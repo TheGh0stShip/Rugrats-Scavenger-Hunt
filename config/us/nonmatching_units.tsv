@@ -1,5 +1,4 @@
 # VRAM SIZE SOURCE NOTES
-0x8003E884	0x30	src/game/parser_read_var_ac.c	semantic C; closest KMC build differs in instruction selection, registers, and scheduling
 0x8003E800	0x74	src/game/parser_read_inverse_motion.c	semantic C; closest KMC build differs in floating-point allocation and scheduling
 0x8003E8E4	0x58	src/game/parser_adjust_float_30.c	semantic C; closest KMC build differs in sign extension and floating-point scheduling
 0x8003EAFC	0x48	src/game/parser_select_record_84.c	semantic C; closest KMC build differs in instruction selection and registers
@@ -13,10 +12,7 @@
 0x8002A13C	0x18	src/game/enable_state_b92a8.c	semantic C; closest IDO 5.3 build has a t6/v1 allocation swap
 0x8002A5C8	0x24	src/game/get_active_field_28.c	semantic C; closest KMC build differs in branch layout and padding
 0x8002A604	0x24	src/game/get_active_field_2c.c	semantic C; closest KMC build differs in branch layout and padding
-0x8002A9A4	0x30	src/game/get_object_node_field_2c.c	semantic C; closest KMC build differs in conditional selection and scheduling
 0x80044258	0x18	src/game/set_object_state_4.c	semantic C; closest IDO 5.3 build lacks two trailing hazard nops
 0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs only in one instruction scheduling position
-0x8004D0A4	0x48	src/runtime/scale_runtime_value.c	semantic C; closest KMC assembler build differs by two instructions and one hazard nop
-0x8004D0EC	0x4C	src/runtime/scale_runtime_value_aligned.c	semantic C; closest KMC assembler build differs by two instructions and one hazard nop
 0x8004D1F0	0xA0	src/runtime/create_indexed_runtime_record.c	semantic C; target uses a different expression and register-allocation shape
 

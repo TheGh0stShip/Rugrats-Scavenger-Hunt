@@ -17,7 +17,7 @@ provide your own legally obtained USA retail ROM.
 - Two resource archives: 910 nonempty indexed resources in 911 records
 - Audio: 178 indexed samples across two sample and pointer-bank pairs
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Matching C: 280 functions / 19,148 code bytes
+- Matching C: 284 functions / 19,392 code bytes
 - Matching initialized data: 240 bytes
 
 The reproducible physical ROM map is in `analysis/rom_map.md`; its companion

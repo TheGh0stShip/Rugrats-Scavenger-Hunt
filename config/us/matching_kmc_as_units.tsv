@@ -105,3 +105,5 @@
 0x3F7D8	0x50	src/game/parser_accumulate_b9.c	-O2 -G0 -mips3 -mgp32 -mfp32	28ff195075373cc9c0968f4e1cd9101cf865f391684053ad0d5e374b6170fdaf
 0x3F828	0x50	src/game/parser_accumulate_bc.c	-O2 -G0 -mips3 -mgp32 -mfp32	e2010033c31848f134d438b78d00c00abc81e904c53c4358b2e96ccad035faad
 0x3F878	0x50	src/game/parser_accumulate_bd.c	-O2 -G0 -mips3 -mgp32 -mfp32	56108e6d5e9c39a6bd153223ba519e5f7387ba175bd294a08bc48cff4575e41f
+0x4DCA4	0x48	src/runtime/scale_runtime_value.c	--section-base=.rodata:0x800038C0 -O2 -G0	72c2a5637d9ae94ddcdbfdddd17fb4c760bc8f9c2bb764fb6d316b60437342a2
+0x4DCEC	0x4C	src/runtime/scale_runtime_value_aligned.c	--section-base=.rodata:0x800038D0 -O2 -G0	d808aaf013719d7f23973cc72cab327e5d18c7347290b17503312b6794d1acc2
