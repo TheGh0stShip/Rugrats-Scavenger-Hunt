@@ -242,3 +242,4 @@
 0x48850	0x110	src/runtime/invalidate_data_cache_range.c	-O2 -G0 -mips3 -mgp32 -mfp32	ba4e8300e2a5b95695ab6ee3dfc6fe4ade0a20ae59ee349f0f8b14ac0ab93f55
 0x57C0	0xAC	src/runtime/install_exception_vectors.c	-O2 -G0 -mips3 -mgp32 -mfp32	1bb7453e27dcc7b297f8f721ed098df0738d4370dd13d6ec8d65cea39a126911
 0x49214	0x108	src/runtime/enqueue_and_yield.c	-O2 -G0 -mips3 -mgp32 -mfp32	3d95cfb8e10cf886242d87caff210d36c6e32316861bcc9a10dbdb8d931e35e3
+0x49374	0x17C	src/runtime/dispatch_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	5117c020de09d251e455a674b09c05e20fcbd1f5efc0bacdafdde801c54ca1ab
