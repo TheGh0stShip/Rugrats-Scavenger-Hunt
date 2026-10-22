@@ -1,0 +1,41 @@
+from __future__ import annotations
+
+import importlib.util
+import unittest
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+SPEC = importlib.util.spec_from_file_location(
+    "audit_rom", ROOT / "tools/audit_rom.py"
+)
+AUDIT = importlib.util.module_from_spec(SPEC)
+assert SPEC.loader is not None
+SPEC.loader.exec_module(AUDIT)
+
+
+class RomAuditTests(unittest.TestCase):
+    def test_declared_ranges_cover_rom(self) -> None:
+        ranges = (
+            (0, AUDIT.PROGRAM_START),
+            (AUDIT.PROGRAM_START, AUDIT.PROGRAM_END),
+            (AUDIT.PROGRAM_END, 0x21AC00),
+            (0x21AC00, 0x4DB6D0),
+            (0x4DB6D0, 0xF4D840),
+            (0xF4D840, 0xF4D850),
+            (0xF4D850, AUDIT.ROM_SIZE),
+        )
+        self.assertEqual(ranges[0][0], 0)
+        self.assertEqual(ranges[-1][1], AUDIT.ROM_SIZE)
+        self.assertTrue(all(left[1] == right[0] for left, right in zip(ranges, ranges[1:])))
+
+    def test_program_sections_cover_initial_image(self) -> None:
+        self.assertEqual(sum(end - start for _, start, end in AUDIT.PROGRAM_SECTIONS), 0x56E80)
+        self.assertEqual(
+            sum(end - start for kind, start, end in AUDIT.PROGRAM_SECTIONS if kind == "text"),
+            0x4EEC0,
+        )
+
+
+if __name__ == "__main__":
+    unittest.main()

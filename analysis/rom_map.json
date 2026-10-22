@@ -1,0 +1,7473 @@
+{
+  "sha1": "fb2a62f1625630d6f0beb5fd00a32e12155d50e8",
+  "rom_size": 16777216,
+  "ranges": [
+    {
+      "start": 0,
+      "end": 4096,
+      "kind": "rom_header_and_boot",
+      "size": 4096
+    },
+    {
+      "start": 4096,
+      "end": 360064,
+      "kind": "initial_program_image",
+      "size": 355968
+    },
+    {
+      "start": 360064,
+      "end": 2206720,
+      "kind": "audio_and_display_data",
+      "size": 1846656
+    },
+    {
+      "start": 2206720,
+      "end": 5093072,
+      "kind": "resource_archive_1",
+      "size": 2886352
+    },
+    {
+      "start": 5093072,
+      "end": 16046144,
+      "kind": "resource_archive_2",
+      "size": 10953072
+    },
+    {
+      "start": 16046144,
+      "end": 16046160,
+      "kind": "build_stamp",
+      "size": 16
+    },
+    {
+      "start": 16046160,
+      "end": 16777216,
+      "kind": "zero_padding",
+      "size": 731056
+    }
+  ],
+  "program_sections": [
+    {
+      "kind": "text",
+      "start": 4096,
+      "end": 4156,
+      "size": 60
+    },
+    {
+      "kind": "rodata",
+      "start": 4156,
+      "end": 17888,
+      "size": 13732
+    },
+    {
+      "kind": "data",
+      "start": 17888,
+      "end": 17904,
+      "size": 16
+    },
+    {
+      "kind": "text",
+      "start": 17904,
+      "end": 341108,
+      "size": 323204
+    },
+    {
+      "kind": "data",
+      "start": 341108,
+      "end": 360064,
+      "size": 18956
+    }
+  ],
+  "program_section_bytes": {
+    "text": 323264,
+    "rodata": 13732,
+    "data": 18972
+  },
+  "audio_graphics_ranges": [
+    {
+      "kind": "display_lists_and_loader_block",
+      "start": 360064,
+      "end": 360400,
+      "size": 336
+    },
+    {
+      "kind": "audio_pointer_bank_1",
+      "start": 360400,
+      "end": 373872,
+      "size": 13472
+    },
+    {
+      "kind": "audio_sample_bank_1",
+      "start": 373872,
+      "end": 1118992,
+      "size": 745120
+    },
+    {
+      "kind": "audio_sample_bank_2",
+      "start": 1118992,
+      "end": 2186368,
+      "size": 1067376
+    },
+    {
+      "kind": "audio_pointer_bank_2",
+      "start": 2186368,
+      "end": 2206720,
+      "size": 20352
+    }
+  ],
+  "audio_sample_count": 178,
+  "archives": [
+    {
+      "name": "resource_archive_1",
+      "start": 2206720,
+      "end": 5093072,
+      "span_bytes": 2886352,
+      "record_count": 380,
+      "nonempty_count": 380,
+      "empty_count": 0,
+      "direct_count": 380,
+      "transformed_count": 0,
+      "index_bytes": 4568,
+      "stored_resource_bytes": 2879376,
+      "logical_resource_bytes": 2879376,
+      "alignment_padding_bytes": 2408,
+      "mort_signature_count": 380,
+      "mdlh_signature_count": 0,
+      "prefix_counts": {
+        "4d4f5254": 380
+      },
+      "records": [
+        {
+          "index": 0,
+          "rom_start": 2211296,
+          "rom_end": 2219868,
+          "logical_size": 8572,
+          "stored_size": 8572,
+          "transform_size": 0
+        },
+        {
+          "index": 1,
+          "rom_start": 2219872,
+          "rom_end": 2227476,
+          "logical_size": 7604,
+          "stored_size": 7604,
+          "transform_size": 0
+        },
+        {
+          "index": 2,
+          "rom_start": 2227488,
+          "rom_end": 2233164,
+          "logical_size": 5676,
+          "stored_size": 5676,
+          "transform_size": 0
+        },
+        {
+          "index": 3,
+          "rom_start": 2233168,
+          "rom_end": 2237316,
+          "logical_size": 4148,
+          "stored_size": 4148,
+          "transform_size": 0
+        },
+        {
+          "index": 4,
+          "rom_start": 2237328,
+          "rom_end": 2241640,
+          "logical_size": 4312,
+          "stored_size": 4312,
+          "transform_size": 0
+        },
+        {
+          "index": 5,
+          "rom_start": 2241648,
+          "rom_end": 2245956,
+          "logical_size": 4308,
+          "stored_size": 4308,
+          "transform_size": 0
+        },
+        {
+          "index": 6,
+          "rom_start": 2245968,
+          "rom_end": 2249792,
+          "logical_size": 3824,
+          "stored_size": 3824,
+          "transform_size": 0
+        },
+        {
+          "index": 7,
+          "rom_start": 2249792,
+          "rom_end": 2252864,
+          "logical_size": 3072,
+          "stored_size": 3072,
+          "transform_size": 0
+        },
+        {
+          "index": 8,
+          "rom_start": 2252864,
+          "rom_end": 2258676,
+          "logical_size": 5812,
+          "stored_size": 5812,
+          "transform_size": 0
+        },
+        {
+          "index": 9,
+          "rom_start": 2258688,
+          "rom_end": 2266156,
+          "logical_size": 7468,
+          "stored_size": 7468,
+          "transform_size": 0
+        },
+        {
+          "index": 10,
+          "rom_start": 2266160,
+          "rom_end": 2271808,
+          "logical_size": 5648,
+          "stored_size": 5648,
+          "transform_size": 0
+        },
+        {
+          "index": 11,
+          "rom_start": 2271808,
+          "rom_end": 2287972,
+          "logical_size": 16164,
+          "stored_size": 16164,
+          "transform_size": 0
+        },
+        {
+          "index": 12,
+          "rom_start": 2287984,
+          "rom_end": 2294904,
+          "logical_size": 6920,
+          "stored_size": 6920,
+          "transform_size": 0
+        },
+        {
+          "index": 13,
+          "rom_start": 2294912,
+          "rom_end": 2311276,
+          "logical_size": 16364,
+          "stored_size": 16364,
+          "transform_size": 0
+        },
+        {
+          "index": 14,
+          "rom_start": 2311280,
+          "rom_end": 2354420,
+          "logical_size": 43140,
+          "stored_size": 43140,
+          "transform_size": 0
+        },
+        {
+          "index": 15,
+          "rom_start": 2354432,
+          "rom_end": 2376088,
+          "logical_size": 21656,
+          "stored_size": 21656,
+          "transform_size": 0
+        },
+        {
+          "index": 16,
+          "rom_start": 2376096,
+          "rom_end": 2388084,
+          "logical_size": 11988,
+          "stored_size": 11988,
+          "transform_size": 0
+        },
+        {
+          "index": 17,
+          "rom_start": 2388096,
+          "rom_end": 2394588,
+          "logical_size": 6492,
+          "stored_size": 6492,
+          "transform_size": 0
+        },
+        {
+          "index": 18,
+          "rom_start": 2394592,
+          "rom_end": 2400884,
+          "logical_size": 6292,
+          "stored_size": 6292,
+          "transform_size": 0
+        },
+        {
+          "index": 19,
+          "rom_start": 2400896,
+          "rom_end": 2407904,
+          "logical_size": 7008,
+          "stored_size": 7008,
+          "transform_size": 0
+        },
+        {
+          "index": 20,
+          "rom_start": 2407904,
+          "rom_end": 2414880,
+          "logical_size": 6976,
+          "stored_size": 6976,
+          "transform_size": 0
+        },
+        {
+          "index": 21,
+          "rom_start": 2414880,
+          "rom_end": 2419028,
+          "logical_size": 4148,
+          "stored_size": 4148,
+          "transform_size": 0
+        },
+        {
+          "index": 22,
+          "rom_start": 2419040,
+          "rom_end": 2424260,
+          "logical_size": 5220,
+          "stored_size": 5220,
+          "transform_size": 0
+        },
+        {
+          "index": 23,
+          "rom_start": 2424272,
+          "rom_end": 2430344,
+          "logical_size": 6072,
+          "stored_size": 6072,
+          "transform_size": 0
+        },
+        {
+          "index": 24,
+          "rom_start": 2430352,
+          "rom_end": 2436840,
+          "logical_size": 6488,
+          "stored_size": 6488,
+          "transform_size": 0
+        },
+        {
+          "index": 25,
+          "rom_start": 2436848,
+          "rom_end": 2443404,
+          "logical_size": 6556,
+          "stored_size": 6556,
+          "transform_size": 0
+        },
+        {
+          "index": 26,
+          "rom_start": 2443408,
+          "rom_end": 2448984,
+          "logical_size": 5576,
+          "stored_size": 5576,
+          "transform_size": 0
+        },
+        {
+          "index": 27,
+          "rom_start": 2448992,
+          "rom_end": 2456944,
+          "logical_size": 7952,
+          "stored_size": 7952,
+          "transform_size": 0
+        },
+        {
+          "index": 28,
+          "rom_start": 2456944,
+          "rom_end": 2461260,
+          "logical_size": 4316,
+          "stored_size": 4316,
+          "transform_size": 0
+        },
+        {
+          "index": 29,
+          "rom_start": 2461264,
+          "rom_end": 2476812,
+          "logical_size": 15548,
+          "stored_size": 15548,
+          "transform_size": 0
+        },
+        {
+          "index": 30,
+          "rom_start": 2476816,
+          "rom_end": 2478132,
+          "logical_size": 1316,
+          "stored_size": 1316,
+          "transform_size": 0
+        },
+        {
+          "index": 31,
+          "rom_start": 2478144,
+          "rom_end": 2487432,
+          "logical_size": 9288,
+          "stored_size": 9288,
+          "transform_size": 0
+        },
+        {
+          "index": 32,
+          "rom_start": 2487440,
+          "rom_end": 2495724,
+          "logical_size": 8284,
+          "stored_size": 8284,
+          "transform_size": 0
+        },
+        {
+          "index": 33,
+          "rom_start": 2495728,
+          "rom_end": 2497636,
+          "logical_size": 1908,
+          "stored_size": 1908,
+          "transform_size": 0
+        },
+        {
+          "index": 34,
+          "rom_start": 2497648,
+          "rom_end": 2560660,
+          "logical_size": 63012,
+          "stored_size": 63012,
+          "transform_size": 0
+        },
+        {
+          "index": 35,
+          "rom_start": 2560672,
+          "rom_end": 2606188,
+          "logical_size": 45516,
+          "stored_size": 45516,
+          "transform_size": 0
+        },
+        {
+          "index": 36,
+          "rom_start": 2606192,
+          "rom_end": 2614604,
+          "logical_size": 8412,
+          "stored_size": 8412,
+          "transform_size": 0
+        },
+        {
+          "index": 37,
+          "rom_start": 2614608,
+          "rom_end": 2630184,
+          "logical_size": 15576,
+          "stored_size": 15576,
+          "transform_size": 0
+        },
+        {
+          "index": 38,
+          "rom_start": 2630192,
+          "rom_end": 2632680,
+          "logical_size": 2488,
+          "stored_size": 2488,
+          "transform_size": 0
+        },
+        {
+          "index": 39,
+          "rom_start": 2632688,
+          "rom_end": 2650108,
+          "logical_size": 17420,
+          "stored_size": 17420,
+          "transform_size": 0
+        },
+        {
+          "index": 40,
+          "rom_start": 2650112,
+          "rom_end": 2658560,
+          "logical_size": 8448,
+          "stored_size": 8448,
+          "transform_size": 0
+        },
+        {
+          "index": 41,
+          "rom_start": 2658560,
+          "rom_end": 2668300,
+          "logical_size": 9740,
+          "stored_size": 9740,
+          "transform_size": 0
+        },
+        {
+          "index": 42,
+          "rom_start": 2668304,
+          "rom_end": 2674404,
+          "logical_size": 6100,
+          "stored_size": 6100,
+          "transform_size": 0
+        },
+        {
+          "index": 43,
+          "rom_start": 2674416,
+          "rom_end": 2694164,
+          "logical_size": 19748,
+          "stored_size": 19748,
+          "transform_size": 0
+        },
+        {
+          "index": 44,
+          "rom_start": 2694176,
+          "rom_end": 2704704,
+          "logical_size": 10528,
+          "stored_size": 10528,
+          "transform_size": 0
+        },
+        {
+          "index": 45,
+          "rom_start": 2704704,
+          "rom_end": 2707812,
+          "logical_size": 3108,
+          "stored_size": 3108,
+          "transform_size": 0
+        },
+        {
+          "index": 46,
+          "rom_start": 2707824,
+          "rom_end": 2711548,
+          "logical_size": 3724,
+          "stored_size": 3724,
+          "transform_size": 0
+        },
+        {
+          "index": 47,
+          "rom_start": 2711552,
+          "rom_end": 2713584,
+          "logical_size": 2032,
+          "stored_size": 2032,
+          "transform_size": 0
+        },
+        {
+          "index": 48,
+          "rom_start": 2713584,
+          "rom_end": 2719844,
+          "logical_size": 6260,
+          "stored_size": 6260,
+          "transform_size": 0
+        },
+        {
+          "index": 49,
+          "rom_start": 2719856,
+          "rom_end": 2721952,
+          "logical_size": 2096,
+          "stored_size": 2096,
+          "transform_size": 0
+        },
+        {
+          "index": 50,
+          "rom_start": 2721952,
+          "rom_end": 2724308,
+          "logical_size": 2356,
+          "stored_size": 2356,
+          "transform_size": 0
+        },
+        {
+          "index": 51,
+          "rom_start": 2724320,
+          "rom_end": 2728244,
+          "logical_size": 3924,
+          "stored_size": 3924,
+          "transform_size": 0
+        },
+        {
+          "index": 52,
+          "rom_start": 2728256,
+          "rom_end": 2738984,
+          "logical_size": 10728,
+          "stored_size": 10728,
+          "transform_size": 0
+        },
+        {
+          "index": 53,
+          "rom_start": 2738992,
+          "rom_end": 2751404,
+          "logical_size": 12412,
+          "stored_size": 12412,
+          "transform_size": 0
+        },
+        {
+          "index": 54,
+          "rom_start": 2751408,
+          "rom_end": 2790864,
+          "logical_size": 39456,
+          "stored_size": 39456,
+          "transform_size": 0
+        },
+        {
+          "index": 55,
+          "rom_start": 2790864,
+          "rom_end": 2804804,
+          "logical_size": 13940,
+          "stored_size": 13940,
+          "transform_size": 0
+        },
+        {
+          "index": 56,
+          "rom_start": 2804816,
+          "rom_end": 2821648,
+          "logical_size": 16832,
+          "stored_size": 16832,
+          "transform_size": 0
+        },
+        {
+          "index": 57,
+          "rom_start": 2821648,
+          "rom_end": 2860024,
+          "logical_size": 38376,
+          "stored_size": 38376,
+          "transform_size": 0
+        },
+        {
+          "index": 58,
+          "rom_start": 2860032,
+          "rom_end": 2865780,
+          "logical_size": 5748,
+          "stored_size": 5748,
+          "transform_size": 0
+        },
+        {
+          "index": 59,
+          "rom_start": 2865792,
+          "rom_end": 2870164,
+          "logical_size": 4372,
+          "stored_size": 4372,
+          "transform_size": 0
+        },
+        {
+          "index": 60,
+          "rom_start": 2870176,
+          "rom_end": 2876344,
+          "logical_size": 6168,
+          "stored_size": 6168,
+          "transform_size": 0
+        },
+        {
+          "index": 61,
+          "rom_start": 2876352,
+          "rom_end": 2883036,
+          "logical_size": 6684,
+          "stored_size": 6684,
+          "transform_size": 0
+        },
+        {
+          "index": 62,
+          "rom_start": 2883040,
+          "rom_end": 2894636,
+          "logical_size": 11596,
+          "stored_size": 11596,
+          "transform_size": 0
+        },
+        {
+          "index": 63,
+          "rom_start": 2894640,
+          "rom_end": 2905564,
+          "logical_size": 10924,
+          "stored_size": 10924,
+          "transform_size": 0
+        },
+        {
+          "index": 64,
+          "rom_start": 2905568,
+          "rom_end": 2906948,
+          "logical_size": 1380,
+          "stored_size": 1380,
+          "transform_size": 0
+        },
+        {
+          "index": 65,
+          "rom_start": 2906960,
+          "rom_end": 2913972,
+          "logical_size": 7012,
+          "stored_size": 7012,
+          "transform_size": 0
+        },
+        {
+          "index": 66,
+          "rom_start": 2913984,
+          "rom_end": 2916084,
+          "logical_size": 2100,
+          "stored_size": 2100,
+          "transform_size": 0
+        },
+        {
+          "index": 67,
+          "rom_start": 2916096,
+          "rom_end": 2925488,
+          "logical_size": 9392,
+          "stored_size": 9392,
+          "transform_size": 0
+        },
+        {
+          "index": 68,
+          "rom_start": 2925488,
+          "rom_end": 2933340,
+          "logical_size": 7852,
+          "stored_size": 7852,
+          "transform_size": 0
+        },
+        {
+          "index": 69,
+          "rom_start": 2933344,
+          "rom_end": 2939056,
+          "logical_size": 5712,
+          "stored_size": 5712,
+          "transform_size": 0
+        },
+        {
+          "index": 70,
+          "rom_start": 2939056,
+          "rom_end": 2948540,
+          "logical_size": 9484,
+          "stored_size": 9484,
+          "transform_size": 0
+        },
+        {
+          "index": 71,
+          "rom_start": 2948544,
+          "rom_end": 2954128,
+          "logical_size": 5584,
+          "stored_size": 5584,
+          "transform_size": 0
+        },
+        {
+          "index": 72,
+          "rom_start": 2954128,
+          "rom_end": 2960104,
+          "logical_size": 5976,
+          "stored_size": 5976,
+          "transform_size": 0
+        },
+        {
+          "index": 73,
+          "rom_start": 2960112,
+          "rom_end": 2970120,
+          "logical_size": 10008,
+          "stored_size": 10008,
+          "transform_size": 0
+        },
+        {
+          "index": 74,
+          "rom_start": 2970128,
+          "rom_end": 2976196,
+          "logical_size": 6068,
+          "stored_size": 6068,
+          "transform_size": 0
+        },
+        {
+          "index": 75,
+          "rom_start": 2976208,
+          "rom_end": 2983060,
+          "logical_size": 6852,
+          "stored_size": 6852,
+          "transform_size": 0
+        },
+        {
+          "index": 76,
+          "rom_start": 2983072,
+          "rom_end": 2990384,
+          "logical_size": 7312,
+          "stored_size": 7312,
+          "transform_size": 0
+        },
+        {
+          "index": 77,
+          "rom_start": 2990384,
+          "rom_end": 2997688,
+          "logical_size": 7304,
+          "stored_size": 7304,
+          "transform_size": 0
+        },
+        {
+          "index": 78,
+          "rom_start": 2997696,
+          "rom_end": 3005908,
+          "logical_size": 8212,
+          "stored_size": 8212,
+          "transform_size": 0
+        },
+        {
+          "index": 79,
+          "rom_start": 3005920,
+          "rom_end": 3013452,
+          "logical_size": 7532,
+          "stored_size": 7532,
+          "transform_size": 0
+        },
+        {
+          "index": 80,
+          "rom_start": 3013456,
+          "rom_end": 3017604,
+          "logical_size": 4148,
+          "stored_size": 4148,
+          "transform_size": 0
+        },
+        {
+          "index": 81,
+          "rom_start": 3017616,
+          "rom_end": 3022152,
+          "logical_size": 4536,
+          "stored_size": 4536,
+          "transform_size": 0
+        },
+        {
+          "index": 82,
+          "rom_start": 3022160,
+          "rom_end": 3024352,
+          "logical_size": 2192,
+          "stored_size": 2192,
+          "transform_size": 0
+        },
+        {
+          "index": 83,
+          "rom_start": 3024352,
+          "rom_end": 3026936,
+          "logical_size": 2584,
+          "stored_size": 2584,
+          "transform_size": 0
+        },
+        {
+          "index": 84,
+          "rom_start": 3026944,
+          "rom_end": 3030016,
+          "logical_size": 3072,
+          "stored_size": 3072,
+          "transform_size": 0
+        },
+        {
+          "index": 85,
+          "rom_start": 3030016,
+          "rom_end": 3034132,
+          "logical_size": 4116,
+          "stored_size": 4116,
+          "transform_size": 0
+        },
+        {
+          "index": 86,
+          "rom_start": 3034144,
+          "rom_end": 3038588,
+          "logical_size": 4444,
+          "stored_size": 4444,
+          "transform_size": 0
+        },
+        {
+          "index": 87,
+          "rom_start": 3038592,
+          "rom_end": 3043420,
+          "logical_size": 4828,
+          "stored_size": 4828,
+          "transform_size": 0
+        },
+        {
+          "index": 88,
+          "rom_start": 3043424,
+          "rom_end": 3043960,
+          "logical_size": 536,
+          "stored_size": 536,
+          "transform_size": 0
+        },
+        {
+          "index": 89,
+          "rom_start": 3043968,
+          "rom_end": 3046584,
+          "logical_size": 2616,
+          "stored_size": 2616,
+          "transform_size": 0
+        },
+        {
+          "index": 90,
+          "rom_start": 3046592,
+          "rom_end": 3055132,
+          "logical_size": 8540,
+          "stored_size": 8540,
+          "transform_size": 0
+        },
+        {
+          "index": 91,
+          "rom_start": 3055136,
+          "rom_end": 3058796,
+          "logical_size": 3660,
+          "stored_size": 3660,
+          "transform_size": 0
+        },
+        {
+          "index": 92,
+          "rom_start": 3058800,
+          "rom_end": 3071788,
+          "logical_size": 12988,
+          "stored_size": 12988,
+          "transform_size": 0
+        },
+        {
+          "index": 93,
+          "rom_start": 3071792,
+          "rom_end": 3074056,
+          "logical_size": 2264,
+          "stored_size": 2264,
+          "transform_size": 0
+        },
+        {
+          "index": 94,
+          "rom_start": 3074064,
+          "rom_end": 3075868,
+          "logical_size": 1804,
+          "stored_size": 1804,
+          "transform_size": 0
+        },
+        {
+          "index": 95,
+          "rom_start": 3075872,
+          "rom_end": 3080052,
+          "logical_size": 4180,
+          "stored_size": 4180,
+          "transform_size": 0
+        },
+        {
+          "index": 96,
+          "rom_start": 3080064,
+          "rom_end": 3085740,
+          "logical_size": 5676,
+          "stored_size": 5676,
+          "transform_size": 0
+        },
+        {
+          "index": 97,
+          "rom_start": 3085744,
+          "rom_end": 3088628,
+          "logical_size": 2884,
+          "stored_size": 2884,
+          "transform_size": 0
+        },
+        {
+          "index": 98,
+          "rom_start": 3088640,
+          "rom_end": 3097276,
+          "logical_size": 8636,
+          "stored_size": 8636,
+          "transform_size": 0
+        },
+        {
+          "index": 99,
+          "rom_start": 3097280,
+          "rom_end": 3101752,
+          "logical_size": 4472,
+          "stored_size": 4472,
+          "transform_size": 0
+        },
+        {
+          "index": 100,
+          "rom_start": 3101760,
+          "rom_end": 3107080,
+          "logical_size": 5320,
+          "stored_size": 5320,
+          "transform_size": 0
+        },
+        {
+          "index": 101,
+          "rom_start": 3107088,
+          "rom_end": 3112120,
+          "logical_size": 5032,
+          "stored_size": 5032,
+          "transform_size": 0
+        },
+        {
+          "index": 102,
+          "rom_start": 3112128,
+          "rom_end": 3117744,
+          "logical_size": 5616,
+          "stored_size": 5616,
+          "transform_size": 0
+        },
+        {
+          "index": 103,
+          "rom_start": 3117744,
+          "rom_end": 3124496,
+          "logical_size": 6752,
+          "stored_size": 6752,
+          "transform_size": 0
+        },
+        {
+          "index": 104,
+          "rom_start": 3124496,
+          "rom_end": 3132580,
+          "logical_size": 8084,
+          "stored_size": 8084,
+          "transform_size": 0
+        },
+        {
+          "index": 105,
+          "rom_start": 3132592,
+          "rom_end": 3137552,
+          "logical_size": 4960,
+          "stored_size": 4960,
+          "transform_size": 0
+        },
+        {
+          "index": 106,
+          "rom_start": 3137552,
+          "rom_end": 3143000,
+          "logical_size": 5448,
+          "stored_size": 5448,
+          "transform_size": 0
+        },
+        {
+          "index": 107,
+          "rom_start": 3143008,
+          "rom_end": 3147976,
+          "logical_size": 4968,
+          "stored_size": 4968,
+          "transform_size": 0
+        },
+        {
+          "index": 108,
+          "rom_start": 3147984,
+          "rom_end": 3152424,
+          "logical_size": 4440,
+          "stored_size": 4440,
+          "transform_size": 0
+        },
+        {
+          "index": 109,
+          "rom_start": 3152432,
+          "rom_end": 3156316,
+          "logical_size": 3884,
+          "stored_size": 3884,
+          "transform_size": 0
+        },
+        {
+          "index": 110,
+          "rom_start": 3156320,
+          "rom_end": 3165796,
+          "logical_size": 9476,
+          "stored_size": 9476,
+          "transform_size": 0
+        },
+        {
+          "index": 111,
+          "rom_start": 3165808,
+          "rom_end": 3170412,
+          "logical_size": 4604,
+          "stored_size": 4604,
+          "transform_size": 0
+        },
+        {
+          "index": 112,
+          "rom_start": 3170416,
+          "rom_end": 3174236,
+          "logical_size": 3820,
+          "stored_size": 3820,
+          "transform_size": 0
+        },
+        {
+          "index": 113,
+          "rom_start": 3174240,
+          "rom_end": 3182032,
+          "logical_size": 7792,
+          "stored_size": 7792,
+          "transform_size": 0
+        },
+        {
+          "index": 114,
+          "rom_start": 3182032,
+          "rom_end": 3186860,
+          "logical_size": 4828,
+          "stored_size": 4828,
+          "transform_size": 0
+        },
+        {
+          "index": 115,
+          "rom_start": 3186864,
+          "rom_end": 3196148,
+          "logical_size": 9284,
+          "stored_size": 9284,
+          "transform_size": 0
+        },
+        {
+          "index": 116,
+          "rom_start": 3196160,
+          "rom_end": 3205096,
+          "logical_size": 8936,
+          "stored_size": 8936,
+          "transform_size": 0
+        },
+        {
+          "index": 117,
+          "rom_start": 3205104,
+          "rom_end": 3210460,
+          "logical_size": 5356,
+          "stored_size": 5356,
+          "transform_size": 0
+        },
+        {
+          "index": 118,
+          "rom_start": 3210464,
+          "rom_end": 3219396,
+          "logical_size": 8932,
+          "stored_size": 8932,
+          "transform_size": 0
+        },
+        {
+          "index": 119,
+          "rom_start": 3219408,
+          "rom_end": 3225480,
+          "logical_size": 6072,
+          "stored_size": 6072,
+          "transform_size": 0
+        },
+        {
+          "index": 120,
+          "rom_start": 3225488,
+          "rom_end": 3233408,
+          "logical_size": 7920,
+          "stored_size": 7920,
+          "transform_size": 0
+        },
+        {
+          "index": 121,
+          "rom_start": 3233408,
+          "rom_end": 3244124,
+          "logical_size": 10716,
+          "stored_size": 10716,
+          "transform_size": 0
+        },
+        {
+          "index": 122,
+          "rom_start": 3244128,
+          "rom_end": 3251948,
+          "logical_size": 7820,
+          "stored_size": 7820,
+          "transform_size": 0
+        },
+        {
+          "index": 123,
+          "rom_start": 3251952,
+          "rom_end": 3259448,
+          "logical_size": 7496,
+          "stored_size": 7496,
+          "transform_size": 0
+        },
+        {
+          "index": 124,
+          "rom_start": 3259456,
+          "rom_end": 3266760,
+          "logical_size": 7304,
+          "stored_size": 7304,
+          "transform_size": 0
+        },
+        {
+          "index": 125,
+          "rom_start": 3266768,
+          "rom_end": 3276356,
+          "logical_size": 9588,
+          "stored_size": 9588,
+          "transform_size": 0
+        },
+        {
+          "index": 126,
+          "rom_start": 3276368,
+          "rom_end": 3280844,
+          "logical_size": 4476,
+          "stored_size": 4476,
+          "transform_size": 0
+        },
+        {
+          "index": 127,
+          "rom_start": 3280848,
+          "rom_end": 3289684,
+          "logical_size": 8836,
+          "stored_size": 8836,
+          "transform_size": 0
+        },
+        {
+          "index": 128,
+          "rom_start": 3289696,
+          "rom_end": 3295888,
+          "logical_size": 6192,
+          "stored_size": 6192,
+          "transform_size": 0
+        },
+        {
+          "index": 129,
+          "rom_start": 3295888,
+          "rom_end": 3301408,
+          "logical_size": 5520,
+          "stored_size": 5520,
+          "transform_size": 0
+        },
+        {
+          "index": 130,
+          "rom_start": 3301408,
+          "rom_end": 3312268,
+          "logical_size": 10860,
+          "stored_size": 10860,
+          "transform_size": 0
+        },
+        {
+          "index": 131,
+          "rom_start": 3312272,
+          "rom_end": 3319024,
+          "logical_size": 6752,
+          "stored_size": 6752,
+          "transform_size": 0
+        },
+        {
+          "index": 132,
+          "rom_start": 3319024,
+          "rom_end": 3332020,
+          "logical_size": 12996,
+          "stored_size": 12996,
+          "transform_size": 0
+        },
+        {
+          "index": 133,
+          "rom_start": 3332032,
+          "rom_end": 3337420,
+          "logical_size": 5388,
+          "stored_size": 5388,
+          "transform_size": 0
+        },
+        {
+          "index": 134,
+          "rom_start": 3337424,
+          "rom_end": 3345548,
+          "logical_size": 8124,
+          "stored_size": 8124,
+          "transform_size": 0
+        },
+        {
+          "index": 135,
+          "rom_start": 3345552,
+          "rom_end": 3353572,
+          "logical_size": 8020,
+          "stored_size": 8020,
+          "transform_size": 0
+        },
+        {
+          "index": 136,
+          "rom_start": 3353584,
+          "rom_end": 3360432,
+          "logical_size": 6848,
+          "stored_size": 6848,
+          "transform_size": 0
+        },
+        {
+          "index": 137,
+          "rom_start": 3360432,
+          "rom_end": 3366792,
+          "logical_size": 6360,
+          "stored_size": 6360,
+          "transform_size": 0
+        },
+        {
+          "index": 138,
+          "rom_start": 3366800,
+          "rom_end": 3371824,
+          "logical_size": 5024,
+          "stored_size": 5024,
+          "transform_size": 0
+        },
+        {
+          "index": 139,
+          "rom_start": 3371824,
+          "rom_end": 3376332,
+          "logical_size": 4508,
+          "stored_size": 4508,
+          "transform_size": 0
+        },
+        {
+          "index": 140,
+          "rom_start": 3376336,
+          "rom_end": 3378988,
+          "logical_size": 2652,
+          "stored_size": 2652,
+          "transform_size": 0
+        },
+        {
+          "index": 141,
+          "rom_start": 3378992,
+          "rom_end": 3384768,
+          "logical_size": 5776,
+          "stored_size": 5776,
+          "transform_size": 0
+        },
+        {
+          "index": 142,
+          "rom_start": 3384768,
+          "rom_end": 3391520,
+          "logical_size": 6752,
+          "stored_size": 6752,
+          "transform_size": 0
+        },
+        {
+          "index": 143,
+          "rom_start": 3391520,
+          "rom_end": 3399016,
+          "logical_size": 7496,
+          "stored_size": 7496,
+          "transform_size": 0
+        },
+        {
+          "index": 144,
+          "rom_start": 3399024,
+          "rom_end": 3402948,
+          "logical_size": 3924,
+          "stored_size": 3924,
+          "transform_size": 0
+        },
+        {
+          "index": 145,
+          "rom_start": 3402960,
+          "rom_end": 3413480,
+          "logical_size": 10520,
+          "stored_size": 10520,
+          "transform_size": 0
+        },
+        {
+          "index": 146,
+          "rom_start": 3413488,
+          "rom_end": 3420464,
+          "logical_size": 6976,
+          "stored_size": 6976,
+          "transform_size": 0
+        },
+        {
+          "index": 147,
+          "rom_start": 3420464,
+          "rom_end": 3429196,
+          "logical_size": 8732,
+          "stored_size": 8732,
+          "transform_size": 0
+        },
+        {
+          "index": 148,
+          "rom_start": 3429200,
+          "rom_end": 3433412,
+          "logical_size": 4212,
+          "stored_size": 4212,
+          "transform_size": 0
+        },
+        {
+          "index": 149,
+          "rom_start": 3433424,
+          "rom_end": 3441600,
+          "logical_size": 8176,
+          "stored_size": 8176,
+          "transform_size": 0
+        },
+        {
+          "index": 150,
+          "rom_start": 3441600,
+          "rom_end": 3453456,
+          "logical_size": 11856,
+          "stored_size": 11856,
+          "transform_size": 0
+        },
+        {
+          "index": 151,
+          "rom_start": 3453456,
+          "rom_end": 3459912,
+          "logical_size": 6456,
+          "stored_size": 6456,
+          "transform_size": 0
+        },
+        {
+          "index": 152,
+          "rom_start": 3459920,
+          "rom_end": 3461792,
+          "logical_size": 1872,
+          "stored_size": 1872,
+          "transform_size": 0
+        },
+        {
+          "index": 153,
+          "rom_start": 3461792,
+          "rom_end": 3465908,
+          "logical_size": 4116,
+          "stored_size": 4116,
+          "transform_size": 0
+        },
+        {
+          "index": 154,
+          "rom_start": 3465920,
+          "rom_end": 3471240,
+          "logical_size": 5320,
+          "stored_size": 5320,
+          "transform_size": 0
+        },
+        {
+          "index": 155,
+          "rom_start": 3471248,
+          "rom_end": 3477412,
+          "logical_size": 6164,
+          "stored_size": 6164,
+          "transform_size": 0
+        },
+        {
+          "index": 156,
+          "rom_start": 3477424,
+          "rom_end": 3482672,
+          "logical_size": 5248,
+          "stored_size": 5248,
+          "transform_size": 0
+        },
+        {
+          "index": 157,
+          "rom_start": 3482672,
+          "rom_end": 3490236,
+          "logical_size": 7564,
+          "stored_size": 7564,
+          "transform_size": 0
+        },
+        {
+          "index": 158,
+          "rom_start": 3490240,
+          "rom_end": 3497028,
+          "logical_size": 6788,
+          "stored_size": 6788,
+          "transform_size": 0
+        },
+        {
+          "index": 159,
+          "rom_start": 3497040,
+          "rom_end": 3506392,
+          "logical_size": 9352,
+          "stored_size": 9352,
+          "transform_size": 0
+        },
+        {
+          "index": 160,
+          "rom_start": 3506400,
+          "rom_end": 3510580,
+          "logical_size": 4180,
+          "stored_size": 4180,
+          "transform_size": 0
+        },
+        {
+          "index": 161,
+          "rom_start": 3510592,
+          "rom_end": 3517632,
+          "logical_size": 7040,
+          "stored_size": 7040,
+          "transform_size": 0
+        },
+        {
+          "index": 162,
+          "rom_start": 3517632,
+          "rom_end": 3521620,
+          "logical_size": 3988,
+          "stored_size": 3988,
+          "transform_size": 0
+        },
+        {
+          "index": 163,
+          "rom_start": 3521632,
+          "rom_end": 3530008,
+          "logical_size": 8376,
+          "stored_size": 8376,
+          "transform_size": 0
+        },
+        {
+          "index": 164,
+          "rom_start": 3530016,
+          "rom_end": 3535176,
+          "logical_size": 5160,
+          "stored_size": 5160,
+          "transform_size": 0
+        },
+        {
+          "index": 165,
+          "rom_start": 3535184,
+          "rom_end": 3545024,
+          "logical_size": 9840,
+          "stored_size": 9840,
+          "transform_size": 0
+        },
+        {
+          "index": 166,
+          "rom_start": 3545024,
+          "rom_end": 3555160,
+          "logical_size": 10136,
+          "stored_size": 10136,
+          "transform_size": 0
+        },
+        {
+          "index": 167,
+          "rom_start": 3555168,
+          "rom_end": 3563056,
+          "logical_size": 7888,
+          "stored_size": 7888,
+          "transform_size": 0
+        },
+        {
+          "index": 168,
+          "rom_start": 3563056,
+          "rom_end": 3569840,
+          "logical_size": 6784,
+          "stored_size": 6784,
+          "transform_size": 0
+        },
+        {
+          "index": 169,
+          "rom_start": 3569840,
+          "rom_end": 3577204,
+          "logical_size": 7364,
+          "stored_size": 7364,
+          "transform_size": 0
+        },
+        {
+          "index": 170,
+          "rom_start": 3577216,
+          "rom_end": 3590032,
+          "logical_size": 12816,
+          "stored_size": 12816,
+          "transform_size": 0
+        },
+        {
+          "index": 171,
+          "rom_start": 3590032,
+          "rom_end": 3595320,
+          "logical_size": 5288,
+          "stored_size": 5288,
+          "transform_size": 0
+        },
+        {
+          "index": 172,
+          "rom_start": 3595328,
+          "rom_end": 3603800,
+          "logical_size": 8472,
+          "stored_size": 8472,
+          "transform_size": 0
+        },
+        {
+          "index": 173,
+          "rom_start": 3603808,
+          "rom_end": 3613744,
+          "logical_size": 9936,
+          "stored_size": 9936,
+          "transform_size": 0
+        },
+        {
+          "index": 174,
+          "rom_start": 3613744,
+          "rom_end": 3621068,
+          "logical_size": 7324,
+          "stored_size": 7324,
+          "transform_size": 0
+        },
+        {
+          "index": 175,
+          "rom_start": 3621072,
+          "rom_end": 3631820,
+          "logical_size": 10748,
+          "stored_size": 10748,
+          "transform_size": 0
+        },
+        {
+          "index": 176,
+          "rom_start": 3631824,
+          "rom_end": 3636624,
+          "logical_size": 4800,
+          "stored_size": 4800,
+          "transform_size": 0
+        },
+        {
+          "index": 177,
+          "rom_start": 3636624,
+          "rom_end": 3644644,
+          "logical_size": 8020,
+          "stored_size": 8020,
+          "transform_size": 0
+        },
+        {
+          "index": 178,
+          "rom_start": 3644656,
+          "rom_end": 3654152,
+          "logical_size": 9496,
+          "stored_size": 9496,
+          "transform_size": 0
+        },
+        {
+          "index": 179,
+          "rom_start": 3654160,
+          "rom_end": 3660520,
+          "logical_size": 6360,
+          "stored_size": 6360,
+          "transform_size": 0
+        },
+        {
+          "index": 180,
+          "rom_start": 3660528,
+          "rom_end": 3665292,
+          "logical_size": 4764,
+          "stored_size": 4764,
+          "transform_size": 0
+        },
+        {
+          "index": 181,
+          "rom_start": 3665296,
+          "rom_end": 3677384,
+          "logical_size": 12088,
+          "stored_size": 12088,
+          "transform_size": 0
+        },
+        {
+          "index": 182,
+          "rom_start": 3677392,
+          "rom_end": 3685452,
+          "logical_size": 8060,
+          "stored_size": 8060,
+          "transform_size": 0
+        },
+        {
+          "index": 183,
+          "rom_start": 3685456,
+          "rom_end": 3693640,
+          "logical_size": 8184,
+          "stored_size": 8184,
+          "transform_size": 0
+        },
+        {
+          "index": 184,
+          "rom_start": 3693648,
+          "rom_end": 3698284,
+          "logical_size": 4636,
+          "stored_size": 4636,
+          "transform_size": 0
+        },
+        {
+          "index": 185,
+          "rom_start": 3698288,
+          "rom_end": 3704092,
+          "logical_size": 5804,
+          "stored_size": 5804,
+          "transform_size": 0
+        },
+        {
+          "index": 186,
+          "rom_start": 3704096,
+          "rom_end": 3710464,
+          "logical_size": 6368,
+          "stored_size": 6368,
+          "transform_size": 0
+        },
+        {
+          "index": 187,
+          "rom_start": 3710464,
+          "rom_end": 3716408,
+          "logical_size": 5944,
+          "stored_size": 5944,
+          "transform_size": 0
+        },
+        {
+          "index": 188,
+          "rom_start": 3716416,
+          "rom_end": 3719908,
+          "logical_size": 3492,
+          "stored_size": 3492,
+          "transform_size": 0
+        },
+        {
+          "index": 189,
+          "rom_start": 3719920,
+          "rom_end": 3727320,
+          "logical_size": 7400,
+          "stored_size": 7400,
+          "transform_size": 0
+        },
+        {
+          "index": 190,
+          "rom_start": 3727328,
+          "rom_end": 3733468,
+          "logical_size": 6140,
+          "stored_size": 6140,
+          "transform_size": 0
+        },
+        {
+          "index": 191,
+          "rom_start": 3733472,
+          "rom_end": 3738500,
+          "logical_size": 5028,
+          "stored_size": 5028,
+          "transform_size": 0
+        },
+        {
+          "index": 192,
+          "rom_start": 3738512,
+          "rom_end": 3744872,
+          "logical_size": 6360,
+          "stored_size": 6360,
+          "transform_size": 0
+        },
+        {
+          "index": 193,
+          "rom_start": 3744880,
+          "rom_end": 3752312,
+          "logical_size": 7432,
+          "stored_size": 7432,
+          "transform_size": 0
+        },
+        {
+          "index": 194,
+          "rom_start": 3752320,
+          "rom_end": 3759200,
+          "logical_size": 6880,
+          "stored_size": 6880,
+          "transform_size": 0
+        },
+        {
+          "index": 195,
+          "rom_start": 3759200,
+          "rom_end": 3763060,
+          "logical_size": 3860,
+          "stored_size": 3860,
+          "transform_size": 0
+        },
+        {
+          "index": 196,
+          "rom_start": 3763072,
+          "rom_end": 3767996,
+          "logical_size": 4924,
+          "stored_size": 4924,
+          "transform_size": 0
+        },
+        {
+          "index": 197,
+          "rom_start": 3768000,
+          "rom_end": 3774320,
+          "logical_size": 6320,
+          "stored_size": 6320,
+          "transform_size": 0
+        },
+        {
+          "index": 198,
+          "rom_start": 3774320,
+          "rom_end": 3779600,
+          "logical_size": 5280,
+          "stored_size": 5280,
+          "transform_size": 0
+        },
+        {
+          "index": 199,
+          "rom_start": 3779600,
+          "rom_end": 3788004,
+          "logical_size": 8404,
+          "stored_size": 8404,
+          "transform_size": 0
+        },
+        {
+          "index": 200,
+          "rom_start": 3788016,
+          "rom_end": 3788876,
+          "logical_size": 860,
+          "stored_size": 860,
+          "transform_size": 0
+        },
+        {
+          "index": 201,
+          "rom_start": 3788880,
+          "rom_end": 3789352,
+          "logical_size": 472,
+          "stored_size": 472,
+          "transform_size": 0
+        },
+        {
+          "index": 202,
+          "rom_start": 3789360,
+          "rom_end": 3791292,
+          "logical_size": 1932,
+          "stored_size": 1932,
+          "transform_size": 0
+        },
+        {
+          "index": 203,
+          "rom_start": 3791296,
+          "rom_end": 3793000,
+          "logical_size": 1704,
+          "stored_size": 1704,
+          "transform_size": 0
+        },
+        {
+          "index": 204,
+          "rom_start": 3793008,
+          "rom_end": 3800024,
+          "logical_size": 7016,
+          "stored_size": 7016,
+          "transform_size": 0
+        },
+        {
+          "index": 205,
+          "rom_start": 3800032,
+          "rom_end": 3807008,
+          "logical_size": 6976,
+          "stored_size": 6976,
+          "transform_size": 0
+        },
+        {
+          "index": 206,
+          "rom_start": 3807008,
+          "rom_end": 3811868,
+          "logical_size": 4860,
+          "stored_size": 4860,
+          "transform_size": 0
+        },
+        {
+          "index": 207,
+          "rom_start": 3811872,
+          "rom_end": 3818064,
+          "logical_size": 6192,
+          "stored_size": 6192,
+          "transform_size": 0
+        },
+        {
+          "index": 208,
+          "rom_start": 3818064,
+          "rom_end": 3826404,
+          "logical_size": 8340,
+          "stored_size": 8340,
+          "transform_size": 0
+        },
+        {
+          "index": 209,
+          "rom_start": 3826416,
+          "rom_end": 3834856,
+          "logical_size": 8440,
+          "stored_size": 8440,
+          "transform_size": 0
+        },
+        {
+          "index": 210,
+          "rom_start": 3834864,
+          "rom_end": 3841188,
+          "logical_size": 6324,
+          "stored_size": 6324,
+          "transform_size": 0
+        },
+        {
+          "index": 211,
+          "rom_start": 3841200,
+          "rom_end": 3847824,
+          "logical_size": 6624,
+          "stored_size": 6624,
+          "transform_size": 0
+        },
+        {
+          "index": 212,
+          "rom_start": 3847824,
+          "rom_end": 3855772,
+          "logical_size": 7948,
+          "stored_size": 7948,
+          "transform_size": 0
+        },
+        {
+          "index": 213,
+          "rom_start": 3855776,
+          "rom_end": 3860932,
+          "logical_size": 5156,
+          "stored_size": 5156,
+          "transform_size": 0
+        },
+        {
+          "index": 214,
+          "rom_start": 3860944,
+          "rom_end": 3874424,
+          "logical_size": 13480,
+          "stored_size": 13480,
+          "transform_size": 0
+        },
+        {
+          "index": 215,
+          "rom_start": 3874432,
+          "rom_end": 3889576,
+          "logical_size": 15144,
+          "stored_size": 15144,
+          "transform_size": 0
+        },
+        {
+          "index": 216,
+          "rom_start": 3889584,
+          "rom_end": 3898284,
+          "logical_size": 8700,
+          "stored_size": 8700,
+          "transform_size": 0
+        },
+        {
+          "index": 217,
+          "rom_start": 3898288,
+          "rom_end": 3909264,
+          "logical_size": 10976,
+          "stored_size": 10976,
+          "transform_size": 0
+        },
+        {
+          "index": 218,
+          "rom_start": 3909264,
+          "rom_end": 3915004,
+          "logical_size": 5740,
+          "stored_size": 5740,
+          "transform_size": 0
+        },
+        {
+          "index": 219,
+          "rom_start": 3915008,
+          "rom_end": 3920488,
+          "logical_size": 5480,
+          "stored_size": 5480,
+          "transform_size": 0
+        },
+        {
+          "index": 220,
+          "rom_start": 3920496,
+          "rom_end": 3931016,
+          "logical_size": 10520,
+          "stored_size": 10520,
+          "transform_size": 0
+        },
+        {
+          "index": 221,
+          "rom_start": 3931024,
+          "rom_end": 3941580,
+          "logical_size": 10556,
+          "stored_size": 10556,
+          "transform_size": 0
+        },
+        {
+          "index": 222,
+          "rom_start": 3941584,
+          "rom_end": 3947456,
+          "logical_size": 5872,
+          "stored_size": 5872,
+          "transform_size": 0
+        },
+        {
+          "index": 223,
+          "rom_start": 3947456,
+          "rom_end": 3956348,
+          "logical_size": 8892,
+          "stored_size": 8892,
+          "transform_size": 0
+        },
+        {
+          "index": 224,
+          "rom_start": 3956352,
+          "rom_end": 3967588,
+          "logical_size": 11236,
+          "stored_size": 11236,
+          "transform_size": 0
+        },
+        {
+          "index": 225,
+          "rom_start": 3967600,
+          "rom_end": 3972400,
+          "logical_size": 4800,
+          "stored_size": 4800,
+          "transform_size": 0
+        },
+        {
+          "index": 226,
+          "rom_start": 3972400,
+          "rom_end": 3978920,
+          "logical_size": 6520,
+          "stored_size": 6520,
+          "transform_size": 0
+        },
+        {
+          "index": 227,
+          "rom_start": 3978928,
+          "rom_end": 3985708,
+          "logical_size": 6780,
+          "stored_size": 6780,
+          "transform_size": 0
+        },
+        {
+          "index": 228,
+          "rom_start": 3985712,
+          "rom_end": 3994284,
+          "logical_size": 8572,
+          "stored_size": 8572,
+          "transform_size": 0
+        },
+        {
+          "index": 229,
+          "rom_start": 3994288,
+          "rom_end": 4005076,
+          "logical_size": 10788,
+          "stored_size": 10788,
+          "transform_size": 0
+        },
+        {
+          "index": 230,
+          "rom_start": 4005088,
+          "rom_end": 4012780,
+          "logical_size": 7692,
+          "stored_size": 7692,
+          "transform_size": 0
+        },
+        {
+          "index": 231,
+          "rom_start": 4012784,
+          "rom_end": 4024960,
+          "logical_size": 12176,
+          "stored_size": 12176,
+          "transform_size": 0
+        },
+        {
+          "index": 232,
+          "rom_start": 4024960,
+          "rom_end": 4029856,
+          "logical_size": 4896,
+          "stored_size": 4896,
+          "transform_size": 0
+        },
+        {
+          "index": 233,
+          "rom_start": 4029856,
+          "rom_end": 4035692,
+          "logical_size": 5836,
+          "stored_size": 5836,
+          "transform_size": 0
+        },
+        {
+          "index": 234,
+          "rom_start": 4035696,
+          "rom_end": 4044068,
+          "logical_size": 8372,
+          "stored_size": 8372,
+          "transform_size": 0
+        },
+        {
+          "index": 235,
+          "rom_start": 4044080,
+          "rom_end": 4051052,
+          "logical_size": 6972,
+          "stored_size": 6972,
+          "transform_size": 0
+        },
+        {
+          "index": 236,
+          "rom_start": 4051056,
+          "rom_end": 4056536,
+          "logical_size": 5480,
+          "stored_size": 5480,
+          "transform_size": 0
+        },
+        {
+          "index": 237,
+          "rom_start": 4056544,
+          "rom_end": 4063392,
+          "logical_size": 6848,
+          "stored_size": 6848,
+          "transform_size": 0
+        },
+        {
+          "index": 238,
+          "rom_start": 4063392,
+          "rom_end": 4071144,
+          "logical_size": 7752,
+          "stored_size": 7752,
+          "transform_size": 0
+        },
+        {
+          "index": 239,
+          "rom_start": 4071152,
+          "rom_end": 4081280,
+          "logical_size": 10128,
+          "stored_size": 10128,
+          "transform_size": 0
+        },
+        {
+          "index": 240,
+          "rom_start": 4081280,
+          "rom_end": 4087572,
+          "logical_size": 6292,
+          "stored_size": 6292,
+          "transform_size": 0
+        },
+        {
+          "index": 241,
+          "rom_start": 4087584,
+          "rom_end": 4095796,
+          "logical_size": 8212,
+          "stored_size": 8212,
+          "transform_size": 0
+        },
+        {
+          "index": 242,
+          "rom_start": 4095808,
+          "rom_end": 4103464,
+          "logical_size": 7656,
+          "stored_size": 7656,
+          "transform_size": 0
+        },
+        {
+          "index": 243,
+          "rom_start": 4103472,
+          "rom_end": 4116916,
+          "logical_size": 13444,
+          "stored_size": 13444,
+          "transform_size": 0
+        },
+        {
+          "index": 244,
+          "rom_start": 4116928,
+          "rom_end": 4121728,
+          "logical_size": 4800,
+          "stored_size": 4800,
+          "transform_size": 0
+        },
+        {
+          "index": 245,
+          "rom_start": 4121728,
+          "rom_end": 4125488,
+          "logical_size": 3760,
+          "stored_size": 3760,
+          "transform_size": 0
+        },
+        {
+          "index": 246,
+          "rom_start": 4125488,
+          "rom_end": 4130452,
+          "logical_size": 4964,
+          "stored_size": 4964,
+          "transform_size": 0
+        },
+        {
+          "index": 247,
+          "rom_start": 4130464,
+          "rom_end": 4137860,
+          "logical_size": 7396,
+          "stored_size": 7396,
+          "transform_size": 0
+        },
+        {
+          "index": 248,
+          "rom_start": 4137872,
+          "rom_end": 4150152,
+          "logical_size": 12280,
+          "stored_size": 12280,
+          "transform_size": 0
+        },
+        {
+          "index": 249,
+          "rom_start": 4150160,
+          "rom_end": 4159640,
+          "logical_size": 9480,
+          "stored_size": 9480,
+          "transform_size": 0
+        },
+        {
+          "index": 250,
+          "rom_start": 4159648,
+          "rom_end": 4170656,
+          "logical_size": 11008,
+          "stored_size": 11008,
+          "transform_size": 0
+        },
+        {
+          "index": 251,
+          "rom_start": 4170656,
+          "rom_end": 4177208,
+          "logical_size": 6552,
+          "stored_size": 6552,
+          "transform_size": 0
+        },
+        {
+          "index": 252,
+          "rom_start": 4177216,
+          "rom_end": 4181172,
+          "logical_size": 3956,
+          "stored_size": 3956,
+          "transform_size": 0
+        },
+        {
+          "index": 253,
+          "rom_start": 4181184,
+          "rom_end": 4189916,
+          "logical_size": 8732,
+          "stored_size": 8732,
+          "transform_size": 0
+        },
+        {
+          "index": 254,
+          "rom_start": 4189920,
+          "rom_end": 4196248,
+          "logical_size": 6328,
+          "stored_size": 6328,
+          "transform_size": 0
+        },
+        {
+          "index": 255,
+          "rom_start": 4196256,
+          "rom_end": 4203428,
+          "logical_size": 7172,
+          "stored_size": 7172,
+          "transform_size": 0
+        },
+        {
+          "index": 256,
+          "rom_start": 4203440,
+          "rom_end": 4206676,
+          "logical_size": 3236,
+          "stored_size": 3236,
+          "transform_size": 0
+        },
+        {
+          "index": 257,
+          "rom_start": 4206688,
+          "rom_end": 4215228,
+          "logical_size": 8540,
+          "stored_size": 8540,
+          "transform_size": 0
+        },
+        {
+          "index": 258,
+          "rom_start": 4215232,
+          "rom_end": 4219700,
+          "logical_size": 4468,
+          "stored_size": 4468,
+          "transform_size": 0
+        },
+        {
+          "index": 259,
+          "rom_start": 4219712,
+          "rom_end": 4228612,
+          "logical_size": 8900,
+          "stored_size": 8900,
+          "transform_size": 0
+        },
+        {
+          "index": 260,
+          "rom_start": 4228624,
+          "rom_end": 4234464,
+          "logical_size": 5840,
+          "stored_size": 5840,
+          "transform_size": 0
+        },
+        {
+          "index": 261,
+          "rom_start": 4234464,
+          "rom_end": 4242476,
+          "logical_size": 8012,
+          "stored_size": 8012,
+          "transform_size": 0
+        },
+        {
+          "index": 262,
+          "rom_start": 4242480,
+          "rom_end": 4254664,
+          "logical_size": 12184,
+          "stored_size": 12184,
+          "transform_size": 0
+        },
+        {
+          "index": 263,
+          "rom_start": 4254672,
+          "rom_end": 4264248,
+          "logical_size": 9576,
+          "stored_size": 9576,
+          "transform_size": 0
+        },
+        {
+          "index": 264,
+          "rom_start": 4264256,
+          "rom_end": 4270680,
+          "logical_size": 6424,
+          "stored_size": 6424,
+          "transform_size": 0
+        },
+        {
+          "index": 265,
+          "rom_start": 4270688,
+          "rom_end": 4278512,
+          "logical_size": 7824,
+          "stored_size": 7824,
+          "transform_size": 0
+        },
+        {
+          "index": 266,
+          "rom_start": 4278512,
+          "rom_end": 4286460,
+          "logical_size": 7948,
+          "stored_size": 7948,
+          "transform_size": 0
+        },
+        {
+          "index": 267,
+          "rom_start": 4286464,
+          "rom_end": 4292140,
+          "logical_size": 5676,
+          "stored_size": 5676,
+          "transform_size": 0
+        },
+        {
+          "index": 268,
+          "rom_start": 4292144,
+          "rom_end": 4297396,
+          "logical_size": 5252,
+          "stored_size": 5252,
+          "transform_size": 0
+        },
+        {
+          "index": 269,
+          "rom_start": 4297408,
+          "rom_end": 4304612,
+          "logical_size": 7204,
+          "stored_size": 7204,
+          "transform_size": 0
+        },
+        {
+          "index": 270,
+          "rom_start": 4304624,
+          "rom_end": 4315828,
+          "logical_size": 11204,
+          "stored_size": 11204,
+          "transform_size": 0
+        },
+        {
+          "index": 271,
+          "rom_start": 4315840,
+          "rom_end": 4322232,
+          "logical_size": 6392,
+          "stored_size": 6392,
+          "transform_size": 0
+        },
+        {
+          "index": 272,
+          "rom_start": 4322240,
+          "rom_end": 4328732,
+          "logical_size": 6492,
+          "stored_size": 6492,
+          "transform_size": 0
+        },
+        {
+          "index": 273,
+          "rom_start": 4328736,
+          "rom_end": 4335648,
+          "logical_size": 6912,
+          "stored_size": 6912,
+          "transform_size": 0
+        },
+        {
+          "index": 274,
+          "rom_start": 4335648,
+          "rom_end": 4345000,
+          "logical_size": 9352,
+          "stored_size": 9352,
+          "transform_size": 0
+        },
+        {
+          "index": 275,
+          "rom_start": 4345008,
+          "rom_end": 4351596,
+          "logical_size": 6588,
+          "stored_size": 6588,
+          "transform_size": 0
+        },
+        {
+          "index": 276,
+          "rom_start": 4351600,
+          "rom_end": 4356756,
+          "logical_size": 5156,
+          "stored_size": 5156,
+          "transform_size": 0
+        },
+        {
+          "index": 277,
+          "rom_start": 4356768,
+          "rom_end": 4362676,
+          "logical_size": 5908,
+          "stored_size": 5908,
+          "transform_size": 0
+        },
+        {
+          "index": 278,
+          "rom_start": 4362688,
+          "rom_end": 4368112,
+          "logical_size": 5424,
+          "stored_size": 5424,
+          "transform_size": 0
+        },
+        {
+          "index": 279,
+          "rom_start": 4368112,
+          "rom_end": 4375256,
+          "logical_size": 7144,
+          "stored_size": 7144,
+          "transform_size": 0
+        },
+        {
+          "index": 280,
+          "rom_start": 4375264,
+          "rom_end": 4377556,
+          "logical_size": 2292,
+          "stored_size": 2292,
+          "transform_size": 0
+        },
+        {
+          "index": 281,
+          "rom_start": 4377568,
+          "rom_end": 4388348,
+          "logical_size": 10780,
+          "stored_size": 10780,
+          "transform_size": 0
+        },
+        {
+          "index": 282,
+          "rom_start": 4388352,
+          "rom_end": 4401340,
+          "logical_size": 12988,
+          "stored_size": 12988,
+          "transform_size": 0
+        },
+        {
+          "index": 283,
+          "rom_start": 4401344,
+          "rom_end": 4408380,
+          "logical_size": 7036,
+          "stored_size": 7036,
+          "transform_size": 0
+        },
+        {
+          "index": 284,
+          "rom_start": 4408384,
+          "rom_end": 4413120,
+          "logical_size": 4736,
+          "stored_size": 4736,
+          "transform_size": 0
+        },
+        {
+          "index": 285,
+          "rom_start": 4413120,
+          "rom_end": 4417264,
+          "logical_size": 4144,
+          "stored_size": 4144,
+          "transform_size": 0
+        },
+        {
+          "index": 286,
+          "rom_start": 4417264,
+          "rom_end": 4423592,
+          "logical_size": 6328,
+          "stored_size": 6328,
+          "transform_size": 0
+        },
+        {
+          "index": 287,
+          "rom_start": 4423600,
+          "rom_end": 4429472,
+          "logical_size": 5872,
+          "stored_size": 5872,
+          "transform_size": 0
+        },
+        {
+          "index": 288,
+          "rom_start": 4429472,
+          "rom_end": 4438044,
+          "logical_size": 8572,
+          "stored_size": 8572,
+          "transform_size": 0
+        },
+        {
+          "index": 289,
+          "rom_start": 4438048,
+          "rom_end": 4450488,
+          "logical_size": 12440,
+          "stored_size": 12440,
+          "transform_size": 0
+        },
+        {
+          "index": 290,
+          "rom_start": 4450496,
+          "rom_end": 4462740,
+          "logical_size": 12244,
+          "stored_size": 12244,
+          "transform_size": 0
+        },
+        {
+          "index": 291,
+          "rom_start": 4462752,
+          "rom_end": 4469380,
+          "logical_size": 6628,
+          "stored_size": 6628,
+          "transform_size": 0
+        },
+        {
+          "index": 292,
+          "rom_start": 4469392,
+          "rom_end": 4472760,
+          "logical_size": 3368,
+          "stored_size": 3368,
+          "transform_size": 0
+        },
+        {
+          "index": 293,
+          "rom_start": 4472768,
+          "rom_end": 4481628,
+          "logical_size": 8860,
+          "stored_size": 8860,
+          "transform_size": 0
+        },
+        {
+          "index": 294,
+          "rom_start": 4481632,
+          "rom_end": 4487956,
+          "logical_size": 6324,
+          "stored_size": 6324,
+          "transform_size": 0
+        },
+        {
+          "index": 295,
+          "rom_start": 4487968,
+          "rom_end": 4495172,
+          "logical_size": 7204,
+          "stored_size": 7204,
+          "transform_size": 0
+        },
+        {
+          "index": 296,
+          "rom_start": 4495184,
+          "rom_end": 4505184,
+          "logical_size": 10000,
+          "stored_size": 10000,
+          "transform_size": 0
+        },
+        {
+          "index": 297,
+          "rom_start": 4505184,
+          "rom_end": 4510596,
+          "logical_size": 5412,
+          "stored_size": 5412,
+          "transform_size": 0
+        },
+        {
+          "index": 298,
+          "rom_start": 4510608,
+          "rom_end": 4514172,
+          "logical_size": 3564,
+          "stored_size": 3564,
+          "transform_size": 0
+        },
+        {
+          "index": 299,
+          "rom_start": 4514176,
+          "rom_end": 4516144,
+          "logical_size": 1968,
+          "stored_size": 1968,
+          "transform_size": 0
+        },
+        {
+          "index": 300,
+          "rom_start": 4516144,
+          "rom_end": 4524904,
+          "logical_size": 8760,
+          "stored_size": 8760,
+          "transform_size": 0
+        },
+        {
+          "index": 301,
+          "rom_start": 4524912,
+          "rom_end": 4532372,
+          "logical_size": 7460,
+          "stored_size": 7460,
+          "transform_size": 0
+        },
+        {
+          "index": 302,
+          "rom_start": 4532384,
+          "rom_end": 4539292,
+          "logical_size": 6908,
+          "stored_size": 6908,
+          "transform_size": 0
+        },
+        {
+          "index": 303,
+          "rom_start": 4539296,
+          "rom_end": 4551860,
+          "logical_size": 12564,
+          "stored_size": 12564,
+          "transform_size": 0
+        },
+        {
+          "index": 304,
+          "rom_start": 4551872,
+          "rom_end": 4555436,
+          "logical_size": 3564,
+          "stored_size": 3564,
+          "transform_size": 0
+        },
+        {
+          "index": 305,
+          "rom_start": 4555440,
+          "rom_end": 4563068,
+          "logical_size": 7628,
+          "stored_size": 7628,
+          "transform_size": 0
+        },
+        {
+          "index": 306,
+          "rom_start": 4563072,
+          "rom_end": 4570664,
+          "logical_size": 7592,
+          "stored_size": 7592,
+          "transform_size": 0
+        },
+        {
+          "index": 307,
+          "rom_start": 4570672,
+          "rom_end": 4580872,
+          "logical_size": 10200,
+          "stored_size": 10200,
+          "transform_size": 0
+        },
+        {
+          "index": 308,
+          "rom_start": 4580880,
+          "rom_end": 4583012,
+          "logical_size": 2132,
+          "stored_size": 2132,
+          "transform_size": 0
+        },
+        {
+          "index": 309,
+          "rom_start": 4583024,
+          "rom_end": 4588704,
+          "logical_size": 5680,
+          "stored_size": 5680,
+          "transform_size": 0
+        },
+        {
+          "index": 310,
+          "rom_start": 4588704,
+          "rom_end": 4595972,
+          "logical_size": 7268,
+          "stored_size": 7268,
+          "transform_size": 0
+        },
+        {
+          "index": 311,
+          "rom_start": 4595984,
+          "rom_end": 4605860,
+          "logical_size": 9876,
+          "stored_size": 9876,
+          "transform_size": 0
+        },
+        {
+          "index": 312,
+          "rom_start": 4605872,
+          "rom_end": 4610472,
+          "logical_size": 4600,
+          "stored_size": 4600,
+          "transform_size": 0
+        },
+        {
+          "index": 313,
+          "rom_start": 4610480,
+          "rom_end": 4615700,
+          "logical_size": 5220,
+          "stored_size": 5220,
+          "transform_size": 0
+        },
+        {
+          "index": 314,
+          "rom_start": 4615712,
+          "rom_end": 4626428,
+          "logical_size": 10716,
+          "stored_size": 10716,
+          "transform_size": 0
+        },
+        {
+          "index": 315,
+          "rom_start": 4626432,
+          "rom_end": 4633244,
+          "logical_size": 6812,
+          "stored_size": 6812,
+          "transform_size": 0
+        },
+        {
+          "index": 316,
+          "rom_start": 4633248,
+          "rom_end": 4639292,
+          "logical_size": 6044,
+          "stored_size": 6044,
+          "transform_size": 0
+        },
+        {
+          "index": 317,
+          "rom_start": 4639296,
+          "rom_end": 4648124,
+          "logical_size": 8828,
+          "stored_size": 8828,
+          "transform_size": 0
+        },
+        {
+          "index": 318,
+          "rom_start": 4648128,
+          "rom_end": 4653120,
+          "logical_size": 4992,
+          "stored_size": 4992,
+          "transform_size": 0
+        },
+        {
+          "index": 319,
+          "rom_start": 4653120,
+          "rom_end": 4664612,
+          "logical_size": 11492,
+          "stored_size": 11492,
+          "transform_size": 0
+        },
+        {
+          "index": 320,
+          "rom_start": 4664624,
+          "rom_end": 4669776,
+          "logical_size": 5152,
+          "stored_size": 5152,
+          "transform_size": 0
+        },
+        {
+          "index": 321,
+          "rom_start": 4669776,
+          "rom_end": 4677636,
+          "logical_size": 7860,
+          "stored_size": 7860,
+          "transform_size": 0
+        },
+        {
+          "index": 322,
+          "rom_start": 4677648,
+          "rom_end": 4686220,
+          "logical_size": 8572,
+          "stored_size": 8572,
+          "transform_size": 0
+        },
+        {
+          "index": 323,
+          "rom_start": 4686224,
+          "rom_end": 4691800,
+          "logical_size": 5576,
+          "stored_size": 5576,
+          "transform_size": 0
+        },
+        {
+          "index": 324,
+          "rom_start": 4691808,
+          "rom_end": 4696088,
+          "logical_size": 4280,
+          "stored_size": 4280,
+          "transform_size": 0
+        },
+        {
+          "index": 325,
+          "rom_start": 4696096,
+          "rom_end": 4701508,
+          "logical_size": 5412,
+          "stored_size": 5412,
+          "transform_size": 0
+        },
+        {
+          "index": 326,
+          "rom_start": 4701520,
+          "rom_end": 4708108,
+          "logical_size": 6588,
+          "stored_size": 6588,
+          "transform_size": 0
+        },
+        {
+          "index": 327,
+          "rom_start": 4708112,
+          "rom_end": 4711836,
+          "logical_size": 3724,
+          "stored_size": 3724,
+          "transform_size": 0
+        },
+        {
+          "index": 328,
+          "rom_start": 4711840,
+          "rom_end": 4715368,
+          "logical_size": 3528,
+          "stored_size": 3528,
+          "transform_size": 0
+        },
+        {
+          "index": 329,
+          "rom_start": 4715376,
+          "rom_end": 4721148,
+          "logical_size": 5772,
+          "stored_size": 5772,
+          "transform_size": 0
+        },
+        {
+          "index": 330,
+          "rom_start": 4721152,
+          "rom_end": 4726988,
+          "logical_size": 5836,
+          "stored_size": 5836,
+          "transform_size": 0
+        },
+        {
+          "index": 331,
+          "rom_start": 4726992,
+          "rom_end": 4730684,
+          "logical_size": 3692,
+          "stored_size": 3692,
+          "transform_size": 0
+        },
+        {
+          "index": 332,
+          "rom_start": 4730688,
+          "rom_end": 4738312,
+          "logical_size": 7624,
+          "stored_size": 7624,
+          "transform_size": 0
+        },
+        {
+          "index": 333,
+          "rom_start": 4738320,
+          "rom_end": 4747700,
+          "logical_size": 9380,
+          "stored_size": 9380,
+          "transform_size": 0
+        },
+        {
+          "index": 334,
+          "rom_start": 4747712,
+          "rom_end": 4756544,
+          "logical_size": 8832,
+          "stored_size": 8832,
+          "transform_size": 0
+        },
+        {
+          "index": 335,
+          "rom_start": 4756544,
+          "rom_end": 4763192,
+          "logical_size": 6648,
+          "stored_size": 6648,
+          "transform_size": 0
+        },
+        {
+          "index": 336,
+          "rom_start": 4763200,
+          "rom_end": 4771836,
+          "logical_size": 8636,
+          "stored_size": 8636,
+          "transform_size": 0
+        },
+        {
+          "index": 337,
+          "rom_start": 4771840,
+          "rom_end": 4773740,
+          "logical_size": 1900,
+          "stored_size": 1900,
+          "transform_size": 0
+        },
+        {
+          "index": 338,
+          "rom_start": 4773744,
+          "rom_end": 4779816,
+          "logical_size": 6072,
+          "stored_size": 6072,
+          "transform_size": 0
+        },
+        {
+          "index": 339,
+          "rom_start": 4779824,
+          "rom_end": 4789672,
+          "logical_size": 9848,
+          "stored_size": 9848,
+          "transform_size": 0
+        },
+        {
+          "index": 340,
+          "rom_start": 4789680,
+          "rom_end": 4807208,
+          "logical_size": 17528,
+          "stored_size": 17528,
+          "transform_size": 0
+        },
+        {
+          "index": 341,
+          "rom_start": 4807216,
+          "rom_end": 4809996,
+          "logical_size": 2780,
+          "stored_size": 2780,
+          "transform_size": 0
+        },
+        {
+          "index": 342,
+          "rom_start": 4810000,
+          "rom_end": 4828492,
+          "logical_size": 18492,
+          "stored_size": 18492,
+          "transform_size": 0
+        },
+        {
+          "index": 343,
+          "rom_start": 4828496,
+          "rom_end": 4831728,
+          "logical_size": 3232,
+          "stored_size": 3232,
+          "transform_size": 0
+        },
+        {
+          "index": 344,
+          "rom_start": 4831728,
+          "rom_end": 4842636,
+          "logical_size": 10908,
+          "stored_size": 10908,
+          "transform_size": 0
+        },
+        {
+          "index": 345,
+          "rom_start": 4842640,
+          "rom_end": 4854344,
+          "logical_size": 11704,
+          "stored_size": 11704,
+          "transform_size": 0
+        },
+        {
+          "index": 346,
+          "rom_start": 4854352,
+          "rom_end": 4860348,
+          "logical_size": 5996,
+          "stored_size": 5996,
+          "transform_size": 0
+        },
+        {
+          "index": 347,
+          "rom_start": 4860352,
+          "rom_end": 4867592,
+          "logical_size": 7240,
+          "stored_size": 7240,
+          "transform_size": 0
+        },
+        {
+          "index": 348,
+          "rom_start": 4867600,
+          "rom_end": 4874444,
+          "logical_size": 6844,
+          "stored_size": 6844,
+          "transform_size": 0
+        },
+        {
+          "index": 349,
+          "rom_start": 4874448,
+          "rom_end": 4883928,
+          "logical_size": 9480,
+          "stored_size": 9480,
+          "transform_size": 0
+        },
+        {
+          "index": 350,
+          "rom_start": 4883936,
+          "rom_end": 4890200,
+          "logical_size": 6264,
+          "stored_size": 6264,
+          "transform_size": 0
+        },
+        {
+          "index": 351,
+          "rom_start": 4890208,
+          "rom_end": 4899268,
+          "logical_size": 9060,
+          "stored_size": 9060,
+          "transform_size": 0
+        },
+        {
+          "index": 352,
+          "rom_start": 4899280,
+          "rom_end": 4900400,
+          "logical_size": 1120,
+          "stored_size": 1120,
+          "transform_size": 0
+        },
+        {
+          "index": 353,
+          "rom_start": 4900400,
+          "rom_end": 4916548,
+          "logical_size": 16148,
+          "stored_size": 16148,
+          "transform_size": 0
+        },
+        {
+          "index": 354,
+          "rom_start": 4916560,
+          "rom_end": 4930432,
+          "logical_size": 13872,
+          "stored_size": 13872,
+          "transform_size": 0
+        },
+        {
+          "index": 355,
+          "rom_start": 4930432,
+          "rom_end": 4941512,
+          "logical_size": 11080,
+          "stored_size": 11080,
+          "transform_size": 0
+        },
+        {
+          "index": 356,
+          "rom_start": 4941520,
+          "rom_end": 4948792,
+          "logical_size": 7272,
+          "stored_size": 7272,
+          "transform_size": 0
+        },
+        {
+          "index": 357,
+          "rom_start": 4948800,
+          "rom_end": 4960100,
+          "logical_size": 11300,
+          "stored_size": 11300,
+          "transform_size": 0
+        },
+        {
+          "index": 358,
+          "rom_start": 4960112,
+          "rom_end": 4968000,
+          "logical_size": 7888,
+          "stored_size": 7888,
+          "transform_size": 0
+        },
+        {
+          "index": 359,
+          "rom_start": 4968000,
+          "rom_end": 4977516,
+          "logical_size": 9516,
+          "stored_size": 9516,
+          "transform_size": 0
+        },
+        {
+          "index": 360,
+          "rom_start": 4977520,
+          "rom_end": 4985084,
+          "logical_size": 7564,
+          "stored_size": 7564,
+          "transform_size": 0
+        },
+        {
+          "index": 361,
+          "rom_start": 4985088,
+          "rom_end": 4997108,
+          "logical_size": 12020,
+          "stored_size": 12020,
+          "transform_size": 0
+        },
+        {
+          "index": 362,
+          "rom_start": 4997120,
+          "rom_end": 5005296,
+          "logical_size": 8176,
+          "stored_size": 8176,
+          "transform_size": 0
+        },
+        {
+          "index": 363,
+          "rom_start": 5005296,
+          "rom_end": 5009736,
+          "logical_size": 4440,
+          "stored_size": 4440,
+          "transform_size": 0
+        },
+        {
+          "index": 364,
+          "rom_start": 5009744,
+          "rom_end": 5015260,
+          "logical_size": 5516,
+          "stored_size": 5516,
+          "transform_size": 0
+        },
+        {
+          "index": 365,
+          "rom_start": 5015264,
+          "rom_end": 5020612,
+          "logical_size": 5348,
+          "stored_size": 5348,
+          "transform_size": 0
+        },
+        {
+          "index": 366,
+          "rom_start": 5020624,
+          "rom_end": 5028676,
+          "logical_size": 8052,
+          "stored_size": 8052,
+          "transform_size": 0
+        },
+        {
+          "index": 367,
+          "rom_start": 5028688,
+          "rom_end": 5031076,
+          "logical_size": 2388,
+          "stored_size": 2388,
+          "transform_size": 0
+        },
+        {
+          "index": 368,
+          "rom_start": 5031088,
+          "rom_end": 5033736,
+          "logical_size": 2648,
+          "stored_size": 2648,
+          "transform_size": 0
+        },
+        {
+          "index": 369,
+          "rom_start": 5033744,
+          "rom_end": 5040816,
+          "logical_size": 7072,
+          "stored_size": 7072,
+          "transform_size": 0
+        },
+        {
+          "index": 370,
+          "rom_start": 5040816,
+          "rom_end": 5047988,
+          "logical_size": 7172,
+          "stored_size": 7172,
+          "transform_size": 0
+        },
+        {
+          "index": 371,
+          "rom_start": 5048000,
+          "rom_end": 5051432,
+          "logical_size": 3432,
+          "stored_size": 3432,
+          "transform_size": 0
+        },
+        {
+          "index": 372,
+          "rom_start": 5051440,
+          "rom_end": 5057188,
+          "logical_size": 5748,
+          "stored_size": 5748,
+          "transform_size": 0
+        },
+        {
+          "index": 373,
+          "rom_start": 5057200,
+          "rom_end": 5061608,
+          "logical_size": 4408,
+          "stored_size": 4408,
+          "transform_size": 0
+        },
+        {
+          "index": 374,
+          "rom_start": 5061616,
+          "rom_end": 5065440,
+          "logical_size": 3824,
+          "stored_size": 3824,
+          "transform_size": 0
+        },
+        {
+          "index": 375,
+          "rom_start": 5065440,
+          "rom_end": 5071412,
+          "logical_size": 5972,
+          "stored_size": 5972,
+          "transform_size": 0
+        },
+        {
+          "index": 376,
+          "rom_start": 5071424,
+          "rom_end": 5078436,
+          "logical_size": 7012,
+          "stored_size": 7012,
+          "transform_size": 0
+        },
+        {
+          "index": 377,
+          "rom_start": 5078448,
+          "rom_end": 5084752,
+          "logical_size": 6304,
+          "stored_size": 6304,
+          "transform_size": 0
+        },
+        {
+          "index": 378,
+          "rom_start": 5084752,
+          "rom_end": 5090568,
+          "logical_size": 5816,
+          "stored_size": 5816,
+          "transform_size": 0
+        },
+        {
+          "index": 379,
+          "rom_start": 5090576,
+          "rom_end": 5093064,
+          "logical_size": 2488,
+          "stored_size": 2488,
+          "transform_size": 0
+        }
+      ]
+    },
+    {
+      "name": "resource_archive_2",
+      "start": 5093072,
+      "end": 16046144,
+      "span_bytes": 10953072,
+      "record_count": 531,
+      "nonempty_count": 530,
+      "empty_count": 1,
+      "direct_count": 382,
+      "transformed_count": 148,
+      "index_bytes": 6380,
+      "stored_resource_bytes": 10944013,
+      "logical_resource_bytes": 11913050,
+      "alignment_padding_bytes": 2679,
+      "mort_signature_count": 0,
+      "mdlh_signature_count": 376,
+      "prefix_counts": {
+        "00000000": 6,
+        "04000001": 2,
+        "04000002": 26,
+        "04000003": 1,
+        "04000004": 1,
+        "04000005": 2,
+        "04000046": 2,
+        "04000100": 48,
+        "04000200": 8,
+        "04000300": 1,
+        "06000200": 7,
+        "06000300": 11,
+        "06000400": 17,
+        "06000600": 4,
+        "06000700": 1,
+        "06004000": 10,
+        "43000128": 3,
+        "43000132": 3,
+        "430001de": 1,
+        "6d646c68": 376
+      },
+      "records": [
+        {
+          "index": 0,
+          "rom_start": 5099456,
+          "rom_end": 5107906,
+          "logical_size": 18512,
+          "stored_size": 8450,
+          "transform_size": 8450
+        },
+        {
+          "index": 1,
+          "rom_start": 5107920,
+          "rom_end": 5112982,
+          "logical_size": 18512,
+          "stored_size": 5062,
+          "transform_size": 5062
+        },
+        {
+          "index": 2,
+          "rom_start": 5112992,
+          "rom_end": 5123518,
+          "logical_size": 124184,
+          "stored_size": 10526,
+          "transform_size": 10526
+        },
+        {
+          "index": 3,
+          "rom_start": 5123520,
+          "rom_end": 5146277,
+          "logical_size": 124184,
+          "stored_size": 22757,
+          "transform_size": 22757
+        },
+        {
+          "index": 4,
+          "rom_start": 5146288,
+          "rom_end": 5156948,
+          "logical_size": 124184,
+          "stored_size": 10660,
+          "transform_size": 10660
+        },
+        {
+          "index": 5,
+          "rom_start": 5156960,
+          "rom_end": 5257752,
+          "logical_size": 124184,
+          "stored_size": 100792,
+          "transform_size": 100792
+        },
+        {
+          "index": 6,
+          "rom_start": 5257760,
+          "rom_end": 5336703,
+          "logical_size": 124184,
+          "stored_size": 78943,
+          "transform_size": 78943
+        },
+        {
+          "index": 7,
+          "rom_start": 5336704,
+          "rom_end": 5345234,
+          "logical_size": 124184,
+          "stored_size": 8530,
+          "transform_size": 8530
+        },
+        {
+          "index": 8,
+          "rom_start": 5345248,
+          "rom_end": 5432832,
+          "logical_size": 124184,
+          "stored_size": 87584,
+          "transform_size": 87584
+        },
+        {
+          "index": 9,
+          "rom_start": 5432832,
+          "rom_end": 5475229,
+          "logical_size": 124184,
+          "stored_size": 42397,
+          "transform_size": 42397
+        },
+        {
+          "index": 10,
+          "rom_start": 5475232,
+          "rom_end": 5477006,
+          "logical_size": 4040,
+          "stored_size": 1774,
+          "transform_size": 1774
+        },
+        {
+          "index": 11,
+          "rom_start": 5477008,
+          "rom_end": 5477371,
+          "logical_size": 5000,
+          "stored_size": 363,
+          "transform_size": 363
+        },
+        {
+          "index": 12,
+          "rom_start": 5477376,
+          "rom_end": 5479826,
+          "logical_size": 11016,
+          "stored_size": 2450,
+          "transform_size": 2450
+        },
+        {
+          "index": 13,
+          "rom_start": 5479840,
+          "rom_end": 5480945,
+          "logical_size": 1704,
+          "stored_size": 1105,
+          "transform_size": 1105
+        },
+        {
+          "index": 14,
+          "rom_start": 5480960,
+          "rom_end": 5482261,
+          "logical_size": 1704,
+          "stored_size": 1301,
+          "transform_size": 1301
+        },
+        {
+          "index": 15,
+          "rom_start": 5482272,
+          "rom_end": 5483444,
+          "logical_size": 1704,
+          "stored_size": 1172,
+          "transform_size": 1172
+        },
+        {
+          "index": 16,
+          "rom_start": 5483456,
+          "rom_end": 5485071,
+          "logical_size": 1992,
+          "stored_size": 1615,
+          "transform_size": 1615
+        },
+        {
+          "index": 17,
+          "rom_start": 5485072,
+          "rom_end": 5486346,
+          "logical_size": 1512,
+          "stored_size": 1274,
+          "transform_size": 1274
+        },
+        {
+          "index": 18,
+          "rom_start": 5486352,
+          "rom_end": 5487677,
+          "logical_size": 1512,
+          "stored_size": 1325,
+          "transform_size": 1325
+        },
+        {
+          "index": 19,
+          "rom_start": 5487680,
+          "rom_end": 5488869,
+          "logical_size": 1512,
+          "stored_size": 1189,
+          "transform_size": 1189
+        },
+        {
+          "index": 20,
+          "rom_start": 5488880,
+          "rom_end": 5490062,
+          "logical_size": 1512,
+          "stored_size": 1182,
+          "transform_size": 1182
+        },
+        {
+          "index": 21,
+          "rom_start": 5490064,
+          "rom_end": 5491464,
+          "logical_size": 1704,
+          "stored_size": 1400,
+          "transform_size": 1400
+        },
+        {
+          "index": 22,
+          "rom_start": 5491472,
+          "rom_end": 5492645,
+          "logical_size": 1512,
+          "stored_size": 1173,
+          "transform_size": 1173
+        },
+        {
+          "index": 23,
+          "rom_start": 5492656,
+          "rom_end": 5493899,
+          "logical_size": 1512,
+          "stored_size": 1243,
+          "transform_size": 1243
+        },
+        {
+          "index": 24,
+          "rom_start": 5493904,
+          "rom_end": 5494974,
+          "logical_size": 1512,
+          "stored_size": 1070,
+          "transform_size": 1070
+        },
+        {
+          "index": 25,
+          "rom_start": 5494976,
+          "rom_end": 5496033,
+          "logical_size": 1512,
+          "stored_size": 1057,
+          "transform_size": 1057
+        },
+        {
+          "index": 26,
+          "rom_start": 5496048,
+          "rom_end": 5497242,
+          "logical_size": 2104,
+          "stored_size": 1194,
+          "transform_size": 1194
+        },
+        {
+          "index": 27,
+          "rom_start": 5497248,
+          "rom_end": 5498430,
+          "logical_size": 2104,
+          "stored_size": 1182,
+          "transform_size": 1182
+        },
+        {
+          "index": 28,
+          "rom_start": 5498432,
+          "rom_end": 5499651,
+          "logical_size": 2104,
+          "stored_size": 1219,
+          "transform_size": 1219
+        },
+        {
+          "index": 29,
+          "rom_start": 5499664,
+          "rom_end": 5500998,
+          "logical_size": 2104,
+          "stored_size": 1334,
+          "transform_size": 1334
+        },
+        {
+          "index": 30,
+          "rom_start": 5501008,
+          "rom_end": 5502542,
+          "logical_size": 3064,
+          "stored_size": 1534,
+          "transform_size": 1534
+        },
+        {
+          "index": 31,
+          "rom_start": 5502544,
+          "rom_end": 5506096,
+          "logical_size": 3552,
+          "stored_size": 3552,
+          "transform_size": 0
+        },
+        {
+          "index": 32,
+          "rom_start": 5506096,
+          "rom_end": 5507299,
+          "logical_size": 1432,
+          "stored_size": 1203,
+          "transform_size": 1203
+        },
+        {
+          "index": 33,
+          "rom_start": 5507312,
+          "rom_end": 5508618,
+          "logical_size": 1432,
+          "stored_size": 1306,
+          "transform_size": 1306
+        },
+        {
+          "index": 34,
+          "rom_start": 5508624,
+          "rom_end": 5509732,
+          "logical_size": 1432,
+          "stored_size": 1108,
+          "transform_size": 1108
+        },
+        {
+          "index": 35,
+          "rom_start": 5509744,
+          "rom_end": 5510856,
+          "logical_size": 1432,
+          "stored_size": 1112,
+          "transform_size": 1112
+        },
+        {
+          "index": 36,
+          "rom_start": 5510864,
+          "rom_end": 5511864,
+          "logical_size": 1320,
+          "stored_size": 1000,
+          "transform_size": 1000
+        },
+        {
+          "index": 37,
+          "rom_start": 5511872,
+          "rom_end": 5512838,
+          "logical_size": 1320,
+          "stored_size": 966,
+          "transform_size": 966
+        },
+        {
+          "index": 38,
+          "rom_start": 5512848,
+          "rom_end": 5513898,
+          "logical_size": 1320,
+          "stored_size": 1050,
+          "transform_size": 1050
+        },
+        {
+          "index": 39,
+          "rom_start": 5513904,
+          "rom_end": 5515019,
+          "logical_size": 1320,
+          "stored_size": 1115,
+          "transform_size": 1115
+        },
+        {
+          "index": 40,
+          "rom_start": 5515024,
+          "rom_end": 5516611,
+          "logical_size": 2088,
+          "stored_size": 1587,
+          "transform_size": 1587
+        },
+        {
+          "index": 41,
+          "rom_start": 5516624,
+          "rom_end": 5517513,
+          "logical_size": 1064,
+          "stored_size": 889,
+          "transform_size": 889
+        },
+        {
+          "index": 42,
+          "rom_start": 5517520,
+          "rom_end": 5517679,
+          "logical_size": 2488,
+          "stored_size": 159,
+          "transform_size": 159
+        },
+        {
+          "index": 43,
+          "rom_start": 5517680,
+          "rom_end": 5517828,
+          "logical_size": 936,
+          "stored_size": 148,
+          "transform_size": 148
+        },
+        {
+          "index": 44,
+          "rom_start": 5517840,
+          "rom_end": 5518060,
+          "logical_size": 2488,
+          "stored_size": 220,
+          "transform_size": 220
+        },
+        {
+          "index": 45,
+          "rom_start": 5518064,
+          "rom_end": 5518245,
+          "logical_size": 2488,
+          "stored_size": 181,
+          "transform_size": 181
+        },
+        {
+          "index": 46,
+          "rom_start": 5518256,
+          "rom_end": 5518437,
+          "logical_size": 936,
+          "stored_size": 181,
+          "transform_size": 181
+        },
+        {
+          "index": 47,
+          "rom_start": 5518448,
+          "rom_end": 5518564,
+          "logical_size": 1704,
+          "stored_size": 116,
+          "transform_size": 116
+        },
+        {
+          "index": 48,
+          "rom_start": 5518576,
+          "rom_end": 5518747,
+          "logical_size": 1704,
+          "stored_size": 171,
+          "transform_size": 171
+        },
+        {
+          "index": 49,
+          "rom_start": 5518752,
+          "rom_end": 5520656,
+          "logical_size": 1904,
+          "stored_size": 1904,
+          "transform_size": 0
+        },
+        {
+          "index": 50,
+          "rom_start": 5520656,
+          "rom_end": 5522960,
+          "logical_size": 2304,
+          "stored_size": 2304,
+          "transform_size": 0
+        },
+        {
+          "index": 51,
+          "rom_start": 5522960,
+          "rom_end": 5524760,
+          "logical_size": 1800,
+          "stored_size": 1800,
+          "transform_size": 0
+        },
+        {
+          "index": 52,
+          "rom_start": 5524768,
+          "rom_end": 5526672,
+          "logical_size": 1904,
+          "stored_size": 1904,
+          "transform_size": 0
+        },
+        {
+          "index": 53,
+          "rom_start": 5526672,
+          "rom_end": 5528976,
+          "logical_size": 2304,
+          "stored_size": 2304,
+          "transform_size": 0
+        },
+        {
+          "index": 54,
+          "rom_start": 5528976,
+          "rom_end": 5530776,
+          "logical_size": 1800,
+          "stored_size": 1800,
+          "transform_size": 0
+        },
+        {
+          "index": 55,
+          "rom_start": 5530784,
+          "rom_end": 5531760,
+          "logical_size": 1192,
+          "stored_size": 976,
+          "transform_size": 976
+        },
+        {
+          "index": 56,
+          "rom_start": 5531760,
+          "rom_end": 5532724,
+          "logical_size": 1192,
+          "stored_size": 964,
+          "transform_size": 964
+        },
+        {
+          "index": 57,
+          "rom_start": 5532736,
+          "rom_end": 5534146,
+          "logical_size": 2168,
+          "stored_size": 1410,
+          "transform_size": 1410
+        },
+        {
+          "index": 58,
+          "rom_start": 5534160,
+          "rom_end": 5535658,
+          "logical_size": 2488,
+          "stored_size": 1498,
+          "transform_size": 1498
+        },
+        {
+          "index": 59,
+          "rom_start": 5535664,
+          "rom_end": 5536946,
+          "logical_size": 2168,
+          "stored_size": 1282,
+          "transform_size": 1282
+        },
+        {
+          "index": 60,
+          "rom_start": 5536960,
+          "rom_end": 5537760,
+          "logical_size": 936,
+          "stored_size": 800,
+          "transform_size": 800
+        },
+        {
+          "index": 61,
+          "rom_start": 5537760,
+          "rom_end": 5538550,
+          "logical_size": 936,
+          "stored_size": 790,
+          "transform_size": 790
+        },
+        {
+          "index": 62,
+          "rom_start": 5538560,
+          "rom_end": 5539356,
+          "logical_size": 936,
+          "stored_size": 796,
+          "transform_size": 796
+        },
+        {
+          "index": 63,
+          "rom_start": 5539360,
+          "rom_end": 5540153,
+          "logical_size": 936,
+          "stored_size": 793,
+          "transform_size": 793
+        },
+        {
+          "index": 64,
+          "rom_start": 5540160,
+          "rom_end": 5540852,
+          "logical_size": 1512,
+          "stored_size": 692,
+          "transform_size": 692
+        },
+        {
+          "index": 65,
+          "rom_start": 5540864,
+          "rom_end": 5541375,
+          "logical_size": 1512,
+          "stored_size": 511,
+          "transform_size": 511
+        },
+        {
+          "index": 66,
+          "rom_start": 5541376,
+          "rom_end": 5541899,
+          "logical_size": 1512,
+          "stored_size": 523,
+          "transform_size": 523
+        },
+        {
+          "index": 67,
+          "rom_start": 5541904,
+          "rom_end": 5544692,
+          "logical_size": 4680,
+          "stored_size": 2788,
+          "transform_size": 2788
+        },
+        {
+          "index": 68,
+          "rom_start": 5544704,
+          "rom_end": 5547145,
+          "logical_size": 3480,
+          "stored_size": 2441,
+          "transform_size": 2441
+        },
+        {
+          "index": 69,
+          "rom_start": 5547152,
+          "rom_end": 5549445,
+          "logical_size": 3768,
+          "stored_size": 2293,
+          "transform_size": 2293
+        },
+        {
+          "index": 70,
+          "rom_start": 5549456,
+          "rom_end": 5550874,
+          "logical_size": 4440,
+          "stored_size": 1418,
+          "transform_size": 1418
+        },
+        {
+          "index": 71,
+          "rom_start": 5550880,
+          "rom_end": 5586704,
+          "logical_size": 35824,
+          "stored_size": 35824,
+          "transform_size": 0
+        },
+        {
+          "index": 72,
+          "rom_start": 5586704,
+          "rom_end": 5604232,
+          "logical_size": 17528,
+          "stored_size": 17528,
+          "transform_size": 0
+        },
+        {
+          "index": 73,
+          "rom_start": 5604240,
+          "rom_end": 5621288,
+          "logical_size": 17048,
+          "stored_size": 17048,
+          "transform_size": 0
+        },
+        {
+          "index": 74,
+          "rom_start": 5621296,
+          "rom_end": 5638896,
+          "logical_size": 17600,
+          "stored_size": 17600,
+          "transform_size": 0
+        },
+        {
+          "index": 75,
+          "rom_start": 5638896,
+          "rom_end": 5657296,
+          "logical_size": 18400,
+          "stored_size": 18400,
+          "transform_size": 0
+        },
+        {
+          "index": 76,
+          "rom_start": 5657296,
+          "rom_end": 5676904,
+          "logical_size": 19608,
+          "stored_size": 19608,
+          "transform_size": 0
+        },
+        {
+          "index": 77,
+          "rom_start": 5676912,
+          "rom_end": 5696616,
+          "logical_size": 19704,
+          "stored_size": 19704,
+          "transform_size": 0
+        },
+        {
+          "index": 78,
+          "rom_start": 5696624,
+          "rom_end": 5716360,
+          "logical_size": 19736,
+          "stored_size": 19736,
+          "transform_size": 0
+        },
+        {
+          "index": 79,
+          "rom_start": 5716368,
+          "rom_end": 5735488,
+          "logical_size": 19120,
+          "stored_size": 19120,
+          "transform_size": 0
+        },
+        {
+          "index": 80,
+          "rom_start": 5735488,
+          "rom_end": 5753880,
+          "logical_size": 18392,
+          "stored_size": 18392,
+          "transform_size": 0
+        },
+        {
+          "index": 81,
+          "rom_start": 5753888,
+          "rom_end": 5773328,
+          "logical_size": 19440,
+          "stored_size": 19440,
+          "transform_size": 0
+        },
+        {
+          "index": 82,
+          "rom_start": 5773328,
+          "rom_end": 5789704,
+          "logical_size": 16376,
+          "stored_size": 16376,
+          "transform_size": 0
+        },
+        {
+          "index": 83,
+          "rom_start": 5789712,
+          "rom_end": 5804128,
+          "logical_size": 14416,
+          "stored_size": 14416,
+          "transform_size": 0
+        },
+        {
+          "index": 84,
+          "rom_start": 5804128,
+          "rom_end": 5823280,
+          "logical_size": 19152,
+          "stored_size": 19152,
+          "transform_size": 0
+        },
+        {
+          "index": 85,
+          "rom_start": 5823280,
+          "rom_end": 5828232,
+          "logical_size": 4952,
+          "stored_size": 4952,
+          "transform_size": 0
+        },
+        {
+          "index": 86,
+          "rom_start": 5828240,
+          "rom_end": 5854472,
+          "logical_size": 26232,
+          "stored_size": 26232,
+          "transform_size": 0
+        },
+        {
+          "index": 87,
+          "rom_start": 5854480,
+          "rom_end": 5862760,
+          "logical_size": 8280,
+          "stored_size": 8280,
+          "transform_size": 0
+        },
+        {
+          "index": 88,
+          "rom_start": 5862768,
+          "rom_end": 5872664,
+          "logical_size": 9896,
+          "stored_size": 9896,
+          "transform_size": 0
+        },
+        {
+          "index": 89,
+          "rom_start": 5872672,
+          "rom_end": 5887392,
+          "logical_size": 14720,
+          "stored_size": 14720,
+          "transform_size": 0
+        },
+        {
+          "index": 90,
+          "rom_start": 5887392,
+          "rom_end": 5892448,
+          "logical_size": 5056,
+          "stored_size": 5056,
+          "transform_size": 0
+        },
+        {
+          "index": 91,
+          "rom_start": 5892448,
+          "rom_end": 5898912,
+          "logical_size": 6464,
+          "stored_size": 6464,
+          "transform_size": 0
+        },
+        {
+          "index": 92,
+          "rom_start": 5898912,
+          "rom_end": 5905544,
+          "logical_size": 6632,
+          "stored_size": 6632,
+          "transform_size": 0
+        },
+        {
+          "index": 93,
+          "rom_start": 5905552,
+          "rom_end": 5911912,
+          "logical_size": 6360,
+          "stored_size": 6360,
+          "transform_size": 0
+        },
+        {
+          "index": 94,
+          "rom_start": 5911920,
+          "rom_end": 5918448,
+          "logical_size": 6528,
+          "stored_size": 6528,
+          "transform_size": 0
+        },
+        {
+          "index": 95,
+          "rom_start": 5918448,
+          "rom_end": 5924976,
+          "logical_size": 6528,
+          "stored_size": 6528,
+          "transform_size": 0
+        },
+        {
+          "index": 96,
+          "rom_start": 5924976,
+          "rom_end": 5932816,
+          "logical_size": 7840,
+          "stored_size": 7840,
+          "transform_size": 0
+        },
+        {
+          "index": 97,
+          "rom_start": 5932816,
+          "rom_end": 5946256,
+          "logical_size": 13440,
+          "stored_size": 13440,
+          "transform_size": 0
+        },
+        {
+          "index": 98,
+          "rom_start": 5946256,
+          "rom_end": 5947312,
+          "logical_size": 1056,
+          "stored_size": 1056,
+          "transform_size": 0
+        },
+        {
+          "index": 99,
+          "rom_start": 5947312,
+          "rom_end": 5948368,
+          "logical_size": 1056,
+          "stored_size": 1056,
+          "transform_size": 0
+        },
+        {
+          "index": 100,
+          "rom_start": 5948368,
+          "rom_end": 6162688,
+          "logical_size": 214320,
+          "stored_size": 214320,
+          "transform_size": 0
+        },
+        {
+          "index": 101,
+          "rom_start": 6162688,
+          "rom_end": 6166800,
+          "logical_size": 4112,
+          "stored_size": 4112,
+          "transform_size": 0
+        },
+        {
+          "index": 102,
+          "rom_start": 6166800,
+          "rom_end": 6170080,
+          "logical_size": 3280,
+          "stored_size": 3280,
+          "transform_size": 0
+        },
+        {
+          "index": 103,
+          "rom_start": 6170080,
+          "rom_end": 6437152,
+          "logical_size": 267072,
+          "stored_size": 267072,
+          "transform_size": 0
+        },
+        {
+          "index": 104,
+          "rom_start": 6437152,
+          "rom_end": 6700384,
+          "logical_size": 263232,
+          "stored_size": 263232,
+          "transform_size": 0
+        },
+        {
+          "index": 105,
+          "rom_start": 6700384,
+          "rom_end": 6759168,
+          "logical_size": 58784,
+          "stored_size": 58784,
+          "transform_size": 0
+        },
+        {
+          "index": 106,
+          "rom_start": 6759168,
+          "rom_end": 6991664,
+          "logical_size": 232496,
+          "stored_size": 232496,
+          "transform_size": 0
+        },
+        {
+          "index": 107,
+          "rom_start": 6991664,
+          "rom_end": 6995632,
+          "logical_size": 3968,
+          "stored_size": 3968,
+          "transform_size": 0
+        },
+        {
+          "index": 108,
+          "rom_start": 6995632,
+          "rom_end": 6999184,
+          "logical_size": 3552,
+          "stored_size": 3552,
+          "transform_size": 0
+        },
+        {
+          "index": 109,
+          "rom_start": 6999184,
+          "rom_end": 7341328,
+          "logical_size": 342144,
+          "stored_size": 342144,
+          "transform_size": 0
+        },
+        {
+          "index": 110,
+          "rom_start": 7341328,
+          "rom_end": 7612352,
+          "logical_size": 271024,
+          "stored_size": 271024,
+          "transform_size": 0
+        },
+        {
+          "index": 111,
+          "rom_start": 7612352,
+          "rom_end": 7687200,
+          "logical_size": 74848,
+          "stored_size": 74848,
+          "transform_size": 0
+        },
+        {
+          "index": 112,
+          "rom_start": 7687200,
+          "rom_end": 7937336,
+          "logical_size": 250136,
+          "stored_size": 250136,
+          "transform_size": 0
+        },
+        {
+          "index": 113,
+          "rom_start": 7937344,
+          "rom_end": 7942472,
+          "logical_size": 5128,
+          "stored_size": 5128,
+          "transform_size": 0
+        },
+        {
+          "index": 114,
+          "rom_start": 7942480,
+          "rom_end": 7946152,
+          "logical_size": 3672,
+          "stored_size": 3672,
+          "transform_size": 0
+        },
+        {
+          "index": 115,
+          "rom_start": 7946160,
+          "rom_end": 8277776,
+          "logical_size": 331616,
+          "stored_size": 331616,
+          "transform_size": 0
+        },
+        {
+          "index": 116,
+          "rom_start": 8277776,
+          "rom_end": 8577624,
+          "logical_size": 299848,
+          "stored_size": 299848,
+          "transform_size": 0
+        },
+        {
+          "index": 117,
+          "rom_start": 8577632,
+          "rom_end": 8636888,
+          "logical_size": 59256,
+          "stored_size": 59256,
+          "transform_size": 0
+        },
+        {
+          "index": 118,
+          "rom_start": 8636896,
+          "rom_end": 8896336,
+          "logical_size": 259440,
+          "stored_size": 259440,
+          "transform_size": 0
+        },
+        {
+          "index": 119,
+          "rom_start": 8896336,
+          "rom_end": 8900808,
+          "logical_size": 4472,
+          "stored_size": 4472,
+          "transform_size": 0
+        },
+        {
+          "index": 120,
+          "rom_start": 8900816,
+          "rom_end": 8904384,
+          "logical_size": 3568,
+          "stored_size": 3568,
+          "transform_size": 0
+        },
+        {
+          "index": 121,
+          "rom_start": 8904384,
+          "rom_end": 9209768,
+          "logical_size": 305384,
+          "stored_size": 305384,
+          "transform_size": 0
+        },
+        {
+          "index": 122,
+          "rom_start": 9209776,
+          "rom_end": 9494120,
+          "logical_size": 284344,
+          "stored_size": 284344,
+          "transform_size": 0
+        },
+        {
+          "index": 123,
+          "rom_start": 9494128,
+          "rom_end": 9552328,
+          "logical_size": 58200,
+          "stored_size": 58200,
+          "transform_size": 0
+        },
+        {
+          "index": 124,
+          "rom_start": 9552336,
+          "rom_end": 9713816,
+          "logical_size": 161480,
+          "stored_size": 161480,
+          "transform_size": 0
+        },
+        {
+          "index": 125,
+          "rom_start": 9713824,
+          "rom_end": 9802344,
+          "logical_size": 88520,
+          "stored_size": 88520,
+          "transform_size": 0
+        },
+        {
+          "index": 126,
+          "rom_start": 9802352,
+          "rom_end": 9927144,
+          "logical_size": 124792,
+          "stored_size": 124792,
+          "transform_size": 0
+        },
+        {
+          "index": 127,
+          "rom_start": 9927152,
+          "rom_end": 10059088,
+          "logical_size": 131936,
+          "stored_size": 131936,
+          "transform_size": 0
+        },
+        {
+          "index": 128,
+          "rom_start": 10059088,
+          "rom_end": 10088032,
+          "logical_size": 28944,
+          "stored_size": 28944,
+          "transform_size": 0
+        },
+        {
+          "index": 129,
+          "rom_start": 10088032,
+          "rom_end": 10122416,
+          "logical_size": 34384,
+          "stored_size": 34384,
+          "transform_size": 0
+        },
+        {
+          "index": 130,
+          "rom_start": 10122416,
+          "rom_end": 10138904,
+          "logical_size": 16488,
+          "stored_size": 16488,
+          "transform_size": 0
+        },
+        {
+          "index": 131,
+          "rom_start": 10138912,
+          "rom_end": 10165808,
+          "logical_size": 26896,
+          "stored_size": 26896,
+          "transform_size": 0
+        },
+        {
+          "index": 132,
+          "rom_start": 10165808,
+          "rom_end": 10181528,
+          "logical_size": 15720,
+          "stored_size": 15720,
+          "transform_size": 0
+        },
+        {
+          "index": 133,
+          "rom_start": 10181536,
+          "rom_end": 10197992,
+          "logical_size": 16456,
+          "stored_size": 16456,
+          "transform_size": 0
+        },
+        {
+          "index": 134,
+          "rom_start": 10198000,
+          "rom_end": 10280504,
+          "logical_size": 82504,
+          "stored_size": 82504,
+          "transform_size": 0
+        },
+        {
+          "index": 135,
+          "rom_start": 10280512,
+          "rom_end": 10316480,
+          "logical_size": 35968,
+          "stored_size": 35968,
+          "transform_size": 0
+        },
+        {
+          "index": 136,
+          "rom_start": 10316480,
+          "rom_end": 10353640,
+          "logical_size": 37160,
+          "stored_size": 37160,
+          "transform_size": 0
+        },
+        {
+          "index": 137,
+          "rom_start": 10353648,
+          "rom_end": 10366392,
+          "logical_size": 12744,
+          "stored_size": 12744,
+          "transform_size": 0
+        },
+        {
+          "index": 138,
+          "rom_start": 10366400,
+          "rom_end": 10368306,
+          "logical_size": 17296,
+          "stored_size": 1906,
+          "transform_size": 1906
+        },
+        {
+          "index": 139,
+          "rom_start": 10368320,
+          "rom_end": 10495304,
+          "logical_size": 126984,
+          "stored_size": 126984,
+          "transform_size": 0
+        },
+        {
+          "index": 140,
+          "rom_start": 10495312,
+          "rom_end": 10585376,
+          "logical_size": 90064,
+          "stored_size": 90064,
+          "transform_size": 0
+        },
+        {
+          "index": 141,
+          "rom_start": 10585376,
+          "rom_end": 10723016,
+          "logical_size": 137640,
+          "stored_size": 137640,
+          "transform_size": 0
+        },
+        {
+          "index": 142,
+          "rom_start": 10723024,
+          "rom_end": 10845784,
+          "logical_size": 122760,
+          "stored_size": 122760,
+          "transform_size": 0
+        },
+        {
+          "index": 143,
+          "rom_start": 10845792,
+          "rom_end": 10934448,
+          "logical_size": 88656,
+          "stored_size": 88656,
+          "transform_size": 0
+        },
+        {
+          "index": 144,
+          "rom_start": 10934448,
+          "rom_end": 10942928,
+          "logical_size": 8480,
+          "stored_size": 8480,
+          "transform_size": 0
+        },
+        {
+          "index": 145,
+          "rom_start": 10942928,
+          "rom_end": 10946031,
+          "logical_size": 22736,
+          "stored_size": 3103,
+          "transform_size": 3103
+        },
+        {
+          "index": 146,
+          "rom_start": 10946032,
+          "rom_end": 11048632,
+          "logical_size": 102600,
+          "stored_size": 102600,
+          "transform_size": 0
+        },
+        {
+          "index": 147,
+          "rom_start": 11048640,
+          "rom_end": 11179544,
+          "logical_size": 130904,
+          "stored_size": 130904,
+          "transform_size": 0
+        },
+        {
+          "index": 148,
+          "rom_start": 11179552,
+          "rom_end": 11294208,
+          "logical_size": 114656,
+          "stored_size": 114656,
+          "transform_size": 0
+        },
+        {
+          "index": 149,
+          "rom_start": 11294208,
+          "rom_end": 11366728,
+          "logical_size": 72520,
+          "stored_size": 72520,
+          "transform_size": 0
+        },
+        {
+          "index": 150,
+          "rom_start": 11366736,
+          "rom_end": 11420512,
+          "logical_size": 53776,
+          "stored_size": 53776,
+          "transform_size": 0
+        },
+        {
+          "index": 151,
+          "rom_start": 11420512,
+          "rom_end": 11442816,
+          "logical_size": 22304,
+          "stored_size": 22304,
+          "transform_size": 0
+        },
+        {
+          "index": 152,
+          "rom_start": 11442816,
+          "rom_end": 11464384,
+          "logical_size": 21568,
+          "stored_size": 21568,
+          "transform_size": 0
+        },
+        {
+          "index": 153,
+          "rom_start": 11464384,
+          "rom_end": 11467152,
+          "logical_size": 2768,
+          "stored_size": 2768,
+          "transform_size": 0
+        },
+        {
+          "index": 154,
+          "rom_start": 11467152,
+          "rom_end": 11476072,
+          "logical_size": 8920,
+          "stored_size": 8920,
+          "transform_size": 0
+        },
+        {
+          "index": 155,
+          "rom_start": 11476080,
+          "rom_end": 11483344,
+          "logical_size": 7264,
+          "stored_size": 7264,
+          "transform_size": 0
+        },
+        {
+          "index": 156,
+          "rom_start": 11483344,
+          "rom_end": 11491616,
+          "logical_size": 8272,
+          "stored_size": 8272,
+          "transform_size": 0
+        },
+        {
+          "index": 157,
+          "rom_start": 11491616,
+          "rom_end": 11504992,
+          "logical_size": 13376,
+          "stored_size": 13376,
+          "transform_size": 0
+        },
+        {
+          "index": 158,
+          "rom_start": 11504992,
+          "rom_end": 11512656,
+          "logical_size": 7664,
+          "stored_size": 7664,
+          "transform_size": 0
+        },
+        {
+          "index": 159,
+          "rom_start": 11512656,
+          "rom_end": 11517216,
+          "logical_size": 4560,
+          "stored_size": 4560,
+          "transform_size": 0
+        },
+        {
+          "index": 160,
+          "rom_start": 11517216,
+          "rom_end": 11533584,
+          "logical_size": 16368,
+          "stored_size": 16368,
+          "transform_size": 0
+        },
+        {
+          "index": 161,
+          "rom_start": 11533584,
+          "rom_end": 11547256,
+          "logical_size": 13672,
+          "stored_size": 13672,
+          "transform_size": 0
+        },
+        {
+          "index": 162,
+          "rom_start": 11547264,
+          "rom_end": 11550315,
+          "logical_size": 23376,
+          "stored_size": 3051,
+          "transform_size": 3051
+        },
+        {
+          "index": 163,
+          "rom_start": 11550320,
+          "rom_end": 11682824,
+          "logical_size": 132504,
+          "stored_size": 132504,
+          "transform_size": 0
+        },
+        {
+          "index": 164,
+          "rom_start": 11682832,
+          "rom_end": 11805920,
+          "logical_size": 123088,
+          "stored_size": 123088,
+          "transform_size": 0
+        },
+        {
+          "index": 165,
+          "rom_start": 11805920,
+          "rom_end": 11952376,
+          "logical_size": 146456,
+          "stored_size": 146456,
+          "transform_size": 0
+        },
+        {
+          "index": 166,
+          "rom_start": 11952384,
+          "rom_end": 12008576,
+          "logical_size": 56192,
+          "stored_size": 56192,
+          "transform_size": 0
+        },
+        {
+          "index": 167,
+          "rom_start": 12008576,
+          "rom_end": 12062720,
+          "logical_size": 54144,
+          "stored_size": 54144,
+          "transform_size": 0
+        },
+        {
+          "index": 168,
+          "rom_start": 12062720,
+          "rom_end": 12159472,
+          "logical_size": 96752,
+          "stored_size": 96752,
+          "transform_size": 0
+        },
+        {
+          "index": 169,
+          "rom_start": 12159472,
+          "rom_end": 12262872,
+          "logical_size": 103400,
+          "stored_size": 103400,
+          "transform_size": 0
+        },
+        {
+          "index": 170,
+          "rom_start": 12262880,
+          "rom_end": 12270024,
+          "logical_size": 7144,
+          "stored_size": 7144,
+          "transform_size": 0
+        },
+        {
+          "index": 171,
+          "rom_start": 12270032,
+          "rom_end": 12316392,
+          "logical_size": 46360,
+          "stored_size": 46360,
+          "transform_size": 0
+        },
+        {
+          "index": 172,
+          "rom_start": 12316400,
+          "rom_end": 12323616,
+          "logical_size": 7216,
+          "stored_size": 7216,
+          "transform_size": 0
+        },
+        {
+          "index": 173,
+          "rom_start": 12323616,
+          "rom_end": 12329736,
+          "logical_size": 6120,
+          "stored_size": 6120,
+          "transform_size": 0
+        },
+        {
+          "index": 174,
+          "rom_start": 12329744,
+          "rom_end": 12412880,
+          "logical_size": 83136,
+          "stored_size": 83136,
+          "transform_size": 0
+        },
+        {
+          "index": 175,
+          "rom_start": 12412880,
+          "rom_end": 12414095,
+          "logical_size": 13072,
+          "stored_size": 1215,
+          "transform_size": 1215
+        },
+        {
+          "index": 176,
+          "rom_start": 12414096,
+          "rom_end": 12517904,
+          "logical_size": 103808,
+          "stored_size": 103808,
+          "transform_size": 0
+        },
+        {
+          "index": 177,
+          "rom_start": 12517904,
+          "rom_end": 12617000,
+          "logical_size": 99096,
+          "stored_size": 99096,
+          "transform_size": 0
+        },
+        {
+          "index": 178,
+          "rom_start": 12617008,
+          "rom_end": 12668168,
+          "logical_size": 51160,
+          "stored_size": 51160,
+          "transform_size": 0
+        },
+        {
+          "index": 179,
+          "rom_start": 12668176,
+          "rom_end": 12718160,
+          "logical_size": 49984,
+          "stored_size": 49984,
+          "transform_size": 0
+        },
+        {
+          "index": 180,
+          "rom_start": 12718160,
+          "rom_end": 12768744,
+          "logical_size": 50584,
+          "stored_size": 50584,
+          "transform_size": 0
+        },
+        {
+          "index": 181,
+          "rom_start": 12768752,
+          "rom_end": 12883248,
+          "logical_size": 114496,
+          "stored_size": 114496,
+          "transform_size": 0
+        },
+        {
+          "index": 182,
+          "rom_start": 12883248,
+          "rom_end": 12993008,
+          "logical_size": 109760,
+          "stored_size": 109760,
+          "transform_size": 0
+        },
+        {
+          "index": 183,
+          "rom_start": 12993008,
+          "rom_end": 12995384,
+          "logical_size": 2376,
+          "stored_size": 2376,
+          "transform_size": 0
+        },
+        {
+          "index": 184,
+          "rom_start": 12995392,
+          "rom_end": 13001064,
+          "logical_size": 5672,
+          "stored_size": 5672,
+          "transform_size": 0
+        },
+        {
+          "index": 185,
+          "rom_start": 13001072,
+          "rom_end": 13002479,
+          "logical_size": 7536,
+          "stored_size": 1407,
+          "transform_size": 1407
+        },
+        {
+          "index": 186,
+          "rom_start": 13002480,
+          "rom_end": 13119784,
+          "logical_size": 117304,
+          "stored_size": 117304,
+          "transform_size": 0
+        },
+        {
+          "index": 187,
+          "rom_start": 13119792,
+          "rom_end": 13161656,
+          "logical_size": 41864,
+          "stored_size": 41864,
+          "transform_size": 0
+        },
+        {
+          "index": 188,
+          "rom_start": 13161664,
+          "rom_end": 13200792,
+          "logical_size": 39128,
+          "stored_size": 39128,
+          "transform_size": 0
+        },
+        {
+          "index": 189,
+          "rom_start": 13200800,
+          "rom_end": 13254816,
+          "logical_size": 54016,
+          "stored_size": 54016,
+          "transform_size": 0
+        },
+        {
+          "index": 190,
+          "rom_start": 13254816,
+          "rom_end": 13284416,
+          "logical_size": 29600,
+          "stored_size": 29600,
+          "transform_size": 0
+        },
+        {
+          "index": 191,
+          "rom_start": 13284416,
+          "rom_end": 13340392,
+          "logical_size": 55976,
+          "stored_size": 55976,
+          "transform_size": 0
+        },
+        {
+          "index": 192,
+          "rom_start": 13340400,
+          "rom_end": 13357264,
+          "logical_size": 16864,
+          "stored_size": 16864,
+          "transform_size": 0
+        },
+        {
+          "index": 193,
+          "rom_start": 13357264,
+          "rom_end": 13362384,
+          "logical_size": 5120,
+          "stored_size": 5120,
+          "transform_size": 0
+        },
+        {
+          "index": 194,
+          "rom_start": 13362384,
+          "rom_end": 13370416,
+          "logical_size": 8032,
+          "stored_size": 8032,
+          "transform_size": 0
+        },
+        {
+          "index": 195,
+          "rom_start": 13370416,
+          "rom_end": 13371100,
+          "logical_size": 7632,
+          "stored_size": 684,
+          "transform_size": 684
+        },
+        {
+          "index": 196,
+          "rom_start": 13371104,
+          "rom_end": 13454888,
+          "logical_size": 83784,
+          "stored_size": 83784,
+          "transform_size": 0
+        },
+        {
+          "index": 197,
+          "rom_start": 13454896,
+          "rom_end": 13499560,
+          "logical_size": 44664,
+          "stored_size": 44664,
+          "transform_size": 0
+        },
+        {
+          "index": 198,
+          "rom_start": 13499568,
+          "rom_end": 13537072,
+          "logical_size": 37504,
+          "stored_size": 37504,
+          "transform_size": 0
+        },
+        {
+          "index": 199,
+          "rom_start": 13537072,
+          "rom_end": 13572192,
+          "logical_size": 35120,
+          "stored_size": 35120,
+          "transform_size": 0
+        },
+        {
+          "index": 200,
+          "rom_start": 13572192,
+          "rom_end": 13612384,
+          "logical_size": 40192,
+          "stored_size": 40192,
+          "transform_size": 0
+        },
+        {
+          "index": 201,
+          "rom_start": 13612384,
+          "rom_end": 13699880,
+          "logical_size": 87496,
+          "stored_size": 87496,
+          "transform_size": 0
+        },
+        {
+          "index": 202,
+          "rom_start": 13699888,
+          "rom_end": 13780816,
+          "logical_size": 80928,
+          "stored_size": 80928,
+          "transform_size": 0
+        },
+        {
+          "index": 203,
+          "rom_start": 13780816,
+          "rom_end": 13786808,
+          "logical_size": 5992,
+          "stored_size": 5992,
+          "transform_size": 0
+        },
+        {
+          "index": 204,
+          "rom_start": 13786816,
+          "rom_end": 13792048,
+          "logical_size": 5232,
+          "stored_size": 5232,
+          "transform_size": 0
+        },
+        {
+          "index": 205,
+          "rom_start": 13792048,
+          "rom_end": 13795560,
+          "logical_size": 3512,
+          "stored_size": 3512,
+          "transform_size": 0
+        },
+        {
+          "index": 206,
+          "rom_start": 13795568,
+          "rom_end": 13806912,
+          "logical_size": 11344,
+          "stored_size": 11344,
+          "transform_size": 0
+        },
+        {
+          "index": 207,
+          "rom_start": 13806912,
+          "rom_end": 13807280,
+          "logical_size": 3568,
+          "stored_size": 368,
+          "transform_size": 368
+        },
+        {
+          "index": 208,
+          "rom_start": 13807280,
+          "rom_end": 13860408,
+          "logical_size": 53128,
+          "stored_size": 53128,
+          "transform_size": 0
+        },
+        {
+          "index": 209,
+          "rom_start": 13860416,
+          "rom_end": 13898432,
+          "logical_size": 38016,
+          "stored_size": 38016,
+          "transform_size": 0
+        },
+        {
+          "index": 210,
+          "rom_start": 13898432,
+          "rom_end": 13933304,
+          "logical_size": 34872,
+          "stored_size": 34872,
+          "transform_size": 0
+        },
+        {
+          "index": 211,
+          "rom_start": 13933312,
+          "rom_end": 13979304,
+          "logical_size": 45992,
+          "stored_size": 45992,
+          "transform_size": 0
+        },
+        {
+          "index": 212,
+          "rom_start": 13979312,
+          "rom_end": 14018728,
+          "logical_size": 39416,
+          "stored_size": 39416,
+          "transform_size": 0
+        },
+        {
+          "index": 213,
+          "rom_start": 14018736,
+          "rom_end": 14081408,
+          "logical_size": 62672,
+          "stored_size": 62672,
+          "transform_size": 0
+        },
+        {
+          "index": 214,
+          "rom_start": 14081408,
+          "rom_end": 14087400,
+          "logical_size": 5992,
+          "stored_size": 5992,
+          "transform_size": 0
+        },
+        {
+          "index": 215,
+          "rom_start": 14087408,
+          "rom_end": 14092640,
+          "logical_size": 5232,
+          "stored_size": 5232,
+          "transform_size": 0
+        },
+        {
+          "index": 216,
+          "rom_start": 14092640,
+          "rom_end": 14096152,
+          "logical_size": 3512,
+          "stored_size": 3512,
+          "transform_size": 0
+        },
+        {
+          "index": 217,
+          "rom_start": 14096160,
+          "rom_end": 14107504,
+          "logical_size": 11344,
+          "stored_size": 11344,
+          "transform_size": 0
+        },
+        {
+          "index": 218,
+          "rom_start": 14107504,
+          "rom_end": 14108823,
+          "logical_size": 11344,
+          "stored_size": 1319,
+          "transform_size": 1319
+        },
+        {
+          "index": 219,
+          "rom_start": 14108832,
+          "rom_end": 14237056,
+          "logical_size": 128224,
+          "stored_size": 128224,
+          "transform_size": 0
+        },
+        {
+          "index": 220,
+          "rom_start": 14237056,
+          "rom_end": 14306744,
+          "logical_size": 69688,
+          "stored_size": 69688,
+          "transform_size": 0
+        },
+        {
+          "index": 221,
+          "rom_start": 14306752,
+          "rom_end": 14377096,
+          "logical_size": 70344,
+          "stored_size": 70344,
+          "transform_size": 0
+        },
+        {
+          "index": 222,
+          "rom_start": 14377104,
+          "rom_end": 14459176,
+          "logical_size": 82072,
+          "stored_size": 82072,
+          "transform_size": 0
+        },
+        {
+          "index": 223,
+          "rom_start": 14459184,
+          "rom_end": 14463864,
+          "logical_size": 4680,
+          "stored_size": 4680,
+          "transform_size": 0
+        },
+        {
+          "index": 224,
+          "rom_start": 14463872,
+          "rom_end": 14475488,
+          "logical_size": 11616,
+          "stored_size": 11616,
+          "transform_size": 0
+        },
+        {
+          "index": 225,
+          "rom_start": 14475488,
+          "rom_end": 14477144,
+          "logical_size": 1656,
+          "stored_size": 1656,
+          "transform_size": 0
+        },
+        {
+          "index": 226,
+          "rom_start": 14477152,
+          "rom_end": 14489588,
+          "logical_size": 12436,
+          "stored_size": 12436,
+          "transform_size": 0
+        },
+        {
+          "index": 227,
+          "rom_start": 14489600,
+          "rom_end": 14502036,
+          "logical_size": 12436,
+          "stored_size": 12436,
+          "transform_size": 0
+        },
+        {
+          "index": 228,
+          "rom_start": 14502048,
+          "rom_end": 14514484,
+          "logical_size": 12436,
+          "stored_size": 12436,
+          "transform_size": 0
+        },
+        {
+          "index": 229,
+          "rom_start": 14514496,
+          "rom_end": 14526932,
+          "logical_size": 12436,
+          "stored_size": 12436,
+          "transform_size": 0
+        },
+        {
+          "index": 230,
+          "rom_start": 14526944,
+          "rom_end": 14539380,
+          "logical_size": 12436,
+          "stored_size": 12436,
+          "transform_size": 0
+        },
+        {
+          "index": 231,
+          "rom_start": 14539392,
+          "rom_end": 14551828,
+          "logical_size": 12436,
+          "stored_size": 12436,
+          "transform_size": 0
+        },
+        {
+          "index": 232,
+          "rom_start": 14551840,
+          "rom_end": 14564728,
+          "logical_size": 12888,
+          "stored_size": 12888,
+          "transform_size": 0
+        },
+        {
+          "index": 233,
+          "rom_start": 14564736,
+          "rom_end": 14582440,
+          "logical_size": 17704,
+          "stored_size": 17704,
+          "transform_size": 0
+        },
+        {
+          "index": 234,
+          "rom_start": 14582448,
+          "rom_end": 14601824,
+          "logical_size": 19376,
+          "stored_size": 19376,
+          "transform_size": 0
+        },
+        {
+          "index": 235,
+          "rom_start": 14601824,
+          "rom_end": 14614712,
+          "logical_size": 12888,
+          "stored_size": 12888,
+          "transform_size": 0
+        },
+        {
+          "index": 236,
+          "rom_start": 14614720,
+          "rom_end": 14628520,
+          "logical_size": 13800,
+          "stored_size": 13800,
+          "transform_size": 0
+        },
+        {
+          "index": 237,
+          "rom_start": 14628528,
+          "rom_end": 14641416,
+          "logical_size": 12888,
+          "stored_size": 12888,
+          "transform_size": 0
+        },
+        {
+          "index": 238,
+          "rom_start": 14641424,
+          "rom_end": 14645096,
+          "logical_size": 3672,
+          "stored_size": 3672,
+          "transform_size": 0
+        },
+        {
+          "index": 239,
+          "rom_start": 14645104,
+          "rom_end": 14647528,
+          "logical_size": 2424,
+          "stored_size": 2424,
+          "transform_size": 0
+        },
+        {
+          "index": 240,
+          "rom_start": 14647536,
+          "rom_end": 14648944,
+          "logical_size": 1408,
+          "stored_size": 1408,
+          "transform_size": 0
+        },
+        {
+          "index": 241,
+          "rom_start": 14648944,
+          "rom_end": 14681120,
+          "logical_size": 32176,
+          "stored_size": 32176,
+          "transform_size": 0
+        },
+        {
+          "index": 242,
+          "rom_start": 14681120,
+          "rom_end": 14725808,
+          "logical_size": 44688,
+          "stored_size": 44688,
+          "transform_size": 0
+        },
+        {
+          "index": 243,
+          "rom_start": 14725808,
+          "rom_end": 14728392,
+          "logical_size": 2584,
+          "stored_size": 2584,
+          "transform_size": 0
+        },
+        {
+          "index": 244,
+          "rom_start": 14728400,
+          "rom_end": 14741184,
+          "logical_size": 12784,
+          "stored_size": 12784,
+          "transform_size": 0
+        },
+        {
+          "index": 245,
+          "rom_start": 14741184,
+          "rom_end": 14744432,
+          "logical_size": 3248,
+          "stored_size": 3248,
+          "transform_size": 0
+        },
+        {
+          "index": 246,
+          "rom_start": 14744432,
+          "rom_end": 14747680,
+          "logical_size": 3248,
+          "stored_size": 3248,
+          "transform_size": 0
+        },
+        {
+          "index": 247,
+          "rom_start": 14747680,
+          "rom_end": 14750928,
+          "logical_size": 3248,
+          "stored_size": 3248,
+          "transform_size": 0
+        },
+        {
+          "index": 248,
+          "rom_start": 14750928,
+          "rom_end": 14754176,
+          "logical_size": 3248,
+          "stored_size": 3248,
+          "transform_size": 0
+        },
+        {
+          "index": 249,
+          "rom_start": 14754176,
+          "rom_end": 14755232,
+          "logical_size": 1056,
+          "stored_size": 1056,
+          "transform_size": 0
+        },
+        {
+          "index": 250,
+          "rom_start": 14755232,
+          "rom_end": 14756240,
+          "logical_size": 1008,
+          "stored_size": 1008,
+          "transform_size": 0
+        },
+        {
+          "index": 251,
+          "rom_start": 14756240,
+          "rom_end": 14757256,
+          "logical_size": 1016,
+          "stored_size": 1016,
+          "transform_size": 0
+        },
+        {
+          "index": 252,
+          "rom_start": 14757264,
+          "rom_end": 14758376,
+          "logical_size": 1112,
+          "stored_size": 1112,
+          "transform_size": 0
+        },
+        {
+          "index": 253,
+          "rom_start": 14758384,
+          "rom_end": 14759784,
+          "logical_size": 1400,
+          "stored_size": 1400,
+          "transform_size": 0
+        },
+        {
+          "index": 254,
+          "rom_start": 14759792,
+          "rom_end": 14762648,
+          "logical_size": 2856,
+          "stored_size": 2856,
+          "transform_size": 0
+        },
+        {
+          "index": 255,
+          "rom_start": 14762656,
+          "rom_end": 14763424,
+          "logical_size": 768,
+          "stored_size": 768,
+          "transform_size": 0
+        },
+        {
+          "index": 256,
+          "rom_start": 14763424,
+          "rom_end": 14764496,
+          "logical_size": 1072,
+          "stored_size": 1072,
+          "transform_size": 0
+        },
+        {
+          "index": 257,
+          "rom_start": 14764496,
+          "rom_end": 14765880,
+          "logical_size": 1384,
+          "stored_size": 1384,
+          "transform_size": 0
+        },
+        {
+          "index": 258,
+          "rom_start": 14765888,
+          "rom_end": 14767272,
+          "logical_size": 1384,
+          "stored_size": 1384,
+          "transform_size": 0
+        },
+        {
+          "index": 259,
+          "rom_start": 14767280,
+          "rom_end": 14768664,
+          "logical_size": 1384,
+          "stored_size": 1384,
+          "transform_size": 0
+        },
+        {
+          "index": 260,
+          "rom_start": 14768672,
+          "rom_end": 14770056,
+          "logical_size": 1384,
+          "stored_size": 1384,
+          "transform_size": 0
+        },
+        {
+          "index": 261,
+          "rom_start": 14770064,
+          "rom_end": 14771448,
+          "logical_size": 1384,
+          "stored_size": 1384,
+          "transform_size": 0
+        },
+        {
+          "index": 262,
+          "rom_start": 14771456,
+          "rom_end": 14774232,
+          "logical_size": 2776,
+          "stored_size": 2776,
+          "transform_size": 0
+        },
+        {
+          "index": 263,
+          "rom_start": 14774240,
+          "rom_end": 14778760,
+          "logical_size": 4520,
+          "stored_size": 4520,
+          "transform_size": 0
+        },
+        {
+          "index": 264,
+          "rom_start": 14778768,
+          "rom_end": 14781520,
+          "logical_size": 2752,
+          "stored_size": 2752,
+          "transform_size": 0
+        },
+        {
+          "index": 265,
+          "rom_start": 14781520,
+          "rom_end": 14785536,
+          "logical_size": 4016,
+          "stored_size": 4016,
+          "transform_size": 0
+        },
+        {
+          "index": 266,
+          "rom_start": 14785536,
+          "rom_end": 14787336,
+          "logical_size": 1800,
+          "stored_size": 1800,
+          "transform_size": 0
+        },
+        {
+          "index": 267,
+          "rom_start": 14787344,
+          "rom_end": 14789616,
+          "logical_size": 2272,
+          "stored_size": 2272,
+          "transform_size": 0
+        },
+        {
+          "index": 268,
+          "rom_start": 14789616,
+          "rom_end": 14793144,
+          "logical_size": 3528,
+          "stored_size": 3528,
+          "transform_size": 0
+        },
+        {
+          "index": 269,
+          "rom_start": 14793152,
+          "rom_end": 14795256,
+          "logical_size": 2104,
+          "stored_size": 2104,
+          "transform_size": 0
+        },
+        {
+          "index": 270,
+          "rom_start": 14795264,
+          "rom_end": 14797064,
+          "logical_size": 1800,
+          "stored_size": 1800,
+          "transform_size": 0
+        },
+        {
+          "index": 271,
+          "rom_start": 14797072,
+          "rom_end": 14799344,
+          "logical_size": 2272,
+          "stored_size": 2272,
+          "transform_size": 0
+        },
+        {
+          "index": 272,
+          "rom_start": 14799344,
+          "rom_end": 14802872,
+          "logical_size": 3528,
+          "stored_size": 3528,
+          "transform_size": 0
+        },
+        {
+          "index": 273,
+          "rom_start": 14802880,
+          "rom_end": 14804984,
+          "logical_size": 2104,
+          "stored_size": 2104,
+          "transform_size": 0
+        },
+        {
+          "index": 274,
+          "rom_start": 14804992,
+          "rom_end": 14806792,
+          "logical_size": 1800,
+          "stored_size": 1800,
+          "transform_size": 0
+        },
+        {
+          "index": 275,
+          "rom_start": 14806800,
+          "rom_end": 14809072,
+          "logical_size": 2272,
+          "stored_size": 2272,
+          "transform_size": 0
+        },
+        {
+          "index": 276,
+          "rom_start": 14809072,
+          "rom_end": 14812600,
+          "logical_size": 3528,
+          "stored_size": 3528,
+          "transform_size": 0
+        },
+        {
+          "index": 277,
+          "rom_start": 14812608,
+          "rom_end": 14814712,
+          "logical_size": 2104,
+          "stored_size": 2104,
+          "transform_size": 0
+        },
+        {
+          "index": 278,
+          "rom_start": 14814720,
+          "rom_end": 14818424,
+          "logical_size": 3704,
+          "stored_size": 3704,
+          "transform_size": 0
+        },
+        {
+          "index": 279,
+          "rom_start": 14818432,
+          "rom_end": 14820808,
+          "logical_size": 2376,
+          "stored_size": 2376,
+          "transform_size": 0
+        },
+        {
+          "index": 280,
+          "rom_start": 14820816,
+          "rom_end": 14823336,
+          "logical_size": 2520,
+          "stored_size": 2520,
+          "transform_size": 0
+        },
+        {
+          "index": 281,
+          "rom_start": 14823344,
+          "rom_end": 14825720,
+          "logical_size": 2376,
+          "stored_size": 2376,
+          "transform_size": 0
+        },
+        {
+          "index": 282,
+          "rom_start": 14825728,
+          "rom_end": 14827968,
+          "logical_size": 2240,
+          "stored_size": 2240,
+          "transform_size": 0
+        },
+        {
+          "index": 283,
+          "rom_start": 14827968,
+          "rom_end": 14835120,
+          "logical_size": 7152,
+          "stored_size": 7152,
+          "transform_size": 0
+        },
+        {
+          "index": 284,
+          "rom_start": 14835120,
+          "rom_end": 14839456,
+          "logical_size": 4336,
+          "stored_size": 4336,
+          "transform_size": 0
+        },
+        {
+          "index": 285,
+          "rom_start": 14839456,
+          "rom_end": 14841536,
+          "logical_size": 2080,
+          "stored_size": 2080,
+          "transform_size": 0
+        },
+        {
+          "index": 286,
+          "rom_start": 14841536,
+          "rom_end": 14843736,
+          "logical_size": 2200,
+          "stored_size": 2200,
+          "transform_size": 0
+        },
+        {
+          "index": 287,
+          "rom_start": 14843744,
+          "rom_end": 14844640,
+          "logical_size": 896,
+          "stored_size": 896,
+          "transform_size": 0
+        },
+        {
+          "index": 288,
+          "rom_start": 14844640,
+          "rom_end": 14846216,
+          "logical_size": 1576,
+          "stored_size": 1576,
+          "transform_size": 0
+        },
+        {
+          "index": 289,
+          "rom_start": 14846224,
+          "rom_end": 14847480,
+          "logical_size": 1256,
+          "stored_size": 1256,
+          "transform_size": 0
+        },
+        {
+          "index": 290,
+          "rom_start": 14847488,
+          "rom_end": 14849136,
+          "logical_size": 1648,
+          "stored_size": 1648,
+          "transform_size": 0
+        },
+        {
+          "index": 291,
+          "rom_start": 14849136,
+          "rom_end": 14850224,
+          "logical_size": 1088,
+          "stored_size": 1088,
+          "transform_size": 0
+        },
+        {
+          "index": 292,
+          "rom_start": 14850224,
+          "rom_end": 14851560,
+          "logical_size": 1336,
+          "stored_size": 1336,
+          "transform_size": 0
+        },
+        {
+          "index": 293,
+          "rom_start": 14851568,
+          "rom_end": 14852760,
+          "logical_size": 1192,
+          "stored_size": 1192,
+          "transform_size": 0
+        },
+        {
+          "index": 294,
+          "rom_start": 14852768,
+          "rom_end": 14859272,
+          "logical_size": 6504,
+          "stored_size": 6504,
+          "transform_size": 0
+        },
+        {
+          "index": 295,
+          "rom_start": 14859280,
+          "rom_end": 14862192,
+          "logical_size": 2912,
+          "stored_size": 2912,
+          "transform_size": 0
+        },
+        {
+          "index": 296,
+          "rom_start": 14862192,
+          "rom_end": 14864672,
+          "logical_size": 2480,
+          "stored_size": 2480,
+          "transform_size": 0
+        },
+        {
+          "index": 297,
+          "rom_start": 14864672,
+          "rom_end": 14874192,
+          "logical_size": 9520,
+          "stored_size": 9520,
+          "transform_size": 0
+        },
+        {
+          "index": 298,
+          "rom_start": 14874192,
+          "rom_end": 14878016,
+          "logical_size": 3824,
+          "stored_size": 3824,
+          "transform_size": 0
+        },
+        {
+          "index": 299,
+          "rom_start": 14878016,
+          "rom_end": 14882040,
+          "logical_size": 4024,
+          "stored_size": 4024,
+          "transform_size": 0
+        },
+        {
+          "index": 300,
+          "rom_start": 14882048,
+          "rom_end": 14885064,
+          "logical_size": 3016,
+          "stored_size": 3016,
+          "transform_size": 0
+        },
+        {
+          "index": 301,
+          "rom_start": 14885072,
+          "rom_end": 14888768,
+          "logical_size": 3696,
+          "stored_size": 3696,
+          "transform_size": 0
+        },
+        {
+          "index": 302,
+          "rom_start": 14888768,
+          "rom_end": 14893992,
+          "logical_size": 5224,
+          "stored_size": 5224,
+          "transform_size": 0
+        },
+        {
+          "index": 303,
+          "rom_start": 14894000,
+          "rom_end": 14898328,
+          "logical_size": 4328,
+          "stored_size": 4328,
+          "transform_size": 0
+        },
+        {
+          "index": 304,
+          "rom_start": 14898336,
+          "rom_end": 14902048,
+          "logical_size": 3712,
+          "stored_size": 3712,
+          "transform_size": 0
+        },
+        {
+          "index": 305,
+          "rom_start": 14902048,
+          "rom_end": 14905656,
+          "logical_size": 3608,
+          "stored_size": 3608,
+          "transform_size": 0
+        },
+        {
+          "index": 306,
+          "rom_start": 14905664,
+          "rom_end": 14910392,
+          "logical_size": 4728,
+          "stored_size": 4728,
+          "transform_size": 0
+        },
+        {
+          "index": 307,
+          "rom_start": 14910400,
+          "rom_end": 14912560,
+          "logical_size": 2160,
+          "stored_size": 2160,
+          "transform_size": 0
+        },
+        {
+          "index": 308,
+          "rom_start": 14912560,
+          "rom_end": 14914720,
+          "logical_size": 2160,
+          "stored_size": 2160,
+          "transform_size": 0
+        },
+        {
+          "index": 309,
+          "rom_start": 14914720,
+          "rom_end": 14916888,
+          "logical_size": 2168,
+          "stored_size": 2168,
+          "transform_size": 0
+        },
+        {
+          "index": 310,
+          "rom_start": 14916896,
+          "rom_end": 14941280,
+          "logical_size": 24384,
+          "stored_size": 24384,
+          "transform_size": 0
+        },
+        {
+          "index": 311,
+          "rom_start": 14941280,
+          "rom_end": 14942128,
+          "logical_size": 848,
+          "stored_size": 848,
+          "transform_size": 0
+        },
+        {
+          "index": 312,
+          "rom_start": 14942128,
+          "rom_end": 14947840,
+          "logical_size": 5712,
+          "stored_size": 5712,
+          "transform_size": 0
+        },
+        {
+          "index": 313,
+          "rom_start": 14947840,
+          "rom_end": 14957248,
+          "logical_size": 9408,
+          "stored_size": 9408,
+          "transform_size": 0
+        },
+        {
+          "index": 314,
+          "rom_start": 14957248,
+          "rom_end": 14960952,
+          "logical_size": 3704,
+          "stored_size": 3704,
+          "transform_size": 0
+        },
+        {
+          "index": 315,
+          "rom_start": 14960960,
+          "rom_end": 14967640,
+          "logical_size": 6680,
+          "stored_size": 6680,
+          "transform_size": 0
+        },
+        {
+          "index": 316,
+          "rom_start": 14967648,
+          "rom_end": 14970280,
+          "logical_size": 2632,
+          "stored_size": 2632,
+          "transform_size": 0
+        },
+        {
+          "index": 317,
+          "rom_start": 14970288,
+          "rom_end": 14973120,
+          "logical_size": 2832,
+          "stored_size": 2832,
+          "transform_size": 0
+        },
+        {
+          "index": 318,
+          "rom_start": 14973120,
+          "rom_end": 14981784,
+          "logical_size": 8664,
+          "stored_size": 8664,
+          "transform_size": 0
+        },
+        {
+          "index": 319,
+          "rom_start": 14981792,
+          "rom_end": 15007344,
+          "logical_size": 25552,
+          "stored_size": 25552,
+          "transform_size": 0
+        },
+        {
+          "index": 320,
+          "rom_start": 15007344,
+          "rom_end": 15018296,
+          "logical_size": 10952,
+          "stored_size": 10952,
+          "transform_size": 0
+        },
+        {
+          "index": 321,
+          "rom_start": 15018304,
+          "rom_end": 15020944,
+          "logical_size": 2640,
+          "stored_size": 2640,
+          "transform_size": 0
+        },
+        {
+          "index": 322,
+          "rom_start": 15020944,
+          "rom_end": 15031176,
+          "logical_size": 10232,
+          "stored_size": 10232,
+          "transform_size": 0
+        },
+        {
+          "index": 323,
+          "rom_start": 15031184,
+          "rom_end": 15032336,
+          "logical_size": 1152,
+          "stored_size": 1152,
+          "transform_size": 0
+        },
+        {
+          "index": 324,
+          "rom_start": 15032336,
+          "rom_end": 15066160,
+          "logical_size": 33824,
+          "stored_size": 33824,
+          "transform_size": 0
+        },
+        {
+          "index": 325,
+          "rom_start": 15066160,
+          "rom_end": 15068864,
+          "logical_size": 2704,
+          "stored_size": 2704,
+          "transform_size": 0
+        },
+        {
+          "index": 326,
+          "rom_start": 15068864,
+          "rom_end": 15071080,
+          "logical_size": 2216,
+          "stored_size": 2216,
+          "transform_size": 0
+        },
+        {
+          "index": 327,
+          "rom_start": 15071088,
+          "rom_end": 15073792,
+          "logical_size": 2704,
+          "stored_size": 2704,
+          "transform_size": 0
+        },
+        {
+          "index": 328,
+          "rom_start": 15073792,
+          "rom_end": 15076064,
+          "logical_size": 2272,
+          "stored_size": 2272,
+          "transform_size": 0
+        },
+        {
+          "index": 329,
+          "rom_start": 15076064,
+          "rom_end": 15081056,
+          "logical_size": 4992,
+          "stored_size": 4992,
+          "transform_size": 0
+        },
+        {
+          "index": 330,
+          "rom_start": 15081056,
+          "rom_end": 15083904,
+          "logical_size": 2848,
+          "stored_size": 2848,
+          "transform_size": 0
+        },
+        {
+          "index": 331,
+          "rom_start": 15083904,
+          "rom_end": 15087000,
+          "logical_size": 3096,
+          "stored_size": 3096,
+          "transform_size": 0
+        },
+        {
+          "index": 332,
+          "rom_start": 15087008,
+          "rom_end": 15090088,
+          "logical_size": 3080,
+          "stored_size": 3080,
+          "transform_size": 0
+        },
+        {
+          "index": 333,
+          "rom_start": 15090096,
+          "rom_end": 15093144,
+          "logical_size": 3048,
+          "stored_size": 3048,
+          "transform_size": 0
+        },
+        {
+          "index": 334,
+          "rom_start": 15093152,
+          "rom_end": 15095664,
+          "logical_size": 2512,
+          "stored_size": 2512,
+          "transform_size": 0
+        },
+        {
+          "index": 335,
+          "rom_start": 15095664,
+          "rom_end": 15099456,
+          "logical_size": 3792,
+          "stored_size": 3792,
+          "transform_size": 0
+        },
+        {
+          "index": 336,
+          "rom_start": 15099456,
+          "rom_end": 15102744,
+          "logical_size": 3288,
+          "stored_size": 3288,
+          "transform_size": 0
+        },
+        {
+          "index": 337,
+          "rom_start": 15102752,
+          "rom_end": 15105376,
+          "logical_size": 2624,
+          "stored_size": 2624,
+          "transform_size": 0
+        },
+        {
+          "index": 338,
+          "rom_start": 15105376,
+          "rom_end": 15106328,
+          "logical_size": 952,
+          "stored_size": 952,
+          "transform_size": 0
+        },
+        {
+          "index": 339,
+          "rom_start": 15106336,
+          "rom_end": 15107080,
+          "logical_size": 744,
+          "stored_size": 744,
+          "transform_size": 0
+        },
+        {
+          "index": 340,
+          "rom_start": 15107088,
+          "rom_end": 15108592,
+          "logical_size": 1504,
+          "stored_size": 1504,
+          "transform_size": 0
+        },
+        {
+          "index": 341,
+          "rom_start": 15108592,
+          "rom_end": 15111016,
+          "logical_size": 2424,
+          "stored_size": 2424,
+          "transform_size": 0
+        },
+        {
+          "index": 342,
+          "rom_start": 15111024,
+          "rom_end": 15113664,
+          "logical_size": 2640,
+          "stored_size": 2640,
+          "transform_size": 0
+        },
+        {
+          "index": 343,
+          "rom_start": 15113664,
+          "rom_end": 15117312,
+          "logical_size": 3648,
+          "stored_size": 3648,
+          "transform_size": 0
+        },
+        {
+          "index": 344,
+          "rom_start": 15117312,
+          "rom_end": 15120256,
+          "logical_size": 2944,
+          "stored_size": 2944,
+          "transform_size": 0
+        },
+        {
+          "index": 345,
+          "rom_start": 15120256,
+          "rom_end": 15124112,
+          "logical_size": 3856,
+          "stored_size": 3856,
+          "transform_size": 0
+        },
+        {
+          "index": 346,
+          "rom_start": 15124112,
+          "rom_end": 15129208,
+          "logical_size": 5096,
+          "stored_size": 5096,
+          "transform_size": 0
+        },
+        {
+          "index": 347,
+          "rom_start": 15129216,
+          "rom_end": 15132904,
+          "logical_size": 3688,
+          "stored_size": 3688,
+          "transform_size": 0
+        },
+        {
+          "index": 348,
+          "rom_start": 15132912,
+          "rom_end": 15134768,
+          "logical_size": 1856,
+          "stored_size": 1856,
+          "transform_size": 0
+        },
+        {
+          "index": 349,
+          "rom_start": 15134768,
+          "rom_end": 15142624,
+          "logical_size": 7856,
+          "stored_size": 7856,
+          "transform_size": 0
+        },
+        {
+          "index": 350,
+          "rom_start": 15142624,
+          "rom_end": 15145016,
+          "logical_size": 2392,
+          "stored_size": 2392,
+          "transform_size": 0
+        },
+        {
+          "index": 351,
+          "rom_start": 15145024,
+          "rom_end": 15146536,
+          "logical_size": 1512,
+          "stored_size": 1512,
+          "transform_size": 0
+        },
+        {
+          "index": 352,
+          "rom_start": 15146544,
+          "rom_end": 15150248,
+          "logical_size": 3704,
+          "stored_size": 3704,
+          "transform_size": 0
+        },
+        {
+          "index": 353,
+          "rom_start": 15150256,
+          "rom_end": 15153872,
+          "logical_size": 3616,
+          "stored_size": 3616,
+          "transform_size": 0
+        },
+        {
+          "index": 354,
+          "rom_start": 15153872,
+          "rom_end": 15170496,
+          "logical_size": 16624,
+          "stored_size": 16624,
+          "transform_size": 0
+        },
+        {
+          "index": 355,
+          "rom_start": 15170496,
+          "rom_end": 15184600,
+          "logical_size": 14104,
+          "stored_size": 14104,
+          "transform_size": 0
+        },
+        {
+          "index": 356,
+          "rom_start": 15184608,
+          "rom_end": 15193880,
+          "logical_size": 9272,
+          "stored_size": 9272,
+          "transform_size": 0
+        },
+        {
+          "index": 357,
+          "rom_start": 15193888,
+          "rom_end": 15195736,
+          "logical_size": 1848,
+          "stored_size": 1848,
+          "transform_size": 0
+        },
+        {
+          "index": 358,
+          "rom_start": 15195744,
+          "rom_end": 15198240,
+          "logical_size": 2496,
+          "stored_size": 2496,
+          "transform_size": 0
+        },
+        {
+          "index": 359,
+          "rom_start": 15198240,
+          "rom_end": 15200296,
+          "logical_size": 2056,
+          "stored_size": 2056,
+          "transform_size": 0
+        },
+        {
+          "index": 360,
+          "rom_start": 15200304,
+          "rom_end": 15203360,
+          "logical_size": 3056,
+          "stored_size": 3056,
+          "transform_size": 0
+        },
+        {
+          "index": 361,
+          "rom_start": 15203360,
+          "rom_end": 15208728,
+          "logical_size": 5368,
+          "stored_size": 5368,
+          "transform_size": 0
+        },
+        {
+          "index": 362,
+          "rom_start": 15208736,
+          "rom_end": 15210120,
+          "logical_size": 1384,
+          "stored_size": 1384,
+          "transform_size": 0
+        },
+        {
+          "index": 363,
+          "rom_start": 15210128,
+          "rom_end": 15210952,
+          "logical_size": 824,
+          "stored_size": 824,
+          "transform_size": 0
+        },
+        {
+          "index": 364,
+          "rom_start": 15210960,
+          "rom_end": 15213712,
+          "logical_size": 2752,
+          "stored_size": 2752,
+          "transform_size": 0
+        },
+        {
+          "index": 365,
+          "rom_start": 15213712,
+          "rom_end": 15216200,
+          "logical_size": 2488,
+          "stored_size": 2488,
+          "transform_size": 0
+        },
+        {
+          "index": 366,
+          "rom_start": 15216208,
+          "rom_end": 15217520,
+          "logical_size": 1312,
+          "stored_size": 1312,
+          "transform_size": 0
+        },
+        {
+          "index": 367,
+          "rom_start": 15217520,
+          "rom_end": 15222480,
+          "logical_size": 4960,
+          "stored_size": 4960,
+          "transform_size": 0
+        },
+        {
+          "index": 368,
+          "rom_start": 15222480,
+          "rom_end": 15224256,
+          "logical_size": 1776,
+          "stored_size": 1776,
+          "transform_size": 0
+        },
+        {
+          "index": 369,
+          "rom_start": 15224256,
+          "rom_end": 15226656,
+          "logical_size": 2400,
+          "stored_size": 2400,
+          "transform_size": 0
+        },
+        {
+          "index": 370,
+          "rom_start": 15226656,
+          "rom_end": 15230680,
+          "logical_size": 4024,
+          "stored_size": 4024,
+          "transform_size": 0
+        },
+        {
+          "index": 371,
+          "rom_start": 15230688,
+          "rom_end": 15234712,
+          "logical_size": 4024,
+          "stored_size": 4024,
+          "transform_size": 0
+        },
+        {
+          "index": 372,
+          "rom_start": 15234720,
+          "rom_end": 15237616,
+          "logical_size": 2896,
+          "stored_size": 2896,
+          "transform_size": 0
+        },
+        {
+          "index": 373,
+          "rom_start": 15237616,
+          "rom_end": 15239712,
+          "logical_size": 2096,
+          "stored_size": 2096,
+          "transform_size": 0
+        },
+        {
+          "index": 374,
+          "rom_start": 15239712,
+          "rom_end": 15241552,
+          "logical_size": 1840,
+          "stored_size": 1840,
+          "transform_size": 0
+        },
+        {
+          "index": 375,
+          "rom_start": 15241552,
+          "rom_end": 15267296,
+          "logical_size": 25744,
+          "stored_size": 25744,
+          "transform_size": 0
+        },
+        {
+          "index": 376,
+          "rom_start": 15267296,
+          "rom_end": 15271136,
+          "logical_size": 3840,
+          "stored_size": 3840,
+          "transform_size": 0
+        },
+        {
+          "index": 377,
+          "rom_start": 15271136,
+          "rom_end": 15273664,
+          "logical_size": 2528,
+          "stored_size": 2528,
+          "transform_size": 0
+        },
+        {
+          "index": 378,
+          "rom_start": 15273664,
+          "rom_end": 15276544,
+          "logical_size": 2880,
+          "stored_size": 2880,
+          "transform_size": 0
+        },
+        {
+          "index": 379,
+          "rom_start": 15276544,
+          "rom_end": 15278296,
+          "logical_size": 1752,
+          "stored_size": 1752,
+          "transform_size": 0
+        },
+        {
+          "index": 380,
+          "rom_start": 15278304,
+          "rom_end": 15296776,
+          "logical_size": 18472,
+          "stored_size": 18472,
+          "transform_size": 0
+        },
+        {
+          "index": 381,
+          "rom_start": 15296784,
+          "rom_end": 15315296,
+          "logical_size": 18512,
+          "stored_size": 18512,
+          "transform_size": 0
+        },
+        {
+          "index": 382,
+          "rom_start": 15315296,
+          "rom_end": 15333976,
+          "logical_size": 18680,
+          "stored_size": 18680,
+          "transform_size": 0
+        },
+        {
+          "index": 383,
+          "rom_start": 15333984,
+          "rom_end": 15352488,
+          "logical_size": 18504,
+          "stored_size": 18504,
+          "transform_size": 0
+        },
+        {
+          "index": 384,
+          "rom_start": 15352496,
+          "rom_end": 15359304,
+          "logical_size": 6808,
+          "stored_size": 6808,
+          "transform_size": 0
+        },
+        {
+          "index": 385,
+          "rom_start": 15359312,
+          "rom_end": 15366392,
+          "logical_size": 7080,
+          "stored_size": 7080,
+          "transform_size": 0
+        },
+        {
+          "index": 386,
+          "rom_start": 15366400,
+          "rom_end": 15372664,
+          "logical_size": 6264,
+          "stored_size": 6264,
+          "transform_size": 0
+        },
+        {
+          "index": 387,
+          "rom_start": 15372672,
+          "rom_end": 15379360,
+          "logical_size": 6688,
+          "stored_size": 6688,
+          "transform_size": 0
+        },
+        {
+          "index": 388,
+          "rom_start": 15379360,
+          "rom_end": 15388152,
+          "logical_size": 8792,
+          "stored_size": 8792,
+          "transform_size": 0
+        },
+        {
+          "index": 389,
+          "rom_start": 15388160,
+          "rom_end": 15396752,
+          "logical_size": 8592,
+          "stored_size": 8592,
+          "transform_size": 0
+        },
+        {
+          "index": 390,
+          "rom_start": 15396752,
+          "rom_end": 15405016,
+          "logical_size": 8264,
+          "stored_size": 8264,
+          "transform_size": 0
+        },
+        {
+          "index": 391,
+          "rom_start": 15405024,
+          "rom_end": 15413632,
+          "logical_size": 8608,
+          "stored_size": 8608,
+          "transform_size": 0
+        },
+        {
+          "index": 392,
+          "rom_start": 15413632,
+          "rom_end": 15422096,
+          "logical_size": 8464,
+          "stored_size": 8464,
+          "transform_size": 0
+        },
+        {
+          "index": 393,
+          "rom_start": 15422096,
+          "rom_end": 15431128,
+          "logical_size": 9032,
+          "stored_size": 9032,
+          "transform_size": 0
+        },
+        {
+          "index": 394,
+          "rom_start": 15431136,
+          "rom_end": 15438720,
+          "logical_size": 7584,
+          "stored_size": 7584,
+          "transform_size": 0
+        },
+        {
+          "index": 395,
+          "rom_start": 15438720,
+          "rom_end": 15446696,
+          "logical_size": 7976,
+          "stored_size": 7976,
+          "transform_size": 0
+        },
+        {
+          "index": 396,
+          "rom_start": 15446704,
+          "rom_end": 15454872,
+          "logical_size": 8168,
+          "stored_size": 8168,
+          "transform_size": 0
+        },
+        {
+          "index": 397,
+          "rom_start": 15454880,
+          "rom_end": 15463984,
+          "logical_size": 9104,
+          "stored_size": 9104,
+          "transform_size": 0
+        },
+        {
+          "index": 398,
+          "rom_start": 15463984,
+          "rom_end": 15472088,
+          "logical_size": 8104,
+          "stored_size": 8104,
+          "transform_size": 0
+        },
+        {
+          "index": 399,
+          "rom_start": 15472096,
+          "rom_end": 15480216,
+          "logical_size": 8120,
+          "stored_size": 8120,
+          "transform_size": 0
+        },
+        {
+          "index": 400,
+          "rom_start": 15480224,
+          "rom_end": 15483080,
+          "logical_size": 2856,
+          "stored_size": 2856,
+          "transform_size": 0
+        },
+        {
+          "index": 401,
+          "rom_start": 15483088,
+          "rom_end": 15486776,
+          "logical_size": 3688,
+          "stored_size": 3688,
+          "transform_size": 0
+        },
+        {
+          "index": 402,
+          "rom_start": 15486784,
+          "rom_end": 15489664,
+          "logical_size": 2880,
+          "stored_size": 2880,
+          "transform_size": 0
+        },
+        {
+          "index": 403,
+          "rom_start": 15489664,
+          "rom_end": 15499240,
+          "logical_size": 9576,
+          "stored_size": 9576,
+          "transform_size": 0
+        },
+        {
+          "index": 404,
+          "rom_start": 15499248,
+          "rom_end": 15503624,
+          "logical_size": 4376,
+          "stored_size": 4376,
+          "transform_size": 0
+        },
+        {
+          "index": 405,
+          "rom_start": 15503632,
+          "rom_end": 15504696,
+          "logical_size": 1064,
+          "stored_size": 1064,
+          "transform_size": 0
+        },
+        {
+          "index": 406,
+          "rom_start": 15504704,
+          "rom_end": 15506008,
+          "logical_size": 1304,
+          "stored_size": 1304,
+          "transform_size": 0
+        },
+        {
+          "index": 407,
+          "rom_start": 15506016,
+          "rom_end": 15506976,
+          "logical_size": 960,
+          "stored_size": 960,
+          "transform_size": 0
+        },
+        {
+          "index": 408,
+          "rom_start": 15506976,
+          "rom_end": 15507920,
+          "logical_size": 944,
+          "stored_size": 944,
+          "transform_size": 0
+        },
+        {
+          "index": 409,
+          "rom_start": 15507920,
+          "rom_end": 15509880,
+          "logical_size": 1960,
+          "stored_size": 1960,
+          "transform_size": 0
+        },
+        {
+          "index": 410,
+          "rom_start": 15509888,
+          "rom_end": 15511824,
+          "logical_size": 1936,
+          "stored_size": 1936,
+          "transform_size": 0
+        },
+        {
+          "index": 411,
+          "rom_start": 15511824,
+          "rom_end": 15513808,
+          "logical_size": 1984,
+          "stored_size": 1984,
+          "transform_size": 0
+        },
+        {
+          "index": 412,
+          "rom_start": 15513808,
+          "rom_end": 15515760,
+          "logical_size": 1952,
+          "stored_size": 1952,
+          "transform_size": 0
+        },
+        {
+          "index": 413,
+          "rom_start": 15515760,
+          "rom_end": 15517712,
+          "logical_size": 1952,
+          "stored_size": 1952,
+          "transform_size": 0
+        },
+        {
+          "index": 414,
+          "rom_start": 15517712,
+          "rom_end": 15519608,
+          "logical_size": 1896,
+          "stored_size": 1896,
+          "transform_size": 0
+        },
+        {
+          "index": 415,
+          "rom_start": 15519616,
+          "rom_end": 15521696,
+          "logical_size": 2080,
+          "stored_size": 2080,
+          "transform_size": 0
+        },
+        {
+          "index": 416,
+          "rom_start": 15521696,
+          "rom_end": 15523672,
+          "logical_size": 1976,
+          "stored_size": 1976,
+          "transform_size": 0
+        },
+        {
+          "index": 417,
+          "rom_start": 15523680,
+          "rom_end": 15525848,
+          "logical_size": 2168,
+          "stored_size": 2168,
+          "transform_size": 0
+        },
+        {
+          "index": 418,
+          "rom_start": 15525856,
+          "rom_end": 15538808,
+          "logical_size": 12952,
+          "stored_size": 12952,
+          "transform_size": 0
+        },
+        {
+          "index": 419,
+          "rom_start": 15538816,
+          "rom_end": 15565736,
+          "logical_size": 26920,
+          "stored_size": 26920,
+          "transform_size": 0
+        },
+        {
+          "index": 420,
+          "rom_start": 15565744,
+          "rom_end": 15596928,
+          "logical_size": 31184,
+          "stored_size": 31184,
+          "transform_size": 0
+        },
+        {
+          "index": 421,
+          "rom_start": 15596928,
+          "rom_end": 15597687,
+          "logical_size": 816,
+          "stored_size": 759,
+          "transform_size": 759
+        },
+        {
+          "index": 422,
+          "rom_start": 15597696,
+          "rom_end": 15598413,
+          "logical_size": 816,
+          "stored_size": 717,
+          "transform_size": 717
+        },
+        {
+          "index": 423,
+          "rom_start": 15598416,
+          "rom_end": 15598947,
+          "logical_size": 816,
+          "stored_size": 531,
+          "transform_size": 531
+        },
+        {
+          "index": 424,
+          "rom_start": 15598960,
+          "rom_end": 15599281,
+          "logical_size": 656,
+          "stored_size": 321,
+          "transform_size": 321
+        },
+        {
+          "index": 425,
+          "rom_start": 15599296,
+          "rom_end": 15599665,
+          "logical_size": 656,
+          "stored_size": 369,
+          "transform_size": 369
+        },
+        {
+          "index": 426,
+          "rom_start": 15599680,
+          "rom_end": 15600001,
+          "logical_size": 656,
+          "stored_size": 321,
+          "transform_size": 321
+        },
+        {
+          "index": 427,
+          "rom_start": 15600016,
+          "rom_end": 15601000,
+          "logical_size": 984,
+          "stored_size": 984,
+          "transform_size": 0
+        },
+        {
+          "index": 428,
+          "rom_start": 15601008,
+          "rom_end": 15601960,
+          "logical_size": 952,
+          "stored_size": 952,
+          "transform_size": 0
+        },
+        {
+          "index": 429,
+          "rom_start": 15601968,
+          "rom_end": 15606664,
+          "logical_size": 4696,
+          "stored_size": 4696,
+          "transform_size": 0
+        },
+        {
+          "index": 430,
+          "rom_start": 15606672,
+          "rom_end": 15612096,
+          "logical_size": 5424,
+          "stored_size": 5424,
+          "transform_size": 0
+        },
+        {
+          "index": 431,
+          "rom_start": 15612096,
+          "rom_end": 15624544,
+          "logical_size": 12448,
+          "stored_size": 12448,
+          "transform_size": 0
+        },
+        {
+          "index": 432,
+          "rom_start": 15624544,
+          "rom_end": 15628088,
+          "logical_size": 3544,
+          "stored_size": 3544,
+          "transform_size": 0
+        },
+        {
+          "index": 433,
+          "rom_start": 15628096,
+          "rom_end": 15637864,
+          "logical_size": 9768,
+          "stored_size": 9768,
+          "transform_size": 0
+        },
+        {
+          "index": 434,
+          "rom_start": 15637872,
+          "rom_end": 15654032,
+          "logical_size": 16160,
+          "stored_size": 16160,
+          "transform_size": 0
+        },
+        {
+          "index": 435,
+          "rom_start": 15654032,
+          "rom_end": 15670232,
+          "logical_size": 16200,
+          "stored_size": 16200,
+          "transform_size": 0
+        },
+        {
+          "index": 436,
+          "rom_start": 15670240,
+          "rom_end": 15673792,
+          "logical_size": 3552,
+          "stored_size": 3552,
+          "transform_size": 0
+        },
+        {
+          "index": 437,
+          "rom_start": 15673792,
+          "rom_end": 15675376,
+          "logical_size": 1584,
+          "stored_size": 1584,
+          "transform_size": 0
+        },
+        {
+          "index": 438,
+          "rom_start": 15675376,
+          "rom_end": 15679272,
+          "logical_size": 3896,
+          "stored_size": 3896,
+          "transform_size": 0
+        },
+        {
+          "index": 439,
+          "rom_start": 15679280,
+          "rom_end": 15684320,
+          "logical_size": 5040,
+          "stored_size": 5040,
+          "transform_size": 0
+        },
+        {
+          "index": 440,
+          "rom_start": 15684320,
+          "rom_end": 15686304,
+          "logical_size": 1984,
+          "stored_size": 1984,
+          "transform_size": 0
+        },
+        {
+          "index": 441,
+          "rom_start": 15686304,
+          "rom_end": 15688720,
+          "logical_size": 2416,
+          "stored_size": 2416,
+          "transform_size": 0
+        },
+        {
+          "index": 442,
+          "rom_start": 15688720,
+          "rom_end": 15689402,
+          "logical_size": 3272,
+          "stored_size": 682,
+          "transform_size": 682
+        },
+        {
+          "index": 443,
+          "rom_start": 15689408,
+          "rom_end": 15690118,
+          "logical_size": 3272,
+          "stored_size": 710,
+          "transform_size": 710
+        },
+        {
+          "index": 444,
+          "rom_start": 15690128,
+          "rom_end": 15690827,
+          "logical_size": 3272,
+          "stored_size": 699,
+          "transform_size": 699
+        },
+        {
+          "index": 445,
+          "rom_start": 15690832,
+          "rom_end": 15691540,
+          "logical_size": 3272,
+          "stored_size": 708,
+          "transform_size": 708
+        },
+        {
+          "index": 446,
+          "rom_start": 15691552,
+          "rom_end": 15692255,
+          "logical_size": 3272,
+          "stored_size": 703,
+          "transform_size": 703
+        },
+        {
+          "index": 447,
+          "rom_start": 15692256,
+          "rom_end": 15692956,
+          "logical_size": 3272,
+          "stored_size": 700,
+          "transform_size": 700
+        },
+        {
+          "index": 448,
+          "rom_start": 15692960,
+          "rom_end": 15693665,
+          "logical_size": 3272,
+          "stored_size": 705,
+          "transform_size": 705
+        },
+        {
+          "index": 449,
+          "rom_start": 15693680,
+          "rom_end": 15694372,
+          "logical_size": 3272,
+          "stored_size": 692,
+          "transform_size": 692
+        },
+        {
+          "index": 450,
+          "rom_start": 15694384,
+          "rom_end": 15695078,
+          "logical_size": 3272,
+          "stored_size": 694,
+          "transform_size": 694
+        },
+        {
+          "index": 451,
+          "rom_start": 15695088,
+          "rom_end": 15789676,
+          "logical_size": 124184,
+          "stored_size": 94588,
+          "transform_size": 94588
+        },
+        {
+          "index": 452,
+          "rom_start": 15789680,
+          "rom_end": 15895070,
+          "logical_size": 124184,
+          "stored_size": 105390,
+          "transform_size": 105390
+        },
+        {
+          "index": 453,
+          "rom_start": 15895072,
+          "rom_end": 15897103,
+          "logical_size": 3480,
+          "stored_size": 2031,
+          "transform_size": 2031
+        },
+        {
+          "index": 454,
+          "rom_start": 15897104,
+          "rom_end": 15899790,
+          "logical_size": 3800,
+          "stored_size": 2686,
+          "transform_size": 2686
+        },
+        {
+          "index": 455,
+          "rom_start": 15899792,
+          "rom_end": 15901463,
+          "logical_size": 3128,
+          "stored_size": 1671,
+          "transform_size": 1671
+        },
+        {
+          "index": 456,
+          "rom_start": 15901472,
+          "rom_end": 15903216,
+          "logical_size": 3800,
+          "stored_size": 1744,
+          "transform_size": 1744
+        },
+        {
+          "index": 457,
+          "rom_start": 15903216,
+          "rom_end": 15906210,
+          "logical_size": 5208,
+          "stored_size": 2994,
+          "transform_size": 2994
+        },
+        {
+          "index": 458,
+          "rom_start": 15906224,
+          "rom_end": 15909177,
+          "logical_size": 5528,
+          "stored_size": 2953,
+          "transform_size": 2953
+        },
+        {
+          "index": 459,
+          "rom_start": 15909184,
+          "rom_end": 15911026,
+          "logical_size": 3256,
+          "stored_size": 1842,
+          "transform_size": 1842
+        },
+        {
+          "index": 460,
+          "rom_start": 15911040,
+          "rom_end": 15913934,
+          "logical_size": 4632,
+          "stored_size": 2894,
+          "transform_size": 2894
+        },
+        {
+          "index": 461,
+          "rom_start": 15913936,
+          "rom_end": 15914091,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 462,
+          "rom_start": 15914096,
+          "rom_end": 15914251,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 463,
+          "rom_start": 15914256,
+          "rom_end": 15914411,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 464,
+          "rom_start": 15914416,
+          "rom_end": 15914571,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 465,
+          "rom_start": 15914576,
+          "rom_end": 15914731,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 466,
+          "rom_start": 15914736,
+          "rom_end": 15914891,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 467,
+          "rom_start": 15914896,
+          "rom_end": 15915051,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 468,
+          "rom_start": 15915056,
+          "rom_end": 15915211,
+          "logical_size": 616,
+          "stored_size": 155,
+          "transform_size": 155
+        },
+        {
+          "index": 469,
+          "rom_start": 15915216,
+          "rom_end": 15918071,
+          "logical_size": 3640,
+          "stored_size": 2855,
+          "transform_size": 2855
+        },
+        {
+          "index": 470,
+          "rom_start": 15918080,
+          "rom_end": 15921506,
+          "logical_size": 5208,
+          "stored_size": 3426,
+          "transform_size": 3426
+        },
+        {
+          "index": 471,
+          "rom_start": 15921520,
+          "rom_end": 15924937,
+          "logical_size": 5208,
+          "stored_size": 3417,
+          "transform_size": 3417
+        },
+        {
+          "index": 472,
+          "rom_start": 15924944,
+          "rom_end": 15928402,
+          "logical_size": 5208,
+          "stored_size": 3458,
+          "transform_size": 3458
+        },
+        {
+          "index": 473,
+          "rom_start": 15928416,
+          "rom_end": 15932947,
+          "logical_size": 6776,
+          "stored_size": 4531,
+          "transform_size": 4531
+        },
+        {
+          "index": 474,
+          "rom_start": 15932960,
+          "rom_end": 15937397,
+          "logical_size": 5752,
+          "stored_size": 4437,
+          "transform_size": 4437
+        },
+        {
+          "index": 475,
+          "rom_start": 15937408,
+          "rom_end": 15940941,
+          "logical_size": 4632,
+          "stored_size": 3533,
+          "transform_size": 3533
+        },
+        {
+          "index": 476,
+          "rom_start": 15940944,
+          "rom_end": 15942074,
+          "logical_size": 4056,
+          "stored_size": 1130,
+          "transform_size": 1130
+        },
+        {
+          "index": 477,
+          "rom_start": 15942080,
+          "rom_end": 15943018,
+          "logical_size": 4056,
+          "stored_size": 938,
+          "transform_size": 938
+        },
+        {
+          "index": 478,
+          "rom_start": 15943024,
+          "rom_end": 15946774,
+          "logical_size": 6584,
+          "stored_size": 3750,
+          "transform_size": 3750
+        },
+        {
+          "index": 479,
+          "rom_start": 15946784,
+          "rom_end": 15951338,
+          "logical_size": 6424,
+          "stored_size": 4554,
+          "transform_size": 4554
+        },
+        {
+          "index": 480,
+          "rom_start": 15951344,
+          "rom_end": 15953204,
+          "logical_size": 6968,
+          "stored_size": 1860,
+          "transform_size": 1860
+        },
+        {
+          "index": 481,
+          "rom_start": 15953216,
+          "rom_end": 15956026,
+          "logical_size": 4440,
+          "stored_size": 2810,
+          "transform_size": 2810
+        },
+        {
+          "index": 482,
+          "rom_start": 15956032,
+          "rom_end": 15956872,
+          "logical_size": 840,
+          "stored_size": 840,
+          "transform_size": 0
+        },
+        {
+          "index": 483,
+          "rom_start": 15956880,
+          "rom_end": 15958352,
+          "logical_size": 1472,
+          "stored_size": 1472,
+          "transform_size": 0
+        },
+        {
+          "index": 484,
+          "rom_start": 15958352,
+          "rom_end": 15961096,
+          "logical_size": 2744,
+          "stored_size": 2744,
+          "transform_size": 0
+        },
+        {
+          "index": 485,
+          "rom_start": 15961104,
+          "rom_end": 15963040,
+          "logical_size": 1936,
+          "stored_size": 1936,
+          "transform_size": 0
+        },
+        {
+          "index": 486,
+          "rom_start": 15963040,
+          "rom_end": 15965320,
+          "logical_size": 2280,
+          "stored_size": 2280,
+          "transform_size": 0
+        },
+        {
+          "index": 487,
+          "rom_start": 15965328,
+          "rom_end": 15966224,
+          "logical_size": 896,
+          "stored_size": 896,
+          "transform_size": 0
+        },
+        {
+          "index": 488,
+          "rom_start": 15966224,
+          "rom_end": 15967368,
+          "logical_size": 1144,
+          "stored_size": 1144,
+          "transform_size": 0
+        },
+        {
+          "index": 489,
+          "rom_start": 15967376,
+          "rom_end": 15968936,
+          "logical_size": 1560,
+          "stored_size": 1560,
+          "transform_size": 0
+        },
+        {
+          "index": 490,
+          "rom_start": 15968944,
+          "rom_end": 15969854,
+          "logical_size": 1320,
+          "stored_size": 910,
+          "transform_size": 910
+        },
+        {
+          "index": 491,
+          "rom_start": 15969856,
+          "rom_end": 15970718,
+          "logical_size": 1320,
+          "stored_size": 862,
+          "transform_size": 862
+        },
+        {
+          "index": 492,
+          "rom_start": 15970720,
+          "rom_end": 15971632,
+          "logical_size": 1320,
+          "stored_size": 912,
+          "transform_size": 912
+        },
+        {
+          "index": 493,
+          "rom_start": 15971632,
+          "rom_end": 15972645,
+          "logical_size": 1320,
+          "stored_size": 1013,
+          "transform_size": 1013
+        },
+        {
+          "index": 494,
+          "rom_start": 15972656,
+          "rom_end": 15973109,
+          "logical_size": 2488,
+          "stored_size": 453,
+          "transform_size": 453
+        },
+        {
+          "index": 495,
+          "rom_start": 15973120,
+          "rom_end": 15974792,
+          "logical_size": 1672,
+          "stored_size": 1672,
+          "transform_size": 0
+        },
+        {
+          "index": 496,
+          "rom_start": 15974800,
+          "rom_end": 15976464,
+          "logical_size": 1664,
+          "stored_size": 1664,
+          "transform_size": 0
+        },
+        {
+          "index": 497,
+          "rom_start": 15976464,
+          "rom_end": 15978504,
+          "logical_size": 2040,
+          "stored_size": 2040,
+          "transform_size": 0
+        },
+        {
+          "index": 498,
+          "rom_start": 15978512,
+          "rom_end": 15980544,
+          "logical_size": 2032,
+          "stored_size": 2032,
+          "transform_size": 0
+        },
+        {
+          "index": 499,
+          "rom_start": 15980544,
+          "rom_end": 15982744,
+          "logical_size": 2200,
+          "stored_size": 2200,
+          "transform_size": 0
+        },
+        {
+          "index": 500,
+          "rom_start": 15982752,
+          "rom_end": 15984944,
+          "logical_size": 2192,
+          "stored_size": 2192,
+          "transform_size": 0
+        },
+        {
+          "index": 501,
+          "rom_start": 15984944,
+          "rom_end": 15986856,
+          "logical_size": 1912,
+          "stored_size": 1912,
+          "transform_size": 0
+        },
+        {
+          "index": 502,
+          "rom_start": 15986864,
+          "rom_end": 15988768,
+          "logical_size": 1904,
+          "stored_size": 1904,
+          "transform_size": 0
+        },
+        {
+          "index": 503,
+          "rom_start": 15988768,
+          "rom_end": 15990624,
+          "logical_size": 1856,
+          "stored_size": 1856,
+          "transform_size": 0
+        },
+        {
+          "index": 504,
+          "rom_start": 15990624,
+          "rom_end": 15991647,
+          "logical_size": 1294,
+          "stored_size": 1023,
+          "transform_size": 1023
+        },
+        {
+          "index": 505,
+          "rom_start": 15991648,
+          "rom_end": 15996305,
+          "logical_size": 6262,
+          "stored_size": 4657,
+          "transform_size": 4657
+        },
+        {
+          "index": 506,
+          "rom_start": 15996320,
+          "rom_end": 15997108,
+          "logical_size": 1070,
+          "stored_size": 788,
+          "transform_size": 788
+        },
+        {
+          "index": 507,
+          "rom_start": 15997120,
+          "rom_end": 15997763,
+          "logical_size": 892,
+          "stored_size": 643,
+          "transform_size": 643
+        },
+        {
+          "index": 508,
+          "rom_start": 15997776,
+          "rom_end": 15998384,
+          "logical_size": 881,
+          "stored_size": 608,
+          "transform_size": 608
+        },
+        {
+          "index": 509,
+          "rom_start": 15998384,
+          "rom_end": 15999011,
+          "logical_size": 919,
+          "stored_size": 627,
+          "transform_size": 627
+        },
+        {
+          "index": 510,
+          "rom_start": 15999024,
+          "rom_end": 15999583,
+          "logical_size": 791,
+          "stored_size": 559,
+          "transform_size": 559
+        },
+        {
+          "index": 511,
+          "rom_start": 15999584,
+          "rom_end": 15999996,
+          "logical_size": 571,
+          "stored_size": 412,
+          "transform_size": 412
+        },
+        {
+          "index": 512,
+          "rom_start": 16000000,
+          "rom_end": 16004555,
+          "logical_size": 7972,
+          "stored_size": 4555,
+          "transform_size": 4555
+        },
+        {
+          "index": 513,
+          "rom_start": 16004560,
+          "rom_end": 16006561,
+          "logical_size": 3149,
+          "stored_size": 2001,
+          "transform_size": 2001
+        },
+        {
+          "index": 514,
+          "rom_start": 16006576,
+          "rom_end": 16009272,
+          "logical_size": 3504,
+          "stored_size": 2696,
+          "transform_size": 2696
+        },
+        {
+          "index": 515,
+          "rom_start": 16009280,
+          "rom_end": 16010760,
+          "logical_size": 2141,
+          "stored_size": 1480,
+          "transform_size": 1480
+        },
+        {
+          "index": 516,
+          "rom_start": 16010768,
+          "rom_end": 16011397,
+          "logical_size": 899,
+          "stored_size": 629,
+          "transform_size": 629
+        },
+        {
+          "index": 517,
+          "rom_start": 16011408,
+          "rom_end": 16013342,
+          "logical_size": 3026,
+          "stored_size": 1934,
+          "transform_size": 1934
+        },
+        {
+          "index": 518,
+          "rom_start": 16013344,
+          "rom_end": 16017164,
+          "logical_size": 6062,
+          "stored_size": 3820,
+          "transform_size": 3820
+        },
+        {
+          "index": 519,
+          "rom_start": 16017168,
+          "rom_end": 16020393,
+          "logical_size": 10512,
+          "stored_size": 3225,
+          "transform_size": 3225
+        },
+        {
+          "index": 520,
+          "rom_start": 16020400,
+          "rom_end": 16020812,
+          "logical_size": 571,
+          "stored_size": 412,
+          "transform_size": 412
+        },
+        {
+          "index": 521,
+          "rom_start": 16020816,
+          "rom_end": 16023278,
+          "logical_size": 3529,
+          "stored_size": 2462,
+          "transform_size": 2462
+        },
+        {
+          "index": 522,
+          "rom_start": 16023280,
+          "rom_end": 16025281,
+          "logical_size": 3895,
+          "stored_size": 2001,
+          "transform_size": 2001
+        },
+        {
+          "index": 523,
+          "rom_start": 16025296,
+          "rom_end": 16027797,
+          "logical_size": 4204,
+          "stored_size": 2501,
+          "transform_size": 2501
+        },
+        {
+          "index": 524,
+          "rom_start": 16027808,
+          "rom_end": 16030365,
+          "logical_size": 4709,
+          "stored_size": 2557,
+          "transform_size": 2557
+        },
+        {
+          "index": 525,
+          "rom_start": 16030368,
+          "rom_end": 16036182,
+          "logical_size": 10475,
+          "stored_size": 5814,
+          "transform_size": 5814
+        },
+        {
+          "index": 526,
+          "rom_start": 16036192,
+          "rom_end": 16040862,
+          "logical_size": 11425,
+          "stored_size": 4670,
+          "transform_size": 4670
+        },
+        {
+          "index": 527,
+          "rom_start": 16040864,
+          "rom_end": 16044582,
+          "logical_size": 9466,
+          "stored_size": 3718,
+          "transform_size": 3718
+        },
+        {
+          "index": 528,
+          "rom_start": 16044592,
+          "rom_end": 16045151,
+          "logical_size": 791,
+          "stored_size": 559,
+          "transform_size": 559
+        },
+        {
+          "index": 529,
+          "rom_start": 16045152,
+          "rom_end": 16046136,
+          "logical_size": 984,
+          "stored_size": 984,
+          "transform_size": 0
+        },
+        {
+          "index": 530,
+          "rom_start": 16046144,
+          "rom_end": 16046144,
+          "logical_size": 0,
+          "stored_size": 0,
+          "transform_size": 0
+        }
+      ]
+    }
+  ],
+  "resource_records": 911,
+  "nonempty_resources": 910
+}

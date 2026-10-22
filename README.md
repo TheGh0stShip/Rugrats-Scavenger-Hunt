@@ -12,14 +12,18 @@ provide your own legally obtained USA retail ROM.
 - CIC 6102; header entry point `0x80000400`
 - Initial program: ROM `0x1000..0x57E80`, VRAM `0x80000400..0x80057280`
 - BSS: `0x80057280..0x800C7E30`
-- 1,273 initial function candidates; 268 SDK functions fingerprinted
+- Executable sections: 323,264 bytes; initialized data: 32,704 bytes
+- 1,273 conservative function candidates; 268 SDK functions fingerprinted
+- Two resource archives: 910 nonempty indexed resources in 911 records
+- Audio: 178 indexed samples across two sample and pointer-bank pairs
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
 - Matching C: 245 functions / 17,808 code bytes
 - Matching initialized data: 240 bytes
 
-The automated survey is preserved in `analysis/survey/`. Function boundaries
-are candidates until reviewed; its report explicitly records known boundary
-ambiguities.
+The reproducible physical ROM map is in `analysis/rom_map.md`; its companion
+JSON includes every resource record. The automated code survey is preserved in
+`analysis/survey/`. Function boundaries are candidates until reviewed; a
+stripped retail ROM cannot prove original source-level function boundaries.
 
 ## Verification
 
@@ -39,7 +43,6 @@ with the retail ROM.
 [ByteMatch](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt). The
 default-branch workflow publishes the same report as `us_report` after every
 push. Its aggregate measures report program code and initialized program data.
-The ROM after the initial program image is excluded until its formats and
-boundaries have been audited; those bytes are not presumed to be code, data,
-assets, images, or audio.
+The ROM-wide audit identifies audio banks and both indexed resource archives.
+Post-program resources remain excluded from the code/data progress percentage.
 

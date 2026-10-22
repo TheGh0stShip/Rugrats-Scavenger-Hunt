@@ -5,9 +5,12 @@ N64DK_PYTHON ?= $(abspath $(N64DK_ROOT))/.venv/bin/python
 N64DK_TOOLCHAIN ?= ../BattleTanx/.toolchain
 N64DK := PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) -m n64dk
 
-.PHONY: check report report-check verify-rom verify-matching survey
+.PHONY: check report report-check rom-audit verify-rom verify-matching survey
 
 check: verify-rom verify-matching report-check
+
+rom-audit: verify-rom
+	$(PYTHON) tools/audit_rom.py "$(ROM)" --json analysis/rom_map.json --markdown analysis/rom_map.md
 
 report:
 	$(PYTHON) tools/generate_decomp_report.py

@@ -20,6 +20,8 @@ MANIFESTS = (
 )
 DEFAULT_OUTPUT = ROOT / "build/report.json"
 PROGRAM_ROM_END = 0x57E80
+PROGRAM_TEXT_BYTES = 0x4EEC0
+PROGRAM_INITIALIZED_DATA_BYTES = 0x7FC0
 
 
 def manifest_ranges() -> list[tuple[int, int, str]]:
@@ -129,8 +131,9 @@ def build_report() -> dict:
         matched_code += matched
         matched_functions += int(complete)
 
-    total_code = sum(function["size"] for function in functions)
-    total_program_data = PROGRAM_ROM_END - section["rom"] - total_code
+    catalogued_function_bytes = sum(function["size"] for function in functions)
+    total_code = PROGRAM_TEXT_BYTES
+    total_program_data = PROGRAM_INITIALIZED_DATA_BYTES
     data_progress = tomllib.loads(DATA_PROGRESS.read_text())["initialized_data"]
     matched_data = data_progress["matched"]
     audited_program_data = matched_data + data_progress["unmatched"]
@@ -140,6 +143,8 @@ def build_report() -> dict:
         raise ValueError("data-progress manifest does not cover initialized program data")
     if section["rom"] + total_code + total_program_data != PROGRAM_ROM_END:
         raise ValueError("code and initialized data do not cover the program image")
+    if catalogued_function_bytes > total_code:
+        raise ValueError("function catalogue exceeds executable section size")
 
     overall = measures(
         total_code,
