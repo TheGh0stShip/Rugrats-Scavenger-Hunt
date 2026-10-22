@@ -21,6 +21,8 @@
 0x43CF4	0xC	src/game/get_state_address_c42f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f2e0b3443b98bcfc55298583103a91cb2f1c697c5eaa47b69b5f9ca310ad0ed
 0x4D5D0	0x2C	src/runtime/init_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	fb791e3f6c4cf5d4653e44e7acf51f161f79689f14c6cdd1a8a15a25eca3a5ab
 0x4D5FC	0x30	src/runtime/clear_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	2a26c4eb6d518bf6b9a2037a6c0a94a2d68fcf252c8794d4ebdc0312282cc13d
+0x4DC10	0x54	src/runtime/move_all_runtime_nodes.c	-O2 -G0 -mips3 -mgp32 -mfp32	41dd134517a327c066d179fb26f2ac489301c29050022032399ad4918195f76b
+0x4DC64	0x40	src/runtime/activate_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	23de5d3d99e3b97a8e85b2ea087995d9a65c18df7e556f108a84646b2acee6eb
 0x4DE90	0x10	src/runtime/read_audio_interface_dram_addr.c	-O2 -G0 -mips3 -mgp32 -mfp32	679568a8280a1cc54387664b9e46dd53d246ce010538ce2e3327ac214a9b4e75
 0x4DEA0	0x10	src/runtime/read_audio_interface_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca2590df63a0994d2295be9346906b5706c52e06e06a133776138a7b7929c473
 0x4EA90	0x30	src/runtime/init_queue_800c45a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca30f8ecefe984ea11d56664595c9c2812c1808b4709886bf059936c54fa86f2

@@ -95,6 +95,7 @@
 0x4CC70	0x14	src/runtime/store_when_mode_one.c	-O2 -G0 -mips3 -mgp32 -mfp32	ad4794677ad62d058a57385e2beef7bd5397ac0714bc98f110e9b8c74fcfa7c9
 0x4D5A0	0x30	src/runtime/store_record_mode.c	-O2 -G0 -mips3 -mgp32 -mfp32	c4f5b188a4ce718ac0fabf65fdd1a66b17ede31bc644e3ec17d19d36805f2149
 0x4D62C	0x20	src/runtime/prepend_doubly_linked_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	8e1e0e1b596c1ad95da3c64f594dfdc9bd751e01410837e8ccf40ee45be06116
+0x4D710	0x40	src/runtime/copy_bytes_positive.c	-O2 -G0 -mips3 -mgp32 -mfp32	b8315bb21abeccad7780c155c2e1ae0c0da78a96a60d870dbda5e8564289c4a3
 0x4DBCC	0x2C	src/runtime/pop_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	cea7d7fb3c7042c62432bc81778092618ffff9900e059c1cfa4aecb0f4a35af1
 0x4DBF8	0x18	src/runtime/push_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	53fd08d46730bf2c1724ad217e9c053aa3f99887140eaca8cd0fca7de20a7b79
 0x4E6A0	0x20	src/runtime/si_status_active.c	-O2 -G0 -mips3 -mgp32 -mfp32	badffc805f1799689b77a45ef79c9f82a6fe7c18d857553d9a3801c5bb6ce83b
