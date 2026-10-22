@@ -73,3 +73,4 @@
 0x20BEC	0x58	src/game/init_aligned_resource_pool.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9861fb8883f8239b5679508cb5338c4dc36e24ff1050dc792149d1efad751352
 0xEAEC	0x28	src/game/set_grid_record_halfword.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	622a15c97592f2f50cdd172d26138d19bfa797c64a619123064bb23499b16688
 0xEB14	0x2C	src/game/get_grid_record_halfword.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	eff029f8be2c1ceb2472be6512fc46858fea3d42fc5527fc12d2c6c2fc4709aa
+0xEA4C	0x34	src/game/clear_grid_record_flag.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	781852976de0e66b3579a84063313c2c849b9d1908b9f0dba9c89415d1d043c8
