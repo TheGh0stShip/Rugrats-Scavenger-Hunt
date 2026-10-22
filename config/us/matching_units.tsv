@@ -102,6 +102,7 @@
 0x4E080	0x20	src/runtime/audio_interface_status_negative.c	-O2 -G0 -mips3 -mgp32 -mfp32	695c2167e71480ed602fd2aefcf2dae1ebc096e9ef9489714731751b7bf8a2d2
 0x4F9A0	0x48	src/runtime/controller_address_checksum.c	-O2 -G0 -mips3 -mgp32 -mfp32	09cd19f39dfa44d2cc1c62af44818942f04faf68e0010bf786d3d8010298ec1b
 0x4F9E8	0x68	src/runtime/controller_data_checksum.c	-O2 -G0 -mips3 -mgp32 -mfp32	6264c83b65cf2820b6c375296903fa640325a6b4794f80275149588282f810bb
+0x50AA0	0x20	src/runtime/get_active_state_7218.c	-O2 -G0 -mips3 -mgp32 -mfp32	2ea99809d4724d4caf4f7799ea5f623087f964bc704b4ce42cfd2348b4b6719b
 0x52B80	0x20	src/runtime/sp_dma_active.c	-O2 -G0 -mips3 -mgp32 -mfp32	3e9a180c46c8a5a9bb9b129e0f7ff4f87641bcd77a3c4a200ba0383c71d31b61
 0x52BB0	0x30	src/runtime/set_sp_pc.c	-O2 -G0 -mips3 -mgp32 -mfp32	57c7e1feb2597ad9742f81e1beddbaf8abe34fadf84ff59faec4cfc036717333
 0x52920	0x20	src/runtime/dp_status_active.c	-O2 -G0 -mips3 -mgp32 -mfp32	01352d7623ed6883d9b5c8d2935c364315e4aa505229fa8fed2c470657debbdd

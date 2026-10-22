@@ -51,5 +51,4 @@
 0x8004D0A4	0x48	src/runtime/scale_runtime_value.c	semantic C; closest KMC assembler build differs by two instructions and one hazard nop
 0x8004D0EC	0x4C	src/runtime/scale_runtime_value_aligned.c	semantic C; closest KMC assembler build differs by two instructions and one hazard nop
 0x8004D1F0	0xA0	src/runtime/create_indexed_runtime_record.c	semantic C; target uses a different expression and register-allocation shape
-0x8004FEA0	0x20	src/runtime/get_active_state_7218.c	semantic C; closest KMC build differs in register allocation
 

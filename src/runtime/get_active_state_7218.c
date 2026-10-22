@@ -9,8 +9,9 @@ typedef struct {
 extern DeviceManager D_80057210;
 
 void *func_8004FEA0(void) {
-    if (D_80057210.active != 0) {
+    if (!D_80057210.active) {
+        return 0;
+    } else {
         return D_80057210.command_queue;
     }
-    return 0;
 }

@@ -34,6 +34,7 @@
 0x4E0A0	0x170	src/runtime/set_vi_special_features.c	-O2 -G0 -mips3 -mgp32 -mfp32	109f4561832ee4e82c7a51427213447c0abd9ba01fb0fbc29708b006307d44e2
 0x4EA90	0x30	src/runtime/init_queue_800c45a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca30f8ecefe984ea11d56664595c9c2812c1808b4709886bf059936c54fa86f2
 0x4EDD0	0xA0	src/runtime/set_timer.c	-O2 -G0 -mips3 -mgp32 -mfp32	22d601164403530fcc58c74ce296a99191bba6fdc15530587bdaa12a43dc5888
+0x508C0	0xA0	src/runtime/start_extended_pi_dma.c	-O2 -G0 -mips3 -mgp32 -mfp32	fea315489d7e832e5ab38d04a58a2f07b6a231381b3abfecf2cd8417307f5d1c
 0x52BA0	0x10	src/runtime/write_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	87f4554b65720db3a616e71c1e06b8c2f95731c91b14d0bffeb4b618a8b379d4
 0x52D50	0x10	src/runtime/read_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2e827923487755f449dbe9074b0d6fbc69a89128fd74ab6f1b1d25c100006a03
 0x53110	0xC	src/game/get_state_word_563c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4b3259da4085639bbe0e77391c973abacc77d0ba4b139dc7d587f0324398ede6
@@ -44,6 +45,7 @@
 0x51AB0	0x54	src/runtime/create_pi_access_queue.c	-O2 -G0 -mips3 -mgp32 -mfp32	de42f2e0bbcf7be7f1c2bc2a8674badf2dc1ac3bcc20ee379e965852f0ff3836
 0x51B04	0x6C	src/runtime/get_pi_access.c	-O2 -G0 -mips3 -mgp32 -mfp32	d5dc729ba126b91ba7881cf4d978bac22df7a8f69f4ecf30c377a1c405c38d72
 0x51B70	0x30	src/runtime/init_queue_800c6bb0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4898bbe35a61b10c1519c367398fa7c2c4f9324b4759ac1f113a1269e0a4d2ff
+0x51BA0	0xB0	src/runtime/start_pi_dma.c	-O2 -G0 -mips3 -mgp32 -mfp32	214699dcbc433a7b78fdbb877b991d6b4cbe88e447594d77ba689160378ee510
 0x51CF0	0x14	src/runtime/diagnostic_stub_800510f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	7008cedc7bc7666823ccb635b2fcb91203276ea030284707c9e8f52db2ea3448
 0x51D04	0x1C	src/runtime/diagnostic_stub_80051104.c	-O2 -G0 -mips3 -mgp32 -mfp32	aa856e35dba294708397847ba0b81ee640868e8cb6bb484286779e156a944ec2
 0x51D20	0x148	src/runtime/create_scheduler.c	-O2 -G0 -mips3 -mgp32 -mfp32	a2d5b4e98b085b66d41c4c346a972f698bec500365ef7e42e501782ee2f5b011
