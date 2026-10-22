@@ -100,6 +100,7 @@
 0x43D00	0x2C	src/game/fill_bytes.c	-O2 -G0 -mips3 -mgp32 -mfp32	ada7b60864dacba13ef8ff02ce36ba72f67b5191b7620ebeb9ecff03e5d6438b
 0x3F484	0x30	src/game/parser_read_var_ac.c	-O2 -G0 -mips3 -mgp32 -mfp32	a0ceb049d9359bc858525d9311acf517e31d89178c2022c4f421b674761b2cdf
 0x2B5A4	0x30	src/game/get_object_node_field_2c.c	-O2 -G0 -mips3 -mgp32 -mfp32	54f6064dfa17107e4e8e6a81792d4fad9ee5465b40590ec49a42ba67ef213670
+0x3F6FC	0x48	src/game/parser_select_record_84.c	-O2 -G0 -mips3 -mgp32 -mfp32	4b2d045107694fd9d0fba72a7b2734beb2a86a2b02275ea328d993498c20a936
 0x3F750	0x8	src/game/parser_skip_one.c	-O2 -G0 -mips3 -mgp32 -mfp32	932e3d781ad736264ff78a311ed98bbccda8db3c8362dcf4777c2dc4534d072e
 0x3F7C8	0x10	src/game/parser_read_ca.c	-O2 -G0 -mips3 -mgp32 -mfp32	43288ec873b3d0201f4923ce6827f0625f13966b537a6f1be24dd25c05fe110a
 0x3F8C8	0x10	src/game/parser_read_bc.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c5d4970ca0ed79eea132b3e6b1001d9cd90b2597485e54c3018dcf1a9a60d70

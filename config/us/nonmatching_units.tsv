@@ -1,7 +1,4 @@
 # VRAM SIZE SOURCE NOTES
-0x8003E800	0x74	src/game/parser_read_inverse_motion.c	semantic C; closest KMC build differs in floating-point allocation and scheduling
-0x8003E8E4	0x58	src/game/parser_adjust_float_30.c	semantic C; closest KMC build differs in sign extension and floating-point scheduling
-0x8003EAFC	0x48	src/game/parser_select_record_84.c	semantic C; closest KMC build differs in instruction selection and registers
 0x8003EB58	0x70	src/game/parser_set_position.c	semantic C; byte parsing and record offsets recovered but code generation differs
 0x8003E47C	0x54	src/game/update_matching_records.c	semantic C; loop branch shape and allocation remain unmatched
 0x8003E54C	0x128	src/game/parser_read_interpolation.c	semantic C; parser layout recovered, with remaining KMC scheduling/allocation differences
