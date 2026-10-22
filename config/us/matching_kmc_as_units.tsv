@@ -96,3 +96,7 @@
 0x3BC20	0x14	src/game/return_zero_8003b020.c	-O2 -G0	8ccb6993b3324e93313736a0c3176f085573965078bdbf35b24e00db7ff51923
 0x4101C	0x24	src/game/reset_control_object.c	-O2 -G0	0f90a5c61a05fb3240f752da2ed1364ee4cb8e769b70f44b049473ecc2c44ffb
 0x4D64C	0x34	src/runtime/unlink_doubly_linked_node.c	-O2 -G0	731974050a9ccbc9ad118b04cfc7c7b335a8706c8c6320dae11469195fd5a00f
+0x468E0	0x10	src/game/square_root.c	-O2 -G0 -mips3 -mgp32 -mfp32	4ea14d5f89379ec41118bbacbd120dec7513472a303805a5461b4438f53a0626
+0x3CFD4	0x24	src/game/submit_mode_0.c	-O2 -G0	028a05d3b925ccabc67df06450506f21844110716d4dc3c8bfab020eb0d16d0a
+0x3CFF8	0x28	src/game/submit_mode_1.c	-O2 -G0	4192cd5fc273b3315db7eac1ffefc44c2a322401b5bc04bc3b54569d0fa25617
+0x3D020	0x30	src/game/submit_mode_2.c	-O2 -G0	64caede8f06bf2001cc81ce27cc6b2edfe3bb9aad19a072b79b1d087cdd69f0a

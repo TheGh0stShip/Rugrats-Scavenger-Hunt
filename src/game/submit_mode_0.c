@@ -1,3 +1,13 @@
 typedef unsigned char u8;
 extern void func_8003C744(u8 *mode);
-void func_8003C3D4(void *unused) { u8 mode = 0; func_8003C744(&mode); }
+void func_8003C3D4(void *unused) {
+    struct {
+        u8 mode;
+        u8 padding[3];
+        void *volatile argument;
+    } locals;
+
+    locals.mode = 0;
+    locals.argument = unused;
+    func_8003C744(&locals.mode);
+}
