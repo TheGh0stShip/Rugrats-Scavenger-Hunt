@@ -15,6 +15,9 @@ SPEC.loader.exec_module(AUDIT)
 
 
 class RomAuditTests(unittest.TestCase):
+    def test_signature_census_includes_overlapping_occurrences(self) -> None:
+        self.assertEqual(AUDIT.find_all(b"aaaa", b"aa"), [0, 1, 2])
+
     def test_declared_ranges_cover_rom(self) -> None:
         ranges = (
             (0, AUDIT.PROGRAM_START),

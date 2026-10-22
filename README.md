@@ -19,11 +19,13 @@ provide your own legally obtained USA retail ROM.
 - Audio: 178 indexed samples across two sample and pointer-bank pairs
 - Asset signatures: 380 `MORT` records and 376 `mdlh` model-header records
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Matching C: 388 functions / 24,832 code bytes
+- Matching C: 391 functions / 24,976 code bytes
 - Matching initialized data: 240 bytes
 - Physical ROM inventory: 16,777,216 / 16,777,216 bytes (100%)
 
-The reproducible physical ROM map is in `analysis/rom_map.md`. Its companion
+The reproducible physical ROM map is in `analysis/rom_map.md`; the combined
+function, data, archive, audio, and attack-priority analysis is in
+`analysis/deep_rom_audit.md`. The map's companion
 JSON includes every resource and audio-sample record, while the hosted tracker
 reports byte-matched code, byte-matched initialized data,
 asset extraction, asset-container inventory, and physical ROM coverage as
@@ -59,4 +61,6 @@ default-branch workflow publishes the same report as `us_report` after every
 push. Its aggregate measures report program code and initialized program data.
 The ROM-wide audit identifies audio banks and both indexed resource archives.
 Post-program resources remain excluded from the code/data progress percentage.
+Run `make deep-rom-audit` to regenerate the physical map, progress report, and
+combined attack map from the verified retail image.
 

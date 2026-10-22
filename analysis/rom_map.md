@@ -2,6 +2,7 @@
 
 SHA-1: `fb2a62f1625630d6f0beb5fd00a32e12155d50e8`  
 ROM size: 16,777,216 bytes (`0x1000000`)
+Build stamp: `05.04.99 11.13`
 
 All ranges are half-open. The table covers every physical ROM byte exactly once.
 
@@ -74,9 +75,13 @@ The two pointer banks index 178 audio samples containing 1,807,650 bytes of enco
 - Storage paths: 380 direct, 0 transformed
 - Indexed storage: 2,879,376 bytes
 - Logical/allocation sizes: 2,879,376 bytes
+- Record sizes: minimum 472, median 6,752.0, p90 11,492, maximum 63,012 bytes
+- Exact duplicate payloads: 1 groups, 2 records
 - Inter-record/alignment padding: 2,408 bytes
 - Recognized leading signatures: MORT=380, mdlh=0
 - Exact prefix families (records / stored bytes): 4d4f5254=380/2,879,376
+
+Duplicate record-index groups: 38/379
 
 ### resource_archive_2
 
@@ -86,10 +91,26 @@ The two pointer banks index 178 audio samples containing 1,807,650 bytes of enco
 - Storage paths: 382 direct, 148 transformed
 - Indexed storage: 10,944,013 bytes
 - Logical/allocation sizes: 11,913,050 bytes
+- Record sizes: minimum 116, median 3,421.5, p90 58,200, maximum 342,144 bytes
+- Exact duplicate payloads: 19 groups, 48 records
 - Inter-record/alignment padding: 2,679 bytes
 - Recognized leading signatures: MORT=0, mdlh=376
 - Exact prefix families (records / stored bytes): 6d646c68=376/10,092,456, 04000100=48/39,840, 04000002=26/55,670, 06000400=17/44,720, 06000300=11/8,430, 06004000=10/562,167, 04000200=8/11,750, 06000200=7/6,284, 00000000=6/74,616, 06000600=4/14,578, 43000128=3/1,011, 43000132=3/2,007, 04000001=2/2,091, 04000005=2/6,154, 04000046=2/13,512, 04000003=1/1,215, 04000004=1/1,906, 04000300=1/2,788, 06000700=1/2,450, 430001de=1/368
 
+The 148 transformed records occupy 776,941 bytes and expand to 1,745,978 bytes (stored/logical ratio 0.445).
+
+Duplicate record-index groups: 98/99, 203/214, 204/215, 205/216, 206/217, 232/235/237, 245/246/247/248, 257/258/259/260/261, 266/270/274, 267/271/275, 268/272/276, 269/273/277, 325/327, 370/371, 424/426, 427/529, 467/468, 510/528, 511/520
+
+## Signature census
+
+Counts below are full-ROM exact byte searches. Archive membership is still the stronger structural evidence.
+
+| Signature | Occurrences | Offsets |
+|---|---:|---|
+| `MORT` | 380 | `0x21BDE0`, `0x21DF60`, `0x21FD20`, `0x221350`, `0x222390`, `0x223470`, `0x224550`, `0x225440` ... |
+| `mdlh` | 378 | `0x001D40`, `0x002230`, `0x53F650`, `0x5435A0`, `0x543D10`, `0x544610`, `0x544D20`, `0x545490` ... |
+| `N64 PtrTablesV2` | 2 | `0x057FD0`, `0x215C80` |
+| `N64 WaveTables` | 2 | `0x05B470`, `0x111310` |
 ## Important limits
 
 The archive indices establish exact physical boundaries and counts. Resource semantics (models, textures, animation, and related content) require format-specific parsing; prefixes alone are not used to claim semantic counts.
