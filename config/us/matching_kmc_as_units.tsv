@@ -93,3 +93,6 @@
 0x47E30	0x2D4	src/runtime/matrix_rotate.c	--section-base=.data:0x80055FF0 -O3 -G0 -mips3 -mgp32 -mfp32	fdf48cb103e7ffb09a0110cb3cf20dbb078679ea3875140e629ba6aa361b4551
 0x47AB0	0x380	src/runtime/matrix_perspective.c	--section-base=.rodata:0x80003570 -O3 -G0 -mips3 -mgp32 -mfp32	ed4c43cf691778a9e3f3bcd6860c83c559344a3526002147150da5fb6a19994d
 0x3FAA8	0x18	src/game/parser_clear_ac.c	-O2 -G0	4e3178abf83d2b6a7c07635433bde4cf641dfa1bd52928b34c9e6460fe95dfe1
+0x3BC20	0x14	src/game/return_zero_8003b020.c	-O2 -G0	8ccb6993b3324e93313736a0c3176f085573965078bdbf35b24e00db7ff51923
+0x4101C	0x24	src/game/reset_control_object.c	-O2 -G0	0f90a5c61a05fb3240f752da2ed1364ee4cb8e769b70f44b049473ecc2c44ffb
+0x4D64C	0x34	src/runtime/unlink_doubly_linked_node.c	-O2 -G0	731974050a9ccbc9ad118b04cfc7c7b335a8706c8c6320dae11469195fd5a00f

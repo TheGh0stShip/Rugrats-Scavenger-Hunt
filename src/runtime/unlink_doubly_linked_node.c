@@ -13,3 +13,5 @@ void func_8004CA4C(Link *node) {
         node->previous->next = node->next;
     }
 }
+
+__asm__("nop\n\tnop\n\tnop");

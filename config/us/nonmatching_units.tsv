@@ -23,16 +23,13 @@
 0x8002A9A4	0x30	src/game/get_object_node_field_2c.c	semantic C; closest KMC build differs in conditional selection and scheduling
 0x8002BC50	0x1C	src/game/init_state_544e0.c	semantic C; closest KMC build has three immediate differences
 0x8003AF84	0x2C	src/game/dispatch_fe02.c	semantic C; closest KMC build has two scheduling differences
-0x8003B020	0x14	src/game/return_zero_8003b020.c	semantic C; target includes unmatched hazard padding
 0x8003C3D4	0x24	src/game/submit_mode_0.c	semantic C; target homes an otherwise unused argument and includes padding
 0x8003C3F8	0x28	src/game/submit_mode_1.c	semantic C; target homes an otherwise unused argument and includes padding
 0x8003C420	0x30	src/game/submit_mode_2.c	semantic C; target homes an argument and differs in final padding
-0x8004041C	0x24	src/game/reset_control_object.c	semantic C; closest KMC build differs by one hazard nop and final size
 0x80040BA8	0x2C	src/game/pop_object_node.c	semantic C; closest KMC assembler build differs in register allocation and scheduling
 0x80043100	0x2C	src/game/fill_bytes.c	semantic C; closest KMC build differs in loop shape and register allocation
 0x80044258	0x18	src/game/set_object_state_4.c	semantic C; closest IDO 5.3 build lacks two trailing hazard nops
 0x80045CE0	0x10	src/game/square_root.c	semantic C; target is a hand-authored sqrt.s leaf with padding
-0x8004CA4C	0x34	src/runtime/unlink_doubly_linked_node.c	semantic C; closest KMC build lacks one target hazard nop
 0x8004CA80	0x40	src/runtime/init_aligned_arena.c	semantic C; closest KMC build differs in temporary register allocation
 0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs in register allocation and scheduling
 0x8004D0A4	0x48	src/runtime/scale_runtime_value.c	semantic C; closest KMC assembler build differs by two instructions and one hazard nop
