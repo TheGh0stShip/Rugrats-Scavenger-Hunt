@@ -65,3 +65,5 @@
 0x13050	0x38	src/game/initialize_state_52e94.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1724efdd4866bd53d59c7ca801ad306b9e7c8ded984e69b88ffe4b1017562c25
 0x173D0	0x38	src/game/validate_indexed_records.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	be22c02315f5d7c013e5cd860e262769dbfdbdfa28efabe7bb9e08ca7d6ae83e
 0x30E00	0x38	src/game/reset_scene_timing.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1e6378e3d4ce98754fdce2095a30b3adc426b40ccb0eba3e774a6e8069cef4f3
+0x1F1F0	0x40	src/game/advance_wrapped_resource_pointer.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d8783654024a49a716ad50288c6d1af26162b69aeca30c2aa61e362f9e8944f0
+0x1A2A4	0x44	src/game/count_active_mode_slots.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	675900f7f5998dea1ed9d6b6178209d45ab710c315a0213fa6dbe53e21c126df
