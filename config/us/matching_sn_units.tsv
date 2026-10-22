@@ -48,3 +48,5 @@
 0x26C10	0x30	src/game/count_object_entries.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	be1f9f6fc9500abe404e32d14502d82c14221335ff25a6c65e7c857f05eba46a
 0x30E8C	0x2C	src/game/set_runtime_callbacks.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	40ab717706707dd5d5afa63d2db88a1baf963964b3209a5919469a626f5ac4f0
 0xDAEC	0x24	src/game/record_field_is_set.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5d2aea9a94df5bc214d5800abc1f729ff904b6167c8d08a5ca9344d38ef53efb
+0x1CF40	0x2C	src/game/current_input_has_flag_10.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	952be7697899af27b0d31d75fbe100e8b72f0aa6beb3e4ec3d7cc9d4087f9dc5
+0x1CF6C	0x2C	src/game/current_input_has_flag_40.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	aea3f33d260cec3014906b0dde9c9a61fda21290991032f3e6bd2e46cb3bffa5
