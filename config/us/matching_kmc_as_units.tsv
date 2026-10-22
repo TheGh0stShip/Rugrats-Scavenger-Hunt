@@ -19,11 +19,13 @@
 0x43494	0xC	src/game/get_callback_800428a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4483f657f9ecfeb06431b149aeb5e15f8001a02f506d4e223d03da54f3173b39
 0x436A0	0xC	src/game/set_state_word_c40c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	68a32b2ba216903f09416c6d05914baea5c3bc97529b86f2fd02d64abb10bdfd
 0x43CF4	0xC	src/game/get_state_address_c42f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f2e0b3443b98bcfc55298583103a91cb2f1c697c5eaa47b69b5f9ca310ad0ed
+0x48AE0	0xD0	src/runtime/create_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	bdd4109589a4bebba113580bec3ccaab2820f6fcecd70fedc07a83949ca12900
 0x4D5D0	0x2C	src/runtime/init_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	fb791e3f6c4cf5d4653e44e7acf51f161f79689f14c6cdd1a8a15a25eca3a5ab
 0x4D5FC	0x30	src/runtime/clear_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	2a26c4eb6d518bf6b9a2037a6c0a94a2d68fcf252c8794d4ebdc0312282cc13d
 0x49610	0x90	src/runtime/get_time.c	-O2 -G0 -mips3 -mgp32 -mfp32	0baa4662a2479447e6cd6e5643345e6db179f9c7e4cf74ffc79f03332a3c29d6
 0x499D0	0x130	src/runtime/receive_message.c	-O2 -G0 -mips3 -mgp32 -mfp32	5e059c250729d45cc3da7a9b4687c5625fc4cee311c44055d08150cca5193b1e
 0x49B00	0x130	src/runtime/send_message.c	-O2 -G0 -mips3 -mgp32 -mfp32	53de7440763bd72bd68d47fbd9f2a0954dbb35ffffc8f81e3bed78075fe1227b
+0x49C30	0x60	src/runtime/set_event_message.c	-O2 -G0 -mips3 -mgp32 -mfp32	d8981ebf36fd497b7b4aa30753b7b7acf8826a26293880629639eb07d7a039a9
 0x49540	0xD0	src/runtime/destroy_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	4980d235695127602990fe5f50d519915f004b210daa9dc4c863da44cd94cf0b
 0x49C90	0xD0	src/runtime/set_thread_priority.c	-O2 -G0 -mips3 -mgp32 -mfp32	e630ed02a34e16a5462f004707a822c83f36382dec5269d1bac2082d3a2f7223
 0x49D60	0x120	src/runtime/start_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	d82f5945aeae42a33039a3085dc91fa641e99bf64ee0be02a1a3706c2da8e570
