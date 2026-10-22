@@ -229,3 +229,6 @@
 0x5778	0x10	src/runtime/jump_to_exception_entry_194.c	-O2 -G0 -mips3 -mgp32 -mfp32	13f200562894692e745528a10539b3460e2479956b404a8f3162a725de811721
 0x57B0	0x10	src/runtime/jump_to_exception_entry_14.c	-O2 -G0 -mips3 -mgp32 -mfp32	def2fa647979ada99cfe3c7a7114c17b9e66a66cd175e02ec71bdd85ef1ab83b
 0x48BB0	0x10	src/runtime/jump_to_thread_entry.c	-O2 -G0 -mips3 -mgp32 -mfp32	6112d81e3b008cad21cce84561b8767e68ce5ec1a57269069930d4041abe541d
+0x12158	0x8	src/game/jump_to_state_handler.c	-O2 -G0 -mips3 -mgp32 -mfp32	0801c5d781ab193c544820949f74d7ba730d0c0df9e5fa6f62824b1ebd7d2786
+0x3BB30	0x14	src/game/return_command_token.c	-O2 -G0 -mips3 -mgp32 -mfp32	da1da61b09d4cc1c2508063099e8acdafca9088524722ab7662dec07246ad564
+0x3742C	0x18	src/runtime/clear_watchpoint.c	-O2 -G0 -mips3 -mgp32 -mfp32	be7bf6c78932bd569d1c2bfae45eb70d11d9f2180c4a873138a867c545e58adc
