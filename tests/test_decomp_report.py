@@ -20,7 +20,7 @@ class DecompReportTests(unittest.TestCase):
         totals = report["measures"]
 
         self.assertEqual(totals["total_code"], "323264")
-        self.assertEqual(totals["matched_code"], "26608")
+        self.assertEqual(totals["matched_code"], "26812")
         self.assertEqual(totals["total_data"], "32704")
         self.assertEqual(totals["matched_data"], "240")
 

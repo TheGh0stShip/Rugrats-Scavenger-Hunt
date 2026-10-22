@@ -206,6 +206,9 @@
 0x45F0	0x38	src/runtime/disable_interrupt_bit.c	-O2 -G0 -mips3 -mgp32 -mfp32	b9874e83b4315df33da17ccb4be92b4d81c57476cf2e134bf7c37ace63d4ddf3
 0x4628	0x30	src/runtime/enable_interrupt_bits.c	-O2 -G0 -mips3 -mgp32 -mfp32	ccfece60fb8bcc60b512fdc9716a3f5319050221d7d93e27a3cdd85dd229f920
 0x4870	0x3C	src/runtime/store_unaligned_byte.c	-O2 -G0 -mips3 -mgp32 -mfp32	51b6cc29401b66eb77f962f3192d1896f69943bc7b9c5b5ed71c27d6c1f0bdda
+0x4714	0x40	src/runtime/read_unaligned_byte.c	-O2 -G0 -mips3 -mgp32 -mfp32	8168e72cc6fd16c739152218fc4d8fd4cf3bc6966b9c161482295b0b2db22104
+0x4754	0x40	src/runtime/read_unaligned_byte_alt.c	-O2 -G0 -mips3 -mgp32 -mfp32	8168e72cc6fd16c739152218fc4d8fd4cf3bc6966b9c161482295b0b2db22104
+0x5380	0x4C	src/runtime/run_protected_command.c	-O2 -G0 -mips3 -mgp32 -mfp32	a124e7f18aa0ca05d7631e7d6e7de2f77ae4debb684aa9de8685ff256517a5e5
 0x312CC	0x30	src/game/finalize_scene_state_extended.c	-O2 -G0 -mips3 -mgp32 -mfp32	2950fc6775a8027825b623789d3ca07b2fecfe65806f540f7d01998dce599eaa
 0x36464	0x28	src/game/enable_state_and_clear_field_f4.c	-O2 -G0 -mips3 -mgp32 -mfp32	11893bf8a5c2cca267cde6193ebb1864c78adb86091bf7f173b3d556497b100d
 0x755C	0x6C	src/game/remap_identifier_neighbor.c	-O2 -G0 -mips3 -mgp32 -mfp32	edb8e80319e6c43ee093e5bfc88e22cd67f9d1d95c2d59b33b0647202ace3af5
