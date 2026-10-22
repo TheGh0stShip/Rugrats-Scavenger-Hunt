@@ -47,3 +47,4 @@
 0x1C1BC	0x30	src/game/get_active_limited_delta.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f5b5cf72be88a997fb7a6d38cfeecf5be50411158b04f1028704bf5998da2495
 0x26C10	0x30	src/game/count_object_entries.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	be1f9f6fc9500abe404e32d14502d82c14221335ff25a6c65e7c857f05eba46a
 0x30E8C	0x2C	src/game/set_runtime_callbacks.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	40ab717706707dd5d5afa63d2db88a1baf963964b3209a5919469a626f5ac4f0
+0xDAEC	0x24	src/game/record_field_is_set.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5d2aea9a94df5bc214d5800abc1f729ff904b6167c8d08a5ca9344d38ef53efb
