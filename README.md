@@ -11,7 +11,7 @@ provide your own legally obtained USA retail ROM.
 - BSS: `0x80057280..0x800C7E30`
 - 1,273 initial function candidates; 268 SDK functions fingerprinted
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Matching C: 215 functions / 11,848 code bytes
+- Matching C: 218 functions / 12,532 code bytes
 - Matching initialized data: 144 bytes
 
 The automated survey is preserved in `analysis/survey/`. Function boundaries
