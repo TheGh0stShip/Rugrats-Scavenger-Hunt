@@ -64,7 +64,7 @@
 0x508C0	0xA0	src/runtime/start_extended_pi_dma.c	-O2 -G0 -mips3 -mgp32 -mfp32	fea315489d7e832e5ab38d04a58a2f07b6a231381b3abfecf2cd8417307f5d1c
 0x52BA0	0x10	src/runtime/write_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	87f4554b65720db3a616e71c1e06b8c2f95731c91b14d0bffeb4b618a8b379d4
 0x52D50	0x10	src/runtime/read_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2e827923487755f449dbe9074b0d6fbc69a89128fd74ab6f1b1d25c100006a03
-0x53110	0xC	src/game/get_state_word_563c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4b3259da4085639bbe0e77391c973abacc77d0ba4b139dc7d587f0324398ede6
+0x53110	0x10	src/game/get_state_word_563c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	1487cf2b019a0db356627c16db270ed2aa170b19ff816a587c4d4e402ef80bcb
 0x50600	0x20	src/runtime/get_record_word_4.c	-O2 -G0 -mips3 -mgp32 -mfp32	86f6fd08af0681cf480e5999389d1c60870815cab7a4c38c30d9adf5599885ee
 0x516F0	0x50	src/runtime/disable_runtime_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	1ede03b7be7083e3b5c925e1162e5c7e85dbdadd7e5cac060dc5c55d7520dc61
 0x51740	0x40	src/runtime/enable_runtime_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	5577be63f1398def27c8c820636b9d09f366221fafcb63df4aabf80e15657c4a

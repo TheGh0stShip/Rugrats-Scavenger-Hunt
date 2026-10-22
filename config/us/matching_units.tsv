@@ -220,3 +220,8 @@
 0x496A0	0x10	src/runtime/read_cop0_count.c	-O2 -G0 -mips3 -mgp32 -mfp32	49439260d2ea325fd9d1049a302274c512c90775bbc3751b54513b65152f01ae
 0x49960	0x10	src/runtime/write_cop0_status_delayed.c	-O2 -G0 -mips3 -mgp32 -mfp32	8c9798aafb630c54a679991a2a686c3379687a94f8b3c8c14e5eafe1cd8cb961
 0x4A1C0	0x10	src/runtime/write_cop0_compare.c	-O2 -G0 -mips3 -mgp32 -mfp32	424b05c5a5a48f29b4669731a97ea63a5ee362e2b47fa58afc9317487695229c
+0x498C0	0x10	src/runtime/read_cop0_status_alt.c	-O2 -G0 -mips3 -mgp32 -mfp32	98eb78e5220bcc1e31ff049202bde4471c76ac15ebbc22d818771f741671fe0a
+0x49500	0x20	src/runtime/disable_interrupts.c	-O2 -G0 -mips3 -mgp32 -mfp32	b5ec893cd5c1e37c723f982142b67fc24befcf35b6e48b596abbcca4c4d44560
+0x49520	0x20	src/runtime/enable_interrupt_mask.c	-O2 -G0 -mips3 -mgp32 -mfp32	760fabe684a57096a1f98fb972d27fc9ae0f5b227768fa227ed73c15b4ad1e09
+0x586C	0x1C	src/runtime/invalidate_instruction_cache.c	-O2 -G0 -mips3 -mgp32 -mfp32	7fa634084d1c34c9ab3a71ad827d92d481a457df55a9557bf5e5f40088c82ded
+0x5888	0x1C	src/runtime/invalidate_data_cache.c	-O2 -G0 -mips3 -mgp32 -mfp32	b108f5136c8776d18c6006066648434d6510bba7727aa316e6071ef934da6a3f
