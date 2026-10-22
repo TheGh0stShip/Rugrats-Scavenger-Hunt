@@ -164,3 +164,6 @@
 0x34A70	0x20	src/game/call_func_8001def8.c	-O2 -G0 -mips3 -mgp32 -mfp32	081108bcfea0d0567a853bad4558256ef74d75f19932b87f41f0c8b46c0bd029
 0x3E154	0x1C	src/game/reset_parser_runtime_fields.c	-O2 -G0 -mips3 -mgp32 -mfp32	85c2dddf6a528a6f37775c91d4c2f49a0dfc9f7f666d742786b8cbe17a9d7b94
 0x106E8	0x20	src/game/relocate_header_offsets.c	-O2 -G0 -mips3 -mgp32 -mfp32	3b01df0002f6d8fe3239ddda2dc4e2cd8751f2f3385db64677991dd2a85b7954
+0x8700	0x24	src/game/call_with_unit_scale.c	-O2 -G0 -mips3 -mgp32 -mfp32	89751ea5c79c70df8600b268c0a8fa539d013e7a506e60ff3b2fa4b2f14b57a5
+0xEDB0	0x18	src/game/remap_high_identifier.c	-O2 -G0 -mips3 -mgp32 -mfp32	908ef205252a32368285c53c66d1defa5e627aeb642b6d8a2ee6226a3c538c87
+0x14714	0x28	src/game/finalize_resource_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	f3354168e492f5a6fb97c72bb6c4d90446d8ae9fae493a770b5bcc723477f14f
