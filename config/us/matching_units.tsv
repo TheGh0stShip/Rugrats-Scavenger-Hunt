@@ -1,5 +1,8 @@
 # KMC GCC 2.7.2 exact matching units
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x124F0	0x40	src/game/enable_player_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	771fd439079f4b5e43faf3a7a1e0510eed2d41d8742bdbbb0fb341a2605ddd76
+0x1A700	0x40	src/game/init_input_ranges.c	-O2 -G0 -mips3 -mgp32 -mfp32	c55af13d2fc76ad7e1c9742b0ca50e05a4afc3c1674ba32eabfdde07fcb48b18
+0x1FCA8	0x40	src/game/set_resource_pair.c	-O2 -G0 -mips3 -mgp32 -mfp32	68bc3edfbdb11e54a5b8878d7aa43fedc072b5f97f57d0c14aa0e050c5544aeb
 0x1FF6C	0x3C	src/game/release_loaded_identifier.c	-O2 -G0 -mips3 -mgp32 -mfp32	c5686fabb246f87d046210f4acde802aab5f89345c58f683ea3b819d5698874b
 0x26C64	0x34	src/game/insert_object_slot.c	-O1 -G0 -mips3 -mgp32 -mfp32	176fe04a42a7354ddf6432ca47a4722de2cea482bd9b95133d882f44519795fc
 0xE510	0x38	src/game/process_object_30.c	-O2 -G0 -mips3 -mgp32 -mfp32	9767cc1781d62234f152edd7612b46bdd3dc442cc7c871a9043f1e54053c3d04
