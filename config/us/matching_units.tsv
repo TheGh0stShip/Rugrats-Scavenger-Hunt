@@ -170,3 +170,8 @@
 0xA864	0x28	src/game/call_state_handler_9194.c	-O2 -G0 -mips3 -mgp32 -mfp32	6e2503db2b56ff4f4890d1444b66b0b8848daaeeb919320300037c4becb9ffe4
 0x1D31C	0x30	src/game/finish_when_ready_8001c71c.c	-O2 -G0 -mips3 -mgp32 -mfp32	20c6426a2bb955f4072872172cae55392e0eb294b5d7457395232f4fc8ee9cc9
 0x1D34C	0x30	src/game/finish_when_ready_8001c74c.c	-O2 -G0 -mips3 -mgp32 -mfp32	20c6426a2bb955f4072872172cae55392e0eb294b5d7457395232f4fc8ee9cc9
+0x131E0	0x2C	src/game/clear_state_timer_block.c	-O2 -G0 -mips3 -mgp32 -mfp32	024dd6a48f909827fdd2df8d66d2b44220e61c675e17b36546d3be699f5b183d
+0x21EA4	0x2C	src/game/clear_state_pointer_fb8c.c	-O2 -G0 -mips3 -mgp32 -mfp32	c1bbfee0d58cc9d7ab2b161fd8708aeff885983b4ebafd55073342536310dcef
+0x30F28	0x28	src/game/finalize_scene_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	ecf0ce7658ca638db691c81747d929dd1280d1a1dffe42eb201bcc7aea62d258
+0x312CC	0x30	src/game/finalize_scene_state_extended.c	-O2 -G0 -mips3 -mgp32 -mfp32	2950fc6775a8027825b623789d3ca07b2fecfe65806f540f7d01998dce599eaa
+0x36464	0x28	src/game/enable_state_and_clear_field_f4.c	-O2 -G0 -mips3 -mgp32 -mfp32	11893bf8a5c2cca267cde6193ebb1864c78adb86091bf7f173b3d556497b100d
