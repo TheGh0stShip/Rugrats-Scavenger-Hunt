@@ -26,3 +26,5 @@
 0x1F250	0x18	src/game/reset_resource_indices.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	31192fa2836a35e6c040a9fd416ed74b187fe10cffef63e26aef91dc34e33c61
 0x79B0	0x1C	src/game/select_count.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b99e9ab2561b515835e81386133461a22ecec7194c2f816c8c7e385e48a95759
 0x2AD3C	0x18	src/game/enable_state_b92a8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f69414f16289ffe2f01aa3c13fc04cdf49730667bd6c91e959a90257a1259f04
+0xC4C4	0x14	src/game/get_state_flag_10000000.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	371f262cb16ce2751133ac06e0eabc8aaaa53c89520cc469c08722bd82b2eff7
+0xC4D8	0x14	src/game/get_state_flag_20000000.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	16a4668c99b626a6326863fb6d9a800e512a1290d36283159b134af892cba0e3

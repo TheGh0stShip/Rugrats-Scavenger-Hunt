@@ -137,4 +137,5 @@
 0x51F50	0x8	src/game/get_object_field_78_address.c	-O2 -G0 -mips3 -mgp32 -mfp32	d82c49368eef6b8ec668ea667cb0a950e97a442870973cd6baf8b3e57bcda040
 0x2B1C8	0x24	src/game/get_active_field_28.c	-O2 -G0 -mips3 -mgp32 -mfp32	7e5b2d1626b289b29075c0193cc16893c0de6662185189f0be1113049956ae99
 0x2B204	0x24	src/game/get_active_field_2c.c	-O2 -G0 -mips3 -mgp32 -mfp32	1a9e6360c43f9e51a3bff3f1357c7fc90db3a1f3f5cf517a7acc1ca57b9de9dd
+0xC4EC	0x18	src/game/state_high_nibble_is_clear.c	-O2 -G0 -mips3 -mgp32 -mfp32	a25280a1dd056a7a0690eead80accad9b1bc26a7b7ba6d082a8f2aa389aa35aa
 
