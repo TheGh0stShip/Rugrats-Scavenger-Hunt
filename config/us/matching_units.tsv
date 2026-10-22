@@ -144,4 +144,7 @@
 0x1CB24	0x18	src/game/set_active_field_2c_if_present.c	-O2 -G0 -mips3 -mgp32 -mfp32	4716bf788e474f47263f86746e5015f8cfa347029c5afa8d6c69481303bb55b8
 0x1CB00	0x24	src/game/get_active_field_28_or_negative.c	-O2 -G0 -mips3 -mgp32 -mfp32	0ffb6ad13893ab00bf3a3937e43bea827f382b660d7f8308a37975454905f4dc
 0x1CB3C	0x24	src/game/get_active_field_2c_or_negative.c	-O2 -G0 -mips3 -mgp32 -mfp32	bbf49bd1acbb01fa6bd474533973c7ce1954b014af155612e79cf6351dd78f95
+0x9D50	0x1C	src/game/get_state_array_word_5811c.c	-O2 -G0 -mips3 -mgp32 -mfp32	1648d3542ba13119da414c21ff7f79332ff518fe26fd35b278c4110c427f04b5
+0xD8B0	0x18	src/game/enable_nested_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	bb63685304e91f64a90ad510c9afadbb746f342b44a7b9c6ac6b61ac0210a65e
+0xD8E4	0x24	src/game/disable_nested_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	eb3048a07c9934b30712aaa1f3249a67122726553c583909c2f8c3d1db639bd3
 
