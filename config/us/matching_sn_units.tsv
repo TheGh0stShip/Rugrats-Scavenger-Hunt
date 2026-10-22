@@ -28,3 +28,6 @@
 0x2AD3C	0x18	src/game/enable_state_b92a8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f69414f16289ffe2f01aa3c13fc04cdf49730667bd6c91e959a90257a1259f04
 0xC4C4	0x14	src/game/get_state_flag_10000000.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	371f262cb16ce2751133ac06e0eabc8aaaa53c89520cc469c08722bd82b2eff7
 0xC4D8	0x14	src/game/get_state_flag_20000000.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	16a4668c99b626a6326863fb6d9a800e512a1290d36283159b134af892cba0e3
+0x11C04	0x18	src/game/get_state_byte_52c04.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	177d05e3b6ebb4499b3583c41c5294a02e8745a421f40c1499e43c6a2ccd102f
+0x1B0F4	0x18	src/game/advance_aligned_state_5b1e4.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	998a7420dc4972d7779cc536761ddd5b5260d2bc3efe4012ba0a48811d3a649f
+0x1CB60	0x18	src/game/get_active_array_address.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ed5313cb8b39d7f67d2601d7b6d569bfda06d4548a0c9f37e23ec9c28070bf63

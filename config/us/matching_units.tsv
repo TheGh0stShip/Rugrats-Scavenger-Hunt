@@ -141,4 +141,5 @@
 0xE960	0x14	src/game/get_active_header_halfword_2.c	-O2 -G0 -mips3 -mgp32 -mfp32	00a0ae3c5836fa48bfe27e780ccc224cae8fe5dc569bdf25a1c4b277219a73f2
 0xE974	0x14	src/game/get_active_header_halfword_0.c	-O2 -G0 -mips3 -mgp32 -mfp32	c7826c9a19b493a6f751b102ee3fa3e2489266fdde42d82e9ead730371574a18
 0xEC64	0x14	src/game/get_active_header_halfword_a.c	-O2 -G0 -mips3 -mgp32 -mfp32	9a955c728901db268804d7e2441c4f7a4f2575f93ef52c8c8924187ed63d081b
+0x1CB24	0x18	src/game/set_active_field_2c_if_present.c	-O2 -G0 -mips3 -mgp32 -mfp32	4716bf788e474f47263f86746e5015f8cfa347029c5afa8d6c69481303bb55b8
 
