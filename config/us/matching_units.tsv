@@ -22,6 +22,7 @@
 0x13088	0x10	src/game/get_state_word_52e94.c	-O2 -G0 -mips3 -mgp32 -mfp32	cf50a47faf724c7f06c6f8c37b255a244d2755e21ec3994e10ad902f554fc996
 0x130A0	0x10	src/game/get_state_word_58c00.c	-O2 -G0 -mips3 -mgp32 -mfp32	2504e7ca605e4e42e17da439ed416619a79efaa59e66704ae887ed94bb530fa9
 0x138E8	0x10	src/game/get_state_word_58c28.c	-O2 -G0 -mips3 -mgp32 -mfp32	1ce83cd797365f50992a02c58a569c69e76dd227d4fb0c0a2aaa2556b54f0262
+0x13DF0	0x8	src/game/noop_800131f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	78aa5094d5ec7291c79f799c009d04f06c2f20187988e3dcc8d35ee5efdbb378
 0x14270	0x10	src/game/get_state_word_52ed0.c	-O2 -G0 -mips3 -mgp32 -mfp32	fafd6196fff46a04fa31a6500927c71a52abdb7658a8ad89980f9aa2ac45de3e
 0x14304	0x20	src/game/set_color_gray_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	7a486136656e43faaec5ce8a7f464a2f96aaba97465e9af6ede3d8a84713d792
 0x14324	0x20	src/game/set_color_white_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	2ed73ee720f8a66e91a733756929d253ad8ea604c50cc0a52f36823612a6c5d1
