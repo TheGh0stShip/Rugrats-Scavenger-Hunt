@@ -1,0 +1,28 @@
+# KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
+# ROM_START SIZE SOURCE FLAGS SHA256
+0x3B474	0xC	src/game/set_state_word_c3fa0.c	-O2 -G0 -mips3 -mgp32 -mfp32	fe2187a04c82ad0f632f3eca32a96d8e54681a0f4d5b14a1ca6b59d790d7b2de
+0x3BB44	0x24	src/game/dispatch_fe00.c	-O2 -G0 -mips3 -mgp32 -mfp32	e98b2c12799e6ddd65958a41fab99976ceee443eeced326a598804e73d2eb064
+0x3BB68	0x1C	src/game/dispatch_fe01.c	-O2 -G0 -mips3 -mgp32 -mfp32	4052b0681ea78b1ad1935fc39f30cec8ffb6424a8681833b20e5a49b75214899
+0x3C620	0x30	src/game/create_enabled_object.c	-O2 -G0 -mips3 -mgp32 -mfp32	46c00399c61ff1f6513ec44879da5ede4babbc768d16e81c106ba7afee403d3e
+0x3CF20	0x28	src/game/select_negative_object.c	-O2 -G0 -mips3 -mgp32 -mfp32	232eb58793b24792a3f7e062b3fbf9b574b0ca0f51591809c40245984f1b9399
+0x3CF6C	0xC	src/game/get_state_word_c3ffc.c	-O2 -G0 -mips3 -mgp32 -mfp32	a8a48a1a5d5aeeb8b00842a6f11c612b4e577d0f114b67c7e0bdd2cd8f793cc6
+0x3D130	0x8	src/game/get_object_word_4.c	-O2 -G0 -mips3 -mgp32 -mfp32	f300cc2a20caf2e044831d78571f83a9135ffec06071b9ba8884a16cf94a3775
+0x3D138	0xC	src/game/set_state_word_c4008.c	-O2 -G0 -mips3 -mgp32 -mfp32	d78d7714c356491c7b48da2f1a001d94d1d9608cf11b2f85e3e3297d6bca7b7d
+0x3D144	0xC	src/game/set_state_word_c400c.c	-O2 -G0 -mips3 -mgp32 -mfp32	18d23dc6fad6bb235d6cc47984e283c74a7e15cb93e5231457610b1cb8b1ec84
+0x3D150	0xC	src/game/get_state_word_c4008.c	-O2 -G0 -mips3 -mgp32 -mfp32	cffc1a9d58286e6dddc9f3cc73001f69b0737fb65039d66bac342ae38408aa30
+0x3D164	0x8	src/game/get_object_word_10.c	-O2 -G0 -mips3 -mgp32 -mfp32	1ac44655e0f53c0e47616442825604a4bc61b0de6857fde216122cd8da10023e
+0x3D16C	0xC	src/game/set_state_word_55fbc.c	-O2 -G0 -mips3 -mgp32 -mfp32	dcc1bf14d60896b960d07ede1e39854f87de02f1feee744a7cd7fdebc5d43d4f
+0x3D254	0xC	src/game/set_state_word_c4010.c	-O2 -G0 -mips3 -mgp32 -mfp32	41f7849d827e5c7275d9daf6766671b408c352c0a1a961246b7e792b514db14b
+0x3F390	0x70	src/game/parser_read_motion_scale.c	--section-base=.rodata:0x80003388 -O2 -G0 -mips3 -mgp32 -mfp32	aaa889b2d25f490a65e9c9784b5267ae7df2e421cd65f34bb32eae751ae4aa88
+0x3F9A8	0x3C	src/game/parser_read_scale_6c.c	--section-base=.rodata:0x800033B0 -O2 -G0 -mips3 -mgp32 -mfp32	0fb5f45bccc936a16a24fb27294a2b8cb1d16fa3accf38e4d1079cc4def5fced
+0x3F9F4	0x44	src/game/parser_conditional_callback.c	-O2 -G0 -mips3 -mgp32 -mfp32	bfcc1f8cbd9d2b649e6d3c47a029188be6f5e6d33840a42ff601ff2d2d839f67
+0x43494	0xC	src/game/get_callback_800428a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4483f657f9ecfeb06431b149aeb5e15f8001a02f506d4e223d03da54f3173b39
+0x436A0	0xC	src/game/set_state_word_c40c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	68a32b2ba216903f09416c6d05914baea5c3bc97529b86f2fd02d64abb10bdfd
+0x43CF4	0xC	src/game/get_state_address_c42f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f2e0b3443b98bcfc55298583103a91cb2f1c697c5eaa47b69b5f9ca310ad0ed
+0x4DE90	0x10	src/runtime/read_audio_interface_dram_addr.c	-O2 -G0 -mips3 -mgp32 -mfp32	679568a8280a1cc54387664b9e46dd53d246ce010538ce2e3327ac214a9b4e75
+0x4DEA0	0x10	src/runtime/read_audio_interface_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca2590df63a0994d2295be9346906b5706c52e06e06a133776138a7b7929c473
+0x52BA0	0x10	src/runtime/write_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	87f4554b65720db3a616e71c1e06b8c2f95731c91b14d0bffeb4b618a8b379d4
+0x52D50	0x10	src/runtime/read_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2e827923487755f449dbe9074b0d6fbc69a89128fd74ab6f1b1d25c100006a03
+0x53110	0xC	src/game/get_state_word_563c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4b3259da4085639bbe0e77391c973abacc77d0ba4b139dc7d587f0324398ede6
+0x50600	0x20	src/runtime/get_record_word_4.c	-O2 -G0 -mips3 -mgp32 -mfp32	86f6fd08af0681cf480e5999389d1c60870815cab7a4c38c30d9adf5599885ee
+0x52CE0	0x20	src/runtime/set_sp_status_400.c	-O2 -G0 -mips3 -mgp32 -mfp32	04e7743a487f3eba34157f00f551fbe95c75e3834f610d6a8509badb6789e06d

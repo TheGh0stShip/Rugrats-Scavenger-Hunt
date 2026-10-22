@@ -1,0 +1,23 @@
+# SN Systems GCC 2.8 exact matching units
+# ROM_START SIZE SOURCE FLAGS SHA256
+0x6128	0x1C	src/game/update_object_halfword.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ef96079830611b3c3fb259a30f880c8e0d6a1ebdbc0a05c861ece8bed646f59d
+0x6144	0x24	src/game/get_current_player.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a3d44cc14a0d4a5185cb207d39169424bea8b9201a5089d69fd3c9a6e667e04d
+0x61A4	0x1C	src/game/get_player_slot.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a9eefaeafa21edc55524ce51a6360c056fda29b26000f554439fa2f65ab5482d
+0x9B40	0x10	src/game/reset_state_halfword.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0ae5e0bc10493e61a1742258af4f69eb3b1313868276f97be767b49eb364c83b
+0x9FD0	0xC	src/game/set_state_word_58180.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	262f1a0f99650480a2415321eabd8495e36726ed928c96afce3a44166beef6d1
+0xC4A8	0xC	src/game/set_state_word_52ab8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0e0f151b564fb0eeeb0e57d866426cc56c3be79366bbfc74c9cf299644957b9b
+0xC504	0xC	src/game/clear_state_word_52ab8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d2918c2ad6c5ec9542a58cb8e4e34fa50e70533d13b4688d8bb057b357b4e050
+0xEBD8	0xC	src/game/clear_state_word_581d4.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	81a01f6d165af55086c63a5ab2e1f3f99ed638af4e1a7b6c98fe6430c603b541
+0x12E84	0x10	src/game/set_state_word_58bf4.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	7e3559a539d78cc8e7933fd85f4197d7fd3d8f2a176a46da5c63ddafa1545f59
+0x138F8	0xC	src/game/set_state_word_58c10.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6c6afd93345c1942c5c6b676f574394239cd67fbc405987cb3fe3423360d4105
+0x143E8	0xC	src/game/set_state_word_52ed0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	404f669a36232358edade166c097caaa9b1a1c9ae28cb64317d3f326cf95211e
+0x1EAE8	0x10	src/game/enable_state_word_52f10.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4eab32bee6bb5a8baa4c72074957b39d9ef28432f2af7c0947f9ce5bcd7d1d86
+0x1EAF8	0xC	src/game/disable_state_word_52f10.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5ba7237b5802ac058b142485bf40e9d686dd7ee67a517be0e3443643ef03dcc4
+0x1EC34	0x2C	src/game/copy_words.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	de5aa00c1a0baf6e47fc83f29958d34bc3cbd951b009f2c2677bd97ad73f747d
+0x1F1D0	0x20	src/game/init_resource_arena.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	22e7edb18b3f77622e16fb7180c26db2328648b014200bae0aea8d918fd180b6
+0x1FABC	0x14	src/game/copy_state_word_53928.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	385b22e5806cf9e8a9ea08e50adcaec1fc76ed0e72521e1621a8a3d3ac96b314
+0x20BE0	0xC	src/game/clear_state_word_5b1e0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b7acfb1ef27582dc9a39a19c23f3b22b5f9920c4ee5732926e964e17e9d32722
+0x2B228	0x18	src/game/get_active_array_entry.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ed5313cb8b39d7f67d2601d7b6d569bfda06d4548a0c9f37e23ec9c28070bf63
+0x30AA8	0xC	src/game/set_state_word_b9324.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d19b3def83efb3c6ec979edaf68e40e2ecf23df4b85f45e0df687222c70abe12
+0x30AC4	0xC	src/game/set_state_byte_b9320.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f9bfb1eb08f0c826f893fc835a33b481bff061fb2598d937a447e9f6118e0d1c
+0x30AE0	0xC	src/game/set_state_byte_b9321.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	53e4eea132d97bf45485115332ad2b5a757879e64a9f87d181361724bd2b3165

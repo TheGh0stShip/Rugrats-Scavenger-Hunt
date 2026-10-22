@@ -1,0 +1,8 @@
+.toolchain/
+.venv/
+build/
+analysis/survey/main_segment.bin
+*.n64
+*.v64
+*.z64
+

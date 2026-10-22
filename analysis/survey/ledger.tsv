@@ -1,0 +1,1061 @@
+start	end	size	class	category	kind	name	evidence
+0x0	0x40	64	rom_metadata	rom_metadata	header	rom_header	rom header
+0x40	0x1000	4032	rom_metadata	rom_metadata	ipl3	ipl3	cic 6102
+0x1000	0x103C	60	code	program	.text	text_80000400	datamap section
+0x103C	0x45E0	13732	data	program	.rodata	rodata_8000043C	datamap section
+0x45E0	0x45F0	16	data	program	.data	data_800039E0	datamap section
+0x45F0	0x37800	209424	code	program	.text	text_800039F0	datamap section
+0x37800	0x37B40	832	code	program	rsp_text	rsp_80036C00	RSP opcodes only, vector-heavy (64-byte granularity)
+0x37B40	0x37D80	576	code	program	.text	text_800039F0	datamap section
+0x37D80	0x39540	6080	code	program	rsp_text	rsp_80037180	RSP opcodes only, vector-heavy (64-byte granularity)
+0x39540	0x53474	106292	code	program	.text	text_800039F0	datamap section
+0x53474	0x57E80	18956	data	program	.data	data_80052874	datamap section
+0x57E80	0x57E90	16	referenced	loader_range	pi	rom_57E80	call 0x80013B68 in 0x80013B3C
+0x57E90	0x57F80	240	payload	graphics	display_list	dl_57E90	f3dex display list, 30 commands (data not resolvable)
+0x57F80	0x57FA8	40	payload	graphics	display_list	dl_57F80	f3dex display list, 5 commands (data not resolvable)
+0x57FA8	0x57FD0	40	payload	graphics	display_list	dl_57FA8	f3dex display list, 5 commands (data not resolvable)
+0x57FD0	0x58000	48	container	audio	libmus.PtrTablesHeader	ptr_57FD0.PtrTablesHeader_0	waves=78 refs=1
+0x58000	0x58014	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_30	base=0x10 len=0x34F2 refs=1
+0x58014	0x58018	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58018	0x580A0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_48	order=2 npredictors=4 refs=1
+0x580A0	0x580B4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_D0	base=0x3510 len=0x2DA2 refs=1
+0x580B4	0x580B8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x580B8	0x58140	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_E8	order=2 npredictors=4 refs=1
+0x58140	0x58154	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_170	base=0x62C0 len=0x2355 refs=1
+0x58154	0x58158	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58158	0x581E0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_188	order=2 npredictors=4 refs=1
+0x581E0	0x581F4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_210	base=0x8620 len=0x2F01 refs=1
+0x581F4	0x581F8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x581F8	0x58280	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_228	order=2 npredictors=4 refs=1
+0x58280	0x58294	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2B0	base=0xB530 len=0xB5B refs=1
+0x58294	0x58298	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58298	0x58320	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2C8	order=2 npredictors=4 refs=1
+0x58320	0x58334	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_350	base=0xC090 len=0xBBE refs=1
+0x58334	0x58338	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58338	0x583C0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_368	order=2 npredictors=4 refs=1
+0x583C0	0x583D4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_3F0	base=0xCC50 len=0x1EBA refs=1
+0x583D4	0x583D8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x583D8	0x58460	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_408	order=2 npredictors=4 refs=1
+0x58460	0x58474	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_490	base=0xEB10 len=0x5CE2 refs=1
+0x58474	0x58478	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58478	0x58500	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_4A8	order=2 npredictors=4 refs=1
+0x58500	0x58514	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_530	base=0x14800 len=0xBD9 refs=1
+0x58514	0x58518	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58518	0x585A0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_548	order=2 npredictors=4 refs=1
+0x585A0	0x585B4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_5D0	base=0x153E0 len=0x1194 refs=1
+0x585B4	0x585B8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x585B8	0x58640	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_5E8	order=2 npredictors=4 refs=1
+0x58640	0x58654	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_670	base=0x16580 len=0x2853 refs=1
+0x58654	0x58658	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58658	0x586E0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_688	order=2 npredictors=4 refs=1
+0x586E0	0x586F4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_710	base=0x18DE0 len=0x465 refs=1
+0x586F4	0x586F8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x586F8	0x58780	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_728	order=2 npredictors=4 refs=1
+0x58780	0x58794	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_7B0	base=0x19250 len=0x7479 refs=1
+0x58794	0x58798	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58798	0x58820	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_7C8	order=2 npredictors=4 refs=1
+0x58820	0x58834	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_850	base=0x206D0 len=0x912 refs=1
+0x58834	0x58838	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58838	0x588C0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_868	order=2 npredictors=4 refs=1
+0x588C0	0x588D4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_8F0	base=0x20FF0 len=0x173D refs=1
+0x588D4	0x588D8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x588D8	0x58960	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_908	order=2 npredictors=4 refs=1
+0x58960	0x58974	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_990	base=0x22730 len=0x1A16 refs=1
+0x58974	0x58978	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58978	0x58A00	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_9A8	order=2 npredictors=4 refs=1
+0x58A00	0x58A14	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_A30	base=0x24150 len=0x2865 refs=1
+0x58A14	0x58A18	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58A18	0x58AA0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_A48	order=2 npredictors=4 refs=1
+0x58AA0	0x58AB4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_AD0	base=0x269C0 len=0x3210 refs=1
+0x58AB4	0x58AB8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58AB8	0x58B40	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_AE8	order=2 npredictors=4 refs=1
+0x58B40	0x58B54	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_B70	base=0x29BD0 len=0x206A refs=1
+0x58B54	0x58B58	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58B58	0x58BE0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_B88	order=2 npredictors=4 refs=1
+0x58BE0	0x58BF4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_C10	base=0x2BC40 len=0x15D5 refs=1
+0x58BF4	0x58BF8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58BF8	0x58C80	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_C28	order=2 npredictors=4 refs=1
+0x58C80	0x58C94	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_CB0	base=0x2D220 len=0x1521 refs=1
+0x58C94	0x58C98	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58C98	0x58D20	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_CC8	order=2 npredictors=4 refs=1
+0x58D20	0x58D34	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_D50	base=0x2E750 len=0x57D2 refs=1
+0x58D34	0x58D38	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58D38	0x58DC0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_D68	order=2 npredictors=4 refs=1
+0x58DC0	0x58DD4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_DF0	base=0x33F30 len=0x1839 refs=1
+0x58DD4	0x58DD8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58DD8	0x58E60	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_E08	order=2 npredictors=4 refs=1
+0x58E60	0x58E74	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_E90	base=0x35770 len=0x1EBA refs=1
+0x58E74	0x58E78	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58E78	0x58F00	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_EA8	order=2 npredictors=4 refs=1
+0x58F00	0x58F2C	44	container	audio	libmus.ADPCMloop	ptr_57FD0.ADPCMloop_F30	start=994 end=12390 count=-1 refs=1
+0x58F2C	0x58F30	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58F30	0x58F44	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_F60	base=0x37630 len=0x2B6B refs=1
+0x58F44	0x58F48	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x58F48	0x58FD0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_F78	order=2 npredictors=4 refs=1
+0x58FD0	0x58FFC	44	container	audio	libmus.ADPCMloop	ptr_57FD0.ADPCMloop_1000	start=128 end=19000 count=-1 refs=1
+0x58FFC	0x59000	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59000	0x59014	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1030	base=0x3A1A0 len=0x1B12 refs=1
+0x59014	0x59018	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59018	0x590A0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1048	order=2 npredictors=4 refs=1
+0x590A0	0x590B4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_10D0	base=0x3BCC0 len=0x47CA refs=1
+0x590B4	0x590B8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x590B8	0x59140	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_10E8	order=2 npredictors=4 refs=1
+0x59140	0x59154	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1170	base=0x40490 len=0x23EE refs=1
+0x59154	0x59158	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59158	0x591E0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1188	order=2 npredictors=4 refs=1
+0x591E0	0x591F4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1210	base=0x42880 len=0xA56 refs=1
+0x591F4	0x591F8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x591F8	0x59280	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1228	order=2 npredictors=4 refs=1
+0x59280	0x59294	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_12B0	base=0x432E0 len=0x3FC6 refs=1
+0x59294	0x59298	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59298	0x59320	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_12C8	order=2 npredictors=4 refs=1
+0x59320	0x59334	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1350	base=0x472B0 len=0x4020 refs=1
+0x59334	0x59338	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59338	0x593C0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1368	order=2 npredictors=4 refs=1
+0x593C0	0x593D4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_13F0	base=0x4B2D0 len=0x4140 refs=1
+0x593D4	0x593D8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x593D8	0x59460	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1408	order=2 npredictors=4 refs=1
+0x59460	0x59474	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1490	base=0x4F410 len=0x314A refs=1
+0x59474	0x59478	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59478	0x59500	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_14A8	order=2 npredictors=4 refs=1
+0x59500	0x59514	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1530	base=0x52560 len=0x1A04 refs=1
+0x59514	0x59518	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59518	0x595A0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1548	order=2 npredictors=4 refs=1
+0x595A0	0x595B4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_15D0	base=0x53F70 len=0xCBA refs=1
+0x595B4	0x595B8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x595B8	0x59640	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_15E8	order=2 npredictors=4 refs=1
+0x59640	0x59654	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1670	base=0x54C30 len=0x2178 refs=1
+0x59654	0x59658	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59658	0x596E0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1688	order=2 npredictors=4 refs=1
+0x596E0	0x596F4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1710	base=0x56DB0 len=0x3CA5 refs=1
+0x596F4	0x596F8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x596F8	0x59780	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1728	order=2 npredictors=4 refs=1
+0x59780	0x59794	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_17B0	base=0x5AA60 len=0x1803 refs=1
+0x59794	0x59798	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59798	0x59820	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_17C8	order=2 npredictors=4 refs=1
+0x59820	0x59834	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1850	base=0x5C270 len=0xB52 refs=1
+0x59834	0x59838	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59838	0x598C0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1868	order=2 npredictors=4 refs=1
+0x598C0	0x598D4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_18F0	base=0x5CDD0 len=0x990 refs=1
+0x598D4	0x598D8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x598D8	0x59960	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1908	order=2 npredictors=4 refs=1
+0x59960	0x59974	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1990	base=0x5D760 len=0x7C5 refs=1
+0x59974	0x59978	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59978	0x59A00	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_19A8	order=2 npredictors=4 refs=1
+0x59A00	0x59A14	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1A30	base=0x5DF30 len=0x1FE3 refs=1
+0x59A14	0x59A18	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59A18	0x59AA0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1A48	order=2 npredictors=4 refs=1
+0x59AA0	0x59AB4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1AD0	base=0x5FF20 len=0x327C refs=1
+0x59AB4	0x59AB8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59AB8	0x59B40	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1AE8	order=2 npredictors=4 refs=1
+0x59B40	0x59B54	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1B70	base=0x631A0 len=0xDEC refs=1
+0x59B54	0x59B58	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59B58	0x59BE0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1B88	order=2 npredictors=4 refs=1
+0x59BE0	0x59BF4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1C10	base=0x63F90 len=0x9D8 refs=1
+0x59BF4	0x59BF8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59BF8	0x59C80	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1C28	order=2 npredictors=4 refs=1
+0x59C80	0x59C94	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1CB0	base=0x64970 len=0xA71 refs=1
+0x59C94	0x59C98	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59C98	0x59D20	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1CC8	order=2 npredictors=4 refs=1
+0x59D20	0x59D34	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1D50	base=0x653F0 len=0x26D0 refs=1
+0x59D34	0x59D38	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59D38	0x59DC0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1D68	order=2 npredictors=4 refs=1
+0x59DC0	0x59DD4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1DF0	base=0x67AC0 len=0x24A2 refs=1
+0x59DD4	0x59DD8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59DD8	0x59E60	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1E08	order=2 npredictors=4 refs=1
+0x59E60	0x59E74	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1E90	base=0x69F70 len=0x196B refs=1
+0x59E74	0x59E78	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59E78	0x59F00	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1EA8	order=2 npredictors=4 refs=1
+0x59F00	0x59F14	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1F30	base=0x6B8E0 len=0x4AC7 refs=1
+0x59F14	0x59F18	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59F18	0x59FA0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1F48	order=2 npredictors=4 refs=1
+0x59FA0	0x59FB4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_1FD0	base=0x703B0 len=0x16C8 refs=1
+0x59FB4	0x59FB8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x59FB8	0x5A040	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_1FE8	order=2 npredictors=4 refs=1
+0x5A040	0x5A054	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2070	base=0x71A80 len=0x4D61 refs=1
+0x5A054	0x5A058	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A058	0x5A0E0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2088	order=2 npredictors=4 refs=1
+0x5A0E0	0x5A0F4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2110	base=0x767F0 len=0xF8A refs=1
+0x5A0F4	0x5A0F8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A0F8	0x5A180	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2128	order=2 npredictors=4 refs=1
+0x5A180	0x5A194	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_21B0	base=0x77780 len=0x1329 refs=1
+0x5A194	0x5A198	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A198	0x5A220	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_21C8	order=2 npredictors=4 refs=1
+0x5A220	0x5A234	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2250	base=0x78AB0 len=0x1746 refs=1
+0x5A234	0x5A238	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A238	0x5A2C0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2268	order=2 npredictors=4 refs=1
+0x5A2C0	0x5A2D4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_22F0	base=0x7A200 len=0x1C7A refs=1
+0x5A2D4	0x5A2D8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A2D8	0x5A360	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2308	order=2 npredictors=4 refs=1
+0x5A360	0x5A374	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2390	base=0x7BE80 len=0xC96 refs=1
+0x5A374	0x5A378	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A378	0x5A400	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_23A8	order=2 npredictors=4 refs=1
+0x5A400	0x5A414	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2430	base=0x7CB20 len=0x16FE refs=1
+0x5A414	0x5A418	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A418	0x5A4A0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2448	order=2 npredictors=4 refs=1
+0x5A4A0	0x5A4B4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_24D0	base=0x7E220 len=0x165C refs=1
+0x5A4B4	0x5A4B8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A4B8	0x5A540	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_24E8	order=2 npredictors=4 refs=1
+0x5A540	0x5A554	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2570	base=0x7F880 len=0x1CE6 refs=1
+0x5A554	0x5A558	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A558	0x5A5E0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2588	order=2 npredictors=4 refs=1
+0x5A5E0	0x5A5F4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2610	base=0x81570 len=0x2889 refs=1
+0x5A5F4	0x5A5F8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A5F8	0x5A680	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2628	order=2 npredictors=4 refs=1
+0x5A680	0x5A694	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_26B0	base=0x83E00 len=0x1224 refs=1
+0x5A694	0x5A698	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A698	0x5A720	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_26C8	order=2 npredictors=4 refs=1
+0x5A720	0x5A734	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2750	base=0x85030 len=0x61AA refs=1
+0x5A734	0x5A738	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A738	0x5A7C0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2768	order=2 npredictors=4 refs=1
+0x5A7C0	0x5A7EC	44	container	audio	libmus.ADPCMloop	ptr_57FD0.ADPCMloop_27F0	start=243 end=41338 count=-1 refs=1
+0x5A7EC	0x5A7F0	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A7F0	0x5A804	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2820	base=0x8B1E0 len=0x2BBC refs=1
+0x5A804	0x5A808	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A808	0x5A890	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2838	order=2 npredictors=4 refs=1
+0x5A890	0x5A8BC	44	container	audio	libmus.ADPCMloop	ptr_57FD0.ADPCMloop_28C0	start=358 end=19809 count=-1 refs=1
+0x5A8BC	0x5A8C0	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A8C0	0x5A8D4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_28F0	base=0x8DDA0 len=0xDBF refs=1
+0x5A8D4	0x5A8D8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A8D8	0x5A960	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2908	order=2 npredictors=4 refs=1
+0x5A960	0x5A974	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2990	base=0x8EB60 len=0x1689 refs=1
+0x5A974	0x5A978	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5A978	0x5AA00	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_29A8	order=2 npredictors=4 refs=1
+0x5AA00	0x5AA14	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2A30	base=0x901F0 len=0x106B refs=1
+0x5AA14	0x5AA18	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AA18	0x5AAA0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2A48	order=2 npredictors=4 refs=1
+0x5AAA0	0x5AAB4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2AD0	base=0x91260 len=0x975 refs=1
+0x5AAB4	0x5AAB8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AAB8	0x5AB40	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2AE8	order=2 npredictors=4 refs=1
+0x5AB40	0x5AB54	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2B70	base=0x91BE0 len=0x4A9A refs=1
+0x5AB54	0x5AB58	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AB58	0x5ABE0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2B88	order=2 npredictors=4 refs=1
+0x5ABE0	0x5AC0C	44	container	audio	libmus.ADPCMloop	ptr_57FD0.ADPCMloop_2C10	start=185 end=32616 count=-1 refs=1
+0x5AC0C	0x5AC10	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AC10	0x5AC24	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2C40	base=0x96680 len=0x6BAF refs=1
+0x5AC24	0x5AC28	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AC28	0x5ACB0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2C58	order=2 npredictors=4 refs=1
+0x5ACB0	0x5ACC4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2CE0	base=0x9D230 len=0xD6E refs=1
+0x5ACC4	0x5ACC8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5ACC8	0x5AD50	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2CF8	order=2 npredictors=4 refs=1
+0x5AD50	0x5AD64	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2D80	base=0x9DFA0 len=0xB49 refs=1
+0x5AD64	0x5AD68	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AD68	0x5ADF0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2D98	order=2 npredictors=4 refs=1
+0x5ADF0	0x5AE04	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2E20	base=0x9EAF0 len=0x5703 refs=1
+0x5AE04	0x5AE08	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AE08	0x5AE90	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2E38	order=2 npredictors=4 refs=1
+0x5AE90	0x5AEA4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2EC0	base=0xA4200 len=0x6483 refs=1
+0x5AEA4	0x5AEA8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AEA8	0x5AF30	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2ED8	order=2 npredictors=4 refs=1
+0x5AF30	0x5AF44	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_2F60	base=0xAA690 len=0x22F2 refs=1
+0x5AF44	0x5AF48	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AF48	0x5AFD0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_2F78	order=2 npredictors=4 refs=1
+0x5AFD0	0x5AFE4	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_3000	base=0xAC990 len=0xECD refs=1
+0x5AFE4	0x5AFE8	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5AFE8	0x5B070	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_3018	order=2 npredictors=4 refs=1
+0x5B070	0x5B084	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_30A0	base=0xAD860 len=0x7AA refs=1
+0x5B084	0x5B088	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5B088	0x5B110	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_30B8	order=2 npredictors=4 refs=1
+0x5B110	0x5B124	20	container	audio	libmus.WaveTable	ptr_57FD0.WaveTable_3140	base=0xAE010 len=0x7161 refs=1
+0x5B124	0x5B128	4	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5B128	0x5B1B0	136	container	audio	libmus.ADPCMBook	ptr_57FD0.ADPCMBook_3158	order=2 npredictors=4 refs=1
+0x5B1B0	0x5B2E8	312	container	audio	libmus.WaveList	ptr_57FD0.WaveList_31E0	refs=1
+0x5B2E8	0x5B336	78	container	audio	libmus.BaseNotes	ptr_57FD0.BaseNotes_3318	refs=1
+0x5B336	0x5B338	2	referenced	loader_range	pi	rom_57FD0	call 0x8001EAC0 in 0x8001EA7C
+0x5B338	0x5B470	312	container	audio	libmus.Detunes	ptr_57FD0.Detunes_3368	refs=1
+0x5B470	0x5B480	16	container	audio	libmus.WaveTablesHeader	wbk_5B470.header	magic
+0x5B480	0x5E972	13554	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_0	frames9=1506 refs=wave0
+0x5E972	0x5E980	14	padding	-	fill_00	gap_5E972	-
+0x5E980	0x61722	11682	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_3500	frames9=1298 refs=wave1
+0x61722	0x61730	14	padding	-	fill_00	gap_61722	-
+0x61730	0x63A85	9045	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_62B0	frames9=1005 refs=wave2
+0x63A85	0x63A90	11	padding	-	fill_00	gap_63A85	-
+0x63A90	0x66991	12033	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_8610	frames9=1337 refs=wave3
+0x66991	0x669A0	15	padding	-	fill_00	gap_66991	-
+0x669A0	0x674FB	2907	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_B520	frames9=323 refs=wave4
+0x674FB	0x67500	5	padding	-	fill_00	gap_674FB	-
+0x67500	0x680BE	3006	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_C080	frames9=334 refs=wave5
+0x680BE	0x680C0	2	padding	-	fill_00	gap_680BE	-
+0x680C0	0x69F7A	7866	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_CC40	frames9=874 refs=wave6
+0x69F7A	0x69F80	6	padding	-	fill_00	gap_69F7A	-
+0x69F80	0x6FC62	23778	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_EB00	frames9=2642 refs=wave7
+0x6FC62	0x6FC70	14	padding	-	fill_00	gap_6FC62	-
+0x6FC70	0x70849	3033	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_147F0	frames9=337 refs=wave8
+0x70849	0x70850	7	padding	-	fill_00	gap_70849	-
+0x70850	0x719E4	4500	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_153D0	frames9=500 refs=wave9
+0x719E4	0x719F0	12	padding	-	fill_00	gap_719E4	-
+0x719F0	0x74243	10323	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_16570	frames9=1147 refs=wave10
+0x74243	0x74250	13	padding	-	fill_00	gap_74243	-
+0x74250	0x746B5	1125	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_18DD0	frames9=125 refs=wave11
+0x746B5	0x746C0	11	padding	-	fill_00	gap_746B5	-
+0x746C0	0x7BB39	29817	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_19240	frames9=3313 refs=wave12
+0x7BB39	0x7BB40	7	padding	-	fill_00	gap_7BB39	-
+0x7BB40	0x7C452	2322	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_206C0	frames9=258 refs=wave13
+0x7C452	0x7C460	14	padding	-	fill_00	gap_7C452	-
+0x7C460	0x7DB9D	5949	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_20FE0	frames9=661 refs=wave14
+0x7DB9D	0x7DBA0	3	padding	-	fill_00	gap_7DB9D	-
+0x7DBA0	0x7F5B6	6678	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_22720	frames9=742 refs=wave15
+0x7F5B6	0x7F5C0	10	padding	-	fill_00	gap_7F5B6	-
+0x7F5C0	0x81E25	10341	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_24140	frames9=1149 refs=wave16
+0x81E25	0x81E30	11	padding	-	fill_00	gap_81E25	-
+0x81E30	0x85040	12816	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_269B0	frames9=1424 refs=wave17
+0x85040	0x870AA	8298	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_29BC0	frames9=922 refs=wave18
+0x870AA	0x870B0	6	padding	-	fill_00	gap_870AA	-
+0x870B0	0x88685	5589	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_2BC30	frames9=621 refs=wave19
+0x88685	0x88690	11	padding	-	fill_00	gap_88685	-
+0x88690	0x89BB1	5409	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_2D210	frames9=601 refs=wave20
+0x89BB1	0x89BC0	15	padding	-	fill_00	gap_89BB1	-
+0x89BC0	0x8F392	22482	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_2E740	frames9=2498 refs=wave21
+0x8F392	0x8F3A0	14	padding	-	fill_00	gap_8F392	-
+0x8F3A0	0x90BD9	6201	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_33F20	frames9=689 refs=wave22
+0x90BD9	0x90BE0	7	padding	-	fill_00	gap_90BD9	-
+0x90BE0	0x92A9A	7866	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_35760	frames9=874 refs=wave23
+0x92A9A	0x92AA0	6	padding	-	fill_00	gap_92A9A	-
+0x92AA0	0x9560B	11115	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_37620	frames9=1235 refs=wave24
+0x9560B	0x95610	5	padding	-	fill_00	gap_9560B	-
+0x95610	0x97122	6930	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_3A190	frames9=770 refs=wave25
+0x97122	0x97130	14	padding	-	fill_00	gap_97122	-
+0x97130	0x9B8FA	18378	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_3BCB0	frames9=2042 refs=wave26
+0x9B8FA	0x9B900	6	padding	-	fill_00	gap_9B8FA	-
+0x9B900	0x9DCEE	9198	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_40480	frames9=1022 refs=wave27
+0x9DCEE	0x9DCF0	2	padding	-	fill_00	gap_9DCEE	-
+0x9DCF0	0x9E746	2646	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_42870	frames9=294 refs=wave28
+0x9E746	0x9E750	10	padding	-	fill_00	gap_9E746	-
+0x9E750	0xA2716	16326	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_432D0	frames9=1814 refs=wave29
+0xA2716	0xA2720	10	padding	-	fill_00	gap_A2716	-
+0xA2720	0xA6740	16416	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_472A0	frames9=1824 refs=wave30
+0xA6740	0xAA880	16704	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_4B2C0	frames9=1856 refs=wave31
+0xAA880	0xAD9CA	12618	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_4F400	frames9=1402 refs=wave32
+0xAD9CA	0xAD9D0	6	padding	-	fill_00	gap_AD9CA	-
+0xAD9D0	0xAF3D4	6660	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_52550	frames9=740 refs=wave33
+0xAF3D4	0xAF3E0	12	padding	-	fill_00	gap_AF3D4	-
+0xAF3E0	0xB009A	3258	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_53F60	frames9=362 refs=wave34
+0xB009A	0xB00A0	6	padding	-	fill_00	gap_B009A	-
+0xB00A0	0xB2218	8568	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_54C20	frames9=952 refs=wave35
+0xB2218	0xB2220	8	padding	-	fill_00	gap_B2218	-
+0xB2220	0xB5EC5	15525	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_56DA0	frames9=1725 refs=wave36
+0xB5EC5	0xB5ED0	11	padding	-	fill_00	gap_B5EC5	-
+0xB5ED0	0xB76D3	6147	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_5AA50	frames9=683 refs=wave37
+0xB76D3	0xB76E0	13	padding	-	fill_00	gap_B76D3	-
+0xB76E0	0xB8232	2898	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_5C260	frames9=322 refs=wave38
+0xB8232	0xB8240	14	padding	-	fill_00	gap_B8232	-
+0xB8240	0xB8BD0	2448	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_5CDC0	frames9=272 refs=wave39
+0xB8BD0	0xB9395	1989	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_5D750	frames9=221 refs=wave40
+0xB9395	0xB93A0	11	padding	-	fill_00	gap_B9395	-
+0xB93A0	0xBB383	8163	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_5DF20	frames9=907 refs=wave41
+0xBB383	0xBB390	13	padding	-	fill_00	gap_BB383	-
+0xBB390	0xBE60C	12924	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_5FF10	frames9=1436 refs=wave42
+0xBE60C	0xBE610	4	padding	-	fill_00	gap_BE60C	-
+0xBE610	0xBF3FC	3564	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_63190	frames9=396 refs=wave43
+0xBF3FC	0xBF400	4	padding	-	fill_00	gap_BF3FC	-
+0xBF400	0xBFDD8	2520	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_63F80	frames9=280 refs=wave44
+0xBFDD8	0xBFDE0	8	padding	-	fill_00	gap_BFDD8	-
+0xBFDE0	0xC0851	2673	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_64960	frames9=297 refs=wave45
+0xC0851	0xC0860	15	padding	-	fill_00	gap_C0851	-
+0xC0860	0xC2F30	9936	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_653E0	frames9=1104 refs=wave46
+0xC2F30	0xC53D2	9378	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_67AB0	frames9=1042 refs=wave47
+0xC53D2	0xC53E0	14	padding	-	fill_00	gap_C53D2	-
+0xC53E0	0xC6D4B	6507	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_69F60	frames9=723 refs=wave48
+0xC6D4B	0xC6D50	5	padding	-	fill_00	gap_C6D4B	-
+0xC6D50	0xCB817	19143	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_6B8D0	frames9=2127 refs=wave49
+0xCB817	0xCB820	9	padding	-	fill_00	gap_CB817	-
+0xCB820	0xCCEE8	5832	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_703A0	frames9=648 refs=wave50
+0xCCEE8	0xCCEF0	8	padding	-	fill_00	gap_CCEE8	-
+0xCCEF0	0xD1C51	19809	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_71A70	frames9=2201 refs=wave51
+0xD1C51	0xD1C60	15	padding	-	fill_00	gap_D1C51	-
+0xD1C60	0xD2BEA	3978	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_767E0	frames9=442 refs=wave52
+0xD2BEA	0xD2BF0	6	padding	-	fill_00	gap_D2BEA	-
+0xD2BF0	0xD3F19	4905	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_77770	frames9=545 refs=wave53
+0xD3F19	0xD3F20	7	padding	-	fill_00	gap_D3F19	-
+0xD3F20	0xD5666	5958	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_78AA0	frames9=662 refs=wave54
+0xD5666	0xD5670	10	padding	-	fill_00	gap_D5666	-
+0xD5670	0xD72EA	7290	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_7A1F0	frames9=810 refs=wave55
+0xD72EA	0xD72F0	6	padding	-	fill_00	gap_D72EA	-
+0xD72F0	0xD7F86	3222	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_7BE70	frames9=358 refs=wave56
+0xD7F86	0xD7F90	10	padding	-	fill_00	gap_D7F86	-
+0xD7F90	0xD968E	5886	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_7CB10	frames9=654 refs=wave57
+0xD968E	0xD9690	2	padding	-	fill_00	gap_D968E	-
+0xD9690	0xDACEC	5724	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_7E210	frames9=636 refs=wave58
+0xDACEC	0xDACF0	4	padding	-	fill_00	gap_DACEC	-
+0xDACF0	0xDC9D6	7398	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_7F870	frames9=822 refs=wave59
+0xDC9D6	0xDC9E0	10	padding	-	fill_00	gap_DC9D6	-
+0xDC9E0	0xDF269	10377	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_81560	frames9=1153 refs=wave60
+0xDF269	0xDF270	7	padding	-	fill_00	gap_DF269	-
+0xDF270	0xE0494	4644	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_83DF0	frames9=516 refs=wave61
+0xE0494	0xE04A0	12	padding	-	fill_00	gap_E0494	-
+0xE04A0	0xE664A	25002	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_85020	frames9=2778 refs=wave62
+0xE664A	0xE6650	6	padding	-	fill_00	gap_E664A	-
+0xE6650	0xE920C	11196	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_8B1D0	frames9=1244 refs=wave63
+0xE920C	0xE9210	4	padding	-	fill_00	gap_E920C	-
+0xE9210	0xE9FCF	3519	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_8DD90	frames9=391 refs=wave64
+0xE9FCF	0xE9FD0	1	padding	-	fill_00	gap_E9FCF	-
+0xE9FD0	0xEB659	5769	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_8EB50	frames9=641 refs=wave65
+0xEB659	0xEB660	7	padding	-	fill_00	gap_EB659	-
+0xEB660	0xEC6CB	4203	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_901E0	frames9=467 refs=wave66
+0xEC6CB	0xEC6D0	5	padding	-	fill_00	gap_EC6CB	-
+0xEC6D0	0xED045	2421	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_91250	frames9=269 refs=wave67
+0xED045	0xED050	11	padding	-	fill_00	gap_ED045	-
+0xED050	0xF1AEA	19098	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_91BD0	frames9=2122 refs=wave68
+0xF1AEA	0xF1AF0	6	padding	-	fill_00	gap_F1AEA	-
+0xF1AF0	0xF869F	27567	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_96670	frames9=3063 refs=wave69
+0xF869F	0xF86A0	1	padding	-	fill_00	gap_F869F	-
+0xF86A0	0xF940E	3438	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_9D220	frames9=382 refs=wave70
+0xF940E	0xF9410	2	padding	-	fill_00	gap_F940E	-
+0xF9410	0xF9F59	2889	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_9DF90	frames9=321 refs=wave71
+0xF9F59	0xF9F60	7	padding	-	fill_00	gap_F9F59	-
+0xF9F60	0xFF663	22275	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_9EAE0	frames9=2475 refs=wave72
+0xFF663	0xFF670	13	padding	-	fill_00	gap_FF663	-
+0xFF670	0x105AF3	25731	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_A41F0	frames9=2859 refs=wave73
+0x105AF3	0x105B00	13	padding	-	fill_00	gap_105AF3	-
+0x105B00	0x107DF2	8946	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_AA680	frames9=994 refs=wave74
+0x107DF2	0x107E00	14	padding	-	fill_00	gap_107DF2	-
+0x107E00	0x108CCD	3789	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_AC980	frames9=421 refs=wave75
+0x108CCD	0x108CD0	3	padding	-	fill_00	gap_108CCD	-
+0x108CD0	0x10947A	1962	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_AD850	frames9=218 refs=wave76
+0x10947A	0x109480	6	padding	-	fill_00	gap_10947A	-
+0x109480	0x1105E1	29025	payload	audio	libmus.adpcm_sample	wbk_5B470.sample_AE000	frames9=3225 refs=wave77
+0x1105E1	0x1105F0	15	padding	-	fill_00	gap_1105E1	-
+0x1105F0	0x111310	3360	referenced	loader_range	pi	rom_1105F0	call 0x8001EAE4 in 0x8001EA7C
+0x111310	0x111320	16	container	audio	libmus.WaveTablesHeader	wbk_111310.header	magic
+0x111320	0x111B36	2070	payload	audio	libmus.adpcm_sample	wbk_111310.sample_0	frames9=230 refs=wave0
+0x111B36	0x111B40	10	padding	-	fill_00	gap_111B36	-
+0x111B40	0x1123CB	2187	payload	audio	libmus.adpcm_sample	wbk_111310.sample_820	frames9=243 refs=wave1
+0x1123CB	0x1123D0	5	padding	-	fill_00	gap_1123CB	-
+0x1123D0	0x112A6C	1692	payload	audio	libmus.adpcm_sample	wbk_111310.sample_10B0	frames9=188 refs=wave2
+0x112A6C	0x112A70	4	padding	-	fill_00	gap_112A6C	-
+0x112A70	0x11318A	1818	payload	audio	libmus.adpcm_sample	wbk_111310.sample_1750	frames9=202 refs=wave3
+0x11318A	0x113190	6	padding	-	fill_00	gap_11318A	-
+0x113190	0x1136A9	1305	payload	audio	libmus.adpcm_sample	wbk_111310.sample_1E70	frames9=145 refs=wave4
+0x1136A9	0x1136B0	7	padding	-	fill_00	gap_1136A9	-
+0x1136B0	0x114B41	5265	payload	audio	libmus.adpcm_sample	wbk_111310.sample_2390	frames9=585 refs=wave5
+0x114B41	0x114B50	15	padding	-	fill_00	gap_114B41	-
+0x114B50	0x115EA6	4950	payload	audio	libmus.adpcm_sample	wbk_111310.sample_3830	frames9=550 refs=wave6
+0x115EA6	0x115EB0	10	padding	-	fill_00	gap_115EA6	-
+0x115EB0	0x1165EE	1854	payload	audio	libmus.adpcm_sample	wbk_111310.sample_4B90	frames9=206 refs=wave7
+0x1165EE	0x1165F0	2	padding	-	fill_00	gap_1165EE	-
+0x1165F0	0x1189BA	9162	payload	audio	libmus.adpcm_sample	wbk_111310.sample_52D0	frames9=1018 refs=wave8
+0x1189BA	0x1189C0	6	padding	-	fill_00	gap_1189BA	-
+0x1189C0	0x119E1B	5211	payload	audio	libmus.adpcm_sample	wbk_111310.sample_76A0	frames9=579 refs=wave9
+0x119E1B	0x119E20	5	padding	-	fill_00	gap_119E1B	-
+0x119E20	0x11B70D	6381	payload	audio	libmus.adpcm_sample	wbk_111310.sample_8B00	frames9=709 refs=wave10
+0x11B70D	0x11B710	3	padding	-	fill_00	gap_11B70D	-
+0x11B710	0x11CC9D	5517	payload	audio	libmus.adpcm_sample	wbk_111310.sample_A3F0	frames9=613 refs=wave11
+0x11CC9D	0x11CCA0	3	padding	-	fill_00	gap_11CC9D	-
+0x11CCA0	0x120AB6	15894	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B980	frames9=1766 refs=wave12
+0x120AB6	0x120AC0	10	padding	-	fill_00	gap_120AB6	-
+0x120AC0	0x123A6C	12204	payload	audio	libmus.adpcm_sample	wbk_111310.sample_F7A0	frames9=1356 refs=wave13
+0x123A6C	0x123A70	4	padding	-	fill_00	gap_123A6C	-
+0x123A70	0x124DB4	4932	payload	audio	libmus.adpcm_sample	wbk_111310.sample_12750	frames9=548 refs=wave14
+0x124DB4	0x124DC0	12	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x124DC0	0x128366	13734	payload	audio	libmus.adpcm_sample	wbk_111310.sample_13AA0	frames9=1526 refs=wave15
+0x128366	0x128370	10	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x128370	0x12A380	8208	payload	audio	libmus.adpcm_sample	wbk_111310.sample_17050	frames9=912 refs=wave16
+0x12A380	0x12C16B	7659	payload	audio	libmus.adpcm_sample	wbk_111310.sample_19060	frames9=851 refs=wave17
+0x12C16B	0x12C170	5	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x12C170	0x12D0F1	3969	payload	audio	libmus.adpcm_sample	wbk_111310.sample_1AE50	frames9=441 refs=wave18
+0x12D0F1	0x12D100	15	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x12D100	0x1330A9	24489	payload	audio	libmus.adpcm_sample	wbk_111310.sample_1BDE0	frames9=2721 refs=wave19
+0x1330A9	0x1330B0	7	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x1330B0	0x137B38	19080	payload	audio	libmus.adpcm_sample	wbk_111310.sample_21D90	frames9=2120 refs=wave20
+0x137B38	0x137B40	8	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x137B40	0x13C30A	18378	payload	audio	libmus.adpcm_sample	wbk_111310.sample_26820	frames9=2042 refs=wave21
+0x13C30A	0x13C310	6	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x13C310	0x13EB5A	10314	payload	audio	libmus.adpcm_sample	wbk_111310.sample_2AFF0	frames9=1146 refs=wave22
+0x13EB5A	0x13EB60	6	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x13EB60	0x13FB68	4104	payload	audio	libmus.adpcm_sample	wbk_111310.sample_2D840	frames9=456 refs=wave23
+0x13FB68	0x13FB70	8	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x13FB70	0x1412BF	5967	payload	audio	libmus.adpcm_sample	wbk_111310.sample_2E850	frames9=663 refs=wave24
+0x1412BF	0x1412C0	1	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x1412C0	0x141E12	2898	payload	audio	libmus.adpcm_sample	wbk_111310.sample_2FFA0	frames9=322 refs=wave25
+0x141E12	0x141E20	14	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x141E20	0x143BBA	7578	payload	audio	libmus.adpcm_sample	wbk_111310.sample_30B00	frames9=842 refs=wave26
+0x143BBA	0x143BC0	6	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x143BC0	0x146569	10665	payload	audio	libmus.adpcm_sample	wbk_111310.sample_328A0	frames9=1185 refs=wave27
+0x146569	0x146570	7	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x146570	0x148421	7857	payload	audio	libmus.adpcm_sample	wbk_111310.sample_35250	frames9=873 refs=wave28
+0x148421	0x148430	15	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x148430	0x14DAD0	22176	payload	audio	libmus.adpcm_sample	wbk_111310.sample_37110	frames9=2464 refs=wave29
+0x14DAD0	0x150B27	12375	payload	audio	libmus.adpcm_sample	wbk_111310.sample_3C7B0	frames9=1375 refs=wave30
+0x150B27	0x150B30	9	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x150B30	0x156314	22500	payload	audio	libmus.adpcm_sample	wbk_111310.sample_3F810	frames9=2500 refs=wave31
+0x156314	0x156320	12	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x156320	0x159419	12537	payload	audio	libmus.adpcm_sample	wbk_111310.sample_45000	frames9=1393 refs=wave32
+0x159419	0x159420	7	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x159420	0x15BD8A	10602	payload	audio	libmus.adpcm_sample	wbk_111310.sample_48100	frames9=1178 refs=wave33
+0x15BD8A	0x15BD90	6	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x15BD90	0x15D971	7137	payload	audio	libmus.adpcm_sample	wbk_111310.sample_4AA70	frames9=793 refs=wave34
+0x15D971	0x15D980	15	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x15D980	0x15F2B5	6453	payload	audio	libmus.adpcm_sample	wbk_111310.sample_4C660	frames9=717 refs=wave35
+0x15F2B5	0x15F2C0	11	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x15F2C0	0x161C84	10692	payload	audio	libmus.adpcm_sample	wbk_111310.sample_4DFA0	frames9=1188 refs=wave36
+0x161C84	0x161C90	12	referenced	loader_range	pi	rom_123C0E	records 0x800EFD64
+0x161C90	0x162FE6	4950	payload	audio	libmus.adpcm_sample	wbk_111310.sample_50970	frames9=550 refs=wave37
+0x162FE6	0x162FF0	10	padding	-	fill_00	gap_162FE6	-
+0x162FF0	0x164F70	8064	payload	audio	libmus.adpcm_sample	wbk_111310.sample_51CD0	frames9=896 refs=wave38
+0x164F70	0x165E97	3879	payload	audio	libmus.adpcm_sample	wbk_111310.sample_53C50	frames9=431 refs=wave39
+0x165E97	0x165EA0	9	padding	-	fill_00	gap_165E97	-
+0x165EA0	0x167760	6336	payload	audio	libmus.adpcm_sample	wbk_111310.sample_54B80	frames9=704 refs=wave40
+0x167760	0x16C158	18936	payload	audio	libmus.adpcm_sample	wbk_111310.sample_56440	frames9=2104 refs=wave41
+0x16C158	0x16C160	8	padding	-	fill_00	gap_16C158	-
+0x16C160	0x17146A	21258	payload	audio	libmus.adpcm_sample	wbk_111310.sample_5AE40	frames9=2362 refs=wave42
+0x17146A	0x171470	6	padding	-	fill_00	gap_17146A	-
+0x171470	0x176A41	21969	payload	audio	libmus.adpcm_sample	wbk_111310.sample_60150	frames9=2441 refs=wave43
+0x176A41	0x176A50	15	padding	-	fill_00	gap_176A41	-
+0x176A50	0x17C07B	22059	payload	audio	libmus.adpcm_sample	wbk_111310.sample_65730	frames9=2451 refs=wave44
+0x17C07B	0x17C080	5	padding	-	fill_00	gap_17C07B	-
+0x17C080	0x187321	45729	payload	audio	libmus.adpcm_sample	wbk_111310.sample_6AD60	frames9=5081 refs=wave45
+0x187321	0x187330	15	padding	-	fill_00	gap_187321	-
+0x187330	0x18EA79	30537	payload	audio	libmus.adpcm_sample	wbk_111310.sample_76010	frames9=3393 refs=wave46
+0x18EA79	0x18EA80	7	padding	-	fill_00	gap_18EA79	-
+0x18EA80	0x1974F2	35442	payload	audio	libmus.adpcm_sample	wbk_111310.sample_7D760	frames9=3938 refs=wave47
+0x1974F2	0x197500	14	padding	-	fill_00	gap_1974F2	-
+0x197500	0x19E931	29745	payload	audio	libmus.adpcm_sample	wbk_111310.sample_861E0	frames9=3305 refs=wave48
+0x19E931	0x19E940	15	padding	-	fill_00	gap_19E931	-
+0x19E940	0x1A535A	27162	payload	audio	libmus.adpcm_sample	wbk_111310.sample_8D620	frames9=3018 refs=wave49
+0x1A535A	0x1A5360	6	padding	-	fill_00	gap_1A535A	-
+0x1A5360	0x1AA03A	19674	payload	audio	libmus.adpcm_sample	wbk_111310.sample_94040	frames9=2186 refs=wave50
+0x1AA03A	0x1AA040	6	padding	-	fill_00	gap_1AA03A	-
+0x1AA040	0x1AC8A5	10341	payload	audio	libmus.adpcm_sample	wbk_111310.sample_98D20	frames9=1149 refs=wave51
+0x1AC8A5	0x1AC8B0	11	padding	-	fill_00	gap_1AC8A5	-
+0x1AC8B0	0x1B2A12	24930	payload	audio	libmus.adpcm_sample	wbk_111310.sample_9B590	frames9=2770 refs=wave52
+0x1B2A12	0x1B2A20	14	padding	-	fill_00	gap_1B2A12	-
+0x1B2A20	0x1B4370	6480	payload	audio	libmus.adpcm_sample	wbk_111310.sample_A1700	frames9=720 refs=wave53
+0x1B4370	0x1B55CA	4698	payload	audio	libmus.adpcm_sample	wbk_111310.sample_A3050	frames9=522 refs=wave54
+0x1B55CA	0x1B55D0	6	padding	-	fill_00	gap_1B55CA	-
+0x1B55D0	0x1B6869	4761	payload	audio	libmus.adpcm_sample	wbk_111310.sample_A42B0	frames9=529 refs=wave55
+0x1B6869	0x1B6870	7	padding	-	fill_00	gap_1B6869	-
+0x1B6870	0x1B703E	1998	payload	audio	libmus.adpcm_sample	wbk_111310.sample_A5550	frames9=222 refs=wave56
+0x1B703E	0x1B7040	2	padding	-	fill_00	gap_1B703E	-
+0x1B7040	0x1BA676	13878	payload	audio	libmus.adpcm_sample	wbk_111310.sample_A5D20	frames9=1542 refs=wave57
+0x1BA676	0x1BA680	10	padding	-	fill_00	gap_1BA676	-
+0x1BA680	0x1BB8EC	4716	payload	audio	libmus.adpcm_sample	wbk_111310.sample_A9360	frames9=524 refs=wave58
+0x1BB8EC	0x1BB8F0	4	padding	-	fill_00	gap_1BB8EC	-
+0x1BB8F0	0x1BFAC9	16857	payload	audio	libmus.adpcm_sample	wbk_111310.sample_AA5D0	frames9=1873 refs=wave59
+0x1BFAC9	0x1BFAD0	7	padding	-	fill_00	gap_1BFAC9	-
+0x1BFAD0	0x1C1BCA	8442	payload	audio	libmus.adpcm_sample	wbk_111310.sample_AE7B0	frames9=938 refs=wave60
+0x1C1BCA	0x1C1BD0	6	padding	-	fill_00	gap_1C1BCA	-
+0x1C1BD0	0x1C37A8	7128	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B08B0	frames9=792 refs=wave61
+0x1C37A8	0x1C37B0	8	padding	-	fill_00	gap_1C37A8	-
+0x1C37B0	0x1C4005	2133	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B2490	frames9=237 refs=wave62
+0x1C4005	0x1C4010	11	padding	-	fill_00	gap_1C4005	-
+0x1C4010	0x1C519B	4491	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B2CF0	frames9=499 refs=wave63
+0x1C519B	0x1C51A0	5	padding	-	fill_00	gap_1C519B	-
+0x1C51A0	0x1C6454	4788	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B3E80	frames9=532 refs=wave64
+0x1C6454	0x1C6460	12	padding	-	fill_00	gap_1C6454	-
+0x1C6460	0x1C69EE	1422	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B5140	frames9=158 refs=wave65
+0x1C69EE	0x1C69F0	2	padding	-	fill_00	gap_1C69EE	-
+0x1C69F0	0x1C76E9	3321	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B56D0	frames9=369 refs=wave66
+0x1C76E9	0x1C76F0	7	padding	-	fill_00	gap_1C76E9	-
+0x1C76F0	0x1C88E7	4599	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B63D0	frames9=511 refs=wave67
+0x1C88E7	0x1C88F0	9	padding	-	fill_00	gap_1C88E7	-
+0x1C88F0	0x1C9385	2709	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B75D0	frames9=301 refs=wave68
+0x1C9385	0x1C9390	11	padding	-	fill_00	gap_1C9385	-
+0x1C9390	0x1CA122	3474	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B8070	frames9=386 refs=wave69
+0x1CA122	0x1CA130	14	padding	-	fill_00	gap_1CA122	-
+0x1CA130	0x1CAA03	2259	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B8E10	frames9=251 refs=wave70
+0x1CAA03	0x1CAA10	13	padding	-	fill_00	gap_1CAA03	-
+0x1CAA10	0x1CAE87	1143	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B96F0	frames9=127 refs=wave71
+0x1CAE87	0x1CAE90	9	padding	-	fill_00	gap_1CAE87	-
+0x1CAE90	0x1CB562	1746	payload	audio	libmus.adpcm_sample	wbk_111310.sample_B9B70	frames9=194 refs=wave72
+0x1CB562	0x1CB570	14	padding	-	fill_00	gap_1CB562	-
+0x1CB570	0x1CB8E2	882	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BA250	frames9=98 refs=wave73
+0x1CB8E2	0x1CB8F0	14	padding	-	fill_00	gap_1CB8E2	-
+0x1CB8F0	0x1CC226	2358	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BA5D0	frames9=262 refs=wave74
+0x1CC226	0x1CC230	10	padding	-	fill_00	gap_1CC226	-
+0x1CC230	0x1CD169	3897	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BAF10	frames9=433 refs=wave75
+0x1CD169	0x1CD170	7	padding	-	fill_00	gap_1CD169	-
+0x1CD170	0x1CD89C	1836	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BBE50	frames9=204 refs=wave76
+0x1CD89C	0x1CD8A0	4	padding	-	fill_00	gap_1CD89C	-
+0x1CD8A0	0x1CEAB2	4626	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BC580	frames9=514 refs=wave77
+0x1CEAB2	0x1CEAC0	14	padding	-	fill_00	gap_1CEAB2	-
+0x1CEAC0	0x1CFA92	4050	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BD7A0	frames9=450 refs=wave78
+0x1CFA92	0x1CFAA0	14	padding	-	fill_00	gap_1CFA92	-
+0x1CFAA0	0x1D0C46	4518	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BE780	frames9=502 refs=wave79
+0x1D0C46	0x1D0C50	10	padding	-	fill_00	gap_1D0C46	-
+0x1D0C50	0x1D1241	1521	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BF930	frames9=169 refs=wave80
+0x1D1241	0x1D1250	15	padding	-	fill_00	gap_1D1241	-
+0x1D1250	0x1D1637	999	payload	audio	libmus.adpcm_sample	wbk_111310.sample_BFF30	frames9=111 refs=wave81
+0x1D1637	0x1D1640	9	padding	-	fill_00	gap_1D1637	-
+0x1D1640	0x1E03A0	60768	payload	audio	libmus.adpcm_sample	wbk_111310.sample_C0320	frames9=6752 refs=wave82
+0x1E03A0	0x1E66BB	25371	payload	audio	libmus.adpcm_sample	wbk_111310.sample_CF080	frames9=2819 refs=wave83
+0x1E66BB	0x1E66C0	5	padding	-	fill_00	gap_1E66BB	-
+0x1E66C0	0x1E9C30	13680	payload	audio	libmus.adpcm_sample	wbk_111310.sample_D53A0	frames9=1520 refs=wave84
+0x1E9C30	0x1EEAF0	20160	payload	audio	libmus.adpcm_sample	wbk_111310.sample_D8910	frames9=2240 refs=wave85
+0x1EEAF0	0x1F0521	6705	payload	audio	libmus.adpcm_sample	wbk_111310.sample_DD7D0	frames9=745 refs=wave86
+0x1F0521	0x1F0530	15	padding	-	fill_00	gap_1F0521	-
+0x1F0530	0x1F13A3	3699	payload	audio	libmus.adpcm_sample	wbk_111310.sample_DF210	frames9=411 refs=wave87
+0x1F13A3	0x1F13B0	13	padding	-	fill_00	gap_1F13A3	-
+0x1F13B0	0x1F1BCF	2079	payload	audio	libmus.adpcm_sample	wbk_111310.sample_E0090	frames9=231 refs=wave88
+0x1F1BCF	0x1F1BD0	1	padding	-	fill_00	gap_1F1BCF	-
+0x1F1BD0	0x1F608B	17595	payload	audio	libmus.adpcm_sample	wbk_111310.sample_E08B0	frames9=1955 refs=wave89
+0x1F608B	0x1F6090	5	padding	-	fill_00	gap_1F608B	-
+0x1F6090	0x1F8814	10116	payload	audio	libmus.adpcm_sample	wbk_111310.sample_E4D70	frames9=1124 refs=wave90
+0x1F8814	0x1F8820	12	padding	-	fill_00	gap_1F8814	-
+0x1F8820	0x1FD326	19206	payload	audio	libmus.adpcm_sample	wbk_111310.sample_E7500	frames9=2134 refs=wave91
+0x1FD326	0x1FD330	10	padding	-	fill_00	gap_1FD326	-
+0x1FD330	0x1FFE41	11025	payload	audio	libmus.adpcm_sample	wbk_111310.sample_EC010	frames9=1225 refs=wave92
+0x1FFE41	0x1FFE50	15	padding	-	fill_00	gap_1FFE41	-
+0x1FFE50	0x20543C	21996	payload	audio	libmus.adpcm_sample	wbk_111310.sample_EEB30	frames9=2444 refs=wave93
+0x20543C	0x205440	4	padding	-	fill_00	gap_20543C	-
+0x205440	0x20BBA5	26469	payload	audio	libmus.adpcm_sample	wbk_111310.sample_F4120	frames9=2941 refs=wave94
+0x20BBA5	0x20BBB0	11	padding	-	fill_00	gap_20BBA5	-
+0x20BBB0	0x20E346	10134	payload	audio	libmus.adpcm_sample	wbk_111310.sample_FA890	frames9=1126 refs=wave95
+0x20E346	0x20E350	10	padding	-	fill_00	gap_20E346	-
+0x20E350	0x2111B8	11880	payload	audio	libmus.adpcm_sample	wbk_111310.sample_FD030	frames9=1320 refs=wave96
+0x2111B8	0x2111C0	8	padding	-	fill_00	gap_2111B8	-
+0x2111C0	0x212CB7	6903	payload	audio	libmus.adpcm_sample	wbk_111310.sample_FFEA0	frames9=767 refs=wave97
+0x212CB7	0x212CC0	9	padding	-	fill_00	gap_212CB7	-
+0x212CC0	0x214982	7362	payload	audio	libmus.adpcm_sample	wbk_111310.sample_1019A0	frames9=818 refs=wave98
+0x214982	0x214990	14	padding	-	fill_00	gap_214982	-
+0x214990	0x215C7A	4842	payload	audio	libmus.adpcm_sample	wbk_111310.sample_103670	frames9=538 refs=wave99
+0x215C7A	0x215C80	6	unknown	-	-	gap_215C7A	-
+0x215C80	0x215CB0	48	container	audio	libmus.PtrTablesHeader	ptr_215C80.PtrTablesHeader_0	waves=100 refs=1
+0x215CB0	0x215CC4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_30	base=0x10 len=0x816 refs=1
+0x215CC4	0x215CC8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215CC8	0x215D50	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_48	order=2 npredictors=4 refs=1
+0x215D50	0x215D7C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_D0	start=2570 end=3584 count=-1 refs=1
+0x215D7C	0x215D80	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215D80	0x215D94	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_100	base=0x830 len=0x88B refs=1
+0x215D94	0x215D98	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215D98	0x215E20	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_118	order=2 npredictors=4 refs=1
+0x215E20	0x215E4C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1A0	start=2928 end=3768 count=-1 refs=1
+0x215E4C	0x215E50	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215E50	0x215E64	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1D0	base=0x10C0 len=0x69C refs=1
+0x215E64	0x215E68	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215E68	0x215EF0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1E8	order=2 npredictors=4 refs=1
+0x215EF0	0x215F1C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_270	start=2029 end=2869 count=-1 refs=1
+0x215F1C	0x215F20	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215F20	0x215F34	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2A0	base=0x1760 len=0x71A refs=1
+0x215F34	0x215F38	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215F38	0x215FC0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2B8	order=2 npredictors=4 refs=1
+0x215FC0	0x215FEC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_340	start=2308 end=3148 count=-1 refs=1
+0x215FEC	0x215FF0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x215FF0	0x216004	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_370	base=0x1E80 len=0x519 refs=1
+0x216004	0x216008	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216008	0x216090	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_388	order=2 npredictors=4 refs=1
+0x216090	0x2160BC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_410	start=1432 end=2251 count=-1 refs=1
+0x2160BC	0x2160C0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2160C0	0x2160D4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_440	base=0x23A0 len=0x1491 refs=1
+0x2160D4	0x2160D8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2160D8	0x216160	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_458	order=2 npredictors=4 refs=1
+0x216160	0x21618C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4E0	start=7936 end=9286 count=-1 refs=1
+0x21618C	0x216190	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216190	0x2161A4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_510	base=0x3840 len=0x1356 refs=1
+0x2161A4	0x2161A8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2161A8	0x216230	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_528	order=2 npredictors=4 refs=1
+0x216230	0x21625C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_5B0	start=7891 end=8731 count=-1 refs=1
+0x21625C	0x216260	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216260	0x216274	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_5E0	base=0x4BA0 len=0x73E refs=1
+0x216274	0x216278	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216278	0x216300	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_5F8	order=2 npredictors=4 refs=1
+0x216300	0x21632C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_680	start=2124 end=3140 count=-1 refs=1
+0x21632C	0x216330	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216330	0x216344	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_6B0	base=0x52E0 len=0x23CA refs=1
+0x216344	0x216348	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216348	0x2163D0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_6C8	order=2 npredictors=4 refs=1
+0x2163D0	0x2163FC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_750	start=15135 end=16146 count=-1 refs=1
+0x2163FC	0x216400	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216400	0x216414	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_780	base=0x76B0 len=0x145B refs=1
+0x216414	0x216418	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216418	0x2164A0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_798	order=2 npredictors=4 refs=1
+0x2164A0	0x2164CC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_820	start=8332 end=9172 count=-1 refs=1
+0x2164CC	0x2164D0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2164D0	0x2164E4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_850	base=0x8B10 len=0x18ED refs=1
+0x2164E4	0x2164E8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2164E8	0x216570	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_868	order=2 npredictors=4 refs=1
+0x216570	0x21659C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_8F0	start=10193 end=11033 count=-1 refs=1
+0x21659C	0x2165A0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2165A0	0x2165B4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_920	base=0xA400 len=0x158D refs=1
+0x2165B4	0x2165B8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2165B8	0x216640	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_938	order=2 npredictors=4 refs=1
+0x216640	0x21666C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_9C0	start=8911 end=9730 count=-1 refs=1
+0x21666C	0x216670	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216670	0x216684	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_9F0	base=0xB990 len=0x3E16 refs=1
+0x216684	0x216688	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216688	0x216710	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_A08	order=2 npredictors=4 refs=1
+0x216710	0x21673C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_A90	start=395 end=26887 count=-1 refs=1
+0x21673C	0x216740	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216740	0x216754	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_AC0	base=0xF7B0 len=0x2FAC refs=1
+0x216754	0x216758	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216758	0x2167E0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_AD8	order=2 npredictors=4 refs=1
+0x2167E0	0x21680C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_B60	start=20746 end=21586 count=-1 refs=1
+0x21680C	0x216810	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216810	0x216824	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_B90	base=0x12760 len=0x1344 refs=1
+0x216824	0x216828	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216828	0x2168B0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_BA8	order=2 npredictors=4 refs=1
+0x2168B0	0x2168DC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_C30	start=2620 end=8324 count=-1 refs=1
+0x2168DC	0x2168E0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2168E0	0x2168F4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_C60	base=0x13AB0 len=0x35A6 refs=1
+0x2168F4	0x2168F8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2168F8	0x216980	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_C78	order=2 npredictors=4 refs=1
+0x216980	0x2169AC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_D00	start=912 end=23524 count=-1 refs=1
+0x2169AC	0x2169B0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2169B0	0x2169C4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_D30	base=0x17060 len=0x2010 refs=1
+0x2169C4	0x2169C8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2169C8	0x216A50	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_D48	order=2 npredictors=4 refs=1
+0x216A50	0x216A7C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_DD0	start=13287 end=14132 count=-1 refs=1
+0x216A7C	0x216A80	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216A80	0x216A94	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_E00	base=0x19070 len=0x1DEB refs=1
+0x216A94	0x216A98	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216A98	0x216B20	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_E18	order=2 npredictors=4 refs=1
+0x216B20	0x216B4C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_EA0	start=12520 end=13360 count=-1 refs=1
+0x216B4C	0x216B50	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216B50	0x216B64	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_ED0	base=0x1AE60 len=0xF81 refs=1
+0x216B64	0x216B68	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216B68	0x216BF0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_EE8	order=2 npredictors=4 refs=1
+0x216BF0	0x216C1C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_F70	start=6165 end=7005 count=-1 refs=1
+0x216C1C	0x216C20	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216C20	0x216C34	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_FA0	base=0x1BDF0 len=0x5FA9 refs=1
+0x216C34	0x216C38	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216C38	0x216CC0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_FB8	order=2 npredictors=4 refs=1
+0x216CC0	0x216CEC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1040	start=2257 end=39682 count=-1 refs=1
+0x216CEC	0x216CF0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216CF0	0x216D04	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1070	base=0x21DA0 len=0x4A88 refs=1
+0x216D04	0x216D08	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216D08	0x216D90	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1088	order=2 npredictors=4 refs=1
+0x216D90	0x216DBC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1110	start=27423 end=33829 count=-1 refs=1
+0x216DBC	0x216DC0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216DC0	0x216DD4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1140	base=0x26830 len=0x47CA refs=1
+0x216DD4	0x216DD8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216DD8	0x216E60	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1158	order=2 npredictors=4 refs=1
+0x216E60	0x216E8C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_11E0	start=189 end=32346 count=-1 refs=1
+0x216E8C	0x216E90	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216E90	0x216EA4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1210	base=0x2B000 len=0x284A refs=1
+0x216EA4	0x216EA8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216EA8	0x216F30	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1228	order=2 npredictors=4 refs=1
+0x216F30	0x216F44	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_12B0	base=0x2D850 len=0x1008 refs=1
+0x216F44	0x216F48	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x216F48	0x216FD0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_12C8	order=2 npredictors=4 refs=1
+0x216FD0	0x216FFC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1350	start=6303 end=7143 count=-1 refs=1
+0x216FFC	0x217000	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217000	0x217014	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1380	base=0x2E860 len=0x174F refs=1
+0x217014	0x217018	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217018	0x2170A0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1398	order=2 npredictors=4 refs=1
+0x2170A0	0x2170B4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1420	base=0x2FFB0 len=0xB52 refs=1
+0x2170B4	0x2170B8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2170B8	0x217140	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1438	order=2 npredictors=4 refs=1
+0x217140	0x217154	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_14C0	base=0x30B10 len=0x1D9A refs=1
+0x217154	0x217158	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217158	0x2171E0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_14D8	order=2 npredictors=4 refs=1
+0x2171E0	0x2171F4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1560	base=0x328B0 len=0x29A9 refs=1
+0x2171F4	0x2171F8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2171F8	0x217280	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1578	order=2 npredictors=4 refs=1
+0x217280	0x2172AC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1600	start=15384 end=18793 count=-1 refs=1
+0x2172AC	0x2172B0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2172B0	0x2172C4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1630	base=0x35260 len=0x1EB1 refs=1
+0x2172C4	0x2172C8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2172C8	0x217350	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1648	order=2 npredictors=4 refs=1
+0x217350	0x21737C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_16D0	start=10163 end=13892 count=-1 refs=1
+0x21737C	0x217380	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217380	0x217394	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1700	base=0x37120 len=0x56A0 refs=1
+0x217394	0x217398	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217398	0x217420	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1718	order=2 npredictors=4 refs=1
+0x217420	0x21744C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_17A0	start=9018 end=38827 count=-1 refs=1
+0x21744C	0x217450	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217450	0x217464	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_17D0	base=0x3C7C0 len=0x3057 refs=1
+0x217464	0x217468	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217468	0x2174F0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_17E8	order=2 npredictors=4 refs=1
+0x2174F0	0x21751C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1870	start=12283 end=21899 count=-1 refs=1
+0x21751C	0x217520	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217520	0x217534	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_18A0	base=0x3F820 len=0x57E4 refs=1
+0x217534	0x217538	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217538	0x2175C0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_18B8	order=2 npredictors=4 refs=1
+0x2175C0	0x2175EC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1940	start=18416 end=38172 count=-1 refs=1
+0x2175EC	0x2175F0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2175F0	0x217604	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1970	base=0x45010 len=0x30F9 refs=1
+0x217604	0x217608	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217608	0x217690	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1988	order=2 npredictors=4 refs=1
+0x217690	0x2176BC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1A10	start=21009 end=22189 count=-1 refs=1
+0x2176BC	0x2176C0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2176C0	0x2176D4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1A40	base=0x48110 len=0x296A refs=1
+0x2176D4	0x2176D8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2176D8	0x217760	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1A58	order=2 npredictors=4 refs=1
+0x217760	0x21778C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1AE0	start=17913 end=18757 count=-1 refs=1
+0x21778C	0x217790	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217790	0x2177A4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1B10	base=0x4AA80 len=0x1BE1 refs=1
+0x2177A4	0x2177A8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2177A8	0x217830	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1B28	order=2 npredictors=4 refs=1
+0x217830	0x21785C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1BB0	start=11533 end=12629 count=-1 refs=1
+0x21785C	0x217860	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217860	0x217874	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1BE0	base=0x4C670 len=0x1935 refs=1
+0x217874	0x217878	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217878	0x217900	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1BF8	order=2 npredictors=4 refs=1
+0x217900	0x21792C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1C80	start=10562 end=11428 count=-1 refs=1
+0x21792C	0x217930	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217930	0x217944	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1CB0	base=0x4DFB0 len=0x29C4 refs=1
+0x217944	0x217948	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217948	0x2179D0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1CC8	order=2 npredictors=4 refs=1
+0x2179D0	0x2179FC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1D50	start=12661 end=18897 count=-1 refs=1
+0x2179FC	0x217A00	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217A00	0x217A14	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1D80	base=0x50980 len=0x1356 refs=1
+0x217A14	0x217A18	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217A18	0x217AA0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1D98	order=2 npredictors=4 refs=1
+0x217AA0	0x217ACC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1E20	start=5525 end=8729 count=-1 refs=1
+0x217ACC	0x217AD0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217AD0	0x217AE4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1E50	base=0x51CE0 len=0x1F80 refs=1
+0x217AE4	0x217AE8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217AE8	0x217B70	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1E68	order=2 npredictors=4 refs=1
+0x217B70	0x217B84	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1EF0	base=0x53C60 len=0xF27 refs=1
+0x217B84	0x217B88	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217B88	0x217C10	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1F08	order=2 npredictors=4 refs=1
+0x217C10	0x217C3C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_1F90	start=5939 end=6779 count=-1 refs=1
+0x217C3C	0x217C40	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217C40	0x217C54	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_1FC0	base=0x54B90 len=0x18C0 refs=1
+0x217C54	0x217C58	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217C58	0x217CE0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_1FD8	order=2 npredictors=4 refs=1
+0x217CE0	0x217D0C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2060	start=10334 end=11153 count=-1 refs=1
+0x217D0C	0x217D10	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217D10	0x217D24	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2090	base=0x56450 len=0x49F8 refs=1
+0x217D24	0x217D28	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217D28	0x217DB0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_20A8	order=2 npredictors=4 refs=1
+0x217DB0	0x217DC4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2130	base=0x5AE50 len=0x530A refs=1
+0x217DC4	0x217DC8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217DC8	0x217E50	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2148	order=2 npredictors=4 refs=1
+0x217E50	0x217E64	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_21D0	base=0x60160 len=0x55D1 refs=1
+0x217E64	0x217E68	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217E68	0x217EF0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_21E8	order=2 npredictors=4 refs=1
+0x217EF0	0x217F04	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2270	base=0x65740 len=0x562B refs=1
+0x217F04	0x217F08	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217F08	0x217F90	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2288	order=2 npredictors=4 refs=1
+0x217F90	0x217FA4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2310	base=0x6AD70 len=0xB2A1 refs=1
+0x217FA4	0x217FA8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x217FA8	0x218030	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2328	order=2 npredictors=4 refs=1
+0x218030	0x21805C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_23B0	start=28672 end=79919 count=-1 refs=1
+0x21805C	0x218060	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218060	0x218074	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_23E0	base=0x76020 len=0x7749 refs=1
+0x218074	0x218078	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218078	0x218100	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_23F8	order=2 npredictors=4 refs=1
+0x218100	0x21812C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2480	start=15603 end=52993 count=-1 refs=1
+0x21812C	0x218130	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218130	0x218144	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_24B0	base=0x7D770 len=0x8A72 refs=1
+0x218144	0x218148	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218148	0x2181D0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_24C8	order=2 npredictors=4 refs=1
+0x2181D0	0x2181FC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2550	start=13758 end=61532 count=-1 refs=1
+0x2181FC	0x218200	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218200	0x218214	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2580	base=0x861F0 len=0x7431 refs=1
+0x218214	0x218218	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218218	0x2182A0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2598	order=2 npredictors=4 refs=1
+0x2182A0	0x2182CC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2620	start=14840 end=51476 count=-1 refs=1
+0x2182CC	0x2182D0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2182D0	0x2182E4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2650	base=0x8D630 len=0x6A1A refs=1
+0x2182E4	0x2182E8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2182E8	0x218370	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2668	order=2 npredictors=4 refs=1
+0x218370	0x21839C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_26F0	start=10996 end=46455 count=-1 refs=1
+0x21839C	0x2183A0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2183A0	0x2183B4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2720	base=0x94050 len=0x4CDA refs=1
+0x2183B4	0x2183B8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2183B8	0x218440	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2738	order=2 npredictors=4 refs=1
+0x218440	0x21846C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_27C0	start=10596 end=33442 count=-1 refs=1
+0x21846C	0x218470	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218470	0x218484	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_27F0	base=0x98D30 len=0x2865 refs=1
+0x218484	0x218488	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218488	0x218510	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2808	order=2 npredictors=4 refs=1
+0x218510	0x21853C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2890	start=16516 end=17527 count=-1 refs=1
+0x21853C	0x218540	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218540	0x218554	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_28C0	base=0x9B5A0 len=0x6162 refs=1
+0x218554	0x218558	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218558	0x2185E0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_28D8	order=2 npredictors=4 refs=1
+0x2185E0	0x21860C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2960	start=38917 end=42794 count=-1 refs=1
+0x21860C	0x218610	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218610	0x218624	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2990	base=0xA1710 len=0x1950 refs=1
+0x218624	0x218628	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218628	0x2186B0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_29A8	order=2 npredictors=4 refs=1
+0x2186B0	0x2186DC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2A30	start=10491 end=11303 count=-1 refs=1
+0x2186DC	0x2186E0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2186E0	0x2186F4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2A60	base=0xA3060 len=0x125A refs=1
+0x2186F4	0x2186F8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2186F8	0x218780	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2A78	order=2 npredictors=4 refs=1
+0x218780	0x2187AC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2B00	start=7238 end=8083 count=-1 refs=1
+0x2187AC	0x2187B0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2187B0	0x2187C4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2B30	base=0xA42C0 len=0x1299 refs=1
+0x2187C4	0x2187C8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2187C8	0x218850	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2B48	order=2 npredictors=4 refs=1
+0x218850	0x21887C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2BD0	start=7291 end=8303 count=-1 refs=1
+0x21887C	0x218880	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218880	0x218894	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2C00	base=0xA5560 len=0x7CE refs=1
+0x218894	0x218898	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218898	0x218920	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2C18	order=2 npredictors=4 refs=1
+0x218920	0x21894C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2CA0	start=2608 end=3427 count=-1 refs=1
+0x21894C	0x218950	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218950	0x218964	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2CD0	base=0xA5D30 len=0x3636 refs=1
+0x218964	0x218968	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218968	0x2189F0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2CE8	order=2 npredictors=4 refs=1
+0x2189F0	0x218A04	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2D70	base=0xA9370 len=0x126C refs=1
+0x218A04	0x218A08	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218A08	0x218A90	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2D88	order=2 npredictors=4 refs=1
+0x218A90	0x218AA4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2E10	base=0xAA5E0 len=0x41D9 refs=1
+0x218AA4	0x218AA8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218AA8	0x218B30	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2E28	order=2 npredictors=4 refs=1
+0x218B30	0x218B44	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2EB0	base=0xAE7C0 len=0x20FA refs=1
+0x218B44	0x218B48	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218B48	0x218BD0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2EC8	order=2 npredictors=4 refs=1
+0x218BD0	0x218BE4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_2F50	base=0xB08C0 len=0x1BD8 refs=1
+0x218BE4	0x218BE8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218BE8	0x218C70	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_2F68	order=2 npredictors=4 refs=1
+0x218C70	0x218C9C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_2FF0	start=11181 end=12535 count=-1 refs=1
+0x218C9C	0x218CA0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218CA0	0x218CB4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3020	base=0xB24A0 len=0x855 refs=1
+0x218CB4	0x218CB8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218CB8	0x218D40	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3038	order=2 npredictors=4 refs=1
+0x218D40	0x218D6C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_30C0	start=2860 end=3700 count=-1 refs=1
+0x218D6C	0x218D70	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218D70	0x218D84	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_30F0	base=0xB2D00 len=0x118B refs=1
+0x218D84	0x218D88	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218D88	0x218E10	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3108	order=2 npredictors=4 refs=1
+0x218E10	0x218E3C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3190	start=7053 end=7897 count=-1 refs=1
+0x218E3C	0x218E40	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218E40	0x218E54	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_31C0	base=0xB3E90 len=0x12B4 refs=1
+0x218E54	0x218E58	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218E58	0x218EE0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_31D8	order=2 npredictors=4 refs=1
+0x218EE0	0x218F0C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3260	start=7602 end=8424 count=-1 refs=1
+0x218F0C	0x218F10	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218F10	0x218F24	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3290	base=0xB5150 len=0x58E refs=1
+0x218F24	0x218F28	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218F28	0x218FB0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_32A8	order=2 npredictors=4 refs=1
+0x218FB0	0x218FC4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3330	base=0xB56E0 len=0xCF9 refs=1
+0x218FC4	0x218FC8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x218FC8	0x219050	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3348	order=2 npredictors=4 refs=1
+0x219050	0x219064	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_33D0	base=0xB63E0 len=0x11F7 refs=1
+0x219064	0x219068	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219068	0x2190F0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_33E8	order=2 npredictors=4 refs=1
+0x2190F0	0x21911C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3470	start=6382 end=8066 count=-1 refs=1
+0x21911C	0x219120	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219120	0x219134	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_34A0	base=0xB75E0 len=0xA95 refs=1
+0x219134	0x219138	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219138	0x2191C0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_34B8	order=2 npredictors=4 refs=1
+0x2191C0	0x2191EC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3540	start=3870 end=4710 count=-1 refs=1
+0x2191EC	0x2191F0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2191F0	0x219204	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3570	base=0xB8080 len=0xD92 refs=1
+0x219204	0x219208	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219208	0x219290	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3588	order=2 npredictors=4 refs=1
+0x219290	0x2192BC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3610	start=4974 end=6074 count=-1 refs=1
+0x2192BC	0x2192C0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2192C0	0x2192D4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3640	base=0xB8E20 len=0x8D3 refs=1
+0x2192D4	0x2192D8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2192D8	0x219360	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3658	order=2 npredictors=4 refs=1
+0x219360	0x219374	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_36E0	base=0xB9700 len=0x477 refs=1
+0x219374	0x219378	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219378	0x219400	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_36F8	order=2 npredictors=4 refs=1
+0x219400	0x219414	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3780	base=0xB9B80 len=0x6D2 refs=1
+0x219414	0x219418	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219418	0x2194A0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3798	order=2 npredictors=4 refs=1
+0x2194A0	0x2194B4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3820	base=0xBA260 len=0x372 refs=1
+0x2194B4	0x2194B8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2194B8	0x219540	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3838	order=2 npredictors=4 refs=1
+0x219540	0x219554	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_38C0	base=0xBA5E0 len=0x936 refs=1
+0x219554	0x219558	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219558	0x2195E0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_38D8	order=2 npredictors=4 refs=1
+0x2195E0	0x2195F4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3960	base=0xBAF20 len=0xF39 refs=1
+0x2195F4	0x2195F8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2195F8	0x219680	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3978	order=2 npredictors=4 refs=1
+0x219680	0x219694	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3A00	base=0xBBE60 len=0x72C refs=1
+0x219694	0x219698	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219698	0x219720	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3A18	order=2 npredictors=4 refs=1
+0x219720	0x219734	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3AA0	base=0xBC590 len=0x1212 refs=1
+0x219734	0x219738	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219738	0x2197C0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3AB8	order=2 npredictors=4 refs=1
+0x2197C0	0x2197D4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3B40	base=0xBD7B0 len=0xFD2 refs=1
+0x2197D4	0x2197D8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2197D8	0x219860	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3B58	order=2 npredictors=4 refs=1
+0x219860	0x21988C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3BE0	start=6234 end=7069 count=-1 refs=1
+0x21988C	0x219890	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219890	0x2198A4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3C10	base=0xBE790 len=0x11A6 refs=1
+0x2198A4	0x2198A8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x2198A8	0x219930	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3C28	order=2 npredictors=4 refs=1
+0x219930	0x21995C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3CB0	start=7121 end=7961 count=-1 refs=1
+0x21995C	0x219960	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219960	0x219974	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3CE0	base=0xBF940 len=0x5F1 refs=1
+0x219974	0x219978	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219978	0x219A00	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3CF8	order=2 npredictors=4 refs=1
+0x219A00	0x219A2C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3D80	start=1819 end=2638 count=-1 refs=1
+0x219A2C	0x219A30	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219A30	0x219A44	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3DB0	base=0xBFF40 len=0x3E7 refs=1
+0x219A44	0x219A48	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219A48	0x219AD0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3DC8	order=2 npredictors=4 refs=1
+0x219AD0	0x219AFC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_3E50	start=706 end=1722 count=-1 refs=1
+0x219AFC	0x219B00	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219B00	0x219B14	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3E80	base=0xC0330 len=0xED60 refs=1
+0x219B14	0x219B18	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219B18	0x219BA0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3E98	order=2 npredictors=4 refs=1
+0x219BA0	0x219BB4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3F20	base=0xCF090 len=0x631B refs=1
+0x219BB4	0x219BB8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219BB8	0x219C40	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3F38	order=2 npredictors=4 refs=1
+0x219C40	0x219C54	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_3FC0	base=0xD53B0 len=0x3570 refs=1
+0x219C54	0x219C58	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219C58	0x219CE0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_3FD8	order=2 npredictors=4 refs=1
+0x219CE0	0x219CF4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4060	base=0xD8920 len=0x4EC0 refs=1
+0x219CF4	0x219CF8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219CF8	0x219D80	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4078	order=2 npredictors=4 refs=1
+0x219D80	0x219D94	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4100	base=0xDD7E0 len=0x1A31 refs=1
+0x219D94	0x219D98	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219D98	0x219E20	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4118	order=2 npredictors=4 refs=1
+0x219E20	0x219E34	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_41A0	base=0xDF220 len=0xE73 refs=1
+0x219E34	0x219E38	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219E38	0x219EC0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_41B8	order=2 npredictors=4 refs=1
+0x219EC0	0x219EEC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4240	start=5660 end=6500 count=-1 refs=1
+0x219EEC	0x219EF0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219EF0	0x219F04	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4270	base=0xE00A0 len=0x81F refs=1
+0x219F04	0x219F08	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219F08	0x219F90	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4288	order=2 npredictors=4 refs=1
+0x219F90	0x219FBC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4310	start=2838 end=3657 count=-1 refs=1
+0x219FBC	0x219FC0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219FC0	0x219FD4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4340	base=0xE08C0 len=0x44BB refs=1
+0x219FD4	0x219FD8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x219FD8	0x21A060	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4358	order=2 npredictors=4 refs=1
+0x21A060	0x21A08C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_43E0	start=29269 end=30244 count=-1 refs=1
+0x21A08C	0x21A090	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A090	0x21A0A4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4410	base=0xE4D80 len=0x2784 refs=1
+0x21A0A4	0x21A0A8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A0A8	0x21A130	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4428	order=2 npredictors=4 refs=1
+0x21A130	0x21A15C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_44B0	start=16972 end=17812 count=-1 refs=1
+0x21A15C	0x21A160	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A160	0x21A174	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_44E0	base=0xE7510 len=0x4B06 refs=1
+0x21A174	0x21A178	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A178	0x21A200	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_44F8	order=2 npredictors=4 refs=1
+0x21A200	0x21A22C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4580	start=33077 end=34051 count=-1 refs=1
+0x21A22C	0x21A230	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A230	0x21A244	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_45B0	base=0xEC020 len=0x2B11 refs=1
+0x21A244	0x21A248	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A248	0x21A2D0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_45C8	order=2 npredictors=4 refs=1
+0x21A2D0	0x21A2FC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4650	start=18679 end=19533 count=-1 refs=1
+0x21A2FC	0x21A300	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A300	0x21A314	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4680	base=0xEEB40 len=0x55EC refs=1
+0x21A314	0x21A318	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A318	0x21A3A0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4698	order=2 npredictors=4 refs=1
+0x21A3A0	0x21A3CC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4720	start=37908 end=38972 count=-1 refs=1
+0x21A3CC	0x21A3D0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A3D0	0x21A3E4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4750	base=0xF4130 len=0x6765 refs=1
+0x21A3E4	0x21A3E8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A3E8	0x21A470	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4768	order=2 npredictors=4 refs=1
+0x21A470	0x21A484	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_47F0	base=0xFA8A0 len=0x2796 refs=1
+0x21A484	0x21A488	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A488	0x21A510	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4808	order=2 npredictors=4 refs=1
+0x21A510	0x21A53C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4890	start=16912 end=17926 count=-1 refs=1
+0x21A53C	0x21A540	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A540	0x21A554	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_48C0	base=0xFD040 len=0x2E68 refs=1
+0x21A554	0x21A558	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A558	0x21A5E0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_48D8	order=2 npredictors=4 refs=1
+0x21A5E0	0x21A60C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4960	start=20176 end=21021 count=-1 refs=1
+0x21A60C	0x21A610	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A610	0x21A624	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4990	base=0xFFEB0 len=0x1AF7 refs=1
+0x21A624	0x21A628	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A628	0x21A6B0	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_49A8	order=2 npredictors=4 refs=1
+0x21A6B0	0x21A6DC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4A30	start=7050 end=12152 count=-1 refs=1
+0x21A6DC	0x21A6E0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A6E0	0x21A6F4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4A60	base=0x1019B0 len=0x1CC2 refs=1
+0x21A6F4	0x21A6F8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A6F8	0x21A780	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4A78	order=2 npredictors=4 refs=1
+0x21A780	0x21A7AC	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4B00	start=5712 end=12084 count=-1 refs=1
+0x21A7AC	0x21A7B0	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A7B0	0x21A7C4	20	container	audio	libmus.WaveTable	ptr_215C80.WaveTable_4B30	base=0x103680 len=0x12EA refs=1
+0x21A7C4	0x21A7C8	4	referenced	loader_range	pi	rom_215C80	call 0x8001EB48 in 0x8001EA7C
+0x21A7C8	0x21A850	136	container	audio	libmus.ADPCMBook	ptr_215C80.ADPCMBook_4B48	order=2 npredictors=4 refs=1
+0x21A850	0x21A87C	44	container	audio	libmus.ADPCMloop	ptr_215C80.ADPCMloop_4BD0	start=4783 end=8076 count=-1 refs=1
+0x21A87C	0x21AA0C	400	container	audio	libmus.WaveList	ptr_215C80.WaveList_4BFC	refs=1
+0x21AA0C	0x21AA70	100	container	audio	libmus.BaseNotes	ptr_215C80.BaseNotes_4D8C	refs=1
+0x21AA70	0x21AC00	400	container	audio	libmus.Detunes	ptr_215C80.Detunes_4DF0	refs=1
+0x21AC00	0x6FA050	5108816	unknown	-	-	gap_21AC00	-
+0x6FA050	0x749D72	326946	referenced	loader_range	pi	rom_6FA050	records 0x800AA234
+0x749D72	0xF4D840	8403662	unknown	-	-	gap_749D72	-
+0xF4D840	0xF4D850	16	referenced	loader_range	pi	rom_F4D840	records 0x80052EB8 in 0x80030350
+0xF4D850	0x1000000	731056	padding	-	fill_00	gap_F4D850	-
