@@ -92,3 +92,4 @@
 0x52D00	0x50	src/runtime/check_sp_task_yielded.c	-O2 -G0 -mips3 -mgp32 -mfp32	bdeb5b082d7b1dddc4446352e60404a4a944ddc2b1cda83e20240f2c9045e689
 0x47E30	0x2D4	src/runtime/matrix_rotate.c	--section-base=.data:0x80055FF0 -O3 -G0 -mips3 -mgp32 -mfp32	fdf48cb103e7ffb09a0110cb3cf20dbb078679ea3875140e629ba6aa361b4551
 0x47AB0	0x380	src/runtime/matrix_perspective.c	--section-base=.rodata:0x80003570 -O3 -G0 -mips3 -mgp32 -mfp32	ed4c43cf691778a9e3f3bcd6860c83c559344a3526002147150da5fb6a19994d
+0x3FAA8	0x18	src/game/parser_clear_ac.c	-O2 -G0	4e3178abf83d2b6a7c07635433bde4cf641dfa1bd52928b34c9e6460fe95dfe1

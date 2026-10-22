@@ -2,7 +2,6 @@
 0x80003A58	0x38	src/runtime/pi_wait_and_store.c	semantic C; KMC best score 22, compiled size 0x20
 0x80006DB0	0x1C	src/game/select_count.c	semantic C; best SN diff has branch/instruction/scheduling differences
 0x8003E884	0x30	src/game/parser_read_var_ac.c	semantic C; closest KMC build differs in instruction selection, registers, and scheduling
-0x8003EEA8	0x18	src/game/parser_clear_ac.c	semantic C; target padding and hazard nop layout remain unmatched
 0x8003E800	0x74	src/game/parser_read_inverse_motion.c	semantic C; closest KMC build differs in floating-point allocation and scheduling
 0x8003E8E4	0x58	src/game/parser_adjust_float_30.c	semantic C; closest KMC build differs in sign extension and floating-point scheduling
 0x8003EAFC	0x48	src/game/parser_select_record_84.c	semantic C; closest KMC build differs in instruction selection and registers
