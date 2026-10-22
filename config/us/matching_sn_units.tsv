@@ -22,3 +22,5 @@
 0x30AA8	0xC	src/game/set_state_word_b9324.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d19b3def83efb3c6ec979edaf68e40e2ecf23df4b85f45e0df687222c70abe12
 0x30AC4	0xC	src/game/set_state_byte_b9320.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f9bfb1eb08f0c826f893fc835a33b481bff061fb2598d937a447e9f6118e0d1c
 0x30AE0	0xC	src/game/set_state_byte_b9321.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	53e4eea132d97bf45485115332ad2b5a757879e64a9f87d181361724bd2b3165
+0x1F230	0x18	src/game/allocate_resource_block.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	c320d4d41dba9ec0bf2eed19a16ad4cde0e4237c80deba73ff8863813d4628a1
+0x1F250	0x18	src/game/reset_resource_indices.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	31192fa2836a35e6c040a9fd416ed74b187fe10cffef63e26aef91dc34e33c61
