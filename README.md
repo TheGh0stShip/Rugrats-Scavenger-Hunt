@@ -24,7 +24,10 @@ provide your own legally obtained USA retail ROM.
 - Physical ROM inventory: 16,777,216 / 16,777,216 bytes (100%)
 
 The reproducible physical ROM map is in `analysis/rom_map.md`. Its companion
-JSON includes every resource and audio-sample record, while
+JSON includes every resource and audio-sample record, while the hosted tracker
+reports byte-matched code, byte-matched initialized data,
+asset extraction, asset-container inventory, and physical ROM coverage as
+separate measures. Container discovery is not counted as asset extraction.
 `analysis/rom_inventory.tsv` is a gap-free 1,907-row ledger covering every ROM address from `0x000000` through
 `0xFFFFFF`. The automated code and initialized-data survey is preserved in
 `analysis/survey/`. Function boundaries are candidates until reviewed; a
