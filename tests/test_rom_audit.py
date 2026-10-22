@@ -36,6 +36,45 @@ class RomAuditTests(unittest.TestCase):
             0x4EEC0,
         )
 
+    def test_physical_ledger_is_gap_free(self) -> None:
+        report = {
+            "program_sections": [
+                {"kind": kind, "start": start, "end": end}
+                for kind, start, end in AUDIT.PROGRAM_SECTIONS
+            ],
+            "audio_graphics_ranges": [
+                {"kind": kind, "start": start, "end": end}
+                for kind, start, end in AUDIT.AUDIO_GRAPHICS_RANGES
+            ],
+            "audio_banks": [
+                {
+                    "name": name,
+                    "pointer_start": pointer_start,
+                    "wave_start": wave_start,
+                    "wave_end": wave_end,
+                    "samples": [],
+                }
+                for name, pointer_start, wave_start, wave_end in AUDIT.AUDIO_BANKS
+            ],
+            "archives": [
+                {
+                    "name": name,
+                    "start": start,
+                    "end": end,
+                    "index_bytes": end - start,
+                    "records": [],
+                }
+                for name, start, end in AUDIT.ARCHIVES
+            ],
+        }
+        rows = AUDIT.physical_ledger(report)
+        self.assertEqual(rows[0]["start"], 0)
+        self.assertEqual(rows[-1]["end"], AUDIT.ROM_SIZE)
+        self.assertTrue(
+            all(left["end"] == right["start"] for left, right in zip(rows, rows[1:]))
+        )
+        self.assertEqual(sum(row["size"] for row in rows), AUDIT.ROM_SIZE)
+
 
 if __name__ == "__main__":
     unittest.main()

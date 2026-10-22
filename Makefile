@@ -10,7 +10,7 @@ N64DK := PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_T
 check: verify-rom verify-matching report-check
 
 rom-audit: verify-rom
-	$(PYTHON) tools/audit_rom.py "$(ROM)" --json analysis/rom_map.json --markdown analysis/rom_map.md
+	$(PYTHON) tools/audit_rom.py "$(ROM)" --json analysis/rom_map.json --markdown analysis/rom_map.md --ledger analysis/rom_inventory.tsv
 
 report:
 	$(PYTHON) tools/generate_decomp_report.py

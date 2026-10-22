@@ -14,16 +14,27 @@ provide your own legally obtained USA retail ROM.
 - BSS: `0x80057280..0x800C7E30`
 - Executable sections: 323,264 bytes; initialized data: 32,704 bytes
 - 1,273 conservative function candidates; 268 SDK functions fingerprinted
+- 1,017 initialized-data objects identified (including 65 jump tables and 153 strings)
 - Two resource archives: 910 nonempty indexed resources in 911 records
 - Audio: 178 indexed samples across two sample and pointer-bank pairs
+- Asset signatures: 380 `MORT` records and 376 `mdlh` model-header records
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Matching C: 289 functions / 19,864 code bytes
+- Matching C: 284 functions / 19,864 code bytes
 - Matching initialized data: 240 bytes
+- Physical ROM inventory: 16,777,216 / 16,777,216 bytes (100%)
 
-The reproducible physical ROM map is in `analysis/rom_map.md`; its companion
-JSON includes every resource record. The automated code survey is preserved in
+The reproducible physical ROM map is in `analysis/rom_map.md`. Its companion
+JSON includes every resource and audio-sample record, while
+`analysis/rom_inventory.tsv` is a gap-free 1,907-row ledger covering every ROM address from `0x000000` through
+`0xFFFFFF`. The automated code and initialized-data survey is preserved in
 `analysis/survey/`. Function boundaries are candidates until reviewed; a
 stripped retail ROM cannot prove original source-level function boundaries.
+
+Counts deliberately remain at the strongest level supported by the formats.
+For example, the ROM proves 178 indexed audio samples, but not which samples
+are music versus effects. Likewise, an archive record can contain multiple
+textures, meshes, or animations, so container counts are not presented as
+decoded asset counts.
 
 ## Verification
 
