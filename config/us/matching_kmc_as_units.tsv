@@ -121,3 +121,4 @@
 0x3F14C	0x128	src/game/parser_read_interpolation.c	--section-base=.rodata:0x80003380 -O2 -G0 -mips3 -mgp32 -mfp32	1ea60cd954f0460bb3ca70a5978ec74c96bfd8fca8088822e3358482e0f3ab50
 0x4DDF0	0xA0	src/runtime/create_indexed_runtime_record.c	-O2 -G0 -mips3 -mgp32 -mfp32	eaf11d13f53f9446858e550c90058369d3c7ba83a5876180218af423d759863b
 0x4C140	0x24	src/runtime/scale_double_power_two.c	-O2 -G0 -mips3 -mgp32 -mfp32	412c93b8610646e94b70c4e07ba0237df0f6f254d35b22609d6e0db9cc9d189b
+0x3B410	0x30	src/game/dispatch_and_return_value.c	-O1 -G0 -mips3 -mgp32 -mfp32	fc42be47c592ab3fc2a3a025e55886c165b19b248fb8bd19c02fd70c6c704ee5

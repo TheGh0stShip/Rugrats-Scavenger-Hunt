@@ -62,3 +62,6 @@
 0x9D6C	0x28	src/game/set_grid_halfword.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	63ce7a4375614bae571fb743689bae50f749f5dba39904bf3cb08e8fca89f5d7
 0x2ED7C	0x2C	src/game/update_object_counter_194.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a52aeca4969d0bb42e45b8b7d61d8ecd2c5f63c98469f34be593eaa05bd2048e
 0x1C98C	0x34	src/game/initialize_fixed_identifiers.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1d1f92a192be9af7f7db6e550bd679dd093493f16f3268b1584d5ec516029f26
+0x13050	0x38	src/game/initialize_state_52e94.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1724efdd4866bd53d59c7ca801ad306b9e7c8ded984e69b88ffe4b1017562c25
+0x173D0	0x38	src/game/validate_indexed_records.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	be22c02315f5d7c013e5cd860e262769dbfdbdfa28efabe7bb9e08ca7d6ae83e
+0x30E00	0x38	src/game/reset_scene_timing.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1e6378e3d4ce98754fdce2095a30b3adc426b40ccb0eba3e774a6e8069cef4f3
