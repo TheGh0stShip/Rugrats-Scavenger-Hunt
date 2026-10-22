@@ -1,5 +1,8 @@
 # Rugrats: Scavenger Hunt (USA) decompilation
 
+[![Progress](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Code&measure=matched_code_percent)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
+[![Report](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml/badge.svg)](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml)
+
 An in-progress, byte-matching C decompilation of the Nintendo 64 game. You must
 provide your own legally obtained USA retail ROM.
 
@@ -11,7 +14,7 @@ provide your own legally obtained USA retail ROM.
 - BSS: `0x80057280..0x800C7E30`
 - 1,273 initial function candidates; 268 SDK functions fingerprinted
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Matching C: 221 functions / 13,236 code bytes
+- Matching C: 224 functions / 13,908 code bytes
 - Matching initialized data: 144 bytes
 
 The automated survey is preserved in `analysis/survey/`. Function boundaries
@@ -31,4 +34,9 @@ By default the Makefile reuses `../n64-decomp-kit` and
 locations. `make verify-matching` compiles every row in
 the matching manifests in `config/us/` and compares relocated output directly
 with the retail ROM.
+
+`make report` generates the ROM-independent objdiff v2 progress report used by
+[ByteMatch](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt). The
+default-branch workflow publishes the same report as `us_report` after every
+push.
 

@@ -92,6 +92,7 @@
 0x4C470	0x10	src/game/noop_8004b870.c	-O2 -G0 -mips3 -mgp32 -mfp32	2415714719d85e4a789acee079f28e4e4c4c2b693ab00b843e8d8d91c8c3882c
 0x4C480	0x20	src/runtime/init_record.c	-O2 -G0 -mips3 -mgp32 -mfp32	fbb508e6a86134d259e851e282169a4b06c0a2c6ff878f0a829346eb89bb4ed1
 0x49EC0	0x54	src/runtime/init_timer_services.c	-O2 -G0 -mips3 -mgp32 -mfp32	1d053157c0d7c2ed93f228947171d55f148c0ba5f451ea7e54def9c81b98d197
+0x49E80	0x40	src/runtime/dequeue_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	c43e631d6b4f1adba7f466e217d868ae5adf0bf06bbc3e6d082f6c19786afe4a
 0x4C5E0	0x30	src/runtime/append_record_word.c	-O2 -G0 -mips3 -mgp32 -mfp32	d63be2a0db7fe36c7fae44f59256f173fd3653d2fa12a175aab077c7e9b384ba
 0x4CC70	0x14	src/runtime/store_when_mode_one.c	-O2 -G0 -mips3 -mgp32 -mfp32	ad4794677ad62d058a57385e2beef7bd5397ac0714bc98f110e9b8c74fcfa7c9
 0x4D5A0	0x30	src/runtime/store_record_mode.c	-O2 -G0 -mips3 -mgp32 -mfp32	c4f5b188a4ce718ac0fabf65fdd1a66b17ede31bc644e3ec17d19d36805f2149

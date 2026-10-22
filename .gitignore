@@ -1,6 +1,7 @@
 .toolchain/
 .venv/
 build/
+__pycache__/
 analysis/survey/main_segment.bin
 *.n64
 *.v64
