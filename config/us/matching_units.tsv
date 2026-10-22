@@ -225,3 +225,4 @@
 0x49520	0x20	src/runtime/enable_interrupt_mask.c	-O2 -G0 -mips3 -mgp32 -mfp32	760fabe684a57096a1f98fb972d27fc9ae0f5b227768fa227ed73c15b4ad1e09
 0x586C	0x1C	src/runtime/invalidate_instruction_cache.c	-O2 -G0 -mips3 -mgp32 -mfp32	7fa634084d1c34c9ab3a71ad827d92d481a457df55a9557bf5e5f40088c82ded
 0x5888	0x1C	src/runtime/invalidate_data_cache.c	-O2 -G0 -mips3 -mgp32 -mfp32	b108f5136c8776d18c6006066648434d6510bba7727aa316e6071ef934da6a3f
+0x4B70C	0x34	src/game/append_mode_two_word.c	-O2 -G0 -mips3 -mgp32 -mfp32	ccf9eefd5130957aa8d102e61fa137834e60d83f5eda1b051ac7a99e834b1c20
