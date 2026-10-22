@@ -32,11 +32,11 @@ The gap-free ledger has 1,907 non-overlapping intervals covering 16,777,216 / 16
 
 The two executable sections total 323,264 bytes. The function catalogue contains 1,273 functions spanning 314,356 instruction bytes; the remaining 8,908 executable-section bytes are padding, embedded tables, or boundary-sensitive regions and are not invented as functions.
 
-- Exact manifest coverage: 27,160 / 323,264 bytes (8.401802%)
-- Fully covered functions: 423 / 1,273 (33.228594%)
+- Exact manifest coverage: 27,248 / 323,264 bytes (8.429024%)
+- Fully covered functions: 424 / 1,273 (33.307148%)
 - Partially covered catalogue functions: 7
 - Catalogue classifications: {'asm': 35, 'c': 873, 'leaf': 259, 'stub': 106}
-- Not-fully-covered classifications: {'asm': 35, 'c': 701, 'leaf': 111, 'stub': 3}
+- Not-fully-covered classifications: {'asm': 35, 'c': 701, 'leaf': 110, 'stub': 3}
 - Jump tables: 64 with 990 entries
 - Boundary findings requiring review: {'rejected_start': 1, 'in_text_data': 6, 'stray_words': 52, 'cross_branch': 5, 'start_in_delay_slot': 6, 'falls_through': 3, 'branch_to_entry': 2, 'late_start': 2, 'branch_outside': 1}
 
