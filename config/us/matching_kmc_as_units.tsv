@@ -29,6 +29,8 @@
 0x4EA24	0x6C	src/runtime/get_si_access.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c6e86e7488926f82e7d6d6cea8be307af41b6f6cf4c0d7de84597174c6cec97
 0x4DE90	0x10	src/runtime/read_audio_interface_dram_addr.c	-O2 -G0 -mips3 -mgp32 -mfp32	679568a8280a1cc54387664b9e46dd53d246ce010538ce2e3327ac214a9b4e75
 0x4DEA0	0x10	src/runtime/read_audio_interface_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca2590df63a0994d2295be9346906b5706c52e06e06a133776138a7b7929c473
+0x4DEB0	0x130	src/runtime/set_audio_frequency.c	--section-base=.rodata:0x80003900 -O2 -G0 -mips3 -mgp32 -mfp32	91e9720ab0df801365331614c99a5a4514ace0ba12c7b80ba3984b53023461b5
+0x4DFE0	0xA0	src/runtime/set_audio_next_buffer.c	--section-base=.data:0x80056350 -O2 -G0 -mips3 -mgp32 -mfp32	657469cb6c6f12005b510949f47f258e30980525bf414a6bad385c0a153db65e
 0x4EA90	0x30	src/runtime/init_queue_800c45a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca30f8ecefe984ea11d56664595c9c2812c1808b4709886bf059936c54fa86f2
 0x52BA0	0x10	src/runtime/write_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	87f4554b65720db3a616e71c1e06b8c2f95731c91b14d0bffeb4b618a8b379d4
 0x52D50	0x10	src/runtime/read_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2e827923487755f449dbe9074b0d6fbc69a89128fd74ab6f1b1d25c100006a03
@@ -43,7 +45,12 @@
 0x51CF0	0x14	src/runtime/diagnostic_stub_800510f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	7008cedc7bc7666823ccb635b2fcb91203276ea030284707c9e8f52db2ea3448
 0x51D04	0x1C	src/runtime/diagnostic_stub_80051104.c	-O2 -G0 -mips3 -mgp32 -mfp32	aa856e35dba294708397847ba0b81ee640868e8cb6bb484286779e156a944ec2
 0x52630	0x38	src/runtime/mark_task_pending.c	-O1 -G0 -mips3 -mgp32 -mfp32	59bfb9ca23cfbe1c4c78c5fd4f8529e2eb8b8c7a25230a97b0bd86b1f16652f9
+0x52880	0xA0	src/runtime/set_dp_next_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	19b87bc5457fc10e0276cfc154bcc35427763fd0d2a22951ef18ab879af4ac68
 0x52D60	0x40	src/runtime/get_queue_value_63c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8dc66b5e6dcbd6f52f26abfb58f5f891c5df312e7d7ff4d09da1306efb9b5966
 0x52DA0	0x40	src/runtime/get_queue_value_63c4.c	-O2 -G0 -mips3 -mgp32 -mfp32	64860635895c57bbcf520d4ba42a72d627ccd83e7a2a901091d822f33aa39cbf
+0x53120	0x60	src/runtime/set_vi_event.c	-O2 -G0 -mips3 -mgp32 -mfp32	6ba59b3882044ebaeeb11ae852353c966a4a521e89e75915b73d577827153a64
+0x53180	0x50	src/runtime/set_vi_mode.c	-O2 -G0 -mips3 -mgp32 -mfp32	814a49a6af82f477d98dc6e962df0b64696a462becb307beb80b43d58ee01243
+0x531D0	0x50	src/runtime/swap_vi_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	f161f971b15b3527fb459547d96c60ca872b4efb4ae65adff568a4ffaae24354
+0x53220	0x60	src/runtime/set_vi_black.c	-O2 -G0 -mips3 -mgp32 -mfp32	84a5e4ed47c5f68e319c2aacb73ff007557c6a62184707db9e8c6f741e60cb7d
 0x52CE0	0x20	src/runtime/set_sp_status_400.c	-O2 -G0 -mips3 -mgp32 -mfp32	04e7743a487f3eba34157f00f551fbe95c75e3834f610d6a8509badb6789e06d
 0x52D00	0x50	src/runtime/check_sp_task_yielded.c	-O2 -G0 -mips3 -mgp32 -mfp32	bdeb5b082d7b1dddc4446352e60404a4a944ddc2b1cda83e20240f2c9045e689
