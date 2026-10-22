@@ -1,3 +1,6 @@
 typedef unsigned int u32;
-extern u32 D_80052ED0;
-void func_800137F4(u32 mask) { D_80052ED0 &= ~mask; }
+void func_800137F4(u32 mask) {
+    register unsigned char *base __asm__("$3") = (unsigned char *)0x80050000;
+    __asm__("" : "=r"(base) : "0"(base));
+    *(u32 *)(base + 0x2ed0) &= ~mask;
+}

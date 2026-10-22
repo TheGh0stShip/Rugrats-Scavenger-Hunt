@@ -1,5 +1,6 @@
 # SN Systems GCC 2.8 exact matching units
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x143F4	0x18	src/game/clear_state_flags_52ed0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	08a6505708b5c8b2975a39cee4cc87ece28bf06b84f2fb734a2cb68512c32f58
 0x6128	0x1C	src/game/update_object_halfword.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ef96079830611b3c3fb259a30f880c8e0d6a1ebdbc0a05c861ece8bed646f59d
 0x6144	0x24	src/game/get_current_player.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a3d44cc14a0d4a5185cb207d39169424bea8b9201a5089d69fd3c9a6e667e04d
 0x61A4	0x1C	src/game/get_player_slot.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a9eefaeafa21edc55524ce51a6360c056fda29b26000f554439fa2f65ab5482d

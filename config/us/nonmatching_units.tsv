@@ -1,7 +1,6 @@
 # VRAM SIZE SOURCE NOTES
 0x80003A58	0x38	src/runtime/pi_wait_and_store.c	semantic C; KMC best score 22, compiled size 0x20
 0x80006DB0	0x1C	src/game/select_count.c	semantic C; best SN diff has branch/instruction/scheduling differences
-0x80048764	0x10	src/game/replace_word_from_pointer.c	semantic C; best KMC diff is a v0/t9 register allocation swap
 0x8003E884	0x30	src/game/parser_read_var_ac.c	semantic C; closest KMC build differs in instruction selection, registers, and scheduling
 0x8003EEA8	0x18	src/game/parser_clear_ac.c	semantic C; target padding and hazard nop layout remain unmatched
 0x8003E800	0x74	src/game/parser_read_inverse_motion.c	semantic C; closest KMC build differs in floating-point allocation and scheduling
@@ -13,7 +12,6 @@
 0x8003EC78	0x50	src/game/parser_accumulate_bd.c	semantic C; closest KMC build has an a0/v1 allocation swap
 0x8003E47C	0x54	src/game/update_matching_records.c	semantic C; loop branch shape and allocation remain unmatched
 0x8003E54C	0x128	src/game/parser_read_interpolation.c	semantic C; parser layout recovered, with remaining KMC scheduling/allocation differences
-0x800137F4	0x18	src/game/clear_state_flags_52ed0.c	semantic C; closest SN build has operand/register ordering differences
 0x8001E0B0	0x30	src/game/reset_resource_record.c	semantic C; closest SN build has two scheduling differences
 0x8001E28C	0x24	src/game/offset_resource_bounds.c	semantic C; closest IDO 5.3 build differs only in register allocation
 0x8001E630	0x18	src/game/allocate_resource_block.c	semantic C; closest SN build differs in return/update allocation
@@ -35,7 +33,6 @@
 0x80043100	0x2C	src/game/fill_bytes.c	semantic C; closest KMC build differs in loop shape and register allocation
 0x80044258	0x18	src/game/set_object_state_4.c	semantic C; closest IDO 5.3 build lacks two trailing hazard nops
 0x80045CE0	0x10	src/game/square_root.c	semantic C; target is a hand-authored sqrt.s leaf with padding
-0x80048764	0x10	src/runtime/advance_list_head.c	semantic C; target uses the SDK assembly register convention
 0x8004CA4C	0x34	src/runtime/unlink_doubly_linked_node.c	semantic C; closest KMC build lacks one target hazard nop
 0x8004CA80	0x40	src/runtime/init_aligned_arena.c	semantic C; closest KMC build differs in temporary register allocation
 0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs in register allocation and scheduling
