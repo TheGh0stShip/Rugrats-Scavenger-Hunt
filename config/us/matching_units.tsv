@@ -197,6 +197,8 @@
 0x131E0	0x2C	src/game/clear_state_timer_block.c	-O2 -G0 -mips3 -mgp32 -mfp32	024dd6a48f909827fdd2df8d66d2b44220e61c675e17b36546d3be699f5b183d
 0x21EA4	0x2C	src/game/clear_state_pointer_fb8c.c	-O2 -G0 -mips3 -mgp32 -mfp32	c1bbfee0d58cc9d7ab2b161fd8708aeff885983b4ebafd55073342536310dcef
 0x30F28	0x28	src/game/finalize_scene_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	ecf0ce7658ca638db691c81747d929dd1280d1a1dffe42eb201bcc7aea62d258
+0x3B440	0x34	src/game/next_random_value.c	-O1 -G0 -mips3 -mgp32 -mfp32	f82e8b814d3762476cf8adba0c71a02b7dedf3b431f88784c1115b8a05f4ae03
+0x30DC8	0x30	src/game/range_entry_is_complete.c	-O2 -G0 -mips3 -mgp32 -mfp32	cd46b79cf5fe30056da6255d3a09b37c2a62233721abd0460a9d33a89cc0fdb0
 0x312CC	0x30	src/game/finalize_scene_state_extended.c	-O2 -G0 -mips3 -mgp32 -mfp32	2950fc6775a8027825b623789d3ca07b2fecfe65806f540f7d01998dce599eaa
 0x36464	0x28	src/game/enable_state_and_clear_field_f4.c	-O2 -G0 -mips3 -mgp32 -mfp32	11893bf8a5c2cca267cde6193ebb1864c78adb86091bf7f173b3d556497b100d
 0x755C	0x6C	src/game/remap_identifier_neighbor.c	-O2 -G0 -mips3 -mgp32 -mfp32	edb8e80319e6c43ee093e5bfc88e22cd67f9d1d95c2d59b33b0647202ace3af5
