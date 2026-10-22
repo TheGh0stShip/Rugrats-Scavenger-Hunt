@@ -162,3 +162,5 @@
 0x28538	0x20	src/game/call_func_8001a3ec_80027938.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c1f8cd95d77740928880b9e57584b1866288ee2bf866d0eeef16ef6243df2d4
 0x28558	0x20	src/game/call_func_80033e1c_80027958.c	-O2 -G0 -mips3 -mgp32 -mfp32	bf6fd22d617d6144ec9d96d71bbf15a3ca3194753b672dd199d57c2d4af2fa05
 0x34A70	0x20	src/game/call_func_8001def8.c	-O2 -G0 -mips3 -mgp32 -mfp32	081108bcfea0d0567a853bad4558256ef74d75f19932b87f41f0c8b46c0bd029
+0x3E154	0x1C	src/game/reset_parser_runtime_fields.c	-O2 -G0 -mips3 -mgp32 -mfp32	85c2dddf6a528a6f37775c91d4c2f49a0dfc9f7f666d742786b8cbe17a9d7b94
+0x106E8	0x20	src/game/relocate_header_offsets.c	-O2 -G0 -mips3 -mgp32 -mfp32	3b01df0002f6d8fe3239ddda2dc4e2cd8751f2f3385db64677991dd2a85b7954
