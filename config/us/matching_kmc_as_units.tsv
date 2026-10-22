@@ -22,6 +22,9 @@
 0x4D5D0	0x2C	src/runtime/init_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	fb791e3f6c4cf5d4653e44e7acf51f161f79689f14c6cdd1a8a15a25eca3a5ab
 0x4D5FC	0x30	src/runtime/clear_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	2a26c4eb6d518bf6b9a2037a6c0a94a2d68fcf252c8794d4ebdc0312282cc13d
 0x49610	0x90	src/runtime/get_time.c	-O2 -G0 -mips3 -mgp32 -mfp32	0baa4662a2479447e6cd6e5643345e6db179f9c7e4cf74ffc79f03332a3c29d6
+0x49540	0xD0	src/runtime/destroy_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	4980d235695127602990fe5f50d519915f004b210daa9dc4c863da44cd94cf0b
+0x49C90	0xD0	src/runtime/set_thread_priority.c	-O2 -G0 -mips3 -mgp32 -mfp32	e630ed02a34e16a5462f004707a822c83f36382dec5269d1bac2082d3a2f7223
+0x49D60	0x120	src/runtime/start_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	d82f5945aeae42a33039a3085dc91fa641e99bf64ee0be02a1a3706c2da8e570
 0x49F14	0x13C	src/runtime/timer_interrupt.c	-O2 -G0 -mips3 -mgp32 -mfp32	a0d751c1993b5ddce37224cc1b4f2daae2c7c9f822afa4b4d451b1d825451ac8
 0x4A050	0x60	src/runtime/set_timer_interrupt.c	-O2 -G0 -mips3 -mgp32 -mfp32	a6e525eeb5a42ce9aa7561aa330f186fc5fef87451a13620f477b5761eb2caa6
 0x4A0B0	0x110	src/runtime/insert_timer.c	-O2 -G0 -mips3 -mgp32 -mfp32	6898dd55ac35d8cb9cc6b8d3e814f74ddbeeb6fad9cfe3f9dd7229947ace4e26
