@@ -1,6 +1,6 @@
 # Rugrats: Scavenger Hunt (USA) decompilation
 
-[![Progress](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Code&measure=matched_code_percent)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
+[![Progress](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Overall&measure=matched_code_percent)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
 [![Report](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml/badge.svg)](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml)
 
 An in-progress, byte-matching C decompilation of the Nintendo 64 game. You must
@@ -38,5 +38,7 @@ with the retail ROM.
 `make report` generates the ROM-independent objdiff v2 progress report used by
 [ByteMatch](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt). The
 default-branch workflow publishes the same report as `us_report` after every
-push.
+push. Overall progress covers the complete reportable ROM payload from `0x1000`
+through the end of the 8 MiB image. Program code, initialized program data, and
+the remaining asset/image/audio region are also reported as separate categories.
 

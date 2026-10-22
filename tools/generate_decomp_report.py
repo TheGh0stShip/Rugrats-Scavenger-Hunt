@@ -18,6 +18,8 @@ MANIFESTS = (
     ROOT / "config/us/matching_ido_units.tsv",
 )
 DEFAULT_OUTPUT = ROOT / "build/report.json"
+ROM_SIZE = 0x800000
+REPORTABLE_ROM_START = 0x1000
 PROGRAM_ROM_END = 0x57E80
 MATCHED_DATA = 144
 
@@ -91,6 +93,11 @@ def measures(total_code: int, matched_code: int, total_functions: int,
     }
 
 
+def byte_category(total: int, matched: int) -> dict:
+    """Expose non-code byte progress in category views that render code fields."""
+    return measures(total, matched, 0, 0, total, matched)
+
+
 def build_report() -> dict:
     section = tomllib.loads(FUNCTIONS.read_text())["section"][0]
     functions = section["functions"]
@@ -130,29 +137,53 @@ def build_report() -> dict:
         matched_functions += int(complete)
 
     total_code = sum(function["size"] for function in functions)
-    total_data = PROGRAM_ROM_END - section["rom"] - total_code
+    total_program_data = PROGRAM_ROM_END - section["rom"] - total_code
+    total_assets = ROM_SIZE - PROGRAM_ROM_END
+    total_non_code = total_program_data + total_assets
+    total_reportable = ROM_SIZE - REPORTABLE_ROM_START
+    matched_reportable = matched_code + MATCHED_DATA
     if matched_code != sum(right - left for left, right, _source in ranges):
         raise ValueError("matching manifests include bytes outside the function catalogue")
-    if total_data < MATCHED_DATA:
+    if total_program_data < MATCHED_DATA:
         raise ValueError("initialized-data progress exceeds the program data total")
+    if total_code + total_non_code != total_reportable:
+        raise ValueError("code, program data and assets do not cover the ROM payload")
 
     overall = measures(
+        total_reportable,
+        matched_reportable,
+        len(functions),
+        matched_functions,
+        total_non_code,
+        MATCHED_DATA,
+    )
+    code = measures(
         total_code,
         matched_code,
         len(functions),
         matched_functions,
-        total_data,
-        MATCHED_DATA,
     )
     return {
         "measures": overall,
         "units": units,
         "version": 2,
-        "categories": [{
-            "id": "code",
-            "name": "Program code",
-            "measures": overall,
-        }],
+        "categories": [
+            {
+                "id": "code",
+                "name": "Program code",
+                "measures": code,
+            },
+            {
+                "id": "program_data",
+                "name": "Initialized program data",
+                "measures": byte_category(total_program_data, MATCHED_DATA),
+            },
+            {
+                "id": "assets",
+                "name": "Assets, images and audio",
+                "measures": byte_category(total_assets, 0),
+            },
+        ],
     }
 
 
@@ -166,7 +197,7 @@ def main() -> None:
     result = report["measures"]
     print(
         f"wrote {args.output}: {result['matched_code']} / "
-        f"{result['total_code']} code bytes"
+        f"{result['total_code']} reportable ROM bytes"
     )
 
 
