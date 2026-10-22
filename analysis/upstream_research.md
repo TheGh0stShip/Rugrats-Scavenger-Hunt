@@ -137,3 +137,96 @@ range before reconstructing equivalent code manually.
   revision; every unit still requires byte verification against the USA ROM.
 - Asset containers are not decoded asset counts. Existing conservative counts
   remain in force until nested formats are parsed.
+
+## Second fifty-round campaign
+
+This follow-up campaign broadened the survey from title-specific searches to
+compiler manuals, source-recovery workflows, asset tooling, community case
+studies, and developer lineage. Each row is one distinct research round.
+
+| Round | Focus | Actionable result |
+|---:|---|---|
+| 1 | KMC compiler tooling | Use pinned GCC 2.7.2 and binutils 2.6 builds |
+| 2 | SN compiler tooling | Preserve the separate compiler and ASN64 assembler pipeline |
+| 3 | Automated matching | Keep relocation-aware verification as the acceptance gate |
+| 4 | Project bootstrap | Existing project layout already exceeds generic templates |
+| 5 | KMC project examples | Mario Golf 64 confirms the same compiler family |
+| 6 | GCC 2.7.2 projects | Reuse known flag and scheduling experiments |
+| 7 | KMC assembler variants | Test assembler variants independently of the C compiler |
+| 8 | GCC-built titles | Search source clusters, not isolated functions |
+| 9 | SN-built projects | Turok 3 is the strongest public SN source-shape reference |
+| 10 | SN optimization flags | Continue per-function optimization-level sweeps |
+| 11 | ASN64 behavior | Treat assembler output as part of the matching identity |
+| 12 | Mixed compiler projects | Keep separate manifests for each proven pipeline |
+| 13 | Permutation search | Reserve randomized searches for close semantic candidates |
+| 14 | First-pass C recovery | Use generated control flow as a draft, never as proof |
+| 15 | Shared scratch services | Search for prior public matches before long campaigns |
+| 16 | Matching automation | Rank work by size, shape, and neighboring clusters |
+| 17 | ROM splitting | Current audited ranges are more precise than generic splitting |
+| 18 | MIPS disassembly | Retain explicit relocations and symbol context |
+| 19 | Object comparison | Continue emitting machine-readable category totals |
+| 20 | Instruction diffing | Use small, address-scoped diffs for rapid iteration |
+| 21 | Asset extraction tools | Generic viewers are useful only after format validation |
+| 22 | `MORT` signature | No independent public definition was found |
+| 23 | `mdlh` signature | No independent public definition was found |
+| 24 | Acclaim formats | Publisher lineage does not match the actual developer |
+| 25 | Nintendo audio libraries | Standard bank structures remain useful comparison points |
+| 26 | Audio extraction | Soundbank tools can validate sample boundaries |
+| 27 | Sequence identification | Third-party titles may use embedded MIDI variants |
+| 28 | ADPCM banks | SDK `.ctl` and `.tbl` documentation provides field semantics |
+| 29 | Display lists | F3DEX command references support direct list walking |
+| 30 | Texture extraction | Texture64 is useful for visual validation, not counting proof |
+| 31 | Models and animation | No compatible game-specific parser was found |
+| 32 | Compression | Test known codecs by valid decode and exact consumed length |
+| 33 | Community matching tips | Repeated code clusters are high-yield candidate groups |
+| 34 | Discussion archives | No stronger game-specific source emerged |
+| 35 | Historic development archives | Manuals are more useful than unverified anecdotes |
+| 36 | Case studies | Record compiler behavior discoveries durably |
+| 37 | SDK documentation | Use original manuals for structures and tool behavior |
+| 38 | GCC scheduling | Inspect compiler source when a correct expression schedules poorly |
+| 39 | VR4300 hazards | Delay and hazard behavior explains otherwise odd instruction order |
+| 40 | SN documentation | The original manual confirms CCN64 feeds ASN64 |
+| 41 | First-difference scripts | A stable smallest-first queue prevents duplicate work |
+| 42 | Function boundaries | Keep discovered boundaries under verification tests |
+| 43 | Library fingerprinting | Exhaust known SDK candidates before manual reconstruction |
+| 44 | Pattern retrieval | Exact source anchors outperform broad text similarity |
+| 45 | Progress reporting | Code, matched data, extraction, and inventory must remain separate |
+| 46 | Data matching | Initialized-data equality needs its own byte gate |
+| 47 | Asset reporting | Container coverage must not be presented as extraction progress |
+| 48 | Continuous verification | Every accepted unit must rebuild against the retail bytes |
+| 49 | Developer lineage | Realtime Associates, not Avalanche, developed this title |
+| 50 | Shared technology | Credits identify Factor 5 voice compression as a research lead |
+
+### New sources and resulting decisions
+
+- The [SN Systems development manual](https://ultra64.ca/files/documentation/sn-systems/SN_Systems_PC_Development_System_for_the_Nintendo_64.pdf)
+  confirms that CCN64 sends compiler output through ASN64. Compiler and
+  assembler variants therefore remain separate matching dimensions.
+- The [VR4300 user manual](https://www.bitsavers.org/components/nec/mips/1995_NEC_VR4300_MIPS_RISC_Microprocessor_Users_Manual.pdf)
+  documents load delays, branch delays, interlocks, and hazards. These details
+  are relevant when source-equivalent candidates differ only in scheduling.
+- The [Nintendo 64 documentation archive](https://ultra64.ca/resources/documentation/)
+  collects the compiler, audio, graphics, and development-system manuals used
+  as primary format references.
+- [Mario Golf 64](https://github.com/monde-lointain/mariogolf64) provides a
+  maintained KMC GCC 2.7.2 and binutils 2.6 project example.
+- [Turok 3](https://github.com/Drahsid/turok3) provides a public example of the
+  SN compiler and ASN64 build chain.
+- [N64 Decomp Workbench](https://github.com/akratch/n64-decomp-workbench)
+  demonstrates reproducible mismatch campaigns and relocation-aware diffs.
+- [Texture64](https://github.com/queueRAM/Texture64),
+  [seq64](https://github.com/sauraen/seq64), and
+  [N64-Tools](https://github.com/jombo23/N64-Tools) are validation references
+  for texture, sequence, and sound-bank hypotheses. Their recognition results
+  are evidence to test, not automatic inventory counts.
+- The [game credits](https://www.mobygames.com/game/36133/rugrats-scavenger-hunt/credits/n64/)
+  identify licensed Factor 5 voice-compression technology. This narrows future
+  audio research more than publisher-based searches do.
+
+### Applied result
+
+The campaign produced two immediate changes. First, the repository now has a
+deterministic smallest-first unmatched-function queue, with filtering by the
+survey's function classification. Second, cluster-based wrapper analysis found
+an exact KMC match for `func_80038F30`, a byte-fill wrapper that reorders its
+two scalar arguments before calling `func_80038E90`.
