@@ -167,3 +167,6 @@
 0x8700	0x24	src/game/call_with_unit_scale.c	-O2 -G0 -mips3 -mgp32 -mfp32	89751ea5c79c70df8600b268c0a8fa539d013e7a506e60ff3b2fa4b2f14b57a5
 0xEDB0	0x18	src/game/remap_high_identifier.c	-O2 -G0 -mips3 -mgp32 -mfp32	908ef205252a32368285c53c66d1defa5e627aeb642b6d8a2ee6226a3c538c87
 0x14714	0x28	src/game/finalize_resource_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	f3354168e492f5a6fb97c72bb6c4d90446d8ae9fae493a770b5bcc723477f14f
+0xA864	0x28	src/game/call_state_handler_9194.c	-O2 -G0 -mips3 -mgp32 -mfp32	6e2503db2b56ff4f4890d1444b66b0b8848daaeeb919320300037c4becb9ffe4
+0x1D31C	0x30	src/game/finish_when_ready_8001c71c.c	-O2 -G0 -mips3 -mgp32 -mfp32	20c6426a2bb955f4072872172cae55392e0eb294b5d7457395232f4fc8ee9cc9
+0x1D34C	0x30	src/game/finish_when_ready_8001c74c.c	-O2 -G0 -mips3 -mgp32 -mfp32	20c6426a2bb955f4072872172cae55392e0eb294b5d7457395232f4fc8ee9cc9
