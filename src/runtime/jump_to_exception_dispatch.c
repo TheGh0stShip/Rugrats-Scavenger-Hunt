@@ -1,0 +1,16 @@
+__asm__(
+    ".set noreorder\n"
+    ".globl func_80004B50\n"
+    "func_80004B50:\n\t"
+    "mtc0 $26, $30\n\t"
+    "lui $26, 0x8000\n\t"
+    "addiu $26, $26, 0x4CBC\n\t"
+    "jr $26\n\t"
+    "nop\n\t"
+    ".word 0\n\t"
+    ".word 0\n\t"
+    ".word 0\n\t"
+    ".word 0\n\t"
+    ".word 0\n\t"
+    ".set reorder"
+);
