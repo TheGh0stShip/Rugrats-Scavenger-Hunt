@@ -1,5 +1,9 @@
 # KMC GCC 2.7.2 exact matching units
 # ROM_START SIZE SOURCE FLAGS SHA256
+0xE510	0x38	src/game/process_object_30.c	-O2 -G0 -mips3 -mgp32 -mfp32	9767cc1781d62234f152edd7612b46bdd3dc442cc7c871a9043f1e54053c3d04
+0x26C98	0x38	src/game/shift_two_slots.c	-O2 -G0 -mips3 -mgp32 -mfp32	eccba9030e26fc4a1ab4e15a776ed2c9eef11105ddb8dd22d5243fbc7d4fa12e
+0x316F8	0x38	src/game/run_cleanup_sequence.c	-O2 -G0 -mips3 -mgp32 -mfp32	a9fb074600b5767cfebc4966800acf2f5e5b95a9b59a542d40a63b46f3b4171f
+0x3EB80	0x38	src/game/offset_nonnull_words.c	-O2 -G0 -mips3 -mgp32 -mfp32	6ae65648aa9228d5257ba46fe990650fc767b0f96eae23bb613557ec4c0731a4
 0x26BC4	0x18	src/game/object_index_is_current.c	-O2 -G0 -mips3 -mgp32 -mfp32	bee38c8bd026c29d6cb1e63bc2dd27147251df6231845685bb7aea2a5fd13bcd
 0x8E90	0x28	src/game/copy_matrix_words.c	-O2 -G0 -mips3 -mgp32 -mfp32	52421dcd94507f46d28366204fdefcf2809d49196646c760330fa969f41750c5
 0x6100	0xC	src/game/object_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	5fdaee46c73acbc8113a6bf1055ed105151172ac6e8fabb5919167cee355c95d

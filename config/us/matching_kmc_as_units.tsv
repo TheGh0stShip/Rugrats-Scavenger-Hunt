@@ -1,5 +1,7 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x4184C	0x38	src/game/relink_object_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	f73c88077275347d9afda5742ce21bffd1547450892833d94fbdf23c67ba409e
+0x43CAC	0x30	src/game/create_state_span.c	-O2 -G0 -mips3 -mgp32 -mfp32	29db66dc8382d41b0135ca85bfb83c006420986e6d71fcfe9b6513e75bc4d8ac
 0x3B474	0xC	src/game/set_state_word_c3fa0.c	-O2 -G0 -mips3 -mgp32 -mfp32	fe2187a04c82ad0f632f3eca32a96d8e54681a0f4d5b14a1ca6b59d790d7b2de
 0x3BB44	0x24	src/game/dispatch_fe00.c	-O2 -G0 -mips3 -mgp32 -mfp32	e98b2c12799e6ddd65958a41fab99976ceee443eeced326a598804e73d2eb064
 0x3BB68	0x1C	src/game/dispatch_fe01.c	-O2 -G0 -mips3 -mgp32 -mfp32	4052b0681ea78b1ad1935fc39f30cec8ffb6424a8681833b20e5a49b75214899
