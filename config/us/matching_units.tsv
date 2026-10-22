@@ -198,3 +198,4 @@
 0x36464	0x28	src/game/enable_state_and_clear_field_f4.c	-O2 -G0 -mips3 -mgp32 -mfp32	11893bf8a5c2cca267cde6193ebb1864c78adb86091bf7f173b3d556497b100d
 0x755C	0x6C	src/game/remap_identifier_neighbor.c	-O2 -G0 -mips3 -mgp32 -mfp32	edb8e80319e6c43ee093e5bfc88e22cd67f9d1d95c2d59b33b0647202ace3af5
 0x99D0	0x48	src/game/init_object_matrix.c	-O2 -G0 -mips3 -mgp32 -mfp32	841c1e242367d82d0c16e41cba13da61979f7e1be34edba9bf8f5cf26ee8bbda
+0x31190	0x48	src/game/initialize_active_scene.c	-O2 -G0 -mips3 -mgp32 -mfp32	e9f13f0cb627bb80358f5f2f2fc4e7f37e1ae25fa6298d4c92cf9ebc9f2d555c
