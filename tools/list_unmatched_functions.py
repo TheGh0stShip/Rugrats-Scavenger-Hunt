@@ -47,21 +47,35 @@ def load_functions(path: Path = FUNCTIONS) -> list[Function]:
     return functions
 
 
-def load_matched_vrams(paths: tuple[Path, ...] = MANIFESTS) -> set[int]:
-    matched = set()
+def load_matched_ranges(
+    paths: tuple[Path, ...] = MANIFESTS,
+) -> list[tuple[int, int]]:
+    matched = []
     for path in paths:
         for line in path.read_text().splitlines():
             if not line or line.startswith("#"):
                 continue
-            rom_start = int(line.split("\t", 1)[0], 16)
-            matched.add(rom_start + VRAM_ROM_DELTA)
+            fields = line.split("\t")
+            rom_start = int(fields[0], 16)
+            size = int(fields[1], 16)
+            vram_start = rom_start + VRAM_ROM_DELTA
+            matched.append((vram_start, vram_start + size))
     return matched
 
 
 def unmatched_functions(
-    functions: list[Function], matched_vrams: set[int], kind: str | None = None
+    functions: list[Function], matched_ranges: list[tuple[int, int]],
+    kind: str | None = None,
 ) -> list[Function]:
-    result = [function for function in functions if function.vram not in matched_vrams]
+    result = [
+        function
+        for function in functions
+        if not any(
+            start <= function.vram
+            and function.vram + function.size <= end
+            for start, end in matched_ranges
+        )
+    ]
     if kind:
         result = [function for function in result if function.kind == kind]
     return sorted(result, key=lambda function: (function.size, function.vram))
@@ -73,7 +87,7 @@ def main() -> None:
     parser.add_argument("--kind", help="restrict to one survey classification")
     args = parser.parse_args()
 
-    queue = unmatched_functions(load_functions(), load_matched_vrams(), args.kind)
+    queue = unmatched_functions(load_functions(), load_matched_ranges(), args.kind)
     print("VRAM       SIZE  KIND  FUNCTION")
     for function in queue[: args.limit]:
         print(

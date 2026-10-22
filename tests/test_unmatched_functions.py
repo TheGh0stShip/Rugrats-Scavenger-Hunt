@@ -20,7 +20,10 @@ class UnmatchedFunctionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             manifest = Path(directory) / "units.tsv"
             manifest.write_text("0x1000\t0x8\tunit.c\t-O2\tdeadbeef\n")
-            self.assertEqual(QUEUE.load_matched_vrams((manifest,)), {0x80000400})
+            self.assertEqual(
+                QUEUE.load_matched_ranges((manifest,)),
+                [(0x80000400, 0x80000408)],
+            )
 
     def test_queue_is_size_then_address_ordered(self) -> None:
         functions = [
@@ -28,8 +31,13 @@ class UnmatchedFunctionTests(unittest.TestCase):
             QUEUE.Function("later", 0x80003000, 0x8, "stub"),
             QUEUE.Function("earlier", 0x80002000, 0x8, "stub"),
         ]
-        result = QUEUE.unmatched_functions(functions, {0x80003000})
+        result = QUEUE.unmatched_functions(functions, [(0x80003000, 0x80003008)])
         self.assertEqual([item.name for item in result], ["earlier", "large"])
+
+    def test_grouped_unit_covers_nested_survey_entries(self) -> None:
+        functions = [QUEUE.Function("nested", 0x80001008, 0x8, "stub")]
+        result = QUEUE.unmatched_functions(functions, [(0x80001000, 0x80001010)])
+        self.assertEqual(result, [])
 
 
 if __name__ == "__main__":
