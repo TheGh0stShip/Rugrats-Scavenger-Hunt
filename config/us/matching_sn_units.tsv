@@ -54,3 +54,4 @@
 0x1CF6C	0x2C	src/game/current_input_has_flag_40.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	aea3f33d260cec3014906b0dde9c9a61fda21290991032f3e6bd2e46cb3bffa5
 0x26BDC	0x34	src/game/count_inactive_object_slots.c	-O1 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	2ae61c7ff1fdfc6c6d8b483571ec9de375a308bac1d3c4cb7d82045ef23bc85c
 0x1A9E0	0x5C	src/game/get_record_pair.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ad8ce4e751ade8936c1a3fb273468a99a3d343b66fd6d02a59bab6385f2559c2
+0x1A7D4	0x7C	src/game/release_active_resource.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b34efc6ca8e153901d56dd519859fe5bbc926b4bc0b6a3d4424e9666a7b99535
