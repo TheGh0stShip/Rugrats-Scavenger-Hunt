@@ -100,3 +100,4 @@
 0x3CFD4	0x24	src/game/submit_mode_0.c	-O2 -G0	028a05d3b925ccabc67df06450506f21844110716d4dc3c8bfab020eb0d16d0a
 0x3CFF8	0x28	src/game/submit_mode_1.c	-O2 -G0	4192cd5fc273b3315db7eac1ffefc44c2a322401b5bc04bc3b54569d0fa25617
 0x3D020	0x30	src/game/submit_mode_2.c	-O2 -G0	64caede8f06bf2001cc81ce27cc6b2edfe3bb9aad19a072b79b1d087cdd69f0a
+0x3BB84	0x2C	src/game/dispatch_fe02.c	-O2 -G0	2cec9dca708ca673b97ff7221c4528a58ee6e09dc5718ef1f5000d55d9f6f0f4

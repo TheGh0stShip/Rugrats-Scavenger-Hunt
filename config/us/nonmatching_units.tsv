@@ -21,8 +21,6 @@
 0x8002A5C8	0x24	src/game/get_active_field_28.c	semantic C; closest KMC build differs in branch layout and padding
 0x8002A604	0x24	src/game/get_active_field_2c.c	semantic C; closest KMC build differs in branch layout and padding
 0x8002A9A4	0x30	src/game/get_object_node_field_2c.c	semantic C; closest KMC build differs in conditional selection and scheduling
-0x8002BC50	0x1C	src/game/init_state_544e0.c	semantic C; closest KMC build has three immediate differences
-0x8003AF84	0x2C	src/game/dispatch_fe02.c	semantic C; closest KMC build has two scheduling differences
 0x80040BA8	0x2C	src/game/pop_object_node.c	semantic C; closest KMC assembler build differs in register allocation and scheduling
 0x80043100	0x2C	src/game/fill_bytes.c	semantic C; closest KMC build differs in loop shape and register allocation
 0x80044258	0x18	src/game/set_object_state_4.c	semantic C; closest IDO 5.3 build lacks two trailing hazard nops
