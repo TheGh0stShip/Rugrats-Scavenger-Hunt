@@ -1,6 +1,4 @@
 # VRAM SIZE SOURCE NOTES
-0x8003EB58	0x70	src/game/parser_set_position.c	semantic C; byte parsing and record offsets recovered but code generation differs
-0x8003E47C	0x54	src/game/update_matching_records.c	semantic C; loop branch shape and allocation remain unmatched
 0x8003E54C	0x128	src/game/parser_read_interpolation.c	semantic C; parser layout recovered, with remaining KMC scheduling/allocation differences
 0x8001E0B0	0x30	src/game/reset_resource_record.c	semantic C; closest SN build has two scheduling differences
 0x8001E28C	0x24	src/game/offset_resource_bounds.c	semantic C; closest IDO 5.3 build differs only in register allocation
