@@ -59,6 +59,8 @@
 0x524FC	0x134	src/runtime/scheduler_execute_tasks.c	--section-base=.data:0x80057254 -O2 -G0 -mips3 -mgp32 -mfp32	7084c60c634faaeaf988a19aa77cfd0479c7d4db969dda037961d8dd53726963
 0x52630	0x250	src/runtime/scheduler_select_tasks.c	--section-base=.rodata:0x800039C0 -O2 -G0 -mips3 -mgp32 -mfp32	e11b909e93d31e1a08e591abd859045139c64de54ae2b6c850245567763889f0
 0x52880	0xA0	src/runtime/set_dp_next_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	19b87bc5457fc10e0276cfc154bcc35427763fd0d2a22951ef18ab879af4ac68
+0x52940	0x240	src/runtime/load_sp_task.c	--section-base=.bss:0x800C6BD0 -O2 -G0 -mips3 -mgp32 -mfp32	25ed90aa2d4c607400088ed83dcaae86c90fcb539d2e3016627b0673d1021f4b
+0x52BE0	0x100	src/runtime/start_sp_raw_dma.c	-O2 -G0 -mips3 -mgp32 -mfp32	5951ae37982925446d5760b873a82938377875ac610da6df042df41aca8a886b
 0x52D60	0x40	src/runtime/get_queue_value_63c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8dc66b5e6dcbd6f52f26abfb58f5f891c5df312e7d7ff4d09da1306efb9b5966
 0x52DA0	0x40	src/runtime/get_queue_value_63c4.c	-O2 -G0 -mips3 -mgp32 -mfp32	64860635895c57bbcf520d4ba42a72d627ccd83e7a2a901091d822f33aa39cbf
 0x53120	0x60	src/runtime/set_vi_event.c	-O2 -G0 -mips3 -mgp32 -mfp32	6ba59b3882044ebaeeb11ae852353c966a4a521e89e75915b73d577827153a64

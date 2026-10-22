@@ -103,6 +103,7 @@
 0x4F9A0	0x48	src/runtime/controller_address_checksum.c	-O2 -G0 -mips3 -mgp32 -mfp32	09cd19f39dfa44d2cc1c62af44818942f04faf68e0010bf786d3d8010298ec1b
 0x4F9E8	0x68	src/runtime/controller_data_checksum.c	-O2 -G0 -mips3 -mgp32 -mfp32	6264c83b65cf2820b6c375296903fa640325a6b4794f80275149588282f810bb
 0x52B80	0x20	src/runtime/sp_dma_active.c	-O2 -G0 -mips3 -mgp32 -mfp32	3e9a180c46c8a5a9bb9b129e0f7ff4f87641bcd77a3c4a200ba0383c71d31b61
+0x52BB0	0x30	src/runtime/set_sp_pc.c	-O2 -G0 -mips3 -mgp32 -mfp32	57c7e1feb2597ad9742f81e1beddbaf8abe34fadf84ff59faec4cfc036717333
 0x52920	0x20	src/runtime/dp_status_active.c	-O2 -G0 -mips3 -mgp32 -mfp32	01352d7623ed6883d9b5c8d2935c364315e4aa505229fa8fed2c470657debbdd
 0x4DDE0	0x10	src/game/clear_pointed_word.c	-O2 -G0 -mips3 -mgp32 -mfp32	e1d58b3797e2652b6f924682d73472ec91145cf6f318f3198bad8f0141713d9b
 0x51F50	0x8	src/game/get_object_field_78_address.c	-O2 -G0 -mips3 -mgp32 -mfp32	d82c49368eef6b8ec668ea667cb0a950e97a442870973cd6baf8b3e57bcda040
