@@ -1,5 +1,4 @@
 # VRAM SIZE SOURCE NOTES
-0x8003E54C	0x128	src/game/parser_read_interpolation.c	semantic C; parser layout recovered, with remaining KMC scheduling/allocation differences
 0x8001E0B0	0x30	src/game/reset_resource_record.c	semantic C; closest SN build has two scheduling differences
 0x8001E28C	0x24	src/game/offset_resource_bounds.c	semantic C; closest IDO 5.3 build differs only in register allocation
 0x8001EF98	0x2C	src/game/apply_resource_value.c	semantic C; closest KMC build has an a0/v0 allocation swap

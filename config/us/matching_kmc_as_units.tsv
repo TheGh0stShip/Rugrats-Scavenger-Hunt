@@ -109,3 +109,4 @@
 0x4DCEC	0x4C	src/runtime/scale_runtime_value_aligned.c	--section-base=.rodata:0x800038D0 -O2 -G0	d808aaf013719d7f23973cc72cab327e5d18c7347290b17503312b6794d1acc2
 0x3F4E4	0x58	src/game/parser_adjust_float_30.c	--section-base=.rodata:0x800033A8 -O2 -G0 -mips3 -mgp32 -mfp32	6a731672175b461e275d9371c7e1094dd090f5e2942c6782222277a966a3223e
 0x3F400	0x74	src/game/parser_read_inverse_motion.c	--section-base=.rodata:0x80003398 -O2 -G0 -mips3 -mgp32 -mfp32	8d45b000e546a19b038de66b408908a0f3d063982e74294272b3114ce3e167b1
+0x3F14C	0x128	src/game/parser_read_interpolation.c	--section-base=.rodata:0x80003380 -O2 -G0 -mips3 -mgp32 -mfp32	1ea60cd954f0460bb3ca70a5978ec74c96bfd8fca8088822e3358482e0f3ab50
