@@ -96,6 +96,7 @@
 0x3F744	0xC	src/game/parser_clear_84.c	-O2 -G0 -mips3 -mgp32 -mfp32	48bee226d8ceb04e95ea0d178a29fb2f9f77c43667803c0d48b86c4023486359
 0x2C850	0x1C	src/game/init_state_544e0.c	-O2 -G0 -mips3 -mgp32 -mfp32	64493d6995ffe905c06a45d9b78ee47cc8825218cd9c0752396ff1e360113e70
 0x4D680	0x40	src/runtime/init_aligned_arena.c	-O2 -G0 -mips3 -mgp32 -mfp32	ad16c49c49bd36364430fca103e4466def55634a73238a989bd373866870de17
+0x4658	0x38	src/runtime/pi_wait_and_store.c	-O2 -G0 -mips3 -mgp32 -mfp32	2eaa8e2601d9277f117e2f2a15447572fe27e2b7c63d4bf5db665d1203022bd1
 0x3F750	0x8	src/game/parser_skip_one.c	-O2 -G0 -mips3 -mgp32 -mfp32	932e3d781ad736264ff78a311ed98bbccda8db3c8362dcf4777c2dc4534d072e
 0x3F7C8	0x10	src/game/parser_read_ca.c	-O2 -G0 -mips3 -mgp32 -mfp32	43288ec873b3d0201f4923ce6827f0625f13966b537a6f1be24dd25c05fe110a
 0x3F8C8	0x10	src/game/parser_read_bc.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c5d4970ca0ed79eea132b3e6b1001d9cd90b2597485e54c3018dcf1a9a60d70

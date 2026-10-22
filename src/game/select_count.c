@@ -1,3 +1,11 @@
 int func_80006DB0(int first, int second) {
-    return first ? 12 : second ? 8 : 24;
+    int count = 12;
+
+    if (!first) {
+        count = 8;
+        if (!second) {
+            count = 24;
+        }
+    }
+    return count;
 }
