@@ -57,7 +57,7 @@
 0x523A0	0xB0	src/runtime/scheduler_task_complete.c	--section-base=.data:0x8005725C -O2 -G0 -mips3 -mgp32 -mfp32	00caff97ad3e4f2f2f669999821f9396b454c28985e5820258c60fdc57188fcd
 0x52450	0xAC	src/runtime/scheduler_append_task.c	-O2 -G0 -mips3 -mgp32 -mfp32	861a1e1814dcbe3d5e794fb035a158b1cba0551902cf6358021ab407978707c5
 0x524FC	0x134	src/runtime/scheduler_execute_tasks.c	--section-base=.data:0x80057254 -O2 -G0 -mips3 -mgp32 -mfp32	7084c60c634faaeaf988a19aa77cfd0479c7d4db969dda037961d8dd53726963
-0x52630	0x38	src/runtime/mark_task_pending.c	-O1 -G0 -mips3 -mgp32 -mfp32	59bfb9ca23cfbe1c4c78c5fd4f8529e2eb8b8c7a25230a97b0bd86b1f16652f9
+0x52630	0x250	src/runtime/scheduler_select_tasks.c	--section-base=.rodata:0x800039C0 -O2 -G0 -mips3 -mgp32 -mfp32	e11b909e93d31e1a08e591abd859045139c64de54ae2b6c850245567763889f0
 0x52880	0xA0	src/runtime/set_dp_next_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	19b87bc5457fc10e0276cfc154bcc35427763fd0d2a22951ef18ab879af4ac68
 0x52D60	0x40	src/runtime/get_queue_value_63c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8dc66b5e6dcbd6f52f26abfb58f5f891c5df312e7d7ff4d09da1306efb9b5966
 0x52DA0	0x40	src/runtime/get_queue_value_63c4.c	-O2 -G0 -mips3 -mgp32 -mfp32	64860635895c57bbcf520d4ba42a72d627ccd83e7a2a901091d822f33aa39cbf
