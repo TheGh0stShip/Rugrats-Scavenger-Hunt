@@ -25,6 +25,8 @@
 0x4DC10	0x54	src/runtime/move_all_runtime_nodes.c	-O2 -G0 -mips3 -mgp32 -mfp32	41dd134517a327c066d179fb26f2ac489301c29050022032399ad4918195f76b
 0x4DC64	0x40	src/runtime/activate_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	23de5d3d99e3b97a8e85b2ea087995d9a65c18df7e556f108a84646b2acee6eb
 0x4DD38	0xA8	src/runtime/select_earliest_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	b1cea66a88031b2eff60c0e9a48c5a740341a9bc9e821e30c2335540dcb839ca
+0x4E9D0	0x54	src/runtime/create_si_access_queue.c	-O2 -G0 -mips3 -mgp32 -mfp32	1f8541c128d2f09bfb0c5f3701a4d502db7763f98f2392df9610eeb40aa0e791
+0x4EA24	0x6C	src/runtime/get_si_access.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c6e86e7488926f82e7d6d6cea8be307af41b6f6cf4c0d7de84597174c6cec97
 0x4DE90	0x10	src/runtime/read_audio_interface_dram_addr.c	-O2 -G0 -mips3 -mgp32 -mfp32	679568a8280a1cc54387664b9e46dd53d246ce010538ce2e3327ac214a9b4e75
 0x4DEA0	0x10	src/runtime/read_audio_interface_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca2590df63a0994d2295be9346906b5706c52e06e06a133776138a7b7929c473
 0x4EA90	0x30	src/runtime/init_queue_800c45a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca30f8ecefe984ea11d56664595c9c2812c1808b4709886bf059936c54fa86f2
@@ -34,6 +36,9 @@
 0x50600	0x20	src/runtime/get_record_word_4.c	-O2 -G0 -mips3 -mgp32 -mfp32	86f6fd08af0681cf480e5999389d1c60870815cab7a4c38c30d9adf5599885ee
 0x516F0	0x50	src/runtime/disable_runtime_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	1ede03b7be7083e3b5c925e1162e5c7e85dbdadd7e5cac060dc5c55d7520dc61
 0x51740	0x40	src/runtime/enable_runtime_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	5577be63f1398def27c8c820636b9d09f366221fafcb63df4aabf80e15657c4a
+0x51780	0x50	src/runtime/yield_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	3fb2e43b2df2a77a1740d335a55400bcdf96013142f9e69f470324b8eb312b0e
+0x51AB0	0x54	src/runtime/create_pi_access_queue.c	-O2 -G0 -mips3 -mgp32 -mfp32	de42f2e0bbcf7be7f1c2bc2a8674badf2dc1ac3bcc20ee379e965852f0ff3836
+0x51B04	0x6C	src/runtime/get_pi_access.c	-O2 -G0 -mips3 -mgp32 -mfp32	d5dc729ba126b91ba7881cf4d978bac22df7a8f69f4ecf30c377a1c405c38d72
 0x51B70	0x30	src/runtime/init_queue_800c6bb0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4898bbe35a61b10c1519c367398fa7c2c4f9324b4759ac1f113a1269e0a4d2ff
 0x51CF0	0x14	src/runtime/diagnostic_stub_800510f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	7008cedc7bc7666823ccb635b2fcb91203276ea030284707c9e8f52db2ea3448
 0x51D04	0x1C	src/runtime/diagnostic_stub_80051104.c	-O2 -G0 -mips3 -mgp32 -mfp32	aa856e35dba294708397847ba0b81ee640868e8cb6bb484286779e156a944ec2
@@ -41,3 +46,4 @@
 0x52D60	0x40	src/runtime/get_queue_value_63c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8dc66b5e6dcbd6f52f26abfb58f5f891c5df312e7d7ff4d09da1306efb9b5966
 0x52DA0	0x40	src/runtime/get_queue_value_63c4.c	-O2 -G0 -mips3 -mgp32 -mfp32	64860635895c57bbcf520d4ba42a72d627ccd83e7a2a901091d822f33aa39cbf
 0x52CE0	0x20	src/runtime/set_sp_status_400.c	-O2 -G0 -mips3 -mgp32 -mfp32	04e7743a487f3eba34157f00f551fbe95c75e3834f610d6a8509badb6789e06d
+0x52D00	0x50	src/runtime/check_sp_task_yielded.c	-O2 -G0 -mips3 -mgp32 -mfp32	bdeb5b082d7b1dddc4446352e60404a4a944ddc2b1cda83e20240f2c9045e689
