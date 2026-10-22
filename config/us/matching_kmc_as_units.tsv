@@ -46,8 +46,12 @@
 0x51B70	0x30	src/runtime/init_queue_800c6bb0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4898bbe35a61b10c1519c367398fa7c2c4f9324b4759ac1f113a1269e0a4d2ff
 0x51CF0	0x14	src/runtime/diagnostic_stub_800510f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	7008cedc7bc7666823ccb635b2fcb91203276ea030284707c9e8f52db2ea3448
 0x51D04	0x1C	src/runtime/diagnostic_stub_80051104.c	-O2 -G0 -mips3 -mgp32 -mfp32	aa856e35dba294708397847ba0b81ee640868e8cb6bb484286779e156a944ec2
+0x51D20	0x148	src/runtime/create_scheduler.c	-O2 -G0 -mips3 -mgp32 -mfp32	a2d5b4e98b085b66d41c4c346a972f698bec500365ef7e42e501782ee2f5b011
 0x51E68	0x58	src/runtime/add_scheduler_client.c	-O2 -G0 -mips3 -mgp32 -mfp32	d9eb10cdc1bf045915da58d7f04c8f2f32d3bdf0300f56e7cd035681f5dc38e6
 0x51EC0	0x90	src/runtime/remove_scheduler_client.c	-O2 -G0 -mips3 -mgp32 -mfp32	1d3d127399ce37e3d1a3f51152554aaba323e839f630dbc2ee87bc4c69d2f2af
+0x51F58	0x104	src/runtime/scheduler_main.c	-O2 -G0 -mips3 -mgp32 -mfp32	7c1d6f3bde5dea150ac334422e500fa727cae17d244ee172be5ad26b49604f52
+0x5205C	0x100	src/runtime/scheduler_handle_retrace.c	-O2 -G0 -mips3 -mgp32 -mfp32	1b36c8359d428ba170ea6734dacfbe03383e30f3a09dd267b8ea9c652ead1547
+0x5226C	0xE0	src/runtime/scheduler_handle_rdp.c	-O2 -G0 -mips3 -mgp32 -mfp32	b979aba389bfcd84189925588f92be0830a0f01543009bad078d4defc434e7ac
 0x5234C	0x54	src/runtime/scheduler_task_ready.c	-O2 -G0 -mips3 -mgp32 -mfp32	b0c7c01335be4a4233f4bf2294d26bc905b86776eb6243e736d32136559ad1e3
 0x52630	0x38	src/runtime/mark_task_pending.c	-O1 -G0 -mips3 -mgp32 -mfp32	59bfb9ca23cfbe1c4c78c5fd4f8529e2eb8b8c7a25230a97b0bd86b1f16652f9
 0x52880	0xA0	src/runtime/set_dp_next_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	19b87bc5457fc10e0276cfc154bcc35427763fd0d2a22951ef18ab879af4ac68
