@@ -63,6 +63,7 @@
 0x52BE0	0x100	src/runtime/start_sp_raw_dma.c	-O2 -G0 -mips3 -mgp32 -mfp32	5951ae37982925446d5760b873a82938377875ac610da6df042df41aca8a886b
 0x52D60	0x40	src/runtime/get_queue_value_63c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8dc66b5e6dcbd6f52f26abfb58f5f891c5df312e7d7ff4d09da1306efb9b5966
 0x52DA0	0x40	src/runtime/get_queue_value_63c4.c	-O2 -G0 -mips3 -mgp32 -mfp32	64860635895c57bbcf520d4ba42a72d627ccd83e7a2a901091d822f33aa39cbf
+0x52DE0	0x330	src/runtime/create_vi_manager.c	--section-base=.data:0x80057260 --section-base=.bss:0x800C6C10 -O2 -G0 -mips3 -mgp32 -mfp32	92839ed6db31e4aad8edc014e49a4e193f2119285e6b5b0bef7e8da9e2955eeb
 0x53120	0x60	src/runtime/set_vi_event.c	-O2 -G0 -mips3 -mgp32 -mfp32	6ba59b3882044ebaeeb11ae852353c966a4a521e89e75915b73d577827153a64
 0x53180	0x50	src/runtime/set_vi_mode.c	-O2 -G0 -mips3 -mgp32 -mfp32	814a49a6af82f477d98dc6e962df0b64696a462becb307beb80b43d58ee01243
 0x531D0	0x50	src/runtime/swap_vi_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	f161f971b15b3527fb459547d96c60ca872b4efb4ae65adff568a4ffaae24354
