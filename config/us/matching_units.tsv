@@ -90,7 +90,6 @@
 0x43150	0x18	src/game/init_object_mode_6.c	-O2 -G0 -mips3 -mgp32 -mfp32	59928b61210b34218edda5592cd941569aac14963024180cfe44c86ffe1f6e43
 0x43CDC	0x18	src/game/get_state_span.c	-O2 -G0 -mips3 -mgp32 -mfp32	3da6bb3546a0780f101ed764e8e54332700bae07006d50ac01d508349d7fa0b1
 0x4C470	0x10	src/game/noop_8004b870.c	-O2 -G0 -mips3 -mgp32 -mfp32	2415714719d85e4a789acee079f28e4e4c4c2b693ab00b843e8d8d91c8c3882c
-0x47630	0x50	src/runtime/matrix_identity_f.c	-O2 -G0 -mips3 -mgp32 -mfp32	17df6c24f5aea688b6f672ce0da965bb11eed67e4b90fb87a05d5ecee067c51b
 0x47770	0x190	src/runtime/matrix_concatenate.c	-O2 -g -G0 -mips3 -mgp32 -mfp32	396f22f2833629686872603e2fd469288ee260b2ec21649d3b0705129a7692e7
 0x48AB0	0x30	src/runtime/create_message_queue.c	-O2 -G0 -mips3 -mgp32 -mfp32	9cbe7c481dc19b4430f8cc3dc6cdf5b50831f553301a2815bad271de055bbf0e
 0x4C480	0x20	src/runtime/init_record.c	-O2 -G0 -mips3 -mgp32 -mfp32	fbb508e6a86134d259e851e282169a4b06c0a2c6ff878f0a829346eb89bb4ed1
