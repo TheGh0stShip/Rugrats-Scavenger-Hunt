@@ -230,3 +230,79 @@ deterministic smallest-first unmatched-function queue, with filtering by the
 survey's function classification. Second, cluster-based wrapper analysis found
 an exact KMC match for `func_80038F30`, a byte-fill wrapper that reorders its
 two scalar arguments before calling `func_80038E90`.
+
+## Two-hundred-fifty-round expansion
+
+Two further campaigns covered 100 and 150 distinct searches. The searches were
+issued in groups of four, but every query was a separately defined research
+round. The 100-round campaign revisited 25 narrow topics with four queries per
+topic. The 150-round campaign used the following 25 families with six queries
+per family, for exactly 150 additional rounds.
+
+| Rounds | Research family | Useful outcome |
+|---:|---|---|
+| 1-6 | Exact-title technical material | No independent source tree, ROM map, or format specification found |
+| 7-12 | Realtime Associates engineering history | Developer lineage confirmed; no public common-engine archive found |
+| 13-18 | Credited programmers | Tom Powers and John Bryant remain the strongest authorship leads |
+| 19-24 | Gex 64 | Retain as the closest KMC and developer-relative source reference |
+| 25-30 | Elmo Nintendo 64 titles | Factor 5 voice technology appears across related titles; formats remain unproven |
+| 31-36 | Charlie Blast's Territory | No reusable source reconstruction or format documentation found |
+| 37-42 | KMC compiler and assembler | Compiler and assembler identity must be tested independently |
+| 43-48 | SN Systems toolchain | CCN64, ASN64, and linker behavior remain a distinct matching pipeline |
+| 49-54 | GCC 2.7.2 internals | Backend, reload, combine, and scheduling sources are useful for near matches |
+| 55-60 | Binutils and VR4300 scheduling | Reorder rules and hazards can explain source-equivalent instruction differences |
+| 61-66 | Original development manuals | Primary references cover texture, audio, linker, and compression behavior |
+| 67-72 | Operating-system libraries | Public version databases can extend the existing SDK fingerprint pass |
+| 73-78 | Standard audio banks | Switched ADPCM codebooks provide a testable recognition rule |
+| 79-84 | Factor 5 audio | Public material confirms the technology family, not this ROM's exact encoding |
+| 85-90 | Compression discovery | Require a valid decode and exact consumed length before assigning a codec |
+| 91-96 | Graphics and asset extraction | Generic viewers validate known formats but cannot establish asset counts |
+| 97-102 | Matching tools | Relocation-aware byte comparison remains the only acceptance criterion |
+| 103-108 | Boundary recovery | Calls, branches, jump tables, and relocations should be combined as evidence |
+| 109-114 | Regional and prototype comparison | A legally supplied alternate image could expose boundaries and changed tables |
+| 115-120 | Mature project workflows | Preserve separate code, data, extraction, and inventory coverage measures |
+| 121-126 | Other compiler case studies | Turok 3 remains the best public SN source-shape reference |
+| 127-132 | Disassemblers and loaders | Useful for independent checks; current audited survey remains more precise |
+| 133-138 | Cross-binary function matching | Call-graph anchors and normalized basic blocks are the most applicable methods |
+| 139-144 | Pointer and entropy analysis | Useful candidate generators, never sufficient boundary proof on their own |
+| 145-150 | Preservation and regional records | PAL title and prototype existence confirmed; no images were acquired |
+
+### Analysis and decisions
+
+- The strongest new quick win is structural source retrieval: begin with known
+  SDK and runtime anchors, then compare their callers and callees against Gex
+  64 and other contemporary source trees. Call-graph context is more selective
+  than searching isolated instruction sequences.
+- The standard Nintendo audio path is documented as switched ADPCM with a
+  coefficient codebook. That is a concrete classifier for bank samples. It
+  must not be conflated with the separately credited voice-compression
+  technology until a decoder call path and stream headers are demonstrated.
+- Cross-region comparison is potentially valuable for locating timing tables,
+  text, and resource indexes. It is deferred because no verified alternate
+  image is present locally; none was downloaded during this survey.
+- Compiler-source inspection is warranted only for semantically correct near
+  matches. The GCC 2.7.2 MIPS backend and binutils 2.6 assembler provide direct
+  explanations for register allocation, delay-slot filling, and scheduling.
+- Broad title, signature, and social searches produced no public definition of
+  `MORT`, `mdlh`, or the indexed resource archives. Those formats remain
+  game-specific and must be recovered from local producers and consumers.
+- Generic entropy, texture, audio, and model tools are validation aids. Their
+  detections will not be counted as decoded assets without non-overlapping ROM
+  ranges, validated structure, and reproducible extraction metadata.
+
+### Research sources retained
+
+- [GNU GCC 2.7.2 MIPS sources](https://github.com/decompals/mips-gcc-2.7.2)
+  for backend and compiler-behavior experiments.
+- [BinDiff matching concepts](https://github.com/google/bindiff/blob/main/docs/concepts.md)
+  for call-reference and basic-block matching strategy.
+- The [Nintendo 64 programming manual](https://ultra64.ca/files/documentation/nintendo/Nintendo_64_Programming_Manual_NU6-06-0030-001G_HQ.pdf)
+  for the switched-ADPCM and codebook definitions.
+- The [VR4300 processor manual](https://www.bitsavers.org/components/nec/mips/1995_NEC_VR4300_MIPS_RISC_Microprocessor_Users_Manual.pdf)
+  for pipeline and hazard behavior.
+- [N64 OS information](https://github.com/akopetsch/n64os-info) for library
+  version history and additional identification methods.
+
+The negative results are intentional deliverables: they prevent unsupported
+format claims and keep future work focused on sources capable of changing
+verified bytes or audited ROM coverage.
