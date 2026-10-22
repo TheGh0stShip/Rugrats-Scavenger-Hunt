@@ -234,3 +234,6 @@
 0x3742C	0x18	src/runtime/clear_watchpoint.c	-O2 -G0 -mips3 -mgp32 -mfp32	be7bf6c78932bd569d1c2bfae45eb70d11d9f2180c4a873138a867c545e58adc
 0x48A80	0x30	src/runtime/writeback_data_cache_all.c	-O2 -G0 -mips3 -mgp32 -mfp32	9e2e910cf2dcf19b0d2826eea41187a62acc4584b8fb7316cc74acbd40f4b04f
 0x5750	0x28	src/runtime/jump_to_exception_dispatch.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f55ce2a668b2f764350c328f30737476c6854c821f2d8ad85d28d88ae02393f
+0x48A00	0x80	src/runtime/invalidate_data_cache_range.c	-O2 -G0 -mips3 -mgp32 -mfp32	34f4c1b390e561d62c4b6dc9ed63701b9b87430391fc74bfe7d21d90b8fd1074
+0x498D0	0x80	src/runtime/invalidate_instruction_cache_range.c	-O2 -G0 -mips3 -mgp32 -mfp32	661c779288b4a4385cb435e15038191ab4b2bd427fc96ab7c44e9d09497ba4b4
+0x49970	0x60	src/runtime/map_debug_tlb_entry.c	-O2 -G0 -mips3 -mgp32 -mfp32	60e870785652f4c5376888fa708add8104458aed09503a8f38eb0925c8dbe54a
