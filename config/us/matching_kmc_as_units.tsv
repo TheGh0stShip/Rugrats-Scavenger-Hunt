@@ -101,3 +101,7 @@
 0x3CFF8	0x28	src/game/submit_mode_1.c	-O2 -G0	4192cd5fc273b3315db7eac1ffefc44c2a322401b5bc04bc3b54569d0fa25617
 0x3D020	0x30	src/game/submit_mode_2.c	-O2 -G0	64caede8f06bf2001cc81ce27cc6b2edfe3bb9aad19a072b79b1d087cdd69f0a
 0x3BB84	0x2C	src/game/dispatch_fe02.c	-O2 -G0	2cec9dca708ca673b97ff7221c4528a58ee6e09dc5718ef1f5000d55d9f6f0f4
+0x417A8	0x2C	src/game/pop_object_node.c	-O2 -G0	4ac18237d4937fa1f3a560fc2553b9829f75ae5ecc8aa2feee2fb690a463be65
+0x3F7D8	0x50	src/game/parser_accumulate_b9.c	-O2 -G0 -mips3 -mgp32 -mfp32	28ff195075373cc9c0968f4e1cd9101cf865f391684053ad0d5e374b6170fdaf
+0x3F828	0x50	src/game/parser_accumulate_bc.c	-O2 -G0 -mips3 -mgp32 -mfp32	e2010033c31848f134d438b78d00c00abc81e904c53c4358b2e96ccad035faad
+0x3F878	0x50	src/game/parser_accumulate_bd.c	-O2 -G0 -mips3 -mgp32 -mfp32	56108e6d5e9c39a6bd153223ba519e5f7387ba175bd294a08bc48cff4575e41f

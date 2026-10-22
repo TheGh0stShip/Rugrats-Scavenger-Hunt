@@ -13,10 +13,12 @@ extern ObjectState *D_80055AF4;
 
 ObjectNode *func_80040BA8(void) {
     ObjectNode *node = D_80055AF4->free_nodes;
+    ObjectNode *result = 0;
 
     if (node != 0) {
+        result = node;
         D_80055AF4->free_nodes = node->next;
         node->next = 0;
     }
-    return node;
+    return result;
 }
