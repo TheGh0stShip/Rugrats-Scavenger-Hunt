@@ -75,6 +75,7 @@
 0x3F0F0	0x30	src/game/parser_read_var_ae.c	-O2 -G0 -mips3 -mgp32 -mfp32	667809b33945016234dbbdef6f2e9cd72fccdf2b0a2b240f5004dca256673834
 0x3F120	0x20	src/game/parser_read_b8.c	-O2 -G0 -mips3 -mgp32 -mfp32	7370ccb4e764d825ee533fba1d84659989829526760b1b83794de1fc921144d3
 0x3F36C	0x24	src/game/parser_read_b2.c	-O2 -G0 -mips3 -mgp32 -mfp32	b2df5cfcdb74621fb52f8dc965285e21355220934376e6b31e9a7792589d7600
+0x3F358	0x14	src/game/parser_read_b4.c	-O2 -G0 -mips3 -mgp32 -mfp32	6da72676a30e61291f76d0952be48a544240f8a62933f40fdeaf4d5b60fa337a
 0x3F140	0xC	src/game/parser_clear_b8.c	-O2 -G0 -mips3 -mgp32 -mfp32	ba359f66d5fe4a59eb1d783a0dfb75c9d5723eace529dd49d11b681e1af6217e
 0x3F474	0x10	src/game/parser_clear_d5_68.c	-O2 -G0 -mips3 -mgp32 -mfp32	27753023deb12ac39738382a9c8a2e58e8ef3b626314e4987813b4ca554994ae
 0x3F4B4	0x10	src/game/parser_set_b7.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca6e5aa0417afc4a35cc24f609131153c3078825be9c0d507d36077d71d12240
@@ -88,6 +89,7 @@
 0x3F6A4	0xC	src/game/parser_clear_ce.c	-O2 -G0 -mips3 -mgp32 -mfp32	f65506451a6fe524e70cc3454714b892bc7daf7eddd1b50b7ca0dbfec979fb3e
 0x3F6B0	0x10	src/game/parser_set_d2.c	-O2 -G0 -mips3 -mgp32 -mfp32	a6d3d1fa916143e4cca7473b054023467e5219d201c6dde3142b3462240a75ae
 0x3F6C0	0xC	src/game/parser_clear_d2.c	-O2 -G0 -mips3 -mgp32 -mfp32	5c1a607ba43e594661aec06930b5286e8662138952f18a5d241213a27f09f895
+0x3F6CC	0x14	src/game/parser_read_d3.c	-O2 -G0 -mips3 -mgp32 -mfp32	00dead62d8f76828c2bd5c4ba26493076410080775ad87b09c81fbfa84553b53
 0x3F6E0	0x14	src/game/parser_read_bd.c	-O2 -G0 -mips3 -mgp32 -mfp32	68aaf91dba53410a35413f6671f46119f3ab7047e9ab1233d0bf02da33e7b474
 0x3F6F4	0x8	src/game/parser_skip_two.c	-O2 -G0 -mips3 -mgp32 -mfp32	9d2fef282bcfc6d5100ce278ce131df2b4ff72b6ffb376bbee5622139a47d7a9
 0x3F744	0xC	src/game/parser_clear_84.c	-O2 -G0 -mips3 -mgp32 -mfp32	48bee226d8ceb04e95ea0d178a29fb2f9f77c43667803c0d48b86c4023486359
