@@ -25,9 +25,15 @@
 0x13DF0	0x8	src/game/noop_800131f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	78aa5094d5ec7291c79f799c009d04f06c2f20187988e3dcc8d35ee5efdbb378
 0x14144	0x2C	src/game/get_resource_field_8.c	-O2 -G0 -mips3 -mgp32 -mfp32	1a58d93c4419b0fe33aa6ab665de300e9ba5c0effb000385dad507e6690ec530
 0x14270	0x10	src/game/get_state_word_52ed0.c	-O2 -G0 -mips3 -mgp32 -mfp32	fafd6196fff46a04fa31a6500927c71a52abdb7658a8ad89980f9aa2ac45de3e
+0x14280	0x2C	src/game/set_color_gray_7f.c	-O2 -G0 -mips3 -mgp32 -mfp32	dedf3f9bc740c3e4f1ab0988c8ed7a427931338884c2b9ff60e9bfbcd3087619
+0x142AC	0x2C	src/game/set_color_white.c	-O2 -G0 -mips3 -mgp32 -mfp32	5fbbe905c6ca8608be94dcf5bfd35ce9b076b24f24cb5df79f30fb89577fb6b1
+0x142D8	0x2C	src/game/set_color_yellow.c	-O2 -G0 -mips3 -mgp32 -mfp32	54bd558a5d99076909231bc046e81b259b48cff48e4114cf5ea51ec5b8bccfe7
 0x14304	0x20	src/game/set_color_gray_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	7a486136656e43faaec5ce8a7f464a2f96aaba97465e9af6ede3d8a84713d792
 0x14324	0x20	src/game/set_color_white_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	2ed73ee720f8a66e91a733756929d253ad8ea604c50cc0a52f36823612a6c5d1
 0x14344	0x20	src/game/set_color_yellow_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	c3d9ab34d0b5b0e8845e84882e59a2115112853c87db28e77814ae7890ae999c
+0x14364	0x2C	src/game/set_color_red.c	-O2 -G0 -mips3 -mgp32 -mfp32	1b7da45ef867ae70ae8d480d3b86b07c8155ee8e24a12b8ef631cada47e59cbc
+0x14390	0x2C	src/game/set_color_green.c	-O2 -G0 -mips3 -mgp32 -mfp32	dbbcb1fccacca00131fbb964c4f07226df94db7e5c4fd230a7781e844e4c7562
+0x143BC	0x2C	src/game/set_color_blue.c	-O2 -G0 -mips3 -mgp32 -mfp32	cd9fa6681ba30a3b55abafdd8eb082060133ab939c7f26fcf1c5f06f789a71e6
 0x168CC	0x10	src/game/noop_80015ccc.c	-O2 -G0 -mips3 -mgp32 -mfp32	9e0b64de6c3f86a93ef84df896a67cdb74509aa14ac2fd32aef2a9ddfb2a9b08
 0x17408	0x28	src/game/noop_group_80016808.c	-O2 -G0 -mips3 -mgp32 -mfp32	4f6a20b97bb9e7f1652ea515f848a4925dd728173eee770f46fdc6d0662c8ce2
 0x1C1EC	0x10	src/game/get_state_word_5b7ec.c	-O2 -G0 -mips3 -mgp32 -mfp32	88606f198a2961d0b0ad5c6da68de53f02c2ce7b16d32641ac7924d382a14d13

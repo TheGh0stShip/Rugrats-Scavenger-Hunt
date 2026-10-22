@@ -15,12 +15,6 @@
 0x8003EC78	0x50	src/game/parser_accumulate_bd.c	semantic C; closest KMC build has an a0/v1 allocation swap
 0x8003E47C	0x54	src/game/update_matching_records.c	semantic C; loop branch shape and allocation remain unmatched
 0x8003E54C	0x128	src/game/parser_read_interpolation.c	semantic C; parser layout recovered, with remaining KMC scheduling/allocation differences
-0x80013680	0x2C	src/game/set_color_gray_7f.c	semantic C; closest KMC build differs in two move instructions
-0x800136AC	0x2C	src/game/set_color_white.c	semantic C; closest KMC build differs in two move instructions
-0x800136D8	0x2C	src/game/set_color_yellow.c	semantic C; closest KMC build differs in one move instruction
-0x80013764	0x2C	src/game/set_color_red.c	semantic C; closest KMC build differs in zero-register argument setup
-0x80013790	0x2C	src/game/set_color_green.c	semantic C; closest KMC build differs in zero-register argument setup
-0x800137BC	0x2C	src/game/set_color_blue.c	semantic C; closest KMC build differs in zero-register argument setup
 0x800137F4	0x18	src/game/clear_state_flags_52ed0.c	semantic C; closest SN build has operand/register ordering differences
 0x8001E0B0	0x30	src/game/reset_resource_record.c	semantic C; closest SN build has two scheduling differences
 0x8001E28C	0x24	src/game/offset_resource_bounds.c	semantic C; closest IDO 5.3 build differs only in register allocation
