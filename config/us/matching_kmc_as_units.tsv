@@ -19,10 +19,14 @@
 0x43494	0xC	src/game/get_callback_800428a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4483f657f9ecfeb06431b149aeb5e15f8001a02f506d4e223d03da54f3173b39
 0x436A0	0xC	src/game/set_state_word_c40c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	68a32b2ba216903f09416c6d05914baea5c3bc97529b86f2fd02d64abb10bdfd
 0x43CF4	0xC	src/game/get_state_address_c42f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f2e0b3443b98bcfc55298583103a91cb2f1c697c5eaa47b69b5f9ca310ad0ed
+0x4D5D0	0x2C	src/runtime/init_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	fb791e3f6c4cf5d4653e44e7acf51f161f79689f14c6cdd1a8a15a25eca3a5ab
+0x4D5FC	0x30	src/runtime/clear_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	2a26c4eb6d518bf6b9a2037a6c0a94a2d68fcf252c8794d4ebdc0312282cc13d
 0x4DE90	0x10	src/runtime/read_audio_interface_dram_addr.c	-O2 -G0 -mips3 -mgp32 -mfp32	679568a8280a1cc54387664b9e46dd53d246ce010538ce2e3327ac214a9b4e75
 0x4DEA0	0x10	src/runtime/read_audio_interface_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca2590df63a0994d2295be9346906b5706c52e06e06a133776138a7b7929c473
+0x4EA90	0x30	src/runtime/init_queue_800c45a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca30f8ecefe984ea11d56664595c9c2812c1808b4709886bf059936c54fa86f2
 0x52BA0	0x10	src/runtime/write_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	87f4554b65720db3a616e71c1e06b8c2f95731c91b14d0bffeb4b618a8b379d4
 0x52D50	0x10	src/runtime/read_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2e827923487755f449dbe9074b0d6fbc69a89128fd74ab6f1b1d25c100006a03
 0x53110	0xC	src/game/get_state_word_563c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4b3259da4085639bbe0e77391c973abacc77d0ba4b139dc7d587f0324398ede6
 0x50600	0x20	src/runtime/get_record_word_4.c	-O2 -G0 -mips3 -mgp32 -mfp32	86f6fd08af0681cf480e5999389d1c60870815cab7a4c38c30d9adf5599885ee
+0x51B70	0x30	src/runtime/init_queue_800c6bb0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4898bbe35a61b10c1519c367398fa7c2c4f9324b4759ac1f113a1269e0a4d2ff
 0x52CE0	0x20	src/runtime/set_sp_status_400.c	-O2 -G0 -mips3 -mgp32 -mfp32	04e7743a487f3eba34157f00f551fbe95c75e3834f610d6a8509badb6789e06d

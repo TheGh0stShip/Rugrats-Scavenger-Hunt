@@ -48,4 +48,5 @@
 0x8004D480	0x20	src/runtime/audio_interface_status_negative.c	semantic C; closest KMC build differs in the signed comparison instruction
 0x8004FEA0	0x20	src/runtime/get_active_state_7218.c	semantic C; closest KMC build differs in register allocation
 0x80051D20	0x20	src/runtime/dp_status_active.c	semantic C; closest KMC build differs in boolean normalization instructions
+0x80051FB0	0x30	src/runtime/set_sp_pc.c	semantic C; closest KMC build differs in branch scheduling and return formation
 
