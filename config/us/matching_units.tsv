@@ -153,3 +153,12 @@
 0xD8B0	0x18	src/game/enable_nested_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	bb63685304e91f64a90ad510c9afadbb746f342b44a7b9c6ac6b61ac0210a65e
 0xD8E4	0x24	src/game/disable_nested_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	eb3048a07c9934b30712aaa1f3249a67122726553c583909c2f8c3d1db639bd3
 
+0x146F4	0x20	src/game/call_func_8001ff88.c	-O2 -G0 -mips3 -mgp32 -mfp32	e7c927586f750891e833fdc5d539beedaf5f905913d5a31515458eb438a02623
+0x170EC	0x20	src/game/call_func_8001a3ec_800164ec.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c1f8cd95d77740928880b9e57584b1866288ee2bf866d0eeef16ef6243df2d4
+0x1710C	0x20	src/game/call_func_80033e1c_8001650c.c	-O2 -G0 -mips3 -mgp32 -mfp32	bf6fd22d617d6144ec9d96d71bbf15a3ca3194753b672dd199d57c2d4af2fa05
+0x1D538	0x20	src/game/call_func_80009634.c	-O2 -G0 -mips3 -mgp32 -mfp32	656a201145699891ed82d06bf860a209449b85dab407d6d755421d0cab86d493
+0x1EAC0	0x20	src/game/call_func_8001a3ec_8001dec0.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c1f8cd95d77740928880b9e57584b1866288ee2bf866d0eeef16ef6243df2d4
+0x21A6C	0x20	src/game/call_func_8001a3ec_80020e6c.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c1f8cd95d77740928880b9e57584b1866288ee2bf866d0eeef16ef6243df2d4
+0x28538	0x20	src/game/call_func_8001a3ec_80027938.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c1f8cd95d77740928880b9e57584b1866288ee2bf866d0eeef16ef6243df2d4
+0x28558	0x20	src/game/call_func_80033e1c_80027958.c	-O2 -G0 -mips3 -mgp32 -mfp32	bf6fd22d617d6144ec9d96d71bbf15a3ca3194753b672dd199d57c2d4af2fa05
+0x34A70	0x20	src/game/call_func_8001def8.c	-O2 -G0 -mips3 -mgp32 -mfp32	081108bcfea0d0567a853bad4558256ef74d75f19932b87f41f0c8b46c0bd029

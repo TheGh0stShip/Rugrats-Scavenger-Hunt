@@ -36,3 +36,4 @@
 0xEBE4	0x24	src/game/get_active_record_halfword_201e.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	217b982b8b1a0e3cadd52cc968f9fa93c52db7bccff47b31a45ba4be26a2080a
 0xEC08	0x24	src/game/get_active_record_halfword_2020.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	57175d0a7810622d5e6d013844934833063986c3acd1f1f3eb00d9f78e64859a
 0x12E64	0x20	src/game/reset_timed_state.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	fa513fe3e3fb0baa17be397d8623467cd02949e714ea27b2c2807fc750ca96c9
+0x1CEAC	0x1C	src/game/clamp_active_signed_byte.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	202f5122752568eb4d7a004278b2184a65ac3112d32da1512d777357814122fa
