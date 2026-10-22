@@ -13,10 +13,12 @@
 0x9B30	0x10	src/game/get_state_halfword.c	-O2 -G0 -mips3 -mgp32 -mfp32	faa5bb419a3d594594a501f5cc48c287e60fe08d2eb009ef127404dcc07b9797
 0x9D40	0x10	src/game/get_state_word_7f70.c	-O2 -G0 -mips3 -mgp32 -mfp32	452be4eb9c18527a71bd3a45b61d6b07c7c6f24293b1c0592026786745cbb77d
 0xC4B4	0x10	src/game/get_state_word_52ab8.c	-O2 -G0 -mips3 -mgp32 -mfp32	a64922758e3cf075b2da2110989fcbd8e6387309dba4387b30faf4c863fbbb6b
+0xE548	0x20	src/game/call_func_80033e1c.c	-O2 -G0 -mips3 -mgp32 -mfp32	bf6fd22d617d6144ec9d96d71bbf15a3ca3194753b672dd199d57c2d4af2fa05
 0xEB40	0x8	src/game/mask_id.c	-O2 -G0 -mips3 -mgp32 -mfp32	590b3ba72f3de128c557a5756dc972b21b410d138076481afdcc10af20411b5f
 0xEB94	0x10	src/game/is_id_245_to_248.c	-O2 -G0 -mips3 -mgp32 -mfp32	5ca8aead75ea2829f1b71a6641c62679f0f45b5c0df1b8846b51d43d4b885ebf
 0xEBA4	0x10	src/game/is_id_249_to_252.c	-O2 -G0 -mips3 -mgp32 -mfp32	279d20e8cf96bff4ae315171492bfeceff221f1139bcdde5173b65e179808961
 0xF3C0	0x8	src/game/noop_8000e7c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	78aa5094d5ec7291c79f799c009d04f06c2f20187988e3dcc8d35ee5efdbb378
+0x1099C	0x10	src/game/stack_frame_8000fd9c.c	-O2 -G0 -mips3 -mgp32 -mfp32	0f7b863eb9567abdbe8d5d1501b08b05460b8c9e5058231446010419432dbff6
 0x11C88	0x10	src/game/get_state_word_52c08.c	-O2 -G0 -mips3 -mgp32 -mfp32	e8d535e827bb9ce1b40425f848b68fdfb7aace956be99cb9be024ce184ba9839
 0x12E94	0x10	src/game/get_state_word_52e90.c	-O2 -G0 -mips3 -mgp32 -mfp32	46837bd15217da205615900a7814c0b24afb50608c8e33b77b7a82c6471a9745
 0x13088	0x10	src/game/get_state_word_52e94.c	-O2 -G0 -mips3 -mgp32 -mfp32	cf50a47faf724c7f06c6f8c37b255a244d2755e21ec3994e10ad902f554fc996
