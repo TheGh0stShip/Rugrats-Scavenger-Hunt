@@ -215,3 +215,8 @@
 0x99D0	0x48	src/game/init_object_matrix.c	-O2 -G0 -mips3 -mgp32 -mfp32	841c1e242367d82d0c16e41cba13da61979f7e1be34edba9bf8f5cf26ee8bbda
 0x31190	0x48	src/game/initialize_active_scene.c	-O2 -G0 -mips3 -mgp32 -mfp32	e9f13f0cb627bb80358f5f2f2fc4e7f37e1ae25fa6298d4c92cf9ebc9f2d555c
 0x26C40	0x24	src/game/initialize_index_slot.c	-O2 -G0 -mips3 -mgp32 -mfp32	0234c884df047d482ca04ee016dc225a7f0dca7dd8e1af0d7efc098f29aba8fe
+0x58A4	0xC	src/runtime/read_cop0_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2ea7fc1f266eee7e59be3d8ffee2aebda5c74a4e6765e268c725a9a6a9f50ddf
+0x58B0	0xC	src/runtime/write_cop0_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2cbf13dc62f3cfcdd5b7b506d5f3f7f0ec898fbd99b88b5a452ed04ca2bba461
+0x496A0	0x10	src/runtime/read_cop0_count.c	-O2 -G0 -mips3 -mgp32 -mfp32	49439260d2ea325fd9d1049a302274c512c90775bbc3751b54513b65152f01ae
+0x49960	0x10	src/runtime/write_cop0_status_delayed.c	-O2 -G0 -mips3 -mgp32 -mfp32	8c9798aafb630c54a679991a2a686c3379687a94f8b3c8c14e5eafe1cd8cb961
+0x4A1C0	0x10	src/runtime/write_cop0_compare.c	-O2 -G0 -mips3 -mgp32 -mfp32	424b05c5a5a48f29b4669731a97ea63a5ee362e2b47fa58afc9317487695229c
