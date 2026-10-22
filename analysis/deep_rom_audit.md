@@ -32,11 +32,11 @@ The gap-free ledger has 1,907 non-overlapping intervals covering 16,777,216 / 16
 
 The two executable sections total 323,264 bytes. The function catalogue contains 1,273 functions spanning 314,356 instruction bytes; the remaining 8,908 executable-section bytes are padding, embedded tables, or boundary-sensitive regions and are not invented as functions.
 
-- Exact manifest coverage: 24,976 / 323,264 bytes (7.726193%)
-- Fully covered functions: 391 / 1,273 (30.714847%)
+- Exact manifest coverage: 25,052 / 323,264 bytes (7.749703%)
+- Fully covered functions: 392 / 1,273 (30.793401%)
 - Partially covered catalogue functions: 7
 - Catalogue classifications: {'asm': 35, 'c': 873, 'leaf': 259, 'stub': 106}
-- Not-fully-covered classifications: {'asm': 35, 'c': 708, 'leaf': 136, 'stub': 3}
+- Not-fully-covered classifications: {'asm': 35, 'c': 708, 'leaf': 135, 'stub': 3}
 - Jump tables: 64 with 990 entries
 - Boundary findings requiring review: {'rejected_start': 1, 'in_text_data': 6, 'stray_words': 52, 'cross_branch': 5, 'start_in_delay_slot': 6, 'falls_through': 3, 'branch_to_entry': 2, 'late_start': 2, 'branch_outside': 1}
 
@@ -76,7 +76,11 @@ Two pointer banks index 178 non-overlapping samples occupying 1,807,650 encoded 
 
 ## Highest-yield attack order
 
-1. Trace the archive-2 transform-size consumer and reconstruct its decoder. One exact decoder unlocks structural inspection of 148 records and 1,745,978 logical bytes.
+The archive-2 transform path is now localized. `func_80013238` multiplies the resource index by 12 and interprets each record as ROM offset, logical/allocation size, and stored transform size. A zero transform size takes the direct DMA path. A nonzero value DMA-loads that many bytes into the scratch buffer at `D_80052EC8`, then calls `func_800166F0` with the scratch buffer, allocated output, and decoded-size pointer.
+
+`func_800166F0` is a control-byte copy/back-reference transform. Some archive streams reference output history before bytes emitted by the isolated record, so it must not yet be described as a standalone decompressor. Its caller setup or history semantics must be recovered before extraction results can be accepted.
+
+1. Reconstruct `func_800166F0` and determine its required output history. This transform path covers 148 records and 1,745,978 logical bytes.
 2. Trace `mdlh` consumers from archive-2 load sites. The 376 uniform headers cover 10,092,456 stored bytes, making this the largest single format family.
 3. Trace the archive-1 `MORT` consumer. All 380 records use that signature and occupy 2,879,376 bytes; do not label them as speech until the consumer proves it.
 4. Continue exact matching from known SDK/runtime call-graph anchors and repeated wrapper clusters. This has a better expected byte yield than isolated large gameplay functions.
