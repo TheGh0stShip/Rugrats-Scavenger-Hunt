@@ -20,7 +20,6 @@
 0x8001E650	0x18	src/game/reset_resource_indices.c	semantic C; closest SN build differs in address materialization and scheduling
 0x8001EF98	0x2C	src/game/apply_resource_value.c	semantic C; closest KMC build has an a0/v0 allocation swap
 0x8001EFC4	0x28	src/game/release_global_resource.c	semantic C; closest KMC build has an a0/v0 allocation swap
-0x8001F480	0x2C	src/game/flush_resource_ranges.c	semantic C; closest KMC build differs in one address-load instruction
 0x8002A13C	0x18	src/game/enable_state_b92a8.c	semantic C; closest IDO 5.3 build has a t6/v1 allocation swap
 0x8002A5C8	0x24	src/game/get_active_field_28.c	semantic C; closest KMC build differs in branch layout and padding
 0x8002A604	0x24	src/game/get_active_field_2c.c	semantic C; closest KMC build differs in branch layout and padding

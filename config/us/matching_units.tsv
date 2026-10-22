@@ -40,6 +40,7 @@
 0x1C9C0	0x10	src/game/noop_group_8001bdc0.c	-O2 -G0 -mips3 -mgp32 -mfp32	f10e5e336e5fb76e6def91eb6fe9dbb0a6adb09eaa07aced495e21d6525df078
 0x1CF38	0x8	src/game/return_zero_8001c338.c	-O2 -G0 -mips3 -mgp32 -mfp32	648cbc77d024f6d08bc8ff4e3bdf1cebf2a933937ee1cebef4690d015808bd9c
 0x1EAE0	0x8	src/game/noop_8001dee0.c	-O2 -G0 -mips3 -mgp32 -mfp32	78aa5094d5ec7291c79f799c009d04f06c2f20187988e3dcc8d35ee5efdbb378
+0x20080	0x2C	src/game/flush_resource_ranges.c	-O2 -G0 -mips3 -mgp32 -mfp32	789624a0e207a65c9265b596a42a309e8aa7346afb59a3cd749c1f972c59ee0a
 0x1F2F8	0x20	src/game/enable_resource_mode.c	-O2 -G0 -mips3 -mgp32 -mfp32	feaae30579f057ad253b68b3486dac3b26a00de267107814f50565264308fef3
 0x1F318	0x20	src/game/disable_resource_mode.c	-O2 -G0 -mips3 -mgp32 -mfp32	64a03e38129585fbe9070024c86d3615987024f37c8929649a4b313c2f911763
 0x1F3BC	0x20	src/game/enable_resource_flag.c	-O2 -G0 -mips3 -mgp32 -mfp32	9164caea752c61de5abcc37442ea6d50be8c4ac56bc0b8a2309d0092ca7852b4
