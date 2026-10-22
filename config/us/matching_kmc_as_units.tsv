@@ -31,7 +31,9 @@
 0x4DEA0	0x10	src/runtime/read_audio_interface_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca2590df63a0994d2295be9346906b5706c52e06e06a133776138a7b7929c473
 0x4DEB0	0x130	src/runtime/set_audio_frequency.c	--section-base=.rodata:0x80003900 -O2 -G0 -mips3 -mgp32 -mfp32	91e9720ab0df801365331614c99a5a4514ace0ba12c7b80ba3984b53023461b5
 0x4DFE0	0xA0	src/runtime/set_audio_next_buffer.c	--section-base=.data:0x80056350 -O2 -G0 -mips3 -mgp32 -mfp32	657469cb6c6f12005b510949f47f258e30980525bf414a6bad385c0a153db65e
+0x4E0A0	0x170	src/runtime/set_vi_special_features.c	-O2 -G0 -mips3 -mgp32 -mfp32	109f4561832ee4e82c7a51427213447c0abd9ba01fb0fbc29708b006307d44e2
 0x4EA90	0x30	src/runtime/init_queue_800c45a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	ca30f8ecefe984ea11d56664595c9c2812c1808b4709886bf059936c54fa86f2
+0x4EDD0	0xA0	src/runtime/set_timer.c	-O2 -G0 -mips3 -mgp32 -mfp32	22d601164403530fcc58c74ce296a99191bba6fdc15530587bdaa12a43dc5888
 0x52BA0	0x10	src/runtime/write_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	87f4554b65720db3a616e71c1e06b8c2f95731c91b14d0bffeb4b618a8b379d4
 0x52D50	0x10	src/runtime/read_sp_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2e827923487755f449dbe9074b0d6fbc69a89128fd74ab6f1b1d25c100006a03
 0x53110	0xC	src/game/get_state_word_563c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4b3259da4085639bbe0e77391c973abacc77d0ba4b139dc7d587f0324398ede6

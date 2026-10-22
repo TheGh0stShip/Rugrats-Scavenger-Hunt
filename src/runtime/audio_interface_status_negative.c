@@ -1,5 +1,10 @@
-typedef signed int s32;
+typedef unsigned int u32;
 
 int func_8004D480(void) {
-    return *(volatile s32 *)0xA450000C < 0;
+    u32 status = *(volatile u32 *)0xA450000C;
+
+    if ((status & 0x80000000) != 0) {
+        return 1;
+    }
+    return 0;
 }
