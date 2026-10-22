@@ -1,3 +1,4 @@
 # IDO 5.3 exact matching units
 # ROM_START SIZE SOURCE FLAGS SHA256
 0x44E38	0x20	src/game/advance_object_state.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	fad508f2dc9b6d0343e1b676f492210f85e67a722f2679d2a5637c4a369a8601
+0x44E58	0x10	src/game/set_object_state_4.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	125a71c27c04c8859e714ac2ebae2c4134a33b78a4d4dfb9682a741f3edd8163

@@ -1051,7 +1051,7 @@ functions = [
     { name = "func_80043E54", vram = 0x80043e54, size = 0x378 }, # c
     { name = "func_800441CC", vram = 0x800441cc, size = 0x6c }, # leaf
     { name = "func_80044238", vram = 0x80044238, size = 0x20 }, # leaf
-    { name = "func_80044258", vram = 0x80044258, size = 0x18 }, # stub
+    { name = "func_80044258", vram = 0x80044258, size = 0x10 }, # leaf; 0x80044268..0x80044270 is alignment
     { name = "func_80044270", vram = 0x80044270, size = 0x1f8 }, # c
     { name = "func_80044468", vram = 0x80044468, size = 0xe8 }, # c
     { name = "func_80044550", vram = 0x80044550, size = 0x290 }, # c

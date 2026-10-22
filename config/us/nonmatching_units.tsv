@@ -3,8 +3,6 @@
 0x8001E28C	0x24	src/game/offset_resource_bounds.c	semantic C; closest IDO 5.3 build differs only in register allocation
 0x8001EF98	0x2C	src/game/apply_resource_value.c	semantic C; closest KMC build has an a0/v0 allocation swap
 0x8001EFC4	0x28	src/game/release_global_resource.c	semantic C; closest KMC build has an a0/v0 allocation swap
-0x8002A13C	0x18	src/game/enable_state_b92a8.c	semantic C; closest IDO 5.3 build has a t6/v1 allocation swap
-0x80044258	0x18	src/game/set_object_state_4.c	semantic C; closest IDO 5.3 build lacks two trailing hazard nops
 0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs only in one instruction scheduling position
 0x8004D1F0	0xA0	src/runtime/create_indexed_runtime_record.c	semantic C; target uses a different expression and register-allocation shape
 
