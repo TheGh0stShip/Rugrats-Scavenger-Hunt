@@ -243,3 +243,4 @@
 0x57C0	0xAC	src/runtime/install_exception_vectors.c	-O2 -G0 -mips3 -mgp32 -mfp32	1bb7453e27dcc7b297f8f721ed098df0738d4370dd13d6ec8d65cea39a126911
 0x49214	0x108	src/runtime/enqueue_and_yield.c	-O2 -G0 -mips3 -mgp32 -mfp32	3d95cfb8e10cf886242d87caff210d36c6e32316861bcc9a10dbdb8d931e35e3
 0x49374	0x17C	src/runtime/dispatch_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	5117c020de09d251e455a674b09c05e20fcbd1f5efc0bacdafdde801c54ca1ab
+0x797C	0x34	src/game/get_angle_step.c	--section-base=.rodata:0x80000590 -O2 -G0 -mips3 -mgp32 -mfp32	d1c998bde1031cd62501c3925449ef11ae3e2eca13656692c04e696bbed3fe75
