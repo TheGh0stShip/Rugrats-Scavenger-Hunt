@@ -22,8 +22,7 @@
 0x80040BA8	0x2C	src/game/pop_object_node.c	semantic C; closest KMC assembler build differs in register allocation and scheduling
 0x80043100	0x2C	src/game/fill_bytes.c	semantic C; closest KMC build differs in loop shape and register allocation
 0x80044258	0x18	src/game/set_object_state_4.c	semantic C; closest IDO 5.3 build lacks two trailing hazard nops
-0x8004CA80	0x40	src/runtime/init_aligned_arena.c	semantic C; closest KMC build differs in temporary register allocation
-0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs in register allocation and scheduling
+0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs only in one instruction scheduling position
 0x8004D0A4	0x48	src/runtime/scale_runtime_value.c	semantic C; closest KMC assembler build differs by two instructions and one hazard nop
 0x8004D0EC	0x4C	src/runtime/scale_runtime_value_aligned.c	semantic C; closest KMC assembler build differs by two instructions and one hazard nop
 0x8004D1F0	0xA0	src/runtime/create_indexed_runtime_record.c	semantic C; target uses a different expression and register-allocation shape

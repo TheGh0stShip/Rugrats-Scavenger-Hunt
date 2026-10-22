@@ -10,10 +10,10 @@ typedef struct {
 void func_8004CA80(Arena *arena, u32 start, u32 size) {
     u32 adjustment = 16 - (start & 15);
 
-    if (adjustment == 16) {
-        arena->start = start;
-    } else {
+    if (adjustment != 16) {
         arena->start = start + adjustment;
+    } else {
+        arena->start = start;
     }
     arena->size = size;
     arena->reserved = 0;

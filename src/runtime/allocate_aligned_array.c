@@ -9,13 +9,22 @@ typedef struct {
 
 void *func_8004CAC0(int unused_0, int unused_1, Arena *arena, u32 count,
                     u32 element_size) {
-    u32 allocation_size = (count * element_size + 15) & ~15;
-    u32 new_cursor = arena->cursor + allocation_size;
-    void *result = 0;
+    register u32 arena_size __asm__("$3") = arena->size;
+    u32 end = arena->start + arena_size;
+    register u32 work __asm__("$4") = ~15;
+    register u32 cursor __asm__("$5") = arena->cursor;
+    u32 allocation_size;
+    register void *result __asm__("$8");
 
-    if (new_cursor <= arena->start + arena->size) {
-        result = (void *)arena->cursor;
+    allocation_size = (count * element_size + 15) & work;
+    work = cursor + allocation_size;
+    result = 0;
+    if (end < work) {
+        goto done;
     }
-    arena->cursor = new_cursor;
+    result = (void *)cursor;
+    __asm__("" : "=r"(result) : "0"(result));
+    arena->cursor = work;
+done:
     return result;
 }
