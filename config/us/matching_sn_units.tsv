@@ -68,3 +68,4 @@
 0x1F1F0	0x40	src/game/advance_wrapped_resource_pointer.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d8783654024a49a716ad50288c6d1af26162b69aeca30c2aa61e362f9e8944f0
 0x1A2A4	0x44	src/game/count_active_mode_slots.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	675900f7f5998dea1ed9d6b6178209d45ab710c315a0213fa6dbe53e21c126df
 0x13DF8	0x40	src/game/get_table_record_word.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0653fffd1b3bf171603cc1e8718102b5c931df117ffbab043ff0fce27990b2dd
+0x20B3C	0x4C	src/game/initialize_resource_rows.c	-O1 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9361191e41f31ccb906c49fd4585fc8832658ae6661683e2d72cff07b2c2c504
