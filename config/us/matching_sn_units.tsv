@@ -56,3 +56,4 @@
 0x1A9E0	0x5C	src/game/get_record_pair.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ad8ce4e751ade8936c1a3fb273468a99a3d343b66fd6d02a59bab6385f2559c2
 0x1A7D4	0x7C	src/game/release_active_resource.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b34efc6ca8e153901d56dd519859fe5bbc926b4bc0b6a3d4424e9666a7b99535
 0x1AE50	0x60	src/game/measure_heap_gap.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	617eb7c9a8611973f58c965a4394701bcabe6ebec63923f10035581881392c6f
+0x1AFEC	0x108	src/game/free_heap_block.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	191e6aa94be1f74314f2748ede71401d1a26170d30b2e2a534789badbc6311e8
