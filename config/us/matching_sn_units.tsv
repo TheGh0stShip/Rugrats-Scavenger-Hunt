@@ -60,3 +60,5 @@
 0xD924	0x2C	src/game/get_record_flag_mask.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9c366d6efdc722830be97831951cd515cd75fb99975e0ffa8f2291a89f642b9d
 0xDA50	0x2C	src/game/get_scaled_record_value.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	c0af7e2618ca5ad47314d8fbd05ade7670ffa61df035ad5d8a2a20a61bcb2dc5
 0x9D6C	0x28	src/game/set_grid_halfword.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	63ce7a4375614bae571fb743689bae50f749f5dba39904bf3cb08e8fca89f5d7
+0x2ED7C	0x2C	src/game/update_object_counter_194.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a52aeca4969d0bb42e45b8b7d61d8ecd2c5f63c98469f34be593eaa05bd2048e
+0x1C98C	0x34	src/game/initialize_fixed_identifiers.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1d1f92a192be9af7f7db6e550bd679dd093493f16f3268b1584d5ec516029f26
