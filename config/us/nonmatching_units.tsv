@@ -3,5 +3,4 @@
 0x8001EF98	0x2C	src/game/apply_resource_value.c	semantic C; closest KMC build has an a0/v0 allocation swap
 0x8001EFC4	0x28	src/game/release_global_resource.c	semantic C; closest KMC build has an a0/v0 allocation swap
 0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs only in one instruction scheduling position
-0x8004D1F0	0xA0	src/runtime/create_indexed_runtime_record.c	semantic C; target uses a different expression and register-allocation shape
 
