@@ -28,6 +28,7 @@
 0x14304	0x20	src/game/set_color_gray_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	7a486136656e43faaec5ce8a7f464a2f96aaba97465e9af6ede3d8a84713d792
 0x14324	0x20	src/game/set_color_white_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	2ed73ee720f8a66e91a733756929d253ad8ea604c50cc0a52f36823612a6c5d1
 0x14344	0x20	src/game/set_color_yellow_opaque.c	-O2 -G0 -mips3 -mgp32 -mfp32	c3d9ab34d0b5b0e8845e84882e59a2115112853c87db28e77814ae7890ae999c
+0x168CC	0x10	src/game/noop_80015ccc.c	-O2 -G0 -mips3 -mgp32 -mfp32	9e0b64de6c3f86a93ef84df896a67cdb74509aa14ac2fd32aef2a9ddfb2a9b08
 0x17408	0x28	src/game/noop_group_80016808.c	-O2 -G0 -mips3 -mgp32 -mfp32	4f6a20b97bb9e7f1652ea515f848a4925dd728173eee770f46fdc6d0662c8ce2
 0x1C1EC	0x10	src/game/get_state_word_5b7ec.c	-O2 -G0 -mips3 -mgp32 -mfp32	88606f198a2961d0b0ad5c6da68de53f02c2ce7b16d32641ac7924d382a14d13
 0x1C9C0	0x10	src/game/noop_group_8001bdc0.c	-O2 -G0 -mips3 -mgp32 -mfp32	f10e5e336e5fb76e6def91eb6fe9dbb0a6adb09eaa07aced495e21d6525df078
@@ -60,6 +61,7 @@
 0x31F10	0xC	src/game/id_group_index.c	-O2 -G0 -mips3 -mgp32 -mfp32	b45ab01cb86eea4d75539240385562f45aee1ac3d66cf254106d0e655dd5eb0a
 0x31F1C	0xC	src/game/is_id_380_to_383.c	-O2 -G0 -mips3 -mgp32 -mfp32	9116ae4d3461dbc7ae4905df35a26f71ea7c94494e4891de28ac63737a3f895a
 0x34A0C	0x18	src/game/noop_group_80033e0c.c	-O2 -G0 -mips3 -mgp32 -mfp32	2dd9d4251f16baabaaefa264df6fc76be9cf5380c59f9fe6a4ff6580c3678b03
+0x368FC	0x10	src/game/noop_80035cfc.c	-O2 -G0 -mips3 -mgp32 -mfp32	9e0b64de6c3f86a93ef84df896a67cdb74509aa14ac2fd32aef2a9ddfb2a9b08
 0x3C5F4	0x2C	src/game/set_control_halfwords.c	-O2 -G0 -mips3 -mgp32 -mfp32	d547601e769f4da8c70624a822aa5bf398c878c806062c58df5ed8c072fcaddb
 0x3CF48	0x24	src/game/store_negative_object.c	-O2 -G0 -mips3 -mgp32 -mfp32	79002fa3340d2c4e33ef28f767943f177dbd93f8f7076356260029b7ffe02733
 0x3D15C	0x8	src/game/set_object_word_10.c	-O2 -G0 -mips3 -mgp32 -mfp32	8090edef6bfc280c2c49239a0db5c9d4a83e2f946383114992f26187a9744ff3
