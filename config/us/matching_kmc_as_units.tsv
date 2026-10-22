@@ -21,6 +21,8 @@
 0x43CF4	0xC	src/game/get_state_address_c42f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f2e0b3443b98bcfc55298583103a91cb2f1c697c5eaa47b69b5f9ca310ad0ed
 0x4D5D0	0x2C	src/runtime/init_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	fb791e3f6c4cf5d4653e44e7acf51f161f79689f14c6cdd1a8a15a25eca3a5ab
 0x4D5FC	0x30	src/runtime/clear_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	2a26c4eb6d518bf6b9a2037a6c0a94a2d68fcf252c8794d4ebdc0312282cc13d
+0x49610	0x90	src/runtime/get_time.c	-O2 -G0 -mips3 -mgp32 -mfp32	0baa4662a2479447e6cd6e5643345e6db179f9c7e4cf74ffc79f03332a3c29d6
+0x4A1D0	0x60	src/runtime/virtual_to_physical.c	-O2 -G0 -mips3 -mgp32 -mfp32	096fe4119f9947bac02418866a4ffce567488f49a6dad42bfaf8daea36fb072f
 0x4AAD8	0x48	src/runtime/init_runtime_record_defaults.c	-O2 -G0 -mips3 -mgp32 -mfp32	93de3217ec50882658e5f2a72913ff7e5cb6501f24e2072e5bcfb48999faab45
 0x4DC10	0x54	src/runtime/move_all_runtime_nodes.c	-O2 -G0 -mips3 -mgp32 -mfp32	41dd134517a327c066d179fb26f2ac489301c29050022032399ad4918195f76b
 0x4DC64	0x40	src/runtime/activate_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	23de5d3d99e3b97a8e85b2ea087995d9a65c18df7e556f108a84646b2acee6eb
