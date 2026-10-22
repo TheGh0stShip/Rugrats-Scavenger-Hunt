@@ -22,6 +22,9 @@
 0x48AE0	0xD0	src/runtime/create_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	bdd4109589a4bebba113580bec3ccaab2820f6fcecd70fedc07a83949ca12900
 0x48110	0xDC	src/runtime/matrix_scale.c	-O3 -G0 -mips3 -mgp32 -mfp32	3945ccc4639aadb6489a5cf425567d48f3327d7e2a2088d03fac12903f48309c
 0x48390	0xC4	src/runtime/matrix_translate.c	-O3 -G0 -mips3 -mgp32 -mfp32	fb155992fb9a519d16dedfcf3380e7a94c934a233f0485e5a5ff1c665a208ff1
+0x47900	0x100	src/runtime/matrix_fixed_wrappers.c	-O2 -G0 -mips3 -mgp32 -mfp32	f84a65f62fe7062617da5acf105c17ffd3a6daa9d24856ad693b4151960e4d59
+0x47A00	0xA8	src/runtime/normalize_vector.c	--symbol=sqrtf:0x80045CE0 -O2 -G0 -mips3 -mgp32 -mfp32	0859b32b87ab7578e0ed6b8fc179744b6d29372a2c082ea506949f07fe6e3680
+0x48820	0x30	src/runtime/random_number.c	--section-base=.data:0x80056010 -O2 -G0 -mips3 -mgp32 -mfp32	9cc4de4a28df74893db6e3fa7b782be1a4274e6cd829f18d80ac593fff8b52e7
 0x4D5D0	0x2C	src/runtime/init_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	fb791e3f6c4cf5d4653e44e7acf51f161f79689f14c6cdd1a8a15a25eca3a5ab
 0x4D5FC	0x30	src/runtime/clear_runtime_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	2a26c4eb6d518bf6b9a2037a6c0a94a2d68fcf252c8794d4ebdc0312282cc13d
 0x49610	0x90	src/runtime/get_time.c	-O2 -G0 -mips3 -mgp32 -mfp32	0baa4662a2479447e6cd6e5643345e6db179f9c7e4cf74ffc79f03332a3c29d6

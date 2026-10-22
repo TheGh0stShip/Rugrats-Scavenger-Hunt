@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 FUNCTIONS = ROOT / "analysis/survey/functions.toml"
+DATA_PROGRESS = ROOT / "config/us/data_progress.toml"
 MANIFESTS = (
     ROOT / "config/us/matching_units.tsv",
     ROOT / "config/us/matching_kmc_as_units.tsv",
@@ -21,7 +22,6 @@ DEFAULT_OUTPUT = ROOT / "build/report.json"
 ROM_SIZE = 0x800000
 REPORTABLE_ROM_START = 0x1000
 PROGRAM_ROM_END = 0x57E80
-MATCHED_DATA = 144
 
 
 def manifest_ranges() -> list[tuple[int, int, str]]:
@@ -138,14 +138,17 @@ def build_report() -> dict:
 
     total_code = sum(function["size"] for function in functions)
     total_program_data = PROGRAM_ROM_END - section["rom"] - total_code
+    data_progress = tomllib.loads(DATA_PROGRESS.read_text())["initialized_data"]
+    matched_data = data_progress["matched"]
+    audited_program_data = matched_data + data_progress["unmatched"]
     total_assets = ROM_SIZE - PROGRAM_ROM_END
     total_non_code = total_program_data + total_assets
     total_reportable = ROM_SIZE - REPORTABLE_ROM_START
-    matched_reportable = matched_code + MATCHED_DATA
+    matched_reportable = matched_code + matched_data
     if matched_code != sum(right - left for left, right, _source in ranges):
         raise ValueError("matching manifests include bytes outside the function catalogue")
-    if total_program_data < MATCHED_DATA:
-        raise ValueError("initialized-data progress exceeds the program data total")
+    if audited_program_data != total_program_data:
+        raise ValueError("data-progress manifest does not cover initialized program data")
     if total_code + total_non_code != total_reportable:
         raise ValueError("code, program data and assets do not cover the ROM payload")
 
@@ -155,7 +158,7 @@ def build_report() -> dict:
         len(functions),
         matched_functions,
         total_non_code,
-        MATCHED_DATA,
+        matched_data,
     )
     code = measures(
         total_code,
@@ -176,7 +179,7 @@ def build_report() -> dict:
             {
                 "id": "program_data",
                 "name": "Initialized program data",
-                "measures": byte_category(total_program_data, MATCHED_DATA),
+                "measures": byte_category(total_program_data, matched_data),
             },
             {
                 "id": "assets",
