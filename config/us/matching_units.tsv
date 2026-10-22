@@ -99,6 +99,8 @@
 0x4DBCC	0x2C	src/runtime/pop_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	cea7d7fb3c7042c62432bc81778092618ffff9900e059c1cfa4aecb0f4a35af1
 0x4DBF8	0x18	src/runtime/push_runtime_node.c	-O2 -G0 -mips3 -mgp32 -mfp32	53fd08d46730bf2c1724ad217e9c053aa3f99887140eaca8cd0fca7de20a7b79
 0x4E6A0	0x20	src/runtime/si_status_active.c	-O2 -G0 -mips3 -mgp32 -mfp32	badffc805f1799689b77a45ef79c9f82a6fe7c18d857553d9a3801c5bb6ce83b
+0x4F9A0	0x48	src/runtime/controller_address_checksum.c	-O2 -G0 -mips3 -mgp32 -mfp32	09cd19f39dfa44d2cc1c62af44818942f04faf68e0010bf786d3d8010298ec1b
+0x4F9E8	0x68	src/runtime/controller_data_checksum.c	-O2 -G0 -mips3 -mgp32 -mfp32	6264c83b65cf2820b6c375296903fa640325a6b4794f80275149588282f810bb
 0x52B80	0x20	src/runtime/sp_dma_active.c	-O2 -G0 -mips3 -mgp32 -mfp32	3e9a180c46c8a5a9bb9b129e0f7ff4f87641bcd77a3c4a200ba0383c71d31b61
 0x4DDE0	0x10	src/game/clear_pointed_word.c	-O2 -G0 -mips3 -mgp32 -mfp32	e1d58b3797e2652b6f924682d73472ec91145cf6f318f3198bad8f0141713d9b
 0x51F50	0x8	src/game/get_object_field_78_address.c	-O2 -G0 -mips3 -mgp32 -mfp32	d82c49368eef6b8ec668ea667cb0a950e97a442870973cd6baf8b3e57bcda040

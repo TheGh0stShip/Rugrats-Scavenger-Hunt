@@ -35,6 +35,8 @@
 0x516F0	0x50	src/runtime/disable_runtime_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	1ede03b7be7083e3b5c925e1162e5c7e85dbdadd7e5cac060dc5c55d7520dc61
 0x51740	0x40	src/runtime/enable_runtime_flags.c	-O2 -G0 -mips3 -mgp32 -mfp32	5577be63f1398def27c8c820636b9d09f366221fafcb63df4aabf80e15657c4a
 0x51B70	0x30	src/runtime/init_queue_800c6bb0.c	-O2 -G0 -mips3 -mgp32 -mfp32	4898bbe35a61b10c1519c367398fa7c2c4f9324b4759ac1f113a1269e0a4d2ff
+0x51CF0	0x14	src/runtime/diagnostic_stub_800510f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	7008cedc7bc7666823ccb635b2fcb91203276ea030284707c9e8f52db2ea3448
+0x51D04	0x1C	src/runtime/diagnostic_stub_80051104.c	-O2 -G0 -mips3 -mgp32 -mfp32	aa856e35dba294708397847ba0b81ee640868e8cb6bb484286779e156a944ec2
 0x52630	0x38	src/runtime/mark_task_pending.c	-O1 -G0 -mips3 -mgp32 -mfp32	59bfb9ca23cfbe1c4c78c5fd4f8529e2eb8b8c7a25230a97b0bd86b1f16652f9
 0x52D60	0x40	src/runtime/get_queue_value_63c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8dc66b5e6dcbd6f52f26abfb58f5f891c5df312e7d7ff4d09da1306efb9b5966
 0x52DA0	0x40	src/runtime/get_queue_value_63c4.c	-O2 -G0 -mips3 -mgp32 -mfp32	64860635895c57bbcf520d4ba42a72d627ccd83e7a2a901091d822f33aa39cbf
