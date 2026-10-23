@@ -28,9 +28,14 @@ jobs:
           name: us_report
           path: build/report.json
           if-no-files-found: error
-      - uses: decmp/upload-action@v1
-        with:
-          report: build/report.json
-          version: NRGE
-          name: "Rugrats: Scavenger Hunt"
-          platform: n64
+      - name: Upload report to decmp.dev
+        run: |
+          curl -fsSL https://api.decmp.dev/action/v1.1.0.mjs -o decmp.mjs
+          echo "10fb0039a067b4ffe67510959356a691efa6efbb0aae16450c04f8c64da0a5f8  decmp.mjs" | sha256sum -c
+          node decmp.mjs
+        env:
+          DECMP_REPORT: build/report.json
+          DECMP_VERSION: NRGE
+          DECMP_NAME: "Rugrats: Scavenger Hunt"
+          DECMP_PLATFORM: n64
+          GITHUB_TOKEN: ${{ github.token }}

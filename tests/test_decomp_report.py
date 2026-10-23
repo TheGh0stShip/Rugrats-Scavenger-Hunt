@@ -77,7 +77,8 @@ class DecompReportTests(unittest.TestCase):
         self.assertIn(data_summary, readme)
         self.assertIn("NRGE_report", workflow)
         self.assertIn("us_report", workflow)
-        self.assertIn("decmp/upload-action@v1", workflow)
+        self.assertIn("https://api.decmp.dev/action/v1.1.0.mjs", workflow)
+        self.assertIn("DECMP_VERSION: NRGE", workflow)
         self.assertEqual(manifest["original"]["serial"], "NRGE")
         self.assertEqual(manifest["original"]["sha1"],
                          "fb2a62f1625630d6f0beb5fd00a32e12155d50e8")
