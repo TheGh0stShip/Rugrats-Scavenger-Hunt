@@ -11,7 +11,7 @@
     "sha1": "fb2a62f1625630d6f0beb5fd00a32e12155d50e8"
   },
   "project": "Rugrats: Scavenger Hunt matching decompilation",
-  "status": "paused",
+  "status": "in-progress",
   "toolchain": "Decompkit",
   "approach": "Matching decompilation with byte-exact code and initialized-data verification, plus separate asset and physical-image inventories.",
   "notes": "USA Rev 0: 30,000 of 323,264 code bytes and 465 of 1,273 functions matched; 240 of 32,704 initialized-data bytes matched; 0 extracted asset bytes; full 16,777,216-byte physical inventory.",
