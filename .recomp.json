@@ -1,0 +1,43 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Rugrats: Scavenger Hunt",
+  "wikidata": "Q3235097",
+  "system": "N64",
+  "type": "decomp",
+  "original": {
+    "region": "USA",
+    "revision": "Rev 0",
+    "serial": "NRGE",
+    "sha1": "fb2a62f1625630d6f0beb5fd00a32e12155d50e8"
+  },
+  "project": "Rugrats: Scavenger Hunt matching decompilation",
+  "status": "paused",
+  "toolchain": "Decompkit",
+  "approach": "Matching decompilation with byte-exact code and initialized-data verification, plus separate asset and physical-image inventories.",
+  "notes": "USA Rev 0: 30,000 of 323,264 code bytes and 465 of 1,273 functions matched; 240 of 32,704 initialized-data bytes matched; 0 extracted asset bytes; full 16,777,216-byte physical inventory.",
+  "maintainers": [
+    {
+      "name": "TheGh0stShip",
+      "link": "https://github.com/TheGh0stShip"
+    }
+  ],
+  "links": [
+    {
+      "label": "Repository",
+      "url": "https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt"
+    },
+    {
+      "label": "Progress",
+      "url": "https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt"
+    }
+  ],
+  "help": [
+    "Matching game functions",
+    "Initialized-data reconstruction",
+    "Resource format decoding"
+  ],
+  "tags": [
+    "matching",
+    "MIPS"
+  ]
+}

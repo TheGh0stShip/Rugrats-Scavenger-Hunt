@@ -8,6 +8,9 @@ on:
 jobs:
   decomp-report:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -16,6 +19,18 @@ jobs:
       - run: python tools/generate_decomp_report.py
       - uses: actions/upload-artifact@v4
         with:
+          name: NRGE_report
+          path: build/report.json
+          if-no-files-found: error
+      # Preserve the established ByteMatch version key.
+      - uses: actions/upload-artifact@v4
+        with:
           name: us_report
           path: build/report.json
           if-no-files-found: error
+      - uses: decmp/upload-action@v1
+        with:
+          report: build/report.json
+          version: NRGE
+          name: "Rugrats: Scavenger Hunt"
+          platform: n64

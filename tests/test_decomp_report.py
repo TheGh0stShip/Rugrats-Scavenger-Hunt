@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import unittest
 from pathlib import Path
 
@@ -55,6 +56,33 @@ class DecompReportTests(unittest.TestCase):
         }
         self.assertEqual(categories["audio_inventory"]["matched_data"], "1846320")
         self.assertEqual(categories["resource_inventory"]["matched_data"], "13839424")
+
+    def test_public_tracker_metadata_matches_report(self) -> None:
+        report = REPORT.build_report()
+        totals = report["measures"]
+        readme = (ROOT / "README.md").read_text()
+        manifest_text = (ROOT / ".recomp.json").read_text()
+        manifest = json.loads(manifest_text)
+        workflow = (ROOT / ".github/workflows/progress.yml").read_text()
+
+        code_summary = (
+            f"{totals['matched_functions']:,} / {totals['total_functions']:,} functions; "
+            f"{int(totals['matched_code']):,} / {int(totals['total_code']):,} code bytes"
+        )
+        data_summary = (
+            f"{int(totals['matched_data']):,} / "
+            f"{int(totals['total_data']):,} bytes"
+        )
+        self.assertIn(code_summary, readme)
+        self.assertIn(data_summary, readme)
+        self.assertIn("NRGE_report", workflow)
+        self.assertIn("us_report", workflow)
+        self.assertIn("decmp/upload-action@v1", workflow)
+        self.assertEqual(manifest["original"]["serial"], "NRGE")
+        self.assertEqual(manifest["original"]["sha1"],
+                         "fb2a62f1625630d6f0beb5fd00a32e12155d50e8")
+        self.assertIn(f"{int(totals['matched_code']):,}", manifest["notes"])
+        self.assertIn(f"{totals['matched_functions']:,}", manifest["notes"])
 
 
 if __name__ == "__main__":
