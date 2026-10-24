@@ -13,3 +13,4 @@
 0x5790	0x20	src/runtime/copied_vector_tail_80004b90.S	-mips3 -G0	5169b0acffc329f27e836ba416816a53a8da56358d52cef318776266e0f7174c
 0x37420	0xC	src/runtime/cop0_dispatch_stub_80036820.S	-mips3 -G0	868c3a99f6e2da50f6e586b402d2f849185300ee4f797c47f04fafbbe1f3b2ad
 0x48BC0	0x2C	src/libultra/exception_entry_80047fc0.S	-mips3 -G0	da10f91e49bb52d750e973f7f1c4aca9695e867d7cb868d538512e8d00bc2eeb
+0x48BEC	0x538	src/libultra/exception_handler_body_80047fec.s	-mips3 -G0	fa2a773a7618954c4cbf06ca4f5818d817a462bd7cea6aa3bc3a9b0654bd72bb

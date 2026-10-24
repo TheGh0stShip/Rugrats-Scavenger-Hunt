@@ -15,10 +15,12 @@ MANIFESTS = (
     ROOT / "config/us/matching_units.tsv",
     ROOT / "config/us/matching_kmc_normalized_units.tsv",
     ROOT / "config/us/matching_kmc_as_units.tsv",
+    ROOT / "config/us/matching_kmc_padded_units.tsv",
     ROOT / "config/us/matching_sn_units.tsv",
     ROOT / "config/us/matching_sn_normalized_units.tsv",
     ROOT / "config/us/matching_ido_units.tsv",
     ROOT / "config/us/matching_ido_normalized_units.tsv",
+    ROOT / "config/us/matching_asm_units.tsv",
 )
 VRAM_ROM_DELTA = 0x7FFFF400
 FUNCTION_RE = re.compile(
