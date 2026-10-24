@@ -148,3 +148,7 @@
 0x30F50	0x154	src/game/func_80030350.c	--section-base=.rdata:0x80002AE0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	da1ce8d8e6c36a3bdbe3ca3d93d5368fd2dafd768f7d63b62b9128070d848b46
 0x3139C	0xA4	src/game/func_8003079C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	76767927c5dddcce38b201642fcd192f3a306b6f6de811b241d454ddba748f06
 0x31F28	0xE0	src/game/func_80031328.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	92d6c0a01e8c31210c49ba8b7672ff854069f2c1bd51b137376799366c1333e2
+0x11360	0xCC	src/game/func_80010760.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	19312db12a55a2a55e369970c6b91225b110937f273a0ab0f6aeaaa2e136f1e4
+0x29758	0xC0	src/runtime/func_80028B58.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0bfbcd8b0e466aa208329e9df15b1d23fb3de18a28ef244027c32d95b5e75cb1
+0x25FD8	0xC0	src/game/func_800253D8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	13aec93ab93c5ca5579588962c01f0283af685bb296b9acf976d256feafa60e8
+0x34F50	0xE4	src/game/func_80034350.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a26ceff92ea5852db9c67e9a0b61f113cf9ab78cd0e13fad9c81a5423da5990e

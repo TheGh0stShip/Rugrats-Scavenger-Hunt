@@ -1,12 +1,12 @@
 {
- "clone_head": "bf9f8d860ee093e44a767a691a7aceae98143a09",
+ "clone_head": "7db985548767982bfac4a15dc5d4d5549e40a7f8",
  "command": "make verify-matching N64DK_ROOT=$N64DK_ROOT N64DK_TOOLCHAIN=$N64DK_TOOLCHAIN",
  "summaries": [
   "Verified 293/293 units, 17064 code bytes, 52 data bytes (kmc+asn64 13/13, kmc+builtin 280/280)",
   "verified 20 normalized KMC unit(s), 2180 exact bytes",
   "Verified 252/252 units, 62976 code bytes, 1672 data bytes (kmc+as 252/252)",
   "Verified 94/94 units, 4796 code bytes, 44 data bytes (sn 94/94)",
-  "verified 148 normalized SN unit(s), 40156 exact bytes",
+  "verified 152 normalized SN unit(s), 40972 exact bytes",
   "Verified 6/6 units, 236 code bytes, 0 data bytes (ido5.3 6/6)"
  ],
  "units": [
@@ -5740,6 +5740,34 @@
    "rom_start": 204584,
    "size": 224,
    "source": "src/game/func_80031328.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 70496,
+   "size": 204,
+   "source": "src/game/func_80010760.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 169816,
+   "size": 192,
+   "source": "src/runtime/func_80028B58.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 155608,
+   "size": 192,
+   "source": "src/game/func_800253D8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 216912,
+   "size": 228,
+   "source": "src/game/func_80034350.c",
    "tool": "sn+normalized",
    "evidence": "sn+normalized verifier completed run"
   }

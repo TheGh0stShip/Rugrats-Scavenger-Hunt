@@ -235,6 +235,29 @@ def normalize_random_slot_assignment(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_player_marker_draw(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_800549FC) # high\n"
+        "\taddiu\t$17,$2,%lo(D_800549FC) # low\n"
+        "\tmove\t$16,$0\n"
+        "\tlui\t$20,%hi(D_800C3E24) # high\n"
+        "\tli\t$18,-2147483648\t\t\t# 0x80000000\n"
+        "\tlui\t$19,%hi(D_800C3E30) # high\n"
+    ), (
+        "\tmove\t$16,$0\n"
+        "\tlui\t$20,%hi(D_800C3E24) # high\n"
+        "\tli\t$18,-2147483648\t\t\t# 0x80000000\n"
+        "\tlui\t$19,%hi(D_800C3E30) # high\n"
+        "\tlui\t$2,%hi(D_800549FC) # high\n"
+        "\taddiu\t$17,$2,%lo(D_800549FC) # low\n"
+    ), "reviewed player-marker setup scheduling pattern")
+    old = "\taddu\t$2,$2,$3\n"
+    if text.count(old) != 2:
+        raise ValueError("reviewed player-marker operand patterns not found")
+    text = text.replace(old, "\taddu\t$2,$3,$2\n")
+    return normalize_standard_return(text)
+
+
 def normalize_label_menu_draw(text: str) -> str:
     for register, symbol in (
         ("$20", "D_80052F18"),
@@ -1673,6 +1696,8 @@ def normalize(text: str) -> str:
         return normalize_scene_start(text)
     if "\t.ent\tfunc_80031328\n" in text:
         return normalize_random_slot_assignment(text)
+    if "\t.ent\tfunc_80034350\n" in text:
+        return normalize_player_marker_draw(text)
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
     if "\t.ent\tfunc_8002A9D4\n" in text:
