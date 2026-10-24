@@ -1,5 +1,5 @@
 /* Target: func_80034978  VRAM 0x80034978  ROM 0x35578
- * Size: 0xEEC  Pipeline: KMC GCC 2.7.2 -O2 -G0 -mips3 -mgp32 -mfp32
+ * Size: 0xEEC  Pipeline: SN GCC 2.8 -O2 -G0 -mcpu=vr4300 -mips3
  * Confidence: medium */
 typedef unsigned char u8;
 typedef signed char s8;
@@ -115,6 +115,7 @@ extern void func_8001E6F8(s32);
 void func_80034978(void) {
     s32 i;
     s32 k;
+    s32 state;
     s32 sel;
     s32 done;
     s32 base;
@@ -170,8 +171,8 @@ void func_80034978(void) {
         break;
     }
 
-    k = func_8001BF3C();
-    if (k != 0x23 && k != 0x26) {
+    state = func_8001BF3C();
+    if (state != 0x23 && state != 0x26) {
         func_80033E90();
         func_8001D2F4(D_800C3E38);
         switch (D_800C3E28) {
