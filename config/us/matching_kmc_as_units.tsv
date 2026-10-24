@@ -1,5 +1,9 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x40740	0x448	src/libultra/n_al_adpcm_pull.c	--symbol=_decodeChunk:0x80040114 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	e21efb32b86f24d2e22f64d32e352333a4d07262333d25778354db60ede08e48
+0x40B88	0x18C	src/libultra/n_al_load_param.c	--symbol=alCopy:0x8004CB10 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	376bd862913524163f8aedc2582e55b286aff1476379cc235d476977140ccf3d
+0x40D14	0x144	src/libultra/n_al_decode_chunk.c	-D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	bd7bf019346cf27cad3cab34084749fa8b535bbb657308fb7ec61a9482f732bc
+0x40E60	0x1BC	src/libultra/n_al_resample_pull.c	--section-base=.rodata:0x80003430 --symbol=n_alAdpcmPull:0x8003FB40 --symbol=osVirtualToPhysical:0x800495D0 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	6ad60a9bed954a05853b12572b19a2e5d493bdd0c0aa23c5eb64e38b4c223c25
 0x436AC	0x64	src/libmus/install_scheduler_client.c	-O2 -G0 -mips3 -mgp32 -mfp32	426e92bf8b84791777748584f101a7dd4c70e6687ed55c136d569faaa6466804
 0x431F0	0x60	src/libmus/change_custom_effect.c	-O2 -G0 -mips3 -mgp32 -mfp32	042ba473d2c528cbaa029306eb0ccc847e206f6eef84726f65a9d25c29ebf1da
 0x4A82C	0xB8	src/libultra/al_env_mixer_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	07173705d58cacd32dee17181448da2795eb08fe2be5d5aa69678531ca60cdc3
