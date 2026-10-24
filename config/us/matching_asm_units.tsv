@@ -8,3 +8,5 @@
 0x103C	0x5C	src/runtime/run_startup_initializers_8000043c.S	-mips3 -G0	a4668145dbaea89586c57f19eaa4da44c30c7dcfacdcefea19d3b0c22963ea06
 0x1098	0x60	src/runtime/run_startup_finalizers_80000498.S	-mips3 -G0	f1c46dd65ae5392eaa23c6e165b316f7e6e4746031a9e83a10ff14d9b6076708
 0x1000	0x3C	src/runtime/entry_80000400.S	-mips3 -G0	bd24ec05fc457022cbbefc1f5f7712fda7c74bcdd7553e3f62b9d14e0f0b2660
+0x491F4	0x20	src/libultra/exception_resume_800485f4.S	-mips3 -G0	494212393dbc38ba18e3658db754545126093dc8eaf36649fce564aa51e4e116
+0x49124	0xBC	src/libultra/send_event_message_80048524.S	-mips3 -G0	3a2a5f9f98dca4d6d6953517ef0c96e3350974f4ea22a0adf527942e27528017
