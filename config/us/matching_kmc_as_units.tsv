@@ -18,6 +18,7 @@
 0x5127C	0xB4	src/libultra/os_leo_resume.c	-O2 -G0 -mips3 -mgp32 -mfp32	eee37ed891e2b7f5b6a0f869f9cbb3c7122fe91d946ec28c199d961a4f32fc14
 0x51330	0x3C0	src/libultra/os_device_manager.c	--section-base=.rodata:0x80003970 -O2 -G0 -mips3 -mgp32 -mfp32	7eddca62bb8f639091a45eeecc93c17c3e8d292d4414a06dba90fa0673331ce5
 0x50350	0x80	src/libultra/os_pfs_get_one_channel_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	d12ddc8becaf3e7c4e8f3975fa781b111673639884b2e621168ffd5759dc4c19
+0x503D0	0xA0	src/libultra/os_pi_raw_read_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	bb64f566dac9cd91bf77c4794815852388492e6472ce89fe9fe451c1b2059885
 0x501E0	0xE0	src/libultra/os_pfs_get_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	9f586dcd2cf8b77278f1035e22085d0c41288c156145ea4af365df9dd9958c9a
 0x4E730	0x88	src/libultra/os_cont_start_read_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	44d55068f1237dfee85250a99c688f5e010ef6b67f6890f11050597fe8997998
 0x4E7B8	0x9C	src/libultra/os_cont_get_read_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	53ca0e5c214d20db7239bc25d88dbfbadc49d4889f6ecfb7d2b2e4d9787029b7
