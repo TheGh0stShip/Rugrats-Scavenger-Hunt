@@ -152,3 +152,4 @@
 0x3B410	0x30	src/game/dispatch_and_return_value.c	-O1 -G0 -mips3 -mgp32 -mfp32	fc42be47c592ab3fc2a3a025e55886c165b19b248fb8bd19c02fd70c6c704ee5
 0x50960	0x140	src/runtime/jam_message.c	-O2 -G0 -mips3 -mgp32 -mfp32	3bae4544e755d756554c077636564c1189a32657d53c5e68ace960c950dab31c
 0x502C0	0x90	src/libultra/os_pfs_request_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	205e4e55e6828fc0b751b36bd9136fa69820af43c612f0a3b587377eb18d19e2
+0x50470	0x190	src/libultra/os_create_pi_manager.c	-O2 -G0 -mips3 -mgp32 -mfp32	5e2d90db7e8539b1cbf6974e81133f5e6b4d95b541f655e80959b78c30028991
