@@ -117,6 +117,33 @@ def normalize_random_selection(text: str) -> str:
     ), "reviewed random-selection epilogue pattern")
 
 
+def normalize_resource_release(text: str) -> str:
+    return replace_once(text, (
+        "\tlw\t$2,%lo(D_8005392C)($16)\n"
+        "\tlw\t$31,20($sp)\n"
+        "\tsw\t$0,%lo(D_8005392C)($16)\n"
+        "\tlw\t$16,16($sp)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\taddu\t$sp,$sp,24\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tlw\t$2,%lo(D_8005392C)($16)\n"
+        "\tsw\t$0,%lo(D_8005392C)($16)\n"
+        "\tlw\t$31,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\taddu\t$sp,$sp,24\n\tj\t$31\n\tnop\n"
+    ), "reviewed resource-release epilogue pattern")
+
+
+def normalize_state_reset(text: str) -> str:
+    return replace_once(text, (
+        "\tlw\t$31,16($sp)\n"
+        "\tlui\t$2,%hi(D_80061E00) # high\n"
+    ), (
+        "\tlui\t$2,%hi(D_80061E00) # high\n"
+        "\tlw\t$31,16($sp)\n"
+    ), "reviewed state-reset scheduling pattern")
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -124,6 +151,10 @@ def normalize(text: str) -> str:
         return normalize_player_selection(text)
     if "\t.ent\tfunc_80021580\n" in text:
         return normalize_random_selection(text)
+    if "\t.ent\tfunc_8001EED0\n" in text:
+        return normalize_resource_release(text)
+    if "\t.ent\tfunc_8001E0B0\n" in text:
+        return normalize_state_reset(text)
     epilogue = re.compile(
         r"\t\.set\tnoreorder\n\t\.set\tnomacro\n"
         r"\tj\t\$31\n\taddu\t\$sp,\$sp,(?P<frame>\d+)\n"
