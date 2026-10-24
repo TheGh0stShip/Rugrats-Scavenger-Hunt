@@ -29,7 +29,7 @@
 0x436A0	0xC	src/game/set_state_word_c40c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	68a32b2ba216903f09416c6d05914baea5c3bc97529b86f2fd02d64abb10bdfd
 0x43CF4	0xC	src/game/get_state_address_c42f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f2e0b3443b98bcfc55298583103a91cb2f1c697c5eaa47b69b5f9ca310ad0ed
 0x48AE0	0xD0	src/runtime/create_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	bdd4109589a4bebba113580bec3ccaab2820f6fcecd70fedc07a83949ca12900
-0x48110	0xDC	src/runtime/matrix_scale.c	-O3 -G0 -mips3 -mgp32 -mfp32	3945ccc4639aadb6489a5cf425567d48f3327d7e2a2088d03fac12903f48309c
+0x48110	0xE0	src/runtime/matrix_scale.c	-O3 -G0 -mips3 -mgp32 -mfp32	e2c75118809f7ee2f8f65e80b5cda0c73a4c6c369ae8437bcdc6b46d07e8a997
 0x48390	0xC4	src/runtime/matrix_translate.c	-O3 -G0 -mips3 -mgp32 -mfp32	fb155992fb9a519d16dedfcf3380e7a94c934a233f0485e5a5ff1c665a208ff1
 0x47900	0x100	src/runtime/matrix_fixed_wrappers.c	-O2 -G0 -mips3 -mgp32 -mfp32	f84a65f62fe7062617da5acf105c17ffd3a6daa9d24856ad693b4151960e4d59
 0x474F0	0x280	src/runtime/matrix_convert.c	-O3 -G0 -mips3 -mgp32 -mfp32	7186d412c200731a06bd6ba5dea7aaab0f427553f1da96ae0de3c96e247d3162
