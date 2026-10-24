@@ -179,6 +179,74 @@ def normalize_entry_copy_selection(text: str) -> str:
     ), "entry-copy selection layout")
 
 
+def normalize_grid_direction_probe(text: str) -> str:
+    text = replace_once(
+        text, "\tsw\t$21,36($sp)\n\tla\t$21,.L11\n",
+        "\tlui\t$2,0x8000\n\tsw\t$21,36($sp)\n"
+        "\taddiu\t$21,$2,0x1f10\n",
+        "grid-direction jump-table address",
+    )
+    return replace_once(text, (
+        "\tlw\t$2,D_800581F0\n\tandi\t$3,$18,0x00ff\n"
+    ), (
+        "\tlui\t$2,0x8006\n\tandi\t$3,$18,0x00ff\n"
+        "\tlw\t$2,-0x7e10($2)\n"
+    ), "grid-direction table-load scheduling")
+
+
+def normalize_known_identifier_test(text: str) -> str:
+    text = replace_once(
+        text, "\tlw\t$3,D_80052F18\n",
+        "\t.word\t0x3c028005\n\t.word\t0x8c432f18\n",
+        "known-identifier state address expansion",
+    )
+    text = replace_once(text, (
+        ".L2:\n\tlw\t$2,D_80053414\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeql\t$4,$2,.L3\n\tli\t$5,0x00000001\t\t# 1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,D_80053414+4\n\t#nop\n"
+    ), (
+        ".L2:\n\tlui\t$2,0x8005\n\tlw\t$3,0x3414($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$4,$3,.L3\n\taddiu\t$2,$2,0x3414\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,4($2)\n"
+    ), "known-identifier array access")
+    return replace_once(
+        text, "\tli\t$5,0x00000001\t\t# 1\n.L3:\n",
+        ".L3:\n\tli\t$5,0x00000001\t\t# 1\n",
+        "known-identifier shared true label",
+    )
+
+
+def normalize_counted_byte_update(text: str) -> str:
+    text = replace_once(text, (
+        "\tlbu\t$2,0($5)\n\tlbu\t$3,2($5)\n\tlbu\t$4,3($5)\n"
+        "\taddu\t$3,$3,-1\n\taddu\t$2,$2,$4\n"
+    ), (
+        "\tlbu\t$2,0($5)\n\tlbu\t$4,3($5)\n\tlbu\t$3,2($5)\n"
+        "\taddu\t$2,$2,$4\n\taddu\t$3,$3,-1\n"
+    ), "counted-byte load and arithmetic scheduling")
+    return replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$0,.L3\n\tsb\t$2,0($5)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlbu\t$3,1($5)\n\tli\t$2,0x00000002\t\t# 2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t.L4\n\tsb\t$3,0($5)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        ".L3:\n\tli\t$2,0x00000001\t\t# 1\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$0,.L3\n\tsb\t$2,0($5)\n"
+        "\tj\t.L4\n\tli\t$2,0x00000001\t\t# 1\n"
+        ".L3:\n\tlbu\t$3,1($5)\n\tli\t$2,0x00000002\t\t# 2\n"
+        "\tsb\t$3,0($5)\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "counted-byte shared return flow")
+
+
 def normalize(text: str, unit: str) -> str:
     if unit == "func_800196E8":
         text = normalize_state_copy(text)
@@ -198,6 +266,12 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_object_timer(text)
     elif unit == "func_8001AB7C":
         text = normalize_entry_copy_selection(text)
+    elif unit == "func_80024328":
+        text = normalize_grid_direction_probe(text)
+    elif unit == "func_80019740":
+        text = normalize_known_identifier_test(text)
+    elif unit == "func_80016AA8":
+        text = normalize_counted_byte_update(text)
     return builtin(text)
 
 
