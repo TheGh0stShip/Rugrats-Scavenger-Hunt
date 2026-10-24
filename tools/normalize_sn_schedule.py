@@ -325,6 +325,184 @@ def normalize_wrapped_actor_index(text: str) -> str:
     )
 
 
+def normalize_sprite_display_list(text: str) -> str:
+    def swap_registers(span: str, left: str, right: str) -> str:
+        marker = "$@sprite_swap"
+        return span.replace(left, marker).replace(right, left).replace(marker, right)
+
+    case8 = text.find("$L5:\n")
+    case16 = text.find("$L15:\n", case8)
+    end = text.rfind("\tlw\t$22,24($sp)\n")
+    if case8 < 0 or case16 < 0 or end <= case16:
+        raise ValueError("reviewed sprite case spans not found")
+
+    ci8 = text[case8:case16]
+    ci8 = replace_once(ci8,
+        "\tbeq\t$2,$0,$L4\n\taddu\t$11,$25,24\n",
+        "\tbeq\t$2,$0,$L4\n\tmove\t$11,$15\n",
+        "reviewed CI8 loop-entry scheduling")
+    ci8 = replace_once(ci8, "\tmove\t$10,$15\n", "",
+                       "reviewed CI8 global-address move")
+    ci8 = replace_once(ci8,
+        "\taddu\t$3,$13,-1\n\tsll\t$3,$3,2\n\tandi\t$3,$3,0x0fff\n"
+        "\tsll\t$3,$3,12\n\tmult\t$13,$14\n\taddu\t$2,$14,-1\n"
+        "\tsll\t$2,$2,2\n\tandi\t$2,$2,0x0fff\n\tor\t$16,$3,$2\n",
+        "\taddu\t$2,$13,-1\n\tsll\t$2,$2,2\n\tandi\t$2,$2,0x0fff\n"
+        "\tsll\t$2,$2,12\n\taddu\t$3,$14,-1\n\tmult\t$13,$14\n"
+        "\tsll\t$3,$3,2\n\tandi\t$3,$3,0x0fff\n\tor\t$16,$2,$3\n"
+        "\taddu\t$10,$25,24\n",
+        "reviewed CI8 tile-word allocation and part scheduling")
+    loop = ci8.find("$L7:\n")
+    if loop < 0:
+        raise ValueError("reviewed CI8 loop not found")
+    ci8 = ci8[:loop] + swap_registers(ci8[loop:], "$10", "$11")
+    ci8 = replace_once(ci8, "\taddu\t$24,$24,1\n", "", "reviewed CI8 counter schedule")
+    ci8 = replace_once(ci8,
+        "\tori\t$9,$9,0x0400\n\tlw\t$5,%lo(D_8007784C)($11)\n",
+        "\tori\t$9,$9,0x0400\n\taddu\t$24,$24,1\n"
+        "\tlw\t$5,%lo(D_8007784C)($11)\n",
+        "reviewed CI8 counter schedule destination")
+
+    rgba = text[case16:end]
+    rgba = replace_once(rgba, "\tmove\t$12,$15\n", "", "reviewed RGBA16 global move")
+    rgba = replace_once(rgba,
+        "\tbeq\t$2,$0,$L4\n\taddu\t$11,$25,24\n",
+        "\tbeq\t$2,$0,$L4\n\tmove\t$12,$15\n",
+        "reviewed RGBA16 loop-entry scheduling")
+    rgba = replace_once(rgba,
+        "\tmult\t$13,$14\n\taddu\t$2,$14,-1\n",
+        "\taddu\t$2,$14,-1\n\tmult\t$13,$14\n",
+        "reviewed RGBA16 multiply scheduling")
+    rgba = replace_once(rgba, "\tor\t$18,$3,$2\n\tmflo\t$16\n",
+        "\tor\t$18,$3,$2\n\taddu\t$11,$25,24\n\tmflo\t$16\n",
+        "reviewed RGBA16 part-pointer scheduling")
+    rgba = replace_once(rgba,
+        "\tandi\t$13,$17,0x00ff\n\tli\t$15,-183500800\t\t\t# 0xf5100000\n",
+        "\tli\t$15,-183500800\t\t\t# 0xf5100000\n\tandi\t$13,$17,0x00ff\n",
+        "reviewed RGBA16 format-command scheduling")
+    rgba = replace_once(rgba,
+        "\tsra\t$10,$10,2\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$10,$L21\n\tli\t$5,2048\t\t\t# 0x00000800\n",
+        "\tsra\t$2,$10,2\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L21\n\tli\t$4,2048\t\t\t# 0x00000800\n",
+        "reviewed RGBA16 quarter allocation")
+    rgba = replace_once(rgba, "\taddu\t$5,$10,2047\n", "\taddu\t$4,$2,2047\n",
+                        "reviewed RGBA16 dxt allocation")
+    rgba = replace_once(rgba, "\tmove\t$4,$13\n", "\tmove\t$5,$13\n",
+                        "reviewed RGBA16 divisor copy")
+    rgba = replace_once(rgba, "\taddu\t$4,$13,3\n$L23:\n\tsra\t$4,$4,2\n",
+        "\taddu\t$5,$13,3\n$L23:\n\tsra\t$2,$5,2\n",
+        "reviewed RGBA16 signed divisor")
+    rgba = replace_once(rgba,
+        "\tblez\t$4,$L25\n\tandi\t$2,$5,0x0fff\n",
+        "\tblezl\t$2,$L25\n\tandi\t$2,$4,0x0fff\n",
+        "reviewed RGBA16 divide branch")
+    rgba = replace_once(rgba, "\tdiv\t$2,$5,$4\n", "\tdiv\t$2,$4,$2\n",
+                        "reviewed RGBA16 division allocation")
+    rgba = replace_once(rgba, "$L25:\n\taddu\t$24,$24,1\n", "$L25:\n"
+        "\tor\t$2,$6,$2\n\tsw\t$2,4($7)\n",
+        "reviewed RGBA16 result-store schedule")
+    rgba = replace_once(rgba,
+        "\tlw\t$5,%lo(D_8007784C)($12)\n\tor\t$2,$6,$2\n\tsw\t$2,4($7)\n",
+        "\taddu\t$24,$24,1\n\tlw\t$5,%lo(D_8007784C)($12)\n",
+        "reviewed RGBA16 result-store schedule destination")
+    return normalize_standard_return(text[:case8] + ci8 + rgba + text[end:])
+
+    # Legacy reconstruction shapes below remain documented for comparison.
+    text = replace_once(
+        text,
+        "\tsw\t$17,4($sp)\n"
+        "\tli\t$17,8\t\t\t# 0x00000008\n"
+        "\tsw\t$22,24($sp)\n"
+        "\tsw\t$21,20($sp)\n"
+        "\tsw\t$20,16($sp)\n"
+        "\tsw\t$19,12($sp)\n"
+        "\tsw\t$18,8($sp)\n",
+        "\tsw\t$18,8($sp)\n"
+        "\tli\t$18,8\t\t\t# 0x00000008\n"
+        "\tsw\t$22,24($sp)\n"
+        "\tsw\t$21,20($sp)\n"
+        "\tsw\t$20,16($sp)\n"
+        "\tsw\t$19,12($sp)\n"
+        "\tsw\t$17,4($sp)\n",
+        "reviewed sprite prologue register allocation",
+    )
+    start = text.find("\tlhu\t$2,14($25)\n")
+    case8 = text.find("$L5:\n", start)
+    case16 = text.find("$L15:\n", case8)
+    end = text.rfind("\tlw\t$22,24($sp)\n")
+    if start < 0 or case8 < 0 or case16 < 0 or end <= case16:
+        raise ValueError("reviewed sprite register-allocation span not found")
+
+    def rename(span: str, pairs: tuple[tuple[str, str], ...]) -> str:
+        for number, (old, _) in enumerate(pairs):
+            span = span.replace(old, f"$@sprite_{number}")
+        for number, (_, new) in enumerate(pairs):
+            span = span.replace(f"$@sprite_{number}", new)
+        return span
+
+    setup = rename(text[start:case8], (("$17", "$18"), ("$18", "$17")))
+    ci8 = text[case8:case16]
+    ci8 = replace_once(
+        ci8,
+        "\tbeq\t$2,$0,$L4\n\taddu\t$11,$25,24\n",
+        "\tbeq\t$2,$0,$L4\n\tmove\t$11,$15\n",
+        "reviewed CI8 loop-entry scheduling",
+    )
+    ci8 = replace_once(
+        ci8,
+        "\tmove\t$10,$15\n",
+        "",
+        "reviewed CI8 global-address move",
+    )
+    ci8 = replace_once(
+        ci8,
+        "\taddu\t$3,$13,-1\n"
+        "\tsll\t$3,$3,2\n"
+        "\tandi\t$3,$3,0x0fff\n"
+        "\tsll\t$3,$3,12\n"
+        "\tmult\t$13,$14\n"
+        "\taddu\t$2,$14,-1\n"
+        "\tsll\t$2,$2,2\n"
+        "\tandi\t$2,$2,0x0fff\n"
+        "\tor\t$16,$3,$2\n",
+        "\taddu\t$2,$13,-1\n"
+        "\tsll\t$2,$2,2\n"
+        "\tandi\t$2,$2,0x0fff\n"
+        "\tsll\t$2,$2,12\n"
+        "\taddu\t$3,$14,-1\n"
+        "\tmult\t$13,$14\n"
+        "\tsll\t$3,$3,2\n"
+        "\tandi\t$3,$3,0x0fff\n"
+        "\tor\t$16,$2,$3\n",
+        "reviewed CI8 tile-word register allocation",
+    )
+    ci8 = replace_once(
+        ci8,
+        "\tor\t$16,$2,$3\n",
+        "\tor\t$16,$2,$3\n\taddu\t$10,$25,24\n",
+        "reviewed CI8 part-pointer scheduling",
+    )
+    loop = ci8.find("$L7:\n")
+    if loop < 0:
+        raise ValueError("reviewed CI8 loop label not found")
+    ci8 = rename(ci8[:loop], (("$18", "$17"),)) + ci8[loop:]
+    load_end_marker = "$L13:\n"
+    load_end = ci8.find(load_end_marker, loop)
+    if load_end < 0:
+        raise ValueError("reviewed CI8 load-block end not found")
+    load_end += len(load_end_marker)
+    ci8 = ci8[:loop] + rename(
+        ci8[loop:load_end],
+        (("$10", "$11"), ("$11", "$10")),
+    ) + rename(
+        ci8[load_end:],
+        (("$10", "$11"), ("$11", "$10")),
+    )
+    body = setup + ci8 + text[case16:end]
+    return normalize_standard_return(text[:start] + body + text[end:])
+
+
 def normalize_resource_range(text: str) -> str:
     text = replace_once(text, (
         "\tlui\t$8,%hi(D_80052EB0) # high\n"
@@ -4381,6 +4559,8 @@ def normalize_e4_func_80006C18(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8000D0AC\n" in text:
+        return normalize_sprite_display_list(text)
     if "\t.ent\tfunc_8002903C\n" in text:
         return normalize_wrapped_actor_index(text)
     if "\t.ent\tfunc_80016DB0\n" in text:
