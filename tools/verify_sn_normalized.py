@@ -11,7 +11,7 @@ import tempfile
 from pathlib import Path
 
 from n64dk.elf import Elf
-from n64dk.match.compare import relocate
+from n64dk.match.compare import compare_object
 from n64dk.match.symbols import load
 from n64dk.match.toolchain import load_config
 
@@ -48,7 +48,15 @@ def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
                 raise ValueError(f"{manifest}:{number}: expected five fields")
             start, size = int(fields[0], 0), int(fields[1], 0)
             source = project / fields[2]
-            flags = shlex.split(fields[3])
+            raw_flags = shlex.split(fields[3])
+            flags = []
+            bases = {}
+            for flag in raw_flags:
+                if flag.startswith("--section-base="):
+                    section, value = flag.split("=", 1)[1].split(":", 1)
+                    bases[section] = int(value, 0)
+                else:
+                    flags.append(flag)
             digest = hashlib.sha256(source.read_bytes()).hexdigest()
             if digest != fields[4]:
                 raise ValueError(f"{source}: SHA-256 differs from manifest")
@@ -80,17 +88,17 @@ def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
             ], project)
 
             vram = start + ROM_TO_VRAM
-            actual = relocate(Elf(obj.read_bytes()), ".text", {".text": vram}, symbol_map)
-            expected = rom_data[start:start + size]
-            if actual != expected:
-                first = next(
-                    (index for index, pair in enumerate(zip(actual, expected))
-                     if pair[0] != pair[1]),
-                    min(len(actual), len(expected)),
-                )
+            result = compare_object(
+                Elf(obj.read_bytes()), rom_data,
+                lambda address: address - ROM_TO_VRAM,
+                vram, size, symbol_map, bases=bases,
+                infer=True, rodata_search=False, with_diff=False,
+            )
+            if not result.exact:
+                first = result.text.first_diff
                 raise ValueError(
-                    f"{source}: mismatch at +0x{first:X}; "
-                    f"compiled 0x{len(actual):X}, expected 0x{size:X}"
+                    f"{source}: mismatch at +0x{first or 0:X}; "
+                    f"compiled 0x{result.compiled_size:X}, expected 0x{size:X}"
                 )
             checked += 1
             checked_bytes += size

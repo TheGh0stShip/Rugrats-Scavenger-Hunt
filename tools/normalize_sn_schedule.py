@@ -101,11 +101,29 @@ def normalize_player_selection(text: str) -> str:
     ), "reviewed selection return scheduling pattern")
 
 
+def normalize_random_selection(text: str) -> str:
+    return replace_once(text, (
+        "\tlw\t$31,28($sp)\n\tlw\t$18,24($sp)\n"
+        "\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\tsw\t$3,%lo(D_800529F8)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\taddu\t$sp,$sp,32\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tsw\t$3,%lo(D_800529F8)($2)\n"
+        "\tlw\t$31,28($sp)\n\tlw\t$18,24($sp)\n"
+        "\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\taddu\t$sp,$sp,32\n\tj\t$31\n\tnop\n"
+    ), "reviewed random-selection epilogue pattern")
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
     if "\t.ent\tfunc_8002A9D4\n" in text:
         return normalize_player_selection(text)
+    if "\t.ent\tfunc_80021580\n" in text:
+        return normalize_random_selection(text)
     epilogue = re.compile(
         r"\t\.set\tnoreorder\n\t\.set\tnomacro\n"
         r"\tj\t\$31\n\taddu\t\$sp,\$sp,(?P<frame>\d+)\n"
