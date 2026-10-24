@@ -150,12 +150,14 @@ void func_80026824(void) {
     register s32 colStart __asm__("$fp");
     s32 cell, id;
     s32 bonus = 0;
-    s32 rowOff, z0, z1;
+    s32 rowOff;
     s32 dist, alpha;
+    s32 absDist;
     s32 tileRow, tileCol;
     Vec3f v;
     f32 zero;
     f32 initialScale;
+    s32 z0, z1;
 
     if (func_8000B8C4()) {
         return;
@@ -278,6 +280,7 @@ draw:
             if (D_800581D0 & 0x8000) {
                 func_8000CD50(res->model.head, 0, 1);
             }
+            zero = 0.0f;
             v.z = zero;
             v.y = zero;
             v.x = zero;
@@ -299,6 +302,7 @@ draw:
         flags = 0;
     }
 
+    zero = 0.0f;
     {
     register s32 row __asm__("$21");
     register s32 col __asm__("$18");
@@ -336,17 +340,17 @@ draw:
             }
             tileCol = col - colStart;
             tileRow = rowOff;
-            if (id >= 0x27) {
+            if ((u32)id >= 0x27) {
                 v.x = tileCol * 600;
                 v.z = z0;
             } else {
                 v.x = tileCol * 600 + 300;
                 v.z = z1;
             }
-            v.y = zero;
+            *(s32 *)&v.y = 0;
             mtx = func_8001E630();
             func_8000CF10(mtx, zero, zero, zero, 1.0f, v.x, v.y, v.z);
-            if (id >= 0x27) {
+            if ((u32)id >= 0x27) {
                 flags |= 0x40000000;
                 func_8000C034(&func_800197C8(id)->model, v.x, v.y, v.z, D_80059CF0, mtx, flags);
             } else {
@@ -382,6 +386,7 @@ draw:
 
         func_80005544();
         func_80010B0C();
+        zero = 0.0f;
         for (i = 0, record = (u8 *)rect; i < rect->count; i++, record += 0x10) {
             struct Model_800197C8 *m;
 
@@ -396,7 +401,7 @@ draw:
             }
             tileRow = it->row;
             tileCol = it->col;
-            v.y = zero;
+            *(s32 *)&v.y = 0;
             v.x = tileCol * 600 + 300;
             v.z = tileRow * 600 + 300;
             if ((u32)id < 0x100) {
@@ -433,18 +438,19 @@ draw:
             }
             if (func_80010BD8((s32)v.x, (s32)v.z, &dist) && !func_80027978(id)) {
                 flags |= 0x04000000;
-                if (!((f32)dist >= zero)) {
-                    dist = -dist;
+                absDist = dist;
+                if (!((f32)absDist >= zero)) {
+                    absDist = -absDist;
                 }
-                if ((u32)(dist - 0x10) < 0x1D) {
+                if ((u32)(absDist - 0x10) < 0x1D) {
                     goto after_draw;
                 }
-                if (dist < 0x10) {
-                    k = dist - 0xF;
-                    alpha = ((f32)k >= zero) ? k * 17 : (0xF - dist) * 17;
+                if (absDist < 0x10) {
+                    k = absDist - 0xF;
+                    alpha = ((f32)k >= zero) ? k * 17 : (0xF - absDist) * 17;
                 } else {
-                    k = dist - 0x2D;
-                    alpha = ((f32)k >= zero) ? k * 17 : (0x2D - dist) * 17;
+                    k = absDist - 0x2D;
+                    alpha = ((f32)k >= zero) ? k * 17 : (0x2D - absDist) * 17;
                 }
                 m->r = 0xFF;
                 m->b = 0xFF;
@@ -474,18 +480,26 @@ draw:
         func_8000DCC8(D_800529F0->row, D_800529F0->col, &tileRow, &tileCol);
         d = D_800529F0->col - D_800529F0->prevCol;
         if (d != 0) {
-            D_80054330 = (d < 0) ? 90.0f : 270.0f;
+            if (d < 0) {
+                D_80054330 = 90.0f;
+            } else {
+                D_80054330 = 270.0f;
+            }
         } else {
             d = D_800529F0->row - D_800529F0->prevRow;
             if (d != 0) {
-                D_80054330 = (d < 0) ? zero : 180.0f;
+                if (d < 0) {
+                    D_80054330 = 0.0f;
+                } else {
+                    D_80054330 = 180.0f;
+                }
             }
         }
-        v.y = zero;
+        *(s32 *)&v.y = 0;
         v.x = tileCol * 600 + 300;
         v.z = tileRow * 600 + 300;
         mtx = func_8001E630();
-        func_8000CF10(mtx, zero, D_80054330, zero, 1.0f, v.x, v.y, v.z);
+        func_8000CF10(mtx, 0.0f, D_80054330, 0.0f, 1.0f, v.x, v.y, v.z);
         func_8000B910(&func_800197C8(0x1E2)->model, &v, &D_80052F04->pos, D_80059CF0, mtx, 0);
     }
 }
