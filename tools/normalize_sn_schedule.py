@@ -189,6 +189,84 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_runtime_callback_setup(text: str) -> str:
+    return replace_once(text, (
+        "\tlw\t$31,16($sp)\n"
+        "\tlui\t$2,%hi(D_800545E4) # high\n"
+        "\tsw\t$0,%lo(D_800545E4)($2)\n"
+    ), (
+        "\tlui\t$2,%hi(D_800545E4) # high\n"
+        "\tlw\t$31,16($sp)\n"
+        "\tsw\t$0,%lo(D_800545E4)($2)\n"
+    ), "reviewed callback-setup epilogue scheduling")
+
+
+def normalize_state_finish_branch(text: str) -> str:
+    text = replace_once(text, "\tbeq\t$3,$2,$L2\n", "\tbne\t$3,$2,$L2\n",
+                        "reviewed state-finish branch sense")
+    return normalize_standard_return(text)
+
+
+def normalize_effect_loop_branch(text: str) -> str:
+    text = replace_once(text, "\tbnel\t$2,$0,$L8\n", "\tbne\t$2,$0,$L8\n",
+                        "reviewed effect-loop branch form")
+    return normalize_standard_return(text)
+
+
+def normalize_transition_state(text: str) -> str:
+    text = replace_once(text, "\tslt\t$2,$3,4\n", "\tsltu\t$2,$3,4\n",
+                        "reviewed transition-state unsigned comparison")
+    return normalize_standard_return(text)
+
+
+def normalize_object_cleanup(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$5,%hi(D_80057D58) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$4,%hi(D_80057D5C) # high\n"
+    ), (
+        "\tlui\t$4,%hi(D_80057D5C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$5,%hi(D_80057D58) # high\n"
+    ), "reviewed object-cleanup address scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_text_width_accumulation(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$2,$2,4\n\taddu\t$18,$18,$2\n"
+    ), (
+        "\taddu\t$3,$18,4\n\taddu\t$18,$3,$2\n"
+    ), "reviewed text-width accumulator registers")
+    return normalize_standard_return(text)
+
+
+def normalize_unique_actor_test(text: str) -> str:
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L11\n\tmove\t$2,$8\n"
+    ), (
+        "\tbne\t$2,$0,$L11\n\tmove\t$2,$4\n"
+    ), "reviewed unique-actor zero register")
+    return normalize_standard_return(text)
+
+
+def normalize_owner_search(text: str) -> str:
+    text = replace_once(text, (
+        "\tsll\t$3,$16,2\n\taddu\t$2,$2,$3\n\tlw\t$2,428($2)\n"
+    ), (
+        "\tsll\t$3,$16,2\n\taddu\t$3,$3,$2\n\tlw\t$2,428($3)\n"
+    ), "reviewed owner-search address register")
+    return normalize_standard_return(text)
+
+
+def normalize_node_result(text: str) -> str:
+    old = "\taddu\t$3,$3,$16\n"
+    if text.count(old) != 2:
+        raise ValueError("reviewed node-result operand patterns not found")
+    text = text.replace(old, "\taddu\t$3,$16,$3\n")
+    return normalize_standard_return(text)
+
+
 def normalize_scene_start(text: str) -> str:
     pattern = re.compile(
         r"\tli\t\$4,15[^\n]*\n"
@@ -1692,6 +1770,24 @@ def normalize_large_render_pass(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_80030E2C\n" in text:
+        return normalize_runtime_callback_setup(text)
+    if "\t.ent\tfunc_800327A0\n" in text:
+        return normalize_state_finish_branch(text)
+    if "\t.ent\tfunc_80011CC4\n" in text:
+        return normalize_effect_loop_branch(text)
+    if "\t.ent\tfunc_8000AE0C\n" in text:
+        return normalize_transition_state(text)
+    if "\t.ent\tfunc_80005654\n" in text:
+        return normalize_object_cleanup(text)
+    if "\t.ent\tfunc_800138FC\n" in text:
+        return normalize_text_width_accumulation(text)
+    if "\t.ent\tfunc_800094A4\n" in text:
+        return normalize_unique_actor_test(text)
+    if "\t.ent\tfunc_80025C20\n" in text:
+        return normalize_owner_search(text)
+    if "\t.ent\tfunc_8000C490\n" in text:
+        return normalize_node_result(text)
     if "\t.ent\tfunc_8003079C\n" in text:
         return normalize_scene_start(text)
     if "\t.ent\tfunc_80031328\n" in text:
