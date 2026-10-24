@@ -1,121 +1,92 @@
-typedef unsigned char u8;
-typedef short s16;
+typedef short word;
 typedef unsigned int u32;
-typedef int s32;
 
-typedef struct GsmState {
-    u8 pad_0000[0x18A];
-    s16 frame_count;
-    s16 silence_count;
-    u8 pad_018E[0x1A0 - 0x18E];
-    u32 words[0x400];
-    u8 pad_11A0[0x11C8 - 0x11A0];
-    s32 bit_position;
-} GsmState;
+struct mort_state {
+    unsigned char pad000[0x18A];
+    word speech_run;
+    word silence_run;
+    unsigned char pad18E[0x12];
+    u32 data[0x400];
+    unsigned char pad11A0[0x28];
+    int bit_position;
+};
 
-extern void func_80051050(void *dst, s32 size);
-extern void func_80044468(GsmState *state, s16 *lar, s16 *nc, s16 *bc,
-                         s16 *mc, s16 *xmax, s16 *xmc, s16 *samples);
+extern void func_80051050(void *address, int length);
+extern void func_80044468(struct mort_state *S, word *LARcr, word *Ncr, word *bcr, word *Mcr,
+                          word *xmaxcr, word *xMcr, word *s);
 
-#define READ_BITS(dst, width)                                                \
-    do {                                                                     \
-        if (bits_left > (width)) {                                           \
-            (dst) = current_word & ((1 << (width)) - 1);                     \
-            current_word >>= (width);                                        \
-            bits_left -= (width);                                            \
-        } else {                                                             \
-            (dst) = current_word & ((1 << bits_left) - 1);                   \
-            bit_position += 32;                                              \
-            current_word = state->words[(bit_position >> 5) & 0x3FF];        \
-            if (bits_left != (width)) {                                      \
-                (dst) |= (current_word &                                     \
-                          ((1 << ((width) - bits_left)) - 1)) << bits_left;   \
-                current_word >>= (width) - bits_left;                        \
-            }                                                                \
-            bits_left += 32 - (width);                                       \
-        }                                                                    \
-    } while (0)
+#define GETBITS(dst, n)                                             \
+    if (avail > (n)) {                                              \
+        dst = bits & ((1 << (n)) - 1);                              \
+        bits >>= (n);                                               \
+        avail -= (n);                                               \
+    } else {                                                        \
+        dst = bits & ((1 << avail) - 1);                            \
+        pos += 32;                                                  \
+        bits = S->data[(pos >> 5) & 0x3FF];                         \
+        if (avail != (n)) {                                         \
+            dst |= (bits & ((1 << ((n) - avail)) - 1)) << avail;    \
+            bits >>= (n) - avail;                                   \
+        }                                                           \
+        avail += 32 - (n);                                          \
+    }
 
-s32 func_800447E0(GsmState *state, s16 *samples) {
-    s16 lar[8];
-    s16 nc[4];
-    s16 mc[4];
-    s16 bc[4];
-    s16 xmax[4];
-    s16 xmc[52];
-    s32 bit_position;
-    s32 bits_left;
-    u32 current_word;
-    s32 header;
-    s16 *x;
-    s16 *nc_p;
-    s16 *bc_p;
-    s16 *mc_p;
-    s16 *xmax_p;
+int func_800447E0(struct mort_state *S, word *target)
+{
+    word LARc[8], Nc[4], Mc[4], bc[4], xmaxc[4], xmc[13 * 4];
+    u32 bits;
+    int avail;
+    int pos;
+    int flag;
+    int i;
 
-    bit_position = state->bit_position;
-    current_word = state->words[(bit_position >> 5) & 0x3FF] >>
-                   (bit_position & 31);
-    bits_left = 32 - (bit_position & 31);
-
-    if (state->frame_count == 0 && state->silence_count == 0) {
-        READ_BITS(header, 1);
-        if (header != 0) {
-            READ_BITS(state->silence_count, 4);
-            state->silence_count++;
+    pos = S->bit_position;
+    bits = S->data[(pos >> 5) & 0x3FF] >> (pos & 0x1F);
+    avail = 32 - (pos & 0x1F);
+    if (S->speech_run == 0 && S->silence_run == 0) {
+        GETBITS(flag, 1);
+        if (flag) {
+            GETBITS(S->silence_run, 4);
+            S->silence_run++;
         } else {
-            READ_BITS(state->frame_count, 7);
-            state->frame_count++;
+            GETBITS(S->speech_run, 7);
+            S->speech_run++;
         }
     }
-
-    if (state->silence_count != 0) {
-        func_80051050(samples, 160 * sizeof(*samples));
-        state->silence_count--;
+    if (S->silence_run) {
+        func_80051050(target, 0x140);
+        S->silence_run--;
     } else {
-        nc_p = nc;
-        READ_BITS(lar[0], 6);
-        bc_p = bc;
-        READ_BITS(lar[1], 6);
-        mc_p = mc;
-        READ_BITS(lar[2], 5);
-        xmax_p = xmax;
-        READ_BITS(lar[3], 5);
-        x = xmc;
-        READ_BITS(lar[4], 4);
-        READ_BITS(lar[5], 4);
-        READ_BITS(lar[6], 3);
-        READ_BITS(lar[7], 3);
-
-        do {
-            READ_BITS(*nc_p, 7);
-            nc_p++;
-            READ_BITS(*bc_p, 2);
-            bc_p++;
-            READ_BITS(*mc_p, 2);
-            mc_p++;
-            READ_BITS(*xmax_p, 6);
-            READ_BITS(x[0], 3);
-            READ_BITS(x[1], 3);
-            READ_BITS(x[2], 3);
-            READ_BITS(x[3], 3);
-            READ_BITS(x[4], 3);
-            READ_BITS(x[5], 3);
-            READ_BITS(x[6], 3);
-            READ_BITS(x[7], 3);
-            READ_BITS(x[8], 3);
-            READ_BITS(x[9], 3);
-            READ_BITS(x[10], 3);
-            READ_BITS(x[11], 3);
-            READ_BITS(x[12], 3);
-            x += 13;
-            xmax_p++;
-        } while (x != xmax);
-
-        state->frame_count--;
-        func_80044468(state, lar, nc, bc, mc, xmax, xmc, samples);
+        GETBITS(LARc[0], 6);
+        GETBITS(LARc[1], 6);
+        GETBITS(LARc[2], 5);
+        GETBITS(LARc[3], 5);
+        GETBITS(LARc[4], 4);
+        GETBITS(LARc[5], 4);
+        GETBITS(LARc[6], 3);
+        GETBITS(LARc[7], 3);
+        for (i = 0; i < 4; i++) {
+            GETBITS(Nc[i], 7);
+            GETBITS(bc[i], 2);
+            GETBITS(Mc[i], 2);
+            GETBITS(xmaxc[i], 6);
+            GETBITS(xmc[i * 13 + 0], 3);
+            GETBITS(xmc[i * 13 + 1], 3);
+            GETBITS(xmc[i * 13 + 2], 3);
+            GETBITS(xmc[i * 13 + 3], 3);
+            GETBITS(xmc[i * 13 + 4], 3);
+            GETBITS(xmc[i * 13 + 5], 3);
+            GETBITS(xmc[i * 13 + 6], 3);
+            GETBITS(xmc[i * 13 + 7], 3);
+            GETBITS(xmc[i * 13 + 8], 3);
+            GETBITS(xmc[i * 13 + 9], 3);
+            GETBITS(xmc[i * 13 + 10], 3);
+            GETBITS(xmc[i * 13 + 11], 3);
+            GETBITS(xmc[i * 13 + 12], 3);
+        }
+        S->speech_run--;
+        func_80044468(S, LARc, Nc, bc, Mc, xmaxc, xmc, target);
     }
-
-    state->bit_position = (bit_position & -32) - bits_left + 32;
+    S->bit_position = (pos & ~0x1F) - avail + 32;
     return 0;
 }
