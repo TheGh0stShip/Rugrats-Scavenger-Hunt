@@ -1,6 +1,5 @@
 typedef unsigned char u8;
 typedef signed char s8;
-typedef unsigned short u16;
 typedef short s16;
 typedef unsigned int u32;
 typedef int s32;
@@ -45,4 +44,3 @@ void func_80020DB8(struct Actor_80020DB8 *a)
         }
     }
 }
-

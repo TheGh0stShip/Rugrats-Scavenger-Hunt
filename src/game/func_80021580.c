@@ -1,8 +1,3 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef short s16;
-typedef unsigned int u32;
 typedef int s32;
 
 extern s32 func_8003A840(void);
@@ -19,4 +14,3 @@ void func_80021580(s32 *val, s32 range)
     } while (old == r || r == 0);
     D_800529F8 = r;
 }
-

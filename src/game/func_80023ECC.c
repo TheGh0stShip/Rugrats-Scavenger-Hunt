@@ -1,4 +1,6 @@
-typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16; typedef int s32; typedef unsigned int u32;
+typedef unsigned char u8;
+typedef short s16;
+typedef int s32;
 
 struct Obj_80023ECC {
     u8 pad_000[0x144];
@@ -22,4 +24,3 @@ struct Obj_80023ECC *func_80023ECC(void) {
     }
     return 0;
 }
-

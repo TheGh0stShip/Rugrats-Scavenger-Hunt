@@ -10,8 +10,7 @@ extern s32 func_8003BF04(s32);
 extern void func_8001ED90(s32, s32, s32);
 extern void func_8001EF08(s32, s32, s32);
 
-void func_8001ECE4(s32 arg0, s32 arg1)
-{
+void func_8001ECE4(s32 arg0, s32 arg1) {
     s32 i;
 
     func_8001F30C();

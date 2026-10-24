@@ -1,4 +1,6 @@
-typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16; typedef int s32; typedef unsigned int u32;
+typedef unsigned char u8;
+typedef unsigned int u32;
+typedef int s32;
 
 struct Obj_80024480 {
     u8 pad_000[0x118];
@@ -25,4 +27,3 @@ void func_80024480(s32 arg0) {
     func_80005514((s32)func_80020680(), 0);
     func_80005E3C((s32)func_80020680(), arg0);
 }
-

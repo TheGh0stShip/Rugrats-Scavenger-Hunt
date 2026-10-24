@@ -1,4 +1,4 @@
-typedef signed char s8; typedef unsigned char u8; typedef short s16; typedef unsigned short u16; typedef int s32; typedef unsigned int u32;
+typedef int s32;
 
 extern s32 D_8006FB80;
 extern s32 func_800206D0(void);
@@ -17,4 +17,3 @@ void func_80024730(s32 arg0) {
     func_80005514(func_800206D0(), 2);
     func_8000FDAC(7, arg0);
 }
-

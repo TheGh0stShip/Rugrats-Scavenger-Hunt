@@ -189,6 +189,32 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_label_menu_draw(text: str) -> str:
+    for register, symbol in (
+        ("$20", "D_80052F18"),
+        ("$22", "D_80054964"),
+        ("$19", "D_800532A4"),
+    ):
+        text = replace_once(text, (
+            f"\tlui\t{register},%hi({symbol}) # high\n"
+            f"\taddiu\t{register},{register},%lo({symbol}) # low\n"
+        ), (
+            f"\tlui\t$2,%hi({symbol}) # high\n"
+            f"\taddiu\t{register},$2,%lo({symbol}) # low\n"
+        ), f"reviewed {symbol} address scheduling pattern")
+
+    text = replace_once(text, (
+        "\taddu\t$4,$18,14\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016AA8\n\tsw\t$2,4($18)\n"
+    ), (
+        "\tsw\t$2,4($18)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016AA8\n\taddu\t$4,$18,14\n"
+    ), "reviewed label-menu result scheduling pattern")
+    return normalize_standard_return(text)
+
+
 def normalize_room_search(text: str) -> str:
     old = "\taddu\t$2,$2,$18\n"
     if old not in text:
@@ -1596,6 +1622,8 @@ def normalize(text: str) -> str:
         return normalize_scene_camera_pass(text)
     if "\t.ent\tfunc_80015740\n" in text:
         return normalize_large_render_pass(text)
+    if "\t.ent\tfunc_8001885C\n" in text:
+        return normalize_label_menu_draw(text)
     return normalize_standard_return(text)
 
 
