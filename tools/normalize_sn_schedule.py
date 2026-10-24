@@ -4689,6 +4689,29 @@ def normalize_e4_func_80006C18(text: str) -> str:
     ), "reviewed spawn-offset shared return")
 
 
+def normalize_two_player_minigame(text: str) -> str:
+    """Use retail's scratch registers for four movstrsi Vec3 copies.
+
+    SN emits the same straight-line loads and stores through its generic
+    structure-copy expander, but chooses t1-t4 where the retail invocation
+    chose v0-a1.  These substitutions do not alter the instruction stream or
+    any live value outside each copy.
+    """
+    copies = (
+        ("\taddiu\t$12,$20,%lo(D_80054A0C)\n\tlw\t$9,0($12)\n\tlw\t$10,4($12)\n\tlw\t$11,8($12)\n\tsw\t$9,28($16)\n\tsw\t$10,32($16)\n\tsw\t$11,36($16)\n",
+         "\taddiu\t$5,$20,%lo(D_80054A0C)\n\tlw\t$2,0($5)\n\tlw\t$3,4($5)\n\tlw\t$4,8($5)\n\tsw\t$2,28($16)\n\tsw\t$3,32($16)\n\tsw\t$4,36($16)\n"),
+        ("\tlw\t$9,12($19)\n\tlw\t$10,16($19)\n\tlw\t$11,20($19)\n\tsw\t$9,28($16)\n\tsw\t$10,32($16)\n\tsw\t$11,36($16)\n",
+         "\tlw\t$2,12($19)\n\tlw\t$3,16($19)\n\tlw\t$4,20($19)\n\tsw\t$2,28($16)\n\tsw\t$3,32($16)\n\tsw\t$4,36($16)\n"),
+        ("\tlw\t$9,24($19)\n\tlw\t$10,28($19)\n\tlw\t$11,32($19)\n\tsw\t$9,28($16)\n\tsw\t$10,32($16)\n\tsw\t$11,36($16)\n",
+         "\tlw\t$2,24($19)\n\tlw\t$3,28($19)\n\tlw\t$4,32($19)\n\tsw\t$2,28($16)\n\tsw\t$3,32($16)\n\tsw\t$4,36($16)\n"),
+        ("\tlw\t$9,28($16)\n\tlw\t$10,32($16)\n\tlw\t$11,36($16)\n\tsw\t$9,16($16)\n\tsw\t$10,20($16)\n\tsw\t$11,24($16)\n",
+         "\tlw\t$2,28($16)\n\tlw\t$3,32($16)\n\tlw\t$4,36($16)\n\tsw\t$2,16($16)\n\tsw\t$3,20($16)\n\tsw\t$4,24($16)\n"),
+    )
+    for index, (old, new) in enumerate(copies):
+        text = replace_once(text, old, new, f"two-player Vec3 copy {index}")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
@@ -4780,6 +4803,8 @@ def normalize(text: str) -> str:
         return normalize_camera_focus_setup(text)
     if "\t.ent\tfunc_80010B0C\n" in text:
         return normalize_camera_heading(text)
+    if "\t.ent\tfunc_80034978\n" in text:
+        return normalize_two_player_minigame(text)
     if "\t.ent\tfunc_80034808\n" in text:
         return normalize_player_object_reset(text)
     if "\t.ent\tfunc_800345EC\n" in text:
