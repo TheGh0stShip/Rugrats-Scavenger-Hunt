@@ -30,7 +30,7 @@ extern s32 func_8002FEB4(void);
 extern void func_8002FEC4(s32);
 extern void func_8002FEE0(s32);
 extern void func_8002FEA8(s32);
-extern u8 func_8002FED0(void);
+extern s32 func_8002FED0(void);
 extern u8 func_8002FEEC(void);
 extern void func_8002FF48(s32);
 extern s32 *func_8002A628(s32);
@@ -62,9 +62,8 @@ extern s32 D_800B9314;
 
 void func_8002EBF0(void) {
     struct Obj_8002E0E0 *self;
-    struct Obj_8002E0E0 *other;
-    u8 who;
     u8 k;
+    struct Obj_8002E0E0 *other;
     s32 mine;
     s32 theirs;
     s32 room;
@@ -93,9 +92,9 @@ void func_8002EBF0(void) {
             func_8002F784();
             func_8002FF48(*func_8002A628(0));
             if (func_800166B0(self) & 0x10) {
-                who = func_8002FED0();
+                other = (struct Obj_8002E0E0 *)(u32)func_8002FED0();
                 k = func_8002FEEC();
-                other = func_800055A4(who);
+                other = func_800055A4((u8)(u32)other);
                 if (self->fF4 == other->fF4) {
                     goto refuse;
                 }
@@ -104,12 +103,11 @@ void func_8002EBF0(void) {
                         goto refuse;
                     }
                     D_800B9304 = *(other->f1E8 + k);
-                    mine = *(self->f1E8 + k);
+                    D_800B9300 = *(self->f1E8 + k);
                 } else {
                     D_800B9304 = other->f1F8;
-                    mine = self->f1F8;
+                    D_800B9300 = self->f1F8;
                 }
-                D_800B9300 = mine;
                 D_800B9310 = 0;
                 func_8002FEA8(3);
             }
@@ -142,10 +140,10 @@ void func_8002EBF0(void) {
             }
             func_8002F784();
             if (func_800166B0(self) & 0x10) {
-                who = func_8002FED0();
+                other = (struct Obj_8002E0E0 *)(u32)func_8002FED0();
                 k = func_8002FEEC();
                 self = func_800055A4(D_80057D40);
-                other = func_800055A4(who);
+                other = func_800055A4((u8)(u32)other);
                 if (self->fF4 == other->fF4) {
                     goto refuse;
                 }
@@ -153,20 +151,28 @@ void func_8002EBF0(void) {
                     if (func_800301C8(self, k) != 0 || func_800301C8(other, k) != 0) {
                         goto refuse;
                     }
+                    room = *(self->f1F0 + k);
                     mine = *(self->f1E8 + k);
-                    room = *(self->f1F0 + k) - mine;
+                    room -= mine;
                     theirs = *(other->f1E8 + k);
+                    if (theirs < room) {
+                        D_800B9304 = mine + theirs;
+                        D_800B9300 = 0;
+                    } else {
+                        D_800B9304 = mine + room;
+                        D_800B9300 = *(other->f1E8 + k) - room;
+                    }
                 } else {
                     mine = self->f1F8;
                     room = 99 - mine;
                     theirs = other->f1F8;
-                }
-                if (theirs < room) {
-                    D_800B9304 = mine + theirs;
-                    D_800B9300 = 0;
-                } else {
-                    D_800B9304 = mine + room;
-                    D_800B9300 = theirs - room;
+                    if (theirs < room) {
+                        D_800B9304 = mine + theirs;
+                        D_800B9300 = 0;
+                    } else {
+                        D_800B9304 = mine + room;
+                        D_800B9300 = theirs - room;
+                    }
                 }
                 if (other->f11C != -1 && other->f11C != self->f11C) {
                     func_80010E24(other->f11C, 15);
@@ -248,10 +254,10 @@ void func_8002EBF0(void) {
             }
             func_8002F784();
             if (func_800166B0(self) & 0x10) {
-                who = func_8002FED0();
+                other = (struct Obj_8002E0E0 *)(u32)func_8002FED0();
                 k = func_8002FEEC();
                 self = func_800055A4(D_80057D40);
-                other = func_800055A4(who);
+                other = func_800055A4((u8)(u32)other);
                 if (self->fF4 == other->fF4) {
                     m = *(self->f1F0 + k);
                     if (m != -1 && k != 4) {
