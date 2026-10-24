@@ -189,6 +189,96 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_board_player_input(text: str) -> str:
+    """Reproduce the reviewed retail allocation for the board-input unit."""
+    text = replace_once(
+        text,
+        "\taddu\t$5,$2,-525\n\tsubu\t$4,$4,$5\n",
+        "\taddu\t$2,$2,-525\n\tsubu\t$4,$4,$2\n",
+        "reviewed camera-angle temporary allocation",
+    )
+    text = replace_once(text, "\tbeq\t$2,$0,$L34\n\tli\t$3,-1240793088\t\t\t# 0xb60b0000\n", "\tbeq\t$2,$0,$L34\n\tli\t$2,-1240793088\t\t\t# 0xb60b0000\n", "reviewed clockwise rotation constant allocation")
+    text = replace_once(
+        text,
+        "\tlw\t$2,296($17)\n\tori\t$3,$3,0x60b7\n"
+        "\taddu\t$6,$2,270\n\tmult\t$6,$3\n",
+        "\tlw\t$6,296($17)\n\tori\t$2,$2,0x60b7\n"
+        "\taddu\t$6,$6,270\n\tmult\t$6,$2\n",
+        "reviewed clockwise rotation allocation",
+    )
+    text = replace_once(
+        text,
+        "\tli\t$3,-1240793088\t\t\t# 0xb60b0000\n"
+        "\tlw\t$2,296($17)\n\tori\t$3,$3,0x60b7\n"
+        "\taddu\t$6,$2,90\n\tmult\t$6,$3\n",
+        "\tlw\t$6,296($17)\n\tori\t$2,$2,0x60b7\n"
+        "\taddu\t$6,$6,90\n\tmult\t$6,$2\n",
+        "reviewed counterclockwise rotation allocation",
+    )
+    text = replace_once(
+        text,
+        "\tli\t$4,3\t\t\t# 0x00000003\n$L56:\n"
+        "\tsra\t$3,$6,31\n",
+        "\tli\t$4,3\t\t\t# 0x00000003\n$L56:\n"
+        "\tmove\t$5,$17\n\tsra\t$3,$6,31\n",
+        "reviewed shared rotation call-argument schedule",
+    )
+    text = replace_once(text, "\tsubu\t$3,$2,$3\n\tmove\t$5,$17\n", "\tsubu\t$2,$2,$3\n", "reviewed quotient allocation")
+    text = replace_once(
+        text,
+        "\tsll\t$2,$3,1\n\taddu\t$2,$2,$3\n\tsll\t$3,$2,4\n"
+        "\tsubu\t$3,$3,$2\n\tsll\t$3,$3,3\n\tsubu\t$3,$6,$3\n",
+        "\tsll\t$3,$2,1\n\taddu\t$3,$3,$2\n\tsll\t$2,$3,4\n"
+        "\tsubu\t$2,$2,$3\n\tsll\t$2,$2,3\n\tsubu\t$6,$6,$2\n",
+        "reviewed modulo remainder allocation",
+    )
+    text = replace_once(text, "\tsw\t$3,296($17)\n", "\tsw\t$6,296($17)\n", "reviewed rotation result store")
+    text = replace_once(
+        text,
+        "\tbeq\t$2,$0,$L37\n\tandi\t$2,$16,0x0008\n",
+        "\tbeq\t$2,$0,$L37\n\tli\t$2,-1240793088\t\t\t# 0xb60b0000\n",
+        "reviewed reverse-input branch delay slot",
+    )
+    text = replace_once(
+        text,
+        "$L37:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L39\n\tli\t$2,-1240793088\t\t\t# 0xb60b0000\n",
+        "$L37:\n\tandi\t$2,$16,0x0008\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L39\n\tli\t$2,-1240793088\t\t\t# 0xb60b0000\n",
+        "reviewed reverse-input test schedule",
+    )
+    text = replace_once(
+        text,
+        "\tlui\t$4,%hi(D_80052F80) # high\n\taddiu\t$4,$4,%lo(D_80052F80) # low\n",
+        "\tlui\t$3,%hi(D_80052F80) # high\n\taddiu\t$3,$3,%lo(D_80052F80) # low\n",
+        "reviewed direction-table address allocation",
+    )
+    text = replace_once(
+        text,
+        "\tmult\t$3,$2\n\tlui\t$3,%hi(D_80052F80) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80052F80) # low\n\tmfhi\t$7\n",
+        "\tmult\t$3,$2\n\tmfhi\t$7\n",
+        "reviewed direction-table address schedule source",
+    )
+    text = replace_once(
+        text,
+        "\tandi\t$2,$2,0x0003\n\tsll\t$2,$2,2\n",
+        "\tandi\t$2,$2,0x0003\n\tlui\t$3,%hi(D_80052F80) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80052F80) # low\n\tsll\t$2,$2,2\n",
+        "reviewed direction-table address schedule destination",
+    )
+    text = replace_once(text, "\taddu\t$2,$2,$4\n\tlw\t$2,0($2)\n", "\taddu\t$2,$2,$3\n\tlw\t$5,0($2)\n", "reviewed direction-table value allocation")
+    text = replace_once(
+        text,
+        "\tbnel\t$18,$2,$L62\n\taddu\t$18,$18,-249\n",
+        "\tbne\t$18,$5,$L62\n\taddu\t$2,$18,-249\n",
+        "reviewed direction comparison branch",
+    )
+    text = replace_once(text, "$L46:\n\taddu\t$18,$18,-249\n$L62:\n\tsltu\t$18,$18,4\n", "$L46:\n\taddu\t$2,$18,-249\n$L62:\n\tsltu\t$2,$2,4\n", "reviewed tile-range temporary allocation")
+    text = replace_once(text, "\tbeq\t$18,$0,$L60\n", "\tbeq\t$2,$0,$L60\n", "reviewed tile-range branch allocation")
+    return normalize_standard_return(text)
+
+
 def normalize_zero_copy_with_padding(
     text: str, old: str, new: str, description: str
 ) -> str:
@@ -5345,6 +5435,8 @@ def normalize_board_event_dispatch(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_800247C8\n" in text:
+        return normalize_board_player_input(text)
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
     if "\t.ent\tfunc_8002903C\n" in text:
