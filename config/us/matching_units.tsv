@@ -277,3 +277,9 @@
 0x56E0	0x70	src/runtime/host_file_seek.c	-O2 -G0 -mips3 -mgp32 -mfp32	b5deb6bc6a1cb22afff1147d16cd2c57bb4d160b3fd85844624ea07816a38824
 0x155A4	0x58	src/game/find_indexed_type_17_item.c	-O2 -G0 -mips3 -mgp32 -mfp32	0ecf859e3bb67eb91f20239b785cc327f714ea989e2dfa8bf3514604e36bdfb2
 0x21CE4	0xDC	src/game/copy_actor_transition_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	410380960ed63b9348e1330cc445c028ef961e8fc215fe4f6fba4fb8a27ef6c8
+0x52C8	0xB8	src/runtime/execute_host_command.c	-O2 -G0 -mips3 -mgp32 -mfp32	0d5127aaa9498fbe0c5b3e3ee595fff398da6ff74ecd6c668fae7e5b1821ab8f
+0x39A90	0xA0	src/runtime/fill_aligned_bytes.c	-O2 -G0 -mips3 -mgp32 -mfp32	2d61d477e557cfe1391ddf2f974be0137db7ff7629d69d4820912ac28a174a54
+0x3B320	0xB0	src/runtime/split_double_fraction.c	-O1 -G0 -mips3 -mgp32 -mfp32	619a029f3b237ec04db6e8ee70d7401dc4cebd7c4f85f63a2493e56283d8d1d1
+0xCFAC	0xE4	src/game/apply_track_position_offsets.c	-O2 -G0 -mips2	4264002f01f6c123c9055446d53eecec246c8043eb169cee9a238c1879ce93e8
+0x2F3FC	0xF0	src/game/initialize_random_slot_values.c	-O2 -G0 -mips3 -mgp32 -mfp32	e38592cb6fddfb9076f0b5d7e436589159ea70dcac3a81a3c5df50fad6a0469d
+0x39990	0x100	src/runtime/copy_aligned_bytes.c	-O1 -G0 -mips3 -mgp32 -mfp32	10620eee462189b23db550d8044be365dfa7fdf85a8252940e2154a9f365fa7f
