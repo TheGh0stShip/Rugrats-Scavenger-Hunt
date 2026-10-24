@@ -246,17 +246,6 @@ void func_8000E7C8(Cam *camera) {
             }
             break;
 
-        case 3:
-            func_8000FD38(cam);
-            break;
-
-        case 4:
-            func_8000FD9C(cam);
-            if (D_80052EE4 != 0) {
-                cam->state = 14;
-            }
-            break;
-
         case 5:
         case 6:
         case 7:
@@ -271,13 +260,15 @@ void func_8000E7C8(Cam *camera) {
             cam->pos.z = cam->target->pos.z;
             break;
 
+        case 3:
+            func_8000FD38(cam);
+            break;
+
         case 13:
             D_800C33F4 = cam->unk104;
         case 14:
             c = &D_800C33D8;
-            r = func_80008B80(c->b, c->a);
-            c->dist = r;
-            n = r / 200;
+            n = (c->dist = func_80008B80(c->b, c->a)) / 200;
             if (!((f32)n >= 0.0f)) {
                 n = -n;
             }
@@ -319,6 +310,13 @@ void func_8000E7C8(Cam *camera) {
                 cam->state = 14;
             } else {
                 func_8000F4E4(cam);
+            }
+            break;
+
+        case 4:
+            func_8000FD9C(cam);
+            if (D_80052EE4 != 0) {
+                cam->state = 14;
             }
             break;
 

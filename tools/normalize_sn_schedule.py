@@ -2777,6 +2777,105 @@ def normalize_trade_state_machine(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_camera_state_machine(text: str) -> str:
+    text = replace_once(text,
+        "\ttrunc.w.s $f14,$f0,$8\n\ts.s\t$f14,52($4)\n",
+        "\ttrunc.w.s $f2,$f0,$8\n\ts.s\t$f2,52($4)\n",
+        "reviewed camera destination conversion register")
+    start = text.find("$L14:\n")
+    end = text.find("$L19:\n", start)
+    if start < 0 or end < 0 or text.count("$L14:\n") != 1 or text.count("$L19:\n") != 1:
+        raise ValueError("reviewed camera angle block not found uniquely")
+    angle = """$L14:
+	.set	noreorder
+	.set	nomacro
+	lw	$4,284($18)
+	addiu	$2,$0,-1
+	bne	$4,$2,$L75
+	lui	$6,0xb60b
+	lui	$2,%hi(D_800588F8) # high
+	lw	$3,292($18)
+	addiu	$5,$2,%lo(D_800588F8) # low
+	sw	$3,52($5)
+	lw	$2,284($18)
+	bne	$2,$4,$L18
+	lui	$2,%hi(D_800588F8) # high
+	addiu	$2,$0,2400
+	j	$L19
+	sw	$2,56($5)
+$L75:
+	lui	$2,%hi(D_800588F8) # high
+$L18:
+	addiu	$7,$2,%lo(D_800588F8) # low
+	lw	$4,52($7)
+	ori	$6,$6,0x60b7
+	mult	$4,$6
+	mtc1	$0,$f2
+	sra	$3,$4,31
+	mfhi	$8
+	addu	$2,$8,$4
+	sra	$2,$2,8
+	subu	$2,$2,$3
+	sll	$3,$2,1
+	addu	$3,$3,$2
+	sll	$2,$3,4
+	subu	$2,$2,$3
+	sll	$2,$2,3
+	subu	$3,$4,$2
+	addiu	$2,$0,180
+	subu	$5,$2,$3
+	mtc1	$5,$f0
+	cvt.s.w	$f0,$f0
+	c.le.s	$f2,$f0
+	nop
+	bc1f	$L20
+	lui	$2,%hi(D_80052BE8) # high
+	lw	$2,%lo(D_80052BE8)($2)
+	mult	$2,$5
+	j	$L73
+	nop
+$L20:
+	lw	$2,%lo(D_80052BE8)($2)
+	addiu	$3,$3,-180
+	mult	$2,$3
+$L73:
+	mflo	$2
+	nop
+	nop
+	mult	$2,$6
+	mfhi	$8
+	addu	$3,$8,$2
+	sra	$3,$3,7
+	sra	$2,$2,31
+	subu	$3,$3,$2
+	addiu	$3,$3,2400
+	sw	$3,56($7)
+	.set	macro
+	.set	reorder
+"""
+    text = text[:start] + angle + text[end:]
+    text = text.replace("$f14", "$f2")
+    text = replace_once(text, (
+        "\tlw\t$9,44($18)\n\tlw\t$10,48($18)\n\tlw\t$11,52($18)\n"
+        "\tsw\t$9,60($17)\n\tsw\t$10,64($17)\n\tsw\t$11,68($17)\n"
+    ), (
+        "\tlw\t$2,44($18)\n\tlw\t$3,48($18)\n\tlw\t$4,52($18)\n"
+        "\tsw\t$2,60($17)\n\tsw\t$3,64($17)\n\tsw\t$4,68($17)\n"
+    ), "reviewed camera target-position copy registers")
+    control_copy_old = (
+        "\tlw\t$9,4($17)\n\tlw\t$10,8($17)\n"
+        "\tsw\t$9,16($sp)\n\tsw\t$10,20($sp)\n"
+    )
+    control_copy_new = (
+        "\tlw\t$2,4($17)\n\tlw\t$3,8($17)\n"
+        "\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n"
+    )
+    if text.count(control_copy_old) != 2:
+        raise ValueError("reviewed camera control-vector copies not found twice")
+    text = text.replace(control_copy_old, control_copy_new)
+    return normalize_standard_return(text)
+
+
 
 
 def normalize_player_item_row(text: str) -> str:
@@ -3381,6 +3480,8 @@ def normalize(text: str) -> str:
         return normalize_trade_capacity_score(text)
     if "\t.ent\tfunc_8002EBF0\n" in text:
         return normalize_trade_state_machine(text)
+    if "\t.ent\tfunc_8000E7C8\n" in text:
+        return normalize_camera_state_machine(text)
     if "\t.ent\tfunc_8002C714\n" in text:
         return normalize_player_item_row(text)
     if "\t.ent\tfunc_80028C18\n" in text:
