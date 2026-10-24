@@ -1,12 +1,12 @@
 {
- "clone_head": "57ab262373f1c297b784426a183e1252e58adcb1",
+ "clone_head": "6c97f141e5e4db0949ca48114b13865bfa6ed6c8",
  "command": "make verify-matching N64DK_ROOT=$N64DK_ROOT N64DK_TOOLCHAIN=$N64DK_TOOLCHAIN",
  "summaries": [
   "Verified 293/293 units, 17064 code bytes, 52 data bytes (kmc+asn64 13/13, kmc+builtin 280/280)",
   "verified 22 normalized KMC unit(s), 2484 exact bytes",
   "Verified 252/252 units, 62976 code bytes, 1672 data bytes (kmc+as 252/252)",
   "Verified 94/94 units, 4796 code bytes, 44 data bytes (sn 94/94)",
-  "verified 155 normalized SN unit(s), 41412 exact bytes",
+  "verified 162 normalized SN unit(s), 42868 exact bytes",
   "Verified 6/6 units, 236 code bytes, 0 data bytes (ido5.3 6/6)"
  ],
  "units": [
@@ -5803,6 +5803,55 @@
    "rom_start": 47496,
    "size": 132,
    "source": "src/game/func_8000AD88.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 73424,
+   "size": 304,
+   "source": "src/game/func_800112D0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 71148,
+   "size": 252,
+   "source": "src/game/func_800109EC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 182380,
+   "size": 216,
+   "source": "src/game/func_8002BC6C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 65000,
+   "size": 208,
+   "source": "src/game/func_8000F1E8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 48840,
+   "size": 172,
+   "source": "src/game/func_8000B2C8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 58256,
+   "size": 168,
+   "source": "src/game/func_8000D790.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 72304,
+   "size": 136,
+   "source": "src/game/func_80010E70.c",
    "tool": "sn+normalized",
    "evidence": "sn+normalized verifier completed run"
   }
