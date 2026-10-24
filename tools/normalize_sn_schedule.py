@@ -189,6 +189,81 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_spin_object_setup(text: str) -> str:
+    """Reproduce the reviewed SN allocation and scheduling for the spin-object setup loop."""
+    start = text.find("\tlui\t$2,%hi(D_800C3E50) # high\n")
+    end_marker = "\tbne\t$2,$0,$L5\n\taddu\t$18,$18,60\n"
+    end = text.find(end_marker, start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed spin-object loop allocation span not found")
+    end += len(end_marker)
+    marker = "$@spin_object_swap"
+    span = text[start:end]
+    span = span.replace("$17", marker).replace("$18", "$17").replace(marker, "$18")
+    text = text[:start] + span + text[end:]
+
+    text = replace_once(text, (
+        "\tlh\t$3,%lo(D_800C3E44)($22)\n\t#nop\n"
+        "\taddu\t$3,$3,-3\n #APP\n #NO_APP\n"
+        "\tsubu\t$3,$16,$3\n\tmult\t$3,$20\n"
+        "\tlw\t$2,456($19)\n\taddu\t$19,$19,4\n\tsw\t$2,0($18)\n"
+    ), (
+        "\tlh\t$3,%lo(D_800C3E44)($22)\n\tlw\t$2,456($19)\n"
+        "\taddu\t$3,$3,-3\n #APP\n #NO_APP\n"
+        "\tsubu\t$3,$16,$3\n\tmult\t$3,$20\n"
+        "\taddu\t$19,$19,4\n\taddu\t$16,$16,1\n\tsw\t$2,0($18)\n"
+    ), "reviewed spin-object loop-head schedule")
+    text = replace_once(text, "\tlw\t$6,0($2)\n\tlw\t$7,4($2)\n\tlw\t$8,8($2)\n\tsw\t$6,0($17)\n\tsw\t$7,4($17)\n\tsw\t$8,8($17)\n", "\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n\tsw\t$3,0($17)\n\tsw\t$4,4($17)\n\tsw\t$5,8($17)\n", "reviewed spin-object vector-copy allocation")
+    text = replace_once(text, (
+        "\tlw\t$2,0($18)\n\taddu\t$16,$16,1\n\tsw\t$2,52($17)\n"
+        "\tlw\t$4,0($18)\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800197C8\n\taddu\t$18,$18,4\n"
+    ), (
+        "\tlw\t$4,0($18)\n\taddu\t$18,$18,4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800197C8\n\tsw\t$4,52($17)\n"
+    ), "reviewed spin-object item call schedule")
+    text = replace_once(text, (
+        "\tbeq\t$2,$0,$L11\n\tsll\t$2,$16,4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$4,-1\t\t\t# 0xffffffff\n"
+        "\tlui\t$3,%hi(D_80054B08) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80054B08) # low\n"
+    ), (
+        "\tbeq\t$2,$0,$L11\n\tli\t$4,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_80054B08) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80054B08) # low\n"
+        "\tsll\t$2,$16,4\n"
+    ), "reviewed spin-object clear-loop entry schedule")
+    return normalize_standard_return(text)
+
+
+def normalize_spin_object_motion(text: str) -> str:
+    """Reproduce the reviewed retail allocation for the contiguous spin-motion loop."""
+    text = replace_once(text, "\tmove\t$9,$0\n", "", "reviewed redundant offset initialization")
+    mapping = {
+        "8": "7", "9": "8", "10": "9", "24": "15", "15": "14",
+        "14": "13", "13": "12", "12": "11", "11": "10", "7": "6",
+    }
+    marker = re.compile(r"\$(24|15|14|13|12|11|10|9|8|7)(?!\d)")
+    text = marker.sub(lambda match: "$" + mapping[match.group(1)], text)
+    text = replace_once(text, "\tmove\t$7,$8\n", "\tmove\t$7,$0\n", "reviewed motion-loop index initialization")
+    text = replace_once(text, "\tmove\t$9,$2\n\tlui\t$15,%hi(D_800C3E40) # high\n", "\tlui\t$15,%hi(D_800C3E40) # high\n\tmove\t$9,$2\n", "reviewed motion-loop global-base schedule")
+    text = replace_once(text, "\tmove\t$6,$11\n", "\tmove\t$6,$11\n\tmove\t$8,$7\n", "reviewed motion-loop offset initialization")
+    text = replace_once(text, "\tlui\t$2,%hi(D_80002FE8) # high\n\tl.s\t$f4,%lo(D_80002FE8)($2)\n", "\t.set\tnoat\n\tlui\t$1,%hi(D_80002FE8) # high\n\tl.s\t$f4,%lo(D_80002FE8)($1)\n\t.set\tat\n", "reviewed motion constant address allocation")
+    text = replace_once(text, (
+        "\tmove\t$6,$4\n\taddu\t$2,$7,$9\n\tsubu\t$2,$2,$10\n",
+    )[0], (
+        "\taddu\t$2,$7,$9\n\tsubu\t$2,$2,$10\n\tmove\t$3,$4\n",
+    )[0], "reviewed motion-loop side-value schedule")
+    text = text.replace("\taddu\t$3,$3,$11\n\taddu\t$3,$8,$3\n", "\taddu\t$3,$3,$8\n\taddu\t$3,$3,$11\n")
+    text = replace_once(text, "\tsll\t$3,$6,1\n\taddu\t$3,$3,$6\n", "\tmove\t$4,$3\n\tsll\t$3,$4,1\n\taddu\t$3,$3,$4\n", "reviewed reverse-motion side allocation")
+    text = replace_once(text, "\taddu\t$8,$8,60\n", "\taddu\t$6,$6,60\n", "reviewed object-pointer increment")
+    text = replace_once(text, "\tbne\t$2,$0,$L5\n\taddu\t$6,$6,60\n", "\tbne\t$2,$0,$L5\n\taddu\t$8,$8,60\n", "reviewed motion-offset delay slot")
+    return normalize_standard_return(text)
+
+
 def normalize_board_player_input(text: str) -> str:
     """Reproduce the reviewed retail allocation for the board-input unit."""
     text = replace_once(
@@ -5987,6 +6062,10 @@ def normalize(text: str) -> str:
         return normalize_selected_screen_positions(text)
     if "\t.ent\tfunc_8001D130\n" in text:
         return normalize_single_player_screen_positions(text)
+    if "\t.ent\tfunc_80035D0C\n" in text:
+        return normalize_spin_object_setup(text)
+    if "\t.ent\tfunc_80035A2C\n" in text:
+        return normalize_spin_object_motion(text)
     return normalize_standard_return(text)
 
 
