@@ -1,0 +1,1 @@
+typedef int s32; extern s32 D_80058180; extern s32 func_80009150(s32 index); s32 func_800093DC(void) { s32 i; if (D_80058180 == -1) return D_80058180; for (i = 0; func_80009150(i) != -1; i++) {} return D_80058180; }

@@ -301,3 +301,6 @@
 0x4CDC	0x1B0	src/runtime/func_800040DC.c	--assembler=asn64 --symbol=D_8F057290:0x8F057290 -O2 -G0 -mips3 -mgp32 -mfp32	d53b290a493e5b266d01f574e72d7ad8c1fe299201f04e6d2aeeb0cbd2b55b2b
 0x8AFC	0xFC	src/game/func_80007EFC.c	-O2 -G0 -mips3 -mgp32 -mfp32	0fa76444de434fb94614b584ad88a8d2573c3a8de82645ad9555f4fedd869f6e
 0x3E9B8	0x1C8	src/libmus/find_channel.c	-O2 -G0 -mips3 -mgp32 -mfp32	15c2a51c8baf4a60876495c601cf51cd41425aeae03e295b18d970f45c5e16e0
+0x4C68	0x74	src/runtime/copy_bytes_via_word_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	71e35646eabeb9f9c467b2b8bef1362cd68d6917fb80674cbca5fdf7a93a818c
+0x49C0	0x78	src/runtime/write_byte_via_word_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	1b5b10c7a49195cdf8fe3ecda1d2d7899da9f96a1796b8a0595222954f20c998
+0x4A38	0x78	src/runtime/write_byte_via_word_io_alt.c	-O2 -G0 -mips3 -mgp32 -mfp32	1b5b10c7a49195cdf8fe3ecda1d2d7899da9f96a1796b8a0595222954f20c998

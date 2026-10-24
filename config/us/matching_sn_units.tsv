@@ -97,3 +97,9 @@
 0x172F0	0xD8	src/game/decode_resource_backrefs.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3 -fno-expensive-optimizations	e2bcce054b9f7fc3a6ec9343d54ba75da1f43a1bc938e5ba85c097fdb607b1f3
 0xFEB8	0x94	src/game/func_8000F2B8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	23b814babaa334a18816d65c4c4b0cc4a6a8a23fefc9149efacc9deb3f492f53
 0x20784	0xA8	src/game/draw_fill_color_layers_8001fb84.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f498540b35bfaaffdefbd6a73e55a1e3ff5bbc61d7653abf98153a3c86222e26
+0x9FAC	0x24	src/game/get_result_state_value.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f9b2fb7b6e7877628ece600edc578e391517e0bd805bd87c554ec07b9d24dcd3
+0x17650	0x58	src/game/set_menu_fade_steps_80016a50.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6656cbb5b8db80d282a43e1f032816640cd0c2fb6e467841389a933c1a3c0345
+0x30E38	0x54	src/game/poll_countdown_state_80030238.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a7b09f9a969d17f9cc2a9da8505703fb961b3068f50995ecae1fd2345f66a9d5
+0x334CC	0x48	src/game/max_entry_extent_800328cc.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	7adbf458667dd26f829c8411d460363d37918d70650e84cf50833947575277ea
+0x33514	0x48	src/game/max_entry_extent_80032914.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0453b691b143eb95fb47979357b144f3a4dd9f1d37f3dc667c2731d43fb5ad20
+0x8FCC	0x7C	src/game/build_matrix_from_basis.c	--section-base=.rodata:0x800005F8 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3 -fno-schedule-insns	d5475c16df45ec88b66d4e6724d60dfeb865115f61b4a1e62daacde6df0ca873

@@ -387,9 +387,79 @@ def normalize_actor_position(text: str) -> str:
     )
 
 
+def normalize_c06_func_80027978(text: str) -> str:
+    """Swap the table pointer ($3) and loaded entry ($2) registers in the
+    identifier table scan; the return-value writes to $2 are unchanged."""
+    old = (
+        "\tla\t$3,D_80054268\n.L2:\n\tlw\t$2,0($3)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbeql\t$2,$4,.L4\n"
+        "\tli\t$2,0x00000001\t\t# 1\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$2,$5,.L2\n\taddu\t$3,$3,4\n"
+    )
+    new = (
+        "\tla\t$2,D_80054268\n.L2:\n\tlw\t$3,0($2)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbeql\t$3,$4,.L4\n"
+        "\tli\t$2,0x00000001\t\t# 1\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$3,$5,.L2\n\taddu\t$2,$2,4\n"
+    )
+    if text.count(old) != 1:
+        raise ValueError("func_80027978 table-scan register pattern not found")
+    return text.replace(old, new)
+
+
+def normalize_c09_func_8003ACF0(text: str) -> str:
+    """Swap the loaded word ($6) and xor result ($3) registers in the
+    word-at-a-time scan of func_8003ACF0; values and sources are unchanged."""
+    start = text.find("\t.ent\tfunc_8003ACF0\n")
+    head = text.find(".L9:\n\tlw\t$6,0($4)\n\t#nop\n\txor\t$3,$6,$5\n", start)
+    tail = text.find("\n.L7:\n\tmove\t$2,$0\n", head)
+    if start < 0 or head < 0 or tail < 0:
+        raise ValueError("func_8003ACF0 word-scan register pattern not found")
+    body = text[head:tail]
+    if body.count("$3") != 5 or body.count("$6") != 6:
+        raise ValueError("func_8003ACF0 word-scan register counts changed")
+    body = body.replace("$3", "$@").replace("$6", "$3").replace("$@", "$6")
+    text = text[:head] + body + text[tail:]
+    # The retail assembler filled the return delay slot with the frame pop.
+    epilogue = "\taddu\t$sp,$sp,8\n\tj\t$31\n\t.end\tfunc_8003ACF0\n"
+    if text.count(epilogue) != 1:
+        raise ValueError("func_8003ACF0 epilogue pattern not found")
+    return text.replace(epilogue,
+        "\t.set\tnoreorder\n\tj\t$31\n\taddu\t$sp,$sp,8\n\t.set\treorder\n\t.end\tfunc_8003ACF0\n")
+
+
+def normalize_d1_func_80006E88(text):
+    # Pure reorders: retail schedules the call constant before the angle load,
+    # and the parity mask before the angle load in both turn arms.
+    text = replace_once(text, (
+        "\tlw\t$2,296($16)\n"
+        "\tli\t$4,0x00000006\t\t# 6\n"
+    ), (
+        "\tli\t$4,0x00000006\t\t# 6\n"
+        "\tlw\t$2,296($16)\n"
+    ), "reviewed turn-finish call constant scheduling")
+    old = (
+        "\tlw\t$7,292($16)\n"
+        "\tandi\t$2,$4,0x0001\n"
+    )
+    new = (
+        "\tandi\t$2,$4,0x0001\n"
+        "\tlw\t$7,292($16)\n"
+    )
+    if text.count(old) != 2:
+        raise ValueError("reviewed turn-arm parity scheduling not found twice")
+    return text.replace(old, new)
+
+
 def normalize(text: str, unit: str) -> str:
     if unit == "func_800196E8":
         text = normalize_state_copy(text)
+    elif unit == "func_80006E88":
+        text = normalize_d1_func_80006E88(text)
+    elif unit == "func_8003ACF0":
+        text = normalize_c09_func_8003ACF0(text)
+    elif unit == "func_80027978":
+        text = normalize_c06_func_80027978(text)
     elif unit == "func_8001D0F0":
         text = normalize_guarded_callback(text)
     elif unit == "func_80022760":

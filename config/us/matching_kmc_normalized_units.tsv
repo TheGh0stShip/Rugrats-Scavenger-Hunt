@@ -22,3 +22,6 @@
 0x7D1C	0x40	src/game/func_8000711C.c	--normalizer-unit=func_8000711C -O2 -G0 -mips3 -mgp32 -mfp32	871d367d5348bcb6e0273b6ff9e71c72355564a51ea17e4be45f0f790d0cec57
 0x2861C	0x98	src/game/func_80027A1C.c	--normalizer-unit=func_80027A1C -O2 -G0 -mips3 -mgp32 -mfp32	a44ed66b0bb7e11c381a4529a49d15360d5863b42bb3f6f033b2428b4cd9a1ae
 0x7134	0x98	src/game/func_80006534.c	--normalizer-unit=func_80006534 -O2 -G0 -mips3 -mgp32 -mfp32	9b0bc52d2fc71b1ca911e4f57a3953f144b33391c85abcbf1562ea5f5e7b6f33
+0x28578	0x2C	src/game/identifier_in_terminated_table.c	--normalizer-unit=func_80027978 -O2 -G0 -mips3 -mgp32 -mfp32	f2d14bbe29929d948206a5d6101bf6eaab6c4cee866161a907dba07d0a7948d5
+0x3B8F0	0xE0	src/game/strchr_8003acf0.c	--normalizer-unit=func_8003ACF0 -O1 -G0 -mips3 -mgp32 -mfp32	3afb978c965fad6683cafe35c52c300d4667fbce6bf4fcafafdc43df3ff77961
+0x7A88	0x104	src/game/actor_turn_step_80006e88.c	--normalizer-unit=func_80006E88 -O2 -G0 -mips3 -mgp32 -mfp32	5b697b7ee61c0ce4a035b3493d3383be62ff6b569ea81cbed858e900c0b6b2c3

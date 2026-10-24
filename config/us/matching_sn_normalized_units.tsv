@@ -343,3 +343,69 @@
 0x13D3C	0xB4	src/game/load_archive_entry_8001313c.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3b5d1c963f58ec5c637bc6f7ec20a888ce24aed0f485d47a6158e1a4989421db
 0x2F7F0	0x838	src/game/update_trade_state_machine.c	--section-base=.rdata:0x80002970 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a8d4119cdc433d6075fed0104478cda92cc44f970a1c5d6a381288563d4831d4
 0xF3C8	0x988	src/game/update_camera_state_machine.c	--section-base=.rodata:0x80000788 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cca39c1b2c1e356f2806b3c12c62d4b83b93c9499cf57576f6ec6745916c1fe6
+0x5554	0xC4	src/runtime/host_read_buffer.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	c059459c643a023a428a6d585d2975322e2643d74d23c43f405fbe4105e01a77
+0x9FDC	0x58	src/game/drain_state_entries_58180.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ba8a5a08ed219bac59dc6efb0220c1fce3de001a15b5af39cc9070f4dbbe3037
+0xA034	0x30	src/game/clear_result_state_handle.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cb5607ddc8f8c532499c5d9c7cc16cab3bc0db64466e64e436e881e59d922315
+0xA210	0x24	src/game/store_nearest_actor_result.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	bb4f01dec01421edf954bd4ba29266b8d424ebe4976c99e4630ed2b51af71bb1
+0xA6F4	0xEC	src/game/claim_free_object_flag_slot.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3be70562c4f39bfb10378c8a58b5dbc1554645f6ccca3147e6a33f7ec0bff8b1
+0xA980	0x78	src/game/dispatch_mode_handler_9d80.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f197654cbce96e72a3e95e5474af1d0097acf417342a063eada38d8480054677
+0xDA08	0x48	src/game/check_table_entry_ce08.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b4474a7806931ba8bb1bd2e05398a475530860ddbf98bcfdc987ab61b5830e83
+0xED7C	0x34	src/game/release_room_buffer.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ae1c7a06791e43f740ca11cadd8cecf50e1f81ed05e02d38ca126cc958a6b0e7
+0x100E4	0x120	src/game/reset_camera_orbit.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	770cc646e830cebb54d3f1df6ff0fb5bd33c5de2d146e37887c92a8a6a49ee08
+0xB23C	0x114	src/game/spawn_position_marker_a63c.c	--section-base=.rdata:0x80000698 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9f2c6e24f221cffc9defbebd1bd4c74284d1f450c2bd0608e9d38f44238bc308
+0x10938	0x64	src/game/reset_scavenger_camera_state.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	23c62a8eea2a14106ac4375e49f169cf3e87feb8e6d28cc29df4cd9924cd97ba
+0x11950	0x70	src/game/pfs_channel_poll_status.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ec2c84989e0448233c57a29109ea9f5d01fa153f043cd424d3c4158394dcf034
+0x119C0	0x64	src/game/tick_slot_timers.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	fa6373d0b339c2560b481e9217efbdbd8f9f0c4f67110a1faace59acae03636d
+0x120CC	0x50	src/game/release_object_handle.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	478f1f94448004c6c9b3892c79b9f03b2c055589b7522158703e85fb0e1d2282
+0x12EA4	0x80	src/game/tick_round_countdown.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	172d00f23d0ff6c44a30f6c8c9840cc7ba604a32caa384a52df28fb5549f9ba4
+0x13614	0x188	src/game/select_farthest_open_tile.c	--symbol=sqrtf:0x80045CE0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	07336307479a6168fd0400e4fb7fa4963561d46752d803711b8d24c48a119068
+0x13378	0x214	src/game/place_object_at_farthest_tile.c	--symbol=sqrtf:0x80045CE0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	77909db0ca16204a957d76048e9a71a0145e88e2737dfe1f2a862f2360e5971d
+0x117D8	0xE4	src/game/angle_to_target_within_view.c	--section-base=.rodata:0x800008C8 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	42238dc104c7be7ad3ba68eac333fa8983b14af92b71bbcf21ecd34f4e615f74
+0x19DEC	0x4B8	src/game/update_main_menu_800191ec.c	--section-base=.rdata:0x800015C0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ef901f6e929ad1f74b01fee5c93204cb8adb3197ef04a97b1e676bd75c51a484
+0x14E0C	0x18C	src/game/patch_display_list_modes_8001420c.c	--section-base=.rdata:0x80001180 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1193acbdd38694f091dbe2a170e9a32c6b84c1619b0ead1bef914330c2e6dbd0
+0x14F98	0x18C	src/game/patch_display_list_modes_80014398.c	--section-base=.rdata:0x800011B0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d57e5943ef0dcab16a5d2e59dd11388e665c9e2fcfd1353e203c8d93411111b5
+0x15124	0x18C	src/game/patch_display_list_modes_80014524.c	--section-base=.rdata:0x800011E0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4c3838b30ec6ac260343dcf23b93ad2f6d13a13dab4ee27c056828d44411f3fe
+0x18B4C	0x39C	src/game/draw_option_menu_80017f4c.c	--section-base=.rdata:0x800015BC -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1728db47606771faf75362bdc46d0d8c18c24442cab99c365025fd610195f296
+0x1EB10	0x124	src/game/command_line_options.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1829399ea425a01ca60b955207199b28407f58034df7ce08ecab5aca538d4dc7
+0x22C60	0x248	src/game/select_open_direction_toward.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4824eca4d69110f6b8f0d58e790212c0acbd9a331d50b90740037a8d978278f2
+0x26F10	0x6C	src/game/copy_resource_word_to_slots.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	afde1e3bc092e5c0ac9589970f46e0ea360dca06aba46cb4633534a3a205f460
+0x28480	0x74	src/game/emit_state_range_entries.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	39413d8a851cba396315dbfb2358daf7b07e7b18c91061b38f4e5ac66ded76ff
+0x2CD68	0x5AC	src/game/show_turn_amount_message.c	--section-base=.rdata:0x80002610 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1e2f3ceb16120fe2e4af6f36f9b44c22334d92fda3d57ac2f119fcbf7635f3ae
+0x2A7B4	0x1B4	src/game/run_spin_menu_input.c	--section-base=.rdata:0x800021F4 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	326da25577b069b96a8a6f8fab3ba6264d9c9b2a1cc5b4135a45759072b97f25
+0x2A2D4	0x1A8	src/game/run_select_spin_menu.c	--section-base=.rdata:0x80002170 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	afed3acb4503d1c0cf0cdb794e50507e308dbf20972ed9e5e0e68935cb20077a
+0x2E798	0x34	src/game/set_object_flag_by_mode_8002db98.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	302d8f3a03f1793fd111187c20a0656257695daf2745f43c720f9b08cc522a18
+0x2F4F0	0x40	src/game/init_scene_handle_8002e8f0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	067b7c3402dff55a27166b046a25f5604500d0e7b56b088499619e99ab7c64e5
+0x30AFC	0x4C	src/game/find_object_by_id_8002fefc.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5fbe40bf94adc8852d2fb11c4e1e078b95466472588f6b504c4e5c247c2c8cc0
+0x30EB8	0x70	src/game/draw_mode_banner_800302b8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	65d9da11a4dab5bd43f3d6313687597d5c93c4a8923ae03e2ac208c8e2727c34
+0x311D8	0x4C	src/game/release_active_handle_800305d8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9609820b153e2df2a41f63f8d0b4afe7887e94a140d34d24b43588df07c86ff4
+0x33470	0x5C	src/game/get_cached_resource_80032870.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	db40074e90b9246af2f303b8cb7ea98b5411139d7e0ae3d604b2d1babe44f36b
+0x34A24	0x4C	src/game/print_list_values_80033e24.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e97e5648f364186306451bf5b25460787602344d846c617a28fad44be548899a
+0x35034	0x74	src/game/draw_three_icons_80034434.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	c69c7f748141a5602bcffac92b1706b97a5ea2dfe8b57de2f9c779c5fdc05706
+0x36490	0x60	src/game/remove_list_entry_80035890.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	aba533909266135de77f23a15169d5261a2716f568e249e7a780c96ccc9a454e
+0x310A4	0xEC	src/game/update_scene_countdown_800304a4.c	-fno-schedule-insns -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	568259ebaa6996e3917d9a1c60e0d5b35a0126c4356e142b6c95dbd6fae56d01
+0x2C32C	0x524	src/game/rotate_menu_cursor_8002b72c.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9d9217164625233f62f8677c44bcdd05cf7c0433c2748dbb13434acd251b3a10
+0x36D38	0x6B4	src/game/update_spin_object_80036138.c	--section-base=.rodata:0x80002FF0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	bd79c6d381f9d8b29d4f71674f60c84a224f190f0e2b427c2b046eff24d011d5
+0x1C400	0x58C	src/game/rotate_menu_cursor_8001b800.c	--section-base=.rdata:0x800018C8 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	7332505c6399577fe2f4dd5d278bc4ffada36815483ac539abc4a53dd9bf5f78
+0x7D5C	0x5C0	src/game/actor_grid_walk_8000715c.c	--section-base=.rdata:0x800005B0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1930604205938350c11e00a728d94127befdbf9f035eff50d4b096b399a70386
+0x9EC4	0xD4	src/game/slot_search_800092c4.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1d7f3c121b88eccd214ae3e2ef0b297637649d7f805e0aa105c557db8a134658
+0x6398	0x8C	src/game/tile_access_test_80005798.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	454f10ca466bb9a6f1cfdbcfa0dfef698aff08866a866f2ced2acebd8f90934d
+0x286B4	0x494	src/game/main_frame_message_loop.c	-O2 -G0 -mips3	eb806d7c9596dcd238186c17fdb9bf52568a761c8114bf8dff72e3a77f6b0125
+0x1BC8C	0x530	src/game/bonus_position_shuffle_menu.c	--section-base=.rdata:0x800018C0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9b1ff338dd331d83432f7ff0b339e954858a4e5596e7121f2424dad2be5b4cab
+0x1B680	0xFC	src/game/camera_target_step_setup.c	--section-base=.rdata:0x80001894 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3793d180eccabd0f9425babccfa4ae93cbfa150a9d0ee6baa64c10b93b6bef5f
+0x1F3FC	0x280	src/game/audio_fade_step.c	--section-base=.rdata:0x80001D78 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3d0b79379a6f535dc7af9563cb8f268d315508e9f628a0c81a38eaf9cf6d32d5
+0x32EB8	0x4E8	src/game/resolve_grid_item_800322b8.c	--section-base=.rdata:0x80002B98 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6bf6976452d18217b6038414aa76a0a6c9a78b12c191cefec4a91afb3a3ebb6f
+0x2A9C4	0x34C	src/game/draw_zone_select_80029dc4.c	--section-base=.rdata:0x80002214 -O2 -G0 -mips3	4c7dbbf7dbd643ce1c78c01a641340d31c9109793847a37fc5a5784fd9e1dc32
+0x29324	0x434	src/game/run_frame_message_loop_80028724.c	-O2 -G0 -mips3	fdb111cfaaf331cbda178223f16b78656fa8a56f7acdf5b2d7675efbdaf06d27
+0x10F58	0x408	src/game/debug_camera_control_80010358.c	--section-base=.rodata:0x80000898 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cbf6cc060b70c4839c199f0109de66d7c7055c315bb4105681fe5748258756f3
+0x129AC	0x324	src/game/scene_state_handler_80011DAC.c	--section-base=.rodata:0x800010C0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	8dc6477c95bf8b759b16d3d67e2ebc8a846472ef6ce3611f1ec7ef570115d377
+0x2283C	0x2D4	src/game/select_open_direction_avoiding_back.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	262c593c1a03bf12cff95db1819aa2c981a2b1a4fd49128aea70ae17ee6dd182
+0x22298	0x224	src/game/update_actor_turn_step.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4a406123a707a8793b6d9d613b8d4cfb2664edf955cb8e054a68fb09f592561b
+0x17D44	0x358	src/game/options_volume_menu_80017144.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	152dfc1031be521616e893f2eabd872f254b41e3889c124041de4fc229fdf4bf
+0x19634	0x3A8	src/game/sound_options_menu_80018a34.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	8fecba325d55b6bfca188730ef40a74caadeeacb130a25eeb152a88be5e3e106
+0xF230	0x50	src/game/copy_into_world_save_block.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ae66dbd36483cd5c129f9c343b1e72373bf7b030b14f90413b1ee667d498f67d
+0xF280	0x78	src/game/copy_out_world_save_block.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	fc4f7592b0f0e26a041e87d3a058818632dc34db6bf644d95f2871ac476947b5
+0xE784	0xB4	src/game/mark_room_cells.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	00a199e4051169151297b3509c52ddcd58e32c48474cff1e6523db2bd9bf0dcd
+0xC31C	0x13C	src/game/apply_mesh_vertex_offsets.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	56e4f622419e6ca89154eada21bd44dc8dc5beba7ac06005675bc5b7c0703c26
+0x5618	0xC8	src/game/write_host_data_chunks.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	25a54526024c4ea3955e268a94a644328c601e71a36f176180f239f7d93d12e6
+0xEDD0	0x15C	src/game/spawn_owner_particles.c	--section-base=.rodata:0x80000750 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	8a79c14617ae9a98b8cbd234f0fa7fe53fa85dbdf8e053bedd76958832f929ff
+0x7818	0x4C	src/game/select_spawn_offsets.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	691f02d647f75eeef898eebc5d0867a90895764f51a07626393192d06a842bd1

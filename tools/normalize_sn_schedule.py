@@ -3561,7 +3561,744 @@ def normalize_frame_quota_return(text: str) -> str:
     ), "reviewed frame-quota common return")
 
 
+def normalize_c00_func_80009610(text: str) -> str:
+    return replace_once(text, (
+        "\tlw\t$31,16($sp)\n"
+        "\tlui\t$3,%hi(D_80058188) # high\n"
+    ), (
+        "\tlui\t$3,%hi(D_80058188) # high\n"
+        "\tlw\t$31,16($sp)\n"
+    ), "reviewed call-result store scheduling pattern")
+
+def normalize_c00_host_read_registers(text: str) -> str:
+    text = remap_registers(text, {22: 21, 21: 22, 19: 18, 18: 19})
+    for opcode, register, old, new in (
+        ("sw", 21, 40, 36), ("sw", 22, 36, 40),
+        ("sw", 19, 24, 28), ("sw", 18, 28, 24),
+    ):
+        text = replace_once(
+            text, f"\t{opcode}\t${register},{old}($sp)\n",
+            f"\t{opcode}\t${register},{new}($sp)\n",
+            "reviewed host-read saved-register layout",
+        )
+    text = replace_once(text, (
+        "\tlw\t$31,44($sp)\n\tlw\t$21,40($sp)\n"
+        "\tlw\t$22,36($sp)\n\tlw\t$20,32($sp)\n"
+        "\tlw\t$18,28($sp)\n\tlw\t$19,24($sp)\n"
+    ), (
+        "\tlw\t$31,44($sp)\n\tlw\t$22,40($sp)\n"
+        "\tlw\t$21,36($sp)\n\tlw\t$20,32($sp)\n"
+        "\tlw\t$19,28($sp)\n\tlw\t$18,24($sp)\n"
+    ), "reviewed host-read saved-register restore order")
+    return normalize_standard_return(text)
+
+
+def normalize_c01_func_8000E17C(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$31,20($sp)\n"
+        "\tsw\t$0,%lo(D_800581F0)($16)\n"
+    ), (
+        "\tsw\t$0,%lo(D_800581F0)($16)\n"
+        "\tlw\t$31,20($sp)\n"
+    ), "reviewed room-buffer release store order")
+    return normalize_standard_return(text)
+
+
+
+def normalize_c01_func_8000A63C(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$3,44($17)\n\tlw\t$8,48($17)\n\tlw\t$9,52($17)\n"
+        "\tsw\t$3,236($16)\n\tsw\t$8,240($16)\n\tsw\t$9,244($16)\n"
+    ), (
+        "\tlw\t$2,44($17)\n\tlw\t$3,48($17)\n\tlw\t$4,52($17)\n"
+        "\tsw\t$2,236($16)\n\tsw\t$3,240($16)\n\tsw\t$4,244($16)\n"
+    ), "reviewed position block-copy registers")
+    text = replace_once(text, (
+        "\tmove\t$4,$16\n"
+        "\tli\t$6,4\t\t\t# 0x00000004\n"
+        "\tl.s\t$f0,244($16)\n"
+        "\tlui\t$2,%hi(D_80059DA8) # high\n"
+        "\tcvt.d.s\t$f0,$f0\n"
+        "\tmul.d\t$f0,$f0,$f4\n"
+        "\tlw\t$5,%lo(D_80059DA8)($2)\n"
+        "\tli\t$2,20\t\t\t# 0x00000014\n"
+        "\tli.s\t$f4,3.50000000000000000000e2\n"
+        "\tmove\t$7,$0\n"
+    ), (
+        "\tli\t$6,4\t\t\t# 0x00000004\n"
+        "\tmove\t$7,$0\n"
+        "\tl.s\t$f0,244($16)\n"
+        "\tmove\t$4,$16\n"
+        "\tcvt.d.s\t$f0,$f0\n"
+        "\tmul.d\t$f0,$f0,$f4\n"
+        "\tlui\t$2,%hi(D_80059DA8) # high\n"
+        "\tlw\t$5,%lo(D_80059DA8)($2)\n"
+        "\tli.s\t$f4,3.50000000000000000000e2\n"
+        "\tli\t$2,20\t\t\t# 0x00000014\n"
+    ), "reviewed position call-argument order")
+    return normalize_standard_return(text)
+
+
+def normalize_c02_func_80010BD8(text: str) -> str:
+    # Reviewed register renaming of the dx/dz live ranges and the trunc
+    # scratch register, plus moving the result compare above the epilogue loads.
+    text = replace_once(text, (
+        "\ttrunc.w.s $f6,$f4,$7\n\tmfc1\t$2,$f6\n"
+        "\ttrunc.w.s $f6,$f0,$7\n\tmfc1\t$3,$f6\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbeq\t$2,$0,$L2\n"
+    ), (
+        "\ttrunc.w.s $f2,$f4,$7\n\tmfc1\t$3,$f2\n"
+        "\ttrunc.w.s $f2,$f0,$7\n\tmfc1\t$4,$f2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbeq\t$3,$0,$L2\n"
+    ), "reviewed c02 angle delta registers")
+    text = replace_once(text, (
+        "\tmtc1\t$3,$f12\n\tcvt.d.w\t$f12,$f12\n\tmtc1\t$2,$f14\n"
+    ), (
+        "\tmtc1\t$4,$f12\n\tcvt.d.w\t$f12,$f12\n\tmtc1\t$3,$f14\n"
+    ), "reviewed c02 angle call arguments")
+    text = replace_once(text, "\tbltz\t$3,$L3\n", "\tbltz\t$4,$L3\n",
+                        "reviewed c02 dz sign test")
+    text = replace_once(text, "\ttrunc.w.d $f6,$f0,$7\n\tmfc1\t$3,$f6\n",
+                        "\ttrunc.w.d $f2,$f0,$7\n\tmfc1\t$3,$f2\n",
+                        "reviewed c02 degree truncation register")
+    text = replace_once(text, (
+        "\tsw\t$2,0($16)\n\tlw\t$31,20($sp)\n\tlw\t$16,16($sp)\n\tslt\t$2,$2,60\n"
+    ), (
+        "\tsw\t$2,0($16)\n\tslt\t$2,$2,60\n\tlw\t$31,20($sp)\n\tlw\t$16,16($sp)\n"
+    ), "reviewed c02 result compare placement")
+    return normalize_standard_return(text)
+
+
+def _c03_replace(text, old, new, what):
+    if old not in text:
+        raise ValueError("c03 normalizer pattern missing: " + what)
+    return text.replace(old, new, 1)
+
+
+def normalize_c03_func_800191EC(text):
+    """Main menu dispatcher: register renames and independent reorders only.
+
+    1. Entry compare: rename the loaded index/current/address registers and
+       move the current-index store after the scaled index computation.
+    2. Swap two independent lui instructions before the slot table lookup.
+    3. Block copy of the 0x34-byte menu state: rename the pointer, end and
+       data registers to the retail allocation.
+    """
+    text = _c03_replace(
+        text,
+        "\tlui\t$2,%hi(D_800533DC) # high\n"
+        "\tlui\t$3,%hi(D_800533D8) # high\n"
+        "\tlw\t$4,%lo(D_800533DC)($2)\n"
+        "\tlw\t$2,%lo(D_800533D8)($3)\n",
+        "\tlui\t$2,%hi(D_800533DC) # high\n"
+        "\tlui\t$4,%hi(D_800533D8) # high\n"
+        "\tlw\t$2,%lo(D_800533DC)($2)\n"
+        "\tlw\t$3,%lo(D_800533D8)($4)\n",
+        "entry loads",
+    )
+    text = _c03_replace(
+        text,
+        "\tbeq\t$4,$2,$L2\n\tsw\t$16,16($sp)\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsw\t$4,%lo(D_800533D8)($3)\n"
+        "\tsll\t$3,$4,1\n"
+        "\taddu\t$3,$3,$4\n"
+        "\tsll\t$3,$3,3\n",
+        "\tbeq\t$2,$3,$L2\n\tsw\t$16,16($sp)\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsll\t$3,$2,1\n"
+        "\taddu\t$3,$3,$2\n"
+        "\tsll\t$3,$3,3\n"
+        "\tsw\t$2,%lo(D_800533D8)($4)\n",
+        "entry compare",
+    )
+    text = _c03_replace(
+        text,
+        "\tlui\t$3,%hi(D_8005497C) # high\n"
+        "\tlui\t$2,%hi(D_80052F18+28) # high\n",
+        "\tlui\t$2,%hi(D_80052F18+28) # high\n"
+        "\tlui\t$3,%hi(D_8005497C) # high\n",
+        "slot lookup lui order",
+    )
+    text = _c03_replace(
+        text,
+        "\tlui\t$2,%hi(D_80059ED8) # high\n"
+        "\taddiu\t$3,$2,%lo(D_80059ED8) # low\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80052F18) # low\n"
+        "\taddu\t$4,$2,48\n"
+        "$L15:\n"
+        "\tlw\t$7,0($2)\n\tlw\t$8,4($2)\n\tlw\t$9,8($2)\n\tlw\t$10,12($2)\n"
+        "\tsw\t$7,0($3)\n\tsw\t$8,4($3)\n\tsw\t$9,8($3)\n\tsw\t$10,12($3)\n"
+        "\taddu\t$2,$2,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$4,$L15\n"
+        "\taddu\t$3,$3,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$7,0($2)\n"
+        "\tsw\t$7,0($3)\n",
+        "\tlui\t$2,%hi(D_80059ED8) # high\n"
+        "\taddiu\t$7,$2,%lo(D_80059ED8) # low\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$6,$2,%lo(D_80052F18) # low\n"
+        "\taddu\t$8,$6,48\n"
+        "$L15:\n"
+        "\tlw\t$2,0($6)\n\tlw\t$3,4($6)\n\tlw\t$4,8($6)\n\tlw\t$5,12($6)\n"
+        "\tsw\t$2,0($7)\n\tsw\t$3,4($7)\n\tsw\t$4,8($7)\n\tsw\t$5,12($7)\n"
+        "\taddu\t$6,$6,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$6,$8,$L15\n"
+        "\taddu\t$7,$7,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,0($6)\n"
+        "\tsw\t$2,0($7)\n",
+        "state block copy",
+    )
+    return normalize_standard_return(text)
+
+
+def normalize_c04_func_8001DF10(text):
+    # Retail fills two reorder-mode branch delay slots with the next
+    # fall-through instruction (dead on the taken path) instead of a nop.
+    text = text.replace("\t#.set\tvolatile\n", "").replace("\t#.set\tnovolatile\n", "")
+    text = replace_once(text, (
+        "\tlbu\t$2,0($4)\n"
+        "\t#nop\n"
+        "\tbeq\t$2,$0,$L1\n"
+        "\tli\t$7,32\t\t\t# 0x00000020\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tlbu\t$2,0($4)\n"
+        "\tbeq\t$2,$0,$L1\n"
+        "\tli\t$7,32\t\t\t# 0x00000020\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "c04 func_8001DF10 first delay slot")
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L1\n"
+        "\tli\t$15,45\t\t\t# 0x0000002d\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L1\n"
+        "\tli\t$15,45\t\t\t# 0x0000002d\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "c04 func_8001DF10 second delay slot")
+    return normalize_standard_return(text)
+
+
+def normalize_c08_func_8002FEFC(text: str) -> str:
+    """Rename the loop counter and the table cursor ($5 <-> $6) consistently."""
+    start = text.index("\t.ent\tfunc_8002FEFC\n")
+    end = text.index("\t.end\tfunc_8002FEFC\n", start)
+    body = text[start:end]
+    if "$5" not in body or "$6" not in body:
+        raise ValueError("reviewed func_8002FEFC register pattern not found")
+    body = body.replace("$5", "$TMP").replace("$6", "$5").replace("$TMP", "$6")
+    return text[:start] + body + text[end:]
+
+
+
+def normalize_c08_func_80035890(text: str) -> str:
+    """Move the table high half into the loop-guard delay slot."""
+    return replace_once(text, (
+        "\tbeq\t$2,$0,$L3\n\tmove\t$6,$3\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_800C3E50) # high\n"
+    ), (
+        "\tbeq\t$2,$0,$L3\n\tlui\t$2,%hi(D_800C3E50) # high\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$6,$3\n"
+    ), "reviewed func_80035890 guard delay slot")
+
+
+
+def normalize_c08_func_800304A4(text: str) -> str:
+    """Reorder the stage-advance block (built with -fno-schedule-insns)."""
+    text = replace_once(text, (
+        "\tlw\t$2,%lo(D_800545C0)($3)\n"
+        "\tlui\t$16,%hi(D_80059D40) # high\n"
+        "\taddu\t$2,$2,1\n"
+    ), (
+        "\tlw\t$2,%lo(D_800545C0)($3)\n"
+        "\tli\t$4,1\t\t\t# 0x00000001\n"
+        "\taddu\t$2,$2,1\n"
+    ), "reviewed func_800304A4 increment block")
+    text = replace_once(text, (
+        "\tlw\t$2,0($2)\n"
+        "\tli\t$4,1\t\t\t# 0x00000001\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tjal\tfunc_80012D9C\n"
+    ), (
+        "\tlw\t$2,0($2)\n"
+        "\tlui\t$16,%hi(D_80059D40) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tjal\tfunc_80012D9C\n"
+    ), "reviewed func_800304A4 call setup")
+    return normalize_standard_return(text)
+
+
+def normalize_d1_func_8000715C(text):
+    # Trail-history test: retail hoists the table base into the beq delay slot
+    # and keeps the count in $2 / the base in $3 (pure reorder plus a
+    # consistent $2<->$3 rename over this live range).
+    text = replace_once(text, (
+        "\tlh\t$3,%lo(D_80057DA0)($2)\n"
+        "\t#nop\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tbeq\t$3,$0,$L25\n"
+        "\taddu\t$3,$3,-1\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n"
+        "\n"
+        "\tsll\t$3,$3,1\n"
+        "\tlui\t$2,%hi(D_80057D68) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80057D68) # low\n"
+        "\taddu\t$4,$3,$2\n"
+    ), (
+        "\tlh\t$2,%lo(D_80057DA0)($2)\n"
+        "\t#nop\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L25\n"
+        "\tlui\t$3,%hi(D_80057D68) # high\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n"
+        "\n"
+        "\taddiu\t$3,$3,%lo(D_80057D68) # low\n"
+        "\taddu\t$2,$2,-1\n"
+        "\tsll\t$2,$2,1\n"
+        "\taddu\t$4,$2,$3\n"
+    ), "reviewed trail-history base scheduling")
+    return normalize_standard_return(text)
+
+
+
+def normalize_d1_func_800092C4(text):
+    # Slot-search loop: retail operand order matches normalize_node_result's
+    # reviewed addu swap; the remaining changes are pure reorders with a
+    # consistent $2<->$3 rename over the entry-pointer setup.
+    text = replace_once(text, "\taddu\t$3,$4,$3\n", "\taddu\t$3,$3,$4\n",
+                        "reviewed slot-count operand order")
+    text = replace_once(text, (
+        "\tsll\t$3,$18,6\n"
+        "\tlui\t$2,%hi(D_80057F70) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80057F70) # low\n"
+        "\taddu\t$3,$3,$2\n"
+        "\taddu\t$17,$3,4\n"
+        "\tmove\t$20,$5\n"
+        "\tmove\t$19,$4\n"
+    ), (
+        "\tmove\t$20,$5\n"
+        "\tmove\t$19,$4\n"
+        "\tlui\t$3,%hi(D_80057F70) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80057F70) # low\n"
+        "\tsll\t$2,$18,6\n"
+        "\taddu\t$2,$2,$3\n"
+        "\taddu\t$17,$2,4\n"
+    ), "reviewed slot-entry pointer scheduling")
+    text = replace_once(text, (
+        "\tlw\t$2,%lo(D_800581F0)($20)\n"
+        "\taddu\t$16,$16,1\n"
+        "\taddu\t$2,$19,$2\n"
+        "\tlh\t$2,8222($2)\n"
+        "\t#nop\n"
+    ), (
+        "\tlw\t$2,%lo(D_800581F0)($20)\n"
+        "\taddu\t$2,$2,$19\n"
+        "\tlh\t$2,8222($2)\n"
+        "\taddu\t$16,$16,1\n"
+    ), "reviewed slot-count reload scheduling")
+    return normalize_standard_return(text)
+
+
+
+def normalize_d1_func_80005798(text):
+    # Tile-access test: consistent rename of the mode result ($3->$4) and the
+    # 0x16 constant ($2->$3), plus the reviewed return-zero beql pattern.
+    text = replace_once(text, (
+        "\tbeq\t$2,$0,$L8\n"
+        "\tmove\t$2,$0\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n"
+        "\n"
+        "\tjal\tfunc_8001BF00\n"
+    ), (
+        "\tbeql\t$2,$0,$L8\n"
+        "\tmove\t$2,$0\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n"
+        "\n"
+        "\tjal\tfunc_8001BF00\n"
+    ), "reviewed tile-access return-zero branch")
+    text = replace_once(text, (
+        "\tmove\t$3,$2\n"
+        " #APP\n"
+        " #NO_APP\n"
+        "\tli\t$2,22\t\t\t# 0x00000016\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L7\n"
+    ), (
+        "\tmove\t$4,$2\n"
+        " #APP\n"
+        " #NO_APP\n"
+        "\tli\t$3,22\t\t\t# 0x00000016\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tbne\t$4,$3,$L7\n"
+    ), "reviewed tile-access mode register rename")
+    return normalize_standard_return(text)
+
+
+def normalize_d3_func_8001B08C(text: str) -> str:
+    # func_8001B08C: retail uses $3/$4/$5 as the scratch registers of the
+    # Vec3f struct copy into D_8005B348; the compiler picks $9/$10/$11.
+    text = replace_once(text, (
+        "\tlw\t$9,0($2)\n\tlw\t$10,4($2)\n\tlw\t$11,8($2)\n"
+        "\tsw\t$9,0($17)\n\tsw\t$10,4($17)\n\tsw\t$11,8($17)\n"
+    ), (
+        "\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n"
+        "\tsw\t$3,0($17)\n\tsw\t$4,4($17)\n\tsw\t$5,8($17)\n"
+    ), "reviewed bonus-position struct copy scratch registers")
+    return normalize_standard_return(text)
+
+def normalize_d3_func_8001AA80(text: str) -> str:
+    # func_8001AA80: retail allocates the loop counter, table base, constant 6
+    # and entry pointer to $8/$9/$10/$7 and the two Vec3f struct-copy scratch
+    # sets to $2-$4 and $3-$5; the compiler picks $5/$7/$6/$4 and $8-$10.
+    # Consistent renaming of these live ranges, plus the third velocity
+    # component computed in $f0 (scratch $f2) and the counter increment
+    # scheduled after its store.
+    return normalize_standard_return(replace_once(text, '\tmove\t$5,$0\n\tli\t$6,6\t\t\t# 0x00000006\n\tlui\t$2,%hi(D_8005368C) # high\n\taddiu\t$7,$2,%lo(D_8005368C) # low\n\tmove\t$4,$7\n\tli.s\t$f4,6.00000000000000000000e0\n$L5:\n\tsh\t$6,48($4)\n\tlw\t$8,0($4)\n\tlw\t$9,4($4)\n\tlw\t$10,8($4)\n\tsw\t$8,16($sp)\n\tsw\t$9,20($sp)\n\tsw\t$10,24($sp)\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$16,$6,$L6\n\taddu\t$3,$5,1\n\t.set\tmacro\n\t.set\treorder\n\n\taddu\t$3,$5,-1\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbltzl\t$3,$L8\n\tli\t$3,4\t\t\t# 0x00000004\n\t.set\tmacro\n\t.set\treorder\n\n\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$L11\n\tsll\t$2,$3,4\n\t.set\tmacro\n\t.set\treorder\n\n$L6:\n\tslt\t$2,$3,5\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbeql\t$2,$0,$L8\n\tmove\t$3,$0\n\t.set\tmacro\n\t.set\treorder\n\n$L8:\n\tsll\t$2,$3,4\n$L11:\n\tsubu\t$2,$2,$3\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$7\n\tlw\t$8,0($2)\n\tlw\t$9,4($2)\n\tlw\t$10,8($2)\n\tsw\t$8,32($sp)\n\tsw\t$9,36($sp)\n\tsw\t$10,40($sp)\n\tl.s\t$f0,32($sp)\n\tl.s\t$f2,16($sp)\n\t#nop\n\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n\ts.s\t$f0,36($4)\n\tl.s\t$f0,36($sp)\n\tl.s\t$f2,20($sp)\n\t#nop\n\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n\ts.s\t$f0,40($4)\n\tl.s\t$f2,40($sp)\n\tl.s\t$f0,24($sp)\n\t#nop\n\tsub.s\t$f2,$f2,$f0\n\taddu\t$5,$5,1\n\tslt\t$2,$5,5\n\tdiv.s\t$f2,$f2,$f4\n\ts.s\t$f2,44($4)\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$2,$0,$L5\n\taddu\t$4,$4,60\n', '\tmove\t$8,$0\n\tli\t$10,6\t\t\t# 0x00000006\n\tlui\t$2,%hi(D_8005368C) # high\n\taddiu\t$9,$2,%lo(D_8005368C) # low\n\tmove\t$7,$9\n\tli.s\t$f4,6.00000000000000000000e0\n$L5:\n\tsh\t$10,48($7)\n\tlw\t$2,0($7)\n\tlw\t$3,4($7)\n\tlw\t$4,8($7)\n\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n\tsw\t$4,24($sp)\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$16,$10,$L6\n\taddu\t$3,$8,1\n\t.set\tmacro\n\t.set\treorder\n\n\taddu\t$3,$8,-1\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbltzl\t$3,$L8\n\tli\t$3,4\t\t\t# 0x00000004\n\t.set\tmacro\n\t.set\treorder\n\n\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$L11\n\tsll\t$2,$3,4\n\t.set\tmacro\n\t.set\treorder\n\n$L6:\n\tslt\t$2,$3,5\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbeql\t$2,$0,$L8\n\tmove\t$3,$0\n\t.set\tmacro\n\t.set\treorder\n\n$L8:\n\tsll\t$2,$3,4\n$L11:\n\tsubu\t$2,$2,$3\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$9\n\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n\tsw\t$3,32($sp)\n\tsw\t$4,36($sp)\n\tsw\t$5,40($sp)\n\tl.s\t$f0,32($sp)\n\tl.s\t$f2,16($sp)\n\t#nop\n\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n\ts.s\t$f0,36($7)\n\tl.s\t$f0,36($sp)\n\tl.s\t$f2,20($sp)\n\t#nop\n\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n\ts.s\t$f0,40($7)\n\tl.s\t$f0,40($sp)\n\tl.s\t$f2,24($sp)\n\t#nop\n\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n\ts.s\t$f0,44($7)\n\taddu\t$8,$8,1\n\tslt\t$2,$8,5\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$2,$0,$L5\n\taddu\t$7,$7,60\n',
+        "reviewed camera-target step register allocation"))
+
+
+def normalize_d3_func_8001E7FC(text: str) -> str:
+    # func_8001E7FC: register renaming of separate live ranges (truncation
+    # scratch, unsigned conversion temporaries, fade pointer and the constant 1
+    # in the completion test) and two pure reorders.
+    text = replace_once(text, '\ttrunc.w.s $f4,$f2,$6\n\tmfc1\t$5,$f4\n', '\ttrunc.w.s $f0,$f2,$6\n\tmfc1\t$5,$f0\n', 'reviewed music volume truncation scratch register')
+    text = replace_once(text, '\ttrunc.w.s $f4,$f20,$6\n\tmfc1\t$5,$f4\n', '\ttrunc.w.s $f0,$f20,$6\n\tmfc1\t$5,$f0\n', 'reviewed effect volume truncation scratch register')
+    text = replace_once(text, '\tmul.s\t$f0,$f2,$f0\n\tli.s\t$f2,2.14748364800000000000e9\n\t#nop\n\tc.le.s\t$f2,$f0\n\t#nop\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbc1tl\t$L4\n\tsub.s\t$f0,$f0,$f2\n\t.set\tmacro\n\t.set\treorder\n\n\ttrunc.w.s $f4,$f0,$6\n\tmfc1\t$4,$f4\n\tj\t$L5\n$L4:\n\tli\t$2,-2147483648\t\t\t# 0x80000000\n\ttrunc.w.s $f4,$f0,$6\n\tmfc1\t$4,$f4\n\t#nop\n', '\tmul.s\t$f2,$f2,$f0\n\tli.s\t$f0,2.14748364800000000000e9\n\t#nop\n\tc.le.s\t$f0,$f2\n\t#nop\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbc1tl\t$L4\n\tsub.s\t$f0,$f2,$f0\n\t.set\tmacro\n\t.set\treorder\n\n\ttrunc.w.s $f0,$f2,$6\n\tmfc1\t$4,$f0\n\tj\t$L5\n$L4:\n\ttrunc.w.s $f2,$f0,$6\n\tmfc1\t$4,$f2\n\tli\t$2,-2147483648\t\t\t# 0x80000000\n', 'reviewed unsigned volume conversion registers')
+    text = replace_once(text, '\tli.s\t$f20,2.55000000000000000000e2\n\tl.s\t$f0,4($16)\n', '\tl.s\t$f0,4($16)\n\tli.s\t$f20,2.55000000000000000000e2\n', 'reviewed fade level load order')
+    text = replace_once(text, '\taddiu\t$3,$2,%lo(D_80061D90) # low\n\tl.s\t$f2,4($3)\n\tli.s\t$f0,2.55000000000000000000e2\n\t#nop\n\tc.eq.s\t$f2,$f0\n\t#nop\n\tbc1t\t$L12\n\tmtc1\t$0,$f0\n\t#nop\n\tc.eq.s\t$f2,$f0\n\t#nop\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbc1fl\t$L11\n\tsw\t$0,16($3)\n\t.set\tmacro\n\t.set\treorder\n\n$L12:\n\tlw\t$2,12($3)\n\tli\t$4,1\t\t\t# 0x00000001\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbeql\t$2,$4,$L18\n\tlui\t$2,%hi(D_80053980) # high\n\t.set\tmacro\n\t.set\treorder\n\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbnel\t$2,$0,$L16\n\tli\t$2,1\t\t\t# 0x00000001\n\t.set\tmacro\n\t.set\treorder\n\n\tli\t$2,-1\t\t\t# 0xffffffff\n\tsw\t$2,12($3)\n\tlui\t$2,%hi(D_80053980) # high\n$L18:\n\tsw\t$4,16($3)\n\tsw\t$0,%lo(D_80053980)($2)\n\t.set\tnoreorder\n\t.set\tnomacro\n', '\taddiu\t$4,$2,%lo(D_80061D90) # low\n\tl.s\t$f2,4($4)\n\tli.s\t$f0,2.55000000000000000000e2\n\t#nop\n\tc.eq.s\t$f2,$f0\n\t#nop\n\tbc1t\t$L12\n\tmtc1\t$0,$f0\n\t#nop\n\tc.eq.s\t$f2,$f0\n\t#nop\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbc1fl\t$L11\n\tsw\t$0,16($4)\n\t.set\tmacro\n\t.set\treorder\n\n$L12:\n\tlw\t$2,12($4)\n\tli\t$3,1\t\t\t# 0x00000001\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbeql\t$2,$3,$L18\n\tlui\t$2,%hi(D_80053980) # high\n\t.set\tmacro\n\t.set\treorder\n\n\t.set\tnoreorder\n\t.set\tnomacro\n\tbnel\t$2,$0,$L16\n\tli\t$2,1\t\t\t# 0x00000001\n\t.set\tmacro\n\t.set\treorder\n\n\tli\t$2,-1\t\t\t# 0xffffffff\n\tsw\t$2,12($4)\n\tlui\t$2,%hi(D_80053980) # high\n$L18:\n\tsw\t$3,16($4)\n\tsw\t$0,%lo(D_80053980)($2)\n\t.set\tnoreorder\n\t.set\tnomacro\n', 'reviewed fade completion pointer and constant registers')
+    return normalize_standard_return(text)
+
+
+def normalize_d5_func_80029DC4(text: str) -> str:
+    """Rename the reload temporary for the label high half ($9 -> $4).
+
+    The temporary lives only between these two instructions; retail
+    builds the address in the argument register itself.
+    """
+    text = normalize_standard_return(text)
+    return replace_once(text, (
+        "\tlui\t$9,%hi($LC0) # high\n\taddiu\t$4,$9,%lo($LC0) # low\n"
+    ), (
+        "\tlui\t$4,%hi($LC0) # high\n\taddiu\t$4,$4,%lo($LC0) # low\n"
+    ), "reviewed func_80029DC4 label temporary")
+
+
+def normalize_d6_func_80010358(text):
+    """func_80010358: move the f20 zero materialisation after the first
+    argument load, and rename the two button-difference results from $3 to
+    $2 (live range: subu -> mtc1). Reorder and rename only."""
+    old_zero = "\tmtc1\t$0,$f20\n\tlw\t$5,276($17)\n"
+    new_zero = "\tlw\t$5,276($17)\n\tmtc1\t$0,$f20\n"
+    if text.count(old_zero) != 2:
+        raise ValueError("func_80010358: zero setup pattern missing")
+    text = text.replace(old_zero, new_zero)
+    old_a = ("\tsubu\t$3,$3,$2\n\tli.s\t$f2,5.00000000000000000000e1\n"
+             "\tmtc1\t$3,$f0\n")
+    new_a = ("\tsubu\t$2,$3,$2\n\tli.s\t$f2,5.00000000000000000000e1\n"
+             "\tmtc1\t$2,$f0\n")
+    old_b = "\tsubu\t$3,$3,$2\n\tmfc1\t$5,$f0\n\tmtc1\t$3,$f0\n"
+    new_b = "\tsubu\t$2,$3,$2\n\tmfc1\t$5,$f0\n\tmtc1\t$2,$f0\n"
+    if old_a not in text or old_b not in text:
+        raise ValueError("func_80010358: button difference pattern missing")
+    return normalize_standard_return(
+        text.replace(old_a, new_a).replace(old_b, new_b))
+
+
+def normalize_d8_magic_first_arms(text, branch, fall_label, taken_label, name):
+    # Both switch arms: retail schedules the modulo-by-9 magic constant before
+    # the table address, and fills the branch delay slot with the magic lui.
+    hi = "\tlui\t$18,%hi(D_80052F18) # high\n"
+    lo = "\taddiu\t$18,$18,%lo(D_80052F18) # low\n"
+    app = " #APP\n #NO_APP\n"
+    magic_hi = "\tli\t$3,954400768\t\t\t# 0x38e30000\n"
+    magic = magic_hi + "\tori\t$3,$3,0x8e39\n"
+    pairs = [
+        (branch + hi, branch + magic_hi),
+        (fall_label + hi + lo + app + magic, fall_label + magic + hi + lo + app),
+        (taken_label + lo + app + magic,
+         taken_label + "\tori\t$3,$3,0x8e39\n" + hi + lo + app),
+    ]
+    for old, new in pairs:
+        if text.count(old) != 1:
+            raise ValueError(name + " arm schedule pattern missing")
+        text = text.replace(old, new)
+    return text
+
+
+def normalize_d8_func_80017144(text):
+    return normalize_d8_magic_first_arms(
+        text, "\tbeq\t$3,$2,$L31\n", "$L30:\n", "$L31:\n", "func_80017144")
+
+
+def normalize_d8_func_80018A34(text):
+    return normalize_d8_magic_first_arms(
+        text, "\tbeq\t$3,$0,$L31\n", "$L33:\n", "$L31:\n", "func_80018A34")
+
+
+def normalize_e4_func_8000E630(text: str) -> str:
+    text = replace_once(text, (
+        "\taddiu\t$2,$2,%lo(D_800586A8) # low\n\tmove\t$3,$4\n"
+    ), (
+        "\taddiu\t$7,$2,%lo(D_800586A8) # low\n\tmove\t$6,$4\n"
+    ), "reviewed block-copy pointer registers")
+    return remap_body_registers(
+        text, "\taddu\t$4,$3,320\n",
+        {2: 7, 3: 6, 4: 8, 5: 2, 6: 3, 7: 4, 8: 5},
+        "reviewed block-copy register allocation",
+    )
+
+
+
+def normalize_e4_func_8000E680(text: str) -> str:
+    text = replace_once(text, (
+        "\tmove\t$3,$4\n #APP\n #NO_APP\n"
+        "\tlui\t$2,%hi(D_800586A8) # high\n"
+        "\taddiu\t$2,$2,%lo(D_800586A8) # low\n"
+    ), (
+        "\tmove\t$7,$4\n #APP\n #NO_APP\n"
+        "\tlui\t$2,%hi(D_800586A8) # high\n"
+        "\taddiu\t$6,$2,%lo(D_800586A8) # low\n"
+    ), "reviewed block-copy pointer registers")
+    text = replace_once(text, (
+        "\tlui\t$4,%hi(D_800586A8) # high\n"
+        "\taddiu\t$4,$4,%lo(D_800586A8) # low\n"
+        "\tli\t$5,-1\t\t\t# 0xffffffff\n"
+        "\tli\t$6,328\t\t\t# 0x00000148\n"
+        "\tlw\t$7,0($2)\n"
+        "\tlw\t$8,4($2)\n"
+        "\tsw\t$7,0($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80038E90\n"
+        "\tsw\t$8,4($3)\n"
+    ), (
+        "\tlw\t$2,0($6)\n"
+        "\tlw\t$3,4($6)\n"
+        "\tsw\t$2,0($7)\n"
+        "\tsw\t$3,4($7)\n"
+        "\tlui\t$4,%hi(D_800586A8) # high\n"
+        "\taddiu\t$4,$4,%lo(D_800586A8) # low\n"
+        "\tli\t$5,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80038E90\n"
+        "\tli\t$6,328\t\t\t# 0x00000148\n"
+    ), "reviewed block-copy tail and call-argument order")
+    start = "\taddu\t$4,$2,320\n"
+    head, tail = text.split(start, 1)
+    loop, rest = tail.split("\tlw\t$2,0($6)\n", 1)
+    loop = remap_body_registers(
+        start + loop, start,
+        {2: 6, 3: 7, 4: 8, 7: 2, 8: 3, 9: 4, 10: 5, 5: 9, 6: 10},
+        "reviewed block-copy register allocation",
+    )
+    return normalize_standard_return(head + loop + "\tlw\t$2,0($6)\n" + rest)
+
+
+
+def normalize_e4_func_8000DB84(text: str) -> str:
+    text = replace_once(text, (
+        "\tli\t$9,1\t\t\t# 0x00000001\n"
+        "\tlw\t$4,%lo(D_800581F0)($3)\n"
+        " #APP\n #NO_APP\n\t#nop\n"
+    ), (
+        "\tlw\t$4,%lo(D_800581F0)($3)\n"
+        "\tli\t$9,1\t\t\t# 0x00000001\n"
+        " #APP\n #NO_APP\n"
+    ), "reviewed room-fill constant load-delay fill")
+    text = replace_once(text, "\taddu\t$4,$4,$3\n", "\taddu\t$4,$3,$4\n",
+                        "reviewed room-fill cell pointer operand order")
+    return text
+
+
+
+def normalize_e4_func_80004A18(text: str) -> str:
+    text = remap_registers(text, {22: 21, 21: 22})
+    for opcode, register, old, new in (
+        ("sw", 21, 40, 36), ("sw", 22, 36, 40),
+        ("lw", 21, 40, 36), ("lw", 22, 36, 40),
+    ):
+        text = replace_once(
+            text, f"\t{opcode}\t${register},{old}($sp)\n",
+            f"\t{opcode}\t${register},{new}($sp)\n",
+            "reviewed host-write saved-register layout",
+        )
+    text = replace_once(text, (
+        "\tlw\t$31,44($sp)\n\tlw\t$21,36($sp)\n\tlw\t$22,40($sp)\n"
+    ), (
+        "\tlw\t$31,44($sp)\n\tlw\t$22,40($sp)\n\tlw\t$21,36($sp)\n"
+    ), "reviewed host-write saved-register restore order")
+    return normalize_standard_return(text)
+
+
+
+def normalize_e4_func_8000E1D0(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$16,$17,$20\n"
+        "\tl.s\t$f0,44($19)\n"
+        "\tli.s\t$f2,3.00000000000000000000e2\n"
+        "\ttrunc.w.s $f4,$f0,$5\n"
+        "\ts.s\t$f4,0($16)\n"
+        "\tl.s\t$f0,48($19)\n"
+        "\t#nop\n"
+        "\tadd.s\t$f0,$f0,$f2\n"
+        "\ttrunc.w.s $f4,$f0,$5\n"
+        "\ts.s\t$f4,4($16)\n"
+        "\tl.s\t$f0,52($19)\n"
+        "\t#nop\n"
+        "\ttrunc.w.s $f4,$f0,$5\n"
+        "\ts.s\t$f4,8($16)\n"
+    ), (
+        "\tl.s\t$f0,44($19)\n"
+        "\taddu\t$16,$17,$20\n"
+        "\ttrunc.w.s $f2,$f0,$5\n"
+        "\ts.s\t$f2,0($16)\n"
+        "\tl.s\t$f0,48($19)\n"
+        "\tli.s\t$f2,3.00000000000000000000e2\n"
+        "\tadd.s\t$f0,$f0,$f2\n"
+        "\ttrunc.w.s $f2,$f0,$5\n"
+        "\ts.s\t$f2,4($16)\n"
+        "\tl.s\t$f0,52($19)\n"
+        "\t#nop\n"
+        "\ttrunc.w.s $f2,$f0,$5\n"
+        "\ts.s\t$f2,8($16)\n"
+    ), "reviewed particle position conversion order and registers")
+    return normalize_standard_return(text)
+
+
+
+def normalize_e4_func_8000B71C(text: str) -> str:
+    # Retail gives the conversion scratch the low register, so every loop
+    # variable sits one register higher; the first loop's pointers move too.
+    loop_start = "\tsll\t$2,$10,4\n\taddu\t$4,$2,$5\n\taddu\t$3,$2,$6\n"
+    loop_end = "\tbne\t$2,$0,$L8\n\taddu\t$4,$4,16\n"
+    if text.count(loop_start) != 1 or text.count(loop_end) != 1:
+        raise ValueError("reviewed vertex-offset loop pattern not found")
+    head, rest = text.split(loop_start, 1)
+    loop, tail = rest.split(loop_end, 1)
+    loop = loop_start + loop + loop_end
+    reg = re.compile(r"\$(f?)(\d+)\b")
+    outer = {8: 9, 9: 10, 10: 11, 11: 8}
+    inner = {8: 9, 9: 10, 10: 11, 11: 3, 4: 8, 3: 4}
+
+    def rename(part: str, mapping: dict[int, int]) -> str:
+        def sub(m: re.Match) -> str:
+            if m.group(1):
+                return "$f2" if m.group(2) == "4" else m.group(0)
+            n = int(m.group(2))
+            return "$" + str(mapping.get(n, n))
+        return "\n".join(
+            line if line.startswith("\t.") or line.startswith("$L")
+            else reg.sub(sub, line)
+            for line in part.split("\n")
+        )
+    return rename(head, outer) + rename(loop, inner) + rename(tail, outer)
+
+
+
+def normalize_e4_func_80006C18(text: str) -> str:
+    # Shared return (precedent: normalize_shared_return); the beq delay slot
+    # is filled from the fall-through path instead of the target.
+    sn = "\t.set\tnoreorder\n\t.set\tnomacro\n"
+    sr = "\t.set\tmacro\n\t.set\treorder\n"
+    return replace_once(text, (
+        sn + "\tbeq\t$5,$0,$L3\n\tlui\t$2,%hi(D_80052A18) # high\n" + sr + "\n"
+        "\tlui\t$2,%hi(D_80052A14) # high\n"
+        "\tl.s\t$f0,%lo(D_80052A14)($2)\n"
+        "\tlui\t$2,%hi(D_80052A10) # high\n"
+        "\ts.s\t$f0,0($6)\n"
+        "\tl.s\t$f0,%lo(D_80052A10)($2)\n"
+        + sn + "\tj\t$31\n\ts.s\t$f0,0($7)\n" + sr + "\n"
+        "$L3:\n"
+        "\tl.s\t$f0,%lo(D_80052A18)($2)\n"
+        + sn + "\tj\t$31\n\ts.s\t$f0,0($6)\n" + sr + "\n"
+        "$L2:\n"
+        "\tlui\t$2,%hi(D_80052A1C) # high\n"
+        "\tl.s\t$f0,%lo(D_80052A1C)($2)\n"
+        + sn + "\tj\t$31\n\ts.s\t$f0,0($6)\n" + sr
+    ), (
+        sn + "\tbeq\t$5,$0,$L3\n\tlui\t$2,%hi(D_80052A14) # high\n" + sr + "\n"
+        "\tl.s\t$f0,%lo(D_80052A14)($2)\n"
+        "\tlui\t$2,%hi(D_80052A10) # high\n"
+        "\ts.s\t$f0,0($6)\n"
+        "\tl.s\t$f0,%lo(D_80052A10)($2)\n"
+        + sn + "\tj\t$L_return\n\ts.s\t$f0,0($7)\n" + sr + "\n"
+        "$L3:\n"
+        "\tlui\t$2,%hi(D_80052A18) # high\n"
+        "\tl.s\t$f0,%lo(D_80052A18)($2)\n"
+        + sn + "\tj\t$L_return\n\ts.s\t$f0,0($6)\n" + sr + "\n"
+        "$L2:\n"
+        "\tlui\t$2,%hi(D_80052A1C) # high\n"
+        "\tl.s\t$f0,%lo(D_80052A1C)($2)\n"
+        "\ts.s\t$f0,0($6)\n"
+        "$L_return:\n"
+        + sn + "\tj\t$31\n\tnop\n" + sr
+    ), "reviewed spawn-offset shared return")
+
+
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8000E630\n" in text:
+        return normalize_e4_func_8000E630(text)
+    if "\t.ent\tfunc_8000E680\n" in text:
+        return normalize_e4_func_8000E680(text)
+    if "\t.ent\tfunc_8000DB84\n" in text:
+        return normalize_e4_func_8000DB84(text)
+    if "\t.ent\tfunc_80004A18\n" in text:
+        return normalize_e4_func_80004A18(text)
+    if "\t.ent\tfunc_8000E1D0\n" in text:
+        return normalize_e4_func_8000E1D0(text)
+    if "\t.ent\tfunc_8000B71C\n" in text:
+        return normalize_e4_func_8000B71C(text)
+    if "\t.ent\tfunc_80006C18\n" in text:
+        return normalize_e4_func_80006C18(text)
+    if "\t.ent\tfunc_80017144\n" in text:
+        return normalize_standard_return(normalize_d8_func_80017144(text))
+    if "\t.ent\tfunc_80018A34\n" in text:
+        return normalize_standard_return(normalize_d8_func_80018A34(text))
+    if "\t.ent\tfunc_80010358\n" in text:
+        return normalize_d6_func_80010358(text)
+    if "\t.ent\tfunc_80029DC4\n" in text:
+        return normalize_d5_func_80029DC4(text)
+    if "\t.ent\tfunc_8001B08C\n" in text:
+        return normalize_d3_func_8001B08C(text)
+    if "\t.ent\tfunc_8001AA80\n" in text:
+        return normalize_d3_func_8001AA80(text)
+    if "\t.ent\tfunc_8001E7FC\n" in text:
+        return normalize_d3_func_8001E7FC(text)
+    if "\t.ent\tfunc_8000715C\n" in text:
+        return normalize_d1_func_8000715C(text)
+    if "\t.ent\tfunc_800092C4\n" in text:
+        return normalize_d1_func_800092C4(text)
+    if "\t.ent\tfunc_80005798\n" in text:
+        return normalize_d1_func_80005798(text)
+    if "\t.ent\tfunc_8002FEFC\n" in text:
+        return normalize_c08_func_8002FEFC(text)
+    if "\t.ent\tfunc_80035890\n" in text:
+        return normalize_c08_func_80035890(text)
+    if "\t.ent\tfunc_800304A4\n" in text:
+        return normalize_c08_func_800304A4(text)
+    if "\t.ent\tfunc_8001DF10\n" in text:
+        return normalize_c04_func_8001DF10(text)
+    if "\t.ent\tfunc_800191EC\n" in text:
+        return normalize_c03_func_800191EC(text)
+    if "\t.ent\tfunc_80010BD8\n" in text:
+        return normalize_c02_func_80010BD8(text)
+    if "\t.ent\tfunc_8000E17C\n" in text:
+        return normalize_c01_func_8000E17C(text)
+    if "\t.ent\tfunc_8000A63C\n" in text:
+        return normalize_c01_func_8000A63C(text)
+    if "\t.ent\tfunc_80009610\n" in text:
+        return normalize_c00_func_80009610(text)
+    if "\t.ent\tfunc_80004954\n" in text:
+        return normalize_c00_host_read_registers(text)
     if "\t.ent\tfunc_8001298C\n" in text:
         return normalize_mode_switch_store(text)
     if "\t.ent\tfunc_8002E5B8\n" in text:

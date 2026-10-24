@@ -9,3 +9,4 @@
 0x45068	0xE8	src/runtime/gsm_synthesis_driver.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	93b508a95d3670185292be56277d19e01a7dc5e20a67ef71608cb29575ff00c8
 0x44E70	0x1F8	src/runtime/gsm_decode_lar.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	75b21a439d56b9ad48aea7be0a31105dc171ef36612233422f25822bbf281f9a
 0x45150	0x290	src/runtime/gsm_frame_unpack.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	289a4129db05aafae15ee6e02bac1bfd24bf9dd4fb1cdf28ddf8e78a92a8bc97
+0x44990	0xC4	src/game/init_stream_state_80043d90.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	cf776d2b2434630666702bc6b6f8b73f92d87705c17a18a863b6f0085248ed01
