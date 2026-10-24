@@ -313,6 +313,124 @@ def normalize_spin_object_targets(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_random_spin_objects(text: str) -> str:
+    """Reproduce the reviewed retail scheduling for the random spin-object initializer."""
+    setup_start = text.find("\tmove\t$21,$0\n")
+    random_start = text.find("$L6:\n", setup_start)
+    if setup_start < 0 or random_start < 0:
+        raise ValueError("reviewed random-spin setup span not found")
+    setup = (
+        "\tmove\t$17,$0\n"
+        "\tli\t$22,1717960704\t\t\t# 0x66660000\n"
+        "\tori\t$22,$22,0x6667\n"
+        "\tmove\t$fp,$16\n"
+        "\tlui\t$23,%hi(D_80057D5C) # high\n"
+        "\tmove\t$21,$17\n"
+        "\tlui\t$3,%hi(D_80054AB0) # high\n"
+        "\tli\t$2,3\t\t\t# 0x00000003\n"
+        "\tsw\t$2,%lo(D_80054AB0)($3)\n"
+        "\tli\t$16,1\t\t\t# 0x00000001\n"
+        "$L19:\n"
+        "\tlui\t$20,%hi(D_80052F18) # high\n"
+        "\tlui\t$2,%hi(D_80054ABC) # high\n"
+        "\taddiu\t$19,$2,%lo(D_80054ABC) # low\n"
+        "\tli\t$18,413\t\t\t# 0x0000019d\n"
+    )
+    text = text[:setup_start] + setup + text[random_start:]
+
+    random_start = text.find("$L6:\n") + len("$L6:\n")
+    choice_start = text.find("$L17:\n", random_start)
+    if choice_start < 0:
+        raise ValueError("reviewed random-spin choice span not found")
+    random_loop = (
+        "\tjal\tfunc_8003A840\n\t#nop\n"
+        "\tmult\t$2,$22\n\tsra\t$3,$2,31\n\tmfhi\t$8\n\t#nop\n\t#nop\n"
+        "\tsra\t$4,$8,1\n\tsubu\t$7,$4,$3\n"
+        "\tsll\t$3,$7,2\n\taddu\t$3,$3,$7\n\tsubu\t$7,$2,$3\n"
+        "\taddu\t$4,$7,$fp\n\tlbu\t$2,0($4)\n\t#nop\n"
+        "\tbne\t$2,$0,$L6\n\tlw\t$2,%lo(D_80057D5C)($23)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbnel\t$2,$16,$L18\n\tli\t$18,1431633920\t\t\t# 0x55550000\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$3,%lo(D_80052F18)($20)\n"
+        "\tsll\t$2,$3,2\n\taddu\t$2,$2,$3\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$19\n\tsll\t$3,$7,2\n\taddu\t$3,$3,$2\n"
+        "\tlw\t$2,0($3)\n\t#nop\n"
+        "\tbeq\t$2,$18,$L6\n\t#nop\n"
+    )
+    text = text[:random_start] + random_loop + text[choice_start:]
+    text = replace_once(text, "$L17:\n", "\tli\t$18,1431633920\t\t\t# 0x55550000\n$L18:\n", "reviewed random-spin branch-likely constant path")
+
+    choice_start = text.find("$L18:\n") + len("$L18:\n")
+    loop_end = text.find("\tlui\t$16,%hi(D_800529F0) # high\n", choice_start)
+    if loop_end < 0:
+        raise ValueError("reviewed random-spin object loop end not found")
+    choice_loop = (
+        "\tori\t$18,$18,0x5556\n"
+        "\tlui\t$5,%hi(D_800C3E50) # high\n\taddiu\t$5,$5,%lo(D_800C3E50) # low\n"
+        "\tsll\t$6,$17,2\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlui\t$3,%hi(D_80054ABC) # high\n\taddiu\t$3,$3,%lo(D_80054ABC) # low\n"
+        "\tsb\t$16,0($4)\n\tlw\t$4,%lo(D_80052F18)($2)\n\taddu\t$6,$6,$5\n"
+        "\tsll\t$2,$4,2\n\taddu\t$2,$2,$4\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$3\n"
+        "\tsll\t$4,$7,2\n\tlui\t$3,%hi(D_800C3E44) # high\n\taddu\t$4,$4,$2\n"
+        "\tlh\t$3,%lo(D_800C3E44)($3)\n\tlw\t$2,0($4)\n"
+        "\tlui\t$4,%hi(D_80054B08) # high\n\taddu\t$3,$3,-3\n #APP\n #NO_APP\n"
+        "\tsubu\t$3,$17,$3\n\tmult\t$3,$18\n"
+        "\taddiu\t$4,$4,%lo(D_80054B08) # low\n\taddu\t$4,$21,$4\n\tsw\t$2,0($6)\n"
+        "\tsra\t$2,$3,31\n\tmfhi\t$8\n\t#nop\n\t#nop\n"
+        "\tsubu\t$5,$8,$2\n\tsll\t$2,$5,1\n\taddu\t$2,$2,$5\n\tsubu\t$5,$3,$2\n"
+        "\tlui\t$3,%hi(D_80054AE4) # high\n\taddiu\t$3,$3,%lo(D_80054AE4) # low\n"
+        "\tsll\t$2,$5,1\n\taddu\t$2,$2,$5\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$3\n"
+        "\tlw\t$3,0($2)\n\tlw\t$5,4($2)\n\tlw\t$7,8($2)\n"
+        "\tsw\t$3,0($4)\n\tsw\t$5,4($4)\n\tsw\t$7,8($4)\n"
+        "\tlw\t$2,0($6)\n\taddu\t$21,$21,60\n\tsw\t$2,52($4)\n"
+        "\tlw\t$4,0($6)\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800197C8\n\taddu\t$17,$17,1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tslt\t$2,$17,3\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L19\n\tli\t$16,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    text = text[:choice_start] + choice_loop + text[loop_end:]
+
+    player_start = text.find("\tlui\t$16,%hi(D_800529F0) # high\n")
+    epilogue = text.find("$L1:\n", player_start)
+    if player_start < 0 or epilogue < 0:
+        raise ValueError("reviewed random-spin player span not found")
+    player = (
+        "\tlui\t$16,%hi(D_800529F0) # high\n\tlw\t$2,%lo(D_800529F0)($16)\n"
+        "\tlw\t$3,284($2)\n\tli\t$2,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$3,$2,$L12\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tjal\tfunc_8003A840\n\t#nop\n\tmult\t$2,$18\n"
+        "\tli\t$3,30\t\t\t# 0x0000001e\n\tlw\t$5,%lo(D_800529F0)($16)\n"
+        "\tsra\t$4,$2,31\n\tsh\t$3,404($5)\n\tmfhi\t$8\n\t#nop\n\t#nop\n"
+        "\tsubu\t$4,$8,$4\n\tsll\t$3,$4,1\n\taddu\t$3,$3,$4\n"
+        "\tsubu\t$2,$2,$3\n\tsw\t$2,412($5)\n"
+        "$L12:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001BF00\n\tli\t$17,26\t\t\t# 0x0000001a\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tbne\t$2,$17,$L13\n\t#nop\n\tlw\t$4,%lo(D_800529F0)($16)\n"
+        "\tjal\tfunc_80026010\n\t#nop\n\tsll\t$2,$2,16\n\tsra\t$2,$2,16\n"
+        "\tli\t$3,3\t\t\t# 0x00000003\n\tbeq\t$2,$3,$L1\n\t#nop\n"
+        "$L13:\n\tjal\tfunc_8001BF00\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$17,$L15\n\tlui\t$2,%hi(D_800529F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+        "\tlw\t$3,%lo(D_800529F0)($16)\n\tlb\t$2,423($3)\n"
+        "\tslt\t$2,$2,6\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L15\n\tlui\t$2,%hi(D_800529F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+        "\tlw\t$4,248($3)\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L17\n\taddu\t$4,$4,375\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L15:\n\tlw\t$2,%lo(D_800529F0)($2)\n\tlw\t$4,248($2)\n\taddu\t$4,$4,371\n"
+        "$L17:\n\tjal\tfunc_8001F1C4\n\t#nop\n"
+    )
+    text = text[:player_start] + player + text[epilogue:]
+    return normalize_standard_return(text)
+
+
 def normalize_board_player_input(text: str) -> str:
     """Reproduce the reviewed retail allocation for the board-input unit."""
     text = replace_once(
@@ -6117,6 +6235,8 @@ def normalize(text: str) -> str:
         return normalize_spin_object_motion(text)
     if "\t.ent\tfunc_80035BD0\n" in text:
         return normalize_spin_object_targets(text)
+    if "\t.ent\tfunc_80035E74\n" in text:
+        return normalize_random_spin_objects(text)
     return normalize_standard_return(text)
 
 
