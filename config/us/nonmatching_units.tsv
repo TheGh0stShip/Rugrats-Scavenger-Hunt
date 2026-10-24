@@ -1,4 +1,5 @@
 # VRAM SIZE SOURCE NOTES
 0x800447E0 0xF00 src/runtime/gsm_stream_decode.c SEMANTIC_COMPLETE_IDO53_NEARMATCH
 0x80032A20 0x6F8 src/game/render_sprite_glyphs.c SEMANTIC_COMPLETE_SN_NEARMATCH
+0x800398E0 0xC9C src/runtime/formatted_output_core.c SEMANTIC_COMPLETE_KMC_AS_NEARMATCH
 
