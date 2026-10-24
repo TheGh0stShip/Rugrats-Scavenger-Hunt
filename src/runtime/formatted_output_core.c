@@ -52,33 +52,23 @@ extern s32 func_8003AEA0(const char *s);
     } while (0)
 
 s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
-    u8 c;
     s32 flags;
     s32 width;
     s32 prec;
     s32 fprec;
-    s32 len;
-    s32 prefix;
     s32 isSigned;
     s32 base;
+    u8 c;
+    char *s;
+    s32 len;
+    s32 prefix;
+    f64 x;
     s32 direct;
     s32 count;
-    s32 i;
-    s32 exp;
-    s32 neg;
-    s32 eexp;
-    s32 eneg;
-    char *s;
-    char *p;
-    char *digits;
-    f64 x;
-    u32 v;
-    s64 lv;
 
     count = 0;
     for (;;) {
-        c = (u8)*fmt++;
-        if (c != '%') {
+        if ((c = (u8)*fmt++) != '%') {
             if (c == 0) {
                 D_800C3E74 = 0;
                 return count;
@@ -198,7 +188,13 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                 flags |= 0x80;
                 c = (u8)*fmt++;
                 goto conv;
-            case 'f':
+            case 'f': {
+                s32 i;
+                s32 exp;
+                s32 neg;
+                char *p;
+                char *digits;
+
                 x = va_arg(ap, f64);
                 digits = func_80039634(x, fprec, &exp, &neg);
                 if (neg != 0) {
@@ -264,8 +260,13 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                     goto e_format;
                 }
                 goto float_done;
+            }
             case 'e':
-            case 'E':
+            case 'E': {
+                s32 eexp;
+                s32 eneg;
+                char *digits;
+
                 x = va_arg(ap, f64);
             e_format:
                 digits = func_8003931C(x, fprec, &eexp, &eneg);
@@ -281,6 +282,7 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                 func_800391BC(digits, fprec, eexp - 1, s);
                 D_80055896 = 'e';
                 goto float_done;
+            }
             case 'g':
             case 'G': {
                 f64 general_value;
@@ -310,6 +312,8 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
             flags &= ~4;
         }
         if (flags & 0x20) {
+            s64 lv;
+
             lv = va_arg(ap, s64);
             if (isSigned && lv < 0) {
                 lv = -lv;
@@ -317,6 +321,8 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
             }
             s = func_80039068(lv, base);
         } else {
+            u32 v;
+
             v = va_arg(ap, u32);
             if (flags & 0x40) {
                 if (isSigned) {
