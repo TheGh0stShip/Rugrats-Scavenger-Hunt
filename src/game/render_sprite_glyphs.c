@@ -91,11 +91,10 @@ void func_80032A20(Text_80032A20 *t, s32 x, s32 y) {
                 }
                 q = ((lrs & 0xFFF) << 12) | 0x07000000;
                 if (wb != 0) {
-                    q |= dxtNum / wb;
+                    gp->w1 = q | (dxtNum / wb);
                 } else {
-                    q |= dxtNum;
+                    gp->w1 = q | dxtNum;
                 }
-                gp->w1 = q;
             }
             GFXW(0xE7000000, 0);
             GFXW(0xF5080000 | ((((u32)w + 7) >> 3) << 9), 0x00094260);
@@ -129,11 +128,10 @@ void func_80032A20(Text_80032A20 *t, s32 x, s32 y) {
                 }
                 wb = ((lrs & 0xFFF) << 12) | 0x07000000;
                 if (q > 0) {
-                    wb |= (dxtNum / q) & 0xFFF;
+                    gp->w1 = wb | ((dxtNum / q) & 0xFFF);
                 } else {
-                    wb |= dxtNum & 0xFFF;
+                    gp->w1 = wb | (dxtNum & 0xFFF);
                 }
-                gp->w1 = wb;
             }
             GFXW(0xE7000000, 0);
             GFXW(0xF5100000 | (((((u32)w & 0xFF) * 2 + 7) >> 3) << 9), 0x00094260);
