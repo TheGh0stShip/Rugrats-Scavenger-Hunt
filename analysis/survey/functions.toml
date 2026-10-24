@@ -1213,7 +1213,7 @@ functions = [
     { name = "func_8004EDA0", vram = 0x8004eda0, size = 0x48 }, # leaf
     { name = "func_8004EDE8", vram = 0x8004ede8, size = 0x68 }, # leaf
     { name = "func_8004EE50", vram = 0x8004ee50, size = 0x234 }, # c
-    { name = "func_8004F084", vram = 0x8004f084, size = 0x19c }, # c
+    { name = "func_8004F084", vram = 0x8004f084, size = 0x190 }, # c; 0x8004f214..0x8004f220 is alignment
     { name = "func_8004F220", vram = 0x8004f220, size = 0x220 }, # c
     { name = "func_8004F440", vram = 0x8004f440, size = 0x1a0 }, # c
     { name = "func_8004F5E0", vram = 0x8004f5e0, size = 0xe0 }, # c
