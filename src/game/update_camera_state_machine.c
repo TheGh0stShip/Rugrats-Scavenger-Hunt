@@ -107,9 +107,10 @@ extern void func_800109EC(Cam *cam, s32 idx);
 extern void func_80010850(Cam *cam);
 extern void func_8000F800(Cam *cam);
 
+#define TRANS (&D_800588F8)
+
 void func_8000E7C8(Cam *cam) {
     Actor *pl;
-    Trans_800588F8 *t;
     Ctl_800C33D8 *c;
     Vec3f v;
     Vec3f v2;
@@ -147,22 +148,21 @@ void func_8000E7C8(Cam *cam) {
             } else {
                 cam->steps = 18;
             }
-            t = &D_800588F8;
-            t->cur[0] = cam->unkFC;
-            t->cur[1] = cam->unk100;
-            t->cur[2] = cam->unk104;
-            t->cur[3] = cam->pos.x;
-            t->cur[4] = cam->pos.y;
-            t->cur[5] = cam->pos.z;
+            TRANS->cur[0] = cam->unkFC;
+            TRANS->cur[1] = cam->unk100;
+            TRANS->cur[2] = cam->unk104;
+            TRANS->cur[3] = cam->pos.x;
+            TRANS->cur[4] = cam->pos.y;
+            TRANS->cur[5] = cam->pos.z;
             if (D_80052F18.mode == 2) {
-                t->dst[0] = -24;
-                t->dst[1] = t->cur[1] + 110.0f;
+                TRANS->dst[0] = -24;
+                TRANS->dst[1] = TRANS->cur[1] + 110.0f;
             } else if (pl->unk1FC == 0) {
-                t->dst[0] = -18;
-                t->dst[1] = t->cur[1] + 165.0f;
+                TRANS->dst[0] = -18;
+                TRANS->dst[1] = TRANS->cur[1] + 165.0f;
             } else {
-                t->dst[0] = -18;
-                t->dst[1] = 345;
+                TRANS->dst[0] = -18;
+                TRANS->dst[1] = 345;
             }
             if (pl->unk11C == -1) {
                 D_800588F8.dst[1] = pl->unk124;
@@ -179,29 +179,28 @@ void func_8000E7C8(Cam *cam) {
                 }
                 D_800588F8.dst[2] = r / 180 + 2400;
             }
-            t = &D_800588F8;
-            t->dstPos = pl->pos;
+            TRANS->dstPos = pl->pos;
             if (D_80052F18.mode == 2) {
                 if (func_80005598(pl) != 0) {
-                    t->dstPos.y = 400.0f;
+                    TRANS->dstPos.y = 400.0f;
                 } else {
-                    t->dstPos.y = 1900.0f;
+                    TRANS->dstPos.y = 1900.0f;
                 }
             } else if (pl->unkF8 == 5) {
-                t->dstPos.y = 450.0f;
+                TRANS->dstPos.y = 450.0f;
             } else {
-                t->dstPos.y = 233.0f;
+                TRANS->dstPos.y = 233.0f;
             }
             cam->pos.x = D_800588F8.cur[3];
             cam->pos.y = D_800588F8.cur[4];
             cam->pos.z = D_800588F8.cur[5];
             func_8000FB08(cam, cam->pos);
-            D_800588F8.d[0] = (f32)(t->dst[0] - cam->unkFC) / (f32)cam->steps;
-            t->d[1] = (f32)(t->dst[1] - cam->unk100) / (f32)cam->steps;
-            t->d[2] = (f32)(t->dst[2] - cam->unk104) / (f32)cam->steps;
-            t->d[3] = (t->dstPos.x - cam->pos.x) / (f32)cam->steps;
-            t->d[4] = (t->dstPos.y - cam->pos.y) / (f32)cam->steps;
-            t->d[5] = (t->dstPos.z - cam->pos.z) / (f32)cam->steps;
+            D_800588F8.d[0] = (f32)(TRANS->dst[0] - cam->unkFC) / (f32)cam->steps;
+            TRANS->d[1] = (f32)(TRANS->dst[1] - cam->unk100) / (f32)cam->steps;
+            TRANS->d[2] = (f32)(TRANS->dst[2] - cam->unk104) / (f32)cam->steps;
+            TRANS->d[3] = (TRANS->dstPos.x - cam->pos.x) / (f32)cam->steps;
+            TRANS->d[4] = (TRANS->dstPos.y - cam->pos.y) / (f32)cam->steps;
+            TRANS->d[5] = (TRANS->dstPos.z - cam->pos.z) / (f32)cam->steps;
             cam->state = 2;
             break;
 
@@ -210,29 +209,27 @@ void func_8000E7C8(Cam *cam) {
                 cam->steps = 1;
             }
             if (cam->steps != 0) {
-                t = &D_800588F8;
                 if (--cam->steps != 0) {
-                    t->cur[0] += t->d[0];
-                    t->cur[1] += t->d[1];
-                    t->cur[2] += t->d[2];
-                    t->cur[3] += t->d[3];
-                    t->cur[4] += t->d[4];
-                    t->cur[5] += t->d[5];
+                    TRANS->cur[0] += TRANS->d[0];
+                    TRANS->cur[1] += TRANS->d[1];
+                    TRANS->cur[2] += TRANS->d[2];
+                    TRANS->cur[3] += TRANS->d[3];
+                    TRANS->cur[4] += TRANS->d[4];
+                    TRANS->cur[5] += TRANS->d[5];
                 } else {
-                    t->cur[0] = t->dst[0];
-                    t->cur[1] = t->dst[1];
-                    t->cur[2] = t->dst[2];
-                    t->cur[3] = t->dstPos.x;
-                    t->cur[4] = t->dstPos.y;
-                    t->cur[5] = t->dstPos.z;
+                    TRANS->cur[0] = TRANS->dst[0];
+                    TRANS->cur[1] = TRANS->dst[1];
+                    TRANS->cur[2] = TRANS->dst[2];
+                    TRANS->cur[3] = TRANS->dstPos.x;
+                    TRANS->cur[4] = TRANS->dstPos.y;
+                    TRANS->cur[5] = TRANS->dstPos.z;
                 }
-                t = &D_800588F8;
-                cam->unkFC = t->cur[0];
-                cam->unk100 = t->cur[1];
-                cam->unk104 = t->cur[2];
-                cam->pos.x = t->cur[3];
-                cam->pos.y = t->cur[4];
-                cam->pos.z = t->cur[5];
+                cam->unkFC = TRANS->cur[0];
+                cam->unk100 = TRANS->cur[1];
+                cam->unk104 = TRANS->cur[2];
+                cam->pos.x = TRANS->cur[3];
+                cam->pos.y = TRANS->cur[4];
+                cam->pos.z = TRANS->cur[5];
                 func_8000FB08(cam, cam->pos);
                 if (cam->steps != 0) {
                     break;
