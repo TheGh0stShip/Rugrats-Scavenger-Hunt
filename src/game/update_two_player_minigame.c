@@ -133,6 +133,8 @@ void func_80034978(void) {
     switch ((u32)func_8001BF3C()) {
     case 0x23:
         if (func_80012CE8() == 1) {
+            u8 *room;
+
             func_8001BF24(0x24);
             func_8000B8A8(0x20000000);
             func_80012D9C(10);
@@ -140,7 +142,8 @@ void func_80034978(void) {
             func_8001EEBC();
             func_8001ECE4(0x207, 0x38);
             D_80052F04->unkF0 = 0x15;
-            func_80019BD4(*(s16 *)(D_800581F0 + D_800581E9 * 33 * 16 + 0x201C));
+            room = D_800581F0 + D_800581E9 * 33 * 16;
+            func_80019BD4(*(s16 *)(room + 0x201C));
             func_8001DEF8();
         }
         break;
