@@ -1243,6 +1243,117 @@ def normalize_actor_creation(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_prize_wheel(text: str) -> str:
+    text = replace_once(text, (
+        "\tsw\t$2,%lo(D_800537DC)($16)\n"
+        "\tlui\t$2,%hi(D_800535E4) # high\n"
+        "\tsw\t$0,%lo(D_800535E4)($2)\n"
+        "\tlui\t$2,%hi(D_800537BC) # high\n"
+        "\tlbu\t$3,%lo(D_800537BC)($2)\n"
+        "\tlui\t$2,%hi(D_800537D8) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80047C20\n\tsw\t$3,%lo(D_800537D8)($2)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$3,1717960704\t\t\t# 0x66660000\n"
+        "\tori\t$3,$3,0x6667\n\tmult\t$2,$3\n"
+        "\tlui\t$5,%hi(D_800537E0) # high\n"
+    ), (
+        "\tsw\t$2,%lo(D_800537DC)($16)\n"
+        "\tlui\t$2,%hi(D_800537BC) # high\n"
+        "\tlbu\t$3,%lo(D_800537BC)($2)\n"
+        "\tlui\t$2,%hi(D_800537D8) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80047C20\n\tsw\t$3,%lo(D_800537D8)($2)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$3,1717960704\t\t\t# 0x66660000\n"
+        "\tori\t$3,$3,0x6667\n\tmult\t$2,$3\n"
+        "\tlui\t$3,%hi(D_800535E4) # high\n"
+        "\tlui\t$5,%hi(D_800537E0) # high\n"
+        "\tsw\t$0,%lo(D_800535E4)($3)\n"
+    ), "reviewed prize-wheel start scheduling")
+
+    start = text.index("$L10:\n")
+    end = text.index("\n\tlw\t$5,%lo(D_8005B214)($18)\n", start)
+    old = text[start:end]
+    new = """$L10:
+\tli\t$6,-2004353024\t\t\t# 0x88880000
+\tlui\t$7,%hi(D_800537D4) # high
+\tlw\t$3,%lo(D_800537D4)($7)
+\tori\t$6,$6,0x8889
+\taddu\t$3,$3,39
+\tmult\t$3,$6
+\tli\t$5,-1240793088\t\t\t# 0xb60b0000
+\tori\t$5,$5,0x60b7
+\tmfhi\t$8
+\t#nop
+\t#nop
+\taddu\t$2,$8,$3
+\tsra\t$2,$2,5
+\tsra\t$3,$3,31
+\tsubu\t$2,$2,$3
+\tsll\t$4,$2,4
+\tsubu\t$4,$4,$2
+\tsll\t$4,$4,2
+\tmult\t$4,$5
+\tsra\t$3,$4,31
+\tmfhi\t$8
+\t#nop
+\t#nop
+\taddu\t$2,$8,$4
+\tsra\t$2,$2,8
+\tsubu\t$2,$2,$3
+\tsll\t$3,$2,1
+\taddu\t$3,$3,$2
+\tsll\t$2,$3,4
+\tsubu\t$2,$2,$3
+\tsll\t$2,$2,3
+\tsubu\t$4,$4,$2
+\tlui\t$2,%hi(D_800537D8) # high
+\tmult\t$4,$6
+\tlui\t$3,%hi(D_80053604) # high
+\taddiu\t$3,$3,%lo(D_80053604) # low
+\tsw\t$0,%lo(D_800537D8)($2)
+\tsw\t$4,%lo(D_800537D4)($7)
+\tmfhi\t$8
+\t#nop
+\t#nop
+\taddu\t$2,$8,$4
+\tsra\t$2,$2,5
+\tsra\t$4,$4,31
+\tsubu\t$2,$2,$4
+\tsll\t$2,$2,2
+\taddu\t$2,$2,$3
+\tlw\t$3,%lo(D_8005B214)($18)
+\tlbu\t$2,3($2)
+\tli\t$4,14\t\t\t# 0x0000000e
+\t.set\tnoreorder
+\t.set\tnomacro
+\tjal\tfunc_8001BF24
+\tsb\t$2,424($3)
+\t.set\tmacro
+\t.set\treorder
+"""
+    text = text[:start] + new + text[end:]
+
+    text = replace_once(text, (
+        "\taddu\t$4,$4,$2\n\tmult\t$4,$3\n"
+        "\tlw\t$31,28($sp)\n\tlw\t$18,24($sp)\n"
+        "\tlw\t$17,20($sp)\n\tsra\t$3,$4,31\n"
+    ), (
+        "\taddu\t$4,$4,$2\n\tmult\t$4,$3\n"
+        "\tsra\t$3,$4,31\n"
+    ), "reviewed prize-wheel modulo scheduling")
+    text = replace_once(text, (
+        "\tsw\t$4,%lo(D_800537D4)($16)\n"
+        "\tlw\t$16,16($sp)\n\t#nop\n"
+    ), (
+        "\tsw\t$4,%lo(D_800537D4)($16)\n"
+        "\tlw\t$31,28($sp)\n\tlw\t$18,24($sp)\n"
+        "\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n\t#nop\n"
+    ), "reviewed prize-wheel restore scheduling")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -1334,6 +1445,8 @@ def normalize(text: str) -> str:
         return normalize_main_state_driver(text)
     if "\t.ent\tfunc_80015DF4\n" in text:
         return normalize_actor_creation(text)
+    if "\t.ent\tfunc_8001BF78\n" in text:
+        return normalize_prize_wheel(text)
     return normalize_standard_return(text)
 
 
