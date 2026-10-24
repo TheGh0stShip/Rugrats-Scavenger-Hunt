@@ -141,7 +141,7 @@ void func_80026824(void) {
     register struct Model_800197C8 *extra2 __asm__("$22") = 0;
     struct Rect_8000DD88 *rect = 0;
     struct Placed_8000DD88 *it;
-    u8 *record;
+    register u8 *record __asm__("$17");
     register void *mtx __asm__("$19");
     register s32 flags __asm__("$20");
     register s32 resId __asm__("$23");
@@ -152,7 +152,7 @@ void func_80026824(void) {
     s32 bonus = 0;
     s32 rowOff;
     s32 dist, alpha;
-    s32 absDist;
+    register s32 absDist __asm__("$6");
     s32 tileRow, tileCol;
     Vec3f v;
     f32 zero;
@@ -372,7 +372,7 @@ draw:
         v.x = 3900.0f;
         v.z = 2100.0f;
         mtx = func_8001E630();
-        func_8000CF10(mtx, zero, zero, zero, 1.0f, v.x, v.y, v.z);
+        func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, 1.0f, v.x, v.y, v.z);
         flags |= 0x40000000;
         func_8000C034(&D_8006FCE8, v.x, v.y, v.z, D_80059CF0, mtx, flags);
     }
@@ -381,14 +381,15 @@ draw:
 
     flags = 0;
     if (D_80052EE4 == 0 && func_8000B8EC()) {
-        s32 i;
+        register s32 i __asm__("$21");
         s32 k;
 
+        i = flags;
         func_80005544();
         func_80010B0C();
         zero = 0.0f;
-        for (i = 0, record = (u8 *)rect; i < rect->count; i++, record += 0x10) {
-            struct Model_800197C8 *m;
+        for (record = (u8 *)rect; i < rect->count; i++, record += 0x10) {
+            register struct Model_800197C8 *m __asm__("$18");
 
             it = (struct Placed_8000DD88 *)(record + 0x10);
             id = it->id;
