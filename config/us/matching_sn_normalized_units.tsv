@@ -1,5 +1,17 @@
 # SN Systems GCC 2.8 C units with reviewed assembler scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x344F8	0x78	src/game/func_800338F8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	32fb626d7eadb8289dd0f680837e1067b2195a578e53d44627529487fecc66d4
+0x319C8	0x64	src/game/func_80030DC8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5ab03776023e31d393935eed97e186ca62537dcbd9bb739f16d9c9a169d3d203
+0x31B14	0x60	src/game/func_80030F14.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	28df0b00cd9ed38d6970ebe5d3955a5e10d0b21c8a5fb6960750cd992a934322
+0x31224	0xA0	src/game/func_80030624.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	ef614394c3650b85519a9aabf851dd3e733fa756bdf3263595b0adf86e345fd2
+0x31514	0x88	src/game/func_80030914.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9085921003aabb000df88b6bf066720bb0367945b071aaa56b12889a56875dba
+0x6A3C	0xBC	src/game/func_80005E3C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	77020bc77c18eb304abe7120b79bc4be9d5fc838fe3c2165bbd87477f0c9441d
+0x32380	0x84	src/game/func_80031780.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3cec608e549097179e4debb0d75ff568ad9e1be43741d963943d5d34eb4b06ae
+0x31634	0x80	src/game/func_80030A34.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1ade68eea04268213f8e9935786886358944132de8d8d06eca460a7732232de1
+0x3447C	0x7C	src/game/func_8003387C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	c22dea0f24cb60a633e9a1b624acb7cfa2a2b1230bdc3763fb2eedfe8e60a088
+0xB914	0x74	src/game/func_8000AD14.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	8f241b44e04486c84069ab8320e64c6868404551706b4ec99ea9afd72c128094
+0x7004	0x64	src/game/func_80006404.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cd42fd68ab7d308e63da1b4f838c43b41183c5ba8cefd1f0e1a833f4c648f2cc
+0x1331C	0x5C	src/game/func_8001271C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	111488971e1561df77082d216d0b646dbdfe5607d7f88df1dcb6191efb13357f
 0x155FC	0x504	src/game/render_active_scene_nodes.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	58a83de2fe6a5dc004dac93ccf78f572affd4770e053a003bdcf1a1ae986cc0f
 0x2B5D4	0x670	src/game/update_player_selection_screen.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1a706ba4540327daafa88657addfb10d2480e5a449e9edfe7ea20db98b6d15c3
 0x25330	0x98	src/game/func_80024730.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	39ee6529ea86bf5e8634490336f27717f16f9ea7f2e68b021a233f4b67494202
