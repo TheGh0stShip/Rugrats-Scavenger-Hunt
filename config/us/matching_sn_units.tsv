@@ -94,3 +94,4 @@
 0x1F338	0x84	src/game/start_fade_mode1_8001e738.c	--section-base=.rdata:0x80001D74 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	74ef54fb19360a787ac69fd44ffb0d302dadba6a33046d828cd8bb4ae1d713ae
 0x1FBEC	0x34	src/game/query_resource_slot_8001efec.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3 -fno-delayed-branch	53ea08d3cd53c62d5720d393b77d7dc5b8045a9f1e4538cc0f3d55687da9d513
 0x212D0	0x28	src/game/get_object_at_count_800206d0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3 -fno-delayed-branch	79afa349c87fd53137cad22e9ddc401e2f69474daa8f2eebdd27355e90b3ccc3
+0x172F0	0xD8	src/game/decode_resource_backrefs.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3 -fno-expensive-optimizations	e2bcce054b9f7fc3a6ec9343d54ba75da1f43a1bc938e5ba85c097fdb607b1f3
