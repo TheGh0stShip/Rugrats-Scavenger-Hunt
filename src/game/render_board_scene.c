@@ -145,7 +145,7 @@ void func_80026824(void) {
     s32 flags;
     s32 resId;
     s32 bgId;
-    s32 rowStart, rowEnd, colStart, colEnd;
+    s32 colEnd, rowStart, rowEnd, colStart;
     s32 row, col;
     s32 cell, hi, id, k;
     s32 rowOff, z0, z1;
@@ -165,15 +165,17 @@ void func_80026824(void) {
         rect = func_8000DD88(D_800581E9);
     }
     if (func_8000B8D8()) {
+        s32 modelId;
+
         if (D_80052F18.mode == 0) {
-            resId = 0x54;
+            modelId = 0x54;
         } else if (D_80052F18.mode == 1) {
-            resId = 0x55;
+            modelId = 0x55;
         } else {
             main = 0;
             goto have_main;
         }
-        main = &func_800197C8(resId)->model;
+        main = &func_800197C8(modelId)->model;
     have_main:
         flags = 0x20000000;
         colStart = 0;
@@ -183,7 +185,7 @@ void func_80026824(void) {
     } else {
         func_80019BD4(0x54);
         func_80019BD4(0x55);
-        bgId = D_80052F18.frame + D_80052F18.mode * 3 + 0xE8;
+        bgId = D_80052F18.mode * 3 + 0xE8 + D_80052F18.frame;
         if (func_8000B8C4()) {
             goto background;
         }
