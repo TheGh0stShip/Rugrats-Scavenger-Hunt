@@ -1,5 +1,8 @@
 # KMC GCC 2.7.2 exact matching units
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x3355C	0x68	src/game/func_8003295C.c	-O2 -G0 -mips3 -mgp32 -mfp32	280376a03a33aa4346c1d04e3081d0a99eeb54e26ff8fd4eb80a101a8097b7c1
+0x335C4	0x5C	src/game/func_800329C4.c	-O2 -G0 -mips3 -mgp32 -mfp32	1f91bd047e5a4f47a654766327a5d1ac6494307fda57896553405452d374d0d0
+0x3B9D0	0xC8	src/game/func_8003ADD0.c	-O1 -G0 -mips3 -mgp32 -mfp32	1d874dff116cd5c07a71ad9db5601dc6ce789bf28b543d46492ea558de96492b
 0x39C24	0x44	src/game/format_unsigned_digits.c	-O1 -G0 -mips3 -mgp32 -mfp32	e2019f2729440ba4fd297b2045c24fe7da1389a5ec4203bc2635f9d09f0bc7e0
 0x46CC	0x48	src/runtime/spin_counter.c	-O2 -G0 -mips3 -mgp32 -mfp32	fedbbdd84c768614f7acbe7f8aebb74f737a85cb186bf6e70f26ae89c26c21cb
 0xE368	0x24	src/game/call_func_80019bd4.c	-O2 -G0 -mips3 -mgp32 -mfp32	0ad341fbe77f9ef2bfa6a48664ee88b418c7022298273586fca7e1d2ff46e2be
@@ -253,6 +256,7 @@
 0x797C	0x34	src/game/get_angle_step.c	--section-base=.rodata:0x80000590 -O2 -G0 -mips3 -mgp32 -mfp32	d1c998bde1031cd62501c3925449ef11ae3e2eca13656692c04e696bbed3fe75
 0x4D6C0	0x50	src/runtime/allocate_aligned_array.c	-O2 -G0 -mips3 -mgp32 -mfp32	3cf28a19f9db4e1f811a666352c8873cfcb05fd1b759d6a2f2b7e328f3a04199
 0x3F574	0x6C	src/game/append_parser_record_8003e974.c	-O2 -G0 -mips3 -mgp32 -mfp32	317faaf4b6f92a55cbb3dcaf107b468ab5dd67ea74b306b93d3aa6c4e2a76034
+0x3F5E0	0x9C	src/libmus/player_fnext.c	-O2 -G0 -mips3 -mgp32 -mfp32	3e8fe830495b8c87cbec9191f6a6ad4f7de7906fae90a5679ade8b7b44e8d21f
 0x251FC	0x64	src/game/prepare_runtime_transition.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	c5cd89adf8605b894ede27572bc1029b6bf43fe53563905701234b55019242c1
 0x257DC	0x54	src/game/start_runtime_sequence.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	baa1af03ada58d673616afe9e9378e9cbc47c00a3d2b682d8e4159262766abc4
 0x259AC	0x4C	src/game/activate_runtime_object.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	1c3bd0e9a8348a8b6cc82debd72beff74218c27001e579c8a3983bc9dbd73b64
@@ -286,3 +290,6 @@
 0x2F3FC	0xF0	src/game/initialize_random_slot_values.c	-O2 -G0 -mips3 -mgp32 -mfp32	e38592cb6fddfb9076f0b5d7e436589159ea70dcac3a81a3c5df50fad6a0469d
 0x39990	0x100	src/runtime/copy_aligned_bytes.c	-O1 -G0 -mips3 -mgp32 -mfp32	10620eee462189b23db550d8044be365dfa7fdf85a8252940e2154a9f365fa7f
 0x12530	0x110	src/game/apply_directional_track_offsets.c	-O2 -G0 -mips2	654afa0cf826929e6b0fd37ff3079d7bbd594293de4ce9d23877aa4d0329799f
+0x4794	0xDC	src/runtime/func_80003B94.c	-O2 -G0 -mips3 -mgp32 -mfp32	b7c90a4e3925207d83c81b36baa068e59af47c702630d3ff9bf69e7d5ff1625c
+0x48AC	0x114	src/runtime/func_80003CAC.c	-O2 -G0 -mips3 -mgp32 -mfp32	30a8d57e92db9f6edd7ebb6223955cfc669e710c4866bbf12b7e702d21cc0818
+0x5058	0x250	src/game/func_80004458.c	--section-base=.rodata:0x80000500 -O2 -G0 -mips3 -mgp32 -mfp32	50d35f76ed5fb4aed9bce5bfa59d63896a0661c73e9e78c015a9bd2f86edfc44

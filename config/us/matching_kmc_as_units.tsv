@@ -1,5 +1,9 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x3B480	0x220	src/game/func_8003A880.c	--symbol=__fixdfdi:0x8003B400 --symbol=__floatdidf:0x8003B520 -O1 -G0 -mips3 -mgp32 -mfp32	dbfab436a4f667e34e14fa4c045f70f406e419821189f088dcf74b6896d1c54d
+0x413D0	0x270	src/libultra/n_al_syn_new.c	--symbol=n_syn:0x80055AF4 --symbol=alHeapDBAlloc:0x8004CAC0 --symbol=n_alFxCreate:0x80041DB0 --symbol=n_alFxPull:0x800412F0 --symbol=n_alMainBusPull:0x80040D30 --symbol=alLink:0x8004CA2C --symbol=alN_PVoiceNew:0x800411BC -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	1b65b0964c86b3b8fd11f0f678419ed2e5846329641bb018ddff666baaee4a15
+0x42200	0x1F0	src/libultra/n_al_fx_param.c	--section-base=.rodata:0x80003490 --symbol=n_syn:0x80055AF4 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	4d347c81c1d0ea0f1ae8e2d4d5918804310e0c9f91b66fdfb5ae684d05f2735e
+0x423F0	0x210	src/libultra/n_al_load_output_buffer.c	--section-base=.rodata:0x800034C0 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	e975c64aa6c944d1a94d89290b4fd9ef044c3d5017bb76c75644bc2a71edac7e
 0x4038C	0x360	src/libultra/n_al_env_mixer_commands.c	--section-base=.rodata:0x80003408 --symbol=n_eqpower:0x80055B00 --symbol=n_alResamplePull:0x80040260 --symbol=osVirtualToPhysical:0x800495D0 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	90142b6c52ca20f00584fe15f20f8efeb47e33c1098d05de1cac9d5424bc0281
 0x42A68	0x270	src/libultra/n_al_syn_new.c	--symbol=n_syn:0x80055AF4 --symbol=alHeapDBAlloc:0x8004CAC0 --symbol=alLink:0x8004CA2C --symbol=alN_PVoiceNew:0x800411BC --symbol=n_alFxCreate:0x800420D8 --symbol=n_alFxPull:0x800412F0 --symbol=n_alMainBusPull:0x80040D30 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	0b79876a0414e735277572c435a67372c0d634f59ff68bf5612da251907747cc
 0x40740	0x448	src/libultra/n_al_adpcm_pull.c	--symbol=_decodeChunk:0x80040114 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	e21efb32b86f24d2e22f64d32e352333a4d07262333d25778354db60ede08e48
@@ -238,6 +242,10 @@
 0x3CC90	0x60	src/game/set_matching_resource_value_8003c090.c	-O2 -G0 -mips3 -mgp32 -mfp32	52ae6fd6b2084cf236f350c1f210ee254f7c92cf3c06ecbd266ee79d046053f2
 0x3CD60	0x70	src/game/add_matching_resource_float_8003c160.c	-O2 -G0 -mips3 -mgp32 -mfp32	fef493deb7e4b0faee1bd789be8887edf4ad875e524c1c4659dc2f9d090d2ace
 0x3CE5C	0x88	src/game/set_matching_resource_byte_8003c25c.c	-O2 -G0 -mips3 -mgp32 -mfp32	efa1216edfc0ea7c12358d57a63bbfba7fbe6b6a35a4e554691bfaeb13f3c650
+0x3C650	0x250	src/libmus/start_song_from_marker.c	-O2 -G0 -mips3 -mgp32 -mfp32	c7f74157685c1a04d933eedd12cb097bace74935ccc396699a4624c1e922711d
+0x3EE10	0x26C	src/libmus/player_start.c	-O2 -G0 -mips3 -mgp32 -mfp32	7b0b9eaae9633baa896001f3070932514f5f7dfeaf820067a35da22f0ae85486
+0x3F274	0xE4	src/libmus/player_ftempo.c	-O2 -G0 -mips3 -mgp32 -mfp32	45ffdd4cecc975ae80ebe13985c0509317cead53051175e780f066439dd9c479
+0x3F8D8	0xD0	src/libmus/player_fstartfx.c	-O2 -G0 -mips3 -mgp32 -mfp32	847b4ed140d03350e9d3d7660f92a27401adca3cd59bbc180d7332985b89ce5d
 0x3BBB0	0x70	src/runtime/handle_math_exception.c	-O1 -G0 -mips3 -mgp32 -mfp32	3eebc4b831a27b91f355df96515678a45c79b4642f93da4500b107ecb91cff2e
 0x3B2C0	0x60	src/runtime/scan_last_character.c	-O1 -G0 -mips3 -mgp32 -mfp32	23d4cf71db3d84547c7794799745d0a104f67f88e33a507bf9caaafad3e30d93
 0x3C8A0	0x80	src/runtime/process_pending_runtime_object.c	-O2 -G0 -mips3 -mgp32 -mfp32	f0fee5bc6ea0126f2c4107e2e3f048be2d7e98b51c16ca49b918ee9d64fda0ae
