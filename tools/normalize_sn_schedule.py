@@ -5265,6 +5265,55 @@ def normalize_particle_spray(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_apply_board_pattern(
+    text: str, selection_end: str = "$L17", rewrite_source: bool = True
+) -> str:
+    """Match retail's pattern-selection schedule and inner-loop allocation."""
+    start = "\tmove\t$7,$2\n"
+    end = selection_end + ":\n"
+    if text.count(start) != 1 or text.count(end) != 1:
+        raise ValueError("board-pattern selection span not found")
+    head, rest = text.split(start, 1)
+    _, tail = rest.split(end, 1)
+    selection = (
+        "\tmove\t$7,$2\n\tlh\t$3,8($7)\n"
+        "\tli\t$2,83\t\t\t# 0x00000053\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L3\n\tlui\t$5,%hi(D_8005409C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_8005409C) # high\n\tlw\t$2,4($16)\n"
+        "\taddiu\t$3,$3,%lo(D_8005409C) # low\n\tsll\t$2,$2,2\n"
+        "\taddu\t$3,$3,$2\n\tlw\t$11,248($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tj\t{selection_end}\n\tlui\t$4,%hi(D_8005409C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L3:\n\taddiu\t$5,$5,%lo(D_8005409C) # low\n"
+        "\taddu\t$2,$3,-71\n\tsll\t$4,$2,2\n\taddu\t$4,$4,$2\n"
+        "\tsll\t$4,$4,2\n\tlui\t$3,%hi(D_80054240) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80054240) # low\n\tsll\t$2,$17,2\n"
+        "\taddu\t$2,$2,$3\n\tlw\t$2,0($2)\n\taddu\t$4,$4,$5\n"
+        "\tsll\t$2,$2,2\n\taddu\t$2,$2,$4\n\tlw\t$11,8($2)\n"
+        "\tlui\t$4,%hi(D_8005409C) # high\n"
+    )
+    text = head + selection + end + tail
+    loop_start = "$L8:\n"
+    loop_end = "$L6:\n"
+    if text.count(loop_start) != 1 or text.count(loop_end) != 1:
+        raise ValueError("board-pattern inner loop span not found")
+    head, rest = text.split(loop_start, 1)
+    loop, tail = rest.split(loop_end, 1)
+    loop = re.sub(r"\$4\b", "$PATREG", loop)
+    loop = re.sub(r"\$5\b", "$4", loop)
+    loop = loop.replace("$PATREG", "$5")
+    if rewrite_source:
+        loop = replace_once(
+            loop, "\taddu\t$2,$11,$2\n\tlbu\t$2,0($2)\n",
+            "\taddu\t$3,$11,$2\n\tlbu\t$2,0($3)\n",
+            "reviewed board-pattern source pointer",
+        )
+    return normalize_standard_return(head + loop_start + loop + loop_end + tail)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
@@ -5366,6 +5415,10 @@ def normalize(text: str) -> str:
         return normalize_camera_mode_setup(text)
     if "\t.ent\tfunc_8000E32C\n" in text:
         return normalize_particle_spray(text)
+    if "\t.ent\tfunc_8002637C\n" in text:
+        return normalize_apply_board_pattern(text)
+    if "\t.ent\tfunc_80026560\n" in text:
+        return normalize_apply_board_pattern(text, "$L16", False)
     if "\t.ent\tfunc_80034808\n" in text:
         return normalize_player_object_reset(text)
     if "\t.ent\tfunc_800345EC\n" in text:
