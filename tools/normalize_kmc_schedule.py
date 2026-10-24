@@ -247,6 +247,48 @@ def normalize_counted_byte_update(text: str) -> str:
     ), "counted-byte shared return flow")
 
 
+def normalize_scene_shutdown(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tlw\t$4,D_80059DA8\n",
+        "\tlui\t$2,0x8006\n\tlw\t$4,-0x6258($2)\n",
+        "scene-shutdown initial argument load",
+    )
+    return replace_once(
+        text,
+        "\tmove\t$5,$0\n",
+        "\tmove\t$5,$4\n",
+        "scene-shutdown paired zero argument",
+    )
+
+
+def normalize_actor_mode_setup(text: str) -> str:
+    return replace_once(
+        text,
+        "\tmove\t$6,$0\n",
+        "\tmove\t$6,$4\n",
+        "actor-mode reused zero argument",
+    )
+
+
+def normalize_grid_actor_lookup(text: str) -> str:
+    return replace_once(
+        text,
+        "\tlw\t$4,D_80057D40\n",
+        "\tlui\t$2,0x8005\n\tlw\t$4,0x7d40($2)\n",
+        "grid-actor lookup argument load",
+    )
+
+
+def normalize_scene_handle_call(text: str) -> str:
+    return replace_once(
+        text,
+        "\tlw\t$4,D_80059DA8\n",
+        "\tlui\t$2,0x8006\n\tlw\t$4,-0x6258($2)\n",
+        "scene-handle call argument load",
+    )
+
+
 def normalize(text: str, unit: str) -> str:
     if unit == "func_800196E8":
         text = normalize_state_copy(text)
@@ -272,6 +314,14 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_known_identifier_test(text)
     elif unit == "func_80016AA8":
         text = normalize_counted_byte_update(text)
+    elif unit == "func_80031250":
+        text = normalize_scene_shutdown(text)
+    elif unit == "func_80006E30":
+        text = normalize_actor_mode_setup(text)
+    elif unit == "func_80005610":
+        text = normalize_grid_actor_lookup(text)
+    elif unit == "func_8003099C":
+        text = normalize_scene_handle_call(text)
     return builtin(text)
 
 

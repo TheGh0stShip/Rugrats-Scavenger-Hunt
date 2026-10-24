@@ -12,3 +12,7 @@
 0x24F28	0x158	src/game/func_80024328.c	--normalizer-unit=func_80024328 --section-base=.rodata:0x80001F10 -O2 -G0 -mips3 -mgp32 -mfp32	57a8811b341c2adc8ab7308f85162c2a73f8046fe4078889a13a0be7e2a879a0
 0x1A340	0x48	src/game/func_80019740.c	--normalizer-unit=func_80019740 -O2 -G0 -mips3 -mgp32 -mfp32	58a0a4c37b7411731c5fcdb7be161a3f212a51a72526a0c3df4fb993994ef80e
 0x176A8	0x50	src/game/func_80016AA8.c	--normalizer-unit=func_80016AA8 -O2 -G0 -mips3 -mgp32 -mfp32	30b212826d746b0e725a65b68bfae67f16c8683b9ccb653999afbc6baa376679
+0x31E50	0x9C	src/game/func_80031250.c	--normalizer-unit=func_80031250 -O2 -G0 -mips3 -mgp32 -mfp32	39075916348e81684e934500fce0d7ef53936d7b1538c69811c3553b3b383c97
+0x7A30	0x58	src/game/func_80006E30.c	--normalizer-unit=func_80006E30 -O2 -G0 -mips3 -mgp32 -mfp32	2d463fc7949b598bb4437defb571fd407066e469d800b5d0948b702403c9c361
+0x6210	0x44	src/game/func_80005610.c	--normalizer-unit=func_80005610 -O2 -G0 -mips3 -mgp32 -mfp32	04f222ea3366b5c7812ed9a0873f58eb59ce6e65a13c3f900224734350949458
+0x3159C	0x28	src/game/func_8003099C.c	--normalizer-unit=func_8003099C -O2 -G0 -mips3 -mgp32 -mfp32	55ee36420a15a2a6995a606f09e2dcef773dcaec69db0b382f22af1c55f92b19
