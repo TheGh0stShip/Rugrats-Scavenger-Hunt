@@ -26,3 +26,5 @@
 0x3BD64	0xCC	src/runtime/unsigned_div64_word_8003b164.S	-mips3 -G0	705593a38ef637c17ff1ccaf7a04ee14585c7926feea514497d54a46b8306d18
 0x3FCA8	0xC8	src/game/n_allocate_pvoice_8003f0a8.S	-mips3 -G0	5a67dd6d60f423021fde0b80efbd69aea545003229a8a706124f48b5bada7fda
 0x43770	0xE0	src/game/mus_submit_audio_task_80042b70.S	-mips3 -G0	3a3316735796511d48ede05e55ab147f3d6550f53cb1371530716194798abfa3
+0x3C000	0x120	src/runtime/double_to_int64_8003b400.S	-mips3 -G0	82e94d607d0c11f1ac25aadd8137d4ef2c6928ea2a1bc99ce3b69a6e812b4452
+0x3C120	0x100	src/runtime/int64_to_double_8003b520.S	-mips3 -G0	4f5259d0072bc26e0cf7b7bd58f661006efb05b5c65bb9dd1ae1edf2ec9e4e80
