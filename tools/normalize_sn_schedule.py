@@ -981,6 +981,150 @@ def normalize_actor_scale_update(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_display_list_relocation(text: str) -> str:
+    return replace_once(text, (
+        "$L8:\n\tlw\t$2,4($8)\n\tsw\t$3,4($8)\n"
+        "\tsll\t$3,$2,1\n\tandi\t$3,$3,0x00fe\n"
+        "\tsll\t$3,$3,16\n\tsrl\t$2,$2,16\n"
+        "\tsll\t$4,$2,10\n\tsll\t$2,$2,4\n"
+        "\taddu\t$2,$2,-1\n\tor\t$4,$4,$2\n"
+        "\tandi\t$4,$4,0xffff\n\tor\t$3,$3,$4\n"
+        "\tor\t$3,$3,$10\n\tsw\t$3,0($8)\n"
+    ), (
+        "$L8:\n\tlw\t$2,4($8)\n\tsw\t$3,4($8)\n"
+        "\tsrl\t$4,$2,16\n\tsll\t$2,$2,1\n"
+        "\tandi\t$2,$2,0x00fe\n\tsll\t$2,$2,16\n"
+        "\tsll\t$3,$4,10\n\tsll\t$4,$4,4\n"
+        "\taddu\t$4,$4,-1\n\tor\t$3,$3,$4\n"
+        "\tandi\t$3,$3,0xffff\n\tor\t$3,$3,$10\n"
+        "\tor\t$2,$2,$3\n\tsw\t$2,0($8)\n"
+    ), "reviewed display-list relocation registers")
+
+
+def normalize_object_tile_event(text: str) -> str:
+    text = remap_registers(text, {16: 17})
+    text = replace_once(text, (
+        "\t.frame\t$sp,24,$31\t\t# vars= 0, regs= 2/0, args= 16, extra= 0\n"
+        "\t.mask\t0x80010000,-4\n"
+        "\t.fmask\t0x00000000,0\n"
+        "\tsubu\t$sp,$sp,24\n"
+        "\tsw\t$17,16($sp)\n\tsw\t$31,20($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000E108\n\tmove\t$17,$4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsll\t$2,$2,16\n\tlh\t$3,336($17)\n"
+        "\tsra\t$2,$2,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L2\n\tmove\t$5,$17\n"
+    ), (
+        "\t.frame\t$sp,32,$31\t\t# vars= 0, regs= 3/0, args= 16, extra= 0\n"
+        "\t.mask\t0x80030000,-4\n"
+        "\t.fmask\t0x00000000,0\n"
+        "\tsubu\t$sp,$sp,32\n"
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$4\n"
+        "\tsw\t$31,24($sp)\n\tsw\t$16,16($sp)\n"
+        "\tlh\t$16,336($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000E108\n\tnop\n"
+        "\tbne\t$16,$2,$L2\n\tmove\t$5,$17\n"
+    ), "reviewed object-tile-event frame and cached team")
+    return replace_once(text, (
+        "$L1:\n\tlw\t$31,20($sp)\n\tlw\t$17,16($sp)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\taddu\t$sp,$sp,24\n"
+    ), (
+        "$L1:\n\tlw\t$31,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n\taddu\t$sp,$sp,32\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tnop\n"
+    ), "reviewed object-tile-event epilogue")
+
+
+def normalize_object_activation_filter(text: str) -> str:
+    text = replace_once(text, (
+        "\tsubu\t$sp,$sp,48\n"
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$4\n"
+        "\tsw\t$18,24($sp)\n\tmove\t$18,$0\n"
+        "\tsw\t$19,28($sp)\n\tmove\t$19,$18\n"
+        "\tsw\t$21,36($sp)\n\tmove\t$21,$18\n"
+        "\tlui\t$4,%hi(D_80052F18) # high\n"
+        "\tlw\t$3,%lo(D_80052F18)($4)\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n"
+        "\tsw\t$31,40($sp)\n\tsw\t$20,32($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$2,$L18\n\tsw\t$16,16($sp)\n"
+    ), (
+        "\tsubu\t$sp,$sp,48\n"
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$4\n"
+        "\tsw\t$21,36($sp)\n\tmove\t$21,$0\n"
+        "\tsw\t$18,24($sp)\n\tmove\t$18,$21\n"
+        "\tsw\t$19,28($sp)\n\tmove\t$19,$18\n"
+        "\tlui\t$4,%hi(D_80052F18) # high\n"
+        "\tlw\t$3,%lo(D_80052F18)($4)\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n"
+        "\tsw\t$31,40($sp)\n\tsw\t$20,32($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$2,$L_mode_return\n\tsw\t$16,16($sp)\n"
+    ), "reviewed activation-filter prologue and early mode return")
+    text = replace_once(text, (
+        "\tlw\t$3,280($17)\n\t#nop\n"
+        "\tandi\t$2,$3,0x0020\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L17\n\tmove\t$2,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tandi\t$2,$3,0x0008\n"
+    ), (
+        "\tlw\t$3,280($17)\n\tandi\t$2,$3,0x0020\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L_check_flag8\n\tandi\t$2,$3,0x0008\n"
+        "$L_mode_return:\n\tj\t$L17\n\tmove\t$2,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+        "$L_check_flag8:\n"
+    ), "reviewed activation-filter flag checks")
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L20\n\tlui\t$2,%hi(D_800529F8) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tbne\t$19,$0,$L20\n"
+        "$L18:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L17\n\tmove\t$2,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L20:\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L20\n\tlui\t$2,%hi(D_800529F8) # high\n"
+        "\tbeql\t$19,$0,$L17\n\tmove\t$2,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L20:\n"
+    ), "reviewed activation-filter mode-one return")
+    text = replace_once(text, (
+        "\tbne\t$3,$2,$L6\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$19,$0,$L17\n\tmove\t$2,$21\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L6\n\tnop\n"
+        "\tbeq\t$19,$0,$L17\n\tmove\t$2,$21\n"
+    ), "reviewed activation-filter selected-value return")
+    text = replace_once(text, (
+        "$L16:\n\tjal\tfunc_80009140\n\tmove\t$4,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80009554\n\tmove\t$5,$17\n"
+    ), (
+        "$L16:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80009140\n\tli\t$21,1\t\t\t# 0x00000001\n"
+        "\tmove\t$4,$2\n\tjal\tfunc_80009554\n\tmove\t$5,$17\n"
+    ), "reviewed activation-filter success call")
+    text = replace_once(text, (
+        "\tlbu\t$3,1($2)\n\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\tsb\t$3,319($17)\n$L17:\n"
+    ), (
+        "\tlbu\t$2,1($2)\n\tsb\t$2,319($17)\n"
+        "\tmove\t$2,$21\n$L17:\n"
+    ), "reviewed activation-filter return value")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -1062,6 +1206,12 @@ def normalize(text: str) -> str:
         return normalize_selection_menu(text)
     if "\t.ent\tfunc_80020E8C\n" in text:
         return normalize_actor_scale_update(text)
+    if "\t.ent\tfunc_80019A4C\n" in text:
+        return normalize_display_list_relocation(text)
+    if "\t.ent\tfunc_80023860\n" in text:
+        return normalize_object_tile_event(text)
+    if "\t.ent\tfunc_80023F50\n" in text:
+        return normalize_object_activation_filter(text)
     return normalize_standard_return(text)
 
 
