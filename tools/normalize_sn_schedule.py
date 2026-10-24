@@ -261,6 +261,49 @@ def normalize_packed_state_dispatch(text: str) -> str:
     )
 
 
+def normalize_menu_entry_reset(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tbeq\t$5,$0,$L2\n"
+        "\tmove\t$17,$0\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n",
+        "\tbeq\t$5,$0,$L2\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n\n",
+        "reviewed menu-state branch scheduling pattern",
+    )
+    text = replace_once(
+        text,
+        "\tslt\t$2,$17,$2\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L11\n"
+        "\tli\t$20,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n",
+        "\tslt\t$2,$0,$2\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L11\n"
+        "\tmove\t$17,$0\n"
+        "\t.set\tmacro\n"
+        "\t.set\treorder\n\n"
+        "\tli\t$20,-1\t\t\t# 0xffffffff\n",
+        "reviewed menu-loop entry scheduling pattern",
+    )
+    text = normalize_standard_return(text)
+    end = re.compile(r"(?P<prefix>\t\.set\tmacro\n\t\.set\treorder\n\n)(?P<end>\t\.end\tfunc_80016DB0\n)")
+    match = end.search(text)
+    if match is None:
+        raise ValueError("reviewed menu-entry trailing padding location not found")
+    return end.sub(
+        match.group("prefix") + "\tnop\n" + match.group("end"), text, count=1
+    )
+
+
 def normalize_resource_range(text: str) -> str:
     text = replace_once(text, (
         "\tlui\t$8,%hi(D_80052EB0) # high\n"
@@ -4317,6 +4360,8 @@ def normalize_e4_func_80006C18(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_80016DB0\n" in text:
+        return normalize_menu_entry_reset(text)
     if "\t.ent\tfunc_8002D4C0\n" in text:
         return normalize_packed_state_dispatch(text)
     if "\t.ent\tfunc_800222E8\n" in text:
