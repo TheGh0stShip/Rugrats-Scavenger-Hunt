@@ -329,6 +329,65 @@ def normalize_other_player_vectors(text: str) -> str:
     )
 
 
+def normalize_room_grid_tile(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tsubu\t$sp,$sp,24\n\tlui\t$3,%hi(D_800581F0) # high\n"
+        "\tandi\t$4,$4,0x00ff\n\tsll\t$2,$4,5\n\taddu\t$2,$2,$4\n"
+        "\tsll\t$2,$2,4\n\tsll\t$7,$5,16\n\tsll\t$5,$6,16\n"
+        "\tlw\t$3,%lo(D_800581F0)($3)\n\tsra\t$5,$5,16\n"
+        "\tsw\t$31,16($sp)\n\taddu\t$3,$3,$2\n\tlhu\t$2,8214($3)\n"
+        "\tsra\t$7,$7,16\n\taddu\t$5,$5,$2\n\tsll\t$5,$5,16\n"
+        "\tlhu\t$2,8212($3)\n\tsra\t$5,$5,16\n\taddu\t$4,$7,$2\n"
+        "\tsll\t$4,$4,16\n",
+        "\tsubu\t$sp,$sp,24\n\tsll\t$7,$5,16\n"
+        "\tlui\t$3,%hi(D_800581F0) # high\n\tandi\t$4,$4,0x00ff\n"
+        "\tsll\t$2,$4,5\n\taddu\t$2,$2,$4\n\tsll\t$2,$2,4\n"
+        "\tsra\t$7,$7,16\n\tlw\t$3,%lo(D_800581F0)($3)\n"
+        "\tsll\t$5,$6,16\n\tsw\t$31,16($sp)\n\taddu\t$3,$3,$2\n"
+        "\tlh\t$2,8212($3)\n\tsra\t$5,$5,16\n\taddu\t$7,$7,$2\n"
+        "\tsll\t$7,$7,16\n\tlh\t$2,8214($3)\n\tsra\t$4,$7,16\n"
+        "\taddu\t$5,$5,$2\n\tsll\t$5,$5,16\n",
+        "reviewed room-grid coordinate allocation and schedule",
+    )
+    return replace_once(
+        text,
+        "\tjal\tfunc_8000DF14\n\tsra\t$4,$4,16\n",
+        "\tjal\tfunc_8000DF14\n\tsra\t$5,$5,16\n",
+        "reviewed room-grid call delay slot",
+    )
+
+
+def normalize_zone_choice_input(text: str) -> str:
+    text = text.replace("$17", "$sn_swap").replace("$18", "$17").replace("$sn_swap", "$18")
+    text = replace_once(
+        text,
+        "\tsw\t$17,24($sp)\n\tmove\t$17,$4\n"
+        "\tsw\t$18,20($sp)\n\tmove\t$18,$5\n",
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$4\n"
+        "\tsw\t$18,24($sp)\n\tmove\t$18,$5\n",
+        "reviewed zone-choice saved-register setup",
+    )
+    text = replace_once(
+        text,
+        "\tli\t$16,1\t\t\t# 0x00000001\n\tlw\t$2,280($4)\n"
+        "\tlhu\t$3,D_800B9296\n\tori\t$2,$2,0x0800\n"
+        "\taddu\t$3,$3,$16\n\tsw\t$2,280($4)\n",
+        "\tlw\t$2,280($17)\n\tori\t$2,$2,0x0800\n\tsw\t$2,280($4)\n"
+        "\tlhu\t$2,D_800B9296\n\tli\t$16,1\t\t\t# 0x00000001\n"
+        "\taddu\t$2,$2,1\n",
+        "reviewed zone-choice flag and timer schedule",
+    )
+    text = replace_once(text, "\tsh\t$3,340($4)\n", "\tsh\t$2,340($4)\n", "reviewed zone-choice timer allocation")
+    text = replace_once(
+        text,
+        "\tlw\t$17,24($sp)\n\tlw\t$18,20($sp)\n",
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n",
+        "reviewed zone-choice saved-register restore",
+    )
+    return normalize_standard_return(text)
+
+
 def normalize_zero_copy_with_padding(
     text: str, old: str, new: str, description: str
 ) -> str:
@@ -5485,6 +5544,10 @@ def normalize_board_event_dispatch(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_800299A8\n" in text:
+        return normalize_zone_choice_input(text)
+    if "\t.ent\tfunc_8000DE80\n" in text:
+        return normalize_room_grid_tile(text)
     if "\t.ent\tfunc_8002B6E0\n" in text:
         return normalize_other_player_vectors(text)
     if "\t.ent\tfunc_8001361C\n" in text:
