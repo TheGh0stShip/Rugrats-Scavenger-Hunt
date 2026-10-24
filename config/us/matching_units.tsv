@@ -130,6 +130,7 @@
 0x2C850	0x1C	src/game/init_state_544e0.c	-O2 -G0 -mips3 -mgp32 -mfp32	64493d6995ffe905c06a45d9b78ee47cc8825218cd9c0752396ff1e360113e70
 0x4D680	0x40	src/runtime/init_aligned_arena.c	-O2 -G0 -mips3 -mgp32 -mfp32	ad16c49c49bd36364430fca103e4466def55634a73238a989bd373866870de17
 0x4658	0x38	src/runtime/pi_wait_and_store.c	-O2 -G0 -mips3 -mgp32 -mfp32	2eaa8e2601d9277f117e2f2a15447572fe27e2b7c63d4bf5db665d1203022bd1
+0x4690	0x3C	src/runtime/pi_read_word.c	-O2 -G0 -mips3 -mgp32 -mfp32	72700632044ac1ef29c829aabd8b08e5ab216a96a0e17d0d28fbe8a05c0296b0
 0x43D00	0x2C	src/game/fill_bytes.c	-O2 -G0 -mips3 -mgp32 -mfp32	ada7b60864dacba13ef8ff02ce36ba72f67b5191b7620ebeb9ecff03e5d6438b
 0x3F484	0x30	src/game/parser_read_var_ac.c	-O2 -G0 -mips3 -mgp32 -mfp32	a0ceb049d9359bc858525d9311acf517e31d89178c2022c4f421b674761b2cdf
 0x2B5A4	0x30	src/game/get_object_node_field_2c.c	-O2 -G0 -mips3 -mgp32 -mfp32	54f6064dfa17107e4e8e6a81792d4fad9ee5465b40590ec49a42ba67ef213670
