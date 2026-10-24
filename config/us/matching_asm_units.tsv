@@ -20,3 +20,5 @@
 0x462F4	0xD8	src/runtime/gsm_rpe_decode_body_800456f4.S	-mips3 -G0	aadb349367c461e727046f778c8b833bd0da21566cd32ea11ab6199cab6427e2
 0x463D4	0x2C	src/runtime/gsm_long_term_entry_800457d4.S	-mips3 -G0	e52f489a7129f75ecc0e6785bf34f2279338bfb2ce00af1f61dcf7afe7d5186b
 0x46400	0x88	src/runtime/gsm_long_term_body_80045800.S	-mips3 -G0	e62340a26824e0c219936af68248eb85d67a885b3e433c3c270a16c4fe981769
+0x3BE30	0xB0	src/runtime/signed_div64_8003b230.S	-mips3 -G0	d65899464808139985bdbcaadc981923bcd2e6476eb58cb651793d164660398f
+0x3BEE0	0xC0	src/runtime/signed_mod64_8003b2e0.S	-mips3 -G0	de98f9e23c0f52a7cc17df2239db3e6a728858f71718ced6d0edcd31ea63be79
