@@ -1,3 +1,4 @@
 # SN Systems GCC 2.8 C units with reviewed assembler scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
 0x155FC	0x504	src/game/render_active_scene_nodes.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	58a83de2fe6a5dc004dac93ccf78f572affd4770e053a003bdcf1a1ae986cc0f
+0x2B5D4	0x670	src/game/update_player_selection_screen.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1a706ba4540327daafa88657addfb10d2480e5a449e9edfe7ea20db98b6d15c3
