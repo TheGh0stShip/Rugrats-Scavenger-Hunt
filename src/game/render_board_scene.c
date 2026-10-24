@@ -153,6 +153,7 @@ void func_80026824(void) {
     s32 dist, alpha;
     s32 tileRow, tileCol;
     Vec3f v;
+    f32 initialScale;
     s32 a, b;
 
     if (func_8000B8C4()) {
@@ -228,11 +229,12 @@ void func_80026824(void) {
         colEnd = 64;
     }
 draw:
+    initialScale = 1.0f;
     v.x = 0.0f;
     v.y = 0.0f;
     v.z = 0.0f;
     mtx = func_8001E630();
-    func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, 1.0f, v.x, v.y, v.z);
+    func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, initialScale, v.x, v.y, v.z);
     if (main != 0) {
         if (!func_8000B8EC()) {
             flags |= 0x08000000;
@@ -250,7 +252,7 @@ draw:
             v.y = 10.0f;
             mtx = func_8001E630();
             flags |= 0x08000000;
-            func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, 1.0f, v.x, v.y, v.z);
+            func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, initialScale, v.x, v.y, v.z);
             func_8000B910(extra2, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
         }
     }
