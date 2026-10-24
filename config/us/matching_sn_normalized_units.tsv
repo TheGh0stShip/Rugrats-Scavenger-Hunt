@@ -409,3 +409,5 @@
 0x5618	0xC8	src/game/write_host_data_chunks.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	25a54526024c4ea3955e268a94a644328c601e71a36f176180f239f7d93d12e6
 0xEDD0	0x15C	src/game/spawn_owner_particles.c	--section-base=.rodata:0x80000750 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	8a79c14617ae9a98b8cbd234f0fa7fe53fa85dbdf8e053bedd76958832f929ff
 0x7818	0x4C	src/game/select_spawn_offsets.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	691f02d647f75eeef898eebc5d0867a90895764f51a07626393192d06a842bd1
+0x261AC	0x184	src/game/func_800255AC.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	029c890a561cb372d2ea68d42ed0cee9c95b38582f29fe4c05af471614a40c40
+0x26A48	0x17C	src/game/func_80025E48.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6a813473750116de0a0d80da3c12b43ed16bb3e11ef7963bfd8f5541991f982b

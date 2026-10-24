@@ -189,6 +189,42 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_zero_copy_with_padding(
+    text: str, old: str, new: str, description: str
+) -> str:
+    """Preserve a reviewed zero-copy source and the retail trailing pad word."""
+    text = replace_once(text, old, new, description)
+    text = normalize_standard_return(text)
+    end = re.compile(
+        r"(?P<prefix>\t\.set\tmacro\n\t\.set\treorder\n\n)"
+        r"(?P<end>\t\.end\tfunc_[0-9A-F]+\n)"
+    )
+    match = end.search(text)
+    if match is None:
+        raise ValueError("reviewed trailing padding location not found")
+    return end.sub(
+        match.group("prefix") + "\tnop\n" + match.group("end"), text, count=1
+    )
+
+
+def normalize_available_position_search(text: str) -> str:
+    return normalize_zero_copy_with_padding(
+        text,
+        "\tmove\t$18,$0\n",
+        "\tmove\t$18,$16\n",
+        "reviewed available-position zero-copy pattern",
+    )
+
+
+def normalize_completion_state_scan(text: str) -> str:
+    return normalize_zero_copy_with_padding(
+        text,
+        "\tmove\t$18,$17\n",
+        "\tmove\t$18,$16\n",
+        "reviewed completion-state zero-copy pattern",
+    )
+
+
 def normalize_resource_range(text: str) -> str:
     text = replace_once(text, (
         "\tlui\t$8,%hi(D_80052EB0) # high\n"
@@ -4245,6 +4281,10 @@ def normalize_e4_func_80006C18(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_800255AC\n" in text:
+        return normalize_available_position_search(text)
+    if "\t.ent\tfunc_80025E48\n" in text:
+        return normalize_completion_state_scan(text)
     if "\t.ent\tfunc_8000E630\n" in text:
         return normalize_e4_func_8000E630(text)
     if "\t.ent\tfunc_8000E680\n" in text:
