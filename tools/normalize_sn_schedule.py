@@ -399,6 +399,74 @@ def normalize_random_object_flags(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_state_machine_frame(text: str, limit: int) -> str:
+    replacements = (
+        ("\t.frame\t$sp,24,$31", "\t.frame\t$sp,40,$31"),
+        ("\tsubu\t$sp,$sp,24\n", "\tsubu\t$sp,$sp,40\n"),
+        ("\tsw\t$31,20($sp)\n", "\tsw\t$31,36($sp)\n"),
+        ("\tsw\t$16,16($sp)\n", "\tsw\t$16,32($sp)\n"),
+        (f"\tslt\t$2,$3,{limit}\n", f"\tsltu\t$2,$3,{limit}\n"),
+        ("\tlw\t$31,20($sp)\n", "\tlw\t$31,36($sp)\n"),
+        ("\tlw\t$16,16($sp)\n", "\tlw\t$16,32($sp)\n"),
+        ("\taddu\t$sp,$sp,24\n", "\taddu\t$sp,$sp,40\n"),
+    )
+    for old, new in replacements:
+        text = replace_once(text, old, new, "reviewed state-machine frame layout")
+    return normalize_standard_return(text)
+
+
+def normalize_object_allocation_tail(text: str) -> str:
+    text = replace_once(text, "\taddu\t$17,$17,$2\n", "\taddu\t$17,$17,1\n",
+                        "reviewed allocation count increment")
+    text = replace_once(text, (
+        "\tlui\t$3,%hi(D_80057D58) # high\n"
+        "\tlw\t$2,%lo(D_80057D58)($3)\n"
+        "\tlw\t$31,32($sp)\n\tlw\t$19,28($sp)\n\tlw\t$18,24($sp)\n"
+        "\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\taddu\t$2,$2,1\n\tsw\t$2,%lo(D_80057D58)($3)\n"
+    ), (
+        "\tlui\t$3,%hi(D_80057D58) # high\n"
+        "\tlw\t$2,%lo(D_80057D58)($3)\n"
+        "\taddu\t$2,$2,1\n\tsw\t$2,%lo(D_80057D58)($3)\n"
+        "\tlw\t$31,32($sp)\n\tlw\t$19,28($sp)\n\tlw\t$18,24($sp)\n"
+        "\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+    ), "reviewed allocation counter epilogue scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_resource_bounds(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$4,4($18)\n\t#nop\n"
+        "\tlw\t$3,0($4)\n\tlw\t$2,4($4)\n\t#nop\n"
+        "\tsltu\t$2,$3,$2\n"
+    ), (
+        "\tlw\t$3,4($18)\n\t#nop\n"
+        "\tlw\t$2,4($3)\n\tlw\t$4,0($3)\n\t#nop\n"
+        "\tsltu\t$2,$4,$2\n"
+    ), "reviewed resource-bound registers")
+    text = replace_once(text, "\tsw\t$3,4($4)\n", "\tsw\t$4,4($3)\n",
+                        "reviewed resource-bound store operands")
+    return normalize_standard_return(text)
+
+
+def normalize_menu_flag_draw(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_800533E4) # high\n"
+        "\taddiu\t$2,$2,%lo(D_800533E4) # low\n"
+    ), "", "reviewed menu-table deferred address")
+    text = replace_once(text, (
+        "\taddu\t$16,$2,6\n$L5:\n"
+    ), (
+        "\tlui\t$2,%hi(D_800533E4) # high\n"
+        "\taddiu\t$16,$2,%lo(D_800533E4) # low\n$L5:\n"
+    ), "reviewed menu-table loop base")
+    text = replace_once(text, "\tlh\t$5,-2($16)\n", "\tlh\t$5,4($16)\n",
+                        "reviewed menu-table first coordinate")
+    text = replace_once(text, "\tlh\t$6,0($16)\n", "\tlh\t$6,6($16)\n",
+                        "reviewed menu-table second coordinate")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -442,6 +510,16 @@ def normalize(text: str) -> str:
         return normalize_event_dispatch(text)
     if "\t.ent\tfunc_80023360\n" in text:
         return normalize_random_object_flags(text)
+    if "\t.ent\tfunc_8001ABC8\n" in text:
+        return normalize_state_machine_frame(text, 33)
+    if "\t.ent\tfunc_8001ADC8\n" in text:
+        return normalize_state_machine_frame(text, 29)
+    if "\t.ent\tfunc_800206F8\n" in text:
+        return normalize_object_allocation_tail(text)
+    if "\t.ent\tfunc_8001E204\n" in text:
+        return normalize_resource_bounds(text)
+    if "\t.ent\tfunc_80016AF8\n" in text:
+        return normalize_menu_flag_draw(text)
     return normalize_standard_return(text)
 
 
