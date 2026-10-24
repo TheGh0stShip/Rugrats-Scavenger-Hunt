@@ -1,0 +1,8 @@
+# KMC GCC 2.7.2 C units with catalogue-owned trailing zero padding
+# ROM_START SIZE SOURCE FLAGS SHA256
+0x48638	0x1E8	src/libultra/gu_position.c	--trailing-padding=0x8 -O2 -finline-functions -G0 -mips3 -mgp32 -mfp32	064bc420c5dcce4d064184634d25bc51ae9e9aee6df14e28d026bb2f88718c08
+0x4C7FC	0xC4	src/libultra/al_resample_param.c	--trailing-padding=0x4 --section-base=.rodata:0x80003828 -O2 -G0 -mips3 -mgp32 -mfp32	a6133fdeb0bc3ed41d25988a6c5be2420e532c57bebf5c6614b561f36d486715
+0x4B4AC	0x184	src/libultra/al_decode_chunk.c	--trailing-padding=0x4 -O2 -G0 -mips3 -mgp32 -mfp32	df97c1aecf1bd1e7b40dab7329973dfec48a04ce8372c33b83e01dd4b31785de
+0x406EC	0x54	src/game/calculate_runtime_sample_8003faec.c	--trailing-padding=0x4 -O2 -G0 -mips3 -mgp32 -mfp32	1c4ec05cd0fae75723211dbb09ba7c49f4427fc6ee1f9d5c1b7955e2a1f724ed
+0x43BD4	0x8C	src/game/select_runtime_buffer_80042fd4.c	--trailing-padding=0xC -O2 -G0 -mips3 -mgp32 -mfp32	d0cb2e813849c9ac403b2050999f9996ac6c3964fae89f5e32217d743131f293
+0x4D408	0x98	src/libultra/al_do_mod_func.c	--trailing-padding=0x8 --section-base=.rodata:0x80003898 -O2 -G0 -mips3 -mgp32 -mfp32	3a40f669d5311e040868f1cec47c2c24830263365b7877120954de683c7f363f
