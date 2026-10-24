@@ -24,7 +24,7 @@ provide your own legally obtained USA retail ROM.
 - Audio: 178 indexed samples across two sample and pointer-bank pairs
 - Asset signatures: 380 `MORT` records and 376 `mdlh` model-header records
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Matching C: 653 / 1,273 functions; 85,768 / 323,264 code bytes (26.53%)
+- Matching C: 654 / 1,273 functions; 87,052 / 323,264 code bytes (26.93%)
 - Matching initialized data: 640 / 32,704 bytes (1.96%)
 - Extracted assets: 0 / 15,686,080 bytes (0%); container inventory: 100%
 - Physical ROM inventory: 16,777,216 / 16,777,216 bytes (100%)
@@ -59,7 +59,9 @@ By default the Makefile reuses `../n64-decomp-kit` and
 `../BattleTanx/.toolchain`. Set `N64DK_ROOT` or `N64DK_TOOLCHAIN` to use other
 locations. `make verify-matching` compiles every row in
 the matching manifests in `config/us/` and compares relocated output directly
-with the retail ROM.
+with the retail ROM. Reviewed SN assembler scheduling differences are reproduced
+by `tools/normalize_sn_schedule.py`; generated assembly remains temporary and is
+never stored in the repository.
 
 `make report` generates the ROM-independent objdiff v2 progress report used by
 [ByteMatch](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt). The
