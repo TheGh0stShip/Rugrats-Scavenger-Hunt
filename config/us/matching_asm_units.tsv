@@ -1,2 +1,4 @@
 # ROM_START SIZE SOURCE FLAGS SHA256
 0x53280	0x31C	src/libultra/bcopy.S	-mips3 -G0	688eac87a95f4e8d86ac6912b84681b61dc1816825bd79bce569359d58f82816
+0x4931C	0x48	src/libultra/os_enqueue_thread.S	-mips3 -G0	cbd325d727d6dbfcdcec3c6fe3e9b088d39ac4663830e4c95bad173d6291babc
+0x51C50	0xA0	src/libultra/bzero.S	-mips3 -G0	a03d90b6e7011e27f00041a81c76ddd66e7aa5ca2a841447daffc9ed43213571
