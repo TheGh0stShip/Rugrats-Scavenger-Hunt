@@ -1,5 +1,7 @@
 # SN Systems GCC 2.8 C units with reviewed assembler scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x20188	0x2C8	src/game/select_scene_texture_tiles.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e4a74ac9b8e6ce3c6f9ee58a9a7ea6025d506b85363c3eb79913c8bbf7ad1542
+0x32008	0x308	src/game/seed_board_items_80031408.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb	c8571917d528c5361fa2033c51372ca520e370110cb25900dc594b0b6f045dd8
 0x1AA3C	0x408	src/game/draw_race_hud_80019E3C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	fafd4184067a119499ec61599f0fc34f8a855f3fbdcec5be5362afb2f01aac07
 0x2F530	0x294	src/game/draw_player_scoreboard_8002e930.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	baf2a2ba835f2369ca20054ae2426a009ee1e9af7c7c5bd3cedaff976244af4c
 0x2082C	0x308	src/game/func_8001FC2C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb	f74830ad3bac8e7fac3861488c60330bc323163e2e3546b6bb118862acceda71

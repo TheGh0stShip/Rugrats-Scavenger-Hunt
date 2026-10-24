@@ -24,7 +24,7 @@ provide your own legally obtained USA retail ROM.
 - Audio: 178 indexed samples across two sample and pointer-bank pairs
 - Asset signatures: 380 `MORT` records and 376 `mdlh` model-header records
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Byte-matched source: 1,264 / 1,273 functions; 301,332 / 323,752 code bytes (93.07%)
+- Byte-matched source: 1,266 / 1,273 functions; 302,820 / 323,752 code bytes (93.53%)
 - Matching initialized data: 32,216 / 32,216 bytes (100%)
 - Asset/resource round-trip: 15,686,080 / 15,686,080 bytes (100%)
 - Published extracted asset payloads: 0 bytes; no copyrighted payloads are committed

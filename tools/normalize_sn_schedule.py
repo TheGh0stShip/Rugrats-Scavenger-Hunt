@@ -6145,6 +6145,105 @@ def normalize_board_event_dispatch(text: str) -> str:
     )
 
 
+def normalize_texture_block_loads(text: str) -> str:
+    """Reproduce the reviewed SN allocation and scheduling of the 8-tile load loop."""
+    start = text.find("\t.ent\tfunc_8001F588\n")
+    end = text.find("\t.end\tfunc_8001F588\n", start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed texture-block function not found")
+    body = text[start:end]
+    loop_head = "\tmove\t$12,$0\n\tmove\t$10,$5\n"
+    if body.count(loop_head) != 1:
+        raise ValueError("reviewed texture-block loop head not found")
+    split = body.index(loop_head)
+    head, loop = body[:split], body[split:]
+    if re.search(r"\$(9|10|11|12)\b", head):
+        raise ValueError("reviewed texture-block loop registers used early")
+    loop_map = {"9": "12", "10": "9", "11": "10", "12": "11"}
+    loop = re.sub(
+        r"\$(9|10|11|12)\b", lambda m: "$" + loop_map[m.group(1)], loop
+    )
+    block_start = loop.find("\tli\t$4,2048\t\t\t# 0x00000800\n")
+    block_end = loop.find("\tor\t$2,$6,$2\n", block_start)
+    if block_start < 0 or block_end < 0:
+        raise ValueError("reviewed texture-block tile size span not found")
+    block_end += len("\tor\t$2,$6,$2\n")
+    block = re.sub(
+        r"\$(4|6)\b", lambda m: "$6" if m.group(1) == "4" else "$4",
+        loop[block_start:block_end],
+    )
+    loop = loop[:block_start] + block + loop[block_end:]
+    loop = replace_once(loop, (
+        "\tlw\t$2,0($5)\n"
+        "\t#nop\n"
+        "\tmove\t$3,$2\n"
+        " #APP\n"
+        " #NO_APP\n"
+        "\tli\t$4,655360\t\t\t# 0x000a0000\n"
+    ), (
+        "\tlw\t$2,0($5)\n"
+        "\tli\t$4,655360\t\t\t# 0x000a0000\n"
+        "\tmove\t$3,$2\n"
+        " #APP\n"
+        " #NO_APP\n"
+    ), "reviewed texture-block mode constant")
+    loop = replace_once(loop, (
+        "\tlw\t$2,0($9)\n"
+        "\t#nop\n"
+        "\tlw\t$2,12($2)\n"
+        "\taddu\t$11,$11,1\n"
+    ), (
+        "\tlw\t$2,0($9)\n"
+        "\taddu\t$11,$11,1\n"
+        "\tlw\t$2,12($2)\n"
+    ), "reviewed texture-block counter increment")
+    text = text[:start] + head + loop + text[end:]
+    return normalize_standard_return(text)
+
+
+def normalize_board_item_seeding(text: str) -> str:
+    def swap_registers(span: str, left: str, right: str) -> str:
+        marker = "$@board_seed_swap"
+        return span.replace(left, marker).replace(right, left).replace(marker, right)
+
+    text = replace_once(text, (
+        "\tlw\t$5,%lo(D_800581F0)($4)\n\tmove\t$4,$2\n"
+        "\tsw\t$4,%lo(D_800B936C)($3)\n\tlh\t$2,4($5)\n"
+    ), (
+        "\tlw\t$4,%lo(D_800581F0)($4)\n\tmove\t$5,$2\n"
+        "\tsw\t$5,%lo(D_800B936C)($3)\n\tlh\t$2,4($4)\n"
+    ), "reviewed board-seeding entry allocation")
+    text = replace_once(text, (
+        "\tmove\t$14,$5\n\tmove\t$15,$4\n #APP\n #NO_APP\n"
+        "\tmove\t$17,$3\n\tli\t$16,-1\t\t\t# 0xffffffff\n"
+        "\tmove\t$13,$10\n\tli\t$12,8212\t\t\t# 0x00002014\n$L6:\n"
+    ), (
+        "\tmove\t$14,$4\n\tmove\t$17,$3\n\tmove\t$15,$5\n #APP\n #NO_APP\n"
+        "\tli\t$16,-1\t\t\t# 0xffffffff\n"
+        "\tli\t$12,8212\t\t\t# 0x00002014\n\tmove\t$13,$10\n$L6:\n"
+    ), "reviewed board-seeding preheader schedule")
+    start = text.find("\tli\t$12,8212\t\t\t# 0x00002014\n\tmove\t$13,$10\n$L6:\n")
+    end = text.find("\taddu\t$12,$12,528\n", start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed board-seeding row loop not found")
+    end += len("\taddu\t$12,$12,528\n")
+    text = text[:start] + swap_registers(text[start:end], "$12", "$13") + text[end:]
+    text = replace_once(text, "$L5:\n\taddu\t$12,$12,528\n", "$L5:\n\taddu\t$13,$13,528\n",
+                        "reviewed board-seeding row increment order")
+    text = replace_once(text, "\tbne\t$2,$0,$L6\n\taddu\t$13,$13,528\n",
+                        "\tbne\t$2,$0,$L6\n\taddu\t$12,$12,528\n",
+                        "reviewed board-seeding row increment order")
+    store = (
+        "\taddu\t$3,$11,$7\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$4,%lo(D_80054810)($17)\n\t#nop\n"
+        "\tsll\t$2,$4,3\n\taddu\t$2,$2,$15\n\taddu\t$4,$4,1\n"
+        "\tsw\t$3,0($2)\n\tsh\t$16,8($3)\n\tsw\t$10,4($2)\n"
+    )
+    text = replace_once(text, store, swap_registers(store, "$2", "$3"),
+                        "reviewed board-seeding slot store allocation")
+    return normalize_standard_return(text)
+
+
 def normalize_player_scoreboard(text: str) -> str:
     text = replace_once(text, (
         "\tsw\t$0,32($sp)\n"
@@ -6622,6 +6721,10 @@ def normalize(text: str) -> str:
         return normalize_frame_display_lists(text)
     if "\t.ent\tfunc_8002E930\n" in text:
         return normalize_player_scoreboard(text)
+    if "\t.ent\tfunc_80031408\n" in text:
+        return normalize_board_item_seeding(text)
+    if "\t.ent\tfunc_8001F588\n" in text:
+        return normalize_texture_block_loads(text)
     return normalize_standard_return(text)
 
 
