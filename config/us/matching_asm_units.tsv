@@ -12,3 +12,4 @@
 0x49124	0xBC	src/libultra/send_event_message_80048524.S	-mips3 -G0	3a2a5f9f98dca4d6d6953517ef0c96e3350974f4ea22a0adf527942e27528017
 0x5790	0x20	src/runtime/copied_vector_tail_80004b90.S	-mips3 -G0	5169b0acffc329f27e836ba416816a53a8da56358d52cef318776266e0f7174c
 0x37420	0xC	src/runtime/cop0_dispatch_stub_80036820.S	-mips3 -G0	868c3a99f6e2da50f6e586b402d2f849185300ee4f797c47f04fafbbe1f3b2ad
+0x48BC0	0x2C	src/libultra/exception_entry_80047fc0.S	-mips3 -G0	da10f91e49bb52d750e973f7f1c4aca9695e867d7cb868d538512e8d00bc2eeb
