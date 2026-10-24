@@ -467,6 +467,25 @@ def normalize_menu_flag_draw(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_object_value_dispatch(text: str) -> str:
+    return replace_once(text, (
+        "\tbeq\t$4,$2,$L2\n\tjal\tfunc_80016530\n\tj\t$L3\n"
+        "$L2:\n\tlw\t$2,396($3)\n$L3:\n"
+        "\tlw\t$31,16($sp)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\taddu\t$sp,$sp,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$4,$2,$L2\n\tnop\n"
+        "\tlw\t$2,396($3)\n\tj\t$L3\n\tnop\n"
+        "$L2:\n\tjal\tfunc_80016530\n\tnop\n"
+        "$L3:\n\tlw\t$31,16($sp)\n\taddu\t$sp,$sp,24\n"
+        "\tj\t$31\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "reviewed object-value dispatch control flow")
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -520,6 +539,8 @@ def normalize(text: str) -> str:
         return normalize_resource_bounds(text)
     if "\t.ent\tfunc_80016AF8\n" in text:
         return normalize_menu_flag_draw(text)
+    if "\t.ent\tfunc_800166B0\n" in text:
+        return normalize_object_value_dispatch(text)
     return normalize_standard_return(text)
 
 

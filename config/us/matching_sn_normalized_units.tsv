@@ -80,3 +80,4 @@
 0x212F8	0x17C	src/game/func_800206F8.c	--section-base=.rdata:0x80001DA0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b0cd1c19355a9d352f4f94edbcc0c894cb9c0e5b5471ee4c83cffc5f2da3828b
 0x1EE04	0x88	src/game/func_8001E204.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a298486b69b7e94a00c4c09137e5f881caac1480c9655155b8a4ec7433c94592
 0x176F8	0x8C	src/game/func_80016AF8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9fd04ad73c18cc7b06a8a8e90e305ffd6a2c820d8aeaecbef0c34fae73ec6f7d
+0x172B0	0x40	src/game/func_800166B0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b85e69232152621e70540fce758c032af16cf76827ff51d7d0396e0f82404cc2

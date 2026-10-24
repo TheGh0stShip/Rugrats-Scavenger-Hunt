@@ -108,6 +108,77 @@ def normalize_random_flag(text: str) -> str:
     return text.replace("\tbeq\t$3,$2,.L5\n", "\tbeq\t$4,$2,.L5\n", 1)
 
 
+def normalize_state_copy_init(text: str) -> str:
+    text = replace_once(text, (
+        "\tjal\tfunc_800196A4\n\tli\t$2,0x00000008\t\t# 8\n"
+        "\tla\t$7,D_80052F4C\n\tla\t$6,D_80052F18\n"
+        "\taddu\t$8,$6,48\n\tsw\t$2,D_80059D40\n"
+    ), (
+        "\tjal\tfunc_800196A4\n\tlui\t$3,0x8006\n"
+        "\tli\t$2,0x00000008\t\t# 8\n\tsw\t$2,-0x62c0($3)\n"
+        "\tlui\t$2,0x8005\n\taddiu\t$7,$2,0x2f4c\n"
+        "\tlui\t$2,0x8005\n\taddiu\t$6,$2,0x2f18\n"
+        "\taddu\t$8,$6,48\n"
+    ), "state-copy initialization scheduling")
+    return text
+
+
+def normalize_slot_store(text: str) -> str:
+    return replace_once(
+        text, "\tlw\t$3,D_8006D688\n",
+        "\tlui\t$2,0x8007\n\tlw\t$3,-0x2978($2)\n",
+        "slot-store global address register",
+    )
+
+
+def normalize_object_timer(text: str) -> str:
+    replacements = (
+        ("\t.frame\t$sp,32,$31", "\t.frame\t$sp,24,$31"),
+        ("\tsubu\t$sp,$sp,32\n", "\tsubu\t$sp,$sp,24\n"),
+        ("\tsw\t$16,24($sp)\n", "\tsw\t$16,16($sp)\n"),
+        ("\tsw\t$31,28($sp)\n", "\tsw\t$31,20($sp)\n"),
+        ("\tlw\t$31,28($sp)\n", "\tlw\t$31,20($sp)\n"),
+        ("\tlw\t$16,24($sp)\n", "\tlw\t$16,16($sp)\n"),
+        ("\taddu\t$sp,$sp,32\n", "\taddu\t$sp,$sp,24\n"),
+    )
+    for old, new in replacements:
+        text = replace_once(text, old, new, "object-timer frame layout")
+    text = replace_once(text, (
+        "\tlh\t$2,404($16)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,.L2\n\tmove\t$3,$2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$2,$3,-1\n"
+    ), (
+        "\tlh\t$2,404($16)\n\tlhu\t$3,404($16)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,.L2\n\taddu\t$2,$3,-1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "object-timer unsigned decrement")
+    return replace_once(
+        text, "\tlh\t$4,D_800C3E44\n",
+        "\t.word\t0x3c02800c\n\t.word\t0x84443e44\n",
+        "object-timer comparison address expansion",
+    )
+
+
+def normalize_entry_copy_selection(text: str) -> str:
+    return replace_once(text, (
+        "\tmove\t$9,$4\n\tla\t$6,D_8005368C\n\tmove\t$8,$0\n.L5:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$8,$9,.L6\n\taddu\t$7,$6,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$7,$6,12\n"
+    ), (
+        "\tmove\t$9,$4\n\tmove\t$8,$0\n"
+        "\tlui\t$2,0x8005\n\taddiu\t$6,$2,0x368c\n.L5:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$8,$9,.L6\n\taddu\t$7,$6,12\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$7,$6,24\n"
+    ), "entry-copy selection layout")
+
+
 def normalize(text: str, unit: str) -> str:
     if unit == "func_800196E8":
         text = normalize_state_copy(text)
@@ -119,6 +190,14 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_object_setup(text)
     elif unit == "func_80023544":
         text = normalize_random_flag(text)
+    elif unit == "func_80018FFC":
+        text = normalize_state_copy_init(text)
+    elif unit == "func_8001F9F4":
+        text = normalize_slot_store(text)
+    elif unit == "func_800231B4":
+        text = normalize_object_timer(text)
+    elif unit == "func_8001AB7C":
+        text = normalize_entry_copy_selection(text)
     return builtin(text)
 
 
