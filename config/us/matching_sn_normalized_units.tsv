@@ -104,3 +104,4 @@
 0x16340	0x58C	src/game/func_80015740.c	--section-base=.rdata:0x8000126C -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	1689e634c5e3c2a2c0863603015d00f52b9f60be992dbbd40ee2a3cc4730023b
 0x1F67C	0x1FC	src/game/func_8001EA7C.c	--symbol=D_B005B470_DMA:0xB005B470 --symbol=D_B005B470_CFG:0xB005B470 --symbol=D_B0111310_DMA:0xB0111310 --symbol=D_B0111310_FINAL:0xB0111310 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a9aae7e72c2b0e4374b6150f37ae767f864e2ca452ec5396a3efd0d8a5b509a5
 0x168E0	0x8C	src/game/build_transformed_matrix.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0759ec34b78b3617742a34a7439c89a156c7ccaf82e36dd6172f56fbcd2d0604
+0x21474	0x2B4	src/game/func_80020874.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4d3f7da377e42ec485b106e54513c84ff73ed1621213beb1e470dab1590912d2
