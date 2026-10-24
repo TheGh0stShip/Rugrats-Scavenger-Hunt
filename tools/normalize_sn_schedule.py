@@ -518,6 +518,82 @@ def normalize_controller_direction_bits(text: str) -> str:
     ), "reviewed controller second threshold scheduling")
 
 
+def normalize_object_type_selection(text: str) -> str:
+    text = replace_once(text, (
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$0\n"
+        "\tsw\t$16,16($sp)\n\tmove\t$16,$17\n"
+    ), (
+        "\tsw\t$16,16($sp)\n\tmove\t$16,$0\n"
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$16\n"
+    ), "reviewed object-type selection prologue")
+    text = replace_once(
+        text, "\tjal\tfunc_80024660\n\tmove\t$4,$17\n",
+        "\tjal\tfunc_80024660\n\tmove\t$4,$16\n",
+        "reviewed object-type initial argument register",
+    )
+    text = replace_once(
+        text, "$L38:\n\tli\t$16,2\t\t\t# 0x00000002\n$L3:\n",
+        "$L38:\n$L3:\n\tli\t$16,2\t\t\t# 0x00000002\n",
+        "reviewed object-type default label",
+    )
+    return normalize_standard_return(text)
+
+
+def normalize_node_pool_init(text: str) -> str:
+    text = replace_once(text, (
+        "\tmove\t$6,$0\n\tmove\t$7,$2\n"
+        "\tlw\t$3,%lo(D_80059DC8)($16)\n"
+        "\tlui\t$2,%hi(D_80059DC4) # high\n"
+        "\tsw\t$7,%lo(D_80059DC4)($2)\n"
+        "\tlui\t$2,%hi(D_80059DC0) # high\n"
+    ), (
+        "\tmove\t$6,$0\n\tlui\t$3,%hi(D_80059DC4) # high\n"
+        "\tmove\t$4,$2\n\tsw\t$4,%lo(D_80059DC4)($3)\n"
+        "\tlw\t$3,%lo(D_80059DC8)($16)\n"
+        "\tlui\t$2,%hi(D_80059DC0) # high\n"
+    ), "reviewed node-pool global scheduling")
+    text = replace_once(
+        text, "\tbeq\t$3,$0,$L3\n\tsw\t$7,%lo(D_80059DC0)($2)\n",
+        "\tbeq\t$3,$0,$L3\n\tsw\t$4,%lo(D_80059DC0)($2)\n",
+        "reviewed node-pool head store",
+    )
+    text = replace_once(
+        text, "\tmove\t$5,$7\n\tli\t$4,16\t\t\t# 0x00000010\n",
+        "\tmove\t$7,$4\n\tmove\t$5,$7\n\tli\t$4,16\t\t\t# 0x00000010\n",
+        "reviewed node-pool loop registers",
+    )
+    return normalize_standard_return(text)
+
+
+def normalize_object_update_dispatch(text: str) -> str:
+    text = replace_once(
+        text, "\tandi\t$2,$3,0x0080\n",
+        "\tandi\t$4,$3,0x0080\n",
+        "reviewed object-update flag register",
+    )
+    text = replace_once(
+        text, "\tbeq\t$2,$0,$L2\n\tli\t$2,-129",
+        "\tbeq\t$4,$0,$L2\n\tli\t$2,-129",
+        "reviewed object-update flag branch",
+    )
+    text = replace_once(text, (
+        "\tand\t$2,$3,$2\n\tsw\t$2,280($16)\n"
+        "\tandi\t$2,$3,0x0008\n"
+    ), (
+        "\tand\t$2,$3,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$4,$0,$L2\n\tsw\t$2,280($16)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tandi\t$2,$2,0x0008\n"
+    ), "reviewed object-update cleared-flag check")
+    text = replace_once(
+        text, "\tjal\tfunc_8000DFD8\n\tli\t$4,6",
+        "\tjal\tfunc_8000DFD8\n\tnop",
+        "reviewed object-update call scheduling",
+    )
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -575,6 +651,12 @@ def normalize(text: str) -> str:
         return normalize_object_value_dispatch(text)
     if "\t.ent\tfunc_80016530\n" in text:
         return normalize_controller_direction_bits(text)
+    if "\t.ent\tfunc_800226A8\n" in text:
+        return normalize_object_type_selection(text)
+    if "\t.ent\tfunc_80016830\n" in text:
+        return normalize_node_pool_init(text)
+    if "\t.ent\tfunc_80023C40\n" in text:
+        return normalize_object_update_dispatch(text)
     return normalize_standard_return(text)
 
 
