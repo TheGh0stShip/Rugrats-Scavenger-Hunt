@@ -4774,6 +4774,179 @@ def normalize_two_player_minigame(text: str) -> str:
          "\tlui\t$3,%hi(D_800C3E38) # high\n"),
         "two-player result table address order",
     )
+    # The switch guarantees a zero/one winner index.  Retail encodes the
+    # inversion with xori; this compiler retains the already-loaded literal 1
+    # in a1 and emits the equivalent register xor.
+    text = replace_once(
+        text,
+        "\txor\t$3,$3,$5\n",
+        "\txori\t$3,$3,1\n",
+        "two-player winner inversion",
+    )
+    text = replace_once(
+        text,
+        ("\tbeq\t$2,$0,$L121\n"
+         "\tlui\t$3,%hi(D_80059DB8) # high\n"
+         "\t.set\tmacro\n\t.set\treorder\n\n"
+         "\tlui\t$2,%hi(D_800C3E2C) # high\n"),
+        ("\tbeq\t$2,$0,$L121\n"
+         "\tlui\t$2,%hi(D_800C3E2C) # high\n"
+         "\t.set\tmacro\n\t.set\treorder\n\n"
+         "\tlui\t$3,%hi(D_80059DB8) # high\n"),
+        "two-player prize lookup address schedule",
+    )
+    text = replace_once(
+        text,
+        ("\tand\t$2,$2,$3\n"
+         "\tlui\t$3,%hi(D_80059DB8) # high\n"
+         "\t#.set\tvolatile\n"
+         "\tsw\t$2,%lo(D_80052EE0)($4)\n"
+         "\t#.set\tnovolatile\n"
+         "\tlui\t$2,%hi(D_800C3E20) # high\n"
+         "\tlw\t$2,%lo(D_800C3E20)($2)\n"
+         "\taddiu\t$3,$3,%lo(D_80059DB8) # low\n"
+         "\tsll\t$2,$2,1\n"
+         "\taddu\t$2,$2,$3\n"
+         "\tlui\t$3,%hi(D_80052F04) # high\n"
+         "\tlh\t$5,0($2)\n"
+         "\t#.set\tvolatile\n"
+         "\tlw\t$4,%lo(D_80052F04)($3)\n"
+         "\t#.set\tnovolatile\n"),
+        ("\tand\t$2,$2,$3\n"
+         "\t#.set\tvolatile\n"
+         "\tsw\t$2,%lo(D_80052EE0)($4)\n"
+         "\t#.set\tnovolatile\n"
+         "\tlui\t$4,%hi(D_80052F04) # high\n"
+         "\tlui\t$2,%hi(D_800C3E20) # high\n"
+         "\tlui\t$3,%hi(D_80059DB8) # high\n"
+         "\taddiu\t$3,$3,%lo(D_80059DB8) # low\n"
+         "\tlw\t$2,%lo(D_800C3E20)($2)\n"
+         "\t#.set\tvolatile\n"
+         "\tlw\t$4,%lo(D_80052F04)($4)\n"
+         "\t#.set\tnovolatile\n"
+         "\tsll\t$2,$2,1\n"
+         "\taddu\t$2,$2,$3\n"
+         "\tlh\t$5,0($2)\n"),
+        "two-player prize object schedule",
+    )
+    text = replace_once(
+        text,
+        ("\tli\t$2,1\t\t\t# 0x00000001\n"
+         "\tsll\t$3,$5,$2\n"
+         "\taddu\t$3,$3,$5\n"
+         "\tsw\t$2,244($4)\n"),
+        ("\tli\t$2,1\t\t\t# 0x00000001\n"
+         "\tsw\t$2,244($4)\n"
+         "\tsll\t$3,$5,1\n"
+         "\taddu\t$3,$3,$5\n"),
+        "two-player prize angle multiply",
+    )
+    text = replace_once(
+        text,
+        ("\tmove\t$19,$0\n"
+         "\tlui\t$2,%hi(D_80059DB8) # high\n"
+         "\taddiu\t$2,$2,%lo(D_80059DB8) # low\n"
+         "\tmove\t$21,$2\n"
+         "\tlui\t$2,%hi(D_800C3E2C) # high\n"
+         "\tmove\t$20,$2\n"
+         "\tmove\t$18,$19\n"),
+        ("\tmove\t$19,$0\n"
+         "\tlui\t$2,%hi(D_800C3E2C) # high\n"
+         "\tmove\t$21,$2\n"
+         "\tlui\t$2,%hi(D_80059DB8) # high\n"
+         "\taddiu\t$2,$2,%lo(D_80059DB8) # low\n"
+         "\tmove\t$20,$2\n"
+         "\tmove\t$18,$19\n"),
+        "two-player spawn table setup",
+    )
+    spawn_start = "\tmove\t$18,$19\n"
+    spawn_end = "\n\tlui\t$3,%hi(D_80054AA8) # high\n"
+    if text.count(spawn_start) != 1:
+        raise ValueError("reviewed two-player spawn loop not found")
+    before_spawn, spawn_rest = text.split(spawn_start, 1)
+    if spawn_end not in spawn_rest:
+        raise ValueError("reviewed two-player spawn loop end not found")
+    spawn, after_spawn = spawn_rest.split(spawn_end, 1)
+    spawn = spawn_start + spawn
+    saved = re.compile(r"\$(20|21)\b")
+    spawn = saved.sub(lambda m: "$21" if m.group(1) == "20" else "$20", spawn)
+    text = before_spawn + spawn + spawn_end + after_spawn
+    text = replace_once(
+        text,
+        ("\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbltz\t$19,$L143\n"
+         "\tli\t$8,-2147483648\t\t\t# 0x80000000\n"
+         "\t.set\tmacro\n\t.set\treorder\n\n"
+         "\tlui\t$2,%hi(D_800C3E24) # high\n"
+         "\tlw\t$4,%lo(D_800C3E24)($2)\n"
+         "\tsll\t$3,$19,2\n"
+         "\taddu\t$7,$4,$3\n"
+         "\tlw\t$5,428($7)\n\t#nop\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbltz\t$5,$L143\n"
+         "\tlui\t$2,%hi(D_800C3E30) # high\n"
+         "\t.set\tmacro\n\t.set\treorder\n"),
+        ("\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbltz\t$19,$L143\n"
+         "\tlui\t$2,%hi(D_800C3E24) # high\n"
+         "\t.set\tmacro\n\t.set\treorder\n\n"
+         "\tlw\t$4,%lo(D_800C3E24)($2)\n"
+         "\tsll\t$3,$19,2\n"
+         "\taddu\t$9,$4,$3\n"
+         "\tlw\t$8,428($9)\n\t#nop\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbltz\t$8,$L143\n"
+         "\tli\t$6,-2147483648\t\t\t# 0x80000000\n"
+         "\t.set\tmacro\n\t.set\treorder\n\n"
+         "\tlui\t$2,%hi(D_800C3E30) # high\n"),
+        "two-player item source schedule",
+    )
+    text = replace_once(
+        text,
+        ("\taddu\t$6,$2,$3\n"
+         "\tlw\t$2,428($6)\n\t#nop\n"
+         "\tand\t$2,$2,$8\n"),
+        ("\taddu\t$7,$2,$3\n"
+         "\tlw\t$2,428($7)\n\t#nop\n"
+         "\tand\t$2,$2,$6\n"),
+        "two-player item destination registers",
+    )
+    text = replace_once(
+        text,
+        "\taddu\t$9,$4,$3\n",
+        "\taddu\t$9,$3,$4\n",
+        "two-player source item address operands",
+    )
+    text = replace_once(
+        text,
+        "\taddu\t$7,$2,$3\n",
+        "\taddu\t$7,$3,$2\n",
+        "two-player destination item address operands",
+    )
+    text = replace_once(
+        text,
+        ("\tli\t$21,1\t\t\t# 0x00000001\n"
+         "\tori\t$3,$3,0xffff\n"
+         "\tor\t$2,$5,$8\n"
+         "\tsw\t$2,428($7)\n"
+         "\tlw\t$2,428($6)\n"
+         "\tli\t$5,6\t\t\t# 0x00000006\n"
+         "\tand\t$2,$2,$3\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tjal\tfunc_8002621C\n"
+         "\tsw\t$2,428($6)\n"),
+        ("\tori\t$3,$3,0xffff\n"
+         "\tli\t$5,6\t\t\t# 0x00000006\n"
+         "\tor\t$2,$8,$6\n"
+         "\tsw\t$2,428($9)\n"
+         "\tlw\t$2,428($7)\n"
+         "\tli\t$21,1\t\t\t# 0x00000001\n"
+         "\tand\t$2,$2,$3\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tjal\tfunc_8002621C\n"
+         "\tsw\t$2,428($7)\n"),
+        "two-player item transfer schedule",
+    )
     # The index arithmetic and the player-array address load are independent.
     # Retail starts the address load first, hiding it behind the three ALU
     # instructions; the available scheduler emits the arithmetic first.

@@ -1,5 +1,6 @@
 # SN Systems GCC 2.8 C units with reviewed assembler scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x35578	0xEEC	src/game/update_two_player_minigame.c	--section-base=.rdata:0x80002F38 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e9ec63f77cc751f3872a0e2d793574c189c802a1931d9c49b6ae50366846d2be
 0x10818	0x120	src/game/func_8000FC18.c	--section-base=.rodata:0x80000848 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e60e06e0781d91fc37e3060ffb8f78c5d4c8d7e43da15cf506e0f7dbd695a74a
 0xF2F8	0xC8	src/game/func_8000E6F8.c	--section-base=.rodata:0x80000780 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	23a0a587d115b1e74f609702f79b674b688bd60f526ccf5e5b4071f4fa77f473
 0x2A47C	0x12C	src/game/func_8002987C.c	--section-base=.rodata:0x80002178 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	192cf807468931153057211f9772245bb3652b7199f2c7f8679ed79fc5ebbadc
