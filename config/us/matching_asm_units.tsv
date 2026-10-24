@@ -10,3 +10,5 @@
 0x1000	0x3C	src/runtime/entry_80000400.S	-mips3 -G0	bd24ec05fc457022cbbefc1f5f7712fda7c74bcdd7553e3f62b9d14e0f0b2660
 0x491F4	0x20	src/libultra/exception_resume_800485f4.S	-mips3 -G0	494212393dbc38ba18e3658db754545126093dc8eaf36649fce564aa51e4e116
 0x49124	0xBC	src/libultra/send_event_message_80048524.S	-mips3 -G0	3a2a5f9f98dca4d6d6953517ef0c96e3350974f4ea22a0adf527942e27528017
+0x5790	0x20	src/runtime/copied_vector_tail_80004b90.S	-mips3 -G0	5169b0acffc329f27e836ba416816a53a8da56358d52cef318776266e0f7174c
+0x37420	0xC	src/runtime/cop0_dispatch_stub_80036820.S	-mips3 -G0	868c3a99f6e2da50f6e586b402d2f849185300ee4f797c47f04fafbbe1f3b2ad
