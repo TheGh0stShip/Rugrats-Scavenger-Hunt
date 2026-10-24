@@ -14,7 +14,7 @@
   "status": "in-progress",
   "toolchain": "Decompkit",
   "approach": "Matching decompilation with byte-exact code and initialized-data verification, plus separate asset and physical-image inventories.",
-  "notes": "USA Rev 0: 99,928 of 323,264 code bytes and 717 of 1,273 functions matched; 640 of 32,704 initialized-data bytes matched; 0 extracted asset bytes; full 16,777,216-byte physical inventory.",
+  "notes": "USA Rev 0: 100,652 of 323,264 code bytes and 720 of 1,273 functions matched; 640 of 32,704 initialized-data bytes matched; 0 extracted asset bytes; full 16,777,216-byte physical inventory.",
   "maintainers": [
     {
       "name": "TheGh0stShip",

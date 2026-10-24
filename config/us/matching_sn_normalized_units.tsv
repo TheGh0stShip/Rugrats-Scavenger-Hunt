@@ -57,3 +57,6 @@
 0x1A944	0x9C	src/game/func_80019D44.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	61decf4b7dbd0250ec85a2d0e3f240f92b324849379edd402cb420fa370f0f90
 0x219B8	0xB4	src/game/func_80020DB8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6d65c38218d03e64f04dfc1cb9cc866588e8fb04737ac59cf198ca3dd041c359
 0x1FAD0	0x38	src/game/func_8001EED0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	94d1d9f71ade41307c728a027886c2fbfea184f157e5e9dd7e676fefe0905f9e
+0x21934	0x34	src/game/func_80020D34.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9fd4d8d7930ad0eed64c6f24e706ffdd6738a00e6e6ed9c0eb102219ec7c2ad8
+0x1C3B0	0x50	src/game/func_8001B7B0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	73aed3ea91ee73a185b64ebe7c9656a38d4b2e9f7e77408b57fce0beeca8639d
+0x225EC	0x250	src/game/func_800219EC.c	--section-base=.rdata:0x80001E10 --symbol=sqrtf:0x80045CE0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4b84a382561dcadd451930c43d074bef48f31d0c44d4041c8bc95e21e0a6bf6b

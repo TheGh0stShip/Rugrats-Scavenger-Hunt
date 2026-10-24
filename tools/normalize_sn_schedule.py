@@ -144,17 +144,35 @@ def normalize_state_reset(text: str) -> str:
     ), "reviewed state-reset scheduling pattern")
 
 
-def normalize(text: str) -> str:
-    if "\t.ent\tfunc_800149FC\n" in text:
-        return normalize_scene_renderer(text)
-    if "\t.ent\tfunc_8002A9D4\n" in text:
-        return normalize_player_selection(text)
-    if "\t.ent\tfunc_80021580\n" in text:
-        return normalize_random_selection(text)
-    if "\t.ent\tfunc_8001EED0\n" in text:
-        return normalize_resource_release(text)
-    if "\t.ent\tfunc_8001E0B0\n" in text:
-        return normalize_state_reset(text)
+def normalize_byte_clear_loop(text: str) -> str:
+    return replace_once(
+        text, "\tbne\t$2,$0,$L7\n", "\tbnel\t$2,$0,$L7\n",
+        "reviewed byte-clear branch-likely pattern"
+    )
+
+
+def normalize_shared_return(text: str) -> str:
+    first = (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tsltu\t$2,$2,1\n"
+    )
+    text = replace_once(text, first, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L_return\n\tsltu\t$2,$2,1\n"
+    ), "reviewed shared-return first path")
+    return replace_once(text, (
+        "$L2:\n\tsw\t$2,%lo(D_80053828)($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tmove\t$2,$0\n"
+    ), (
+        "$L2:\n\tsw\t$2,%lo(D_80053828)($3)\n"
+        "\tmove\t$2,$0\n$L_return:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tnop\n"
+    ), "reviewed shared-return second path")
+
+
+def normalize_standard_return(text: str) -> str:
     epilogue = re.compile(
         r"\t\.set\tnoreorder\n\t\.set\tnomacro\n"
         r"\tj\t\$31\n\taddu\t\$sp,\$sp,(?P<frame>\d+)\n"
@@ -169,6 +187,34 @@ def normalize(text: str) -> str:
         text,
         count=1,
     )
+
+
+def normalize_room_search(text: str) -> str:
+    old = "\taddu\t$2,$2,$18\n"
+    if old not in text:
+        raise ValueError("reviewed room-count decrement pattern not found")
+    text = text.replace(old, "\taddu\t$2,$2,-1\n", 1)
+    return normalize_standard_return(text)
+
+
+def normalize(text: str) -> str:
+    if "\t.ent\tfunc_800149FC\n" in text:
+        return normalize_scene_renderer(text)
+    if "\t.ent\tfunc_8002A9D4\n" in text:
+        return normalize_player_selection(text)
+    if "\t.ent\tfunc_80021580\n" in text:
+        return normalize_random_selection(text)
+    if "\t.ent\tfunc_8001EED0\n" in text:
+        return normalize_resource_release(text)
+    if "\t.ent\tfunc_8001E0B0\n" in text:
+        return normalize_state_reset(text)
+    if "\t.ent\tfunc_80020D34\n" in text:
+        return normalize_byte_clear_loop(text)
+    if "\t.ent\tfunc_8001B7B0\n" in text:
+        return normalize_shared_return(text)
+    if "\t.ent\tfunc_800219EC\n" in text:
+        return normalize_room_search(text)
+    return normalize_standard_return(text)
 
 
 def main() -> None:

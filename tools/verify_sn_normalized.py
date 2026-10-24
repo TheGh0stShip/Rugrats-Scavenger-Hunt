@@ -51,10 +51,14 @@ def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
             raw_flags = shlex.split(fields[3])
             flags = []
             bases = {}
+            extra_symbols = {}
             for flag in raw_flags:
                 if flag.startswith("--section-base="):
                     section, value = flag.split("=", 1)[1].split(":", 1)
                     bases[section] = int(value, 0)
+                elif flag.startswith("--symbol="):
+                    name, value = flag.split("=", 1)[1].split(":", 1)
+                    extra_symbols[name] = int(value, 0)
                 else:
                     flags.append(flag)
             digest = hashlib.sha256(source.read_bytes()).hexdigest()
@@ -88,10 +92,12 @@ def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
             ], project)
 
             vram = start + ROM_TO_VRAM
+            row_symbols = symbol_map.copy()
+            row_symbols.update(extra_symbols)
             result = compare_object(
                 Elf(obj.read_bytes()), rom_data,
                 lambda address: address - ROM_TO_VRAM,
-                vram, size, symbol_map, bases=bases,
+                vram, size, row_symbols, bases=bases,
                 infer=True, rodata_search=False, with_diff=False,
             )
             if not result.exact:
