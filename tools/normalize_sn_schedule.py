@@ -688,6 +688,149 @@ def normalize_direction_output(text: str) -> str:
     )
 
 
+def normalize_state_restore_with_flags(text: str) -> str:
+    text = replace_once(text, (
+        "\taddiu\t$5,$2,%lo(D_8005496C) # low\n"
+        "\tlui\t$2,%hi(D_8005497C+8) # high\n"
+        "\taddiu\t$4,$2,%lo(D_8005497C+8) # low\n"
+    ), (
+        "\taddiu\t$5,$2,%lo(D_8005496C) # low\n"
+        "\tlui\t$2,%hi(D_8005497C) # high\n"
+        "\taddiu\t$2,$2,%lo(D_8005497C) # low\n"
+        "\taddiu\t$4,$2,8\n"
+    ), "reviewed flag-table destination address")
+    text = replace_once(
+        text, "\tsw\t$2,0($4)\n$L9:\n\taddu\t$4,$4,4\n",
+        "\tsw\t$2,0($4)\n\taddu\t$4,$4,4\n$L9:\n",
+        "reviewed flag-table skipped-entry label",
+    )
+    return replace_once(text, (
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$3,$2,%lo(D_80052F18) # low\n"
+        "\tlui\t$2,%hi(D_80052F4C) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80052F4C) # low\n"
+        "\taddu\t$4,$2,48\n$L8:\n"
+        "\tlw\t$7,0($2)\n\tlw\t$8,4($2)\n"
+        "\tlw\t$9,8($2)\n\tlw\t$10,12($2)\n"
+        "\tsw\t$7,0($3)\n\tsw\t$8,4($3)\n"
+        "\tsw\t$9,8($3)\n\tsw\t$10,12($3)\n"
+        "\taddu\t$2,$2,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$4,$L8\n\taddu\t$3,$3,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$7,0($2)\n\tsw\t$7,0($3)\n"
+        "\tlw\t$31,72($sp)\n"
+    ), (
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$7,$2,%lo(D_80052F18) # low\n"
+        "\tlui\t$2,%hi(D_80052F4C) # high\n"
+        "\taddiu\t$6,$2,%lo(D_80052F4C) # low\n"
+        "\taddu\t$8,$6,48\n$L8:\n"
+        "\tlw\t$2,0($6)\n\tlw\t$3,4($6)\n"
+        "\tlw\t$4,8($6)\n\tlw\t$5,12($6)\n"
+        "\tsw\t$2,0($7)\n\tsw\t$3,4($7)\n"
+        "\tsw\t$4,8($7)\n\tsw\t$5,12($7)\n"
+        "\taddu\t$6,$6,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$6,$8,$L8\n\taddu\t$7,$7,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,0($6)\n\tlw\t$31,72($sp)\n"
+        "\tsw\t$2,0($7)\n"
+    ), "reviewed state restore copy registers")
+
+
+def normalize_timed_object_result(text: str) -> str:
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$17,$L5\n\tslt\t$3,$3,$17\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$2,60\t\t\t# 0x0000003c\n"
+        "$L10:\n\tsh\t$2,404($16)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L8\n\tli\t$2,16\t\t\t# 0x00000010\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L5:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$0,$L8\n\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$17,$L9\n\tslt\t$3,$3,$17\n"
+        "\tbne\t$3,$0,$L8\n\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\tj\t$L8\n\tli\t$2,2\t\t\t# 0x00000002\n"
+        "$L9:\n\tli\t$2,60\t\t\t# 0x0000003c\n"
+        "$L10:\n\tsh\t$2,404($16)\n\tli\t$2,16\t\t\t# 0x00000010\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "reviewed timed-object result flow")
+    return normalize_standard_return(text)
+
+
+def normalize_object_trigger_result(text: str) -> str:
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L3\n\tmove\t$17,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$3,252($18)\n\tli\t$2,6\t\t\t# 0x00000006\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$2,$L2\n\tli\t$2,2\t\t\t# 0x00000002\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L3:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L12\n\tmove\t$2,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\tlw\t$3,324($18)\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L_early_return\n\tmove\t$17,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$3,252($18)\n\tli\t$2,6\t\t\t# 0x00000006\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L12\n\tmove\t$2,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\tlw\t$3,324($18)\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n"
+    ), "reviewed object-trigger early return flow")
+    text = replace_once(text, (
+        "\tsltu\t$2,$2,2\n\tbeq\t$2,$0,$L9\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8002A5B0\n\tli\t$4,44\t\t\t# 0x0000002c\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L13\n\tmove\t$4,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L9:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8002A5B0\n\tli\t$4,43\t\t\t# 0x0000002b\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$4,1\t\t\t# 0x00000001\n"
+        "$L13:\n\tjal\tfunc_8002A5EC\n\tlw\t$3,284($18)\n"
+    ), (
+        "\tsltu\t$2,$2,2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L9\n\tnop\n"
+        "\tjal\tfunc_8002A5B0\n\tli\t$4,43\t\t\t# 0x0000002b\n"
+        "\tj\t$L13\n\tli\t$4,1\t\t\t# 0x00000001\n"
+        "$L9:\n\tjal\tfunc_8002A5B0\n\tli\t$4,44\t\t\t# 0x0000002c\n"
+        "\tmove\t$4,$0\n$L13:\n"
+        "\tjal\tfunc_8002A5EC\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$3,284($18)\n"
+    ), "reviewed object-trigger random branch layout")
+    text = replace_once(text, (
+        "\tbne\t$3,$2,$L11\n\tli\t$2,30\t\t\t# 0x0000001e\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsh\t$2,404($18)\n"
+    ), (
+        "\tbne\t$3,$2,$L11\n\tli\t$4,30\t\t\t# 0x0000001e\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsh\t$4,404($18)\n"
+    ), "reviewed object-trigger timer register")
+    text = replace_once(
+        text, "\tli\t$17,1\t\t\t# 0x00000001\n\tmove\t$2,$17\n$L12:\n",
+        "\tli\t$17,1\t\t\t# 0x00000001\n$L_early_return:\n\tmove\t$2,$17\n$L12:\n",
+        "reviewed object-trigger early return target",
+    )
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -757,6 +900,12 @@ def normalize(text: str) -> str:
         return normalize_nearest_actor_search(text)
     if "\t.ent\tfunc_80021604\n" in text:
         return normalize_direction_output(text)
+    if "\t.ent\tfunc_8001906C\n" in text:
+        return normalize_state_restore_with_flags(text)
+    if "\t.ent\tfunc_80023110\n" in text:
+        return normalize_timed_object_result(text)
+    if "\t.ent\tfunc_80023D64\n" in text:
+        return normalize_object_trigger_result(text)
     return normalize_standard_return(text)
 
 
