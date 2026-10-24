@@ -125,7 +125,7 @@ void func_80034978(void) {
     f32 n;
     Player_800C3DB0 *p;
     PObj_80034978 *o;
-    char buf[0x70];
+    char buf[0x78];
 
     done = 0;
     sel = -1;
