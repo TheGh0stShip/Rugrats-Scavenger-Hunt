@@ -167,18 +167,13 @@ void func_80026824(void) {
         rect = func_8000DD88(D_800581E9);
     }
     if (func_8000B8D8()) {
-        s32 modelId;
-
         if (D_80052F18.mode == 0) {
-            modelId = 0x54;
+            main = &func_800197C8(0x54)->model;
         } else if (D_80052F18.mode == 1) {
-            modelId = 0x55;
+            main = &func_800197C8(0x55)->model;
         } else {
             main = 0;
-            goto have_main;
         }
-        main = &func_800197C8(modelId)->model;
-    have_main:
         flags = 0x20000000;
         colStart = 0;
         rowStart = 0;
