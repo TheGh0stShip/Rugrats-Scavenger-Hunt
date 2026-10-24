@@ -1,5 +1,6 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x3D6CC	0x548	src/libmus/get_new_note.c	--section-base=.rodata:0x800032E8 -O2 -G0 -mips3 -mgp32 -mfp32 -finline-functions	3d358815d579b40ac26627985830e02e1c97f4cd9741ac359ad63032757e6447
 0x3B480	0x220	src/game/func_8003A880.c	--symbol=__fixdfdi:0x8003B400 --symbol=__floatdidf:0x8003B520 -O1 -G0 -mips3 -mgp32 -mfp32	dbfab436a4f667e34e14fa4c045f70f406e419821189f088dcf74b6896d1c54d
 0x413D0	0x270	src/libultra/n_al_syn_new.c	--symbol=n_syn:0x80055AF4 --symbol=alHeapDBAlloc:0x8004CAC0 --symbol=n_alFxCreate:0x80041DB0 --symbol=n_alFxPull:0x800412F0 --symbol=n_alMainBusPull:0x80040D30 --symbol=alLink:0x8004CA2C --symbol=alN_PVoiceNew:0x800411BC -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	1b65b0964c86b3b8fd11f0f678419ed2e5846329641bb018ddff666baaee4a15
 0x42200	0x1F0	src/libultra/n_al_fx_param.c	--section-base=.rodata:0x80003490 --symbol=n_syn:0x80055AF4 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	4d347c81c1d0ea0f1ae8e2d4d5918804310e0c9f91b66fdfb5ae684d05f2735e
