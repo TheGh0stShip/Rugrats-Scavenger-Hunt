@@ -1,7 +1,2 @@
 # VRAM SIZE SOURCE NOTES
-0x8001E0B0	0x30	src/game/reset_resource_record.c	semantic C; closest SN build has two scheduling differences
-0x8001EF98	0x2C	src/game/apply_resource_value.c	semantic C; closest KMC build has an a0/v0 allocation swap
-0x8001EFC4	0x28	src/game/release_global_resource.c	semantic C; closest KMC build has an a0/v0 allocation swap
-0x8004CAC0	0x50	src/runtime/allocate_aligned_array.c	semantic C; closest KMC build differs only in one instruction scheduling position
-0x80015CE0	0x8C	src/game/build_transformed_matrix.c	corrected start after a non-code word; semantic C; closest SN build differs only in return-delay scheduling
 
