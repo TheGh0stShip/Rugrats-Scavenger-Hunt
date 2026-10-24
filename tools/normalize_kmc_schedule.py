@@ -66,6 +66,21 @@ def normalize_guarded_callback(text: str) -> str:
     )
 
 
+def normalize_find_record_pair(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tbeql\t$2,$6,.L27\n",
+        "\tbeq\t$2,$6,.L27\n",
+        "second-key match branch",
+    )
+    return replace_once(
+        text,
+        "\tbeql\t$2,$5,.L27\n",
+        "\tbeq\t$2,$5,.L27\n",
+        "first-key match branch",
+    )
+
+
 def normalize_divisible_state(text: str) -> str:
     return replace_once(
         text,
@@ -571,6 +586,8 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_c06_func_80027978(text)
     elif unit == "func_8001D0F0":
         text = normalize_guarded_callback(text)
+    elif unit == "func_80007FF8":
+        text = normalize_find_record_pair(text)
     elif unit == "func_80022760":
         text = normalize_divisible_state(text)
     elif unit == "func_80024D14":
