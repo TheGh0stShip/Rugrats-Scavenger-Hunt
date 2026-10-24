@@ -233,3 +233,5 @@
 0x39D38	0x84	src/runtime/round_decimal_digits.c	-O1 -G0 -mips3 -mgp32 -mfp32	b8ada98bfc526437ee8bef07f8b5d84e4b13be249a8416f62d538a2205a69592
 0x39B60	0xC4	src/runtime/append_formatted_character.c	-O1 -G0 -mips3 -mgp32 -mfp32	ca41ea2a9c35bed34b3562b56f9b7c73578b0f326b8f33f457e27750d1ff654d
 0x39DBC	0x160	src/runtime/format_exponent_digits.c	-O1 -G0 -mips3 -mgp32 -mfp32	0e11ae8b402a551f68184e338b8568dc59a6409900163c7ed04a716b43dd639b
+0x4E610	0x90	src/libultra/os_si_raw_read_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	904e096ed8850a8540720ca61897d05bacfeedbec1af36116e15fa1876dc00dd
+0x4E6C0	0x70	src/libultra/os_si_raw_write_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	476244ba68f8f0111d58f77ea8ff138fddfb61f9c7a571d55f031e4acf54ef9f
