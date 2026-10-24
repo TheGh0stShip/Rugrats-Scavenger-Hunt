@@ -136,16 +136,17 @@ extern void func_8000DCC8(s32, s32, s32 *, s32 *);
 #define GRID_ROW(r) ((struct Grid_800581F0 *)(D_800581F0 + (r) * 0x80))
 
 void func_80026824(void) {
-    struct Model_800197C8 *main;
+    register struct Model_800197C8 *main __asm__("$18");
     register struct Model_800197C8 *extra1 __asm__("$21") = 0;
     register struct Model_800197C8 *extra2 __asm__("$22") = 0;
     struct Rect_8000DD88 *rect = 0;
     struct Placed_8000DD88 *it;
-    void *mtx;
+    register void *mtx __asm__("$19");
     register s32 flags __asm__("$20");
     register s32 resId __asm__("$23");
     s32 bgId;
-    s32 colEnd, rowStart, rowEnd, colStart;
+    s32 colEnd, rowStart, rowEnd;
+    register s32 colStart __asm__("$fp");
     s32 row, col;
     s32 cell, hi, id, k;
     s32 bonus = 0;
@@ -227,9 +228,9 @@ void func_80026824(void) {
 draw:
     zero = 0.0f;
     initialScale = 1.0f;
-    v.x = zero;
-    v.y = zero;
-    v.z = zero;
+    v.x = 0.0f;
+    v.y = 0.0f;
+    v.z = 0.0f;
     mtx = func_8001E630();
     func_8000CF10(mtx, zero, zero, zero, initialScale, v.x, v.y, v.z);
     if (main != 0) {
@@ -293,7 +294,6 @@ draw:
         flags = 0;
     }
 
-
     for (row = rowStart; row < rowEnd; row++) {
         for (col = colStart; col < colEnd; col++) {
             rowOff = row - rowStart;
@@ -340,8 +340,12 @@ draw:
                 func_8000C034(&func_800197C8(id)->model, v.x, v.y, v.z, D_80059CF0, mtx, flags);
             } else {
                 s32 t = ROOM(D_800581E9)->unk1C;
-                if (t < 0x53 && t >= 0x51 && (u32)id < 0xF) {
-                    id += 0x18;
+                if (t < 0x53) {
+                    if (t >= 0x51) {
+                        if ((u32)id < 0xF) {
+                            id += 0x18;
+                        }
+                    }
                 }
                 flags |= 0x40000000;
                 func_8000C034(&D_8006FBE0[id], v.x, v.y, v.z, D_80059CF0, mtx, flags);
@@ -381,9 +385,11 @@ draw:
             v.y = zero;
             v.x = tileCol * 600 + 300;
             v.z = tileRow * 600 + 300;
-            if ((u32)id < 0x100 && (u32)id >= 0xFE) {
-                v.x -= 300.0f;
-                v.z -= 300.0f;
+            if ((u32)id < 0x100) {
+                if ((u32)id >= 0xFE) {
+                    v.x -= 300.0f;
+                    v.z -= 300.0f;
+                }
             }
             mtx = func_8001E630();
             if (it->angle == 0x5A) {
