@@ -1,5 +1,9 @@
 # SN Systems GCC 2.8 C units with reviewed assembler scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x10818	0x120	src/game/func_8000FC18.c	--section-base=.rodata:0x80000848 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e60e06e0781d91fc37e3060ffb8f78c5d4c8d7e43da15cf506e0f7dbd695a74a
+0xF2F8	0xC8	src/game/func_8000E6F8.c	--section-base=.rodata:0x80000780 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	23a0a587d115b1e74f609702f79b674b688bd60f526ccf5e5b4071f4fa77f473
+0x2A47C	0x12C	src/game/func_8002987C.c	--section-base=.rodata:0x80002178 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	192cf807468931153057211f9772245bb3652b7199f2c7f8679ed79fc5ebbadc
+0x7738	0xE0	src/game/func_80006B38.c	--section-base=.rodata:0x80000560 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e629d6893ce70b579e08992361f44682d251fb58bdcc6dbad248f02b854de93f
 0x65EC	0x110	src/game/func_800059EC.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6f4a4d826591ccd35a5ee6b46c950604d8d3e7202c7efb4553f2e0222959fac5
 0x75C8	0x118	src/game/func_800069C8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9243d9eab0d0fd667b342aafc1776b2bfa181bd13a22f6ca755c2e1a3f46fed8
 0x87D0	0x130	src/game/func_80007BD0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	fb7a286edb2a2c54add72a15d39074e54a267de684313daec20112de31999d12
