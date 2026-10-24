@@ -1,5 +1,7 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x436AC	0x64	src/libmus/install_scheduler_client.c	-O2 -G0 -mips3 -mgp32 -mfp32	426e92bf8b84791777748584f101a7dd4c70e6687ed55c136d569faaa6466804
+0x431F0	0x60	src/libmus/change_custom_effect.c	-O2 -G0 -mips3 -mgp32 -mfp32	042ba473d2c528cbaa029306eb0ccc847e206f6eef84726f65a9d25c29ebf1da
 0x4A82C	0xB8	src/libultra/al_env_mixer_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	07173705d58cacd32dee17181448da2795eb08fe2be5d5aa69678531ca60cdc3
 0x4A994	0x8C	src/libultra/al_resample_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	f2e6592d39fc6a9848a80080f24754c2a297e96feedbb24722ebe937604b0306
 0x4A8E4	0xB0	src/libultra/al_load_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	88d8928672e318886276ab5bf3f3d27cb69c38d73bd0010f75df9c8833dc032e
