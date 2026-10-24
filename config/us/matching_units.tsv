@@ -3,6 +3,7 @@
 0x3355C	0x68	src/game/func_8003295C.c	-O2 -G0 -mips3 -mgp32 -mfp32	280376a03a33aa4346c1d04e3081d0a99eeb54e26ff8fd4eb80a101a8097b7c1
 0x335C4	0x5C	src/game/func_800329C4.c	-O2 -G0 -mips3 -mgp32 -mfp32	1f91bd047e5a4f47a654766327a5d1ac6494307fda57896553405452d374d0d0
 0x3B9D0	0xD0	src/game/func_8003ADD0.c	-O1 -G0 -mips3 -mgp32 -mfp32	6d6d46f192ac4fd019b60e5a7dc277f0179f2a2a44c19c8abef4fb51499b2eca
+0x23C54	0xBC	src/game/func_80023054.c	-O2 -G0 -mips3 -mgp32 -mfp32	e39adba33fab15cff90acc21411185b7a9dcba9ac7d9dac3b5423cd42977b89f
 0x39C24	0x44	src/game/format_unsigned_digits.c	-O1 -G0 -mips3 -mgp32 -mfp32	e2019f2729440ba4fd297b2045c24fe7da1389a5ec4203bc2635f9d09f0bc7e0
 0x46CC	0x48	src/runtime/spin_counter.c	-O2 -G0 -mips3 -mgp32 -mfp32	fedbbdd84c768614f7acbe7f8aebb74f737a85cb186bf6e70f26ae89c26c21cb
 0xE368	0x24	src/game/call_func_80019bd4.c	-O2 -G0 -mips3 -mgp32 -mfp32	0ad341fbe77f9ef2bfa6a48664ee88b418c7022298273586fca7e1d2ff46e2be

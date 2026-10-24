@@ -486,6 +486,38 @@ def normalize_object_value_dispatch(text: str) -> str:
     ), "reviewed object-value dispatch control flow")
 
 
+def normalize_controller_direction_bits(text: str) -> str:
+    text = replace_once(text, (
+        "\tsll\t$2,$4,2\n\taddu\t$2,$2,$4\n\tsll\t$2,$2,1\n"
+        "\tlui\t$3,%hi(D_80058B58) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80058B58) # low\n"
+        "\taddu\t$2,$2,$3\n"
+        "\tlui\t$3,%hi(D_800012D0) # high\n"
+        "\tlb\t$7,6($2)\n\tl.s\t$f4,%lo(D_800012D0)($3)\n"
+    ), (
+        "\tlui\t$3,%hi(D_80058B58) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80058B58) # low\n"
+        "\tsll\t$2,$4,2\n\taddu\t$2,$2,$4\n\tsll\t$2,$2,1\n"
+        "\taddu\t$2,$2,$3\n\tlb\t$7,6($2)\n"
+        "\t.word\t0x3c018000\n\t.word\t0xc42412d0\n"
+    ), "reviewed controller base and first threshold scheduling")
+    return replace_once(text, (
+        "\tbeq\t$2,$0,$L2\n\tlui\t$2,%hi(D_800012D4) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L5\n\tori\t$5,$5,0x0002\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\tl.s\t$f2,%lo(D_800012D4)($2)\n"
+    ), (
+        "\tbeq\t$2,$0,$L2\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L5\n\tori\t$5,$5,0x0002\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\t.word\t0x3c018000\n\t.word\t0xc42212d4\n"
+    ), "reviewed controller second threshold scheduling")
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -541,6 +573,8 @@ def normalize(text: str) -> str:
         return normalize_menu_flag_draw(text)
     if "\t.ent\tfunc_800166B0\n" in text:
         return normalize_object_value_dispatch(text)
+    if "\t.ent\tfunc_80016530\n" in text:
+        return normalize_controller_direction_bits(text)
     return normalize_standard_return(text)
 
 
