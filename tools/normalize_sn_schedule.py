@@ -594,6 +594,100 @@ def normalize_object_update_dispatch(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def remap_registers(text: str, mapping: dict[int, int]) -> str:
+    for old in mapping:
+        text = text.replace(f"${old}", f"$R{old}")
+    for old, new in mapping.items():
+        text = text.replace(f"$R{old}", f"${new}")
+    return text
+
+
+def normalize_list_range_dispatch(text: str) -> str:
+    text = remap_registers(text, {20: 18, 19: 17, 18: 20, 17: 19})
+    for opcode, register, old, new in (
+        ("sw", 18, 32, 24), ("lw", 18, 32, 24),
+        ("sw", 17, 28, 20), ("lw", 17, 28, 20),
+        ("sw", 20, 24, 32), ("lw", 20, 24, 32),
+        ("sw", 19, 20, 28), ("lw", 19, 20, 28),
+    ):
+        text = replace_once(
+            text, f"\t{opcode}\t${register},{old}($sp)\n",
+            f"\t{opcode}\t${register},{new}($sp)\n",
+            "reviewed list-range saved-register layout",
+        )
+    text = replace_once(text, (
+        "\tlw\t$31,40($sp)\n\tlw\t$21,36($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$20,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+    ), (
+        "\tlw\t$31,40($sp)\n\tlw\t$21,36($sp)\n"
+        "\tlw\t$20,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+    ), "reviewed list-range restore order")
+    return normalize_standard_return(text)
+
+
+def normalize_nearest_actor_search(text: str) -> str:
+    text = remap_registers(text, {19: 18, 18: 19})
+    for opcode, register, old, new in (
+        ("sw", 18, 36, 32), ("lw", 18, 36, 32),
+        ("sw", 19, 32, 36), ("lw", 19, 32, 36),
+    ):
+        text = replace_once(
+            text, f"\t{opcode}\t${register},{old}($sp)\n",
+            f"\t{opcode}\t${register},{new}($sp)\n",
+            "reviewed nearest-actor saved-register layout",
+        )
+    text = replace_once(text, (
+        "\tlbu\t$2,316($16)\n\tmove\t$19,$16\n"
+        "\tsb\t$2,16($sp)\n\tlbu\t$2,317($19)\n"
+        "\tmov.s\t$f20,$f0\n\tsb\t$2,17($sp)\n"
+    ), (
+        "\tlbu\t$2,316($16)\n\tmov.s\t$f20,$f0\n"
+        "\tsb\t$2,16($sp)\n\tlbu\t$2,317($16)\n"
+        "\tmove\t$19,$16\n\tsb\t$2,17($sp)\n"
+    ), "reviewed nearest-actor best-result scheduling")
+    text = replace_once(text, (
+        "\tlw\t$31,44($sp)\n\tlw\t$20,40($sp)\n"
+        "\tlw\t$18,32($sp)\n\tlw\t$19,36($sp)\n"
+    ), (
+        "\tlw\t$31,44($sp)\n\tlw\t$20,40($sp)\n"
+        "\tlw\t$19,36($sp)\n\tlw\t$18,32($sp)\n"
+    ), "reviewed nearest-actor restore order")
+    return normalize_standard_return(text)
+
+
+def normalize_direction_output(text: str) -> str:
+    text = replace_once(
+        text, "\tj\t$31\n\tsw\t$0,0($8)\n",
+        "\tj\t$L14\n\tsw\t$0,0($8)\n",
+        "reviewed direction-zero shared return",
+    )
+    text = replace_once(text, (
+        "\tli\t$2,180\t\t\t# 0x000000b4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tsw\t$2,0($8)\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L13\n\tli\t$2,180\t\t\t# 0x000000b4\n"
+    ), "reviewed direction-180 shared store")
+    text = replace_once(text, (
+        "\tli\t$2,90\t\t\t# 0x0000005a\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tsw\t$2,0($8)\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L13\n\tli\t$2,90\t\t\t# 0x0000005a\n"
+    ), "reviewed direction-90 shared store")
+    return replace_once(
+        text, "\tli\t$2,270\t\t\t# 0x0000010e\n\tsw\t$2,0($8)\n$L14:\n",
+        "\tli\t$2,270\t\t\t# 0x0000010e\n$L13:\n\tsw\t$2,0($8)\n$L14:\n",
+        "reviewed direction-angle common store",
+    )
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -657,6 +751,12 @@ def normalize(text: str) -> str:
         return normalize_node_pool_init(text)
     if "\t.ent\tfunc_80023C40\n" in text:
         return normalize_object_update_dispatch(text)
+    if "\t.ent\tfunc_80016958\n" in text:
+        return normalize_list_range_dispatch(text)
+    if "\t.ent\tfunc_800218BC\n" in text:
+        return normalize_nearest_actor_search(text)
+    if "\t.ent\tfunc_80021604\n" in text:
+        return normalize_direction_output(text)
     return normalize_standard_return(text)
 
 
