@@ -189,6 +189,17 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_resource_range(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$8,%hi(D_80052EB0) # high\n"
+        "\tlui\t$3,%hi(D_80058C40) # high\n"
+    ), (
+        "\tlui\t$3,%hi(D_80058C40) # high\n"
+        "\tlui\t$8,%hi(D_80052EB0) # high\n"
+    ), "reviewed resource-range address scheduling")
+    return normalize_standard_return(text)
+
+
 def normalize_runtime_callback_setup(text: str) -> str:
     return replace_once(text, (
         "\tlw\t$31,16($sp)\n"
@@ -1881,6 +1892,8 @@ def normalize_large_render_pass(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8001330C\n" in text:
+        return normalize_resource_range(text)
     if "\t.ent\tfunc_8002F504\n" in text:
         return normalize_player_meter_update(text)
     if "\t.ent\tfunc_8002C8CC\n" in text or "\t.ent\tfunc_8002CA8C\n" in text:
