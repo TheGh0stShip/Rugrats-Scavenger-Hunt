@@ -106,7 +106,20 @@ def normalize(text: str) -> str:
         return normalize_scene_renderer(text)
     if "\t.ent\tfunc_8002A9D4\n" in text:
         return normalize_player_selection(text)
-    raise ValueError("no reviewed SN scheduling normalization for this unit")
+    epilogue = re.compile(
+        r"\t\.set\tnoreorder\n\t\.set\tnomacro\n"
+        r"\tj\t\$31\n\taddu\t\$sp,\$sp,(?P<frame>\d+)\n"
+    )
+    match = epilogue.search(text)
+    if match is None:
+        raise ValueError("reviewed SN return scheduling pattern not found")
+    frame = match.group("frame")
+    return epilogue.sub(
+        f"\taddu\t$sp,$sp,{frame}\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$31\n\tnop\n",
+        text,
+        count=1,
+    )
 
 
 def main() -> None:
