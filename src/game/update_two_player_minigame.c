@@ -334,15 +334,27 @@ void func_80034978(void) {
         D_800C3DB0[0].actorId = 0;
         break;
     case 2:
-        switch (D_800C3DB0[0].actorId) {
+        switch ((u32)D_800C3DB0[0].actorId) {
         case 0x1A2:
-            D_800C3E2C = D_800C3DB0[1].actorId == 0x1A4;
+            if (D_800C3DB0[1].actorId == 0x1A4) {
+                D_800C3E2C = 1;
+            } else {
+                D_800C3E2C = 0;
+            }
             break;
         case 0x1A3:
-            D_800C3E2C = D_800C3DB0[1].actorId == 0x1A2;
+            if (D_800C3DB0[1].actorId == 0x1A2) {
+                D_800C3E2C = 1;
+            } else {
+                D_800C3E2C = 0;
+            }
             break;
         case 0x1A4:
-            D_800C3E2C = D_800C3DB0[1].actorId == 0x1A3;
+            if (D_800C3DB0[1].actorId == 0x1A3) {
+                D_800C3E2C = 1;
+            } else {
+                D_800C3E2C = 0;
+            }
             break;
         }
         w = D_800C3E2C;
@@ -371,7 +383,7 @@ void func_80034978(void) {
         if (D_80054AA4 != 0) {
             D_80054AA4 = 0;
             o = func_800055A4(D_80059DB8[D_800C3E2C]);
-            switch (o->unkF8) {
+            switch ((u32)o->unkF8) {
             case 0:
                 snd = 10;
                 break;
@@ -386,11 +398,11 @@ void func_80034978(void) {
                 break;
             }
             func_8001F1C4(snd);
-            D_80052EE0 &= ~2;
             o = D_80052F04;
             o->unk104 = 0xC80;
             o->unkF4 = 1;
             o->unk100 = D_80059DB8[D_800C3E20] * 90;
+            D_80052EE0 &= ~2;
         }
         if (i == 4) {
             for (k = 0; k < 6; k++) {
