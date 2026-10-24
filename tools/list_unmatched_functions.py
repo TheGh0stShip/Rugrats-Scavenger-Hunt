@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 FUNCTIONS = ROOT / "analysis/survey/functions.toml"
 MANIFESTS = (
     ROOT / "config/us/matching_units.tsv",
+    ROOT / "config/us/matching_kmc_normalized_units.tsv",
     ROOT / "config/us/matching_kmc_as_units.tsv",
     ROOT / "config/us/matching_sn_units.tsv",
     ROOT / "config/us/matching_sn_normalized_units.tsv",

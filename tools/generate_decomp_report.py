@@ -15,6 +15,7 @@ DATA_PROGRESS = ROOT / "config/us/data_progress.toml"
 ASSET_PROGRESS = ROOT / "config/us/asset_progress.toml"
 MANIFESTS = (
     ROOT / "config/us/matching_units.tsv",
+    ROOT / "config/us/matching_kmc_normalized_units.tsv",
     ROOT / "config/us/matching_kmc_as_units.tsv",
     ROOT / "config/us/matching_sn_units.tsv",
     ROOT / "config/us/matching_sn_normalized_units.tsv",

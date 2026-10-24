@@ -1,0 +1,7 @@
+# KMC GCC 2.7.2 C units with reviewed assembler/register normalization
+# ROM_START SIZE SOURCE FLAGS SHA256
+0x1A2E8	0x4C	src/game/func_800196E8.c	--normalizer-unit=func_800196E8 -O2 -G0 -mips3 -mgp32 -mfp32	ecdb37f78faa0d70713fe3bcd2010b54621c0bebbf228ee6d6947c4892c13e18
+0x1DCF0	0x40	src/game/func_8001D0F0.c	--normalizer-unit=func_8001D0F0 -O2 -G0 -mips3 -mgp32 -mfp32	7bb5ab660a4e447eb5c2fdf3569c04fc7d8b431da4228ddde04c6d64cc9c306e
+0x23360	0x8C	src/game/func_80022760.c	--normalizer-unit=func_80022760 -O2 -G0 -mips3 -mgp32 -mfp32	f280f25a8d62538804b986d4c6bcb0235e99324c3e58f56312a5f9de2709b96f
+0x24144	0xA8	src/game/func_80023544.c	--normalizer-unit=func_80023544 -O2 -G0 -mips3 -mgp32 -mfp32	e5dfee92fa25d8be985b6b1f01725134bd19493b63301e7030879b2eb029e007
+0x25914	0x98	src/game/func_80024D14.c	--normalizer-unit=func_80024D14 -O2 -G0 -mips3 -mgp32 -mfp32	f06924e2e4978c4e8e63485a28b2db3655c85bf26bcc4e10c8f168e2ee8d1d4b
