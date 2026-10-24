@@ -18,6 +18,7 @@ MANIFESTS = (
     ROOT / "config/us/matching_sn_units.tsv",
     ROOT / "config/us/matching_sn_normalized_units.tsv",
     ROOT / "config/us/matching_ido_units.tsv",
+    ROOT / "config/us/matching_ido_normalized_units.tsv",
 )
 VRAM_ROM_DELTA = 0x7FFFF400
 FUNCTION_RE = re.compile(

@@ -32,6 +32,7 @@ verify-matching: verify-rom
 	$(N64DK) match-batch config/us/matching_sn_units.tsv=sn --project . --symbols analysis/survey/symbol_addrs.txt
 	PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) tools/verify_sn_normalized.py config/us/matching_sn_normalized_units.tsv --project . --rom "$(ROM)" --symbols analysis/survey/symbol_addrs.txt
 	$(N64DK) match-batch config/us/matching_ido_units.tsv=ido5.3 --project . --symbols analysis/survey/symbol_addrs.txt
+	PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) tools/verify_ido_normalized.py config/us/matching_ido_normalized_units.tsv --project . --rom "$(ROM)" --symbols analysis/survey/symbol_addrs.txt
 	PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) tools/verify_asm_units.py config/us/matching_asm_units.tsv --project . --rom "$(ROM)" --symbols analysis/survey/symbol_addrs.txt
 
 survey: verify-rom

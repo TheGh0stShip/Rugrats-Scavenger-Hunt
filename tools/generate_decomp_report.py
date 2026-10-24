@@ -21,6 +21,7 @@ MANIFESTS = (
     ROOT / "config/us/matching_sn_units.tsv",
     ROOT / "config/us/matching_sn_normalized_units.tsv",
     ROOT / "config/us/matching_ido_units.tsv",
+    ROOT / "config/us/matching_ido_normalized_units.tsv",
     ROOT / "config/us/matching_asm_units.tsv",
 )
 DEFAULT_OUTPUT = ROOT / "build/report.json"
