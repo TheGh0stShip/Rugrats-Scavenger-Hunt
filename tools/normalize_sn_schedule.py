@@ -215,6 +215,103 @@ def normalize_label_menu_draw(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_player_screen_positions(text: str) -> str:
+    text = replace_once(text, (
+        "\tmove\t$16,$2\n\tmove\t$5,$16\n"
+        "\tlhu\t$4,0($17)\n\tlhu\t$2,2($17)\n"
+        "\taddu\t$17,$17,4\n\taddu\t$19,$19,1\n"
+        "\tsll\t$4,$4,16\n\tand\t$4,$4,$20\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001CF20\n\tor\t$4,$4,$2\n"
+    ), (
+        "\tandi\t$4,$4,65535\n\tmove\t$16,$2\n\tmove\t$5,$16\n"
+        "\tlhu\t$2,0($17)\n\tlhu\t$3,2($17)\n"
+        "\taddu\t$17,$17,4\n\taddu\t$19,$19,1\n"
+        "\tsll\t$2,$2,16\n\tor\t$4,$4,$2\n\tand\t$4,$4,$20\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001CF20\n\tor\t$4,$4,$3\n"
+    ), "reviewed first packed-screen-position pattern")
+    text = replace_once(text, (
+        "\tmove\t$5,$16\n\tlhu\t$4,0($18)\n\tlhu\t$2,2($18)\n"
+        "\tsll\t$4,$4,16\n\tand\t$4,$4,$20\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001D034\n\tor\t$4,$4,$2\n"
+    ), (
+        "\tandi\t$4,$4,65535\n\tlhu\t$2,0($18)\n\tmove\t$5,$16\n"
+        "\tsll\t$2,$2,16\n\tor\t$4,$4,$2\n\tlhu\t$2,2($18)\n"
+        "\tand\t$4,$4,$20\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001D034\n\tor\t$4,$4,$2\n"
+    ), "reviewed second packed-screen-position pattern")
+    return normalize_standard_return(text)
+
+
+def normalize_selected_screen_positions(text: str) -> str:
+    text = replace_once(text, (
+        "\tmove\t$16,$2\n\tmove\t$5,$16\n"
+        "\tlhu\t$4,0($17)\n\tlhu\t$2,2($17)\n"
+        "\tsll\t$4,$4,16\n\tand\t$4,$4,$21\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001CF20\n\tor\t$4,$4,$2\n"
+    ), (
+        "\tandi\t$4,$4,65535\n\tmove\t$16,$2\n"
+        "\tlhu\t$2,0($17)\n\tmove\t$5,$16\n"
+        "\tsll\t$2,$2,16\n\tor\t$4,$4,$2\n"
+        "\tlhu\t$2,2($17)\n\tand\t$4,$4,$21\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001CF20\n\tor\t$4,$4,$2\n"
+    ), "reviewed selected first screen-position pattern")
+    text = replace_once(text, (
+        "\tmove\t$5,$16\n\tlhu\t$4,0($18)\n\tlhu\t$2,2($18)\n"
+        "\tsll\t$4,$4,16\n\tand\t$4,$4,$21\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001D034\n\tor\t$4,$4,$2\n"
+    ), (
+        "\tandi\t$4,$4,65535\n\tlhu\t$2,0($18)\n\tmove\t$5,$16\n"
+        "\tsll\t$2,$2,16\n\tor\t$4,$4,$2\n"
+        "\tlhu\t$2,2($18)\n\tand\t$4,$4,$21\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001D034\n\tor\t$4,$4,$2\n"
+    ), "reviewed selected second screen-position pattern")
+    return normalize_standard_return(text)
+
+
+def normalize_single_player_screen_positions(text: str) -> str:
+    text = replace_once(text, (
+        "\taddiu\t$3,$2,%lo(D_800535B0) # low\n"
+        "\tlhu\t$4,%lo(D_800535B0)($2)\n\tlhu\t$2,2($3)\n"
+        "\tsll\t$4,$4,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001CF20\n\tor\t$4,$4,$2\n"
+    ), (
+        "\taddiu\t$3,$2,%lo(D_800535B0) # low\n"
+        "\tlhu\t$2,%lo(D_800535B0)($2)\n\tlhu\t$4,2($3)\n"
+        "\tsll\t$2,$2,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001CF20\n\tor\t$4,$2,$4\n"
+    ), "reviewed primary player screen-position pattern")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_800535B4) # high\n"
+        "\taddiu\t$3,$2,%lo(D_800535B4) # low\n"
+        "\tlw\t$5,%lo(D_8005B214)($16)\n"
+        "\tlhu\t$4,%lo(D_800535B4)($2)\n\tlhu\t$2,2($3)\n"
+        "\tsll\t$4,$4,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001D034\n\tor\t$4,$4,$2\n"
+    ), (
+        "\tandi\t$4,$4,65535\n"
+        "\tlui\t$3,%hi(D_800535B4) # high\n"
+        "\tlhu\t$2,%lo(D_800535B4)($3)\n"
+        "\taddiu\t$3,$3,%lo(D_800535B4) # low\n"
+        "\tlw\t$5,%lo(D_8005B214)($16)\n\tlhu\t$3,2($3)\n"
+        "\tsll\t$2,$2,16\n\tor\t$4,$4,$2\n"
+        "\tlui\t$2,65535\n\tand\t$4,$4,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001D034\n\tor\t$4,$4,$3\n"
+    ), "reviewed secondary player screen-position pattern")
+    return normalize_standard_return(text)
+
+
 def normalize_room_search(text: str) -> str:
     old = "\taddu\t$2,$2,$18\n"
     if old not in text:
@@ -1624,6 +1721,12 @@ def normalize(text: str) -> str:
         return normalize_large_render_pass(text)
     if "\t.ent\tfunc_8001885C\n" in text:
         return normalize_label_menu_draw(text)
+    if "\t.ent\tfunc_8001D1CC\n" in text:
+        return normalize_player_screen_positions(text)
+    if "\t.ent\tfunc_8001D2F4\n" in text:
+        return normalize_selected_screen_positions(text)
+    if "\t.ent\tfunc_8001D130\n" in text:
+        return normalize_single_player_screen_positions(text)
     return normalize_standard_return(text)
 
 
