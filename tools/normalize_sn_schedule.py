@@ -279,6 +279,56 @@ def normalize_board_player_input(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_indexed_resource_pointer(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tlw\t$3,D_80052EC0\n\tlw\t$2,0($2)\n",
+        "\tlui\t$3,%hi(D_80052EC0) # high\n\tlw\t$4,0($2)\n"
+        "\tlw\t$2,%lo(D_80052EC0)($3)\n",
+        "reviewed resource pointer load allocation",
+    )
+    text = replace_once(
+        text,
+        "\tj\t$31\n\taddu\t$2,$3,$2\n",
+        "\tj\t$L_resource_return\n\taddu\t$2,$2,$4\n",
+        "reviewed resource pointer shared return",
+    )
+    return replace_once(
+        text,
+        "$L2:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tmove\t$2,$0\n",
+        "$L2:\n\tmove\t$2,$0\n$L_resource_return:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$31\n\tnop\n",
+        "reviewed resource pointer zero return",
+    )
+
+
+def normalize_other_player_vectors(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tmove\t$9,$4\n\tlui\t$6,%hi(D_800544E0) # high\n"
+        "\taddiu\t$6,$6,%lo(D_800544E0) # low\n\tmove\t$8,$0\n",
+        "\tmove\t$9,$4\n\tmove\t$8,$0\n\tlui\t$2,%hi(D_800544E0) # high\n"
+        "\taddiu\t$6,$2,%lo(D_800544E0) # low\n",
+        "reviewed player-vector loop setup",
+    )
+    text = replace_once(
+        text,
+        "\tbne\t$8,$9,$L6\n\taddu\t$7,$6,24\n",
+        "\tbeq\t$8,$9,$L6\n\taddu\t$7,$6,12\n",
+        "reviewed player-vector source branch",
+    )
+    text = replace_once(text, "\taddu\t$7,$6,12\n$L6:\n", "\taddu\t$7,$6,24\n$L6:\n", "reviewed alternate player-vector source")
+    return replace_once(
+        text,
+        "\tlw\t$3,0($7)\n\tlw\t$5,4($7)\n\tlw\t$10,8($7)\n"
+        "\tsw\t$3,0($6)\n\tsw\t$5,4($6)\n\tsw\t$10,8($6)\n",
+        "\tlw\t$2,0($7)\n\tlw\t$3,4($7)\n\tlw\t$4,8($7)\n"
+        "\tsw\t$2,0($6)\n\tsw\t$3,4($6)\n\tsw\t$4,8($6)\n",
+        "reviewed player-vector copy allocation",
+    )
+
+
 def normalize_zero_copy_with_padding(
     text: str, old: str, new: str, description: str
 ) -> str:
@@ -5435,6 +5485,10 @@ def normalize_board_event_dispatch(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8002B6E0\n" in text:
+        return normalize_other_player_vectors(text)
+    if "\t.ent\tfunc_8001361C\n" in text:
+        return normalize_indexed_resource_pointer(text)
     if "\t.ent\tfunc_800247C8\n" in text:
         return normalize_board_player_input(text)
     if "\t.ent\tfunc_8000D0AC\n" in text:
