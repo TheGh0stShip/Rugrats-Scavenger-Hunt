@@ -355,7 +355,7 @@ functions = [
     { name = "func_80014F00", vram = 0x80014f00, size = 0x840 }, # c
     { name = "func_80015740", vram = 0x80015740, size = 0x58c }, # c
     { name = "func_80015CCC", vram = 0x80015ccc, size = 0x10 }, # c
-    { name = "func_80015CDC", vram = 0x80015cdc, size = 0x90 }, # asm
+    { name = "func_80015CE0", vram = 0x80015ce0, size = 0x8c }, # c
     { name = "func_80015D70", vram = 0x80015d70, size = 0x84 }, # c
     { name = "func_80015DF4", vram = 0x80015df4, size = 0x300 }, # c
     { name = "func_800160F4", vram = 0x800160f4, size = 0x44 }, # c
