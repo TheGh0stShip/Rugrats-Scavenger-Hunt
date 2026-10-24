@@ -120,8 +120,6 @@ void func_80034978(void) {
     s32 done;
     s32 base;
     s32 snd;
-    s32 w;
-    s32 l;
     u32 mask;
     f32 n;
     Player_800C3DB0 *p;
@@ -364,12 +362,10 @@ void func_80034978(void) {
             }
             break;
         }
-        w = D_800C3E2C;
-        l = w ^ 1;
-        D_800C3E20 = l;
-        D_800C3E30 = D_800C3DB0[w].obj;
-        D_800C3E24 = D_800C3DB0[l].obj;
-        func_8000C530(D_800C3DB0[w].anim, 1, 0);
+        D_800C3E20 = D_800C3E2C ^ 1;
+        D_800C3E30 = D_800C3DB0[D_800C3E2C].obj;
+        D_800C3E24 = D_800C3DB0[D_800C3E20].obj;
+        func_8000C530(D_800C3DB0[D_800C3E2C].anim, 1, 0);
         func_8000CD50(*D_800C3DB0[D_800C3E2C].anim, 1, 1);
         func_8000C530(D_800C3DB0[D_800C3E20].anim, 2, 0);
         func_8000CD50(*D_800C3DB0[D_800C3E20].anim, 2, 1);
