@@ -218,6 +218,7 @@
 0x755C	0x6C	src/game/remap_identifier_neighbor.c	-O2 -G0 -mips3 -mgp32 -mfp32	edb8e80319e6c43ee093e5bfc88e22cd67f9d1d95c2d59b33b0647202ace3af5
 0x99D0	0x48	src/game/init_object_matrix.c	-O2 -G0 -mips3 -mgp32 -mfp32	841c1e242367d82d0c16e41cba13da61979f7e1be34edba9bf8f5cf26ee8bbda
 0x31190	0x48	src/game/initialize_active_scene.c	-O2 -G0 -mips3 -mgp32 -mfp32	e9f13f0cb627bb80358f5f2f2fc4e7f37e1ae25fa6298d4c92cf9ebc9f2d555c
+0x26A04	0x44	src/game/clear_matching_link_tag.c	-O1 -G0 -mips3 -mgp32 -mfp32	c20ece2d294c0b24dfd6c7f781f168975140f463a1d49ea81b2a266e8a94e754
 0x26C40	0x24	src/game/initialize_index_slot.c	-O2 -G0 -mips3 -mgp32 -mfp32	0234c884df047d482ca04ee016dc225a7f0dca7dd8e1af0d7efc098f29aba8fe
 0x58A4	0xC	src/runtime/read_cop0_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2ea7fc1f266eee7e59be3d8ffee2aebda5c74a4e6765e268c725a9a6a9f50ddf
 0x58B0	0xC	src/runtime/write_cop0_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	2cbf13dc62f3cfcdd5b7b506d5f3f7f0ec898fbd99b88b5a452ed04ca2bba461
