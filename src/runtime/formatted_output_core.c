@@ -42,14 +42,8 @@ extern char *func_800396E0(f64 x, s32 prec, char *out);
 extern char *func_8003ADD0(char *dst, const char *src);
 extern s32 func_8003AEA0(const char *s);
 
-#define PUT(ch)                         \
-    do {                                \
-        if (--D_800C3E60 == 0) {        \
-            func_80038F60(ch);          \
-        } else {                        \
-            *D_800C3E68++ = (ch);       \
-        }                               \
-    } while (0)
+#define PUT(ch) \
+    (--D_800C3E60 == 0 ? func_80038F60(ch) : (*D_800C3E68++ = (ch)))
 
 s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
     s32 flags;
