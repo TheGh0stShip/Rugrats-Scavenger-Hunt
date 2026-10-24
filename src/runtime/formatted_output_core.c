@@ -282,15 +282,18 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                 D_80055896 = 'e';
                 goto float_done;
             case 'g':
-            case 'G':
-                x = va_arg(ap, f64);
-                if (x < 0.0) {
-                    x = -x;
+            case 'G': {
+                f64 general_value;
+
+                general_value = va_arg(ap, f64);
+                if (general_value < 0.0) {
+                    general_value = -general_value;
                     flags |= 0x100;
                 }
                 D_80055896 = c - 2;
-                s = func_800396E0(x, fprec, &D_800C3EA0[1]);
+                s = func_800396E0(general_value, fprec, &D_800C3EA0[1]);
                 D_80055896 = 'e';
+            }
             float_done:
                 len = func_8003AEA0(s);
                 prec = 0;
