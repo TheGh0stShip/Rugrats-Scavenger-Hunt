@@ -1,5 +1,6 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x4AA20	0xB8	src/libultra/al_bus_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	3eb89d65ff14c6c980d77307a480038256d57b2e51951fc726b65d4d278f8acf
 0x4EE70	0x17C	src/libultra/os_pfs_is_plug.c	-O2 -G0 -mips3 -mgp32 -mfp32	c8f786eaf7d0770c7bd4c3fa04c4bf9bd1ea0e36653c45af25afbb78b28b4228
 0x4ED10	0xC0	src/libultra/os_cont_pack_request_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	17ce5044a933569ca87e153857bc582ad459da93debb0b24cc6cf0e2e45cafac
 0x4EC5C	0xB4	src/libultra/os_cont_get_init_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	5d90e83f28e30c6922d3b9bd8b8534a44ef78e7154e9d0b14c678e4411a5df04
