@@ -233,8 +233,8 @@ void func_80034978(void) {
         }
     }
 
-    p = D_800C3DB0;
-    for (i = 0; i < 2; i++, p++) {
+    for (i = 0; i < 2; i++) {
+        p = &D_800C3DB0[i];
         if (p->obj->unk11C == -1) {
             func_80023360(p->obj);
         }
@@ -252,16 +252,16 @@ void func_80034978(void) {
             D_80054AA8 = 10;
         }
     } else {
-        p = D_800C3DB0;
-        for (i = 0; i < 2; i++, p++) {
+        for (i = 0; i < 2; i++) {
+            p = &D_800C3DB0[i];
             p->input = func_800166B0(p->obj);
         }
     }
 
     switch (D_800C3E28) {
     case 0:
-        p = D_800C3DB0;
-        for (i = 0; i < 2; i++, p++) {
+        for (i = 0; i < 2; i++) {
+            p = &D_800C3DB0[i];
             if (p->actorId != 0) {
                 continue;
             }
@@ -294,8 +294,8 @@ void func_80034978(void) {
                 D_800C3E28 = 1;
                 D_80054A9C = 6;
                 D_80054AA8 = 0x1E;
-                p = D_800C3DB0;
-                for (i = 0; i < 2; i++, p++) {
+                for (i = 0; i < 2; i++) {
+                    p = &D_800C3DB0[i];
                     p->home = D_80054A30[2];
                     n = (f32)D_80054A9C;
                     p->vel.x = (f32)(s32)((p->home.x - p->pos.x + n - 1.0f) / n);
@@ -315,8 +315,8 @@ void func_80034978(void) {
                     base = 6;
                     break;
                 }
-                p = D_800C3DB0;
-                for (i = 0; i < 2; i++, p++) {
+                for (i = 0; i < 2; i++) {
+                    p = &D_800C3DB0[i];
                     p->home = D_80054A30[i + base];
                     n = (f32)D_80054A9C;
                     p->vel.x = (f32)(s32)((p->home.x - p->pos.x + n - 1.0f) / n);
