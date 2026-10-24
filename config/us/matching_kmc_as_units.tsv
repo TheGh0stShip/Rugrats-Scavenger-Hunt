@@ -1,5 +1,7 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x4038C	0x360	src/libultra/n_al_env_mixer_commands.c	--section-base=.rodata:0x80003408 --symbol=n_eqpower:0x80055B00 --symbol=n_alResamplePull:0x80040260 --symbol=osVirtualToPhysical:0x800495D0 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	90142b6c52ca20f00584fe15f20f8efeb47e33c1098d05de1cac9d5424bc0281
+0x42A68	0x270	src/libultra/n_al_syn_new.c	--symbol=n_syn:0x80055AF4 --symbol=alHeapDBAlloc:0x8004CAC0 --symbol=alLink:0x8004CA2C --symbol=alN_PVoiceNew:0x800411BC --symbol=n_alFxCreate:0x800420D8 --symbol=n_alFxPull:0x800412F0 --symbol=n_alMainBusPull:0x80040D30 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	0b79876a0414e735277572c435a67372c0d634f59ff68bf5612da251907747cc
 0x40740	0x448	src/libultra/n_al_adpcm_pull.c	--symbol=_decodeChunk:0x80040114 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	e21efb32b86f24d2e22f64d32e352333a4d07262333d25778354db60ede08e48
 0x40B88	0x18C	src/libultra/n_al_load_param.c	--symbol=alCopy:0x8004CB10 -D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	376bd862913524163f8aedc2582e55b286aff1476379cc235d476977140ccf3d
 0x40D14	0x144	src/libultra/n_al_decode_chunk.c	-D_LANGUAGE_C -O2 -G0 -mips3 -mgp32 -mfp32	bd7bf019346cf27cad3cab34084749fa8b535bbb657308fb7ec61a9482f732bc
@@ -211,6 +213,11 @@
 0x4CE74	0x218	src/libultra/al_load_output_buffer.c	--section-base=.rodata:0x80003890 -O2 -G0 -mips3 -mgp32 -mfp32	09fe166839276131e8125f4812b3e9a9aeb255a6a9fb40b2bb6e023123fffcab
 0x4DA1C	0x1B0	src/libultra/al_audio_frame.c	--symbol=audio_globals:0x80056340 -O2 -G0 -mips3 -mgp32 -mfp32	16a664d62ef6ae40d028d43df4467a4ac2931038c66b6960914f620750aa3494
 0x42A00	0x68	src/game/init_runtime_manager_80041e00.c	-O2 -G0 -mips3 -mgp32 -mfp32	87b87a6ea2332d23b432533d34be5e0476246f7aa8503cf7571d87e9ee58024c
+0x419D0	0x3EC	src/libultra/n_al_fx_new.c	--section-base=.rodata:0x80003460 --section-base=.data:0x80055C00 -O2 -G0 -mips3 -mgp32 -mfp32	e4ca5700a426daad21c3ae4050e4c052691add12714fd69f8e23d034d112f636
+0x41DBC	0x134	src/libultra/n_al_pvoice_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	1fe1cb77abcc66bfbcd6aa6e129dafffff4d649cedb36ab58c1f9e0b7cb1c688
+0x42600	0x128	src/libultra/n_al_load_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	91fb274b9083fe566f7248ea190c0b36d0441315be3718d7ccf51119b6cf3eba
+0x42728	0x118	src/libultra/n_al_save_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	e851301893e03edcf40af348a9ce761b41ed802d321470c1254e3502e42eb073
+0x42840	0xA0	src/libultra/n_al_filter_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	2d71db34766e2b77f344dbe01656f833fb6d1b2ed9d2a8529090d1995b651656
 0x429B0	0x50	src/game/get_prepared_runtime_word_80041db0.c	-O2 -G0 -mips3 -mgp32 -mfp32	6b1ad4cdc2ca3862fa923931aff403ea000f9c0c1767d90078eb6d123142c368
 0x4D750	0x2CC	src/libultra/al_syn_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	5c1675f3b38daefbd3d55222ad91bf44a35fcf12eb0f3c92f1e9ebb54570ab06
 0x4AF64	0x39C	src/libultra/al_raw16_pull.c	-O2 -G0 -mips3 -mgp32 -mfp32	56aacfe024e1dff9dffe1144459899f070fbe96b84ba77b7e68ba4a60db550e3

@@ -8,6 +8,37 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 typedef float f32;
 
+typedef struct ALLink {
+    struct ALLink *next;
+    struct ALLink *prev;
+} ALLink;
+
+typedef struct {
+    void *base;
+    void *current;
+    s32 length;
+    s32 count;
+} ALHeap;
+
+typedef struct ALParam {
+    struct ALParam *next;
+    s32 delta;
+    s16 type;
+    union { f32 f; s32 i; } data;
+    union { f32 f; s32 i; } moredata;
+    union { f32 f; s32 i; } stillmoredata;
+    union { f32 f; s32 i; } yetstillmoredata;
+} ALParam;
+
+typedef struct ALFilter {
+    struct ALFilter *source;
+    void *handler;
+    void *set_parameter;
+    s16 input;
+    s16 output;
+    s32 type;
+} ALFilter;
+
 typedef union {
     struct {
         u32 w0;
@@ -52,7 +83,8 @@ typedef struct ALWaveTable {
 } ALWaveTable;
 
 typedef struct N_PVoice {
-    char padding_00[0x0C];
+    ALLink node;
+    void *vvoice;
     void *dc_state;
     void *dc_lstate;
     ALRawLoop dc_loop;
@@ -69,8 +101,72 @@ typedef struct N_PVoice {
     s32 rs_upitch;
     f32 rs_delta;
     s32 rs_first;
-    char padding_54[0x38];
+    void *em_state;
+    s16 em_pan;
+    s16 em_volume;
+    s16 em_cvolL;
+    s16 em_cvolR;
+    s16 em_dryamt;
+    s16 em_wetamt;
+    u16 em_lratl;
+    s16 em_lratm;
+    s16 em_ltgt;
+    u16 em_rratl;
+    s16 em_rratm;
+    s16 em_rtgt;
+    s32 em_delta;
+    s32 em_segEnd;
+    s32 em_first;
+    void *em_ctrlList;
+    void *em_ctrlTail;
+    s32 em_motion;
+    s32 offset;
 } N_PVoice;
+
+typedef struct {
+    ALFilter filter;
+} N_ALMainBus;
+
+typedef struct {
+    ALFilter filter;
+    s32 sourceCount;
+    s32 maxSources;
+    N_PVoice **sources;
+    void *fx;
+    void *fx_array[8];
+} N_ALAuxBus;
+
+typedef struct {
+    void *head;
+    ALLink pFreeList;
+    ALLink pAllocList;
+    ALLink pLameList;
+    s32 paramSamples;
+    s32 curSamples;
+    void *dma;
+    ALHeap *heap;
+    ALParam *paramList;
+    N_ALMainBus *mainBus;
+    N_ALAuxBus *auxBus;
+    s32 numPVoices;
+    s32 maxAuxBusses;
+    s32 outputRate;
+    s32 maxOutSamples;
+    s32 sv_dramout;
+    s32 sv_first;
+} N_ALSynth;
+
+typedef struct {
+    s32 maxVVoices;
+    s32 maxPVoices;
+    s32 maxUpdates;
+    s32 maxFXbusses;
+    void *dmaproc;
+    ALHeap *heap;
+    s32 outputRate;
+    u8 fxType;
+    s32 *params;
+} ALSynConfig;
 
 #define _SHIFTL(v, s, w) ((u32)(((u32)(v) & ((0x01 << (w)) - 1)) << (s)))
 #define K0_TO_PHYS(x) ((u32)(x) & 0x1FFFFFFF)

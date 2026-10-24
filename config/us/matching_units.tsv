@@ -270,6 +270,8 @@
 0xDA7C	0x70	src/game/set_runtime_entry_fields.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	ba2d0434b25c98460912171833b19bc6e212b7b60c263b2414f23a15b2299319
 0xDC50	0x5C	src/game/get_or_create_runtime_object.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	61fe2207c8da00da206b86402d9aecec5cd9c075e779c056c29944f8553d395b
 0x43D2C	0x74	src/game/copy_overlapping_bytes_8004312c.c	-O2 -G0 -mips3 -mgp32 -mfp32	68e3a900c54f0d8360c1e951b5778e0b6eacc727772150d49fc53f42250ab1b9
+0x428E0	0x50	src/libultra/n_al_save_pull.c	-O2 -G0 -mips3 -mgp32 -mfp32	de7c1a350b6c8e687e28c5c0d95f85c7da3acb4e916f5138b115650d27d1777d
+0x42930	0x80	src/libultra/n_al_main_bus_pull.c	-O2 -G0 -mips3 -mgp32 -mfp32	d3550972672d78e78132fc4c9042a6493b07f45b4ca520dd63ac7def88ce8425
 0x17784	0x58	src/game/update_runtime_transition_pair.c	-O2 -G0 -mips3 -mgp32 -mfp32	9f7c330f88529eb2f7a78f34c9d8a74bd885bb204557b7deb9794fa3695128ac
 0x53CC	0x90	src/game/read_runtime_command_value.c	-O2 -G0 -mips3 -mgp32 -mfp32	f4b6b081653a44c5b039b76f0f590013b06968161447cc1cbadd1e560dbb3e25
 0x545C	0x90	src/runtime/host_file_open.c	-O2 -G0 -mips3 -mgp32 -mfp32	51506fe2f0b4e3068eadf5714e706968b6158e4eb850ac7061a2a5bc0577b85f
