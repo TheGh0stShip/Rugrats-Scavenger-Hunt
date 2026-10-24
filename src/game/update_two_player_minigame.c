@@ -308,7 +308,10 @@ void func_80034978(void) {
                 D_80054A9C = 6;
                 D_80054AA8 = 0x1E;
                 base = 0;
-                switch (D_800C3DB0[0].actorId + D_800C3DB0[1].actorId - 0x344) {
+                switch ((u32)(D_800C3DB0[0].actorId + D_800C3DB0[1].actorId) - 0x344) {
+                case 0:
+                case 1:
+                    break;
                 case 2:
                     base = 3;
                     break;
