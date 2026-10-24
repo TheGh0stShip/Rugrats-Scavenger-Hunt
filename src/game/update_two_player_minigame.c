@@ -385,6 +385,7 @@ void func_80034978(void) {
         }
         if (D_80054AA4 != 0) {
             PObj_80034978 *prize;
+            s32 prizeAngle;
 
             D_80054AA4 = 0;
             o = func_800055A4(D_80059DB8[D_800C3E2C]);
@@ -404,10 +405,11 @@ void func_80034978(void) {
             }
             func_8001F1C4(snd);
             D_80052EE0 &= ~2;
+            prizeAngle = D_80059DB8[D_800C3E20] * 90;
             prize = D_80052F04;
             prize->unk104 = 0xC80;
             prize->unkF4 = 1;
-            prize->unk100 = D_80059DB8[D_800C3E20] * 90;
+            prize->unk100 = prizeAngle;
         }
         if (i == 4) {
             D_80052F04->unk100 = D_80059DB8[D_800C3E2C] * 90;
