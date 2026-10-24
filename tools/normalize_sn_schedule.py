@@ -197,6 +197,21 @@ def normalize_room_search(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_current_object_filter(text: str) -> str:
+    text = replace_once(text, (
+        "\tbne\t$3,$2,$L2\n"
+        "\tlui\t$2,%hi(D_8006FB8C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$4,%lo(D_8006FB8C)($2)\n"
+    ), (
+        "\tbne\t$3,$2,$L2\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_8006FB8C) # high\n"
+        "\tlw\t$4,%lo(D_8006FB8C)($2)\n"
+    ), "reviewed current-object branch scheduling pattern")
+    return text
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -214,6 +229,8 @@ def normalize(text: str) -> str:
         return normalize_shared_return(text)
     if "\t.ent\tfunc_800219EC\n" in text:
         return normalize_room_search(text)
+    if "\t.ent\tfunc_8001C560\n" in text:
+        return normalize_current_object_filter(text)
     return normalize_standard_return(text)
 
 
