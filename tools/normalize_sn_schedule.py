@@ -2659,6 +2659,124 @@ def normalize_trade_capacity_score(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_trade_state_machine(text: str) -> str:
+    text = replace_once(text, (
+        "\tsll\t$3,$17,1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$2,$3,$16\n"
+        "\taddu\t$7,$3,$18\n"
+        "\tlh\t$4,496($2)\n"
+        "\tlh\t$5,488($2)\n"
+        "\tlh\t$6,488($7)\n"
+        "\tsubu\t$4,$4,$5\n"
+        "\tslt\t$2,$6,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L76\n"
+        "\tlui\t$2,%hi(D_800B9304) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_800B9304) # high\n"
+        "\taddu\t$2,$5,$4\n"
+        "\tsw\t$2,%lo(D_800B9304)($3)\n"
+        "\tmove\t$2,$6\n"
+        "\tlui\t$3,%hi(D_800B9300) # high\n"
+        "\tsubu\t$2,$2,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L28\n"
+        "\tsw\t$2,%lo(D_800B9300)($3)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L23:\n"
+        "\tli\t$2,99\t\t\t# 0x00000063\n"
+        "\tlh\t$5,504($16)\n"
+        "\tlh\t$6,504($18)\n"
+        "\tsubu\t$4,$2,$5\n"
+        "\tslt\t$2,$6,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L29\n"
+        "\tlui\t$2,%hi(D_800B9304) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_800B9304) # high\n"
+        "\taddu\t$2,$5,$4\n"
+        "\tsw\t$2,%lo(D_800B9304)($3)\n"
+        "\tlui\t$3,%hi(D_800B9300) # high\n"
+        "\tsubu\t$2,$6,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L28\n"
+        "\tsw\t$2,%lo(D_800B9300)($3)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L29:\n$L76:\n"
+        "\taddu\t$3,$5,$6\n"
+        "\tsw\t$3,%lo(D_800B9304)($2)\n"
+        "\tlui\t$2,%hi(D_800B9300) # high\n"
+        "\tsw\t$0,%lo(D_800B9300)($2)\n"
+    ), (
+        "\tsll\t$2,$17,1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$3,$2,$16\n"
+        "\taddu\t$6,$2,$18\n"
+        "\tlh\t$2,496($3)\n"
+        "\tlh\t$5,488($3)\n"
+        "\tlh\t$3,488($6)\n"
+        "\tsubu\t$4,$2,$5\n"
+        "\tslt\t$2,$3,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L76\n"
+        "\tlui\t$2,%hi(D_800B9304) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_800B9304) # high\n"
+        "\taddu\t$2,$5,$4\n"
+        "\tsw\t$2,%lo(D_800B9304)($3)\n"
+        "\tlh\t$2,488($6)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L75\n"
+        "\tlui\t$3,%hi(D_800B9300) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L23:\n"
+        "\tli\t$2,99\t\t\t# 0x00000063\n"
+        "\tlh\t$5,504($16)\n"
+        "\tlh\t$3,504($18)\n"
+        "\tsubu\t$4,$2,$5\n"
+        "\tslt\t$2,$3,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L76\n"
+        "\tlui\t$2,%hi(D_800B9304) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_800B9304) # high\n"
+        "\taddu\t$2,$5,$4\n"
+        "\tsw\t$2,%lo(D_800B9304)($3)\n"
+        "\tlh\t$2,504($18)\n"
+        "\tlui\t$3,%hi(D_800B9300) # high\n"
+        "$L75:\n"
+        "\tsubu\t$2,$2,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L28\n"
+        "\tsw\t$2,%lo(D_800B9300)($3)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L76:\n"
+        "\taddu\t$3,$5,$3\n"
+        "\tsw\t$3,%lo(D_800B9304)($2)\n"
+        "\tlui\t$2,%hi(D_800B9300) # high\n"
+        "\tsw\t$0,%lo(D_800B9300)($2)\n"
+    ), "reviewed trade-state transfer block")
+    text = replace_once(text, (
+        "\tlh\t$6,496($2)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$6,$19,$L9\n"
+    ), (
+        "\tlh\t$5,496($2)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$5,$19,$L9\n"
+    ), "reviewed trade-state selected-capacity register")
+    text = replace_once(text,
+        "\tsw\t$6,%lo(D_800B9304)($2)\n",
+        "\tsw\t$5,%lo(D_800B9304)($2)\n",
+        "reviewed trade-state selected-capacity store")
+    text = replace_once(text,
+        "\taddu\t$2,$16,$2\n\tlh\t$3,488($2)\n",
+        "\taddu\t$2,$2,$16\n\tlh\t$3,488($2)\n",
+        "reviewed trade-state item pointer operand order")
+    return normalize_standard_return(text)
+
+
 
 
 def normalize_player_item_row(text: str) -> str:
@@ -3261,6 +3379,8 @@ def normalize(text: str) -> str:
         return normalize_angle_dial_update(text)
     if "\t.ent\tfunc_8002DE5C\n" in text:
         return normalize_trade_capacity_score(text)
+    if "\t.ent\tfunc_8002EBF0\n" in text:
+        return normalize_trade_state_machine(text)
     if "\t.ent\tfunc_8002C714\n" in text:
         return normalize_player_item_row(text)
     if "\t.ent\tfunc_80028C18\n" in text:

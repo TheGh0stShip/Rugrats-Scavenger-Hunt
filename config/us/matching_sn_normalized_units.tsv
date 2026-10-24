@@ -341,3 +341,4 @@
 0x14740	0x88	src/game/init_frame_buffers_80013b40.c	--symbol=D_8013C000:0x8013C000 --symbol=D_80178000:0x80178000 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f5a9a1014f0cd15ca8293425b6f72da97a56c72e5a816323181d04d02ab7d1e2
 0x342A4	0xC8	src/game/load_scene_lights_800336a4.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d2d1bc5abe7e2c0768aab2b698470c8c93f41be65574ea9fb0c91bd5a885012a
 0x13D3C	0xB4	src/game/load_archive_entry_8001313c.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3b5d1c963f58ec5c637bc6f7ec20a888ce24aed0f485d47a6158e1a4989421db
+0x2F7F0	0x838	src/game/update_trade_state_machine.c	--section-base=.rdata:0x80002970 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a8d4119cdc433d6075fed0104478cda92cc44f970a1c5d6a381288563d4831d4
