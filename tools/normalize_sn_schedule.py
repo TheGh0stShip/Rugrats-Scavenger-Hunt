@@ -240,6 +240,27 @@ def normalize_tile_collision_search(text: str) -> str:
     )
 
 
+def normalize_packed_state_dispatch(text: str) -> str:
+    return normalize_zero_copy_with_padding(
+        text,
+        "\tlhu\t$4,%lo(D_800544D4)($2)\n"
+        "\tlhu\t$2,2($3)\n"
+        "\tsll\t$4,$4,16\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tjal\tfunc_8002C714\n"
+        "\tor\t$4,$4,$2\n",
+        "\tlhu\t$2,%lo(D_800544D4)($2)\n"
+        "\tlhu\t$4,2($3)\n"
+        "\tsll\t$2,$2,16\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tjal\tfunc_8002C714\n"
+        "\tor\t$4,$2,$4\n",
+        "reviewed packed-state operand allocation pattern",
+    )
+
+
 def normalize_resource_range(text: str) -> str:
     text = replace_once(text, (
         "\tlui\t$8,%hi(D_80052EB0) # high\n"
@@ -4296,6 +4317,8 @@ def normalize_e4_func_80006C18(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8002D4C0\n" in text:
+        return normalize_packed_state_dispatch(text)
     if "\t.ent\tfunc_800222E8\n" in text:
         return normalize_tile_collision_search(text)
     if "\t.ent\tfunc_800255AC\n" in text:
