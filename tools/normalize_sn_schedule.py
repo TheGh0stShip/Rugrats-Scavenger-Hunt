@@ -1354,6 +1354,113 @@ def normalize_prize_wheel(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_scene_camera_pass(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_8007782C) # high\n"
+        "\tlw\t$2,%lo(D_8007782C)($2)\n"
+    ), (
+        "\tlui\t$2,%hi(D_8007782C) # high\n"
+        "\tlw\t$4,%lo(D_8007782C)($2)\n"
+    ), "reviewed camera-pass active flag register")
+    text = replace_once(text, (
+        "\tbeq\t$2,$0,$L10\n\tlui\t$2,%hi(D_8005B830) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tjal\tfunc_8001E28C\n\tlui\t$2,%hi(D_8005B830) # high\n"
+        "$L10:\n"
+    ), (
+        "\tbeq\t$4,$0,$L10\n\tlui\t$2,%hi(D_8005B830) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001E28C\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_8005B830) # high\n"
+        "$L10:\n"
+    ), "reviewed camera-pass optional update scheduling")
+    text = replace_once(text, (
+        "\tlh\t$2,40($sp)\n\tlh\t$3,42($sp)\n"
+        "\tlh\t$7,44($sp)\n\tmtc1\t$2,$f2\n"
+    ), (
+        "\tlh\t$2,40($sp)\n\tlh\t$3,42($sp)\n"
+        "\tlh\t$7,44($sp)\n"
+        "\t.set\tnoat\n\tlui\t$1,%hi(D_80001D60) # high\n"
+        "\tl.s\t$f22,%lo(D_80001D60)($1)\n\t.set\tat\n"
+        "\tsll\t$4,$4,6\n"
+        "\tmtc1\t$2,$f2\n"
+    ), "reviewed camera-pass unit scale load")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80001D60) # high\n"
+        "\tl.s\t$f22,%lo(D_80001D60)($2)\n"
+        "\tsll\t$4,$4,6\n"
+    ), "", "reviewed camera-pass late unit scale load")
+    text = replace_once(text, (
+        "\tsw\t$0,28($sp)\n\tsw\t$0,36($sp)\n"
+        "\tmtc1\t$2,$f0\n\tcvt.s.w\t$f0,$f0\n"
+        "\ts.s\t$f22,32($sp)\n"
+    ), (
+        "\tsw\t$0,28($sp)\n\ts.s\t$f22,32($sp)\n"
+        "\tsw\t$0,36($sp)\n\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n"
+    ), "reviewed camera-pass unit scale argument scheduling")
+    text = replace_once(text, (
+        "\tlui\t$16,%hi(D_800587F8) # high\n"
+        "\tlui\t$2,%hi(D_80001D64) # high\n"
+        "\tlui\t$3,%hi(D_80052BB0) # high\n"
+        "\tli.s\t$6,4.00000000000000000000e1\n"
+        "\tli.s\t$7,2.13333344459533691406e0\n"
+        "\tlw\t$4,%lo(D_80054358)($18)\n"
+        "\tl.s\t$f0,%lo(D_80001D64)($2)\n"
+        "\tlh\t$2,%lo(D_80052BB0)($3)\n"
+    ), (
+        "\tlui\t$16,%hi(D_800587F8) # high\n"
+        "\tlui\t$2,%hi(D_80052BB0) # high\n"
+        "\tli.s\t$6,4.00000000000000000000e1\n"
+        "\tli.s\t$7,2.13333344459533691406e0\n"
+        "\tlw\t$4,%lo(D_80054358)($18)\n"
+        "\t.set\tnoat\n\tlui\t$1,%hi(D_80001D64) # high\n"
+        "\tl.s\t$f0,%lo(D_80001D64)($1)\n\t.set\tat\n"
+        "\tlh\t$2,%lo(D_80052BB0)($2)\n"
+    ), "reviewed camera-pass perspective constants")
+    text = replace_once(text, (
+        "\tblez\t$3,$L5\n\tsw\t$2,172($20)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$18,$20\n"
+        "$L7:\n"
+    ), (
+        "\tblez\t$3,$L5\n\tsw\t$2,172($20)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tl.s\t$f20,72($sp)\n"
+        "\tmove\t$18,$20\n"
+        "$L7:\n"
+    ), "reviewed camera-pass loop invariant")
+    text = replace_once(text, (
+        "\tl.s\t$f20,72($sp)\n"
+        "\tmove\t$16,$2\n"
+        "\ts.s\t$f22,16($sp)\n"
+        "\tl.s\t$f0,88($sp)\n"
+        "\tmfc1\t$5,$f20\n"
+        "\tmove\t$4,$16\n"
+        "\ts.s\t$f0,20($sp)\n"
+        "\tl.s\t$f0,92($sp)\n"
+        "\tmove\t$6,$5\n"
+        "\ts.s\t$f0,24($sp)\n"
+        "\tl.s\t$f0,96($sp)\n"
+        "\tmove\t$7,$5\n"
+    ), (
+        "\tmfc1\t$5,$f20\n"
+        "\tmfc1\t$6,$f20\n"
+        "\tmfc1\t$7,$f20\n"
+        "\ts.s\t$f22,16($sp)\n"
+        "\tl.s\t$f0,88($sp)\n"
+        "\ts.s\t$f0,20($sp)\n"
+        "\tl.s\t$f0,92($sp)\n"
+        "\tmove\t$16,$2\n"
+        "\ts.s\t$f0,24($sp)\n"
+        "\tl.s\t$f0,96($sp)\n"
+        "\tmove\t$4,$16\n"
+    ), "reviewed camera-pass transform arguments")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -1447,6 +1554,8 @@ def normalize(text: str) -> str:
         return normalize_actor_creation(text)
     if "\t.ent\tfunc_8001BF78\n" in text:
         return normalize_prize_wheel(text)
+    if "\t.ent\tfunc_8001E2B0\n" in text:
+        return normalize_scene_camera_pass(text)
     return normalize_standard_return(text)
 
 
