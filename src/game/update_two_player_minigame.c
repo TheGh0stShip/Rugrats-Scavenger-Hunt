@@ -58,8 +58,8 @@ extern u32 D_800C3E28;
 extern s32 D_800C3E2C;
 extern PObj_80034978 *D_800C3E30;
 extern s32 D_800C3E38[];
-extern PObj_80034978 *D_80052F04;
-extern u32 D_80052EE0;
+extern PObj_80034978 * volatile D_80052F04;
+extern volatile u32 D_80052EE0;
 extern s32 D_80054A9C;
 extern s32 D_80054AA0;
 extern s32 D_80054AA4;
@@ -230,7 +230,7 @@ void func_80034978(void) {
 
     if (D_80054AA8 != 0) {
         if (--D_80054AA8 != 0) {
-            goto tail;
+            return;
         }
     }
 
@@ -385,6 +385,8 @@ void func_80034978(void) {
             }
         }
         if (D_80054AA4 != 0) {
+            PObj_80034978 *prize;
+
             D_80054AA4 = 0;
             o = func_800055A4(D_80059DB8[D_800C3E2C]);
             switch ((u32)o->unkF8) {
@@ -402,11 +404,11 @@ void func_80034978(void) {
                 break;
             }
             func_8001F1C4(snd);
-            o = D_80052F04;
-            o->unk104 = 0xC80;
-            o->unkF4 = 1;
-            o->unk100 = D_80059DB8[D_800C3E20] * 90;
             D_80052EE0 &= ~2;
+            prize = D_80052F04;
+            prize->unk104 = 0xC80;
+            prize->unkF4 = 1;
+            prize->unk100 = D_80059DB8[D_800C3E20] * 90;
         }
         if (i == 4) {
             D_80052F04->unk100 = D_80059DB8[D_800C3E2C] * 90;
@@ -442,8 +444,7 @@ void func_80034978(void) {
         break;
     }
 
-tail:
-    if (func_8001BF3C() == 0 && D_800C3E28 - 5 < 2) {
+    if (func_8001BF3C() == 0 && (u32)(D_800C3E28 - 5) < 2) {
         if (func_8001C2C8() != 0 || (D_800C3DB0[D_800C3E2C].obj->unk18C & 0x10)) {
             func_8001BF24(0x25);
             func_80012D7C(10);
