@@ -1171,6 +1171,78 @@ def normalize_main_state_driver(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_actor_creation(text: str) -> str:
+    text = replace_once(text, (
+        "\tli\t$2,3\t\t\t# 0x00000003\n"
+        "\tsh\t$2,8($18)\n"
+        "\tli\t$2,31232\t\t\t# 0x00007a00\n"
+        "\tli\t$3,2\t\t\t# 0x00000002\n"
+        "\tsw\t$2,40($18)\n"
+    ), (
+        "\tli\t$2,3\t\t\t# 0x00000003\n"
+        "\tli\t$3,2\t\t\t# 0x00000002\n"
+        "\tsh\t$2,8($18)\n"
+        "\tli\t$2,31232\t\t\t# 0x00007a00\n"
+        "\tsw\t$2,40($18)\n"
+    ), "reviewed actor-creation constants scheduling")
+    text = replace_once(text, (
+        "$L12:\n\taddiu\t$5,$2,%lo(D_8005301E+2) # low\n"
+        "\tlw\t$2,%lo(D_8005301E+2)($2)\n"
+        "\tli\t$19,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$19,$L7\n\tlui\t$16,%hi(D_800581F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$3,%lo(D_800581F0)($16)\n"
+        "\tlhu\t$2,-2($5)\n\taddu\t$5,$5,-2\n"
+        "\tsh\t$2,6($3)\n\tlhu\t$2,4($5)\n"
+        "\tlh\t$4,6($3)\n\tsh\t$2,8($3)\n"
+        "\tlh\t$5,4($5)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000E078\n\tlui\t$17,%hi(D_800581E9) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsb\t$2,%lo(D_800581E9)($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000DD88\n\tandi\t$4,$2,0x00ff\n"
+    ), (
+        "$L12:\n\taddiu\t$4,$2,%lo(D_8005301E+2) # low\n"
+        "\tlw\t$2,%lo(D_8005301E+2)($2)\n"
+        "\tli\t$19,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$19,$L7\n\tlui\t$16,%hi(D_800581F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_8005301E) # high\n"
+        "\tlw\t$3,%lo(D_800581F0)($16)\n"
+        "\tlhu\t$2,%lo(D_8005301E)($2)\n"
+        "\tsh\t$2,6($3)\n\tlhu\t$2,2($4)\n"
+        "\tlh\t$4,6($3)\n"
+        "\tsll\t$5,$2,16\n\tsra\t$5,$5,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000E078\n\tsh\t$2,8($3)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$17,%hi(D_800581E9) # high\n"
+        "\tsb\t$2,%lo(D_800581E9)($17)\n"
+        "\tlbu\t$4,%lo(D_800581E9)($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000DD88\n\tnop\n"
+    ), "reviewed actor-creation room coordinates")
+    text = replace_once(text, (
+        "$L14:\n\tlw\t$2,%lo(D_80057D5C)($3)\n"
+        "\tlw\t$31,40($sp)\n\tlw\t$21,36($sp)\n"
+        "\tlw\t$20,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+        "\taddu\t$2,$2,1\n\tsw\t$2,%lo(D_80057D5C)($3)\n"
+    ), (
+        "$L14:\n\tlw\t$2,%lo(D_80057D5C)($3)\n"
+        "\taddu\t$2,$2,1\n\tsw\t$2,%lo(D_80057D5C)($3)\n"
+        "\tlw\t$31,40($sp)\n\tlw\t$21,36($sp)\n"
+        "\tlw\t$20,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+    ), "reviewed actor-creation counter epilogue")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -1260,6 +1332,8 @@ def normalize(text: str) -> str:
         return normalize_object_activation_filter(text)
     if "\t.ent\tfunc_8001D91C\n" in text:
         return normalize_main_state_driver(text)
+    if "\t.ent\tfunc_80015DF4\n" in text:
+        return normalize_actor_creation(text)
     return normalize_standard_return(text)
 
 
