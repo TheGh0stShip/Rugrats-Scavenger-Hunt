@@ -8,7 +8,6 @@ start	end	size	category	subtype	owner	format	extraction	rebuild	verification	evi
 0x006398	0x0065EC	0x254	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x0066FC	0x006A3C	0x340	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x006AF8	0x007004	0x50C	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
-0x007068	0x007134	0xCC	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x0071FC	0x00755C	0x360	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x007818	0x007900	0xE8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x007A2C	0x007A30	0x4	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
@@ -40,7 +39,6 @@ start	end	size	category	subtype	owner	format	extraction	rebuild	verification	evi
 0x00E38C	0x00E390	0x4	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x00E438	0x00E510	0xD8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x00E568	0x00E8C8	0x360	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
-0x00E9AC	0x00EA4C	0xA0	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x00EA80	0x00EAEC	0x6C	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x00EC78	0x00ED08	0x90	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x00ED7C	0x00EDB0	0x34	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
@@ -115,9 +113,9 @@ start	end	size	category	subtype	owner	format	extraction	rebuild	verification	evi
 0x0253C8	0x0257DC	0x414	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x0259F8	0x025FD8	0x5E0	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x026098	0x026820	0x788	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
-0x0268CC	0x026A04	0x138	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x026A48	0x026BC4	0x17C	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
-0x026F0C	0x0284F4	0x15E8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
+0x026F0C	0x02733C	0x430	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
+0x027424	0x0284F4	0x10D0	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x028578	0x0285B0	0x38	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x0286B4	0x029758	0x10A4	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x029818	0x029D9C	0x584	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
@@ -129,7 +127,8 @@ start	end	size	category	subtype	owner	format	extraction	rebuild	verification	evi
 0x02B240	0x02B5A4	0x364	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x02BC44	0x02C850	0xC0C	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x02C944	0x02CBF0	0x2AC	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
-0x02CD68	0x02DFDC	0x1274	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
+0x02CD68	0x02D4CC	0x764	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
+0x02D834	0x02DFDC	0x7A8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x02E004	0x02E7CC	0x7C8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x02E7D8	0x02ECE0	0x508	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x02EDA8	0x02EF2C	0x184	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
@@ -137,7 +136,8 @@ start	end	size	category	subtype	owner	format	extraction	rebuild	verification	evi
 0x02F1B8	0x02F254	0x9C	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x02F2C8	0x02F3FC	0x134	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x02F4EC	0x02F7C4	0x2D8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
-0x02F7F0	0x030AA8	0x12B8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
+0x02F7F0	0x030104	0x914	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
+0x0302D0	0x030AA8	0x7D8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x030AFC	0x030DC8	0x2CC	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x030DF8	0x030E00	0x8	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range
 0x030E38	0x030E8C	0x54	code	code (not in matching manifests)	program image	MIPS text	byte range	none (no matching source)	not verified	no matching manifest unit covers this range

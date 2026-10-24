@@ -1,12 +1,12 @@
 {
- "clone_head": "c3899e8b777610634979ab3cf3fbc56cb90b97eb",
+ "clone_head": "2148e60b42167630d3766da8767c6138f4e2cbfc",
  "command": "make verify-matching N64DK_ROOT=$N64DK_ROOT N64DK_TOOLCHAIN=$N64DK_TOOLCHAIN",
  "summaries": [
   "Verified 293/293 units, 17064 code bytes, 52 data bytes (kmc+asn64 13/13, kmc+builtin 280/280)",
   "verified 22 normalized KMC unit(s), 2484 exact bytes",
   "Verified 252/252 units, 62976 code bytes, 1672 data bytes (kmc+as 252/252)",
   "Verified 94/94 units, 4796 code bytes, 44 data bytes (sn 94/94)",
-  "verified 187 normalized SN unit(s), 46152 exact bytes",
+  "verified 195 normalized SN unit(s), 48392 exact bytes",
   "Verified 6/6 units, 236 code bytes, 0 data bytes (ido5.3 6/6)"
  ],
  "units": [
@@ -6027,6 +6027,62 @@
    "rom_start": 53392,
    "size": 160,
    "source": "src/game/func_8000C490.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 196868,
+   "size": 460,
+   "source": "src/game/func_8002F504.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 185548,
+   "size": 448,
+   "source": "src/game/func_8002C8CC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 185996,
+   "size": 424,
+   "source": "src/game/func_8002CA8C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 160572,
+   "size": 232,
+   "source": "src/game/func_8002673C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 28776,
+   "size": 204,
+   "source": "src/game/func_80006468.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 158048,
+   "size": 164,
+   "source": "src/game/func_80025D60.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 59820,
+   "size": 160,
+   "source": "src/game/func_8000DDAC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 157900,
+   "size": 148,
+   "source": "src/game/func_80025CCC.c",
    "tool": "sn+normalized",
    "evidence": "sn+normalized verifier completed run"
   }

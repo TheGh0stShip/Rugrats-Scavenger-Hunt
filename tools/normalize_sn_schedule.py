@@ -267,6 +267,117 @@ def normalize_node_result(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_player_meter_update(text: str) -> str:
+    text = replace_once(text, "\taddu\t$4,$4,$2\n", "\taddu\t$4,$2,$4\n",
+                        "reviewed meter primary operand order")
+    text = replace_once(text, "\taddu\t$5,$16,$2\n", "\taddu\t$5,$2,$16\n",
+                        "reviewed meter secondary operand order")
+    old = "\taddu\t$3,$16,$3\n"
+    if text.count(old) != 2:
+        raise ValueError("reviewed meter index operands not found")
+    text = text.replace(old, "\taddu\t$3,$3,$16\n")
+    return normalize_standard_return(text)
+
+
+def normalize_large_leaf_frame(text: str) -> str:
+    replacements = (
+        ("\t.frame\t$sp,24,$31", "\t.frame\t$sp,40,$31"),
+        ("\tsubu\t$sp,$sp,24\n", "\tsubu\t$sp,$sp,40\n"),
+        ("\tsw\t$31,16($sp)\n", "\tsw\t$31,32($sp)\n"),
+        ("\tlw\t$31,16($sp)\n", "\tlw\t$31,32($sp)\n"),
+        ("\taddu\t$sp,$sp,24\n", "\taddu\t$sp,$sp,40\n"),
+    )
+    for old, new in replacements:
+        text = replace_once(text, old, new, "reviewed large leaf frame")
+    return normalize_standard_return(text)
+
+
+def normalize_object_array_init(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80052EE4) # high\n"
+        "\tlui\t$4,%hi(D_800C33D8) # high\n"
+        "\taddiu\t$4,$4,%lo(D_800C33D8) # low\n"
+        "\tmove\t$5,$0\n\tli\t$6,60\t\t\t# 0x0000003c\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80038E90\n\tsw\t$0,%lo(D_80052EE4)($2)\n"
+    ), (
+        "\tlui\t$2,%hi(D_80052EE4) # high\n"
+        "\tsw\t$0,%lo(D_80052EE4)($2)\n"
+        "\tlui\t$4,%hi(D_800C33D8) # high\n"
+        "\taddiu\t$4,$4,%lo(D_800C33D8) # low\n"
+        "\tmove\t$5,$0\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80038E90\n\tli\t$6,60\t\t\t# 0x0000003c\n"
+    ), "reviewed object-array clear scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_actor_facing(text: str) -> str:
+    text = replace_once(text, (
+        "\tsb\t$16,316($17)\n\tsb\t$18,317($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000DD88\n\tsw\t$0,48($17)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlh\t$2,2($2)\n\tmove\t$4,$19\n"
+    ), (
+        "\tsb\t$16,316($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000DD88\n\tsb\t$18,317($17)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlh\t$2,2($2)\n\tmove\t$4,$19\n\tsw\t$0,48($17)\n"
+    ), "reviewed actor-facing call scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_owner_count(text: str, loop_label: str) -> str:
+    text = replace_once(text, (
+        "\tsll\t$3,$16,2\n\taddu\t$2,$2,$3\n\tlw\t$2,428($2)\n"
+    ), (
+        "\tsll\t$3,$16,2\n\taddu\t$3,$3,$2\n\tlw\t$2,428($3)\n"
+    ), "reviewed owner-count address register")
+    text = replace_once(text, (
+        f"\tslt\t$2,$17,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbne\t$2,$0,{loop_label}\n"
+    ), (
+        f"\tslt\t$2,$17,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbnel\t$2,$0,{loop_label}\n"
+    ),
+                        "reviewed owner-count loop branch")
+    return normalize_standard_return(text)
+
+
+def normalize_room_index_store(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$2,$2,$4\n"
+        "\tlw\t$3,%lo(D_800581F0)($16)\n"
+        "\tsll\t$2,$2,4\n"
+    ), (
+        "\taddu\t$2,$2,$4\n"
+        "\tsll\t$2,$2,4\n"
+        "\tlw\t$3,%lo(D_800581F0)($16)\n"
+    ), "reviewed room-index shift scheduling")
+    text = replace_once(text, (
+        "\tsll\t$2,$2,4\n"
+        "\tlw\t$3,%lo(D_800581F0)($16)\n"
+        "\tsw\t$31,24($sp)\n"
+        "\taddu\t$2,$2,$3\n"
+        "\taddu\t$2,$2,8212\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800278F4\n\tsw\t$2,%lo(D_800581EC)($5)\n"
+    ), (
+        "\tsll\t$2,$2,4\n"
+        "\tlw\t$3,%lo(D_800581F0)($16)\n"
+        "\taddu\t$2,$2,8212\n"
+        "\tsw\t$31,24($sp)\n"
+        "\taddu\t$3,$3,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800278F4\n\tsw\t$3,%lo(D_800581EC)($5)\n"
+    ), "reviewed room-index address scheduling")
+    return normalize_standard_return(text)
+
+
 def normalize_scene_start(text: str) -> str:
     pattern = re.compile(
         r"\tli\t\$4,15[^\n]*\n"
@@ -1770,6 +1881,20 @@ def normalize_large_render_pass(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8002F504\n" in text:
+        return normalize_player_meter_update(text)
+    if "\t.ent\tfunc_8002C8CC\n" in text or "\t.ent\tfunc_8002CA8C\n" in text:
+        return normalize_large_leaf_frame(text)
+    if "\t.ent\tfunc_8002673C\n" in text:
+        return normalize_object_array_init(text)
+    if "\t.ent\tfunc_80006468\n" in text:
+        return normalize_actor_facing(text)
+    if "\t.ent\tfunc_80025D60\n" in text:
+        return normalize_owner_count(text, "$L13")
+    if "\t.ent\tfunc_80025CCC\n" in text:
+        return normalize_owner_count(text, "$L14")
+    if "\t.ent\tfunc_8000DDAC\n" in text:
+        return normalize_room_index_store(text)
     if "\t.ent\tfunc_80030E2C\n" in text:
         return normalize_runtime_callback_setup(text)
     if "\t.ent\tfunc_800327A0\n" in text:
