@@ -283,3 +283,4 @@
 0xCFAC	0xE4	src/game/apply_track_position_offsets.c	-O2 -G0 -mips2	4264002f01f6c123c9055446d53eecec246c8043eb169cee9a238c1879ce93e8
 0x2F3FC	0xF0	src/game/initialize_random_slot_values.c	-O2 -G0 -mips3 -mgp32 -mfp32	e38592cb6fddfb9076f0b5d7e436589159ea70dcac3a81a3c5df50fad6a0469d
 0x39990	0x100	src/runtime/copy_aligned_bytes.c	-O1 -G0 -mips3 -mgp32 -mfp32	10620eee462189b23db550d8044be365dfa7fdf85a8252940e2154a9f365fa7f
+0x12530	0x110	src/game/apply_directional_track_offsets.c	-O2 -G0 -mips2	654afa0cf826929e6b0fd37ff3079d7bbd594293de4ce9d23877aa4d0329799f

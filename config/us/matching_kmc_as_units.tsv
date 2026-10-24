@@ -232,3 +232,4 @@
 0x3C8A0	0x80	src/runtime/process_pending_runtime_object.c	-O2 -G0 -mips3 -mgp32 -mfp32	f0fee5bc6ea0126f2c4107e2e3f048be2d7e98b51c16ca49b918ee9d64fda0ae
 0x39D38	0x84	src/runtime/round_decimal_digits.c	-O1 -G0 -mips3 -mgp32 -mfp32	b8ada98bfc526437ee8bef07f8b5d84e4b13be249a8416f62d538a2205a69592
 0x39B60	0xC4	src/runtime/append_formatted_character.c	-O1 -G0 -mips3 -mgp32 -mfp32	ca41ea2a9c35bed34b3562b56f9b7c73578b0f326b8f33f457e27750d1ff654d
+0x39DBC	0x160	src/runtime/format_exponent_digits.c	-O1 -G0 -mips3 -mgp32 -mfp32	0e11ae8b402a551f68184e338b8568dc59a6409900163c7ed04a716b43dd639b
