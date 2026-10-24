@@ -26,8 +26,8 @@ extern void func_80044468(struct mort_state *S, word *LARcr, word *Ncr, word *bc
         bits = S->data[(pos >> 5) & 0x3FF];                         \
         if (avail != (n)) {                                         \
             dst |= (bits & ((1 << ((n) - avail)) - 1)) << avail;    \
-            bits >>= (n) - avail;                                   \
         }                                                           \
+        bits >>= (n) - avail;                                       \
         avail += 32 - (n);                                          \
     }
 
