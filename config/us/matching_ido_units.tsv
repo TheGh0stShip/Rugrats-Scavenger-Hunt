@@ -6,3 +6,5 @@
 0x138D0	0x18	src/game/reset_state_indices_58c18.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	acc27b32dd4444a0be85c503e495fb3a62fbae2120e0681afa2136549f493bac
 0x9F98	0x14	src/game/set_state_pair_58178.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	c1575c47d39a40431a51e847b179ff666ca62c6cc517169feab86da2199cfff0
 0x44DCC	0x6C	src/game/update_stream_progress_800441cc.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	a7a7afd8f68192bf01e73d89427f486eeb287d511ae4e6c41cc4923ef1ef4561
+0x45068	0xE8	src/runtime/gsm_synthesis_driver.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	93b508a95d3670185292be56277d19e01a7dc5e20a67ef71608cb29575ff00c8
+0x44E70	0x1F8	src/runtime/gsm_decode_lar.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	75b21a439d56b9ad48aea7be0a31105dc171ef36612233422f25822bbf281f9a
