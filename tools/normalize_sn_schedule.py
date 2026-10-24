@@ -5070,6 +5070,30 @@ def normalize_two_player_minigame(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_board_scene_renderer(text: str) -> str:
+    """Use retail's free t1 temporary outside the paired modulo calculation."""
+    text = normalize_standard_return(text)
+    # The preferred source shape already assigns both remainder calculations to
+    # t1, so there is no conflicting t2 live range left to protect.
+    if "$10" not in text:
+        return text
+    modulo_start = "\ttrunc.w.s $f8,$f2,$10\n"
+    modulo_end = (
+        "\tmtc1\t$2,$f8\n"
+        "\tcvt.s.w\t$f8,$f8\n"
+        "\tmfc1\t$7,$f8\n"
+    )
+    if modulo_start not in text:
+        raise ValueError("board renderer modulo block not found")
+    head, rest = text.split(modulo_start, 1)
+    if modulo_end not in rest:
+        raise ValueError("board renderer modulo block end not found")
+    modulo, tail = rest.split(modulo_end, 1)
+    head = re.sub(r"\$10\b", "$9", head)
+    tail = re.sub(r"\$10\b", "$9", tail)
+    return head + modulo_start + modulo + modulo_end + tail
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
@@ -5163,6 +5187,8 @@ def normalize(text: str) -> str:
         return normalize_camera_heading(text)
     if "\t.ent\tfunc_80034978\n" in text:
         return normalize_two_player_minigame(text)
+    if "\t.ent\tfunc_80026824\n" in text:
+        return normalize_board_scene_renderer(text)
     if "\t.ent\tfunc_80034808\n" in text:
         return normalize_player_object_reset(text)
     if "\t.ent\tfunc_800345EC\n" in text:

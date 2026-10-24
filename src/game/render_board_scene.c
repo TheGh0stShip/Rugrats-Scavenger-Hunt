@@ -1,5 +1,5 @@
 /* Target: func_80026824  VRAM 0x80026824  ROM 0x27424
- * Size: 0x105C  Pipeline: KMC GCC 2.7.2 -O2 -G0 -mips3
+ * Size: 0x105C  Pipeline: SN GCC 2.8 -O2 -G0 -mips3
  * Confidence: medium */
 typedef unsigned char u8;
 typedef signed char s8;
@@ -141,14 +141,14 @@ void func_80026824(void) {
     register struct Model_800197C8 *extra2 __asm__("$22") = 0;
     struct Rect_8000DD88 *rect = 0;
     struct Placed_8000DD88 *it;
+    u8 *record;
     register void *mtx __asm__("$19");
     register s32 flags __asm__("$20");
     register s32 resId __asm__("$23");
     s32 bgId;
     s32 colEnd, rowStart, rowEnd;
     register s32 colStart __asm__("$fp");
-    s32 row, col;
-    s32 cell, hi, id, k;
+    s32 cell, id;
     s32 bonus = 0;
     s32 rowOff, z0, z1;
     s32 dist, alpha;
@@ -156,7 +156,6 @@ void func_80026824(void) {
     Vec3f v;
     f32 zero;
     f32 initialScale;
-    s32 a, b;
 
     if (func_8000B8C4()) {
         return;
@@ -228,30 +227,32 @@ void func_80026824(void) {
 draw:
     zero = 0.0f;
     initialScale = 1.0f;
-    v.x = 0.0f;
-    v.y = 0.0f;
-    v.z = 0.0f;
+    *(s32 *)&v.x = 0;
+    *(s32 *)&v.y = 0;
+    *(s32 *)&v.z = 0;
     mtx = func_8001E630();
-    func_8000CF10(mtx, zero, zero, zero, initialScale, v.x, v.y, v.z);
+    func_8000CF10(mtx, zero, zero, zero, initialScale, zero, zero, zero);
     if (main != 0) {
+        register s32 drawMask __asm__("$17") = 0x08000000;
+
         if (!func_8000B8EC()) {
-            flags |= 0x08000000;
+            flags |= drawMask;
             func_8000B910(main, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
         } else {
-            flags |= 0x08000000;
+            flags |= drawMask;
             func_8000C034(main, D_80059D48[0], D_80059D48[1], D_80059D48[2], D_80059CF0, mtx, flags);
-        }
-        if (extra1 != 0) {
-            func_8000B910(extra1, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
-        }
-        if (extra2 != 0) {
-            v.x = zero;
-            v.z = zero;
-            v.y = 10.0f;
-            mtx = func_8001E630();
-            flags |= 0x08000000;
-            func_8000CF10(mtx, zero, zero, zero, initialScale, v.x, v.y, v.z);
-            func_8000B910(extra2, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
+            if (extra1 != 0) {
+                func_8000B910(extra1, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
+            }
+            if (extra2 != 0) {
+                v.x = zero;
+                v.z = zero;
+                v.y = 10.0f;
+                mtx = func_8001E630();
+                flags |= drawMask;
+                func_8000CF10(mtx, zero, zero, zero, initialScale, v.x, v.y, v.z);
+                func_8000B910(extra2, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
+            }
         }
     }
 
@@ -265,9 +266,13 @@ draw:
             func_80006AE0(&v, 0, 0, func_80006D00(0, 0, D_800581D0 & 0x7FFF) + 5.0f);
             v.y = 150.0f;
             mtx = func_8001E630();
-            a = (s32)(D_80054330 + 90.0f) % 360;
-            b = (s32)(D_80054330 + 180.0f) % 360;
-            func_8000CF10(mtx, (f32)a, D_80054330, (f32)b, 1.0f, v.x, v.y, v.z);
+            func_8000CF10(
+                mtx,
+                (f32)((s32)(D_80054330 + 90.0f) % 360),
+                D_80054330,
+                (f32)((s32)(D_80054330 + 180.0f) % 360),
+                1.0f, v.x, v.y, v.z
+            );
             res = func_800197C8(0x1F);
             func_8000B910(&res->model, &v, &D_80052F04->pos, D_80059CF0, mtx, 0);
             if (D_800581D0 & 0x8000) {
@@ -294,6 +299,12 @@ draw:
         flags = 0;
     }
 
+    {
+    register s32 row __asm__("$21");
+    register s32 col __asm__("$18");
+    register s32 hi __asm__("$19");
+    register s32 tileOffset __asm__("$17");
+
     for (row = rowStart; row < rowEnd; row++) {
         for (col = colStart; col < colEnd; col++) {
             rowOff = row - rowStart;
@@ -308,11 +319,11 @@ draw:
             if ((u32)(id - 0x14) < 5 && D_80052F18.mode == 0 && D_80052F18.frame == 1) {
                 id = D_80054208[id];
             }
-            k = id - 0xF9;
-            if ((u32)k < 4) {
+            tileOffset = id - 0xF9;
+            if ((u32)tileOffset < 4) {
                 if (D_800529F0 != 0 && func_80025FC4(D_800529F0, 0xF)) {
                     bonus = 1;
-                    id = k + 0xF;
+                    id = tileOffset + 0xF;
                 } else if (D_80052F18.mode == 1) {
                     id = (resId == 0x52) ? 0xFF : 0xFE;
                 }
@@ -361,17 +372,20 @@ draw:
         flags |= 0x40000000;
         func_8000C034(&D_8006FCE8, v.x, v.y, v.z, D_80059CF0, mtx, flags);
     }
+    }
 
 
     flags = 0;
     if (D_80052EE4 == 0 && func_8000B8EC()) {
         s32 i;
+        s32 k;
 
         func_80005544();
         func_80010B0C();
-        for (i = 0, it = rect->items; i < rect->count; i++, it++) {
+        for (i = 0, record = (u8 *)rect; i < rect->count; i++, record += 0x10) {
             struct Model_800197C8 *m;
 
+            it = (struct Placed_8000DD88 *)(record + 0x10);
             id = it->id;
             if ((u32)(id - 0x106) < 4) {
                 if (!bonus) {
