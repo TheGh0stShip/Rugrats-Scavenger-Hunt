@@ -1461,6 +1461,44 @@ def normalize_scene_camera_pass(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_large_render_pass(text: str) -> str:
+    text = replace_once(text, (
+        "$L4:\n"
+        "\tlui\t$2,%hi(D_8000126C) # high\n"
+        "\tlui\t$3,%hi(D_80001270) # high\n"
+        "\tmtc1\t$0,$f0\n"
+        "\tl.s\t$f20,%lo(D_8000126C)($2)\n"
+        "\tmfc1\t$5,$f0\n"
+        "\tl.s\t$f0,%lo(D_80001270)($3)\n"
+    ), (
+        "$L4:\n"
+        "\tmtc1\t$0,$f0\n"
+        "\t.set\tnoat\n\tlui\t$1,%hi(D_8000126C) # high\n"
+        "\tl.s\t$f20,%lo(D_8000126C)($1)\n\t.set\tat\n"
+        "\tmfc1\t$5,$f0\n"
+        "\t.set\tnoat\n\tlui\t$1,%hi(D_80001270) # high\n"
+        "\tl.s\t$f0,%lo(D_80001270)($1)\n\t.set\tat\n"
+    ), "reviewed large-render view constants")
+    text = replace_once(text, (
+        "\tmove\t$4,$16\n"
+        "\tlui\t$2,%hi(D_80001274) # high\n"
+        "\tlui\t$3,%hi(D_80001278) # high\n"
+        "\tli.s\t$6,2.00000000000000000000e1\n"
+        "\tli.s\t$7,2.13333344459533691406e0\n"
+        "\tl.s\t$f0,%lo(D_80001274)($2)\n"
+        "\tl.s\t$f2,%lo(D_80001278)($3)\n"
+    ), (
+        "\tmove\t$4,$16\n"
+        "\tli.s\t$6,2.00000000000000000000e1\n"
+        "\tli.s\t$7,2.13333344459533691406e0\n"
+        "\t.set\tnoat\n\tlui\t$1,%hi(D_80001274) # high\n"
+        "\tl.s\t$f0,%lo(D_80001274)($1)\n\t.set\tat\n"
+        "\t.set\tnoat\n\tlui\t$1,%hi(D_80001278) # high\n"
+        "\tl.s\t$f2,%lo(D_80001278)($1)\n\t.set\tat\n"
+    ), "reviewed large-render perspective constants")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -1556,6 +1594,8 @@ def normalize(text: str) -> str:
         return normalize_prize_wheel(text)
     if "\t.ent\tfunc_8001E2B0\n" in text:
         return normalize_scene_camera_pass(text)
+    if "\t.ent\tfunc_80015740\n" in text:
+        return normalize_large_render_pass(text)
     return normalize_standard_return(text)
 
 
