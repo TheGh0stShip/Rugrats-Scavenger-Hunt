@@ -122,6 +122,7 @@ void func_80034978(void) {
     s32 snd;
     s32 w;
     s32 l;
+    u32 mask;
     f32 n;
     Player_800C3DB0 *p;
     PObj_80034978 *o;
@@ -423,10 +424,11 @@ void func_80034978(void) {
             } else if (in & 0x400) {
                 sel = 3;
             }
-            if (sel >= 0 && D_800C3E24->items[sel] >= 0 && (D_800C3E30->items[sel] & 0x80000000)) {
-                D_800C3E24->items[sel] |= 0x80000000;
+            mask = 0x80000000;
+            if (sel >= 0 && D_800C3E24->items[sel] >= 0 && (D_800C3E30->items[sel] & mask)) {
+                D_800C3E24->items[sel] |= mask;
                 done = 1;
-                D_800C3E30->items[sel] &= 0x7FFFFFFF;
+                D_800C3E30->items[sel] &= ~mask;
                 func_8002621C(D_800C3E24, 6);
             }
             if (done) {
