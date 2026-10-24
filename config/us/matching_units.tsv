@@ -46,6 +46,7 @@
 0xF3C0	0x8	src/game/noop_8000e7c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	78aa5094d5ec7291c79f799c009d04f06c2f20187988e3dcc8d35ee5efdbb378
 0x1099C	0x10	src/game/stack_frame_8000fd9c.c	-O2 -G0 -mips3 -mgp32 -mfp32	0f7b863eb9567abdbe8d5d1501b08b05460b8c9e5058231446010419432dbff6
 0x11C88	0x10	src/game/get_state_word_52c08.c	-O2 -G0 -mips3 -mgp32 -mfp32	e8d535e827bb9ce1b40425f848b68fdfb7aace956be99cb9be024ce184ba9839
+0x1211C	0x3C	src/game/advance_idle_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	0248b2a14ae08c7584eb5868847b71ba02368bd61a54afdeb7383361a2bef38c
 0x12E94	0x10	src/game/get_state_word_52e90.c	-O2 -G0 -mips3 -mgp32 -mfp32	46837bd15217da205615900a7814c0b24afb50608c8e33b77b7a82c6471a9745
 0x13088	0x10	src/game/get_state_word_52e94.c	-O2 -G0 -mips3 -mgp32 -mfp32	cf50a47faf724c7f06c6f8c37b255a244d2755e21ec3994e10ad902f554fc996
 0x130A0	0x10	src/game/get_state_word_58c00.c	-O2 -G0 -mips3 -mgp32 -mfp32	2504e7ca605e4e42e17da439ed416619a79efaa59e66704ae887ed94bb530fa9
