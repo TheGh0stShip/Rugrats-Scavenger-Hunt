@@ -1,5 +1,9 @@
 # SN Systems GCC 2.8 C units with reviewed assembler scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x2082C	0x308	src/game/func_8001FC2C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb	f74830ad3bac8e7fac3861488c60330bc323163e2e3546b6bb118862acceda71
+0xA234	0x2FC	src/game/func_80009634.c	--section-base=.rdata:0x80000638 --symbol=D_80000630:0x80000630 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	18b0ad86f3bb6faef6510f57ccdb69cc445d9dbdff022f39639bb1ab5b9adc0a
+0x1E018	0x504	src/game/draw_board_space_label_8001d418.c	--section-base=.rdata:0x80001970 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	63d86d68e806feb1ca81c64c18b8a30659901b6211142ed14ec12359a34806b2
+0xB350	0x290	src/game/spawn_debris_object_8000a750.c	--section-base=.rdata:0x800006B0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	167f96df5b292cec6d724e6a2ff5bd918bb722aaa24b0391da35e3b0e9950287
 0x35578	0xEEC	src/game/update_two_player_minigame.c	--section-base=.rdata:0x80002F38 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e9ec63f77cc751f3872a0e2d793574c189c802a1931d9c49b6ae50366846d2be
 0x10818	0x120	src/game/func_8000FC18.c	--section-base=.rodata:0x80000848 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	e60e06e0781d91fc37e3060ffb8f78c5d4c8d7e43da15cf506e0f7dbd695a74a
 0xF2F8	0xC8	src/game/func_8000E6F8.c	--section-base=.rodata:0x80000780 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	23a0a587d115b1e74f609702f79b674b688bd60f526ccf5e5b4071f4fa77f473

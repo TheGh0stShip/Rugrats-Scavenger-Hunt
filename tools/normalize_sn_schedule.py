@@ -189,6 +189,281 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_debris_spawn(text: str) -> str:
+    text = replace_once(text, (
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(func_8000A9E0) # high\n"
+    ), (
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$3,1\t\t\t# 0x00000001\n"
+        "\tlui\t$2,%hi(func_8000A9E0) # high\n"
+    ), "reviewed debris constant allocation")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_800581A8) # high\n"
+        "\tlw\t$3,%lo(D_800581A8)($2)\n"
+        "\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\tsw\t$2,224($16)\n\tsh\t$2,10($16)\n"
+        "\tsw\t$17,228($16)\n\tsw\t$0,232($16)\n"
+        "\tlw\t$8,44($3)\n\tlw\t$9,48($3)\n\tlw\t$10,52($3)\n"
+        "\tsw\t$8,44($16)\n\tsw\t$9,48($16)\n\tsw\t$10,52($16)\n"
+        "\tlw\t$8,236($3)\n\tlw\t$9,240($3)\n\tlw\t$10,244($3)\n"
+        "\tsw\t$8,236($16)\n\tsw\t$9,240($16)\n\tsw\t$10,244($16)\n"
+    ), (
+        "\tlui\t$2,%hi(D_800581A8) # high\n"
+        "\tsw\t$3,224($16)\n\tsh\t$3,10($16)\n"
+        "\tlw\t$3,%lo(D_800581A8)($2)\n"
+        "\tsw\t$17,228($16)\n\tsw\t$0,232($16)\n"
+        "\tmove\t$2,$3\n"
+        "\tlw\t$4,44($3)\n\tlw\t$5,48($3)\n\tlw\t$6,52($3)\n"
+        "\tsw\t$4,44($16)\n\tsw\t$5,48($16)\n\tsw\t$6,52($16)\n"
+        "\tlw\t$3,236($2)\n\tlw\t$4,240($2)\n\tlw\t$5,244($2)\n"
+        "\tsw\t$3,236($16)\n\tsw\t$4,240($16)\n\tsw\t$5,244($16)\n"
+    ), "reviewed debris vector-copy allocation")
+    text = replace_once(
+        text, "\tsra\t$7,$8,$6\n", "\tsra\t$7,$8,4\n",
+        "reviewed debris final divide shift"
+    )
+    return normalize_standard_return(text)
+
+
+def normalize_board_space_label(text: str) -> str:
+    """Reproduce reviewed SN switch lowering and float-store scheduling."""
+    text = replace_once(
+        text, "\tsll\t$3,$3,$19\n", "\tsll\t$3,$3,2\n",
+        "reviewed label jump-table scale",
+    )
+    text = replace_once(
+        text,
+        "\tbeq\t$4,$2,$L21\n\tsltu\t$2,$4,$2\n",
+        "\tbeq\t$4,$2,$L21\n\tsltu\t$2,$4,7\n",
+        "reviewed label first range immediate",
+    )
+    text = replace_once(
+        text,
+        "\tbeq\t$4,$2,$L17\n\tsltu\t$2,$4,$2\n",
+        "\tbeq\t$4,$2,$L17\n\tsltu\t$2,$4,12\n",
+        "reviewed label second range immediate",
+    )
+    text = replace_once(text, (
+        "$L39:\n\tlui\t$2,%hi($LC22) # high\n$L71:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L14\n\taddiu\t$17,$2,%lo($LC22) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L45:\n\tlw\t$2,%lo(D_80052F18)($17)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L46\n\tlui\t$2,%hi($LC24) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi($LC23) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L14\n\taddiu\t$17,$2,%lo($LC23) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L46:\n\taddiu\t$17,$2,%lo($LC24) # low\n$L14:\n"
+    ), (
+        "$L45:\n\tlw\t$2,%lo(D_80052F18)($17)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L46\n\tlui\t$2,%hi($LC24) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi($LC23) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L14\n\taddiu\t$17,$2,%lo($LC23) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L46:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L14\n\taddiu\t$17,$2,%lo($LC24) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L39:\n\tlui\t$2,%hi($LC22) # high\n"
+        "$L71:\n\taddiu\t$17,$2,%lo($LC22) # low\n$L14:\n"
+    ), "reviewed label default and door tail layout")
+    text = replace_once(text, (
+        "\tjal\tfunc_8000E108\n\tbeq\t$16,$2,$L58\n"
+        "\tli.s\t$f4,1.00000000000000000000e4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$20,$0,$L72\n\tlui\t$2,%hi(D_8005368C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli.s\t$f4,1.00000000000000000000e3\n$L72:\n"
+        "\tli.s\t$f0,-8.00000000000000000000e2\n"
+        "\tli.s\t$f2,-6.00000000000000000000e3\n"
+        "\taddiu\t$2,$2,%lo(D_8005368C) # low\n"
+        "\ts.s\t$f4,60($2)\n\ts.s\t$f0,64($2)\n\ts.s\t$f2,68($2)\n"
+    ), (
+        "\tjal\tfunc_8000E108\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$16,$2,$L58\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli.s\t$f0,1.00000000000000000000e4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$20,$0,$L72\n\tlui\t$2,%hi(D_8005368C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli.s\t$f0,1.00000000000000000000e3\n$L72:\n"
+        "\ts.s\t$f0,%lo(D_8005368C+60)($2)\n"
+        "\tlui\t$2,%hi(D_8005368C) # high\n"
+        "\tli.s\t$f0,-8.00000000000000000000e2\n"
+        "\tli.s\t$f2,-6.00000000000000000000e3\n"
+        "\taddiu\t$2,$2,%lo(D_8005368C) # low\n"
+        "\ts.s\t$f0,64($2)\n\ts.s\t$f2,68($2)\n"
+    ), "reviewed label camera float stores")
+    tail_start = text.find("\tjal\tfunc_8000DF14\n", text.find("D_8005B214"))
+    tail_end = text.find("$L1:\n", tail_start)
+    if tail_start < 0 or tail_end < 0:
+        raise ValueError("reviewed label final switch span not found")
+    tail = text[tail_start:tail_end]
+    tail = tail.replace("\tsra\t$3,$2,16\n", "\tsra\t$4,$2,16\n", 1)
+    tail = tail.replace("\tbeq\t$3,$2,$L1\n\tsltu\t$2,$3,$2\n", "\tbeq\t$4,$2,$L1\n\tsltu\t$2,$4,11\n", 1)
+    tail = tail.replace("\tbne\t$2,$0,$L73\n", "\tbnel\t$2,$0,$L73_after\n", 1)
+    tail = tail.replace("\tsltu\t$2,$3,249\n", "\tsltu\t$2,$4,249\n", 1)
+    tail = tail.replace("\tsltu\t$2,$3,245\n", "\tsltu\t$2,$4,245\n", 1)
+    tail = tail.replace("$L73:\n\tmove\t$5,$4\n", "$L73:\n\tli\t$4,255\t\t\t# 0x000000ff\n$L73_after:\n\tmove\t$5,$4\n", 1)
+    text = text[:tail_start] + tail + text[tail_end:]
+    return normalize_standard_return(text)
+
+
+def normalize_actor_event_completion(text: str) -> str:
+    """Preserve the reviewed result copy and late global-load order."""
+    text = replace_once(text, (
+        "\tli\t$2,-1\t\t\t# 0xffffffff\n"
+        "\tsw\t$2,528($17)\n\tsw\t$16,544($17)\n"
+    ), (
+        "\tli\t$2,-1\t\t\t# 0xffffffff\n"
+        "\tsw\t$2,528($17)\n\tmove\t$2,$16\n\tsw\t$2,544($17)\n"
+    ), "reviewed actor completion result copy")
+    text = replace_once(text, (
+        "\tlui\t$3,%hi(D_80054994) # high\n"
+        "\tlui\t$2,%hi(D_80058190) # high\n"
+    ), (
+        "\tlui\t$2,%hi(D_80058190) # high\n"
+        "\tlui\t$3,%hi(D_80054994) # high\n"
+    ), "reviewed actor completion global load order")
+    return normalize_standard_return(text)
+
+
+def normalize_frame_display_lists(text: str) -> str:
+    """Reproduce the reviewed SN constant allocation and display-list loop."""
+    text = replace_once(
+        text, "\tsubu\t$sp,$sp,64\n",
+        "\tsubu\t$sp,$sp,64\n\tsw\t$19,36($sp)\n\tmove\t$19,$0\n",
+        "reviewed frame-list early loop state",
+    )
+    text = replace_once(
+        text, "\tsw\t$19,36($sp)\n\tmove\t$19,$0\n\tlui\t$2,%hi(D_8007784C) # high\n",
+        "\tlui\t$2,%hi(D_8007784C) # high\n",
+        "reviewed frame-list removed late loop state",
+    )
+    text = replace_once(text, (
+        "\tsw\t$23,52($sp)\n"
+        "\tli\t$23,-184549376\t\t\t# 0xf5000000\n"
+        "\tori\t$23,$23,0x0100\n"
+        "\tsw\t$22,48($sp)\n"
+        "\tli\t$22,117637120\t\t\t# 0x07030000\n"
+        "\tori\t$22,$22,0xc000\n"
+        "\tsw\t$fp,56($sp)\n"
+        "\tli\t$fp,-419430400\t\t\t# 0xe7000000\n"
+    ), (
+        "\tsw\t$fp,56($sp)\n"
+        "\tli\t$fp,-402653184\t\t\t# 0xe8000000\n"
+        "\tsw\t$22,48($sp)\n"
+        "\tli\t$22,-184549376\t\t\t# 0xf5000000\n"
+        "\tori\t$22,$22,0x0100\n"
+        "\tsw\t$23,52($sp)\n"
+        "\tli\t$23,117440512\t\t\t# 0x07000000\n"
+    ), "reviewed frame-list persistent constants")
+    text = replace_once(
+        text,
+        "\tlw\t$13,%lo(D_8006D680)($3)\n",
+        "\tlw\t$14,%lo(D_8006D680)($3)\n",
+        "reviewed frame-list base allocation",
+    )
+    text = replace_once(
+        text, "\tmove\t$7,$fp\n", "\tli\t$7,-419430400\t\t\t# 0xe7000000\n",
+        "reviewed frame-list pipe-sync constant",
+    )
+    start = text.find("$L5:\n")
+    end = text.find("\tjal\tfunc_80047E80\n", start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed frame-list loop span not found")
+    loop = """$L5:
+\tlw\t$2,0($25)
+\t.set\tnoreorder
+\t.set\tnomacro
+\tbeq\t$2,$0,$L13
+\tli\t$10,117637120\t\t\t# 0x07030000
+\t.set\tmacro
+\t.set\treorder
+
+\tori\t$10,$10,0xc000
+\tmove\t$13,$0
+\tmove\t$15,$14
+\tmove\t$11,$14
+\tlw\t$4,%lo(D_8007784C)($24)
+\tli\t$12,32\t\t\t# 0x00000020
+\tmove\t$5,$4
+\taddu\t$4,$4,8
+\tli\t$16,-49283072\t\t\t# 0xfd100000
+\taddu\t$6,$4,8
+\taddu\t$7,$4,16
+\taddu\t$8,$4,24
+\taddu\t$9,$4,32
+\tsw\t$16,0($5)
+\tlw\t$3,0($25)
+\taddu\t$2,$4,40
+\tsw\t$4,%lo(D_8007784C)($24)
+\tsw\t$6,%lo(D_8007784C)($24)
+\tsw\t$7,%lo(D_8007784C)($24)
+\tsw\t$8,%lo(D_8007784C)($24)
+\tsw\t$9,%lo(D_8007784C)($24)
+\tsw\t$2,%lo(D_8007784C)($24)
+\tli\t$2,-436207616\t\t\t# 0xe6000000
+\taddu\t$3,$3,48
+\tsw\t$3,4($5)
+\tsw\t$fp,0($4)
+\tsw\t$0,4($4)
+\tsw\t$22,8($4)
+\tsw\t$23,4($6)
+\tsw\t$2,16($4)
+\tli\t$2,-268435456\t\t\t# 0xf0000000
+\tsw\t$0,4($7)
+\tsw\t$2,24($4)
+\tli\t$2,-419430400\t\t\t# 0xe7000000
+\tsw\t$10,4($8)
+\tsw\t$2,32($4)
+\tsw\t$0,4($9)
+$L10:
+\taddu\t$4,$15,$12
+\taddu\t$12,$12,3600
+\tlw\t$3,%lo(D_8007784C)($24)
+\taddu\t$13,$13,1
+\tmove\t$2,$3
+\tsw\t$21,0($2)
+\tsw\t$4,4($2)
+\tlw\t$2,0($11)
+\taddu\t$3,$3,8
+\tsw\t$3,%lo(D_8007784C)($24)
+\tmove\t$3,$2
+\taddu\t$2,$2,8
+\tsw\t$2,0($11)
+\taddu\t$11,$11,4
+\tslt\t$2,$13,8
+\tsw\t$20,0($3)
+\t.set\tnoreorder
+\t.set\tnomacro
+\tbne\t$2,$0,$L10
+\tsw\t$0,4($3)
+\t.set\tmacro
+\t.set\treorder
+
+$L13:
+\taddu\t$14,$14,28832
+\taddu\t$19,$19,1
+\tslt\t$2,$19,2
+\t.set\tnoreorder
+\t.set\tnomacro
+\tbne\t$2,$0,$L5
+\taddu\t$25,$25,4
+\t.set\tmacro
+\t.set\treorder
+
+"""
+    return normalize_standard_return(text[:start] + loop + text[end:])
+
+
 def normalize_spin_object_setup(text: str) -> str:
     """Reproduce the reviewed SN allocation and scheduling for the spin-object setup loop."""
     start = text.find("\tlui\t$2,%hi(D_800C3E50) # high\n")
@@ -6237,6 +6512,14 @@ def normalize(text: str) -> str:
         return normalize_spin_object_targets(text)
     if "\t.ent\tfunc_80035E74\n" in text:
         return normalize_random_spin_objects(text)
+    if "\t.ent\tfunc_8000A750\n" in text:
+        return normalize_debris_spawn(text)
+    if "\t.ent\tfunc_8001D418\n" in text:
+        return normalize_board_space_label(text)
+    if "\t.ent\tfunc_80009634\n" in text:
+        return normalize_actor_event_completion(text)
+    if "\t.ent\tfunc_8001FC2C\n" in text:
+        return normalize_frame_display_lists(text)
     return normalize_standard_return(text)
 
 
