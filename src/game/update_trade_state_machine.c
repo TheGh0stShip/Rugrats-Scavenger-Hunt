@@ -62,8 +62,8 @@ extern s32 D_800B9314;
 
 void func_8002EBF0(void) {
     struct Obj_8002E0E0 *self;
-    u8 k;
     struct Obj_8002E0E0 *other;
+    u8 k;
     s32 mine;
     s32 theirs;
     s32 room;
@@ -153,8 +153,8 @@ void func_8002EBF0(void) {
                     }
                     room = *(self->f1F0 + k);
                     mine = *(self->f1E8 + k);
-                    room -= mine;
                     theirs = *(other->f1E8 + k);
+                    room -= mine;
                     if (theirs < room) {
                         D_800B9304 = mine + theirs;
                         D_800B9300 = 0;
@@ -261,14 +261,16 @@ void func_8002EBF0(void) {
                 if (self->fF4 == other->fF4) {
                     m = *(self->f1F0 + k);
                     if (m != -1 && k != 4) {
-                        D_800B9304 = m;
-                        func_8002FEA8(0x11);
-                        D_800B9310 = 0;
-                        break;
+                        goto accept_steal;
                     }
                 }
             refuse:
                 func_8001F138(0x22);
+                break;
+            accept_steal:
+                D_800B9304 = m;
+                func_8002FEA8(0x11);
+                D_800B9310 = 0;
             }
             break;
         case 17:
