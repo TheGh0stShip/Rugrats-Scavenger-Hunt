@@ -81,6 +81,61 @@ def normalize_find_record_pair(text: str) -> str:
     )
 
 
+def normalize_check_pak_channel(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tsw\t$18,24($sp)\n"
+        "\tmove\t$18,$4\n"
+        "\tla\t$4,D_80058B30\n"
+        "\tsw\t$16,16($sp)\n"
+        "\tla\t$16,D_80058B9C\n"
+        "\tmove\t$5,$16\n"
+        "\tsw\t$31,32($sp)\n"
+        "\tsw\t$19,28($sp)\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tjal\tfunc_8004E270\n"
+        "\tsw\t$17,20($sp)\n",
+        "\tsw\t$18,24($sp)\n"
+        "\tmove\t$18,$4\n"
+        "\tsw\t$17,20($sp)\n"
+        "\tmove\t$17,$0\n"
+        "\tlui\t$4,%hi(D_80058B30)\n"
+        "\taddiu\t$4,$4,%lo(D_80058B30)\n"
+        "\tsw\t$16,16($sp)\n"
+        "\tlui\t$16,%hi(D_80058B9C)\n"
+        "\taddiu\t$5,$16,%lo(D_80058B9C)\n"
+        "\tsw\t$31,32($sp)\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tjal\tfunc_8004E270\n"
+        "\tsw\t$19,28($sp)\n",
+        "pak-channel prologue scheduling",
+    )
+    text = replace_once(
+        text,
+        "\tbne\t$2,$0,.L2\n\tmove\t$17,$0\n",
+        "\tbne\t$2,$0,.L2\n\tmove\t$16,$17\n",
+        "pak-channel initialized loop counter",
+    )
+    text = replace_once(
+        text,
+        "\tlbu\t$2,0($16)\n",
+        "\tlbu\t$2,%lo(D_80058B9C)($16)\n",
+        "pak-channel status offset",
+    )
+    text = replace_once(
+        text,
+        "\tmove\t$16,$0\n\taddu\t$2,$2,$18\n",
+        "\taddu\t$2,$2,$18\n",
+        "pak-channel redundant loop-counter reset",
+    )
+    return replace_once(
+        text,
+        "\tla\t$19,D_80058990\n",
+        "\tlui\t$2,%hi(D_80058990)\n\taddiu\t$19,$2,%lo(D_80058990)\n",
+        "pak-channel record base address",
+    )
 def normalize_divisible_state(text: str) -> str:
     return replace_once(
         text,
@@ -588,6 +643,8 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_guarded_callback(text)
     elif unit == "func_80007FF8":
         text = normalize_find_record_pair(text)
+    elif unit == "func_80010EF8":
+        text = normalize_check_pak_channel(text)
     elif unit == "func_80022760":
         text = normalize_divisible_state(text)
     elif unit == "func_80024D14":
