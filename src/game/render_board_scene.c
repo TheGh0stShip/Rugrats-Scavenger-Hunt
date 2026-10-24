@@ -136,7 +136,7 @@ extern void func_8000DCC8(s32, s32, s32 *, s32 *);
 #define GRID_ROW(r) ((struct Grid_800581F0 *)(D_800581F0 + (r) * 0x80))
 
 void func_80026824(void) {
-    register struct Model_800197C8 *main __asm__("$18");
+    struct Model_800197C8 *main;
     register struct Model_800197C8 *extra1 __asm__("$21") = 0;
     register struct Model_800197C8 *extra2 __asm__("$22") = 0;
     struct Rect_8000DD88 *rect = 0;
@@ -144,16 +144,16 @@ void func_80026824(void) {
     void *mtx;
     register s32 flags __asm__("$20");
     register s32 resId __asm__("$23");
-    register s32 bgId __asm__("$19");
-    s32 colEnd, rowStart, rowEnd;
-    register s32 colStart __asm__("$30");
+    s32 bgId;
+    s32 colEnd, rowStart, rowEnd, colStart;
     s32 row, col;
     s32 cell, hi, id, k;
-    s32 rowOff, z0, z1;
     s32 bonus = 0;
+    s32 rowOff, z0, z1;
     s32 dist, alpha;
     s32 tileRow, tileCol;
     Vec3f v;
+    f32 zero;
     f32 initialScale;
     s32 a, b;
 
@@ -230,12 +230,13 @@ void func_80026824(void) {
         colEnd = 64;
     }
 draw:
+    zero = 0.0f;
     initialScale = 1.0f;
-    v.x = 0.0f;
-    v.y = 0.0f;
-    v.z = 0.0f;
+    v.x = zero;
+    v.y = zero;
+    v.z = zero;
     mtx = func_8001E630();
-    func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, initialScale, v.x, v.y, v.z);
+    func_8000CF10(mtx, zero, zero, zero, initialScale, v.x, v.y, v.z);
     if (main != 0) {
         if (!func_8000B8EC()) {
             flags |= 0x08000000;
@@ -248,12 +249,12 @@ draw:
             func_8000B910(extra1, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
         }
         if (extra2 != 0) {
-            v.x = 0.0f;
-            v.z = 0.0f;
+            v.x = zero;
+            v.z = zero;
             v.y = 10.0f;
             mtx = func_8001E630();
             flags |= 0x08000000;
-            func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, initialScale, v.x, v.y, v.z);
+            func_8000CF10(mtx, zero, zero, zero, initialScale, v.x, v.y, v.z);
             func_8000B910(extra2, &v, &D_80052F04->pos, D_80059CF0, mtx, flags);
         }
     }
@@ -276,18 +277,18 @@ draw:
             if (D_800581D0 & 0x8000) {
                 func_8000CD50(res->model.head, 0, 1);
             }
-            v.z = 0.0f;
-            v.y = 0.0f;
-            v.x = 0.0f;
+            v.z = zero;
+            v.y = zero;
+            v.x = zero;
             func_8000C3AC(&func_800197C8(0x1E4)->model, &v);
             mtx = func_8001E630();
-            func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, D_80054324, v.x, v.y, v.z);
+            func_8000CF10(mtx, zero, zero, zero, D_80054324, v.x, v.y, v.z);
             m = &func_800197C8(0x1E4)->model;
             func_8000B910(m, &v, &D_80052F04->pos, D_80059CF0, mtx, 0);
             func_8000C674(m);
             m = &func_800197C8(0x1E5)->model;
             mtx = func_8001E630();
-            func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, D_80054324, D_800B92A8.x, D_800B92A8.y, D_800B92A8.z);
+            func_8000CF10(mtx, zero, zero, zero, D_80054324, D_800B92A8.x, D_800B92A8.y, D_800B92A8.z);
             func_8000B910(m, &D_800B92A8, &D_80052F04->pos, D_80059CF0, mtx, 0);
             func_8002A154();
             func_80027880();
@@ -336,9 +337,9 @@ draw:
                 v.x = tileCol * 600 + 300;
                 v.z = z1;
             }
-            v.y = 0.0f;
+            v.y = zero;
             mtx = func_8001E630();
-            func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, 1.0f, v.x, v.y, v.z);
+            func_8000CF10(mtx, zero, zero, zero, 1.0f, v.x, v.y, v.z);
             if (id >= 0x27) {
                 flags |= 0x40000000;
                 func_8000C034(&func_800197C8(id)->model, v.x, v.y, v.z, D_80059CF0, mtx, flags);
@@ -357,7 +358,7 @@ draw:
         v.x = 3900.0f;
         v.z = 2100.0f;
         mtx = func_8001E630();
-        func_8000CF10(mtx, 0.0f, 0.0f, 0.0f, 1.0f, v.x, v.y, v.z);
+        func_8000CF10(mtx, zero, zero, zero, 1.0f, v.x, v.y, v.z);
         flags |= 0x40000000;
         func_8000C034(&D_8006FCE8, v.x, v.y, v.z, D_80059CF0, mtx, flags);
     }
@@ -382,7 +383,7 @@ draw:
             }
             tileRow = it->row;
             tileCol = it->col;
-            v.y = 0.0f;
+            v.y = zero;
             v.x = tileCol * 600 + 300;
             v.z = tileRow * 600 + 300;
             if ((u32)id < 0x100 && (u32)id >= 0xFE) {
@@ -397,7 +398,7 @@ draw:
             } else {
                 D_80054330 = it->angle;
             }
-            func_8000CF10(mtx, 0.0f, D_80054330, 0.0f, 1.0f, v.x, v.y, v.z);
+            func_8000CF10(mtx, zero, D_80054330, zero, 1.0f, v.x, v.y, v.z);
             m = &func_800197C8(id)->model;
             flags = ((m->head->flags & 0x2000) == 0) << 27;
             if (id == 0x144) {
@@ -417,7 +418,7 @@ draw:
             }
             if (func_80010BD8((s32)v.x, (s32)v.z, &dist) && !func_80027978(id)) {
                 flags |= 0x04000000;
-                if (!((f32)dist >= 0.0f)) {
+                if (!((f32)dist >= zero)) {
                     dist = -dist;
                 }
                 if ((u32)(dist - 0x10) < 0x1D) {
@@ -425,10 +426,10 @@ draw:
                 }
                 if (dist < 0x10) {
                     k = dist - 0xF;
-                    alpha = ((f32)k >= 0.0f) ? k * 17 : (0xF - dist) * 17;
+                    alpha = ((f32)k >= zero) ? k * 17 : (0xF - dist) * 17;
                 } else {
                     k = dist - 0x2D;
-                    alpha = ((f32)k >= 0.0f) ? k * 17 : (0x2D - dist) * 17;
+                    alpha = ((f32)k >= zero) ? k * 17 : (0x2D - dist) * 17;
                 }
                 m->r = 0xFF;
                 m->b = 0xFF;
@@ -462,14 +463,14 @@ draw:
         } else {
             d = D_800529F0->row - D_800529F0->prevRow;
             if (d != 0) {
-                D_80054330 = (d < 0) ? 0.0f : 180.0f;
+                D_80054330 = (d < 0) ? zero : 180.0f;
             }
         }
-        v.y = 0.0f;
+        v.y = zero;
         v.x = tileCol * 600 + 300;
         v.z = tileRow * 600 + 300;
         mtx = func_8001E630();
-        func_8000CF10(mtx, 0.0f, D_80054330, 0.0f, 1.0f, v.x, v.y, v.z);
+        func_8000CF10(mtx, zero, D_80054330, zero, 1.0f, v.x, v.y, v.z);
         func_8000B910(&func_800197C8(0x1E2)->model, &v, &D_80052F04->pos, D_80059CF0, mtx, 0);
     }
 }
