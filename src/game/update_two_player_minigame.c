@@ -215,8 +215,8 @@ void func_80034978(void) {
                 }
             }
             if (D_800C3E28 == 5) {
-                func_8003A57C(buf, "%s %s", D_800535E8[D_800C3E30->unkF8], "Won 6 Cookies!");
-                func_800139F8(buf, 0x100, 0xB4);
+                func_8003A57C(buf + 0x10, "%s %s", D_800535E8[D_800C3E30->unkF8], "Won 6 Cookies!");
+                func_800139F8(buf + 0x10, 0x100, 0xB4);
             } else if (D_800C3E28 == 4) {
                 func_8001380C(0x40, "Pick a prize", 0xB4, 0xBE);
                 if (D_80052F04->unk100 == D_80059DB8[D_800C3E20] * 90) {
