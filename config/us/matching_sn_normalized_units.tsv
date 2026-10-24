@@ -1,5 +1,22 @@
 # SN Systems GCC 2.8 C units with reviewed assembler scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x65EC	0x110	src/game/func_800059EC.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6f4a4d826591ccd35a5ee6b46c950604d8d3e7202c7efb4553f2e0222959fac5
+0x75C8	0x118	src/game/func_800069C8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9243d9eab0d0fd667b342aafc1776b2bfa181bd13a22f6ca755c2e1a3f46fed8
+0x87D0	0x130	src/game/func_80007BD0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	fb7a286edb2a2c54add72a15d39074e54a267de684313daec20112de31999d12
+0xB61C	0x158	src/game/func_8000AA1C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	05fde2ccc19c925ced0b429f67fd0c52af2fa50dab7524e1d999cdf6bf3581ae
+0xDB64	0xE8	src/game/func_8000CF64.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	230d6aaca798ac5fcbd5ca538f9e671f78a67192b45972bd496e2932146d3e6f
+0x105D4	0x114	src/game/func_8000F9D4.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4715af348aed480d24addfaa7196d61ea3ab406d8b789a45e4005562784829cf
+0x12CD0	0xFC	src/game/func_800120D0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	7bd3e9b2eb525fe3e5f2cec80fabecd3f44c0ee7eb047ab517952b8d6e950e1f
+0x1320C	0x110	src/game/func_8001260C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3c338a2430f333a39ae69e8d8e9350ac8ef83d9c696acfe3f9ad9c3f4a6f756d
+0x26CD0	0x14C	src/game/func_800260D0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	53963b5540a1f4951488da7189a43d0af41775eabe80e0f4c5f15ada99c29627
+0x285B0	0x6C	src/game/func_800279B0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0fad070f7b25abf944f00c4aeaad6264f16818c7dfd9e94b551cd6df5c0b1719
+0x29D9C	0x134	src/game/func_8002919C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a9569a507f619ec499593443e86fb8b4dc3931d0a168c63c91b579c897968c5c
+0x2CBF0	0x178	src/game/func_8002BFF0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0b9e62af5e83aa88255c9521d2fbda2d0818323ddb412fe4470fe9444ce719be
+0x2EF2C	0x14C	src/game/func_8002E32C.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5b2e392219919985d9b011e44c46f377e067d2fb71584c0d3a1d5569c58a119d
+0x318C8	0x100	src/game/func_80030CC8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	36b9e967c3ec34e87855b59c7e01c7571512076287190236c6b6e6a2a675645e
+0x32310	0x70	src/game/func_80031710.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6e382cb90e9980e82eb73cc8d120aa0605154f0a454633c6e69b8ad9cb71a981
+0x32404	0x78	src/game/func_80031804.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	213376aa8d92aa5194366becfbc64a3061f17cca3803fe62be162ac0909ad52f
+0x328B0	0xD0	src/game/func_80031CB0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d0c5b4d15969a228ae302798369e16bf485adc3202fc1aaa456aba348d86cad5
 0x344F8	0x78	src/game/func_800338F8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	32fb626d7eadb8289dd0f680837e1067b2195a578e53d44627529487fecc66d4
 0x319C8	0x64	src/game/func_80030DC8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5ab03776023e31d393935eed97e186ca62537dcbd9bb739f16d9c9a169d3d203
 0x31B14	0x60	src/game/func_80030F14.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	28df0b00cd9ed38d6970ebe5d3955a5e10d0b21c8a5fb6960750cd992a934322
