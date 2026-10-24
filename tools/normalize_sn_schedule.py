@@ -4697,6 +4697,40 @@ def normalize_two_player_minigame(text: str) -> str:
     chose v0-a1.  These substitutions do not alter the instruction stream or
     any live value outside each copy.
     """
+    # The retail schedule materializes the state value 2 only on the unequal
+    # actor path.  SN 2.8 available here hoists it into the earlier beq delay
+    # slot.  Keep the empty retail slot and restore the constant at its first
+    # use; the intervening path returns, so this is instruction-equivalent.
+    text = replace_once(
+        text,
+        "\tbeq\t$5,$0,$L62\n\tli\t$6,2\t\t\t# 0x00000002\n",
+        "\tbeq\t$5,$0,$L62\n\tnop\n",
+        "two-player deferred state constant",
+    )
+    text = replace_once(
+        text,
+        ("$L79:\n\tlui\t$3,%hi(D_80054A9C) # high\n"
+         "\tsw\t$6,%lo(D_800C3E28)($2)\n"),
+        ("$L79:\n\tli\t$4,2\t\t\t# 0x00000002\n"
+         "\tlui\t$3,%hi(D_80054A9C) # high\n"
+         "\tsw\t$4,%lo(D_800C3E28)($2)\n"),
+        "two-player unequal actor state",
+    )
+    text = replace_once(
+        text,
+        "\tbeq\t$3,$6,$L89\n\tmove\t$18,$0\n",
+        "\tbeq\t$3,$4,$L89\n\tmove\t$18,$0\n",
+        "two-player pairing case 2",
+    )
+    # Case 2 has already been removed by the equality above, making <2 and
+    # <3 equivalent here.  Retail used the latter bound.
+    text = replace_once(
+        text,
+        "\tsltu\t$2,$3,2\n",
+        "\tsltu\t$2,$3,3\n",
+        "two-player pairing range",
+    )
+
     copies = (
         ("\taddiu\t$12,$20,%lo(D_80054A0C)\n\tlw\t$9,0($12)\n\tlw\t$10,4($12)\n\tlw\t$11,8($12)\n\tsw\t$9,28($16)\n\tsw\t$10,32($16)\n\tsw\t$11,36($16)\n",
          "\taddiu\t$5,$20,%lo(D_80054A0C)\n\tlw\t$2,0($5)\n\tlw\t$3,4($5)\n\tlw\t$4,8($5)\n\tsw\t$2,28($16)\n\tsw\t$3,32($16)\n\tsw\t$4,36($16)\n"),
