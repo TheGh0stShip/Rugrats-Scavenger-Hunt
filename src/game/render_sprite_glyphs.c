@@ -35,7 +35,10 @@ extern Gfx *D_80077830;
 
 #define GFXW(a, b) { Gfx *g_ = D_80077830++; g_->w0 = (a); g_->w1 = (b); }
 
-void func_80032A20(Text_80032A20 *t, s32 x, s32 y) {
+void func_80032A20(Text_80032A20 *arg, s32 x, s32 y) {
+    register Text_80032A20 *t __asm__("$25");
+    register s32 baseX __asm__("$23");
+    register s32 baseY __asm__("$30");
     u8 *tex;
     u8 *pal;
     s32 i;
@@ -43,6 +46,8 @@ void func_80032A20(Text_80032A20 *t, s32 x, s32 y) {
     s32 x0, y0;
     s32 wb, dxtNum, lrs, q;
     Glyph_80032A20 *g;
+
+    __asm__("" : "=r"(baseX), "=r"(baseY), "=r"(t) : "0"(x), "1"(y), "2"(arg));
 
     tex = (u8 *)t + t->texBase;
     i = 0;
@@ -72,8 +77,8 @@ void func_80032A20(Text_80032A20 *t, s32 x, s32 y) {
             g = &t->glyphs[i];
             w = g->w;
             h = g->h;
-            x0 = x + g->x;
-            y0 = y + g->y;
+            x0 = baseX + g->x;
+            y0 = baseY + g->y;
             GFXW(0xFD100000, (u32)(tex + g->texOffset));
             GFXW(0xF5100000, 0x07094260);
             GFXW(0xE6000000, 0);
@@ -109,8 +114,8 @@ void func_80032A20(Text_80032A20 *t, s32 x, s32 y) {
         GFXW(0xE6000000, 0);
         for (; i < t->count; i++) {
             g = &t->glyphs[i];
-            x0 = x + g->x;
-            y0 = y + g->y;
+            x0 = baseX + g->x;
+            y0 = baseY + g->y;
             GFXW(0xFD100000, (u32)(tex + g->texOffset));
             GFXW(0xF5100000, 0x07094260);
             GFXW(0xE6000000, 0);
