@@ -33,7 +33,7 @@ extern void func_80044468(struct mort_state *S, word *LARcr, word *Ncr, word *bc
 
 int func_800447E0(struct mort_state *S, word *target)
 {
-    word LARc[8], Nc[4], Mc[4], bc[4], xmaxc[4], xmc[13 * 4];
+    word LARc[8], Nc[4], Mc[4], bc[4], xmaxc[4], xmc[13 * 4 + 1];
     u32 bits;
     int avail;
     int pos;
