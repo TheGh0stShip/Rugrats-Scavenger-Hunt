@@ -25,3 +25,4 @@
 0x28578	0x2C	src/game/identifier_in_terminated_table.c	--normalizer-unit=func_80027978 -O2 -G0 -mips3 -mgp32 -mfp32	f2d14bbe29929d948206a5d6101bf6eaab6c4cee866161a907dba07d0a7948d5
 0x3B8F0	0xE0	src/game/strchr_8003acf0.c	--normalizer-unit=func_8003ACF0 -O1 -G0 -mips3 -mgp32 -mfp32	3afb978c965fad6683cafe35c52c300d4667fbce6bf4fcafafdc43df3ff77961
 0x7A88	0x104	src/game/actor_turn_step_80006e88.c	--normalizer-unit=func_80006E88 -O2 -G0 -mips3 -mgp32 -mfp32	5b697b7ee61c0ce4a035b3493d3383be62ff6b569ea81cbed858e900c0b6b2c3
+0x3A4E0	0xC9C	src/runtime/formatted_output_core.c	--normalizer-unit=func_800398E0 --section-base=.rodata:0x80003130 -O1 -G0 -mips3 -mgp32 -mfp32	ad4d4873ece5786b8d99019a25de5292b6c4e73a450e0edb939b7c518d386955

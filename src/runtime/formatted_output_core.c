@@ -62,7 +62,8 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
 
     count = 0;
     for (;;) {
-        if ((c = (u8)*fmt++) != '%') {
+        c = (u8)*fmt;
+        if (*(s8 *)fmt++ != '%') {
             if (c == 0) {
                 D_800C3E74 = 0;
                 return count;
@@ -99,7 +100,7 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
             c = (u8)*fmt++;
         } else {
             while (D_80055930[c & 0xFF] & 8) {
-                width = width * 10 + (s8)c - '0';
+                width = width * 10 - '0' + (s8)c;
                 c = (u8)*fmt++;
             }
         }
@@ -107,12 +108,12 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
         prec = 0;
         fprec = 6;
         if ((s8)c == '.') {
-            c = (u8)*fmt++;
-            if ((s8)c == '*') {
+            c = (u8)*fmt;
+            if (*(s8 *)fmt++ == '*') {
                 prec = va_arg(ap, s32);
             } else {
                 while (D_80055930[c & 0xFF] & 8) {
-                    prec = prec * 10 + (s8)c - '0';
+                    prec = prec * 10 - '0' + (s8)c;
                     c = (u8)*fmt++;
                 }
             }
@@ -142,12 +143,6 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                 goto integer;
             case 'u':
                 goto integer;
-            case 'p':
-                flags = 0;
-                prec = 8;
-                D_800C3E70 = D_80055884;
-                base = 16;
-                goto integer;
             case 'c':
                 s = D_800C3EA0;
                 *s = va_arg(ap, char);
@@ -163,25 +158,6 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                     len = prec;
                 }
                 goto emit;
-            case 'n':
-                *va_arg(ap, s32 *) = count;
-                continue;
-            case 'h':
-                flags |= 0x40;
-                c = (u8)*fmt++;
-                goto conv;
-            case 'l':
-                c = (u8)*fmt++;
-                if ((s8)c != 'l') {
-                    goto conv;
-                }
-                flags |= 0x20;
-                c = (u8)*fmt++;
-                goto conv;
-            case 'L':
-                flags |= 0x80;
-                c = (u8)*fmt++;
-                goto conv;
             case 'f': {
                 s32 i;
                 s32 exp;
@@ -265,9 +241,11 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
             e_format:
                 digits = func_8003931C(x, fprec, &eexp, &eneg);
                 s = &D_800C3EA0[1];
-                if (eneg != 0) {
-                    flags |= 0x100;
+                if (eneg == 0) {
+                    goto e_not_negative;
                 }
+                flags |= 0x100;
+            e_not_negative:
                 if (eexp == 0x7FFFFFFF) {
                     func_8003ADD0(s, digits);
                     goto float_done;
@@ -295,6 +273,31 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                 prec = 0;
                 direct = 1;
                 goto pad;
+            case 'n':
+                *va_arg(ap, s32 *) = count;
+                continue;
+            case 'p':
+                flags = 0;
+                prec = 8;
+                D_800C3E70 = D_80055884;
+                base = 16;
+                goto integer;
+            case 'h':
+                flags |= 0x40;
+                c = (u8)*fmt++;
+                goto conv;
+            case 'l':
+                c = (u8)*fmt;
+                if (*(s8 *)fmt++ != 'l') {
+                    goto conv;
+                }
+                flags |= 0x20;
+                c = (u8)*fmt++;
+                goto conv;
+            case 'L':
+                flags |= 0x80;
+                c = (u8)*fmt++;
+                goto conv;
             default:
                 PUT((s8)c);
                 count++;
@@ -309,9 +312,11 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
             s64 lv;
 
             lv = va_arg(ap, s64);
-            if (isSigned && lv < 0) {
-                lv = -lv;
-                flags |= 0x100;
+            if (isSigned) {
+                if (lv < 0) {
+                    lv = -lv;
+                    flags |= 0x100;
+                }
             }
             s = func_80039068(lv, base);
         } else {
@@ -325,9 +330,11 @@ s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
                     v = (u16)v;
                 }
             }
-            if (isSigned && (s32)v < 0) {
-                v = -v;
-                flags |= 0x100;
+            if (isSigned) {
+                if ((s32)v < 0) {
+                    v = -v;
+                    flags |= 0x100;
+                }
             }
             s = func_80039024(v, base);
         }

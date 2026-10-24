@@ -451,8 +451,117 @@ def normalize_d1_func_80006E88(text):
     return text.replace(old, new)
 
 
+def normalize_formatted_output_core(text: str) -> str:
+    """Reproduce retail's frame gap and s2/s3 pointer allocation."""
+    if "\t.frame\t$sp,128,$31" in text:
+        text = replace_once(text, "\t.frame\t$sp,128,$31", "\t.frame\t$sp,144,$31",
+                            "formatted-output frame declaration")
+        text = replace_once(text, "\tsubu\t$sp,$sp,128\n", "\tsubu\t$sp,$sp,144\n",
+                            "formatted-output frame allocation")
+        for register, old_offset, new_offset in (
+            ("31", 116, 132), ("fp", 112, 128), ("23", 108, 124),
+            ("22", 104, 120), ("21", 100, 116), ("20", 96, 112),
+            ("19", 92, 108), ("18", 88, 104), ("17", 84, 100),
+            ("16", 80, 96),
+        ):
+            text = replace_once(
+                text, f"\tsw\t${register},{old_offset}($sp)\n",
+                f"\tsw\t${register},{new_offset}($sp)\n",
+                "formatted-output saved-register store",
+            )
+            text = replace_once(
+                text, f"\tlw\t${register},{old_offset}($sp)\n",
+                f"\tlw\t${register},{new_offset}($sp)\n",
+                "formatted-output saved-register load",
+            )
+        text = replace_once(text, "\ts.d\t$f20,120($sp)\n", "\ts.d\t$f20,136($sp)\n",
+                            "formatted-output floating save")
+        text = replace_once(text, "\tl.d\t$f20,120($sp)\n", "\tl.d\t$f20,136($sp)\n",
+                            "formatted-output floating restore")
+        text = replace_once(text, "\taddu\t$sp,$sp,128\n", "\taddu\t$sp,$sp,144\n",
+                            "formatted-output frame release")
+    elif text.count("\t.frame\t$sp,144,$31") != 1:
+        raise ValueError("formatted-output frame declaration not found uniquely")
+
+    body_start = "\tmove\t$22,$5\n"
+    body_end = "\n\tlw\t$31,132($sp)\n"
+    if text.count(body_start) != 1 or text.count(body_end) != 1:
+        raise ValueError("formatted-output register body not found")
+    head, rest = text.split(body_start, 1)
+    body, tail = rest.split(body_end, 1)
+    body = body_start + body
+    saved_pair = re.compile(r"\$(18|19)\b")
+    body = saved_pair.sub(
+        lambda match: "$19" if match.group(1) == "18" else "$18", body
+    )
+
+    body = replace_once(
+        body,
+        "\tbne\t$16,$0,.L6\n",
+        "\tbne\t$3,$0,.L6\n",
+        "formatted-output signed literal zero test",
+    )
+    for accumulator in ("23", "17"):
+        old = (
+            f"\taddu\t$3,$3,${accumulator}\n"
+            "\tsll\t$3,$3,1\n"
+            "\tsll\t$2,$16,24\n"
+            "\tsra\t$2,$2,24\n"
+            "\taddu\t$2,$2,-48\n"
+            f"\taddu\t${accumulator},$3,$2\n"
+        )
+        new = (
+            f"\taddu\t$3,$3,${accumulator}\n"
+            "\tsll\t$3,$3,1\n"
+            "\taddu\t$3,$3,-48\n"
+            "\tsll\t$2,$16,24\n"
+            "\tsra\t$2,$2,24\n"
+            f"\taddu\t${accumulator},$3,$2\n"
+        )
+        body = replace_once(
+            body, old, new, "formatted-output decimal accumulation order"
+        )
+
+    body = replace_once(
+        body,
+        "\tbnel\t$2,$0,.L94\n"
+        "\tori\t$20,$20,0x0100\n",
+        "\tbeq\t$2,$0,.L94\n"
+        "\tmove\t$7,$18\n"
+        "\tori\t$20,$20,0x0100\n",
+        "formatted-output exponent sign branch",
+    )
+    body = replace_once(
+        body,
+        "\tjal\tfunc_8003ADD0\n"
+        "\tmove\t$4,$18\n",
+        "\tjal\tfunc_8003ADD0\n"
+        "\tmove\t$4,$7\n",
+        "formatted-output exceptional-value destination",
+    )
+    body = replace_once(
+        body,
+        "\taddu\t$6,$6,-1\n"
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tjal\tfunc_800391BC\n"
+        "\tmove\t$7,$18\n",
+        "\t.set\tnoreorder\n"
+        "\t.set\tnomacro\n"
+        "\tjal\tfunc_800391BC\n"
+        "\taddu\t$6,$6,-1\n",
+        "formatted-output exponent call scheduling",
+    )
+    return head + body + body_end + tail
+
+
 def normalize(text: str, unit: str) -> str:
-    if unit == "func_800196E8":
+    if unit == "func_800398E0":
+        # This unit uses the original assembler's reorder pass.  Its reviewed
+        # transformations preserve that input mode instead of applying the
+        # builtin no-reorder scheduler used by the units below.
+        return normalize_formatted_output_core(text)
+    elif unit == "func_800196E8":
         text = normalize_state_copy(text)
     elif unit == "func_80006E88":
         text = normalize_d1_func_80006E88(text)
