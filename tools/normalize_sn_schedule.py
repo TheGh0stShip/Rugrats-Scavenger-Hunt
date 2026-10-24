@@ -225,6 +225,21 @@ def normalize_completion_state_scan(text: str) -> str:
     )
 
 
+def normalize_tile_collision_search(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tlw\t$3,316($2)\n\tlw\t$2,316($18)\n",
+        "\tlw\t$3,316($18)\n\tlw\t$2,316($2)\n",
+        "reviewed commutative tile comparison load order",
+    )
+    return normalize_zero_copy_with_padding(
+        text,
+        "\tmove\t$22,$19\n",
+        "\tmove\t$22,$17\n",
+        "reviewed tile-search zero-copy pattern",
+    )
+
+
 def normalize_resource_range(text: str) -> str:
     text = replace_once(text, (
         "\tlui\t$8,%hi(D_80052EB0) # high\n"
@@ -4281,6 +4296,8 @@ def normalize_e4_func_80006C18(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_800222E8\n" in text:
+        return normalize_tile_collision_search(text)
     if "\t.ent\tfunc_800255AC\n" in text:
         return normalize_available_position_search(text)
     if "\t.ent\tfunc_80025E48\n" in text:
