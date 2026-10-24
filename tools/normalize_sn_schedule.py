@@ -5191,6 +5191,80 @@ def normalize_camera_mode_setup(text: str) -> str:
     return normalize_standard_return(head + marker + tail)
 
 
+def normalize_particle_spray(text: str) -> str:
+    """Reproduce retail allocation and scheduling for the five-particle loop."""
+    text = replace_once(
+        text,
+        "\tbne\t$3,$2,$L1\n\tlui\t$20,%hi(D_80058208) # high\n",
+        "\tbne\t$3,$2,$L1\n\tmove\t$19,$0\n",
+        "reviewed particle-loop guard delay slot",
+    )
+    text = replace_once(text, (
+        "\taddiu\t$20,$20,%lo(D_80058208) # low\n"
+        "\tlui\t$21,%hi(D_80052F90) # high\n"
+        "\taddiu\t$21,$21,%lo(D_80052F90) # low\n"
+        "\tmove\t$19,$0\n\tsll\t$18,$16,3\n\taddu\t$18,$18,$16\n"
+        "\tsll\t$18,$18,2\n\tsubu\t$18,$18,$16\n\tsll\t$18,$18,2\n"
+        "\tmtc1\t$0,$f22\n\taddu\t$16,$20,$18\n"
+    ), (
+        "\tlui\t$2,%hi(D_80058208) # high\n"
+        "\taddiu\t$20,$2,%lo(D_80058208) # low\n"
+        "\tlui\t$2,%hi(D_80052F90) # high\n"
+        "\taddiu\t$21,$2,%lo(D_80052F90) # low\n"
+        "\tmtc1\t$0,$f22\n\tsll\t$2,$16,3\n\taddu\t$2,$2,$16\n"
+        "\tsll\t$2,$2,2\n\tsubu\t$2,$2,$16\n\tsll\t$18,$2,2\n"
+        "\taddu\t$16,$18,$20\n"
+    ), "reviewed particle-loop setup")
+    text = replace_once(text, (
+        "\tli.s\t$f0,1.00000000000000000000e3\n"
+        "\ttrunc.w.s $f6,$f20,$8\n\ts.s\t$f6,0($16)\n"
+        "\tl.s\t$f2,48($17)\n\t#nop\n\tadd.s\t$f2,$f2,$f0\n"
+        "\tl.s\t$f0,4($16)\n\tcvt.s.w\t$f0,$f0\n\tc.lt.s\t$f2,$f0\n"
+    ), (
+        "\ttrunc.w.s $f0,$f20,$8\n\ts.s\t$f0,0($16)\n"
+        "\tl.s\t$f2,48($17)\n\tli.s\t$f0,1.00000000000000000000e3\n"
+        "\tadd.s\t$f2,$f2,$f0\n\tl.s\t$f0,4($16)\n"
+        "\tcvt.s.w\t$f0,$f0\n\tc.lt.s\t$f2,$f0\n"
+    ), "reviewed particle height comparison")
+    text = replace_once(text, (
+        "\tl.s\t$f0,44($17)\n\t#nop\n\ttrunc.w.s $f6,$f0,$8\n"
+        "\ts.s\t$f6,0($16)\n\tl.s\t$f2,48($17)\n"
+        "\tli.s\t$f0,3.00000000000000000000e2\n\t#nop\n"
+        "\tadd.s\t$f2,$f2,$f0\n\tsw\t$0,16($16)\n"
+        "\ttrunc.w.s $f6,$f2,$8\n\ts.s\t$f6,4($16)\n"
+        "\tl.s\t$f0,52($17)\n\t#nop\n\ttrunc.w.s $f6,$f0,$8\n"
+        "\ts.s\t$f6,8($16)\n"
+    ), (
+        "\tl.s\t$f0,44($17)\n\t#nop\n\ttrunc.w.s $f2,$f0,$8\n"
+        "\ts.s\t$f2,0($16)\n\tl.s\t$f0,48($17)\n"
+        "\tli.s\t$f2,3.00000000000000000000e2\n\t#nop\n"
+        "\tadd.s\t$f0,$f0,$f2\n\ttrunc.w.s $f2,$f0,$8\n"
+        "\ts.s\t$f2,4($16)\n\tl.s\t$f0,52($17)\n\tsw\t$0,16($16)\n"
+        "\ttrunc.w.s $f2,$f0,$8\n\ts.s\t$f2,8($16)\n"
+    ), "reviewed particle reset stores")
+    text = text.replace("\taddu\t$2,$20,$18\n", "\taddu\t$2,$18,$20\n")
+    text = text.replace("\taddu\t$3,$20,$18\n", "\taddu\t$3,$18,$20\n")
+    text = replace_once(text, (
+        "\taddu\t$3,$18,$20\n\tl.s\t$f0,24($3)\n"
+        "\tmfc1\t$5,$f22\n\tmfc1\t$6,$f22\n\tmfc1\t$7,$f22\n"
+        "\ts.s\t$f0,16($sp)\n\tl.s\t$f0,32($sp)\n"
+        "\taddu\t$18,$18,28\n\ts.s\t$f0,20($sp)\n"
+        "\tl.s\t$f0,36($sp)\n\tmove\t$16,$2\n\ts.s\t$f0,24($sp)\n"
+        "\tl.s\t$f0,40($sp)\n\tmove\t$4,$16\n"
+    ), (
+        "\taddu\t$3,$18,$20\n\tmfc1\t$5,$f22\n\tmfc1\t$6,$f22\n"
+        "\tmfc1\t$7,$f22\n\tl.s\t$f0,24($3)\n\tmove\t$16,$2\n"
+        "\ts.s\t$f0,16($sp)\n\tl.s\t$f0,32($sp)\n\tmove\t$4,$16\n"
+        "\ts.s\t$f0,20($sp)\n\tl.s\t$f0,36($sp)\n\taddu\t$18,$18,28\n"
+        "\ts.s\t$f0,24($sp)\n\tl.s\t$f0,40($sp)\n"
+    ), "reviewed particle draw-call scheduling")
+    text = replace_once(
+        text, "\taddu\t$16,$20,$18\n", "\taddu\t$16,$18,$20\n",
+        "reviewed particle next-pointer operands",
+    )
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
@@ -5290,6 +5364,8 @@ def normalize(text: str) -> str:
         return normalize_camera_follow_math(text)
     if "\t.ent\tfunc_8000FDAC\n" in text:
         return normalize_camera_mode_setup(text)
+    if "\t.ent\tfunc_8000E32C\n" in text:
+        return normalize_particle_spray(text)
     if "\t.ent\tfunc_80034808\n" in text:
         return normalize_player_object_reset(text)
     if "\t.ent\tfunc_800345EC\n" in text:

@@ -420,3 +420,4 @@
 0x33620	0x6F8	src/game/render_sprite_glyphs.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a351ce74bfb146f6978ea55c316e7c78b4032d35b73b0e324ec9e68774f829d2
 0x10204	0x1FC	src/game/update_camera_follow.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	110d74ffbd130662b46ac4741cf060ba66f512a2ab819d2a1f7c85786a351ce6
 0x109AC	0x3E4	src/game/setup_camera_mode.c	--section-base=.rodata:0x80000850 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	8e7d6df1f5851dc578f4c0a89effa315fa157a1da263cd1aa5beaba14bd167d9
+0xEF2C	0x300	src/game/update_particle_spray.c	--section-base=.rodata:0x80000760 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	387c18b5476782a2ae60b620761f15c86b413fdd015664b1a80833d052c65078
