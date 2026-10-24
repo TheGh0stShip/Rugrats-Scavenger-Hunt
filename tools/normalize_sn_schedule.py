@@ -388,6 +388,91 @@ def normalize_zone_choice_input(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_round_state_reset(text: str) -> str:
+    text = replace_once(
+        text,
+        "\taddiu\t$5,$2,%lo(D_80052F4C) # low\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$4,$2,%lo(D_80052F18) # low\n\taddu\t$6,$4,48\n",
+        "\taddiu\t$7,$2,%lo(D_80052F4C) # low\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$6,$2,%lo(D_80052F18) # low\n\taddu\t$8,$6,48\n",
+        "reviewed round-state copy pointer allocation",
+    )
+    text = replace_once(
+        text,
+        "$L2:\n\tlw\t$7,0($4)\n\tlw\t$8,4($4)\n"
+        "\tlw\t$9,8($4)\n\tlw\t$10,12($4)\n"
+        "\tsw\t$7,0($5)\n\tsw\t$8,4($5)\n"
+        "\tsw\t$9,8($5)\n\tsw\t$10,12($5)\n\taddu\t$4,$4,16\n",
+        "$L2:\n\tlw\t$2,0($6)\n\tlw\t$3,4($6)\n"
+        "\tlw\t$4,8($6)\n\tlw\t$5,12($6)\n"
+        "\tsw\t$2,0($7)\n\tsw\t$3,4($7)\n"
+        "\tsw\t$4,8($7)\n\tsw\t$5,12($7)\n\taddu\t$6,$6,16\n",
+        "reviewed round-state copy word allocation",
+    )
+    text = replace_once(text, "\tbne\t$4,$6,$L2\n\taddu\t$5,$5,16\n", "\tbne\t$6,$8,$L2\n\taddu\t$7,$7,16\n", "reviewed round-state copy loop allocation")
+    text = replace_once(text, "\tlw\t$7,0($4)\n\tsw\t$7,0($5)\n", "\tlw\t$2,0($6)\n\tsw\t$2,0($7)\n", "reviewed round-state copy tail allocation")
+    text = replace_once(
+        text,
+        "\tlui\t$16,%hi(D_80052F18) # high\n\tli\t$17,1\t\t\t# 0x00000001\n"
+        "\tlw\t$2,0($6)\n\tsw\t$2,0($7)\n",
+        "\tlw\t$2,0($6)\n\tsw\t$2,0($7)\n"
+        "\tlui\t$16,%hi(D_80052F18) # high\n\tli\t$17,1\t\t\t# 0x00000001\n",
+        "reviewed round-state copy tail schedule",
+    )
+    text = replace_once(text, "\tmfhi\t$7\n\t#nop\n\t#nop\n\tsubu\t$4,$7,$4\n\tsll\t$3,$4,$17\n", "\tmfhi\t$5\n\t#nop\n\t#nop\n\tsubu\t$4,$5,$4\n\tsll\t$3,$4,1\n", "reviewed modulo-three allocation")
+    text = replace_once(text, "\tsra\t$3,$3,$17\n\tsll\t$3,$3,$17\n", "\tsra\t$3,$3,1\n\tsll\t$3,$3,1\n", "reviewed modulo-two shifts")
+    text = replace_once(
+        text,
+        "\tlui\t$3,%hi(D_80058BF0) # high\n\tlw\t$31,24($sp)\n"
+        "\tli\t$2,10\t\t\t# 0x0000000a\n\tsw\t$2,%lo(D_80058BF0)($3)\n"
+        "\tlui\t$2,%hi(D_80052E98) # high\n\tsw\t$17,%lo(D_80052E98)($2)\n",
+        "\tlui\t$3,%hi(D_80058BF0) # high\n"
+        "\tli\t$2,10\t\t\t# 0x0000000a\n\tsw\t$2,%lo(D_80058BF0)($3)\n"
+        "\tlui\t$2,%hi(D_80052E98) # high\n\tsw\t$17,%lo(D_80052E98)($2)\n"
+        "\tlw\t$31,24($sp)\n",
+        "reviewed round-state epilogue schedule",
+    )
+    return normalize_standard_return(text)
+
+
+def normalize_round_controller_create(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tli\t$4,131\t\t\t# 0x00000083\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n",
+        "\tlui\t$2,%hi(D_80052F18) # high\n",
+        "reviewed round-controller default resource schedule source",
+    )
+    text = replace_once(
+        text,
+        "\tbne\t$3,$2,$L2\n\tli\t$17,526\t\t\t# 0x0000020e\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$4,133\t\t\t# 0x00000085\n$L2:\n",
+        "\tbne\t$3,$2,$L2\n\tli\t$4,131\t\t\t# 0x00000083\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$4,133\t\t\t# 0x00000085\n$L2:\n"
+        "\tli\t$17,526\t\t\t# 0x0000020e\n",
+        "reviewed round-controller resource selection schedule",
+    )
+    text = replace_once(text, "\tjal\tfunc_8001EEBC\n\tli\t$4,526\t\t\t# 0x0000020e\n", "\tjal\tfunc_8001EEBC\n\tmove\t$4,$17\n", "reviewed shared resource argument allocation")
+    text = replace_once(text, "\tmove\t$4,$16\n$L4:\n", "\tmove\t$4,$16\n$L4:\n\tmove\t$5,$18\n", "reviewed controller callback arguments")
+    text = replace_once(
+        text,
+        "\tlw\t$3,292($4)\n\tli\t$2,5\t\t\t# 0x00000005\n"
+        "\tsw\t$2,252($4)\n\tlui\t$2,%hi(D_80058C00) # high\n"
+        "\tsw\t$4,%lo(D_80058C00)($2)\n\tmove\t$7,$3\n"
+        "\tsw\t$7,300($4)\n\tmove\t$7,$0\n",
+        "\tli\t$2,5\t\t\t# 0x00000005\n\tsw\t$2,252($4)\n"
+        "\tlui\t$2,%hi(D_80058C00) # high\n\tlw\t$3,292($4)\n"
+        "\tmove\t$7,$0\n\tsw\t$3,300($4)\n",
+        "reviewed round-controller position copy schedule",
+    )
+    text = replace_once(text, "\tjal\tfunc_80007EFC\n\tsw\t$3,296($4)\n", "\tsw\t$3,296($4)\n\t.set\tnoreorder\n\t.set\tnomacro\n\tjal\tfunc_80007EFC\n\tsw\t$4,%lo(D_80058C00)($2)\n", "reviewed round-controller publish delay slot")
+    return normalize_standard_return(text)
+
+
 def normalize_zero_copy_with_padding(
     text: str, old: str, new: str, description: str
 ) -> str:
@@ -5544,6 +5629,10 @@ def normalize_board_event_dispatch(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_800124B0\n" in text:
+        return normalize_round_controller_create(text)
+    if "\t.ent\tfunc_80012324\n" in text:
+        return normalize_round_state_reset(text)
     if "\t.ent\tfunc_800299A8\n" in text:
         return normalize_zone_choice_input(text)
     if "\t.ent\tfunc_8000DE80\n" in text:
