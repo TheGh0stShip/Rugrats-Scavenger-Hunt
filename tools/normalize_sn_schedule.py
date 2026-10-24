@@ -189,6 +189,52 @@ def normalize_standard_return(text: str) -> str:
     )
 
 
+def normalize_scene_start(text: str) -> str:
+    pattern = re.compile(
+        r"\tli\t\$4,15[^\n]*\n"
+        r"\t\.set\tnoreorder\n\t\.set\tnomacro\n"
+        r"\tjal\tfunc_80012D9C\n"
+        r"\tsw\t\$0,%lo\(D_8005435C\)\(\$2\)\n"
+    )
+    if len(pattern.findall(text)) != 1:
+        raise ValueError("reviewed scene-start store pattern not found uniquely")
+    text = pattern.sub(
+        "\tsw\t$0,%lo(D_8005435C)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80012D9C\n\tli\t$4,15\n",
+        text,
+        count=1,
+    )
+    return normalize_standard_return(text)
+
+
+def normalize_random_slot_assignment(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$2,$2,$3\n"
+        "\tlw\t$3,0($2)\n\t#nop\n"
+        "\tsh\t$18,8($3)\n"
+        "\tlw\t$2,4($2)\n"
+        "\tlui\t$4,%hi(D_800581F0) # high\n"
+        "\tsll\t$3,$2,5\n"
+        "\taddu\t$3,$3,$2\n"
+        "\tlw\t$2,%lo(D_800581F0)($4)\n"
+        "\tsll\t$3,$3,4\n"
+        "\taddu\t$3,$3,$2\n"
+    ), (
+        "\taddu\t$2,$3,$2\n"
+        "\tlw\t$3,0($2)\n\t#nop\n"
+        "\tsh\t$18,8($3)\n"
+        "\tlw\t$3,4($2)\n"
+        "\tlui\t$4,%hi(D_800581F0) # high\n"
+        "\tsll\t$2,$3,5\n"
+        "\taddu\t$2,$2,$3\n"
+        "\tlw\t$3,%lo(D_800581F0)($4)\n"
+        "\tsll\t$2,$2,4\n"
+        "\taddu\t$3,$3,$2\n"
+    ), "reviewed random-slot register allocation pattern")
+    return normalize_standard_return(text)
+
+
 def normalize_label_menu_draw(text: str) -> str:
     for register, symbol in (
         ("$20", "D_80052F18"),
@@ -1623,6 +1669,10 @@ def normalize_large_render_pass(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8003079C\n" in text:
+        return normalize_scene_start(text)
+    if "\t.ent\tfunc_80031328\n" in text:
+        return normalize_random_slot_assignment(text)
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
     if "\t.ent\tfunc_8002A9D4\n" in text:
