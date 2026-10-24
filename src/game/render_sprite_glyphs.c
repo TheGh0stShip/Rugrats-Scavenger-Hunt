@@ -1,6 +1,5 @@
 /* Target: func_80032A20  VRAM 0x80032A20  ROM 0x33620
- * Size: 0x6F8  Pipeline: KMC GCC 2.7.2 -O2 -G0 -mips3 -mgp32 -mfp32
- * Confidence: low */
+ * Size: 0x6F8  Pipeline: SN Systems GCC 2.8 -O2, reviewed scheduling */
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned short u16;
@@ -121,21 +120,37 @@ void func_80032A20(Text_80032A20 *arg, s32 x, s32 y) {
             GFXW(0xE6000000, 0);
             {
                 Gfx *gp = D_80077830++;
+                register s32 quarter __asm__("$10");
+                register s32 quarter_input __asm__("$9");
+                s32 divisor;
+                u32 result;
                 gp->w0 = 0xF3000000;
+                quarter_input = w & 0xFF;
+                quarter = quarter_input;
+                if (quarter_input < 0) {
+                    quarter = quarter_input + 3;
+                }
+                quarter >>= 2;
                 dxtNum = 0x800;
-                if ((s32)(w & 0xFF) / 4 > 0) {
-                    dxtNum = (s32)(w & 0xFF) / 4 + 0x7FF;
+                if (quarter > 0) {
+                    dxtNum = quarter + 0x7FF;
                 }
                 lrs = (s32)((w & 0xFF) * (h & 0xFF)) - 1;
                 if (lrs >= 0x800) {
                     lrs = 0x7FF;
                 }
                 wb = ((lrs & 0xFFF) << 12) | 0x07000000;
-                if ((s32)(w & 0xFF) / 4 > 0) {
-                    gp->w1 = wb | ((dxtNum / ((s32)(w & 0xFF) / 4)) & 0xFFF);
-                } else {
-                    gp->w1 = wb | (dxtNum & 0xFFF);
+                divisor = w & 0xFF;
+                if (divisor < 0) {
+                    divisor += 3;
                 }
+                divisor >>= 2;
+                if (divisor <= 0) {
+                    result = dxtNum & 0xFFF;
+                } else {
+                    result = (dxtNum / divisor) & 0xFFF;
+                }
+                gp->w1 = wb | result;
             }
             GFXW(0xE7000000, 0);
             GFXW(0xF5100000 | (((((u32)w & 0xFF) * 2 + 7) >> 3) << 9), 0x00094260);

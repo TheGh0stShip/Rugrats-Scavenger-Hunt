@@ -503,6 +503,137 @@ def normalize_sprite_display_list(text: str) -> str:
     return normalize_standard_return(text[:start] + body + text[end:])
 
 
+def normalize_sprite_glyph_renderer(text: str) -> str:
+    def rename(span: str, mapping: dict[str, str]) -> str:
+        for index, old in enumerate(mapping):
+            span = span.replace(old, f"@@glyph_{index}@@")
+        for index, new in enumerate(mapping.values()):
+            span = span.replace(f"@@glyph_{index}@@", new)
+        return span
+
+    start = text.find("\tlhu\t$2,14($25)\n")
+    case8 = text.find("$L7:\n", start)
+    case16 = text.find("$L3:\n", case8)
+    end = text.rfind("$L13:\n")
+    if min(start, case8, case16, end) < 0:
+        raise ValueError("reviewed glyph-renderer spans not found")
+
+    setup = rename(text[start:case8], {
+        "$22": "$21", "$17": "$24", "$19": "$18",
+    })
+    setup = replace_once(setup, "\tmove\t$13,$14\n", "\tmove\t$10,$14\n",
+                         "reviewed glyph CI8 global base")
+    setup = replace_once(setup, "\tli\t$14,24\t\t\t# 0x00000018\n", "",
+                         "reviewed glyph CI8 pointer constant")
+    ci8 = rename(text[case8:case16], {
+        "$22": "$21", "$17": "$24", "$19": "$18", "$18": "$17",
+        "$20": "$19", "$13": "$10", "$15": "$14", "$24": "$15",
+    })
+    ci8 = replace_once(ci8,
+        "$L7:\n\taddu\t$11,$25,$14\n",
+        "\taddu\t$11,$25,24\n$L7:\n",
+        "reviewed glyph CI8 pointer setup")
+    ci8 = replace_once(ci8, "\tli\t$8,2048\t\t\t# 0x00000800\n",
+        "\tli\t$9,2048\t\t\t# 0x00000800\n", "reviewed glyph CI8 dxt register")
+    ci8 = replace_once(ci8, "\taddu\t$9,$4,16\n", "\taddu\t$8,$4,16\n",
+                       "reviewed glyph CI8 load pointer")
+    ci8 = replace_once(ci8, "\tsw\t$9,%lo(D_80077830)($10)\n",
+        "\tsw\t$8,%lo(D_80077830)($10)\n", "reviewed glyph CI8 load pointer store")
+    ci8 = replace_once(ci8, "\taddu\t$14,$14,16\n", "\taddu\t$11,$11,16\n",
+                       "reviewed glyph CI8 pointer advance")
+    ci8 = replace_once(ci8,
+        "\tandi\t$10,$16,0x00ff\n\tsrl\t$12,$10,3\n"
+        "\tli\t$2,-49283072\t\t\t# 0xfd100000\n",
+        "\tli\t$2,-49283072\t\t\t# 0xfd100000\n",
+        "reviewed glyph CI8 width calculation schedule")
+    ci8 = replace_once(ci8,
+        "\tbeq\t$12,$0,$L8\n\tsw\t$2,16($4)\n",
+        "\tsw\t$2,16($4)\n\tandi\t$2,$16,0x00ff\n\tsrl\t$5,$2,3\n"
+        "\tbeq\t$5,$0,$L8\n\tmove\t$6,$8\n",
+        "reviewed glyph CI8 load-block setup")
+    ci8 = replace_once(ci8, "\taddu\t$8,$12,2047\n$L8:\n\tandi\t$2,$17,0x00ff\n"
+        "\tmult\t$2,$10\n", "\taddu\t$9,$5,2047\n$L8:\n\tmult\t$17,$2\n",
+        "reviewed glyph CI8 load-block arithmetic")
+    ci8 = replace_once(ci8,
+        "\tbeq\t$12,$0,$L10\n\tor\t$4,$2,$3\n",
+        "\tbeq\t$5,$0,$L10\n\tor\t$4,$2,$3\n",
+        "reviewed glyph CI8 divide guard")
+    ci8 = replace_once(ci8, "\tdiv\t$2,$8,$12\n", "\tdiv\t$2,$9,$5\n",
+                       "reviewed glyph CI8 division registers")
+    ci8 = replace_once(ci8,
+        "\tj\t$L26\n\tor\t$2,$4,$2\n",
+        "\tor\t$2,$4,$2\n\tj\t$L26\n\tsw\t$2,4($6)\n",
+        "reviewed glyph CI8 quotient store")
+    ci8 = replace_once(ci8,
+        "$L10:\n\tor\t$2,$4,$8\n$L26:\n\tsw\t$2,4($9)\n",
+        "$L10:\n\tor\t$2,$4,$9\n\tsw\t$2,4($8)\n$L26:\n",
+        "reviewed glyph CI8 fallback store")
+
+    rgba_source = text[case16:end]
+    loop_start = rgba_source.find("\tmove\t$13,$14\n")
+    if loop_start < 0:
+        raise ValueError("reviewed glyph RGBA loop setup not found")
+    rgba_setup = rename(rgba_source[:loop_start], {
+        "$22": "$21", "$17": "$24", "$19": "$18", "$18": "$17",
+        "$20": "$19", "$21": "$20",
+    })
+    rgba_loop = rename(rgba_source[loop_start:], {
+        "$22": "$21", "$17": "$24", "$19": "$18", "$18": "$17",
+        "$20": "$19", "$21": "$20", "$14": "$12", "$13": "$11",
+        "$11": "$13", "$15": "$14", "$24": "$15",
+    })
+    rgba = rgba_setup + rgba_loop
+    rgba = replace_once(rgba, "\tmove\t$11,$12\n", "\tmove\t$11,$14\n",
+                        "reviewed glyph RGBA global base")
+    rgba = replace_once(rgba, "\tli\t$16,24\t\t\t# 0x00000018\n", "",
+                        "reviewed glyph RGBA pointer constant")
+    rgba = replace_once(rgba, "\taddu\t$13,$25,$16\n", "\taddu\t$13,$25,24\n",
+                        "reviewed glyph RGBA pointer setup")
+    rgba = replace_once(rgba, "\taddu\t$13,$25,24\n", "",
+                        "reviewed glyph RGBA pointer schedule source")
+    rgba = replace_once(rgba, "\tor\t$20,$3,$2\n\tmult\t$12,$17\n",
+        "\tor\t$20,$3,$2\n\taddu\t$13,$25,24\n\tmult\t$12,$17\n",
+        "reviewed glyph RGBA pointer schedule destination")
+    rgba = replace_once(rgba, "\tmove\t$9,$12\n\tmove\t$10,$9\n",
+        "\tandi\t$9,$16,0x00ff\n\tmove\t$10,$9\n",
+        "reviewed glyph RGBA quarter input")
+    rgba = replace_once(rgba,
+        "\tsra\t$10,$10,2\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$10,$L20\n\tli\t$8,2048\t\t\t# 0x00000800\n",
+        "\tsra\t$2,$10,2\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L20\n\tli\t$4,2048\t\t\t# 0x00000800\n",
+        "reviewed glyph RGBA quarter allocation")
+    rgba = replace_once(rgba, "\taddu\t$8,$10,2047\n", "\taddu\t$4,$2,2047\n",
+                        "reviewed glyph RGBA dxt allocation")
+    rgba = replace_once(rgba,
+        "\tbgez\t$12,$L22\n\tor\t$12,$2,$3\n",
+        "\tbgez\t$12,$L22\n\tor\t$6,$2,$3\n",
+        "reviewed glyph RGBA packed word")
+    rgba = replace_once(rgba, "$L21:\n", "$L21:\n\tmove\t$5,$12\n",
+                        "reviewed glyph RGBA divisor schedule")
+    rgba = replace_once(rgba, "\taddu\t$9,$12,3\n$L22:\n\tsra\t$9,$9,2\n",
+        "\taddu\t$5,$12,3\n$L22:\n\tsra\t$2,$5,2\n",
+        "reviewed glyph RGBA signed divisor")
+    rgba = replace_once(rgba,
+        "\tblez\t$9,$L24\n\tandi\t$2,$8,0x0fff\n",
+        "\tblezl\t$2,$L24\n\tandi\t$2,$4,0x0fff\n",
+        "reviewed glyph RGBA divide branch")
+    rgba = replace_once(rgba, "\tdiv\t$2,$8,$9\n", "\tdiv\t$2,$4,$2\n",
+                        "reviewed glyph RGBA division registers")
+    rgba = replace_once(rgba, "$L24:\n", "$L24:\n\tor\t$2,$6,$2\n\tsw\t$2,4($7)\n",
+                        "reviewed glyph RGBA result store")
+    rgba = replace_once(rgba,
+        "\tlw\t$5,%lo(D_80077830)($11)\n\tor\t$2,$12,$2\n\tsw\t$2,4($7)\n",
+        "\tlw\t$5,%lo(D_80077830)($11)\n",
+        "reviewed glyph RGBA late result store removal")
+    rgba = replace_once(rgba, "\taddu\t$16,$16,16\n", "\taddu\t$13,$13,16\n",
+                        "reviewed glyph RGBA pointer advance")
+    rgba = rgba.replace("\tor\t$fp,$2,$18\n", "\tor\t$22,$2,$18\n")
+    rgba = rgba.replace("\tsw\t$fp,0($5)\n", "\tsw\t$22,0($5)\n")
+
+    return normalize_standard_return(text[:start] + setup + ci8 + rgba + text[end:])
+
+
 def normalize_resource_range(text: str) -> str:
     text = replace_once(text, (
         "\tlui\t$8,%hi(D_80052EB0) # high\n"
@@ -4707,6 +4838,8 @@ def normalize(text: str) -> str:
         return normalize_material_lighting_commands(text)
     if "\t.ent\tfunc_80014F00\n" in text:
         return normalize_scene_material_renderer(text)
+    if "\t.ent\tfunc_80032A20\n" in text:
+        return normalize_sprite_glyph_renderer(text)
     if "\t.ent\tfunc_80012DBC\n" in text:
         return normalize_byte_from_float_trunc(text)
     if "\t.ent\tfunc_80010850\n" in text:
