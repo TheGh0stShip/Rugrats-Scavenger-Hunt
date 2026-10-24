@@ -235,3 +235,4 @@
 0x39DBC	0x160	src/runtime/format_exponent_digits.c	-O1 -G0 -mips3 -mgp32 -mfp32	0e11ae8b402a551f68184e338b8568dc59a6409900163c7ed04a716b43dd639b
 0x4E610	0x90	src/libultra/os_si_raw_read_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	904e096ed8850a8540720ca61897d05bacfeedbec1af36116e15fa1876dc00dd
 0x4E6C0	0x70	src/libultra/os_si_raw_write_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	476244ba68f8f0111d58f77ea8ff138fddfb61f9c7a571d55f031e4acf54ef9f
+0x4C8C0	0x3B0	src/libultra/al_fx_pull.c	--section-base=.rodata:0x80003850 --symbol=func_8004B870:0x8004B870 --symbol=func_8004C5FC:0x8004C5FC --symbol=func_8004C48C:0x8004C48C --symbol=func_8004C274:0x8004C274 --symbol=func_8004C76C:0x8004C76C -O2 -G0 -mips3 -mgp32 -mfp32	b702dd1030d8f11170228d0956652d229c9bbeec16a3f02bbd3a2e53f582ba5b
