@@ -109,7 +109,8 @@ extern void func_8000F800(Cam *cam);
 
 #define TRANS (&D_800588F8)
 
-void func_8000E7C8(Cam *cam) {
+void func_8000E7C8(Cam *camera) {
+    register Cam *cam __asm__("$16") = camera;
     Actor *pl;
     Ctl_800C33D8 *c;
     Vec3f v;
