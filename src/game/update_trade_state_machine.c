@@ -155,23 +155,23 @@ void func_8002EBF0(void) {
                     mine = *(self->f1E8 + k);
                     theirs = *(other->f1E8 + k);
                     room -= mine;
-                    if (theirs < room) {
-                        D_800B9304 = mine + theirs;
-                        D_800B9300 = 0;
-                    } else {
+                    if (theirs >= room) {
                         D_800B9304 = mine + room;
                         D_800B9300 = *(other->f1E8 + k) - room;
+                    } else {
+                        D_800B9304 = mine + theirs;
+                        D_800B9300 = 0;
                     }
                 } else {
                     mine = self->f1F8;
                     room = 99 - mine;
                     theirs = other->f1F8;
-                    if (theirs < room) {
-                        D_800B9304 = mine + theirs;
-                        D_800B9300 = 0;
-                    } else {
+                    if (theirs >= room) {
                         D_800B9304 = mine + room;
                         D_800B9300 = theirs - room;
+                    } else {
+                        D_800B9304 = mine + theirs;
+                        D_800B9300 = 0;
                     }
                 }
                 if (other->f11C != -1 && other->f11C != self->f11C) {
