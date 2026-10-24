@@ -342,3 +342,4 @@
 0x342A4	0xC8	src/game/load_scene_lights_800336a4.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d2d1bc5abe7e2c0768aab2b698470c8c93f41be65574ea9fb0c91bd5a885012a
 0x13D3C	0xB4	src/game/load_archive_entry_8001313c.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	3b5d1c963f58ec5c637bc6f7ec20a888ce24aed0f485d47a6158e1a4989421db
 0x2F7F0	0x838	src/game/update_trade_state_machine.c	--section-base=.rdata:0x80002970 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a8d4119cdc433d6075fed0104478cda92cc44f970a1c5d6a381288563d4831d4
+0xF3C8	0x988	src/game/update_camera_state_machine.c	--section-base=.rodata:0x80000788 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cca39c1b2c1e356f2806b3c12c62d4b83b93c9499cf57576f6ec6745916c1fe6

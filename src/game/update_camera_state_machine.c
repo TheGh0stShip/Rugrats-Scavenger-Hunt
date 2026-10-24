@@ -273,13 +273,15 @@ void func_8000E7C8(Cam *camera) {
                 n = -n;
             }
             c->count = n;
-            c->unk18 = cam->unkFC;
-            c->unk1C = cam->unk104;
+            dx = cam->unkFC;
+            dz = cam->unk104;
+            c->unk18 = dx;
+            c->unk1C = dz;
             if (n < 5) {
                 c->count = 5;
             }
-            dx = (D_800547C0 - cam->unkFC) / c->count;
-            dz = (D_800547C4 - cam->unk104) / c->count;
+            dx = (D_800547C0 - dx) / c->count;
+            dz = (D_800547C4 - dz) / c->count;
             f = c->count;
             c->dx = (c->a.x - cam->pos.x) / f;
             c->dz = (c->a.z - cam->pos.z) / f;

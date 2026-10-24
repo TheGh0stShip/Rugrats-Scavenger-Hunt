@@ -2854,6 +2854,103 @@ $L73:
 	.set	reorder
 """
     text = text[:start] + angle + text[end:]
+    start = text.find("$L50:\n")
+    end = text.find("$L53:\n", start)
+    if start < 0 or end < 0 or text.count("$L50:\n") != 1 or text.count("$L53:\n") != 1:
+        raise ValueError("reviewed camera transition setup block not found uniquely")
+    transition = """$L50:
+	.set	noreorder
+	.set	nomacro
+	lui	$18,%hi(D_800C33D8) # high
+	addiu	$17,$18,%lo(D_800C33D8) # low
+	lw	$7,%lo(D_800C33D8)($18)
+	lw	$4,12($17)
+	lw	$5,16($17)
+	lw	$6,20($17)
+	lw	$2,4($17)
+	lw	$3,8($17)
+	sw	$2,16($sp)
+	sw	$3,20($sp)
+	jal	func_80008B80
+	nop
+	lui	$3,0x51eb
+	ori	$3,$3,0x851f
+	mult	$2,$3
+	sw	$2,32($17)
+	sra	$2,$2,31
+	mtc1	$0,$f2
+	mfhi	$8
+	sra	$3,$8,6
+	subu	$2,$3,$2
+	mtc1	$2,$f0
+	cvt.s.w	$f0,$f0
+	c.le.s	$f2,$f0
+	nop
+	bc1fl	$LCAM_COUNT_SIGN
+	subu	$2,$0,$2
+$LCAM_COUNT_SIGN:
+	sw	$2,40($17)
+	lw	$4,252($16)
+	sw	$4,24($17)
+	lw	$6,260($16)
+	slt	$2,$2,5
+	beq	$2,$0,$LCAM_COUNT_CLAMPED
+	sw	$6,28($17)
+	addiu	$2,$0,5
+	sw	$2,40($17)
+$LCAM_COUNT_CLAMPED:
+	lui	$2,%hi(D_800547C0) # high
+	lw	$5,%lo(D_800547C0)($2)
+	lw	$3,40($17)
+	subu	$5,$5,$4
+	.set	macro
+	.set	reorder
+	div	$5,$5,$3
+	.set	noreorder
+	.set	nomacro
+	lui	$2,%hi(D_800547C4) # high
+	lw	$4,%lo(D_800547C4)($2)
+	subu	$4,$4,$6
+	.set	macro
+	.set	reorder
+	div	$4,$4,$3
+	.set	noreorder
+	.set	nomacro
+	lwc1	$f0,%lo(D_800C33D8)($18)
+	lwc1	$f2,88($16)
+	sub.s	$f0,$f0,$f2
+	mtc1	$3,$f4
+	cvt.s.w	$f4,$f4
+	div.s	$f0,$f0,$f4
+	swc1	$f0,48($17)
+	lwc1	$f0,8($17)
+	lwc1	$f2,96($16)
+	sub.s	$f0,$f0,$f2
+	div.s	$f0,$f0,$f4
+	swc1	$f0,56($17)
+	lwc1	$f0,88($16)
+	lwc1	$f2,92($16)
+	swc1	$f0,12($17)
+	lwc1	$f0,96($16)
+	lui	$2,%hi(D_800547C8) # high
+	swc1	$f0,20($17)
+	lwc1	$f0,%lo(D_800547C8)($2)
+	cvt.s.w	$f0,$f0
+	addiu	$2,$0,15
+	sub.s	$f0,$f0,$f2
+	sw	$2,240($16)
+	lui	$2,%hi(D_800587F0) # high
+	div.s	$f0,$f0,$f4
+	trunc.w.s	$f2,$f0
+	swc1	$f2,%lo(D_800587F0)($2)
+	lui	$2,%hi(D_80058674) # high
+	sw	$5,%lo(D_80058674)($2)
+	lui	$2,%hi(D_80058670) # high
+	sw	$4,%lo(D_80058670)($2)
+	.set	macro
+	.set	reorder
+"""
+    text = text[:start] + transition + text[end:]
     text = text.replace("$f14", "$f2")
     text = replace_once(text, (
         "\tlw\t$9,44($18)\n\tlw\t$10,48($18)\n\tlw\t$11,52($18)\n"
@@ -2862,6 +2959,15 @@ $L73:
         "\tlw\t$2,44($18)\n\tlw\t$3,48($18)\n\tlw\t$4,52($18)\n"
         "\tsw\t$2,60($17)\n\tsw\t$3,64($17)\n\tsw\t$4,68($17)\n"
     ), "reviewed camera target-position copy registers")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlw\t$2,44($18)\n\tlw\t$3,48($18)\n\tlw\t$4,52($18)\n"
+        "\tsw\t$2,60($17)\n\tsw\t$3,64($17)\n\tsw\t$4,68($17)\n"
+    ), (
+        "\tlw\t$2,44($18)\n\tlw\t$3,48($18)\n\tlw\t$4,52($18)\n"
+        "\tsw\t$2,60($17)\n\tsw\t$3,64($17)\n\tsw\t$4,68($17)\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+    ), "reviewed camera mode-address scheduling")
     control_copy_old = (
         "\tlw\t$9,4($17)\n\tlw\t$10,8($17)\n"
         "\tsw\t$9,16($sp)\n\tsw\t$10,20($sp)\n"
@@ -2870,9 +2976,33 @@ $L73:
         "\tlw\t$2,4($17)\n\tlw\t$3,8($17)\n"
         "\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n"
     )
-    if text.count(control_copy_old) != 2:
-        raise ValueError("reviewed camera control-vector copies not found twice")
+    if text.count(control_copy_old) != 1:
+        raise ValueError("reviewed camera control-vector copy not found uniquely")
     text = text.replace(control_copy_old, control_copy_new)
+    text = replace_once(text, (
+        "$L53:\n\tlui\t$18,%hi(D_800C33D8) # high\n"
+        "\tlw\t$7,%lo(D_800C33D8)($18)\n"
+        "\taddiu\t$17,$18,%lo(D_800C33D8) # low\n"
+        "\tlw\t$2,4($17)\n\tlw\t$3,8($17)\n"
+        "\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n"
+    ), (
+        "$L53:\n\tlui\t$18,%hi(D_800C33D8) # high\n"
+        "\taddiu\t$17,$18,%lo(D_800C33D8) # low\n"
+        "\tlw\t$2,4($17)\n\tlw\t$3,8($17)\n"
+        "\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n"
+        "\tlw\t$7,%lo(D_800C33D8)($18)\n"
+    ), "reviewed camera follow-state scheduling")
+    text = replace_once(text, (
+        "\tsw\t$0,16($17)\n"
+        "\tl.s\t$f0,%lo(D_800C33D8)($18)\n"
+        "\tl.s\t$f2,8($17)\n"
+        "\tli\t$2,16\t\t\t# 0x00000010\n"
+    ), (
+        "\tl.s\t$f0,%lo(D_800C33D8)($18)\n"
+        "\tl.s\t$f2,8($17)\n"
+        "\tli\t$2,16\t\t\t# 0x00000010\n"
+        "\tsw\t$0,16($17)\n"
+    ), "reviewed camera follow-state reset scheduling")
     return normalize_standard_return(text)
 
 
