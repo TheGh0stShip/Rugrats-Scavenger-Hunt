@@ -5314,6 +5314,36 @@ def normalize_apply_board_pattern(
     return normalize_standard_return(head + loop_start + loop + loop_end + tail)
 
 
+def normalize_board_event_dispatch(text: str) -> str:
+    """Use retail's notify/forced saved-register allocation."""
+    start = "\tsubu\t$sp,$sp,48\n"
+    body_start = "\tsll\t$2,$2,16\n"
+    if text.count(start) != 1 or text.count(body_start) != 1:
+        raise ValueError("board-event prologue span not found")
+    head, rest = text.split(start, 1)
+    _, body = rest.split(body_start, 1)
+    prologue = (
+        "\tsubu\t$sp,$sp,48\n\tsw\t$17,20($sp)\n\tmove\t$17,$4\n"
+        "\tsw\t$21,36($sp)\n\tmove\t$21,$0\n\tsw\t$20,32($sp)\n"
+        "\tli\t$20,1\t\t\t# 0x00000001\n\tsw\t$16,16($sp)\n"
+        "\tmove\t$16,$20\n\tsw\t$31,40($sp)\n\tsw\t$19,28($sp)\n"
+        "\tsw\t$18,24($sp)\n\tlh\t$4,336($17)\n\tlw\t$5,324($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000E154\n\tmove\t$18,$21\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    epilogue = "$L1:\n"
+    if body.count(epilogue) != 1:
+        raise ValueError("board-event epilogue marker not found")
+    middle, tail = body.split(epilogue, 1)
+    middle = re.sub(r"\$18\b", "$EVENTREG", middle)
+    middle = re.sub(r"\$20\b", "$18", middle)
+    middle = middle.replace("$EVENTREG", "$20")
+    return normalize_standard_return(
+        head + prologue + body_start + middle + epilogue + tail
+    )
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
@@ -5419,6 +5449,8 @@ def normalize(text: str) -> str:
         return normalize_apply_board_pattern(text)
     if "\t.ent\tfunc_80026560\n" in text:
         return normalize_apply_board_pattern(text, "$L16", False)
+    if "\t.ent\tfunc_80025730\n" in text:
+        return normalize_board_event_dispatch(text)
     if "\t.ent\tfunc_80034808\n" in text:
         return normalize_player_object_reset(text)
     if "\t.ent\tfunc_800345EC\n" in text:

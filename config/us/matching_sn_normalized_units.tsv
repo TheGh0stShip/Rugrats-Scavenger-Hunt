@@ -423,3 +423,4 @@
 0xEF2C	0x300	src/game/update_particle_spray.c	--section-base=.rodata:0x80000760 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	387c18b5476782a2ae60b620761f15c86b413fdd015664b1a80833d052c65078
 0x26F7C	0x1E4	src/game/apply_board_pattern.c	-O2 -G0 -mips3	f1c33a7d4deb22557b3c473c02e0380f3d7f81e5900b512bae9b95bb41a07a45
 0x27160	0x1DC	src/game/merge_board_pattern.c	-O2 -G0 -mips3	86b0f27d6aacbc104c0875597f3c186aca405d480ffe18919d3f7568f1bed64b
+0x26330	0x4E4	src/game/process_board_event.c	--section-base=.rodata:0x80002048 -O2 -G0 -mips3 -fno-schedule-insns	9772f42b765df7190f7fcfed26c8a1a19e0433660d0094f14b35bd1f54650fe6
