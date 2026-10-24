@@ -4730,6 +4730,53 @@ def normalize_two_player_minigame(text: str) -> str:
         "\tsltu\t$2,$3,3\n",
         "two-player pairing range",
     )
+    # Independent address materializations; retail scheduled the indexed
+    # scalar before the table base in both state-display paths.
+    text = replace_once(
+        text,
+        ("\tlui\t$3,%hi(D_80059DB8) # high\n"
+         "\tlui\t$2,%hi(D_800C3E20) # high\n"),
+        ("\tlui\t$2,%hi(D_800C3E20) # high\n"
+         "\tlui\t$3,%hi(D_80059DB8) # high\n"),
+        "two-player prize table address order",
+    )
+    text = replace_once(
+        text,
+        ("\tlui\t$3,%hi(D_800C3E38) # high\n"
+         "\tlui\t$2,%hi(D_800C3E20) # high\n"),
+        ("\tlui\t$2,%hi(D_800C3E20) # high\n"
+         "\tlui\t$3,%hi(D_800C3E38) # high\n"),
+        "two-player result table address order",
+    )
+    # The index arithmetic and the player-array address load are independent.
+    # Retail starts the address load first, hiding it behind the three ALU
+    # instructions; the available scheduler emits the arithmetic first.
+    text = replace_once(
+        text,
+        ("\tj\t$L156\n"
+         "\tsll\t$16,$17,3\n"),
+        ("\tj\t$L156\n"
+         "\tlui\t$2,%hi(D_800C3DB0) # high\n"),
+        "two-player selected player jump schedule",
+    )
+    text = replace_once(
+        text,
+        ("\tsltu\t$17,$0,$2\n"
+         "\tsll\t$16,$17,3\n"
+         "$L156:\n"
+         "\tsubu\t$16,$16,$17\n"
+         "\tsll\t$16,$16,3\n"
+         "\tlui\t$2,%hi(D_800C3DB0) # high\n"
+         "\taddiu\t$2,$2,%lo(D_800C3DB0) # low\n"),
+        ("\tsltu\t$17,$0,$2\n"
+         "\tlui\t$2,%hi(D_800C3DB0) # high\n"
+         "$L156:\n"
+         "\taddiu\t$2,$2,%lo(D_800C3DB0) # low\n"
+         "\tsll\t$16,$17,3\n"
+         "\tsubu\t$16,$16,$17\n"
+         "\tsll\t$16,$16,3\n"),
+        "two-player active player address schedule",
+    )
 
     copies = (
         ("\taddiu\t$12,$20,%lo(D_80054A0C)\n\tlw\t$9,0($12)\n\tlw\t$10,4($12)\n\tlw\t$11,8($12)\n\tsw\t$9,28($16)\n\tsw\t$10,32($16)\n\tsw\t$11,36($16)\n",
