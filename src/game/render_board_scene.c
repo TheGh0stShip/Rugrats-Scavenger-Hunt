@@ -136,16 +136,17 @@ extern void func_8000DCC8(s32, s32, s32 *, s32 *);
 #define GRID_ROW(r) ((struct Grid_800581F0 *)(D_800581F0 + (r) * 0x80))
 
 void func_80026824(void) {
-    struct Model_800197C8 *main;
-    struct Model_800197C8 *extra1 = 0;
-    struct Model_800197C8 *extra2 = 0;
+    register struct Model_800197C8 *main __asm__("$18");
+    register struct Model_800197C8 *extra1 __asm__("$21") = 0;
+    register struct Model_800197C8 *extra2 __asm__("$22") = 0;
     struct Rect_8000DD88 *rect = 0;
     struct Placed_8000DD88 *it;
     void *mtx;
-    s32 flags;
-    s32 resId;
-    s32 bgId;
-    s32 colEnd, rowStart, rowEnd, colStart;
+    register s32 flags __asm__("$20");
+    register s32 resId __asm__("$23");
+    register s32 bgId __asm__("$19");
+    s32 colEnd, rowStart, rowEnd;
+    register s32 colStart __asm__("$30");
     s32 row, col;
     s32 cell, hi, id, k;
     s32 rowOff, z0, z1;
