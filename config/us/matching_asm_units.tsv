@@ -15,3 +15,4 @@
 0x48BC0	0x2C	src/libultra/exception_entry_80047fc0.S	-mips3 -G0	da10f91e49bb52d750e973f7f1c4aca9695e867d7cb868d538512e8d00bc2eeb
 0x48BEC	0x538	src/libultra/exception_handler_body_80047fec.s	-mips3 -G0	fa2a773a7618954c4cbf06ca4f5818d817a462bd7cea6aa3bc3a9b0654bd72bb
 0x5DF0	0x304	src/runtime/save_crash_context_800051f0.S	-mips3 -G0	bc981b3215bace594f723c9a035dc746e2878e19c04a5cbc27fb80e2f2e58aaa
+0x46654	0x28C	src/runtime/gsm_short_term_synthesis_80045a54.S	-mips3 -G0	cbd796abd5c26f195fc219e98cf980738103c34bcdc41bcc856621aad7a2e706
