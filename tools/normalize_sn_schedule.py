@@ -212,6 +212,102 @@ def normalize_current_object_filter(text: str) -> str:
     return text
 
 
+def normalize_resource_dispatch(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$3,%hi(D_80061DC8) # high\n"
+        "\tlui\t$2,%hi(D_80053934) # high\n"
+    ), (
+        "\tlui\t$2,%hi(D_80053934) # high\n"
+        "\tlui\t$3,%hi(D_80061DC8) # high\n"
+    ), "reviewed resource-dispatch address scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_lookup_entry(text: str) -> str:
+    return replace_once(text, (
+        "\tbne\t$3,$2,$L6\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\taddu\t$2,$4,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\tmove\t$2,$0\n"
+        "$L6:\n\tj\t$31\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeql\t$3,$2,$L6\n\taddu\t$2,$4,24\n"
+        "\tj\t$L6\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\tmove\t$2,$0\n"
+        "$L6:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "reviewed lookup shared-return layout")
+
+
+def normalize_string_width(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$7,%lo(D_8006D688)($2)\n\t#nop\n"
+        "\tlw\t$2,20($7)\n"
+    ), (
+        "\tlw\t$3,%lo(D_8006D688)($2)\n\t#nop\n"
+        "\tlw\t$2,20($3)\n"
+    ), "reviewed string-width base register")
+    text = replace_once(text, (
+        "\tbeq\t$5,$0,$L3\n\tsubu\t$6,$0,$2\n"
+    ), (
+        "\tbeq\t$5,$0,$L3\n\tsubu\t$7,$0,$2\n"
+    ), "reviewed string-width accumulator register")
+    text = replace_once(text, (
+        "\tli\t$8,10\t\t\t# 0x0000000a\n$L6:\n"
+    ), (
+        "\tli\t$8,10\t\t\t# 0x0000000a\n\tmove\t$6,$3\n$L6:\n"
+    ), "reviewed string-width preserved base")
+    text = text.replace("\tlw\t$3,20($7)\n", "\tlw\t$3,20($6)\n", 1)
+    text = text.replace("\taddu\t$2,$7,$2\n", "\taddu\t$2,$6,$2\n", 1)
+    text = text.replace("\taddu\t$6,$6,$2\n", "\taddu\t$7,$7,$2\n", 1)
+    return text.replace("\tmove\t$2,$6\n", "\tmove\t$2,$7\n", 1)
+
+
+def normalize_allocated_block_tail(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$31,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\tlui\t$3,%hi(D_80061E4C) # high\n"
+        "\tsw\t$2,%lo(D_80061E4C)($3)\n"
+    ), (
+        "\tlui\t$3,%hi(D_80061E4C) # high\n"
+        "\tsw\t$2,%lo(D_80061E4C)($3)\n"
+        "\tlw\t$31,20($sp)\n\tlw\t$16,16($sp)\n"
+    ), "reviewed allocated-block epilogue scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_resource_start_tail(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$31,24($sp)\n\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\tlui\t$2,%hi(D_80061E50) # high\n"
+        "\tsw\t$0,%lo(D_80061E50)($2)\n"
+    ), (
+        "\tlui\t$2,%hi(D_80061E50) # high\n"
+        "\tsw\t$0,%lo(D_80061E50)($2)\n"
+        "\tlw\t$31,24($sp)\n\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+    ), "reviewed resource-start epilogue scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_resource_descriptor_init(text: str) -> str:
+    text = replace_once(text, (
+        "$L4:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001DEF8\n\tsw\t$0,40($4)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L5:\n"
+    ), (
+        "$L4:\n\tsw\t$0,40($4)\n"
+        "$L5:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001DEF8\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "reviewed descriptor shared-call layout")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -231,6 +327,18 @@ def normalize(text: str) -> str:
         return normalize_room_search(text)
     if "\t.ent\tfunc_8001C560\n" in text:
         return normalize_current_object_filter(text)
+    if "\t.ent\tfunc_8001EF08\n" in text:
+        return normalize_resource_dispatch(text)
+    if "\t.ent\tfunc_80019788\n" in text:
+        return normalize_lookup_entry(text)
+    if "\t.ent\tfunc_8001FF88\n" in text:
+        return normalize_string_width(text)
+    if "\t.ent\tfunc_8001EC78\n" in text:
+        return normalize_allocated_block_tail(text)
+    if "\t.ent\tfunc_8001ECE4\n" in text:
+        return normalize_resource_start_tail(text)
+    if "\t.ent\tfunc_8001BDD0\n" in text:
+        return normalize_resource_descriptor_init(text)
     return normalize_standard_return(text)
 
 
