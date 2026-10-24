@@ -5139,6 +5139,58 @@ def normalize_camera_follow_math(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_camera_mode_setup(text: str) -> str:
+    """Apply the retail register rotation and Vec3 copy expansion."""
+    marker = "$L33:\n"
+    if text.count(marker) != 1:
+        raise ValueError("camera-mode case-10 marker not found uniquely")
+    head, tail = text.split(marker, 1)
+    mapping = (("$8", "$9"), ("$9", "$10"), ("$10", "$11"),
+               ("$11", "$12"), ("$7", "$8"))
+    for index, (old, _) in enumerate(mapping):
+        head = re.sub(rf"{re.escape(old)}\b", f"$CAMREG{index}", head)
+    for index, (_, new) in enumerate(mapping):
+        head = head.replace(f"$CAMREG{index}", new)
+    initial_copy = "\tmove\t$9,$5\n"
+    first_case = "$L9:\n"
+    if head.count(initial_copy) != 1 or head.count(first_case) != 1:
+        raise ValueError("camera-mode initial register span not found")
+    prefix, body = head.split(initial_copy, 1)
+    setup, cases = body.split(first_case, 1)
+    setup = re.sub(r"\$5\b", "$7", setup)
+    head = prefix + initial_copy + setup + first_case + cases
+    head = replace_once(
+        head, "\tmove\t$8,$11\n", "\tmove\t$8,$10\n",
+        "reviewed camera-mode zero-copy chain",
+    )
+    old = (
+        "\tlw\t$4,%lo(D_80052F04)($3)\n"
+        "\tli.s\t$f0,4.00000000000000000000e2\n"
+        "\tli\t$2,1200\t\t\t# 0x000004b0\n"
+        "\tlw\t$12,44($8)\n\tlw\t$13,48($8)\n\tlw\t$14,52($8)\n"
+        "\tsw\t$12,88($5)\n\tsw\t$13,92($5)\n\tsw\t$14,96($5)\n"
+        "\ts.s\t$f0,92($4)\n\tsw\t$0,252($4)\n\tsw\t$2,260($4)\n"
+        "\tlw\t$2,292($8)\n\tlw\t$5,88($4)\n\tlw\t$6,92($4)\n"
+        "\tlw\t$7,96($4)\n"
+    )
+    new = (
+        "\tlw\t$4,%lo(D_80052F04)($3)\n"
+        "\tli.s\t$f0,4.00000000000000000000e2\n"
+        "\tlw\t$2,44($9)\n\tlw\t$3,48($9)\n\tlw\t$5,52($9)\n"
+        "\tsw\t$2,88($7)\n\tsw\t$3,92($7)\n\tsw\t$5,96($7)\n"
+        "\ts.s\t$f0,92($4)\n\tsw\t$0,252($4)\n"
+        "\tlw\t$3,292($9)\n\tlw\t$5,88($4)\n\tlw\t$6,92($4)\n"
+        "\tlw\t$7,96($4)\n\tli\t$2,1200\t\t\t# 0x000004b0\n"
+        "\tsw\t$2,260($4)\n"
+    )
+    tail = replace_once(tail, old, new, "reviewed camera-mode Vec3 copy")
+    tail = replace_once(
+        tail, "\tsw\t$2,256($4)\n", "\tsw\t$3,256($4)\n",
+        "reviewed camera-mode angle store",
+    )
+    return normalize_standard_return(head + marker + tail)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
@@ -5236,6 +5288,8 @@ def normalize(text: str) -> str:
         return normalize_board_scene_renderer(text)
     if "\t.ent\tfunc_8000F604\n" in text:
         return normalize_camera_follow_math(text)
+    if "\t.ent\tfunc_8000FDAC\n" in text:
+        return normalize_camera_mode_setup(text)
     if "\t.ent\tfunc_80034808\n" in text:
         return normalize_player_object_reset(text)
     if "\t.ent\tfunc_800345EC\n" in text:
