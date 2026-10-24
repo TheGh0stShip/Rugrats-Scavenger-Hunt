@@ -31,3 +31,6 @@
 0x2F078	0xCC	src/game/update_object_timer_8002e478.S	-mips3 -G0	b7a56217b5a147f1963a30e138b0241dc673df6ba799ba6d945f6116e7899133
 0x20640	0x144	src/game/emit_textured_rectangle_8001fa40.S	-mips3 -G0	1ab23c4304dbd5c65c3ad0cfc5ffff9d86987916d09060d5f576e27d09e1b985
 0x20450	0x1A4	src/game/emit_scaled_textured_rectangle_8001f850.S	-mips3 -G0	a427b653ca48d8329bf63b72d006db0b5075cb6bba60f9c055baf5b231b397da
+0x2E004	0xBC	src/game/reset_round_display_8002d404.S	-mips3 -G0	92a1e815cda6991eb2ac44ddadf608f853118a584ab755a859e7a3b4a4e9224f
+0x2C034	0xFC	src/game/prepare_cursor_motion_8002b434.S	-mips3 -G0	868ef8fa3db638825ed93e994412966e06a05390ad13ddd220df28fb4b5fe0f3
+0x9D94	0x130	src/game/find_record_state_80009194.S	-mips3 -G0	bd6587fe6585ccb40e49bb43fa0f883e67422fd350497dc5553215ba941bdcd3
