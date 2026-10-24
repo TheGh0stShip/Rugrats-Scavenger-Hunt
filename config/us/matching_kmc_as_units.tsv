@@ -255,3 +255,21 @@
 0x3C920	0x118	src/game/select_resource_command_target.c	-O2 -G0 -mips3 -mgp32 -mfp32	d0127c43656f2a724d6c71da220b26af564d03d11723160220d9da012acf710b
 0x3B818	0xD8	src/runtime/compute_tangent.c	--section-base=.rodata:0x800032B0 -O1 -G0 -mips3 -mgp32 -mfp32	4f01636ea446a53ce0798a8535adb7fa766d9f3892d7c64c13296d008be02e48
 0x3B6A0	0xE0	src/runtime/compute_sine.c	--section-base=.rodata:0x80003260 -O1 -G0 -mips3 -mgp32 -mfp32	9af1e8a906efd04ae712d2616825283b82f9022de7cdb4d2ce80fd28d090c5cc
+0x39708	0x118	src/runtime/compute_arctangent.c	--section-base=.rodata:0x80003098 --symbol=__fixdfdi:0x8003B400 -O1 -G0 -mips3 -mgp32 -mfp32	d8320b5f308cb008fd5605ce3ac3aab4a3bac23fca902cb53e0e5b8ab5593aa0
+0x39550	0x1B8	src/runtime/rotate_vector_to_angle.c	--section-base=.rodata:0x80003090 --symbol=__floatdidf:0x8003B520 -O1 -G0 -mips3 -mgp32 -mfp32	f7e1b3609d9d9e683fdc8dd9a865ab2ba980659496962103d1503c1dd583916a
+0x39820	0x170	src/runtime/compute_arctangent2.c	--section-base=.rodata:0x800030B8 -O1 -G0 -mips3 -mgp32 -mfp32	85f3926061cf9b2b28051538767ce23bd4b171755c1e088d3589d8e9149966b6
+0x39C68	0xD0	src/game/format_unsigned_long_digits.c	--symbol=__umoddi3:0x8003B3C0 --symbol=__udivdi3:0x8003B3A0 -O1 -G0 -mips3 -mgp32 -mfp32	c02b784372a9a8d552eda064d92ee6671c42968562076f5ca7dc98001fbe920b
+0x39F1C	0x318	src/runtime/convert_double_digits.c	--section-base=.rodata:0x800030F0 -O1 -G0 -mips3 -mgp32 -mfp32	fdec296133bf76d840b6aa09da19c8ade3957addc7653da98126f0eb4122083f
+0x3BAA0	0x90	src/game/string_length_8003aea0.c	-O2 -G0 -mips3 -mgp32 -mfp32	980efa18103a122cab98f48ddb4be17976b5e9a88a33e849f38e7fa586acb393
+0x3A234	0xAC	src/game/format_fixed_digits_80039634.c	-O1 -G0 -mips3 -mgp32 -mfp32	225f2a73285e93ec49f9f89ac393381f249a85871c7b728d8b01fbcdb27083b7
+0x3B780	0x98	src/game/cosine_by_quadrant_8003ab80.c	--section-base=.rodata:0x80003290 -O1 -G0 -mips3 -mgp32 -mfp32	f6d601b72116ce1a3f191b59aba3341f41cca64bb9a3fee15cd785a0d62c82a1
+0x41EF0	0x310	src/libultra/n_al_fx_pull.c	--symbol=n_syn:0x80055AF4 --symbol=n_alAuxBusPull:0x80040D30 --symbol=_n_saveBuffer:0x80041B28 --symbol=_n_loadBuffer:0x80041A00 --symbol=_n_loadOutputBuffer:0x800417F0 --symbol=_n_filterBuffer:0x80041C40 -O2 -G0 -mips3 -mgp32 -mfp32	bd426cd6bb4b38e05ee35d506f1fe3dcb75840136299dccbab25ce38c39ef05f
+0x41640	0x168	src/libultra/n_al_audio_frame.c	--symbol=n_syn:0x80055AF4 --symbol=_n_timeToSamplesNoRound:0x80040C84 --symbol=n_alSavePull:0x80041CE0 --symbol=_n_collectPVoices:0x80040BEC -O2 -G0 -mips3 -mgp32 -mfp32	11ba54df9c96eb2c956a42d3591cc389aeaead85af4ba0b3b4d0e2c598772a1d
+0x3E4BC	0x194	src/libmus/power_of_2.c	--section-base=.rodata:0x80003308 -O2 -G0 -mips3 -mgp32 -mfp32	f70a23a3f515acc018130f03da497ef1ca0f0d7888130b9f1353b5ad0337e031
+0x3EC68	0x1A8	src/libmus/start_effect.c	-O2 -G0 -mips3 -mgp32 -mfp32	76815b53fc94dd64397e02c633bd7fc1056b8962aefdeb4430d72e4877ef396d
+0x3DF60	0x1F4	src/libmus/process_envelope.c	-O2 -G0 -mips3 -mgp32 -mfp32	06ccb329441fd0727d00db8b4da81c3f900e4365edb8e49f2a0f8af815f06b46
+0x3D3DC	0x2F0	src/libmus/mus_main.c	-O2 -G0 -mips3 -mgp32 -mfp32	7d1b90464736d6914f7a8c3e3c9e19b6447bb378d66773a852099e332eb63517
+0x3A2E0	0x200	src/runtime/format_general_number.c	-O1 -G0 -mips3 -mgp32 -mfp32	883b5c732ce8bf508223fffed5fef438749a8c2a9c1004d7c86ee491fa3535eb
+0x43250	0x174	src/libmus/dma_init.c	-O2 -G0 -mips3 -mgp32 -mfp32	29f90a0ae5a125cdec59c0bc3f9f5b511ff1060ad96b16ce0b0f075e2685908b
+0x4350C	0x194	src/libmus/dma_new_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	576d59a83606e4372cc8d918d64aadd4e4a703f9ffe33eadfe13206e5af40378
+0x441B4	0x268	src/game/set_stream_pan_800435b4.c	-O2 -G0 -mips3 -mgp32 -mfp32	22de197db285743160029617260ca2bb4f0722e3a9665a32af6ef633d741e3d5

@@ -1891,7 +1891,1440 @@ def normalize_large_render_pass(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_warp_tile_scan(text: str) -> str:
+    text = replace_once(text, (
+        "\tbeq\t$2,$0,$L2\n\tli\t$22,2\t\t\t# 0x00000002\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L17:\n"
+    ), (
+        "\tbeq\t$2,$0,$L2\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tli\t$22,2\t\t\t# 0x00000002\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L17:\n"
+    ), "reviewed warp-tile scan loop constant placement")
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_turn_step_update(text: str) -> str:
+    text = replace_once(text, (
+        "\ttrunc.w.s $f6,$f0,$8\n\ts.s\t$f6,292($16)\n"
+    ), (
+        "\ttrunc.w.s $f2,$f0,$8\n\ts.s\t$f2,292($16)\n"
+    ), "reviewed turn-step truncation register")
+    return normalize_standard_return(text)
+
+
+def normalize_random_handle_refresh(text: str) -> str:
+    text = replace_once(text, (
+        "\tjal\tfunc_8003A840\n"
+        "\tsll\t$4,$16,1\n"
+        "\tlui\t$3,%hi(D_80052A20) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80052A20) # low\n"
+    ), (
+        "\tjal\tfunc_8003A840\n"
+        "\tlui\t$3,%hi(D_80052A20) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80052A20) # low\n"
+        "\tsll\t$4,$16,1\n"
+    ), "reviewed random handle refresh table address schedule")
+    return normalize_standard_return(text)
+
+
+
+
+def normalize_result_message_states(text: str) -> str:
+    text = replace_once(text, (
+        "\tsubu\t$sp,$sp,144\n"
+        "\tsw\t$31,136($sp)\n\tsw\t$19,132($sp)\n"
+        "\tsw\t$18,128($sp)\n\tsw\t$17,124($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80009140\n\tsw\t$16,120($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$16,$0\n"
+    ), (
+        "\tsubu\t$sp,$sp,144\n"
+        "\tsw\t$16,120($sp)\n\tmove\t$16,$0\n"
+        "\tsw\t$31,136($sp)\n\tsw\t$19,132($sp)\n"
+        "\tsw\t$18,128($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80009140\n\tsw\t$17,124($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "reviewed result-message state flag prologue")
+    return normalize_standard_return(text)
+
+
+def normalize_depth_node_insert(text: str) -> str:
+    # func_8000B910: retail allocates $2/$3 as the scratch pair of the
+    # by-value Vec3f stack copy; the compiler picks $8/$9.
+    text = replace_once(text, (
+        "\tlw\t$8,4($17)\n\tlw\t$9,8($17)\n"
+        "\tsw\t$8,16($sp)\n\tsw\t$9,20($sp)\n"
+    ), (
+        "\tlw\t$2,4($17)\n\tlw\t$3,8($17)\n"
+        "\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n"
+    ), "reviewed depth-node struct copy scratch registers")
+    return normalize_standard_return(text)
+
+
+
+def normalize_camera_depth_node_insert(text: str) -> str:
+    # func_8000BB80: retail copies the by-value Vec3f stack words through
+    # $3/$4 ahead of the camera pointer load; the compiler picks $8/$9.
+    text = replace_once(text, (
+        "\tlw\t$2,%lo(D_80052F04)($2)\n"
+        "\tlui\t$16,%hi(D_800581B0) # high\n"
+        "\tlw\t$8,64($sp)\n\tlw\t$9,68($sp)\n"
+        "\tsw\t$8,16($sp)\n\tsw\t$9,20($sp)\n"
+    ), (
+        "\tlw\t$3,64($sp)\n\tlw\t$4,68($sp)\n"
+        "\tsw\t$3,16($sp)\n\tsw\t$4,20($sp)\n"
+        "\tlui\t$16,%hi(D_800581B0) # high\n"
+        "\tlw\t$2,%lo(D_80052F04)($2)\n"
+    ), "reviewed camera depth-node struct copy scratch registers")
+    return normalize_standard_return(text)
+
+
+
+def normalize_far_node_append(text: str) -> str:
+    # func_8000C034: retail fills the loop-guard delay slot with the index
+    # copy and shares one empty-slot return between both exits.
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L4\n\tlui\t$10,%hi(D_80052A90) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n\tmove\t$3,$6\n"
+    ), (
+        "\tbne\t$2,$0,$L4\n\tmove\t$3,$6\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$10,%hi(D_80052A90) # high\n"
+    ), "reviewed far-node loop guard delay slot")
+    return replace_once(text, (
+        "\tj\t$31\n\tsw\t$4,52($2)\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L13:\n\tj\t$31\n"
+    ), (
+        "\tsw\t$4,52($2)\n$L13:\n\tj\t$31\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "reviewed far-node shared return")
+
+
+
+def normalize_animation_frame_step(text: str) -> str:
+    # func_8000C674: retail fills the scan-loop range guard delay slot with
+    # the counter copy (pure delay-slot move).
+    text = replace_once(text, (
+        "\tmove\t$16,$6\n\tslt\t$2,$19,$6\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L26\n\tmove\t$21,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L31:\n"
+    ), (
+        "\tslt\t$2,$19,$6\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L26\n\tmove\t$16,$6\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n\tmove\t$21,$0\n$L31:\n"
+    ), "reviewed animation scan-loop guard delay slot")
+    # Retail keeps the step reset at the head of the shared overflow block
+    # and places the callee argument copy in the scan loop's branch-likely
+    # slot; the compiler has the two the other way round (delay-slot swap,
+    # only the scan loop enters at $L16).
+    text = replace_once(text, (
+        "\tbeql\t$21,$0,$L16\n\tli\t$20,1\t\t\t# 0x00000001\n"
+    ), (
+        "\tbeql\t$21,$0,$L16\n\tmove\t$4,$18\n"
+    ), "reviewed animation scan-loop overflow slot")
+    text = replace_once(text, (
+        "$L16:\n\tmove\t$4,$18\n$L58:\n"
+    ), (
+        "$L16:\n\tli\t$20,1\t\t\t# 0x00000001\n$L58:\n"
+    ), "reviewed animation overflow block head")
+    return normalize_standard_return(text)
+
+
+
+def normalize_pair_value_copy(text: str) -> str:
+    # func_8000CAB0: retail holds the destination index in $4 and the pair
+    # table base in $3; the compiler swaps the two temporaries.
+    text = replace_once(text, (
+        "\tlhu\t$3,0($2)\n\tlw\t$2,24($17)\n\t#nop\n\tlw\t$4,16($2)\n"
+        "\tsll\t$2,$5,3\n\taddu\t$2,$2,$4\n\tlw\t$2,0($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$L23\n\tsll\t$3,$3,3\n"
+    ), (
+        "\tlhu\t$4,0($2)\n\tlw\t$2,24($17)\n\t#nop\n\tlw\t$3,16($2)\n"
+        "\tsll\t$2,$5,3\n\taddu\t$2,$2,$3\n\tlw\t$2,0($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$L23\n\tsll\t$4,$4,3\n"
+    ), "reviewed pair-copy first store registers")
+    text = replace_once(text, (
+        "\tlhu\t$3,0($2)\n\tlw\t$2,24($17)\n\tsll\t$3,$3,3\n\tlw\t$4,16($2)\n"
+        "\tsll\t$2,$5,3\n\taddu\t$2,$2,$4\n\tlw\t$2,4($2)\n"
+        "$L23:\n\taddu\t$3,$3,$22\n\tsw\t$2,4($3)\n"
+    ), (
+        "\tlhu\t$4,0($2)\n\tlw\t$2,24($17)\n\tsll\t$4,$4,3\n\tlw\t$3,16($2)\n"
+        "\tsll\t$2,$5,3\n\taddu\t$2,$2,$3\n\tlw\t$2,4($2)\n"
+        "$L23:\n\taddu\t$3,$22,$4\n\tsw\t$2,4($3)\n"
+    ), "reviewed pair-copy shared store registers")
+    return normalize_standard_return(text)
+
+
+
+def normalize_fade_state_step(text: str) -> str:
+    # func_8000D838: retail leaf routes every exit through one final
+    # `jr $ra; nop`; the compiler emits a `j $31` at each exit.
+    text = replace_once(text, (
+        "\tbeq\t$3,$2,$L5\n$L20:\n\tj\t$31\n"
+    ), (
+        "\tbeq\t$3,$2,$L5\n\tj\t$L20\n"
+    ), "reviewed fade-state default exit")
+    count = text.count("\tj\t$31\n\tsw\t$2,")
+    if count != 3:
+        raise ValueError("reviewed fade-state exits not found")
+    text = text.replace("\tj\t$31\n\tsw\t$2,", "\tj\t$L20\n\tsw\t$2,")
+    return replace_once(text, (
+        "$L18:\n\tsw\t$2,40($4)\n\tj\t$31\n"
+    ), (
+        "$L18:\n\tsw\t$2,40($4)\n$L20:\n\tj\t$31\n"
+    ), "reviewed fade-state shared return")
+
+
+
+def normalize_camera_matrix_commands(text: str) -> str:
+    # func_8000F800: retail commits each display-list pointer advance before
+    # the remaining command words; the compiler sinks the three pointer
+    # stores below the register restores.  Same instructions, retail order.
+    text = replace_once(text, (
+        "\tlw\t$3,%lo(D_8007784C)($5)\n\tlhu\t$4,40($sp)\n\tmove\t$2,$3\n"
+        "\tsw\t$4,4($2)\n\tlw\t$4,%lo(D_80054358)($17)\n\taddu\t$3,$3,8\n"
+        "\tsw\t$6,0($2)\n\taddu\t$6,$3,8\n\tsw\t$7,0($3)\n\tsw\t$8,8($3)\n"
+        "\tsll\t$4,$4,6\n\taddu\t$16,$4,$16\n\taddu\t$4,$4,$18\n"
+        "\tsw\t$16,4($3)\n\tsw\t$4,4($6)\n"
+        "\tlw\t$31,60($sp)\n\tlw\t$18,56($sp)\n\tlw\t$17,52($sp)\n"
+        "\tlw\t$16,48($sp)\n\taddu\t$2,$3,16\n"
+        "\tsw\t$3,%lo(D_8007784C)($5)\n\tsw\t$6,%lo(D_8007784C)($5)\n"
+        "\tsw\t$2,%lo(D_8007784C)($5)\n"
+    ), (
+        "\tlw\t$3,%lo(D_8007784C)($5)\n\tlhu\t$4,40($sp)\n\tmove\t$2,$3\n"
+        "\taddu\t$3,$3,8\n\tsw\t$6,0($2)\n\taddu\t$6,$3,8\n"
+        "\tsw\t$4,4($2)\n\tlw\t$4,%lo(D_80054358)($17)\n\taddu\t$2,$3,16\n"
+        "\tsw\t$3,%lo(D_8007784C)($5)\n\tsw\t$6,%lo(D_8007784C)($5)\n"
+        "\tsw\t$7,0($3)\n\tsw\t$2,%lo(D_8007784C)($5)\n\tsw\t$8,8($3)\n"
+        "\tsll\t$4,$4,6\n\taddu\t$16,$4,$16\n\taddu\t$4,$4,$18\n"
+        "\tsw\t$16,4($3)\n\tsw\t$4,4($6)\n"
+        "\tlw\t$31,60($sp)\n\tlw\t$18,56($sp)\n\tlw\t$17,52($sp)\n"
+        "\tlw\t$16,48($sp)\n"
+    ), "reviewed camera matrix command store order")
+    return normalize_standard_return(text)
+
+
+
+def normalize_scene_grid_extent(text: str) -> str:
+    # func_8000D970: retail gives the loop counter $7 and the entry offset
+    # induction variable $8; the compiler swaps the two.
+    start = text.index("\t.ent\tfunc_8000D970\n")
+    end = text.index("\t.end\tfunc_8000D970\n")
+    body = text[start:end]
+    pairs = [
+        ("\tmove\t$8,$0\n", "\tmove\t$7,$0\n"),
+        ("\tli\t$7,8212\t\t\t# 0x00002014\n", "\tli\t$8,8212\t\t\t# 0x00002014\n"),
+        ("\taddu\t$5,$6,$7\n", "\taddu\t$5,$6,$8\n"),
+        ("\taddu\t$8,$8,1\n\tslt\t$2,$8,$2\n", "\taddu\t$7,$7,1\n\tslt\t$2,$7,$2\n"),
+        ("\taddu\t$7,$7,528\n", "\taddu\t$8,$8,528\n"),
+    ]
+    for old, new in pairs:
+        if body.count(old) != 1:
+            raise ValueError("reviewed scene-grid loop registers not found")
+        body = body.replace(old, new, 1)
+    if body.count("$7") != 4 or body.count("$8") != 4:
+        raise ValueError("unexpected scene-grid register use")
+    return normalize_standard_return(text[:start] + body + text[end:])
+
+
+def normalize_byte_from_float_trunc(text: str) -> str:
+    text = replace_once(
+        text,
+        "\ttrunc.w.s $f4,$f0,$12\n\tmfc1\t$2,$f4\n",
+        "\ttrunc.w.s $f2,$f0,$12\n\tmfc1\t$2,$f2\n",
+        "reviewed float-to-byte truncation register",
+    )
+    return normalize_standard_return(text)
+
+
+
+
+
+
+
+
+def normalize_camera_orbit_copy(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$8,276($18)\n\tlw\t$9,280($18)\n\tlw\t$10,284($18)\n"
+        "\tsw\t$8,88($18)\n\tsw\t$9,92($18)\n\tsw\t$10,96($18)\n"
+    ), (
+        "\tlw\t$2,276($18)\n\tlw\t$3,280($18)\n\tlw\t$4,284($18)\n"
+        "\tsw\t$2,88($18)\n\tsw\t$3,92($18)\n\tsw\t$4,96($18)\n"
+    ), "reviewed camera position copy registers")
+    text = replace_once(text, (
+        "\tsubu\t$4,$4,$2\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlw\t$3,%lo(D_80052F18)($2)\n"
+        "\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L5\n\tsw\t$4,256($18)\n"
+    ), (
+        "\tsubu\t$4,$4,$2\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tsw\t$4,256($18)\n"
+        "\tlw\t$3,%lo(D_80052F18)($2)\n"
+        "\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L5\n\tnop\n"
+    ), "reviewed camera angle store scheduling")
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_resource_slot_load(text: str) -> str:
+    text = replace_once(text, (
+        "\tbne\t$17,$0,$L10\n\taddu\t$5,$17,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$4,24($sp)\n\tjal\tfunc_8001A2B0\n\tmove\t$17,$2\n"
+        "\taddu\t$5,$17,24\n$L10:\n"
+        "\tlw\t$4,%lo(D_80052EC8)($16)\n"
+    ), (
+        "\tbne\t$17,$0,$L10\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$4,24($sp)\n\tjal\tfunc_8001A2B0\n\tmove\t$17,$2\n"
+        "$L10:\n"
+    ), "reviewed resource header destination scheduling")
+    copy_start = text.index("$L10:\n") + len("$L10:\n")
+    copy_end = text.index("\t.set\tnoreorder\n\t.set\tnomacro\n\tjal\tfunc_800166F0\n")
+    copy = text[copy_start:copy_end]
+    expected = (
+        "\tlwl\t$8,16($sp)\n\tlwr\t$8,19($sp)\n\tlwl\t$9,20($sp)\n\tlwr\t$9,23($sp)\n"
+        "\tlwl\t$10,24($sp)\n\tlwr\t$10,27($sp)\n\tlwl\t$11,28($sp)\n\tlwr\t$11,31($sp)\n"
+        "\tswl\t$8,0($17)\n\tswr\t$8,3($17)\n\tswl\t$9,4($17)\n\tswr\t$9,7($17)\n"
+        "\tswl\t$10,8($17)\n\tswr\t$10,11($17)\n\tswl\t$11,12($17)\n\tswr\t$11,15($17)\n"
+        "\tlwl\t$8,32($sp)\n\tlwr\t$8,35($sp)\n\tlwl\t$9,36($sp)\n\tlwr\t$9,39($sp)\n"
+        "\tswl\t$8,16($17)\n\tswr\t$8,19($17)\n\tswl\t$9,20($17)\n\tswr\t$9,23($17)\n"
+    )
+    if copy != expected:
+        raise ValueError("reviewed resource header copy pattern not found")
+    copy = remap_registers(copy, {8: 2, 9: 3, 10: 4, 11: 5})
+    copy += "\tlw\t$4,%lo(D_80052EC8)($16)\n\taddu\t$5,$17,24\n"
+    text = text[:copy_start] + copy + text[copy_end:]
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_controller_stick_deadzone(text: str) -> str:
+    text = replace_once(
+        text, "\tlb\t$2,2($5)\n\tlbu\t$3,2($5)\n", "\tlb\t$2,2($5)\n",
+        "reviewed stick-x load scheduling",
+    )
+    text = replace_once(
+        text, "\tc.lt.s\t$f4,$f0\n\t#nop\n", "\tc.lt.s\t$f4,$f0\n\tlbu\t$2,2($5)\n",
+        "reviewed stick-x compare delay",
+    )
+    text = replace_once(
+        text, "\tsb\t$3,6($4)\n$L10:\n", "\tsb\t$2,6($4)\n$L10:\n",
+        "reviewed stick-x store register",
+    )
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_preview_model_loop(text: str) -> str:
+    text = replace_once(
+        text, "\tbnel\t$2,$0,$L12\n\tandi\t$2,$18,0x00ff\n",
+        "\tbne\t$2,$0,$L12\n\tandi\t$2,$18,0x00ff\n",
+        "reviewed preview loop branch delay",
+    )
+    return normalize_standard_return(text)
+
+
+# Additions for tools/normalize_sn_schedule.py (batch b04).
+# Insert the function definitions before `def normalize(` and the DISPATCH
+# lines at the top of normalize().
+
+
+def sink_epilogue_restores(text: str, restores: str, description: str) -> str:
+    """Retail SN units keep callee-saved restores after the final body stores.
+
+    Moves the exact consecutive restore block to sit directly before the
+    final stack adjustment emitted by normalize_standard_return.
+    """
+    text = normalize_standard_return(text)
+    text = replace_once(text, restores, "", description)
+    tail = re.compile(r"\taddu\t\$sp,\$sp,\d+\n\t\.set\tnoreorder\n\t\.set\tnomacro\n\tj\t\$31\n\tnop\n")
+    matches = list(tail.finditer(text))
+    if len(matches) != 1:
+        raise ValueError(f"{description}: final return not found uniquely")
+    at = matches[0].start()
+    return text[:at] + restores + text[at:]
+
+
+
+def normalize_rsp_task_submit(text: str) -> str:
+    return sink_epilogue_restores(text, (
+        "\tlw\t$31,24($sp)\n\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+    ), "reviewed RSP task submit epilogue scheduling")
+
+
+
+def normalize_frame_display_list_start(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$3,$21,104\n"
+        "\tlui\t$2,%hi(D_80052F00) # high\n"
+    ), (
+        "\tlui\t$2,%hi(D_80052F00) # high\n"
+        "\taddu\t$3,$21,104\n"
+    ), "reviewed frame display-list head scheduling")
+    text = replace_once(text, (
+        "\tsw\t$5,0($3)\n"
+        "\taddu\t$5,$2,8\n"
+        "\tsw\t$0,4($3)\n"
+        "\tli\t$3,-419430400\t\t\t# 0xe7000000\n"
+        "\tsw\t$3,0($2)\n"
+        "\tsw\t$0,4($2)\n"
+        "\tsw\t$6,8($2)\n"
+        "\tsw\t$0,4($5)\n"
+        "\tlw\t$31,40($sp)\n\tlw\t$21,36($sp)\n\tlw\t$20,32($sp)\n"
+        "\tlw\t$19,28($sp)\n\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+        "\taddu\t$3,$2,16\n"
+        "\tsw\t$2,%lo(D_8007784C)($4)\n"
+        "\tsw\t$5,%lo(D_8007784C)($4)\n"
+        "\tsw\t$3,%lo(D_8007784C)($4)\n"
+    ), (
+        "\tsw\t$5,0($3)\n"
+        "\taddu\t$5,$2,8\n"
+        "\tsw\t$0,4($3)\n"
+        "\tli\t$3,-419430400\t\t\t# 0xe7000000\n"
+        "\tsw\t$3,0($2)\n"
+        "\taddu\t$3,$2,16\n"
+        "\tsw\t$2,%lo(D_8007784C)($4)\n"
+        "\tsw\t$5,%lo(D_8007784C)($4)\n"
+        "\tsw\t$0,4($2)\n"
+        "\tsw\t$3,%lo(D_8007784C)($4)\n"
+        "\tsw\t$6,8($2)\n"
+        "\tsw\t$0,4($5)\n"
+        "\tlw\t$31,40($sp)\n\tlw\t$21,36($sp)\n\tlw\t$20,32($sp)\n"
+        "\tlw\t$19,28($sp)\n\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+    ), "reviewed frame display-list tail scheduling")
+    return normalize_standard_return(text)
+
+
+
+def normalize_menu_icon_draw_tail(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$4,$18,14\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016AA8\n\tsw\t$2,4($18)\n"
+    ), (
+        "\tsw\t$2,4($18)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016AA8\n\taddu\t$4,$18,14\n"
+    ), "reviewed menu-icon draw call scheduling")
+    return normalize_standard_return(text)
+
+
+
+
+
+def remap_body_registers(
+    text: str, start: str, mapping: dict[int, int], description: str
+) -> str:
+    """Rename loop-invariant registers chosen by the retail allocator.
+
+    Applies a one-to-one register permutation to the function body from the
+    unique start line onwards, leaving stack save/restore lines untouched.
+    """
+    if sorted(mapping) != sorted(mapping.values()):
+        raise ValueError(f"{description}: mapping is not a permutation")
+    if text.count(start) != 1:
+        raise ValueError(f"{description}: start line not found uniquely")
+    head, tail = text.split(start, 1)
+    tail = start + tail
+    reg = re.compile(r"\$(\d+)\b")
+    lines = []
+    for line in tail.split("\n"):
+        if "($sp)" not in line and not line.startswith("\t.") and not line.startswith("$L"):
+            line = reg.sub(lambda m: "$" + str(mapping.get(int(m.group(1)), int(m.group(1)))), line)
+        lines.append(line)
+    return head + "\n".join(lines)
+
+
+
+def normalize_material_fog_off_commands(text: str) -> str:
+    text = remap_body_registers(
+        text, "\tli\t$6,-50397184\t\t\t# 0xfcff0000\n",
+        {4: 6, 6: 16, 10: 13, 11: 12, 12: 15, 13: 24, 14: 25, 15: 4,
+         16: 17, 17: 14, 24: 10, 25: 11},
+        "reviewed material command register allocation",
+    )
+    return normalize_standard_return(text)
+
+
+
+def normalize_material_lighting_commands(text: str) -> str:
+    load = (
+        "\tlui\t$2,%hi(D_80052EE8) # high\n"
+        "\tlw\t$9,%lo(D_80052EE8)($2)\n"
+    )
+    text = replace_once(text, load, "", "reviewed material fog-flag load")
+    text = replace_once(text, (
+        "\tori\t$25,$25,0xf3ff\n"
+    ), (
+        "\tori\t$25,$25,0xf3ff\n" + load
+    ), "reviewed material fog-flag load placement")
+    text = remap_body_registers(
+        text, "\tli\t$16,-50397184\t\t\t# 0xfcff0000\n",
+        {4: 24, 6: 16, 15: 4, 16: 17, 17: 6, 24: 25, 25: 15},
+        "reviewed material command register allocation",
+    )
+    return normalize_standard_return(text)
+
+
+
+def normalize_scene_material_renderer(text: str) -> str:
+    # Empty-list branch: retail fills the delay slot with the first command
+    # word of the shared exit path (as in normalize_scene_renderer).
+    text = replace_once(text, (
+        "\tbeq\t$17,$0,$L8\n"
+        "\tlui\t$23,%hi(D_800C33C0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), (
+        "\tbeq\t$17,$0,$L8\n"
+        "\tli\t$6,-1174405120\t\t\t# 0xba000000\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$23,%hi(D_800C33C0) # high\n"
+    ), "reviewed scene-material empty-list branch")
+    text = replace_once(text, (
+        "$L8:\n\tli\t$6,-1174405120\t\t\t# 0xba000000\n"
+    ), (
+        "\tli\t$6,-1174405120\t\t\t# 0xba000000\n$L8:\n"
+    ), "reviewed scene-material exit label")
+    # Retail rematerialises the 0x02000000 flag bit in $2 instead of
+    # keeping it in $12.
+    li12 = "\tli\t$12,33554432\t\t\t# 0x02000000\n"
+    if text.count(li12) != 3:
+        raise ValueError("reviewed scene-material flag constant not found")
+    text = text.replace(li12, "\tli\t$2,33554432\t\t\t# 0x02000000\n")
+    if text.count("\tor\t$20,$20,$12\n") != 2:
+        raise ValueError("reviewed scene-material flag set not found")
+    text = text.replace("\tor\t$20,$20,$12\n", "\tor\t$20,$20,$2\n")
+    text = replace_once(text, "\tand\t$2,$20,$12\n", "\tand\t$2,$20,$2\n",
+                        "reviewed scene-material flag test")
+    # Material colour command: retail swaps the packet and colour pointers.
+    start = "\tmove\t$7,$5\n\taddu\t$5,$5,8\n\taddu\t$6,$2,20\n"
+    end = "\tsw\t$2,4($7)\n"
+    if text.count(start) != 1:
+        raise ValueError("reviewed scene-material colour block not found")
+    head, rest = text.split(start, 1)
+    body, tail = rest.split(end, 1)
+    block = start + body + end
+    block = block.replace("$7", "$R7").replace("$6", "$7").replace("$R7", "$6")
+    text = head + block + tail
+    return normalize_standard_return(text)
+
+
+# SN scheduling normalizer additions for batch b05 (reorder/rename only).
+# Function definitions go before normalize(); the DISPATCH line goes into normalize().
+
+
+def normalize_bonus_spawn_table(text: str) -> str:
+    text = replace_once(text, (
+        "\tsll\t$3,$19,1\n"
+        "\taddu\t$3,$3,$19\n"
+        "\tsll\t$3,$3,3\n"
+        "\tlui\t$2,%hi(D_80053848) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80053848) # low\n"
+        "\taddu\t$18,$3,$2\n"
+    ), (
+        "\tlui\t$3,%hi(D_80053848) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80053848) # low\n"
+        "\tsll\t$2,$19,1\n"
+        "\taddu\t$2,$2,$19\n"
+        "\tsll\t$2,$2,3\n"
+        "\taddu\t$18,$2,$3\n"
+    ), "reviewed spawn-table row address scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_hunt_list_reset(text: str) -> str:
+    # Retail assigns the second byte argument to $18 and the flag to $20 and
+    # orders the argument copies obj, count, flag, a, b.
+    old = (
+        "\tsw\t$17,44($sp)\n\tmove\t$17,$4\n\tsw\t$19,52($sp)\n\tmove\t$19,$5\n"
+        "\tsw\t$20,56($sp)\n\tmove\t$20,$6\n\tsw\t$16,40($sp)\n\tmove\t$16,$7\n"
+        "\tsw\t$18,48($sp)\n\tmove\t$18,$0\n"
+        "\tlui\t$4,%hi(D_8006D6A0) # high\n\taddiu\t$4,$4,%lo(D_8006D6A0) # low\n"
+        "\tmove\t$5,$18\n\tsw\t$31,60($sp)\n"
+    )
+    new = (
+        "\tsw\t$17,44($sp)\n\tmove\t$17,$4\n\tsw\t$16,40($sp)\n\tmove\t$16,$7\n"
+        "\tsw\t$20,56($sp)\n\tmove\t$20,$0\n"
+        "\tlui\t$4,%hi(D_8006D6A0) # high\n\taddiu\t$4,$4,%lo(D_8006D6A0) # low\n"
+        "\tsw\t$19,52($sp)\n\tmove\t$19,$5\n\tmove\t$5,$20\n"
+        "\tsw\t$18,48($sp)\n\tmove\t$18,$6\n\tsw\t$31,60($sp)\n"
+    )
+    if text.count(old) != 1:
+        raise ValueError("reviewed hunt-list prologue not found")
+    head, tail = text.split(old)
+    lines = []
+    for line in tail.split("\n"):
+        if not re.match(r"\t(sw|lw)\t\$(18|20),(48|56)\(\$sp\)", line):
+            line = re.sub(r"\$(18|20)\b",
+                          lambda m: "$20" if m.group(1) == "18" else "$18", line)
+        lines.append(line)
+    return normalize_standard_return(head + new + "\n".join(lines))
+
+
+def normalize_boot_timer_tail(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$31,28($sp)\n\tlw\t$16,24($sp)\n"
+        "\tsw\t$2,D_80097870\n\tsw\t$3,D_80097870+4\n"
+    ), (
+        "\tsw\t$2,D_80097870\n\tsw\t$3,D_80097870+4\n"
+        "\tlw\t$31,28($sp)\n\tlw\t$16,24($sp)\n"
+    ), "reviewed boot-timer epilogue scheduling")
+    return normalize_standard_return(text)
+
+
+
+def normalize_state_flag_clear_tail(text: str) -> str:
+    text = replace_once(text, (
+        "\tli\t$3,-2\t\t\t# 0xfffffffe\n"
+        "\tsw\t$0,%lo(D_80052EE4)($2)\n"
+        "\tlw\t$2,%lo(D_80052EE0)($4)\n"
+        "\tlw\t$31,16($sp)\n"
+        "\tand\t$2,$2,$3\n"
+    ), (
+        "\tsw\t$0,%lo(D_80052EE4)($2)\n"
+        "\tlw\t$2,%lo(D_80052EE0)($4)\n"
+        "\tli\t$3,-2\t\t\t# 0xfffffffe\n"
+        "\tand\t$2,$2,$3\n"
+        "\tlw\t$31,16($sp)\n"
+    ), "reviewed state-flag clear epilogue scheduling")
+    return text
+
+
+
+def normalize_actor_angle_step(text: str) -> str:
+    text = replace_once(text, (
+        "\tmov.s\t$f20,$f0\n\tlh\t$4,336($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80006D7C\n\tmove\t$5,$0\n"
+    ), (
+        "\tmove\t$5,$0\n\tlh\t$4,336($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80006D7C\n\tmov.s\t$f20,$f0\n"
+    ), "reviewed actor-angle call delay slot")
+    text = replace_once(text, (
+        "\ttrunc.w.s $f6,$f0,$8\n\ts.s\t$f6,292($17)\n"
+    ), (
+        "\ttrunc.w.s $f2,$f0,$8\n\ts.s\t$f2,292($17)\n"
+    ), "reviewed actor-angle position conversion register")
+    text = replace_once(text, (
+        "\ttrunc.w.s $f6,$f0,$8\n\tmfc1\t$5,$f6\n"
+    ), (
+        "\ttrunc.w.s $f2,$f0,$8\n\tmfc1\t$5,$f2\n"
+    ), "reviewed actor-angle step conversion register")
+    return normalize_standard_return(text)
+
+
+
+def normalize_baby_banish_sequence(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$7,252($3)\n\tlw\t$8,256($3)\n\tlw\t$9,260($3)\n"
+        "\tsw\t$7,264($3)\n\tsw\t$8,268($3)\n\tsw\t$9,272($3)\n"
+    ), (
+        "\tlw\t$2,252($3)\n\tlw\t$6,256($3)\n\tlw\t$7,260($3)\n"
+        "\tsw\t$2,264($3)\n\tsw\t$6,268($3)\n\tsw\t$7,272($3)\n"
+    ), "reviewed camera save block-copy registers")
+    text = replace_once(text, (
+        "\tlw\t$7,264($3)\n\tlw\t$8,268($3)\n\tlw\t$9,272($3)\n"
+        "\tsw\t$7,252($3)\n\tsw\t$8,256($3)\n\tsw\t$9,260($3)\n"
+    ), (
+        "\tlw\t$5,264($3)\n\tlw\t$7,268($3)\n\tlw\t$8,272($3)\n"
+        "\tsw\t$5,252($3)\n\tsw\t$7,256($3)\n\tsw\t$8,260($3)\n"
+    ), "reviewed camera restore block-copy registers")
+    return normalize_standard_return(text)
+
+
+
+def normalize_level_exit_frames(text: str) -> str:
+    text = replace_once(text, (
+        "\tbeq\t$3,$2,$L17\n\tlui\t$4,%hi(D_80097868) # high\n"
+    ), (
+        "\tbeq\t$3,$2,$L17\n\tlui\t$12,%hi(D_80097868) # high\n"
+    ), "reviewed frame-counter base register")
+    text = replace_once(text, (
+        "\tlw\t$3,%lo(D_80097868)($4)\n"
+    ), (
+        "\tlw\t$3,%lo(D_80097868)($12)\n"
+    ), "reviewed frame-counter load register")
+    text = replace_once(text, (
+        "\tsw\t$3,%lo(D_80097868)($4)\n"
+    ), (
+        "\tsw\t$3,%lo(D_80097868)($12)\n"
+    ), "reviewed frame-counter store register")
+    text = replace_once(text, (
+        "\tblez\t$2,$L37\n\tlui\t$21,%hi(D_80077850) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$20,4\t\t\t# 0x00000004\n\tli\t$19,2\t\t\t# 0x00000002\n"
+        "\tlui\t$2,%hi(D_8009C358) # high\n"
+    ), (
+        "\tblez\t$2,$L37\n\tlui\t$2,%hi(D_8009C358) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$21,%hi(D_80077850) # high\n"
+        "\tli\t$20,4\t\t\t# 0x00000004\n\tli\t$19,2\t\t\t# 0x00000002\n"
+    ), "reviewed drain-loop setup scheduling")
+    return normalize_standard_return(text)
+
+
+# Normalizer additions for tools/normalize_sn_schedule.py (batch b08).
+# Each function is anchored to one unit and raises via replace_once on mismatch.
+
+
+def normalize_nearest_target_message(text: str) -> str:
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L2\n\tlui\t$2,%hi($LC1) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi($LC0) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L3\n\taddiu\t$4,$2,%lo($LC0) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\taddiu\t$4,$2,%lo($LC1) # low\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbnel\t$2,$0,$L2\n\tlui\t$4,%hi($LC1) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$4,%hi($LC0) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L3\n\taddiu\t$4,$4,%lo($LC0) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\taddiu\t$4,$4,%lo($LC1) # low\n"
+    ), "reviewed nearest-target message string branch")
+    return normalize_standard_return(text)
+
+
+
+
+def normalize_angle_dial_update(text: str) -> str:
+    text = replace_once(text, (
+        "\tmult\t$4,$3\n"
+        "\tlw\t$31,28($sp)\n\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tsra\t$3,$4,31\n"
+    ), (
+        "\tmult\t$4,$3\n"
+        "\tsra\t$3,$4,31\n"
+    ), "reviewed angle-dial epilogue restore placement")
+    text = replace_once(text, (
+        "\tsw\t$4,%lo(D_800537D4)($16)\n\tlw\t$16,16($sp)\n"
+    ), (
+        "\tsw\t$4,%lo(D_800537D4)($16)\n"
+        "\tlw\t$31,28($sp)\n\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+    ), "reviewed angle-dial epilogue restore order")
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_trade_capacity_score(text: str) -> str:
+    text = replace_once(text, (
+        "\tlh\t$6,488($18)\n\tlh\t$5,488($19)\n\tlh\t$4,496($18)\n"
+        "\taddu\t$3,$6,$5\n"
+    ), (
+        "\tlh\t$5,488($18)\n\tlh\t$6,488($19)\n\tlh\t$4,496($18)\n"
+        "\taddu\t$3,$5,$6\n"
+    ), "reviewed trade-capacity score operand registers")
+    text = replace_once(text, (
+        "\tj\t$L14\n\tsubu\t$3,$3,$6\n"
+    ), (
+        "\tj\t$L14\n\tsubu\t$3,$3,$5\n"
+    ), "reviewed trade-capacity overflow subtraction register")
+    text = replace_once(text, (
+        "$L13:\n\tmove\t$3,$5\n"
+    ), (
+        "$L13:\n\tmove\t$3,$6\n"
+    ), "reviewed trade-capacity fallback score register")
+    return normalize_standard_return(text)
+
+
+
+
+def normalize_player_item_row(text: str) -> str:
+    start = text.find("\tmove\t$17,$20\n")
+    end = text.find("\taddu\t$17,$17,2\n")
+    if start < 0 or end < start or text.count("\tmove\t$17,$20\n") != 1:
+        raise ValueError("reviewed item-row loop register block not found")
+    end += len("\taddu\t$17,$17,2\n")
+    text = text[:start] + remap_registers(text[start:end], {16: 17, 17: 16}) + text[end:]
+    text = replace_once(text, (
+        "\tsra\t$2,$2,31\n\tmfhi\t$8\n\t#nop\n\t#nop\n"
+        "\tsra\t$3,$8,1\n\tsubu\t$3,$3,$2\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n\tsubu\t$2,$2,$3\n"
+        "\tsll\t$17,$2,1\n\taddu\t$17,$17,$2\n"
+    ), (
+        "\tsra\t$2,$2,31\n\tli\t$3,2\t\t\t# 0x00000002\n\tmfhi\t$8\n\t#nop\n\t#nop\n"
+        "\tsra\t$5,$8,1\n\tsubu\t$5,$5,$2\n"
+        "\tsubu\t$3,$3,$5\n"
+        "\tsll\t$2,$3,1\n\taddu\t$2,$2,$3\n"
+    ), "reviewed item-row column offset registers")
+    text = replace_once(text, "\tsll\t$17,$17,4\n", "\tsll\t$17,$2,4\n",
+                        "reviewed item-row column offset scale")
+    text = replace_once(text, (
+        "\taddu\t$5,$17,$5\n\taddu\t$5,$5,42\n"
+    ), (
+        "\taddu\t$5,$5,42\n\taddu\t$5,$17,$5\n"
+    ), "reviewed item-row label column sum")
+    return normalize_standard_return(text)
+
+
+def normalize_sound_select_store(text: str) -> str:
+    # Retail allocates the store address high part to $2 and the loaded
+    # selector base to $3 (register choice only; same values stored/loaded).
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlui\t$3,%hi(D_800B9344) # high\n"
+        "\tlw\t$4,%lo(D_80052F18)($2)\n"
+        "\tli\t$2,7\t\t\t# 0x00000007\n"
+    ), (
+        "\tlui\t$2,%hi(D_800B9344) # high\n"
+        "\tlui\t$3,%hi(D_80052F18) # high\n"
+        "\tlw\t$4,%lo(D_80052F18)($3)\n"
+        "\tli\t$3,7\t\t\t# 0x00000007\n"
+    ), "reviewed sound-select store registers")
+    text = replace_once(text, "\tsw\t$2,%lo(D_800B9344)($3)\n",
+                        "\tsw\t$3,%lo(D_800B9344)($2)\n",
+                        "reviewed sound-select store operands")
+    return normalize_standard_return(text)
+
+
+
+def normalize_scene_list_tail_call(text: str) -> str:
+    # Retail keeps the argument load in the call delay slot and issues the
+    # state store before the call (scheduling only).
+    text = replace_once(text, (
+        "\tli\t$4,20\t\t\t# 0x00000014\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80012D9C\n"
+        "\tsw\t$2,%lo(D_800545E4)($3)\n"
+    ), (
+        "\tsw\t$2,%lo(D_800545E4)($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80012D9C\n"
+        "\tli\t$4,20\t\t\t# 0x00000014\n"
+    ), "reviewed scene-list tail call delay slot")
+    return normalize_standard_return(text)
+
+
+
+def normalize_frame_toggle_epilogue(text: str) -> str:
+    # Retail completes the buffer-toggle store before restoring the saved
+    # registers (scheduling only).
+    text = replace_once(text, (
+        "\tlw\t$2,%lo(D_80054824)($3)\n"
+        "\tlw\t$31,24($sp)\n"
+        "\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+        "\tsltu\t$2,$2,1\n"
+        "\tsw\t$2,%lo(D_80054824)($3)\n"
+    ), (
+        "\tlw\t$2,%lo(D_80054824)($3)\n"
+        "\tsltu\t$2,$2,1\n"
+        "\tsw\t$2,%lo(D_80054824)($3)\n"
+        "\tlw\t$31,24($sp)\n"
+        "\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+    ), "reviewed frame-toggle epilogue scheduling")
+    return normalize_standard_return(text)
+
+
+
+def normalize_marker_position_copy(text: str) -> str:
+    # Retail copies the position triple through $3/$4/$5 and sets the
+    # actor-id argument afterwards (register choice and order only).
+    text = replace_once(text, (
+        "\tmove\t$4,$16\n"
+        "\tlw\t$3,0($19)\n"
+        "\tlw\t$8,4($19)\n"
+        "\tlw\t$9,8($19)\n"
+        "\tsw\t$3,32($sp)\n"
+        "\tsw\t$8,36($sp)\n"
+        "\tsw\t$9,40($sp)\n"
+    ), (
+        "\tlw\t$3,0($19)\n"
+        "\tlw\t$4,4($19)\n"
+        "\tlw\t$5,8($19)\n"
+        "\tsw\t$3,32($sp)\n"
+        "\tsw\t$4,36($sp)\n"
+        "\tsw\t$5,40($sp)\n"
+        "\tmove\t$4,$16\n"
+    ), "reviewed marker position copy registers")
+    return normalize_standard_return(text)
+
+
+
+def normalize_stick_choice_registers(text: str) -> str:
+    # Retail keeps the controller index in $4, the pad pointer in $3 and the
+    # stick-y byte in $4 for the menu stick test (register choice only).
+    start = text.index("$L8:\n\tlw\t$3,284($18)\n")
+    end = text.index("$L17:\n", start)
+    segment = text[start:end]
+    for old, new in (
+        ("$L8:\n\tlw\t$3,284($18)\n", "$L8:\n\tlw\t$4,284($18)\n"),
+        ("\tbne\t$3,$2,$L12\n\tlui\t$2,%hi(D_80058B58) # high\n",
+         "\tbne\t$4,$2,$L12\n\tlui\t$3,%hi(D_80058B58) # high\n"),
+        ("$L12:\n\taddiu\t$4,$2,%lo(D_80058B58) # low\n"
+         "\tsll\t$2,$3,2\n\taddu\t$2,$2,$3\n\tsll\t$2,$2,1\n"
+         "\taddu\t$4,$2,$4\n\tlb\t$2,6($4)\n",
+         "$L12:\n\taddiu\t$3,$3,%lo(D_80058B58) # low\n"
+         "\tsll\t$2,$4,2\n\taddu\t$2,$2,$4\n\tsll\t$2,$2,1\n"
+         "\taddu\t$3,$2,$3\n\tlb\t$2,6($3)\n"),
+        ("\tlb\t$5,7($4)\n", "\tlb\t$4,7($3)\n"),
+        ("\tbeql\t$5,$0,$L7\n\tli\t$16,1", "\tbeql\t$4,$0,$L7\n\tli\t$16,1"),
+        ("\tlhu\t$3,4($4)\n", "\tlhu\t$3,4($3)\n"),
+    ):
+        segment = replace_once(segment, old, new,
+                               "reviewed stick-choice register block")
+    text = text[:start] + segment + text[end:]
+    text = replace_once(text, "\tbeql\t$5,$0,$L7\n\tli\t$16,2",
+                        "\tbeql\t$4,$0,$L7\n\tli\t$16,2",
+                        "reviewed stick-choice right test register")
+    return normalize_standard_return(text)
+
+
+
+def normalize_marker_camera_tail(text: str) -> str:
+    # Retail sets up the camera block base after the first float store and
+    # keeps the integer stores between the two conversions (scheduling and
+    # register choice only; same stores, same values).
+    text = replace_once(text, (
+        "\tli\t$3,65536\t\t\t# 0x00010000\n"
+        "\tlw\t$2,12($5)\n"
+        "\tlui\t$7,%hi(D_800C33D8) # high\n"
+        "\tsll\t$2,$2,4\n"
+        "\taddu\t$2,$6,$2\n"
+        "\tsw\t$3,28($2)\n"
+        "\tli\t$2,75\t\t\t# 0x0000004b\n"
+        "\tsh\t$2,%lo(D_800C33C0)($4)\n"
+        "\tlw\t$4,12($5)\n"
+        "\tli\t$2,255\t\t\t# 0x000000ff\n"
+        "\tsh\t$2,2($5)\n"
+        "\tli\t$2,5\t\t\t# 0x00000005\n"
+        "\tsw\t$2,8($5)\n"
+        "\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\tsll\t$4,$4,4\n"
+        "\taddu\t$4,$6,$4\n"
+        "\tlh\t$5,18($4)\n"
+        "\taddiu\t$6,$7,%lo(D_800C33D8) # low\n"
+        "\tsw\t$0,4($6)\n"
+        "\tsw\t$2,44($6)\n"
+        "\tsll\t$3,$5,2\n"
+        "\taddu\t$3,$3,$5\n"
+        "\tsll\t$2,$3,4\n"
+        "\tsubu\t$2,$2,$3\n"
+        "\tsll\t$2,$2,3\n"
+        "\taddu\t$2,$2,300\n"
+        "\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n"
+        "\ts.s\t$f0,%lo(D_800C33D8)($7)\n"
+        "\tlh\t$2,16($4)\n"
+        "\t#nop\n"
+        "\tsll\t$3,$2,2\n"
+        "\taddu\t$3,$3,$2\n"
+        "\tsll\t$2,$3,4\n"
+        "\tsubu\t$2,$2,$3\n"
+        "\tsll\t$2,$2,3\n"
+        "\taddu\t$2,$2,300\n"
+        "\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n"
+        "\ts.s\t$f0,8($6)\n"
+    ), (
+        "\tlw\t$2,12($5)\n"
+        "\tli\t$3,65536\t\t\t# 0x00010000\n"
+        "\tsll\t$2,$2,4\n"
+        "\taddu\t$2,$6,$2\n"
+        "\tsw\t$3,28($2)\n"
+        "\tli\t$2,75\t\t\t# 0x0000004b\n"
+        "\tsh\t$2,%lo(D_800C33C0)($4)\n"
+        "\tlw\t$4,12($5)\n"
+        "\tli\t$2,255\t\t\t# 0x000000ff\n"
+        "\tsh\t$2,2($5)\n"
+        "\tli\t$2,5\t\t\t# 0x00000005\n"
+        "\tsw\t$2,8($5)\n"
+        "\tsll\t$4,$4,4\n"
+        "\taddu\t$4,$6,$4\n"
+        "\tlh\t$2,18($4)\n"
+        "\tlui\t$5,%hi(D_800C33D8) # high\n"
+        "\tsll\t$3,$2,2\n"
+        "\taddu\t$3,$3,$2\n"
+        "\tsll\t$2,$3,4\n"
+        "\tsubu\t$2,$2,$3\n"
+        "\tsll\t$2,$2,3\n"
+        "\taddu\t$2,$2,300\n"
+        "\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n"
+        "\ts.s\t$f0,%lo(D_800C33D8)($5)\n"
+        "\taddiu\t$5,$5,%lo(D_800C33D8) # low\n"
+        "\tlh\t$4,16($4)\n"
+        "\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\tsw\t$0,4($5)\n"
+        "\tsw\t$2,44($5)\n"
+        "\tsll\t$3,$4,2\n"
+        "\taddu\t$3,$3,$4\n"
+        "\tsll\t$2,$3,4\n"
+        "\tsubu\t$2,$2,$3\n"
+        "\tsll\t$2,$2,3\n"
+        "\taddu\t$2,$2,300\n"
+        "\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n"
+        "\ts.s\t$f0,8($5)\n"
+    ), "reviewed marker camera tail scheduling")
+    return normalize_standard_return(text)
+
+
+
+def normalize_triangle_draw_registers(text: str) -> str:
+    # Retail swaps the callee-saved assignments $16<->$17 and $21<->$22
+    # (with their save slots) and publishes the final display-list pointer
+    # before the last two command words (register/scheduling choice only).
+    text = replace_once(text, (
+        "\tsw\t$23,16($3)\n\tsw\t$0,4($4)\n"
+        "\tlw\t$31,76($sp)\n\tlw\t$fp,72($sp)\n\tlw\t$23,68($sp)\n"
+        "\tlw\t$22,64($sp)\n\tlw\t$21,60($sp)\n\tlw\t$20,56($sp)\n"
+        "\tlw\t$19,52($sp)\n\tlw\t$18,48($sp)\n"
+        "\taddu\t$2,$3,24\n\tsw\t$2,%lo(D_80077830)($17)\n"
+        "\tlw\t$17,44($sp)\n\tlw\t$16,40($sp)\n"
+    ), (
+        "\taddu\t$2,$3,24\n\tsw\t$2,%lo(D_80077830)($17)\n"
+        "\tsw\t$23,16($3)\n\tsw\t$0,4($4)\n"
+        "\tlw\t$31,76($sp)\n\tlw\t$fp,72($sp)\n\tlw\t$23,68($sp)\n"
+        "\tlw\t$21,64($sp)\n\tlw\t$22,60($sp)\n\tlw\t$20,56($sp)\n"
+        "\tlw\t$19,52($sp)\n\tlw\t$18,48($sp)\n"
+        "\tlw\t$16,44($sp)\n\tlw\t$17,40($sp)\n"
+    ), "reviewed triangle draw tail")
+    text = remap_registers(text, {16: 17, 17: 16, 21: 22, 22: 21})
+    for register, old, new in ((16, 44, 40), (17, 40, 44),
+                               (21, 64, 60), (22, 60, 64)):
+        text = replace_once(text, f"\tsw\t${register},{old}($sp)\n",
+                            f"\tsw\t${register},{new}($sp)\n",
+                            "reviewed triangle draw save slot")
+    return normalize_standard_return(text)
+
+
+# Additions for tools/normalize_sn_schedule.py (batch b10).
+
+
+def normalize_player_object_reset(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$2,%lo(D_80052EE0)($3)\n"
+        "\tlw\t$31,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+        "\tori\t$2,$2,0x0002\n"
+        "\tsw\t$2,%lo(D_80052EE0)($3)\n"
+    ), (
+        "\tlw\t$2,%lo(D_80052EE0)($3)\n"
+        "\tori\t$2,$2,0x0002\n"
+        "\tsw\t$2,%lo(D_80052EE0)($3)\n"
+        "\tlw\t$31,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n"
+    ), "reviewed player-object reset epilogue pattern")
+    return normalize_standard_return(text)
+
+
+
+
+
+
+def normalize_player_marker_copies(text: str) -> str:
+    text = replace_once(text, (
+        "\tjal\tfunc_8001E630\n"
+        "\tlw\t$8,16($16)\n\tlw\t$9,20($16)\n\tlw\t$10,24($16)\n"
+        "\tsw\t$8,32($sp)\n\tsw\t$9,36($sp)\n\tsw\t$10,40($sp)\n"
+    ), (
+        "\tjal\tfunc_8001E630\n"
+        "\tlw\t$3,16($16)\n\tlw\t$4,20($16)\n\tlw\t$5,24($16)\n"
+        "\tsw\t$3,32($sp)\n\tsw\t$4,36($sp)\n\tsw\t$5,40($sp)\n"
+    ), "reviewed player-marker position copy registers")
+    text = replace_once(text, (
+        "\tlw\t$8,28($16)\n\tlw\t$9,32($16)\n\tlw\t$10,36($16)\n"
+        "\tsw\t$8,16($16)\n\tsw\t$9,20($16)\n\tsw\t$10,24($16)\n"
+        "$L4:\n"
+    ), (
+        "\tlw\t$2,28($16)\n\tlw\t$3,32($16)\n\tlw\t$4,36($16)\n"
+        "\tsw\t$2,16($16)\n\tsw\t$3,20($16)\n\tsw\t$4,24($16)\n"
+        "$L4:\n"
+    ), "reviewed player-marker home copy registers")
+    return normalize_standard_return(text)
+
+
+# SN normalizer additions for batch b11 (verified byte-for-byte in the b11 clone).
+
+# Each function only reorders instructions, renames registers within a live range,
+
+# swaps commutative addu operands, or shares a return (precedent: normalize_shared_return).
+
+
+
+def normalize_point_distance(text: str) -> str:
+    text = replace_once(text, (
+        "$L3:\n\tlw\t$31,16($sp)\n"
+        "\ttrunc.w.s $f8,$f4,$3\n\tmfc1\t$2,$f8\n"
+    ), (
+        "$L3:\n\ttrunc.w.s $f0,$f4,$3\n\tmfc1\t$2,$f0\n"
+        "\tlw\t$31,16($sp)\n"
+    ), "reviewed point-distance truncation scheduling")
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_marker_slot_search(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$2,$2,$17\n"
+    ), (
+        "\taddu\t$2,$17,$2\n"
+    ), "reviewed marker-slot commutative addu operand order")
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_grid_cell_search(text: str) -> str:
+    text = replace_once(text, (
+        "\tsll\t$2,$7,1\n\taddu\t$3,$10,$8\n\taddu\t$2,$2,$3\n"
+    ), (
+        "\tsll\t$3,$7,1\n\taddu\t$2,$10,$8\n\taddu\t$2,$2,$3\n"
+    ), "reviewed grid-cell address register allocation")
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tsb\t$9,0($5)\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L_return\n\tsb\t$9,0($5)\n"
+    ), "reviewed grid-cell shared-return first path")
+    return replace_once(text, (
+        "$L3:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tmove\t$2,$0\n"
+    ), (
+        "$L3:\n\tmove\t$2,$0\n$L_return:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tnop\n"
+    ), "reviewed grid-cell shared-return second path")
+
+
+
+
+
+def normalize_room_point_search(text: str) -> str:
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L7\n\tlui\t$2,%hi(D_800581F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L10:\n"
+    ), (
+        "\tbne\t$2,$0,$L7\n\tmove\t$2,$7\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_800581F0) # high\n$L10:\n"
+    ), "reviewed room-search found-path delay slot")
+    return replace_once(text, (
+        "$L3:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tli\t$2,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L7:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tmove\t$2,$7\n"
+    ), (
+        "$L3:\n\tli\t$2,-1\t\t\t# 0xffffffff\n"
+        "$L7:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tnop\n"
+    ), "reviewed room-search shared return")
+
+
+
+
+
+def normalize_camera_focus_setup(text: str) -> str:
+    old = (
+        "\tmove\t$5,$3\n"
+        "\tlw\t$8,44($4)\n\tlw\t$9,48($4)\n\tlw\t$10,52($4)\n"
+        "\tsw\t$8,88($3)\n\tsw\t$9,92($3)\n\tsw\t$10,96($3)\n"
+        "\ts.s\t$f0,92($5)\n\tsw\t$0,252($5)\n"
+    )
+    new = (
+        "\tmove\t$8,$3\n"
+        "\tlw\t$2,44($4)\n\tlw\t$5,48($4)\n\tlw\t$6,52($4)\n"
+        "\tsw\t$2,88($3)\n\tsw\t$5,92($3)\n\tsw\t$6,96($3)\n"
+        "\ts.s\t$f0,92($8)\n\tsw\t$0,252($8)\n"
+    )
+    text = replace_once(text, old, new, "reviewed camera-focus copy registers")
+    for old, new in (
+        ("\tsw\t$2,260($5)\n\tsw\t$3,256($5)\n",
+         "\tsw\t$2,260($8)\n\tsw\t$3,256($8)\n"),
+        ("$L4:\n\tsw\t$2,240($5)\n", "$L4:\n\tsw\t$2,240($8)\n"),
+    ):
+        text = replace_once(text, old, new, "reviewed camera-focus base register")
+    return normalize_standard_return(text)
+
+
+
+
+
+def normalize_camera_heading(text: str) -> str:
+    for old, new in (
+        ("\ttrunc.w.s $f6,$f4,$4\n\tmfc1\t$2,$f6\n"
+         "\ttrunc.w.s $f6,$f0,$4\n\tmfc1\t$3,$f6\n"
+         "\tbeq\t$2,$0,$L2\n\tmtc1\t$3,$f12\n"
+         "\tcvt.d.w\t$f12,$f12\n\tmtc1\t$2,$f14\n",
+         "\ttrunc.w.s $f2,$f4,$4\n\tmfc1\t$3,$f2\n"
+         "\ttrunc.w.s $f2,$f0,$4\n\tmfc1\t$4,$f2\n"
+         "\tbeq\t$3,$0,$L2\n\tmtc1\t$4,$f12\n"
+         "\tcvt.d.w\t$f12,$f12\n\tmtc1\t$3,$f14\n"),
+        ("\tbltz\t$3,$L3\n", "\tbltz\t$4,$L3\n"),
+        ("\tlui\t$3,%hi(D_80058678) # high\n"
+         "\ttrunc.w.d $f6,$f0,$4\n\tmfc1\t$2,$f6\n",
+         "\tlui\t$4,%hi(D_80058678) # high\n"
+         "\ttrunc.w.d $f2,$f0,$4\n\tmfc1\t$3,$f2\n"),
+        ("\tbgez\t$2,$L5\n\tsw\t$2,%lo(D_80058678)($3)\n",
+         "\tbgez\t$3,$L5\n\tsw\t$3,%lo(D_80058678)($4)\n"),
+        ("\taddu\t$2,$2,360\n\tsw\t$2,%lo(D_80058678)($3)\n",
+         "\taddu\t$2,$3,360\n\tsw\t$2,%lo(D_80058678)($4)\n"),
+    ):
+        text = replace_once(text, old, new, "reviewed camera-heading register allocation")
+    return normalize_standard_return(text)
+
+
+def normalize_mode_switch_store(text: str) -> str:
+    # Consistent rename of $2<->$3 over the live range of the mode store
+    # (both registers are redefined by the following sltu/sll).
+    text = replace_once(text, (
+        "\tlui\t$3,%hi(D_800529F8) # high\n"
+        "\tsw\t$31,20($sp)\n"
+        "\tlw\t$4,252($16)\n"
+        "\tli\t$2,2\t\t\t# 0x00000002\n"
+        "\tsw\t$2,%lo(D_800529F8)($3)\n"
+        "\tsltu\t$2,$4,13\n"
+    ), (
+        "\tlui\t$2,%hi(D_800529F8) # high\n"
+        "\tsw\t$31,20($sp)\n"
+        "\tlw\t$4,252($16)\n"
+        "\tli\t$3,2\t\t\t# 0x00000002\n"
+        "\tsw\t$3,%lo(D_800529F8)($2)\n"
+        "\tsltu\t$2,$4,13\n"
+    ), "reviewed mode-store register pairing")
+    return normalize_standard_return(text)
+
+
+
+def normalize_best_slot_epilogue(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$31,36($sp)\n"
+        "\tlui\t$2,%hi(D_800B92F4) # high\n"
+        "\tsw\t$20,%lo(D_800B92F4)($2)\n"
+    ), (
+        "\tlui\t$2,%hi(D_800B92F4) # high\n"
+        "\tsw\t$20,%lo(D_800B92F4)($2)\n"
+        "\tlw\t$31,36($sp)\n"
+    ), "reviewed best-slot epilogue scheduling")
+    return normalize_standard_return(text)
+
+
+
+def normalize_meter_index_temp(text: str) -> str:
+    # Rename the scaled-index temporary $3 to $16; $16 (the index) dies at
+    # the andi and receives the final address, so no live value is clobbered.
+    text = replace_once(text, (
+        "\tandi\t$3,$16,0x00ff\n"
+        "\tsll\t$3,$3,1\n"
+        "\taddu\t$16,$3,$2\n"
+    ), (
+        "\tandi\t$16,$16,0x00ff\n"
+        "\tsll\t$16,$16,1\n"
+        "\taddu\t$16,$16,$2\n"
+    ), "reviewed meter-index temporary register")
+    return normalize_standard_return(text)
+
+
+
+def normalize_slot_record_clear(text: str) -> str:
+    # Pure reorder (same instructions): the two global clears follow the
+    # record stores in retail, and the final clear fills the return delay slot.
+    rec1 = ("\tsll\t$2,$3,2\n\taddu\t$2,$2,$3\n\tsll\t$2,$2,2\n"
+            "\tsll\t$3,$4,2\n\taddu\t$3,$3,$4\n\tsll\t$3,$3,7\n"
+            "\taddu\t$3,$3,$4\n\tsll\t$3,$3,3\n\taddu\t$2,$2,$3\n"
+            "\taddu\t$2,$2,$6\n\tsw\t$0,28($2)\n")
+    rec2 = ("\tsll\t$2,$4,2\n\taddu\t$2,$2,$4\n\tsll\t$2,$2,2\n"
+            "\taddu\t$2,$2,$3\n\taddu\t$2,$2,$6\n\tsw\t$0,28($2)\n")
+    head = ("\tlui\t$6,%hi(D_800B9378) # high\n"
+            "\tlui\t$7,%hi(D_800C33C0) # high\n"
+            "\taddiu\t$5,$7,%lo(D_800C33C0) # low\n"
+            "\tlw\t$3,16($5)\n"
+            "\taddiu\t$6,$6,%lo(D_800B9378) # low\n")
+    clears = ("\tsw\t$0,16($5)\n\tsw\t$0,12($5)\n"
+              "\tsh\t$0,%lo(D_800C33C0)($7)\n\tsh\t$0,2($5)\n")
+    old = ("\tlui\t$2,%hi(D_80052EE4) # high\n" + head
+           + "\tsw\t$0,%lo(D_80052EE4)($2)\n" + rec1
+           + "\tlw\t$4,12($5)\n"
+           + "\tlui\t$2,%hi(D_8005818C) # high\n"
+           + "\tsw\t$0,%lo(D_8005818C)($2)\n" + rec2 + clears
+           + "\t.set\tnoreorder\n\t.set\tnomacro\n"
+           + "\tj\t$31\n\tsw\t$0,8($5)\n")
+    new = (head + rec1
+           + "\tlw\t$4,12($5)\n"
+           + "\tlui\t$2,%hi(D_80052EE4) # high\n"
+           + "\tsw\t$0,%lo(D_80052EE4)($2)\n" + rec2
+           + "\tlui\t$2,%hi(D_8005818C) # high\n" + clears
+           + "\tsw\t$0,8($5)\n"
+           + "\t.set\tnoreorder\n\t.set\tnomacro\n"
+           + "\tj\t$31\n\tsw\t$0,%lo(D_8005818C)($2)\n")
+    return replace_once(text, old, new, "reviewed slot-record clear scheduling")
+
+
+
+def normalize_frame_quota_return(text: str) -> str:
+    # Shared-return rewrite (same reviewed pattern as func_80021604): the
+    # quota path jumps to the single retail return, and the zero-store path
+    # falls through into it with the store moved out of the delay slot.
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tsw\t$2,%lo(D_80099B08)($7)\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$Lquota_ret\n\tsw\t$2,%lo(D_80099B08)($7)\n"
+    ), "reviewed frame-quota shared return")
+    return replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tsw\t$0,%lo(D_8007782C)($2)\n"
+    ), (
+        "\tsw\t$0,%lo(D_8007782C)($2)\n"
+        "$Lquota_ret:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tnop\n"
+    ), "reviewed frame-quota common return")
+
+
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8001298C\n" in text:
+        return normalize_mode_switch_store(text)
+    if "\t.ent\tfunc_8002E5B8\n" in text:
+        return normalize_best_slot_epilogue(text)
+    if "\t.ent\tfunc_8002F6D0\n" in text:
+        return normalize_meter_index_temp(text)
+    if "\t.ent\tfunc_80031C2C\n" in text:
+        return normalize_slot_record_clear(text)
+    if "\t.ent\tfunc_80027F48\n" in text:
+        return normalize_frame_quota_return(text)
+    if "\t.ent\tfunc_80008B80\n" in text:
+        return normalize_point_distance(text)
+    if "\t.ent\tfunc_80009BE0\n" in text:
+        return normalize_marker_slot_search(text)
+    if "\t.ent\tfunc_8000DC38\n" in text:
+        return normalize_grid_cell_search(text)
+    if "\t.ent\tfunc_8000E078\n" in text:
+        return normalize_room_point_search(text)
+    if "\t.ent\tfunc_8000F150\n" in text:
+        return normalize_camera_focus_setup(text)
+    if "\t.ent\tfunc_80010B0C\n" in text:
+        return normalize_camera_heading(text)
+    if "\t.ent\tfunc_80034808\n" in text:
+        return normalize_player_object_reset(text)
+    if "\t.ent\tfunc_800345EC\n" in text:
+        return normalize_player_marker_copies(text)
+    if "\t.ent\tfunc_80030BE8\n" in text:
+        return normalize_sound_select_store(text)
+    if "\t.ent\tfunc_80030F74\n" in text:
+        return normalize_scene_list_tail_call(text)
+    if "\t.ent\tfunc_8003376C\n" in text:
+        return normalize_frame_toggle_epilogue(text)
+    if "\t.ent\tfunc_800344A8\n" in text:
+        return normalize_marker_position_copy(text)
+    if "\t.ent\tfunc_80031EDC\n" in text:
+        return normalize_stick_choice_registers(text)
+    if "\t.ent\tfunc_8003187C\n" in text:
+        return normalize_marker_camera_tail(text)
+    if "\t.ent\tfunc_80033290\n" in text:
+        return normalize_triangle_draw_registers(text)
+    if "\t.ent\tfunc_8002B178\n" in text:
+        return normalize_nearest_target_message(text)
+    if "\t.ent\tfunc_8002D0A8\n" in text:
+        return normalize_angle_dial_update(text)
+    if "\t.ent\tfunc_8002DE5C\n" in text:
+        return normalize_trade_capacity_score(text)
+    if "\t.ent\tfunc_8002C714\n" in text:
+        return normalize_player_item_row(text)
+    if "\t.ent\tfunc_80028C18\n" in text:
+        return normalize_boot_timer_tail(text)
+    if "\t.ent\tfunc_80028E9C\n" in text:
+        return normalize_state_flag_clear_tail(text)
+    if "\t.ent\tfunc_80029314\n" in text:
+        return normalize_actor_angle_step(text)
+    if "\t.ent\tfunc_8002A1B4\n" in text:
+        return normalize_baby_banish_sequence(text)
+    if "\t.ent\tfunc_80027FD4\n" in text:
+        return normalize_level_exit_frames(text)
+    if "\t.ent\tfunc_80020050\n" in text:
+        return normalize_hunt_list_reset(text)
+    if "\t.ent\tfunc_8001C404\n" in text:
+        return normalize_bonus_spawn_table(text)
+    if "\t.ent\tfunc_80013EE0\n" in text:
+        return normalize_rsp_task_submit(text)
+    if "\t.ent\tfunc_80013BC8\n" in text:
+        return normalize_frame_display_list_start(text)
+    if "\t.ent\tfunc_80016FE4\n" in text:
+        return normalize_menu_icon_draw_tail(text)
+    if "\t.ent\tfunc_8001749C\n" in text:
+        return normalize_menu_icon_draw_tail(text)
+    if "\t.ent\tfunc_800146B0\n" in text:
+        return normalize_material_fog_off_commands(text)
+    if "\t.ent\tfunc_80014814\n" in text:
+        return normalize_material_lighting_commands(text)
+    if "\t.ent\tfunc_80014F00\n" in text:
+        return normalize_scene_material_renderer(text)
+    if "\t.ent\tfunc_80012DBC\n" in text:
+        return normalize_byte_from_float_trunc(text)
+    if "\t.ent\tfunc_80010850\n" in text:
+        return normalize_camera_orbit_copy(text)
+    if "\t.ent\tfunc_80013358\n" in text:
+        return normalize_resource_slot_load(text)
+    if "\t.ent\tfunc_8001116C\n" in text:
+        return normalize_controller_stick_deadzone(text)
+    if "\t.ent\tfunc_80011A40\n" in text:
+        return normalize_preview_model_loop(text)
+    if "\t.ent\tfunc_8000B910\n" in text:
+        return normalize_depth_node_insert(text)
+    if "\t.ent\tfunc_8000BB80\n" in text:
+        return normalize_camera_depth_node_insert(text)
+    if "\t.ent\tfunc_8000C034\n" in text:
+        return normalize_far_node_append(text)
+    if "\t.ent\tfunc_8000C674\n" in text:
+        return normalize_animation_frame_step(text)
+    if "\t.ent\tfunc_8000CAB0\n" in text:
+        return normalize_pair_value_copy(text)
+    if "\t.ent\tfunc_8000D838\n" in text:
+        return normalize_fade_state_step(text)
+    if "\t.ent\tfunc_8000F800\n" in text:
+        return normalize_camera_matrix_commands(text)
+    if "\t.ent\tfunc_8000D970\n" in text:
+        return normalize_scene_grid_extent(text)
+    if "\t.ent\tfunc_80008E20\n" in text:
+        return normalize_random_handle_refresh(text)
+    if "\t.ent\tfunc_80009930\n" in text:
+        return normalize_result_message_states(text)
+    if "\t.ent\tfunc_800065FC\n" in text:
+        return normalize_warp_tile_scan(text)
+    if "\t.ent\tfunc_8000771C\n" in text:
+        return normalize_turn_step_update(text)
     if "\t.ent\tfunc_8001330C\n" in text:
         return normalize_resource_range(text)
     if "\t.ent\tfunc_8002F504\n" in text:

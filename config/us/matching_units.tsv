@@ -89,7 +89,7 @@
 0x1FC88	0x20	src/game/release_resource.c	-O2 -G0 -mips3 -mgp32 -mfp32	04e9d120261f5e0fc5bb0c22df5852f0744f818b073a1fd104d92a0bba225e71
 0x20624	0x1C	src/game/get_active_resource_field.c	-O1 -G0 -mips3 -mgp32 -mfp32	25469076dce51db26f00adb286a5b1f99541905db346824b612d40ea146b07af
 0x1ED68	0x10	src/game/get_state_word_5b8dc.c	-O2 -G0 -mips3 -mgp32 -mfp32	266996c00bb13c9a9abd582abd9d592d612641cd96f19db76b9b2849e5c814c2
-0x1F268	0x10	src/game/get_state_word_61da0.c	-O2 -G0 -mips3 -mgp32 -mfp32	266359c9c9b8616c87271d927c519beeb28a5457356461415e1b91feb283de
+0x1F268	0x10	src/game/get_state_word_61da0.c	-O2 -G0 -mips3 -mgp32 -mfp32	266359c9c9b9d8616c87271d927c519beeb28a5457356461415e1b91feb283de
 0x1FAAC	0x10	src/game/get_state_word_53928.c	-O2 -G0 -mips3 -mgp32 -mfp32	fd8136f22857cd58aac5452f0108cd2c2042bb74ed87ebaad4c1e01b9d1ddfbf
 0x20B34	0x8	src/game/noop_8001ff34.c	-O2 -G0 -mips3 -mgp32 -mfp32	78aa5094d5ec7291c79f799c009d04f06c2f20187988e3dcc8d35ee5efdbb378
 0x2AD10	0x2C	src/game/reset_state_b92a8.c	-O2 -G0 -mips3 -mgp32 -mfp32	65648e89eec08772a8e4de8490b78d0e0390afd8fb0923fc34d58f65918d94b2
@@ -298,3 +298,6 @@
 0x4B9C	0xCC	src/runtime/func_80003F9C.c	-O2 -G0 -mips3 -mgp32 -mfp32	7b073cf28f0776f795dd0bc95a51a853e51b17b6828487c532ae097a74193da2
 0x4E8C	0x100	src/runtime/func_8000428C.c	-O2 -G0 -mips3 -mgp32 -mfp32	7170876f599d0b9b0e392dfa42f14b9e3fd36e2a16aea00d7089f12fcfc24177
 0x4F8C	0xCC	src/runtime/func_8000438C.c	-O2 -G0 -mips3 -mgp32 -mfp32	5bff7aa5f813864a6929ec14062b7d8d182bf43a4ee785d00165dc80eeddc49e
+0x4CDC	0x1B0	src/runtime/func_800040DC.c	--assembler=asn64 --symbol=D_8F057290:0x8F057290 -O2 -G0 -mips3 -mgp32 -mfp32	d53b290a493e5b266d01f574e72d7ad8c1fe299201f04e6d2aeeb0cbd2b55b2b
+0x8AFC	0xFC	src/game/func_80007EFC.c	-O2 -G0 -mips3 -mgp32 -mfp32	0fa76444de434fb94614b584ad88a8d2573c3a8de82645ad9555f4fedd869f6e
+0x3E9B8	0x1C8	src/libmus/find_channel.c	-O2 -G0 -mips3 -mgp32 -mfp32	15c2a51c8baf4a60876495c601cf51cd41425aeae03e295b18d970f45c5e16e0
