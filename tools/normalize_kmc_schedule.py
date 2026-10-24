@@ -289,6 +289,74 @@ def normalize_scene_handle_call(text: str) -> str:
     )
 
 
+def normalize_state_global_store(text: str) -> str:
+    return replace_once(
+        text,
+        "\tsw\t$2,D_800B9344\n",
+        "\tlui\t$3,0x800c\n\tsw\t$2,-0x6cbc($3)\n",
+        "state global store address",
+    )
+
+
+def normalize_conditional_state_store(text: str) -> str:
+    text = normalize_state_global_store(text)
+    return replace_once(
+        text,
+        "\tbeq\t$2,$0,.L2\n\tli\t$2,0x00000005\t\t# 5\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,0x800c\n",
+        "\tbeq\t$2,$0,.L2\n\tlui\t$3,0x800c\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$2,0x00000005\t\t# 5\n",
+        "conditional state-store scheduling",
+    )
+
+
+def normalize_sequence_state_store(text: str) -> str:
+    text = normalize_state_global_store(text)
+    return replace_once(
+        text,
+        "\tli\t$2,0x00000001\t\t# 1\n"
+        "\tlui\t$3,0x800c\n\tsw\t$2,-0x6cbc($3)\n"
+        "\tlw\t$31,16($sp)\n\taddu\t$sp,$sp,24\n\tj\t$31\n",
+        "\tlui\t$3,0x800c\n\tli\t$2,0x00000001\t\t# 1\n"
+        "\tlw\t$31,16($sp)\n\tsw\t$2,-0x6cbc($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\taddu\t$sp,$sp,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n",
+        "sequence state-store epilogue scheduling",
+    )
+
+
+def normalize_runtime_reset_store(text: str) -> str:
+    text = replace_once(
+        text,
+        "\tsw\t$0,D_800545E0\n",
+        "\tlui\t$2,0x8005\n\tsw\t$0,0x45e0($2)\n",
+        "runtime-reset global store address",
+    )
+    return replace_once(
+        text,
+        "\tlui\t$2,0x8005\n\tsw\t$0,0x45e0($2)\n"
+        "\tlw\t$31,16($sp)\n\taddu\t$sp,$sp,24\n\tj\t$31\n",
+        "\tlui\t$2,0x8005\n\tlw\t$31,16($sp)\n"
+        "\tsw\t$0,0x45e0($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\taddu\t$sp,$sp,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n",
+        "runtime-reset epilogue scheduling",
+    )
+
+
+def normalize_mode_dispatch(text: str) -> str:
+    return replace_once(
+        text,
+        "\tlw\t$3,D_80052F18\n\tsubu\t$sp,$sp,24\n",
+        "\tsubu\t$sp,$sp,24\n\tlui\t$2,0x8005\n\tlw\t$3,0x2f18($2)\n",
+        "mode-dispatch prologue and global load",
+    )
+
+
 def normalize(text: str, unit: str) -> str:
     if unit == "func_800196E8":
         text = normalize_state_copy(text)
@@ -322,6 +390,14 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_grid_actor_lookup(text)
     elif unit == "func_8003099C":
         text = normalize_scene_handle_call(text)
+    elif unit == "func_80030B30":
+        text = normalize_conditional_state_store(text)
+    elif unit == "func_800309C4":
+        text = normalize_sequence_state_store(text)
+    elif unit == "func_8002EBC4":
+        text = normalize_runtime_reset_store(text)
+    elif unit == "func_8000711C":
+        text = normalize_mode_dispatch(text)
     return builtin(text)
 
 
