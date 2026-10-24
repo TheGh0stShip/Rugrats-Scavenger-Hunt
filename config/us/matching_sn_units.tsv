@@ -78,3 +78,10 @@
 0xEA4C	0x34	src/game/clear_grid_record_flag.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	781852976de0e66b3579a84063313c2c849b9d1908b9f0dba9c89415d1d043c8
 0x71CC	0x30	src/game/convert_world_coordinates.c	-O2 -G8 -mcpu=vr4300 -mhard-float -meb -mips3	23544de6c67b645e6c55aa1464e9963f9831bf6e37d41ddbb7d87445d3da6d19
 0x1F990	0x3C	src/game/apply_current_resource.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b3118816926de22a6beea2efdec2a2754fbc1a31c1f3b161151879422ea80845
+0xA064	0x40	src/game/toggle_runtime_object_state.c	-O3 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	db9a675bbb361dcf29a984e83f812e27c635ac438f65db2ce2b4fda115b86d17
+0x2AD54	0x60	src/game/advance_runtime_float_sequence.c	-O3 -G8 -mcpu=vr4300 -mhard-float -meb -mips3	10ab7236f66001973ba397c03b6ad0573ee0cf0979d463c550c88918069c1bd1
+0x3FA38	0x70	src/game/parse_runtime_callback_8003ee38.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	148d687ca7750612be150cd191ee33852d1326285530e816856174f7afb5bf62
+0x79CC	0x60	src/game/wrap_runtime_angle.c	--section-base=.rdata:0x80000598 -O3 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	9a703da4a441305458e616e613bfb0538df133789313ab0ae262440b43a3c29a
+0x9B50	0x64	src/game/set_runtime_fade.c	-O3 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	50efddb8c63f9b0d0aa3eec640bfd2597981223360bf9ae3ad45f330685aa720
+0x8EB8	0x88	src/game/build_runtime_matrix.c	--section-base=.rdata:0x800005F0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	50dae268878c49ee1128ed34c1e8d3226f8c9ab4b2e392ae7961b365eb6c141c
+0x8F40	0x8C	src/game/build_runtime_matrix_from_axes.c	--section-base=.rdata:0x800005F4 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5834d9d5f853d9aaa3b368f6d14e9635e477fc2e68ad2acc31710ac84b03620b

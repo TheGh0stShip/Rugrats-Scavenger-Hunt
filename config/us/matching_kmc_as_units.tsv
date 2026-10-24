@@ -159,3 +159,71 @@
 0x4FE20	0x220	src/libultra/os_cont_ram_write.c	-O2 -G0 -mips3 -mgp32 -mfp32	5cc6d6fd0279ab65607bd1d29c40d922128f41a8a429d560f8d75f286930529c
 0x4F150	0x1C0	src/libultra/os_motor_stop.c	-O2 -G0 -mips3 -mgp32 -mfp32	7e260b3dc192f5fe31957b5cfed5b889cdf24fafc5b2a4eb0f57b2409f3e7f26
 0x4F310	0x1C0	src/libultra/os_motor_start.c	-O2 -G0 -mips3 -mgp32 -mfp32	e98c4103dcc63df60cdeb74a61a217c82649d5b4c047efde0519694a28b0e4cd
+0x4F4D0	0x4D0	src/libultra/os_motor_init.c	-O2 -G0 -mips3 -mgp32 -mfp32	708d2585cd1c769dab03bf2ec3362ca32137f8d845ea777bfd281e5cf27cd457
+0x46C90	0x150	src/libultra/gu_cosf.c	--section-base=.rodata:0x800034E0 --symbol=floating_zero:0x80003520 --symbol=cosine_nan:0x80003540 -O2 -G0 -mips3 -mgp32 -mfp32	9d19b4efcb2dc4cf670737b420f6da932b13c7f21f0519a762eb79bb9512ee4d
+0x481F0	0x1A0	src/libultra/gu_sinf.c	--section-base=.rodata:0x800035B8 --symbol=floating_zero:0x800035F0 --symbol=sine_nan:0x80003540 -O2 -G0 -mips3 -mgp32 -mfp32	a83f04ea88a7f5f3aee49f05ebc5d9723c268583598f70ae2c97246b81c3f893
+0x48460	0x1D8	src/libultra/gu_position_f.c	-O2 -G0 -mips3 -mgp32 -mfp32	fc5855f5c8e270ae2ddbab0cfcc1a48c1ba773a8f1e1a095c52ed81d81c39b3b
+0x48638	0x1E0	src/libultra/gu_position.c	-O2 -finline-functions -G0 -mips3 -mgp32 -mfp32	115565028c8994ef8b0223717374b9cef1694d983da89b07568c547259eb8f05
+0x46DE0	0x380	src/libultra/gu_look_at_f.c	--section-base=.rodata:0x80003550 --symbol=sqrtf:0x80045CE0 -O2 -G0 -mips3 -mgp32 -mfp32	b8b43b6a37c89de623a5a5f1abb04666880df4e9e667808e6563d7081180116f
+0x47160	0x390	src/libultra/gu_look_at.c	--section-base=.rodata:0x80003560 --symbol=sqrtf:0x80045CE0 -O2 -finline-functions -G0 -mips3 -mgp32 -mfp32	3febc433260abb98ccb8e76afa8354b6142d18fd0c64ada72f4ad7567f6e9a34
+0x468F0	0x1CC	src/libultra/gu_align_f.c	--section-base=.data:0x80055FE0 --symbol=sqrtf:0x80045CE0 -O2 -G0 -mips3 -mgp32 -mfp32	1861d6755efcfd9a84b3e04353dbb0c007ff376204b5b29204643f93dd524b38
+0x46ABC	0x1D4	src/libultra/gu_align.c	--section-base=.data:0x80055FE0 --symbol=sqrtf:0x80045CE0 -O2 -finline-functions -G0 -mips3 -mgp32 -mfp32	62718b354e19f46aa08d89a87905d1ebb8902c1f39cf97cbff24c840aeaaf150
+0x4E210	0x110	src/libultra/os_vi_init.c	--symbol=vi_contexts:0x80056360 --symbol=television_type:0x80000300 --symbol=vi_current:0x800563C0 --symbol=vi_next:0x800563C4 --symbol=vi_mode_pal:0x80057170 --symbol=vi_mode_mpal:0x800571C0 --symbol=vi_mode_ntsc:0x80057120 -O2 -G0 -mips3 -mgp32 -mfp32	27bca13313b6bebb91d4d481bc4017586e9e70868d287287ee12f0035d77b056
+0x4E320	0x2EC	src/libultra/os_vi_swap_context.c	--section-base=.rodata:0x80003910 --symbol=vi_next:0x800563C4 --symbol=vi_current:0x800563C0 -O2 -G0 -mips3 -mgp32 -mfp32	641b6a25c645e4defc0f3e5aad1a39f492ecc1cf770a70a4917238bdbe70b1e9
+0x3CC38	0x58	src/game/count_resource_matches_8003c038.c	-O2 -G0 -mips3 -mgp32 -mfp32	dce1ce82d7249d150f78a2e22d11e12075635c4e52783853661cce36a74988c1
+0x3D260	0x64	src/game/init_resource_pool_8003c660.c	-O2 -G0 -mips3 -mgp32 -mfp32	a0a7942db9635feb4d06527509b9a3de2ac35b52798d1890dcfe157f19e33ee1
+0x4EAC0	0x19C	src/libultra/os_cont_init.c	--symbol=controller_initialized:0x80057100 --symbol=controller_count:0x800C45FC --symbol=last_controller_command:0x800C4640 --symbol=controller_command_buffer:0x800C4600 --symbol=controller_queue:0x800C45E0 --symbol=controller_messages:0x800C45F8 -O2 -G0 -mips3 -mgp32 -mfp32	b55e392fd24d2abf3645a601ecb908f05dee40d7de8fe9f52ee456c39f28d8d5
+0x3D2C4	0x80	src/game/process_resource_command_8003c6c4.c	-O2 -G0 -mips3 -mgp32 -mfp32	40f1603296a5cf6e15c8231f561a0f4060a4f9209be1bacdf24f150dd57f8082
+0x3D344	0x98	src/game/push_resource_queue_8003c744.c	-O2 -G0 -mips3 -mgp32 -mfp32	7a3d57f413310851985b405557f8bb4c68a850c3a1859f0dcf001c69ebcf6022
+0x3D050	0x5C	src/game/set_active_resource_8003c450.c	-O2 -G0 -mips3 -mgp32 -mfp32	3173564c983db5cf0edfdcf053b7fad2146e428709e0b9788d14a15057017fa2
+0x4C3E4	0x84	src/libultra/al_get_vol.c	-O2 -G0 -mips3 -mgp32 -mfp32	af9134d1a578b2e2a68ad7d26ca370630281b1d899483ebf03628f7c946e4bda
+0x4C060	0xE0	src/libultra/al_frexpf.c	--section-base=.rodata:0x80003778 -O2 -G0 -mips3 -mgp32 -mfp32	80764f29dd97803f70143678ba6f44041403092f6f74c9939babed184e18887c
+0x4BC8C	0xD4	src/libultra/al_env_mixer_param.c	-O2 -G0 -mips3 -mgp32 -mfp32	22bdae0e3801a8516958c69c0d22a87b7ba9642ab966f63b840bd75b75b1c863
+0x4B630	0xDC	src/libultra/al_aux_bus_pull.c	-O2 -G0 -mips3 -mgp32 -mfp32	88b1c98835eb1bb6b9ba032115ca1c6b2c70730e7ff47f1226db0b064b73b130
+0x4D408	0x8C	src/libultra/al_do_mod_func.c	--section-base=.rodata:0x80003898 -O2 -G0 -mips3 -mgp32 -mfp32	eab8b2cb94f9ec54ababdce7cf46bba31f73ad9b0947cbe62a513b559bf796fd
+0x3E228	0x58	src/game/update_runtime_counter_8003d628.c	-O2 -G0 -mips3 -mgp32 -mfp32	29f5da85b651dfa6bd9a5daee4c9dc4c39fa2302f899ebc6c8ed05e29955f3e8
+0x41884	0x50	src/game/scale_runtime_duration.c	--section-base=.rodata:0x80003440 -O2 -G0 -mips3 -mgp32 -mfp32	f1cc165336af9597a7175afe00ae6899f6927db46926b1e643d52ead22ee89b7
+0x4D36C	0x9C	src/libultra/al_filter_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	533eabe76764dee81e5b5a8d50c9356620aba627eedcbe65f3d1495ddfc81fd3
+0x3E280	0x64	src/game/update_runtime_float_8003d680.c	-O2 -G0 -mips3 -mgp32 -mfp32	921a89a3d02d7ef3db1a6541505fe98b206a9b94d60acd2ceb69283c2d9d24d3
+0x4C7FC	0xC0	src/libultra/al_resample_param.c	--section-base=.rodata:0x80003828 -O2 -G0 -mips3 -mgp32 -mfp32	534338a2c8ead882e50dfdec089ddff7d2c2174f4483ed5c5bcd6b5653136173
+0x4C4A0	0x140	src/libultra/al_main_bus_pull.c	-O2 -G0 -mips3 -mgp32 -mfp32	621560773504aa5c6d224ffa8fefb0dc1d41bf13c5a11abd08d433a6be7ef574
+0x410F0	0x90	src/game/queue_runtime_value_800404f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	c939b2dbd447ff05afd28d2a071df7e4a883ea280f1b678610c0a4e6fb41e309
+0x4D08C	0x170	src/libultra/al_load_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	9e111f40a4ce4958a7e4928cc6ef2dbe093b07fe4f7434cfa17ac77a0dace71a
+0x4D1FC	0x170	src/libultra/al_save_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	1ebe347d9c54fe5def3788f3f3f7b864792012cb8f6fcaf14d13f1896e4ee222
+0x41050	0xA0	src/game/queue_runtime_clamped_value_80040450.c	-O2 -G0 -mips3 -mgp32 -mfp32	a30d20728c0db924e7889a5e87cb6a070467b89d2400512c10f5d70ec462f747
+0x41180	0x90	src/game/queue_runtime_float_80040580.c	-O2 -G0 -mips3 -mgp32 -mfp32	895f519041fbc67f9821165eeae882264dcde8ab99408a0c76602ac8db56ce70
+0x4B4AC	0x178	src/libultra/al_decode_chunk.c	-O2 -G0 -mips3 -mgp32 -mfp32	0a804a0c498d055fb5a21c346a2aa2269d605564b5d700c7d910e2252f69438b
+0x41210	0xB0	src/game/queue_runtime_extended_80040610.c	-O2 -G0 -mips3 -mgp32 -mfp32	74e0e7be2d2a14bf20a176accde2de19a41d0aaa4e72b2ed03677170f49ea06a
+0x412C0	0x90	src/game/queue_runtime_tagged_800406c0.c	-O2 -G0 -mips3 -mgp32 -mfp32	9a4847526954ad3999334793fd7413921cb6ab27d91bcbbf67a43dbec258962b
+0x4B300	0x1AC	src/libultra/al_load_param.c	-O2 -G0 -mips3 -mgp32 -mfp32	4ea7fa38d1346634d16c40b764c1730bbd2020671287bfda6ff162a95d60a2ea
+0x41350	0x80	src/game/queue_runtime_marker_80040750.c	-O2 -G0 -mips3 -mgp32 -mfp32	0bb0e2bcde0185e506ba0ce9ef0f799e0030de060ce5a3336405dcb1b75894c2
+0x417EC	0x60	src/game/release_runtime_list_80040bec.c	-O2 -G0 -mips3 -mgp32 -mfp32	39e4a0c6375e46141d567d0f8a5e67918fb1070195daf853f32695af457163a0
+0x418D4	0x5C	src/game/scale_runtime_units_80040cd4.c	--section-base=.rodata:0x80003450 -O2 -G0 -mips3 -mgp32 -mfp32	beb877e148d329f4c0565ca241dc5a1d8c4986172a03b73f46df945f8151d866
+0x3DC14	0x7C	src/game/update_indexed_runtime_owner_8003d014.c	-O2 -G0 -mips3 -mgp32 -mfp32	7f4741887a80e38361b001c281a6b2a9cdf2fa6f80525e24bb351b1b82db5373
+0x4C164	0x280	src/libultra/al_get_rate.c	--section-base=.rodata:0x80003790 -O2 -finline-functions -G0 -mips3 -mgp32 -mfp32	c0dcfc4a6ca2e75ea82771862b111c18e660884c041854f2350ecc4d10bba867
+0x3E7E8	0x94	src/game/random_scaled_value_8003dbe8.c	-O2 -G0 -mips3 -mgp32 -mfp32	66b28fd32bdad8473ded2199c1a4896b777375ec762d4b7b99269c7ee17ff6c8
+0x4C610	0x1EC	src/libultra/al_resample_pull.c	--section-base=.rodata:0x80003820 -O2 -G0 -mips3 -mgp32 -mfp32	2558831c622d82f05ba0e16229c9ec4747eb898a8574be0b8a75749c1d3124b3
+0x3EBB8	0xB0	src/game/init_runtime_record_8003dfb8.c	-O2 -G0 -mips3 -mgp32 -mfp32	df1c71f9086cf8dc4b0162acfecaae99cb569cf4cff653fc3fc254d7e13c9dc9
+0x4CE74	0x218	src/libultra/al_load_output_buffer.c	--section-base=.rodata:0x80003890 -O2 -G0 -mips3 -mgp32 -mfp32	09fe166839276131e8125f4812b3e9a9aeb255a6a9fb40b2bb6e023123fffcab
+0x4DA1C	0x1B0	src/libultra/al_audio_frame.c	--symbol=audio_globals:0x80056340 -O2 -G0 -mips3 -mgp32 -mfp32	16a664d62ef6ae40d028d43df4467a4ac2931038c66b6960914f620750aa3494
+0x42A00	0x68	src/game/init_runtime_manager_80041e00.c	-O2 -G0 -mips3 -mgp32 -mfp32	87b87a6ea2332d23b432533d34be5e0476246f7aa8503cf7571d87e9ee58024c
+0x429B0	0x50	src/game/get_prepared_runtime_word_80041db0.c	-O2 -G0 -mips3 -mgp32 -mfp32	6b1ad4cdc2ca3862fa923931aff403ea000f9c0c1767d90078eb6d123142c368
+0x4D750	0x2CC	src/libultra/al_syn_new.c	-O2 -G0 -mips3 -mgp32 -mfp32	5c1675f3b38daefbd3d55222ad91bf44a35fcf12eb0f3c92f1e9ebb54570ab06
+0x4AF64	0x39C	src/libultra/al_raw16_pull.c	-O2 -G0 -mips3 -mgp32 -mfp32	56aacfe024e1dff9dffe1144459899f070fbe96b84ba77b7e68ba4a60db550e3
+0x4AB20	0x444	src/libultra/al_adpcm_pull.c	-O2 -G0 -mips3 -mgp32 -mfp32	295a5653f200a3e1f90d614607f604f9fda73ab392b4e34bfd9a266b8f87f11d
+0x4CC84	0x1F0	src/libultra/al_fx_param_hdl.c	--section-base=.rodata:0x80003860 --symbol=audio_globals:0x80056340 -O2 -G0 -mips3 -mgp32 -mfp32	8f4dab3e395fa457d74b7125d58a30074a8b07f248d25662504729d101c65152
+0x496B0	0x210	src/libultra/os_initialize.c	--section-base=.data:0x80056040 --symbol=__osFinalrom:0x800C4310 --symbol=__osGetSR:0x80048CC0 --symbol=__osSetSR:0x80048D60 --symbol=__osSetFpcCsr:0x80048D50 --symbol=__osSiRawReadIo:0x8004DA10 --symbol=__osSiRawWriteIo:0x8004DAC0 --symbol=exceptionPreamble:0x80047FB0 --symbol=osWritebackDCache:0x80047E00 --symbol=osInvalICache:0x80048CD0 --symbol=osMapTLBRdb:0x80048D70 --symbol=__osPiRawReadIo:0x8004F7D0 --symbol=__udivdi3:0x8003B3A0 --symbol=resetType:0x8000030C --symbol=appNmiBuffer:0x8000031C --symbol=bzero:0x80051050 --symbol=tvType:0x80000300 -O2 -G0 -mips3 -mgp32 -mfp32	82c862516a1955cc33c2848a33dc36123884c120e58f23c6102c36b644a96658
+0x406EC	0x50	src/game/calculate_runtime_sample_8003faec.c	-O2 -G0 -mips3 -mgp32 -mfp32	22edc554902bf0ef12e22dc77417e9b5147cb3345fd08037d3ab83c16a68c852
+0x42CD8	0x50	src/game/get_runtime_entry_800420d8.c	-O2 -G0 -mips3 -mgp32 -mfp32	581094e7a6b69de0a48103dad7441f0bca5fe9b6082e951d20ca37bac35bd0fe
+0x4A2F0	0xA4	src/libultra/al_init_lpfilter.c	--section-base=.rodata:0x800036E0 -O2 -G0 -mips3 -mgp32 -mfp32	fc15aee2ed668562f946ddfdb4bf93e7b8b0087c8e0f31e20dd63af5843c61ff
+0xC458	0x50	src/game/find_sorted_runtime_value.c	-O3 -G0 -mips3 -mgp32 -mfp32	c8443cb4b4b9a3a94d60af24d9e335098dd94c1a490e9c796f13d4606afdb29c
+0x4BD60	0x300	src/libultra/al_pull_sub_frame.c	--section-base=.rodata:0x80003720 --symbol=eqpower:0x80056220 --symbol=osVirtualToPhysical:0x800495D0 --symbol=func_8004B870:0x8004B870 -O2 -G0 -mips3 -mgp32 -mfp32	0ac2df1d5808a8073047a578fb8d4313c9d3e5160892fe096e8ee587e034244e
+0x43710	0x60	src/game/wait_for_runtime_signal_80042b10.c	-O2 -G0 -mips3 -mgp32 -mfp32	f5c0b53f35c6af87373cc3bbc33a7f14e4fcc4ae88c70964c9eff2d839f0eda6
+0x43BD4	0x80	src/game/select_runtime_buffer_80042fd4.c	-O2 -G0 -mips3 -mgp32 -mfp32	ac55af637986ef92e7f754e5e5ee92dc460659906cd0c4b568c250f7348c5084
+0x448E4	0xA4	src/game/submit_runtime_request_80043ce4.c	-O2 -G0 -mips3 -mgp32 -mfp32	fdba32e237b1f1beb372357c14cbb9a816fd637a4e1648c30f00f6a250ec8d81
+0x3CF78	0x5C	src/game/find_resource_value_8003c378.c	-O2 -G0 -mips3 -mgp32 -mfp32	7a40d9da959881c887e5dbdc69ea56e80be157a60dfd7847aa3c083985062131
+0x3D1DC	0x78	src/game/find_resource_nested_value_8003c5dc.c	-O2 -G0 -mips3 -mgp32 -mfp32	4080deaac0d496b6f95b02de9d5a85593e2bbad7ad462bac123afeab73257c2f
+0x3CDD0	0x8C	src/game/scale_matching_resources_8003c1d0.c	-O2 -G0 -mips3 -mgp32 -mfp32	7c858ddb460e7d8dfaee87a4e9c103cf63f5c22a30b3fef103f334c8b598f7bc
+0x3CC90	0x60	src/game/set_matching_resource_value_8003c090.c	-O2 -G0 -mips3 -mgp32 -mfp32	52ae6fd6b2084cf236f350c1f210ee254f7c92cf3c06ecbd266ee79d046053f2
+0x3CD60	0x70	src/game/add_matching_resource_float_8003c160.c	-O2 -G0 -mips3 -mgp32 -mfp32	fef493deb7e4b0faee1bd789be8887edf4ad875e524c1c4659dc2f9d090d2ace
+0x3CE5C	0x88	src/game/set_matching_resource_byte_8003c25c.c	-O2 -G0 -mips3 -mgp32 -mfp32	efa1216edfc0ea7c12358d57a63bbfba7fbe6b6a35a4e554691bfaeb13f3c650

@@ -251,3 +251,25 @@
 0x49374	0x17C	src/runtime/dispatch_thread.c	-O2 -G0 -mips3 -mgp32 -mfp32	5117c020de09d251e455a674b09c05e20fcbd1f5efc0bacdafdde801c54ca1ab
 0x33D18	0x2C	src/game/set_primitive_color_white.c	-O2 -G0 -mips3 -mgp32 -mfp32	a943f34cdb9cc3766ae5e8de79af2f94820b7828d64c9ba6e29dc1f87748381c
 0x797C	0x34	src/game/get_angle_step.c	--section-base=.rodata:0x80000590 -O2 -G0 -mips3 -mgp32 -mfp32	d1c998bde1031cd62501c3925449ef11ae3e2eca13656692c04e696bbed3fe75
+0x4D6C0	0x50	src/runtime/allocate_aligned_array.c	-O2 -G0 -mips3 -mgp32 -mfp32	3cf28a19f9db4e1f811a666352c8873cfcb05fd1b759d6a2f2b7e328f3a04199
+0x3F574	0x6C	src/game/append_parser_record_8003e974.c	-O2 -G0 -mips3 -mgp32 -mfp32	317faaf4b6f92a55cbb3dcaf107b468ab5dd67ea74b306b93d3aa6c4e2a76034
+0x251FC	0x64	src/game/prepare_runtime_transition.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	c5cd89adf8605b894ede27572bc1029b6bf43fe53563905701234b55019242c1
+0x257DC	0x54	src/game/start_runtime_sequence.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	baa1af03ada58d673616afe9e9378e9cbc47c00a3d2b682d8e4159262766abc4
+0x259AC	0x4C	src/game/activate_runtime_object.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	1c3bd0e9a8348a8b6cc82debd72beff74218c27001e579c8a3983bc9dbd73b64
+0x2A968	0x5C	src/game/start_fixed_runtime_effects.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	144b23d05c089a1df5cb1ff9c4d19fef393e0d2a27a292edfe912d7a9f7a100e
+0x11BB4	0x50	src/game/update_indexed_state_byte.c	-O2 -G0 -mips3 -mgp32 -mfp32	e62e5edb96b4002999491f936f5b5c5dbf34e89350c4e1d23a62f4199bb892e5
+0x3DEF0	0x70	src/game/update_runtime_bounds_8003d2f0.c	-O2 -G0 -mips3 -mgp32 -mfp32	a126f71d0c5d59d6473aa94802eabc13a5c8b607f3c0857c91ac9c3c78a2b542
+0x402E8	0xA4	src/game/update_runtime_mode_8003f6e8.c	-O2 -G0 -mips3 -mgp32 -mfp32	b9d40eaf96cf74274b3243588bec70cb145a456c3ef600702163a9af63f5ee07
+0x76E0	0x58	src/game/transform_runtime_coordinates.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	40d2677bd9409efc947f103980a6ba256011813cdf6f6cde0051e7839a557916
+0x7900	0x7C	src/game/get_runtime_angle_delta.c	--assembler=asn64 --section-base=.rodata:0x80000588 -O3 -G0 -mips3 -mgp32 -mfp32	3cf233c21023f25470f6385c34a254e07e66e70409a7575bd27a56c21ec1f665
+0x85B0	0x78	src/game/advance_object_runtime_index.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	d41ca14919954945b7e028015ec2c367a5aa4a2cb18ee0bd1d4f7988e0c8ddaf
+0x8C9C	0x7C	src/game/unlink_runtime_node.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	9d06a58c044e641f25e740ad0fe14cce3475ae92aa31f15da44df7ab1cfb6a88
+0x8D18	0x5C	src/game/process_runtime_callbacks.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	da8e49b5607eeb52aae9066b6d92fbcf9ad3b231d7900e5a00caaa0989495717
+0x8D74	0x6C	src/game/process_runtime_update_callbacks.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	408582679e70dd2431eb6d30b1c27670799000ade74d5088b7ed75a7a9e820a5
+0x8DE0	0x60	src/game/remove_flagged_runtime_nodes.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	13401c2d182803cb6973b58d4a599533304ba17a6e6c61bc30f7e29b4fdb6579
+0xDA7C	0x70	src/game/set_runtime_entry_fields.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	ba2d0434b25c98460912171833b19bc6e212b7b60c263b2414f23a15b2299319
+0xDC50	0x5C	src/game/get_or_create_runtime_object.c	--assembler=asn64 -O3 -G0 -mips3 -mgp32 -mfp32	61fe2207c8da00da206b86402d9aecec5cd9c075e779c056c29944f8553d395b
+0x43D2C	0x74	src/game/copy_overlapping_bytes_8004312c.c	-O2 -G0 -mips3 -mgp32 -mfp32	68e3a900c54f0d8360c1e951b5778e0b6eacc727772150d49fc53f42250ab1b9
+0x17784	0x58	src/game/update_runtime_transition_pair.c	-O2 -G0 -mips3 -mgp32 -mfp32	9f7c330f88529eb2f7a78f34c9d8a74bd885bb204557b7deb9794fa3695128ac
+0x53CC	0x90	src/game/read_runtime_command_value.c	-O2 -G0 -mips3 -mgp32 -mfp32	f4b6b081653a44c5b039b76f0f590013b06968161447cc1cbadd1e560dbb3e25
+0x545C	0x90	src/game/read_runtime_vector_value.c	-O2 -G0 -mips3 -mgp32 -mfp32	51506fe2f0b4e3068eadf5714e706968b6158e4eb850ac7061a2a5bc0577b85f
