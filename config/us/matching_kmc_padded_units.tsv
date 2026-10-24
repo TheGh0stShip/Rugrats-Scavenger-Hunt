@@ -8,3 +8,5 @@
 0x4D408	0x98	src/libultra/al_do_mod_func.c	--trailing-padding=0x8 --section-base=.rodata:0x80003898 -O2 -G0 -mips3 -mgp32 -mfp32	3a40f669d5311e040868f1cec47c2c24830263365b7877120954de683c7f363f
 0x43988	0x1A8	src/libmus/audio_thread.c	--trailing-padding=0x8 -O2 -G0 -mips3 -mgp32 -mfp32	dc693686b9ee3fa4a63f1188cfc69ef494dc31ec1ed393d065e02cce96e3f087
 0x3B248	0x78	src/game/printf_channel2_8003a648.c	--trailing-padding=0x4 -O1 -G0 -mips3 -mgp32 -mfp32	92c523b9ddfca9152d43ec124f17de00e5b7a7b4c8608d997a19b1f97ab25fad
+0x3FCA8	0xC8	src/game/n_allocate_pvoice.c	--trailing-padding=0x8 -O2 -G0 -mips3 -mgp32 -mfp32	39a5c7279baa9ea64161f2e73dfea68feb47cdef8e9f7891379c890fa88f929d
+0x43770	0xE0	src/game/mus_submit_audio_task.c	--trailing-padding=0x4 -O2 -G0 -mips3 -mgp32 -mfp32	6858226376be16f9c39f4abcf365acf459666a026b36e9e20ea49dab5c328ccc

@@ -293,13 +293,11 @@
 0x3D0AC	0x84	src/game/mus_ptr_bank_relocate.c	-O2 -G0 -mips3 -mgp32 -mfp32	1a58a16c7a649ee58a9ed95afc62de67d90cbfb5c647d3abe72bd7a0476f7b76
 0x3D178	0x64	src/game/mus_handle_get_bank_word.c	-O2 -G0 -mips3 -mgp32 -mfp32	486b11bd7b990d63cfd9dab5715193951329610f1ac9246ef366447c57b6b68c
 0x3FB90	0x118	src/game/n_syn_alloc_voice.c	-O2 -G0 -mips3 -mgp32 -mfp32	bead038b5ec826a737143744da32ee2fff52e7029cdf2705bb735449b1fe6d52
-0x3FCA8	0xC0	src/game/n_allocate_pvoice.c	-O2 -G0 -mips3 -mgp32 -mfp32	55e8a69d58dfe4711c36e16491fdf55575c66526b7b3988f5fc42dde68231170
 0x3E170	0xB8	src/game/mus_channel_step_vibrato.c	-O2 -G0 -mips3 -mgp32 -mfp32	b00e922ad8a96e83be718be53f52c4b782ee9f11fb62d7090dd11fb677363770
 0x433C4	0xD0	src/game/mus_flush_free_list.c	-O2 -G0 -mips3 -mgp32 -mfp32	a9d62e56be62ae6ba33d9968a952d03bc5db6107898ad33bf9f97e6c88a2226d
 0x42D28	0x148	src/game/n_fx_alloc_buffers.c	-O2 -G0 -mips3 -mgp32 -mfp32	0c1d2f05ae3197e1b90caba745e273e1410b09269eb57f27c8d1e8ae88e76691
 0x43850	0x138	src/game/mus_audio_init.c	-O2 -G0 -mips3 -mgp32 -mfp32	29aaadb8795600648ff51e6f3c48ef9d4e1fea0e599c3ca78febd2d0f38970dc
 0x42E70	0x2E0	src/game/n_fx_reinit.c	--section-base=.rodata:0x800034D0 -O2 -G0 -mips3 -mgp32 -mfp32	01b537d3fc752c74c77ebe5fddfd1439ae928431d8c792a1e806f4775fb68e99
-0x43770	0xDC	src/game/mus_submit_audio_task.c	-O2 -G0 -mips3 -mgp32 -mfp32	6ea08e5d3b72ca75c5e7db16289c286d3d9778644b9dbdde6cb35f028a1a3a7c
 0x3E87C	0x13C	src/game/mus_init_channel.c	-O2 -G0 -mips3 -mgp32 -mfp32	6290f0aa2be889114109a76a85c23e829a9e133bf205a41e2da0c4b4b0805e2d
 0x43DA0	0x114	src/game/init_stream_channels_800431a0.c	-O2 -G0 -mips3 -mgp32 -mfp32	3a2749befc69a9bab93a9ce4eeceac321d0d3ab02c47d39ac6c191d89687091d
 0x43EB4	0x140	src/game/service_stream_channels_800432b4.c	-O2 -G0 -mips3 -mgp32 -mfp32	6e1ffa88ab04f9ee73a0be9bad148d354c4e4d27ca80cd86ac1a639cb4eb68c0
