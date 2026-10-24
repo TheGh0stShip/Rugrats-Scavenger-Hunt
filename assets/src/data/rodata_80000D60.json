@@ -1,0 +1,1921 @@
+{
+ "section": ".rodata",
+ "vram": "0x80000D60",
+ "objects": [
+  {
+   "vram": "0x80000D60",
+   "rom": "0x1960",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000D60",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Music by\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000D6C",
+   "rom": "0x196C",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000D6C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4AJ Medina-Shanelle Medina\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000D88",
+   "rom": "0x1988",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80000D88",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Michelle Medina-Gabby Medina\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000DA8",
+   "rom": "0x19A8",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000DA8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Mac and Reed\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000DB8",
+   "rom": "0x19B8",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000DB8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Amy Thompson\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000DC8",
+   "rom": "0x19C8",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000DC8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Alazair & Roz\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000DD8",
+   "rom": "0x19D8",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000DD8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Twon JD\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000DE4",
+   "rom": "0x19E4",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000DE4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2The D\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000DEC",
+   "rom": "0x19EC",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000DEC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Jeff Christensen\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000E00",
+   "rom": "0x1A00",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000E00",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Emily Smith\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000E10",
+   "rom": "0x1A10",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000E10",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Kari & Daniel Powers\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000E28",
+   "rom": "0x1A28",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000E28",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Special Thanks To:\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000E3C",
+   "rom": "0x1A3C",
+   "size": 36,
+   "section": ".rodata",
+   "name": "D_80000E3C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Megan Nakanishi-Kaila Nakanishi\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000E60",
+   "rom": "0x1A60",
+   "size": 36,
+   "section": ".rodata",
+   "name": "D_80000E60",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Jessica Ettinger-Caitlin Durgan\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000E84",
+   "rom": "0x1A84",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000E84",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Focus Testers\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000E94",
+   "rom": "0x1A94",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000E94",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Leta Maunz\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000EA0",
+   "rom": "0x1AA0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000EA0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Larry Siegel\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000EB0",
+   "rom": "0x1AB0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000EB0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Steve Ettinger\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000EC0",
+   "rom": "0x1AC0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000EC0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Shippy Ohka\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000ED0",
+   "rom": "0x1AD0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000ED0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Dave Warhol\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000EE0",
+   "rom": "0x1AE0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000EE0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Beth Scholz\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000EF0",
+   "rom": "0x1AF0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000EF0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Chris Wilson\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F00",
+   "rom": "0x1B00",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80000F00",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Realtime would like to thank:\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F20",
+   "rom": "0x1B20",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000F20",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Greg Turner\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F30",
+   "rom": "0x1B30",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000F30",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Sound & Music Engineering\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F4C",
+   "rom": "0x1B4C",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000F4C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Bill Sears\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F58",
+   "rom": "0x1B58",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000F58",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Michael Prittie\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F6C",
+   "rom": "0x1B6C",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000F6C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Christopher Vuchetich\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F84",
+   "rom": "0x1B84",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000F84",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Additional Graphics\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000F9C",
+   "rom": "0x1B9C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000F9C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Kerwin Burton\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000FAC",
+   "rom": "0x1BAC",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000FAC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Eric Gingrich\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000FBC",
+   "rom": "0x1BBC",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000FBC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Laura Smith\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000FCC",
+   "rom": "0x1BCC",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000FCC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Graphics\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000FD8",
+   "rom": "0x1BD8",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80000FD8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Fraser Thompson-Stephen Nguyen\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000FF8",
+   "rom": "0x1BF8",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000FF8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Tom Powers-John Bryant\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001010",
+   "rom": "0x1C10",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80001010",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Programmers\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001020",
+   "rom": "0x1C20",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80001020",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Elizabeth Smith\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001034",
+   "rom": "0x1C34",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001034",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Producer\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001040",
+   "rom": "0x1C40",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80001040",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Dave Albert\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001050",
+   "rom": "0x1C50",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80001050",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Executive Producer\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001064",
+   "rom": "0x1C64",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80001064",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x32",
+    "0x00",
+    "0x00",
+    "0x00"
+   ],
+   "note": "element u8 from 128 traced accesses at 4 offsets"
+  },
+  {
+   "vram": "0x80001068",
+   "rom": "0x1C68",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80001068",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"0- Realtime Associates, Inc. -\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001088",
+   "rom": "0x1C88",
+   "size": 40,
+   "section": ".rodata",
+   "name": "jtbl_80001088",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8001163C",
+     "sym": "func_80011594",
+     "off": 168
+    },
+    {
+     "reloc": "0x8001162C",
+     "sym": "func_80011594",
+     "off": 152
+    },
+    {
+     "reloc": "0x8001163C",
+     "sym": "func_80011594",
+     "off": 168
+    },
+    {
+     "reloc": "0x80011680",
+     "sym": "func_80011594",
+     "off": 236
+    },
+    {
+     "reloc": "0x8001164C",
+     "sym": "func_80011594",
+     "off": 184
+    },
+    {
+     "reloc": "0x80011680",
+     "sym": "func_80011594",
+     "off": 236
+    },
+    {
+     "reloc": "0x80011680",
+     "sym": "func_80011594",
+     "off": 236
+    },
+    {
+     "reloc": "0x80011680",
+     "sym": "func_80011594",
+     "off": 236
+    },
+    {
+     "reloc": "0x80011680",
+     "sym": "func_80011594",
+     "off": 236
+    },
+    {
+     "reloc": "0x80011678",
+     "sym": "func_80011594",
+     "off": 228
+    }
+   ]
+  },
+  {
+   "vram": "0x800010B0",
+   "rom": "0x1CB0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010B0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1800.0f"
+   ]
+  },
+  {
+   "vram": "0x800010B4",
+   "rom": "0x1CB4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010B4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "180.0f"
+   ]
+  },
+  {
+   "vram": "0x800010B8",
+   "rom": "0x1CB8",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010B8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x800010BC",
+   "rom": "0x1CBC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010BC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x800010C0",
+   "rom": "0x1CC0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010C0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "370.0f"
+   ]
+  },
+  {
+   "vram": "0x800010C4",
+   "rom": "0x1CC4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010C4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "2474.0f"
+   ]
+  },
+  {
+   "vram": "0x800010C8",
+   "rom": "0x1CC8",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010C8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "910.0f"
+   ]
+  },
+  {
+   "vram": "0x800010CC",
+   "rom": "0x1CCC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800010CC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1800.0f"
+   ]
+  },
+  {
+   "vram": "0x800010D0",
+   "rom": "0x1CD0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800010D0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "500.0f",
+    "13.141426086425781f",
+    "12.143620491027832f",
+    "1.5300225469014606e+19f"
+   ]
+  },
+  {
+   "vram": "0x800010E0",
+   "rom": "0x1CE0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800010E0",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x44454D4F",
+    "0x204D4F44",
+    "0x45001000",
+    "0x0B000000"
+   ],
+   "literal": "\"DEMO MODE\\000\\020\\000\\013\\000\\000\\000\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_80011DAC, func_8001298C"
+  },
+  {
+   "vram": "0x800010F0",
+   "rom": "0x1CF0",
+   "size": 52,
+   "section": ".rodata",
+   "name": "jtbl_800010F0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129F0",
+     "sym": "func_8001298C",
+     "off": 100
+    },
+    {
+     "reloc": "0x800129F0",
+     "sym": "func_8001298C",
+     "off": 100
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129D0",
+     "sym": "func_8001298C",
+     "off": 68
+    },
+    {
+     "reloc": "0x800129E0",
+     "sym": "func_8001298C",
+     "off": 84
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    },
+    {
+     "reloc": "0x800129F8",
+     "sym": "func_8001298C",
+     "off": 108
+    }
+   ]
+  },
+  {
+   "vram": "0x80001124",
+   "rom": "0x1D24",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001124",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"BLE_VASE2R\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001130",
+   "rom": "0x1D30",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80001130",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "255.0f"
+   ]
+  },
+  {
+   "vram": "0x80001134",
+   "rom": "0x1D34",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80001134",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "255.0f"
+   ]
+  },
+  {
+   "vram": "0x80001138",
+   "rom": "0x1D38",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001138",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "255.0f",
+    "4.004360260300502e-26f"
+   ]
+  },
+  {
+   "vram": "0x80001140",
+   "rom": "0x1D40",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80001140",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x6D646C68",
+    "0x00524348",
+    "0x41424C45",
+    "0x5F564153"
+   ],
+   "note": "element u32 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80001150",
+   "rom": "0x1D50",
+   "size": 44,
+   "section": ".rodata",
+   "name": "jtbl_80001150",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80014118",
+     "sym": "func_80014084",
+     "off": 148
+    },
+    {
+     "reloc": "0x80014124",
+     "sym": "func_80014084",
+     "off": 160
+    },
+    {
+     "reloc": "0x80014124",
+     "sym": "func_80014084",
+     "off": 160
+    },
+    {
+     "reloc": "0x80014130",
+     "sym": "func_80014084",
+     "off": 172
+    },
+    {
+     "reloc": "0x80014154",
+     "sym": "func_80014084",
+     "off": 208
+    },
+    {
+     "reloc": "0x80014178",
+     "sym": "func_80014084",
+     "off": 244
+    },
+    {
+     "reloc": "0x8001419C",
+     "sym": "func_80014084",
+     "off": 280
+    },
+    {
+     "reloc": "0x800141C0",
+     "sym": "func_80014084",
+     "off": 316
+    },
+    {
+     "reloc": "0x800141C0",
+     "sym": "func_80014084",
+     "off": 316
+    },
+    {
+     "reloc": "0x800141CC",
+     "sym": "func_80014084",
+     "off": 328
+    },
+    {
+     "reloc": "0x800141D8",
+     "sym": "func_80014084",
+     "off": 340
+    }
+   ]
+  },
+  {
+   "vram": "0x8000117C",
+   "rom": "0x1D7C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_8000117C",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80001180",
+   "rom": "0x1D80",
+   "size": 44,
+   "section": ".rodata",
+   "name": "jtbl_80001180",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800142A4",
+     "sym": "func_8001420C",
+     "off": 152
+    },
+    {
+     "reloc": "0x800142B0",
+     "sym": "func_8001420C",
+     "off": 164
+    },
+    {
+     "reloc": "0x800142B0",
+     "sym": "func_8001420C",
+     "off": 164
+    },
+    {
+     "reloc": "0x800142BC",
+     "sym": "func_8001420C",
+     "off": 176
+    },
+    {
+     "reloc": "0x800142E0",
+     "sym": "func_8001420C",
+     "off": 212
+    },
+    {
+     "reloc": "0x80014304",
+     "sym": "func_8001420C",
+     "off": 248
+    },
+    {
+     "reloc": "0x80014328",
+     "sym": "func_8001420C",
+     "off": 284
+    },
+    {
+     "reloc": "0x8001434C",
+     "sym": "func_8001420C",
+     "off": 320
+    },
+    {
+     "reloc": "0x8001434C",
+     "sym": "func_8001420C",
+     "off": 320
+    },
+    {
+     "reloc": "0x80014358",
+     "sym": "func_8001420C",
+     "off": 332
+    },
+    {
+     "reloc": "0x80014364",
+     "sym": "func_8001420C",
+     "off": 344
+    }
+   ]
+  },
+  {
+   "vram": "0x800011AC",
+   "rom": "0x1DAC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_800011AC",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x800011B0",
+   "rom": "0x1DB0",
+   "size": 44,
+   "section": ".rodata",
+   "name": "jtbl_800011B0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80014430",
+     "sym": "func_80014398",
+     "off": 152
+    },
+    {
+     "reloc": "0x8001443C",
+     "sym": "func_80014398",
+     "off": 164
+    },
+    {
+     "reloc": "0x8001443C",
+     "sym": "func_80014398",
+     "off": 164
+    },
+    {
+     "reloc": "0x80014448",
+     "sym": "func_80014398",
+     "off": 176
+    },
+    {
+     "reloc": "0x8001446C",
+     "sym": "func_80014398",
+     "off": 212
+    },
+    {
+     "reloc": "0x80014490",
+     "sym": "func_80014398",
+     "off": 248
+    },
+    {
+     "reloc": "0x800144B4",
+     "sym": "func_80014398",
+     "off": 284
+    },
+    {
+     "reloc": "0x800144D8",
+     "sym": "func_80014398",
+     "off": 320
+    },
+    {
+     "reloc": "0x800144D8",
+     "sym": "func_80014398",
+     "off": 320
+    },
+    {
+     "reloc": "0x800144E4",
+     "sym": "func_80014398",
+     "off": 332
+    },
+    {
+     "reloc": "0x800144F0",
+     "sym": "func_80014398",
+     "off": 344
+    }
+   ]
+  },
+  {
+   "vram": "0x800011DC",
+   "rom": "0x1DDC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_800011DC",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x800011E0",
+   "rom": "0x1DE0",
+   "size": 44,
+   "section": ".rodata",
+   "name": "jtbl_800011E0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800145BC",
+     "sym": "func_80014524",
+     "off": 152
+    },
+    {
+     "reloc": "0x800145C8",
+     "sym": "func_80014524",
+     "off": 164
+    },
+    {
+     "reloc": "0x800145C8",
+     "sym": "func_80014524",
+     "off": 164
+    },
+    {
+     "reloc": "0x800145D4",
+     "sym": "func_80014524",
+     "off": 176
+    },
+    {
+     "reloc": "0x800145F8",
+     "sym": "func_80014524",
+     "off": 212
+    },
+    {
+     "reloc": "0x8001461C",
+     "sym": "func_80014524",
+     "off": 248
+    },
+    {
+     "reloc": "0x80014640",
+     "sym": "func_80014524",
+     "off": 284
+    },
+    {
+     "reloc": "0x80014664",
+     "sym": "func_80014524",
+     "off": 320
+    },
+    {
+     "reloc": "0x80014664",
+     "sym": "func_80014524",
+     "off": 320
+    },
+    {
+     "reloc": "0x80014670",
+     "sym": "func_80014524",
+     "off": 332
+    },
+    {
+     "reloc": "0x8001467C",
+     "sym": "func_80014524",
+     "off": 344
+    }
+   ]
+  },
+  {
+   "vram": "0x8000120C",
+   "rom": "0x1E0C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_8000120C",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80001210",
+   "rom": "0x1E10",
+   "size": 44,
+   "section": ".rodata",
+   "name": "jtbl_80001210",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80014778",
+     "sym": "func_800146B0",
+     "off": 200
+    },
+    {
+     "reloc": "0x80014784",
+     "sym": "func_800146B0",
+     "off": 212
+    },
+    {
+     "reloc": "0x80014784",
+     "sym": "func_800146B0",
+     "off": 212
+    },
+    {
+     "reloc": "0x80014790",
+     "sym": "func_800146B0",
+     "off": 224
+    },
+    {
+     "reloc": "0x8001479C",
+     "sym": "func_800146B0",
+     "off": 236
+    },
+    {
+     "reloc": "0x800147A8",
+     "sym": "func_800146B0",
+     "off": 248
+    },
+    {
+     "reloc": "0x800147B4",
+     "sym": "func_800146B0",
+     "off": 260
+    },
+    {
+     "reloc": "0x800147C0",
+     "sym": "func_800146B0",
+     "off": 272
+    },
+    {
+     "reloc": "0x800147C0",
+     "sym": "func_800146B0",
+     "off": 272
+    },
+    {
+     "reloc": "0x800147CC",
+     "sym": "func_800146B0",
+     "off": 284
+    },
+    {
+     "reloc": "0x800147D8",
+     "sym": "func_800146B0",
+     "off": 296
+    }
+   ]
+  },
+  {
+   "vram": "0x8000123C",
+   "rom": "0x1E3C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_8000123C",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80001240",
+   "rom": "0x1E40",
+   "size": 44,
+   "section": ".rodata",
+   "name": "jtbl_80001240",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800148E0",
+     "sym": "func_80014814",
+     "off": 204
+    },
+    {
+     "reloc": "0x800148EC",
+     "sym": "func_80014814",
+     "off": 216
+    },
+    {
+     "reloc": "0x800148EC",
+     "sym": "func_80014814",
+     "off": 216
+    },
+    {
+     "reloc": "0x800148F8",
+     "sym": "func_80014814",
+     "off": 228
+    },
+    {
+     "reloc": "0x80014908",
+     "sym": "func_80014814",
+     "off": 244
+    },
+    {
+     "reloc": "0x80014918",
+     "sym": "func_80014814",
+     "off": 260
+    },
+    {
+     "reloc": "0x80014930",
+     "sym": "func_80014814",
+     "off": 284
+    },
+    {
+     "reloc": "0x80014948",
+     "sym": "func_80014814",
+     "off": 308
+    },
+    {
+     "reloc": "0x80014948",
+     "sym": "func_80014814",
+     "off": 308
+    },
+    {
+     "reloc": "0x80014954",
+     "sym": "func_80014814",
+     "off": 320
+    },
+    {
+     "reloc": "0x80014960",
+     "sym": "func_80014814",
+     "off": 332
+    }
+   ]
+  },
+  {
+   "vram": "0x8000126C",
+   "rom": "0x1E6C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000126C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80001270",
+   "rom": "0x1E70",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80001270",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-1.0f"
+   ]
+  },
+  {
+   "vram": "0x80001274",
+   "rom": "0x1E74",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80001274",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "250.0f"
+   ]
+  },
+  {
+   "vram": "0x80001278",
+   "rom": "0x1E78",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001278",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "15000.0f",
+    "3572.144287109375f"
+   ]
+  },
+  {
+   "vram": "0x80001280",
+   "rom": "0x1E80",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001280",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Spike\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001288",
+   "rom": "0x1E88",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001288",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Grandpa\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001290",
+   "rom": "0x1E90",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001290",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Angelica\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000129C",
+   "rom": "0x1E9C",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_8000129C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Phil\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800012A4",
+   "rom": "0x1EA4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800012A4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Lil\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800012A8",
+   "rom": "0x1EA8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800012A8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Chuckie\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800012B0",
+   "rom": "0x1EB0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800012B0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Tommy\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800012B8",
+   "rom": "0x1EB8",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_800012B8",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x4E6F7420",
+    "0x456E6F75",
+    "0x67682043",
+    "0x6F6F6B69",
+    "0x65730045",
+    "0x5F534541"
+   ],
+   "literal": "\"Not Enough Cookies\\000E_SEA\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_80016530"
+  },
+  {
+   "vram": "0x800012D0",
+   "rom": "0x1ED0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800012D0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "50.0f"
+   ]
+  },
+  {
+   "vram": "0x800012D4",
+   "rom": "0x1ED4",
+   "size": 172,
+   "section": ".rodata",
+   "name": "D_800012D4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-50.0f",
+    "52.56375503540039f",
+    "819188864.0f",
+    "1.1675611412203472e-14f",
+    "1.710506830845077e+19f",
+    "1.0222493443812188e+27f",
+    "1.2486752384441475e+22f",
+    "4164601249792.0f",
+    "1.1839475905697371e+22f",
+    "2.0616460886694423e-19f",
+    "1.1837442530465613e+22f",
+    "1.7841234311176054e+25f",
+    "4.963538683623095e+28f",
+    "1.9091147591964883e-19f",
+    "7.493461996460464e+28f",
+    "1.8466851024749895e+25f",
+    "1.8501529427868943e+28f",
+    "2.6911766228310478e+20f",
+    "4.258275225012728e+24f",
+    "1.1095301877529518e+27f",
+    "0.0f",
+    "1.1675611412203472e-14f",
+    "1.710506830845077e+19f",
+    "1.0222493443812188e+27f",
+    "1.2486752384441475e+22f",
+    "236361408.0f",
+    "1.79046177493338e-19f",
+    "1.9392610099461046e+26f",
+    "1.9520609426244758e-19f",
+    "6.673270524272753e+26f",
+    "1.1675611412203472e-14f",
+    "1.710506830845077e+19f",
+    "9.497136476303885e+26f",
+    "7.21327185833121e+22f",
+    "0.0006113259005360305f",
+    "7.588340327062015e+31f",
+    "4.258624560228624e+24f",
+    "1.8501529427868943e+28f",
+    "7.185396378077638e+22f",
+    "1.0835456059886346e+24f",
+    "7.5782221015221685e+31f",
+    "6.977187311184933e+22f",
+    "4.073072166312498e+22f"
+   ]
+  },
+  {
+   "vram": "0x80001380",
+   "rom": "0x1F80",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80001380",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Are you sure\\?\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001390",
+   "rom": "0x1F90",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001390",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Quit-\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001398",
+   "rom": "0x1F98",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001398",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Quit\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013A0",
+   "rom": "0x1FA0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800013A0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Music Volume\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013B0",
+   "rom": "0x1FB0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800013B0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Sound Volume\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013C0",
+   "rom": "0x1FC0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800013C0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Pause-\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013C8",
+   "rom": "0x1FC8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800013C8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Options\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013D0",
+   "rom": "0x1FD0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800013D0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"New\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013D4",
+   "rom": "0x1FD4",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800013D4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Game Setup-\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013E4",
+   "rom": "0x1FE4",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800013E4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Reptar Rally\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800013F4",
+   "rom": "0x1FF4",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_800013F4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Pirate Treasure Hunt\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000140C",
+   "rom": "0x200C",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_8000140C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Angelica's Temple\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001420",
+   "rom": "0x2020",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001420",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Game Type-\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000142C",
+   "rom": "0x202C",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_8000142C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Large\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001434",
+   "rom": "0x2034",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001434",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Medium\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000143C",
+   "rom": "0x203C",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_8000143C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Small\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001444",
+   "rom": "0x2044",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80001444",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Board Size-\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001454",
+   "rom": "0x2054",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_80001454",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "zero gap between literals of unknown (alignment padding or an unused zero/empty-string literal)"
+  },
+  {
+   "vram": "0x80001458",
+   "rom": "0x2058",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80001458",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Character Select-\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000146C",
+   "rom": "0x206C",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_8000146C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Credits\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001474",
+   "rom": "0x2074",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80001474",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Hidden Squares\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80001484",
+   "rom": "0x2084",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001484",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"T. Powers\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001490",
+   "rom": "0x2090",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80001490",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"T. L. Powers\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014A0",
+   "rom": "0x20A0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800014A0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Thomas Powers\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014B0",
+   "rom": "0x20B0",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_800014B0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Tom Powers\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014BC",
+   "rom": "0x20BC",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_800014BC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Mr. Powers\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014C8",
+   "rom": "0x20C8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800014C8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Tom P.\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014D0",
+   "rom": "0x20D0",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_800014D0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"T. L. P.\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014DC",
+   "rom": "0x20DC",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800014DC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Full of Himself\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014EC",
+   "rom": "0x20EC",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_800014EC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Marketing\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800014F8",
+   "rom": "0x20F8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800014F8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Testing\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001500",
+   "rom": "0x2100",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80001500",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Artist\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001508",
+   "rom": "0x2108",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001508",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Programmer\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001514",
+   "rom": "0x2114",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001514",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Designer\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001520",
+   "rom": "0x2120",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80001520",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Producer\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000152C",
+   "rom": "0x212C",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_8000152C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Credits-\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80001538",
+   "rom": "0x2138",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80001538",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"-Game Type/Players-\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000154C",
+   "rom": "0x214C",
+   "size": 48,
+   "section": ".rodata",
+   "name": "D_8000154C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Rumble Pak supported.\\nInsert a Rumble Pak now.\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x8000157C",
+   "rom": "0x217C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000157C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"On\\000\\000\"",
+   "note": "text; byte accesses only"
+  }
+ ],
+ "end": "0x80001580",
+ "size": 2080,
+ "c_file": "rodata_80000D60.c"
+}

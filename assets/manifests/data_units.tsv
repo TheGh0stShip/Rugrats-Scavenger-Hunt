@@ -1,0 +1,18 @@
+# Proposed exact initialized-data units. Verified by compiling with KMC GCC 2.7.2 and by the materializer.
+# ROM_START	SIZE	VRAM	SECTION	SOURCE	FLAGS	ROM_SHA256
+0x45E0	0x10	0x800039E0	.data	assets/src/data/data_800039E0.c	-G0 -O2 -mips2 (section alignment 4)	cff9f4169c53828952d357a7a0f4c19a8631104375ef56e65472369a766e16a7
+0x535A0	0xA40	0x800529A0	.data	assets/src/data/data_800529A0.c	-G0 -O2 -mips2 (section alignment 4)	9ef6bb668e8c8c918012d7bd9385824fd3a48fdd9ad2f35462ab37c6a84fe499
+0x53FE0	0x860	0x800533E0	.data	assets/src/data/data_800533E0.c	-G0 -O2 -mips2 (section alignment 4)	5293f906f9137601229dfb4ceba95fea2ed77a54d8b45a80ffbc6f127818ec13
+0x54840	0x820	0x80053C40	.data	assets/src/data/data_80053C40.c	-G0 -O2 -mips2 (section alignment 4)	1ad5798182f36e38564029c1266f56e5b993ee0c2cb1c3e5fb8309e08aab01c7
+0x55060	0xF60	0x80054460	.data	assets/src/data/data_80054460.c	-G0 -O2 -mips2 (section alignment 4)	04fbb348abd60b9089c4219310c223798aca0219109179e770f264132db12587
+0x55FC0	0x840	0x800553C0	.data	assets/src/data/data_800553C0.c	-G0 -O2 -mips2 (section alignment 4)	d33bf9cd2bcc7ba153b04830197e708750341ff609ecdc32a9050531a081fd98
+0x56800	0x820	0x80055C00	.data	assets/src/data/data_80055C00.c	-G0 -O2 -mips2 (section alignment 4)	a413cb3f04ce33021242d0525c9cb5d37450c4ef2deffc87326a1aca532133dd
+0x57020	0x820	0x80056420	.data	assets/src/data/data_80056420.c	-G0 -O2 -mips2 (section alignment 4)	a27827a72d217f684ff4a5fc3fc2573b48f519da4c790b1413e6b8ba78c5514e
+0x57840	0x640	0x80056C40	.data	assets/src/data/data_80056C40.c	-G0 -O2 -mips2 (section alignment 4)	4f3e18ad3d654817bc9c663608add1ed16b49b370d0706c22d194392c7013696
+0x10F8	0x868	0x800004F8	.rodata	assets/src/data/rodata_800004F8.c	-G0 -O2 -mips2 (section alignment 4)	9fa7fa28a34656b0c95def1abbc865b33ab5e155e71284d2fb3a7b2e34405354
+0x1960	0x820	0x80000D60	.rodata	assets/src/data/rodata_80000D60.c	-G0 -O2 -mips2 (section alignment 4)	631937e239a65a784d4136b359e44e2069ece65b7177bc0deb299b39dceac71f
+0x2180	0x800	0x80001580	.rodata	assets/src/data/rodata_80001580.c	-G0 -O2 -mips2 (section alignment 4)	f8c0c6362c7592caf6beb424d2e3716a5487a1d07c8d876006df367e5bc28662
+0x2980	0x890	0x80001D80	.rodata	assets/src/data/rodata_80001D80.c	-G0 -O2 -mips2 (section alignment 4)	10f2a5a550923f63510cc2ca9d6bdc537f036a6033107e58be36c80c8dae803b
+0x3210	0x850	0x80002610	.rodata	assets/src/data/rodata_80002610.c	-G0 -O2 -mips2 (section alignment 4)	752edfaff1359f0138c09cd2e1d5d152ed60ccf96836401c6a1382909c9ccaca
+0x3A60	0x830	0x80002E60	.rodata	assets/src/data/rodata_80002E60.c	-G0 -O2 -mips2 (section alignment 4)	90679aedd3ae28971f6116194b3f40093b487418272057bb130b341ecf2a6a6c
+0x4290	0x350	0x80003690	.rodata	assets/src/data/rodata_80003690.c	-G0 -O2 -mips2 (section alignment 4)	dbaabb5ee04838d16345dc3403eaf3adbfc4d34f935e85e6fb0d146681c66e57

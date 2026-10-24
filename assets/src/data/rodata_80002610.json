@@ -1,0 +1,2189 @@
+{
+ "section": ".rodata",
+ "vram": "0x80002610",
+ "objects": [
+  {
+   "vram": "0x80002610",
+   "rom": "0x3210",
+   "size": 36,
+   "section": ".rodata",
+   "name": "jtbl_80002610",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8002C28C",
+     "sym": "func_8002C168",
+     "off": 292
+    },
+    {
+     "reloc": "0x8002C35C",
+     "sym": "func_8002C168",
+     "off": 500
+    },
+    {
+     "reloc": "0x8002C42C",
+     "sym": "func_8002C168",
+     "off": 708
+    },
+    {
+     "reloc": "0x8002C4FC",
+     "sym": "func_8002C168",
+     "off": 916
+    },
+    {
+     "reloc": "0x8002C624",
+     "sym": "func_8002C168",
+     "off": 1212
+    },
+    {
+     "reloc": "0x8002C624",
+     "sym": "func_8002C168",
+     "off": 1212
+    },
+    {
+     "reloc": "0x8002C624",
+     "sym": "func_8002C168",
+     "off": 1212
+    },
+    {
+     "reloc": "0x8002C624",
+     "sym": "func_8002C168",
+     "off": 1212
+    },
+    {
+     "reloc": "0x8002C5CC",
+     "sym": "func_8002C168",
+     "off": 1124
+    }
+   ]
+  },
+  {
+   "vram": "0x80002634",
+   "rom": "0x3234",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002634",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Gain %d %s!\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002640",
+   "rom": "0x3240",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002640",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Ice Cream\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x8000264C",
+   "rom": "0x324C",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_8000264C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Licorice\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002658",
+   "rom": "0x3258",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002658",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Chocolate Milk\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002668",
+   "rom": "0x3268",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80002668",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Pudding\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002670",
+   "rom": "0x3270",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002670",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Stop spinner\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002680",
+   "rom": "0x3280",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002680",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Camera Mode\\000\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002690",
+   "rom": "0x3290",
+   "size": 180,
+   "section": ".rodata",
+   "name": "jtbl_80002690",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    },
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    },
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D57C",
+     "sym": "func_8002D51C",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002D564",
+     "sym": "func_8002D51C",
+     "off": 72
+    }
+   ]
+  },
+  {
+   "vram": "0x80002744",
+   "rom": "0x3344",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_80002744",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80002748",
+   "rom": "0x3348",
+   "size": 152,
+   "section": ".rodata",
+   "name": "jtbl_80002748",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8002D68C",
+     "sym": "func_8002D51C",
+     "off": 368
+    },
+    {
+     "reloc": "0x8002D678",
+     "sym": "func_8002D51C",
+     "off": 348
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D638",
+     "sym": "func_8002D51C",
+     "off": 284
+    },
+    {
+     "reloc": "0x8002D6CC",
+     "sym": "func_8002D51C",
+     "off": 432
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D620",
+     "sym": "func_8002D51C",
+     "off": 260
+    },
+    {
+     "reloc": "0x8002D620",
+     "sym": "func_8002D51C",
+     "off": 260
+    },
+    {
+     "reloc": "0x8002D6FC",
+     "sym": "func_8002D51C",
+     "off": 480
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D69C",
+     "sym": "func_8002D51C",
+     "off": 384
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D6AC",
+     "sym": "func_8002D51C",
+     "off": 400
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D6E4",
+     "sym": "func_8002D51C",
+     "off": 456
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D658",
+     "sym": "func_8002D51C",
+     "off": 316
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D824",
+     "sym": "func_8002D51C",
+     "off": 776
+    },
+    {
+     "reloc": "0x8002D6FC",
+     "sym": "func_8002D51C",
+     "off": 480
+    },
+    {
+     "reloc": "0x8002D72C",
+     "sym": "func_8002D51C",
+     "off": 528
+    },
+    {
+     "reloc": "0x8002D70C",
+     "sym": "func_8002D51C",
+     "off": 496
+    },
+    {
+     "reloc": "0x8002D7E0",
+     "sym": "func_8002D51C",
+     "off": 708
+    },
+    {
+     "reloc": "0x8002D800",
+     "sym": "func_8002D51C",
+     "off": 740
+    },
+    {
+     "reloc": "0x8002D610",
+     "sym": "func_8002D51C",
+     "off": 244
+    },
+    {
+     "reloc": "0x8002D600",
+     "sym": "func_8002D51C",
+     "off": 228
+    }
+   ]
+  },
+  {
+   "vram": "0x800027E0",
+   "rom": "0x33E0",
+   "size": 204,
+   "section": ".rodata",
+   "name": "jtbl_800027E0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8002D8B0",
+     "sym": "func_8002D51C",
+     "off": 916
+    },
+    {
+     "reloc": "0x8002D8E8",
+     "sym": "func_8002D51C",
+     "off": 972
+    },
+    {
+     "reloc": "0x8002D928",
+     "sym": "func_8002D51C",
+     "off": 1036
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002D938",
+     "sym": "func_8002D51C",
+     "off": 1052
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002D9D8",
+     "sym": "func_8002D51C",
+     "off": 1212
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002D948",
+     "sym": "func_8002D51C",
+     "off": 1068
+    },
+    {
+     "reloc": "0x8002D958",
+     "sym": "func_8002D51C",
+     "off": 1084
+    },
+    {
+     "reloc": "0x8002D948",
+     "sym": "func_8002D51C",
+     "off": 1068
+    },
+    {
+     "reloc": "0x8002D948",
+     "sym": "func_8002D51C",
+     "off": 1068
+    },
+    {
+     "reloc": "0x8002D8A0",
+     "sym": "func_8002D51C",
+     "off": 900
+    },
+    {
+     "reloc": "0x8002D8E8",
+     "sym": "func_8002D51C",
+     "off": 972
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002D970",
+     "sym": "func_8002D51C",
+     "off": 1108
+    },
+    {
+     "reloc": "0x8002D988",
+     "sym": "func_8002D51C",
+     "off": 1132
+    },
+    {
+     "reloc": "0x8002D998",
+     "sym": "func_8002D51C",
+     "off": 1148
+    },
+    {
+     "reloc": "0x8002D9A8",
+     "sym": "func_8002D51C",
+     "off": 1164
+    },
+    {
+     "reloc": "0x8002D9C0",
+     "sym": "func_8002D51C",
+     "off": 1188
+    },
+    {
+     "reloc": "0x8002D890",
+     "sym": "func_8002D51C",
+     "off": 884
+    },
+    {
+     "reloc": "0x8002D9FC",
+     "sym": "func_8002D51C",
+     "off": 1248
+    },
+    {
+     "reloc": "0x8002D9FC",
+     "sym": "func_8002D51C",
+     "off": 1248
+    },
+    {
+     "reloc": "0x8002DA04",
+     "sym": "func_8002D51C",
+     "off": 1256
+    },
+    {
+     "reloc": "0x8002D8F8",
+     "sym": "func_8002D51C",
+     "off": 988
+    },
+    {
+     "reloc": "0x8002D910",
+     "sym": "func_8002D51C",
+     "off": 1012
+    }
+   ]
+  },
+  {
+   "vram": "0x800028AC",
+   "rom": "0x34AC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800028AC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "13.578454971313477f"
+   ],
+   "note": "unreferenced f32 literal by value; constant pool of func_8002D51C, func_8002DA20"
+  },
+  {
+   "vram": "0x800028B0",
+   "rom": "0x34B0",
+   "size": 164,
+   "section": ".rodata",
+   "name": "jtbl_800028B0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8002DAC4",
+     "sym": "func_8002DA20",
+     "off": 164
+    },
+    {
+     "reloc": "0x8002DB4C",
+     "sym": "func_8002DA20",
+     "off": 300
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB74",
+     "sym": "func_8002DA20",
+     "off": 340
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB84",
+     "sym": "func_8002DA20",
+     "off": 356
+    },
+    {
+     "reloc": "0x8002DB74",
+     "sym": "func_8002DA20",
+     "off": 340
+    },
+    {
+     "reloc": "0x8002DB74",
+     "sym": "func_8002DA20",
+     "off": 340
+    }
+   ]
+  },
+  {
+   "vram": "0x80002954",
+   "rom": "0x3554",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002954",
+   "rep": "typed-raw",
+   "ctype": "u32",
+   "values": [
+    "0x0000E701",
+    "0x00001000",
+    "0x0B000000"
+   ],
+   "reason": "unreferenced; values are neither text, f32/f64 literals nor zero (0000e701000010000b000000); constant pool of func_8002DA20, func_8002E930"
+  },
+  {
+   "vram": "0x80002960",
+   "rom": "0x3560",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80002960",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"%d/%d\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002968",
+   "rom": "0x3568",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002968",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x58000000"
+   ],
+   "note": "scalar type from 78 traced accesses"
+  },
+  {
+   "vram": "0x8000296C",
+   "rom": "0x356C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000296C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x25640000"
+   ],
+   "note": "scalar type from 79 traced accesses"
+  },
+  {
+   "vram": "0x80002970",
+   "rom": "0x3570",
+   "size": 92,
+   "section": ".rodata",
+   "name": "jtbl_80002970",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8002EC50",
+     "sym": "func_8002EBF0",
+     "off": 96
+    },
+    {
+     "reloc": "0x8002ECAC",
+     "sym": "func_8002EBF0",
+     "off": 188
+    },
+    {
+     "reloc": "0x8002EDB8",
+     "sym": "func_8002EBF0",
+     "off": 456
+    },
+    {
+     "reloc": "0x8002F024",
+     "sym": "func_8002EBF0",
+     "off": 1076
+    },
+    {
+     "reloc": "0x8002EE04",
+     "sym": "func_8002EBF0",
+     "off": 532
+    },
+    {
+     "reloc": "0x8002EE58",
+     "sym": "func_8002EBF0",
+     "off": 616
+    },
+    {
+     "reloc": "0x8002EFC8",
+     "sym": "func_8002EBF0",
+     "off": 984
+    },
+    {
+     "reloc": "0x8002F024",
+     "sym": "func_8002EBF0",
+     "off": 1076
+    },
+    {
+     "reloc": "0x8002F060",
+     "sym": "func_8002EBF0",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8002F080",
+     "sym": "func_8002EBF0",
+     "off": 1168
+    },
+    {
+     "reloc": "0x8002F394",
+     "sym": "func_8002EBF0",
+     "off": 1956
+    },
+    {
+     "reloc": "0x8002F0B4",
+     "sym": "func_8002EBF0",
+     "off": 1220
+    },
+    {
+     "reloc": "0x8002F0D4",
+     "sym": "func_8002EBF0",
+     "off": 1252
+    },
+    {
+     "reloc": "0x8002F394",
+     "sym": "func_8002EBF0",
+     "off": 1956
+    },
+    {
+     "reloc": "0x8002F130",
+     "sym": "func_8002EBF0",
+     "off": 1344
+    },
+    {
+     "reloc": "0x8002F188",
+     "sym": "func_8002EBF0",
+     "off": 1432
+    },
+    {
+     "reloc": "0x8002F248",
+     "sym": "func_8002EBF0",
+     "off": 1624
+    },
+    {
+     "reloc": "0x8002F394",
+     "sym": "func_8002EBF0",
+     "off": 1956
+    },
+    {
+     "reloc": "0x8002F294",
+     "sym": "func_8002EBF0",
+     "off": 1700
+    },
+    {
+     "reloc": "0x8002F324",
+     "sym": "func_8002EBF0",
+     "off": 1844
+    },
+    {
+     "reloc": "0x8002F408",
+     "sym": "func_8002EBF0",
+     "off": 2072
+    },
+    {
+     "reloc": "0x8002F394",
+     "sym": "func_8002EBF0",
+     "off": 1956
+    },
+    {
+     "reloc": "0x8002F3EC",
+     "sym": "func_8002EBF0",
+     "off": 2044
+    }
+   ]
+  },
+  {
+   "vram": "0x800029CC",
+   "rom": "0x35CC",
+   "size": 56,
+   "section": ".rodata",
+   "name": "D_800029CC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Trade Candy\\000Choose a baby.\\000\\000Choose a candy.\\000Take Candy\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002A04",
+   "rom": "0x3604",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002A04",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Reset All Reptar Bars to 10\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002A20",
+   "rom": "0x3620",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002A20",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Reset All Reptar Bars to 20\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002A3C",
+   "rom": "0x363C",
+   "size": 60,
+   "section": ".rodata",
+   "name": "D_80002A3C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Lock Baby Item\\000\\000Trade Reptar Bars for Candy\\000Trade candy.\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002A78",
+   "rom": "0x3678",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002A78",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"End Turn\\000\\000\\000\\000\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002A88",
+   "rom": "0x3688",
+   "size": 24,
+   "section": ".rodata",
+   "name": "jtbl_80002A88",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8002FF84",
+     "sym": "func_8002FF48",
+     "off": 60
+    },
+    {
+     "reloc": "0x80030018",
+     "sym": "func_8002FF48",
+     "off": 208
+    },
+    {
+     "reloc": "0x800300AC",
+     "sym": "func_8002FF48",
+     "off": 356
+    },
+    {
+     "reloc": "0x800300CC",
+     "sym": "func_8002FF48",
+     "off": 388
+    },
+    {
+     "reloc": "0x800300EC",
+     "sym": "func_8002FF48",
+     "off": 420
+    },
+    {
+     "reloc": "0x80030128",
+     "sym": "func_8002FF48",
+     "off": 480
+    }
+   ]
+  },
+  {
+   "vram": "0x80002AA0",
+   "rom": "0x36A0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002AA0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"No Controller\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002AB0",
+   "rom": "0x36B0",
+   "size": 48,
+   "section": ".rodata",
+   "name": "D_80002AB0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"This game is not designed \\n for this System\\000\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002AE0",
+   "rom": "0x36E0",
+   "size": 24,
+   "section": ".rodata",
+   "name": "jtbl_80002AE0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8003044C",
+     "sym": "func_80030350",
+     "off": 252
+    },
+    {
+     "reloc": "0x800303FC",
+     "sym": "func_80030350",
+     "off": 172
+    },
+    {
+     "reloc": "0x8003043C",
+     "sym": "func_80030350",
+     "off": 236
+    },
+    {
+     "reloc": "0x8003042C",
+     "sym": "func_80030350",
+     "off": 220
+    },
+    {
+     "reloc": "0x80030434",
+     "sym": "func_80030350",
+     "off": 228
+    },
+    {
+     "reloc": "0x80030444",
+     "sym": "func_80030350",
+     "off": 244
+    }
+   ]
+  },
+  {
+   "vram": "0x80002AF8",
+   "rom": "0x36F8",
+   "size": 36,
+   "section": ".rodata",
+   "name": "jtbl_80002AF8",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80030874",
+     "sym": "func_80030840",
+     "off": 52
+    },
+    {
+     "reloc": "0x80030884",
+     "sym": "func_80030840",
+     "off": 68
+    },
+    {
+     "reloc": "0x80030894",
+     "sym": "func_80030840",
+     "off": 84
+    },
+    {
+     "reloc": "0x800308A4",
+     "sym": "func_80030840",
+     "off": 100
+    },
+    {
+     "reloc": "0x800308BC",
+     "sym": "func_80030840",
+     "off": 124
+    },
+    {
+     "reloc": "0x800308CC",
+     "sym": "func_80030840",
+     "off": 140
+    },
+    {
+     "reloc": "0x800308DC",
+     "sym": "func_80030840",
+     "off": 156
+    },
+    {
+     "reloc": "0x800308EC",
+     "sym": "func_80030840",
+     "off": 172
+    },
+    {
+     "reloc": "0x800308FC",
+     "sym": "func_80030840",
+     "off": 188
+    }
+   ]
+  },
+  {
+   "vram": "0x80002B1C",
+   "rom": "0x371C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_80002B1C",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80002B20",
+   "rom": "0x3720",
+   "size": 20,
+   "section": ".rodata",
+   "name": "jtbl_80002B20",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80030EBC",
+     "sym": "func_80030E88",
+     "off": 52
+    },
+    {
+     "reloc": "0x80030ECC",
+     "sym": "func_80030E88",
+     "off": 68
+    },
+    {
+     "reloc": "0x80030EDC",
+     "sym": "func_80030E88",
+     "off": 84
+    },
+    {
+     "reloc": "0x80030EEC",
+     "sym": "func_80030E88",
+     "off": 100
+    },
+    {
+     "reloc": "0x80030EFC",
+     "sym": "func_80030E88",
+     "off": 116
+    }
+   ]
+  },
+  {
+   "vram": "0x80002B34",
+   "rom": "0x3734",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002B34",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Babies Win!\\000Angelica Wins!\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002B50",
+   "rom": "0x3750",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B50",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "300.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B54",
+   "rom": "0x3754",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B54",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "270.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B58",
+   "rom": "0x3758",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B58",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "90.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B5C",
+   "rom": "0x375C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B5C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B60",
+   "rom": "0x3760",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B60",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B64",
+   "rom": "0x3764",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B64",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-425.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B68",
+   "rom": "0x3768",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B68",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-425.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B6C",
+   "rom": "0x376C",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80002B6C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Choose a hiding place\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002B84",
+   "rom": "0x3784",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002B84",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Look inside\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80002B90",
+   "rom": "0x3790",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B90",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-50.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B94",
+   "rom": "0x3794",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B94",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "50.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B98",
+   "rom": "0x3798",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B98",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-1500.0f"
+   ]
+  },
+  {
+   "vram": "0x80002B9C",
+   "rom": "0x379C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002B9C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-200.0f"
+   ]
+  },
+  {
+   "vram": "0x80002BA0",
+   "rom": "0x37A0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002BA0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-3000.0f"
+   ]
+  },
+  {
+   "vram": "0x80002BA4",
+   "rom": "0x37A4",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002BA4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-8500.0f",
+    "12933471.0f",
+    "13440987136.0f"
+   ]
+  },
+  {
+   "vram": "0x80002BB0",
+   "rom": "0x37B0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002BB0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f",
+    "840.0f",
+    "-2.6164308388710655e+33f",
+    "2.525202305882768e-29f"
+   ]
+  },
+  {
+   "vram": "0x80002BC0",
+   "rom": "0x37C0",
+   "size": 20,
+   "section": ".rodata",
+   "name": "jtbl_80002BC0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80033BB0",
+     "sym": "func_80033970",
+     "off": 576
+    },
+    {
+     "reloc": "0x80033BD8",
+     "sym": "func_80033970",
+     "off": 616
+    },
+    {
+     "reloc": "0x80033C08",
+     "sym": "func_80033970",
+     "off": 664
+    },
+    {
+     "reloc": "0x80033CC8",
+     "sym": "func_80033970",
+     "off": 856
+    },
+    {
+     "reloc": "0x80033C24",
+     "sym": "func_80033970",
+     "off": 692
+    }
+   ]
+  },
+  {
+   "vram": "0x80002BD4",
+   "rom": "0x37D4",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002BD4",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x4163746F",
+    "0x72207479",
+    "0x70652025",
+    "0x640A0000",
+    "0x0E4D5553",
+    "0x49435F49",
+    "0x4E54524F"
+   ],
+   "literal": "\"Actor type %d\\n\\000\\000\\016MUSIC_INTRO\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_80033970, func_80033E90"
+  },
+  {
+   "vram": "0x80002BF0",
+   "rom": "0x37F0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002BF0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80002BF4",
+   "rom": "0x37F4",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002BF4",
+   "rep": "struct",
+   "stype": "Struct_80002BF4",
+   "stride": 12,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "f32",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "unk_04",
+     "n": 2,
+     "unk": true
+    }
+   ],
+   "values": [
+    [
+     "1.0f",
+     [
+      "0x00001000",
+      "0x0B000000"
+     ]
+    ]
+   ],
+   "note": "single struct from direct accesses; no conflicts"
+  },
+  {
+   "vram": "0x80002C00",
+   "rom": "0x3800",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80002C00",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Pudding\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C08",
+   "rom": "0x3808",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002C08",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Chocolate Milk\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C18",
+   "rom": "0x3818",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002C18",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Licorice\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C24",
+   "rom": "0x3824",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002C24",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Ice Cream\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C30",
+   "rom": "0x3830",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80002C30",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Bring Susie Here\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C44",
+   "rom": "0x3844",
+   "size": 44,
+   "section": ".rodata",
+   "name": "D_80002C44",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Reptar - Move Set Spin,\\nDon't Lose Energy\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C70",
+   "rom": "0x3870",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002C70",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Send Baby Away\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C80",
+   "rom": "0x3880",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002C80",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Trade Energy for Cookies\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002C9C",
+   "rom": "0x389C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80002C9C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Bring Baby Here\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002CAC",
+   "rom": "0x38AC",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80002CAC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Bring Angelica Here\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002CC0",
+   "rom": "0x38C0",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80002CC0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Send Angelica Away\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002CD4",
+   "rom": "0x38D4",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002CD4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Set Spin (Move 1-5 Spaces)\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002CF0",
+   "rom": "0x38F0",
+   "size": 40,
+   "section": ".rodata",
+   "name": "D_80002CF0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Reptar - Set Spin,\\nDon't Lose Energy\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D18",
+   "rom": "0x3918",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002D18",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"On\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D1C",
+   "rom": "0x391C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002D1C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Off\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D20",
+   "rom": "0x3920",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80002D20",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Ctlr 4\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D28",
+   "rom": "0x3928",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80002D28",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Ctlr 3\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D30",
+   "rom": "0x3930",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80002D30",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Ctlr 2\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D38",
+   "rom": "0x3938",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80002D38",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Ctlr 1\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D40",
+   "rom": "0x3940",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002D40",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00"
+   ],
+   "note": "element u8 from 18 traced accesses at 3 offsets"
+  },
+  {
+   "vram": "0x80002D44",
+   "rom": "0x3944",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80002D44",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"CPU\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D48",
+   "rom": "0x3948",
+   "size": 36,
+   "section": ".rodata",
+   "name": "D_80002D48",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"No cookies for\\nAngelica to take!\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D6C",
+   "rom": "0x396C",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80002D6C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Baby gets statue piece back!\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002D8C",
+   "rom": "0x398C",
+   "size": 36,
+   "section": ".rodata",
+   "name": "D_80002D8C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Angelica takes\\nremaining cookies!\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002DB0",
+   "rom": "0x39B0",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80002DB0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Angelica takes statue piece!\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002DD0",
+   "rom": "0x39D0",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80002DD0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Angelica gets her statue piece!\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002DF0",
+   "rom": "0x39F0",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002DF0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Angelica takes 10 cookies!\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002E0C",
+   "rom": "0x3A0C",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80002E0C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"No Items left in this room\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002E28",
+   "rom": "0x3A28",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80002E28",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Not Enough Cookies\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002E3C",
+   "rom": "0x3A3C",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80002E3C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Susie finds treasure\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80002E54",
+   "rom": "0x3A54",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80002E54",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Treasure!\\000\\000\\000\"",
+   "note": ""
+  }
+ ],
+ "end": "0x80002E60",
+ "size": 2128,
+ "c_file": "rodata_80002610.c"
+}

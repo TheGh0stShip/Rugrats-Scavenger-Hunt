@@ -1,0 +1,31 @@
+{
+ "section": ".data",
+ "vram": "0x800039E0",
+ "objects": [
+  {
+   "vram": "0x800039E0",
+   "rom": "0x45E0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800039E0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x800039E4",
+   "rom": "0x45E4",
+   "size": 12,
+   "section": ".data",
+   "name": "D_800039E4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"sprawdma.c\\000\\000\"",
+   "note": "text; byte accesses only"
+  }
+ ],
+ "end": "0x800039F0",
+ "size": 16,
+ "c_file": "data_800039E0.c"
+}

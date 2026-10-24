@@ -30,9 +30,9 @@ The gap-free ledger has 1,907 non-overlapping intervals covering 16,777,216 / 16
 
 ## Executable and function coverage
 
-The two executable sections total 323,264 bytes. The function catalogue contains 1,273 functions spanning 314,340 instruction bytes; the remaining 8,924 executable-section bytes are padding, embedded tables, or boundary-sensitive regions and are not invented as functions.
+The two executable sections total 323,752 bytes. The function catalogue contains 1,273 functions spanning 314,340 instruction bytes; the remaining 9,412 executable-section bytes are padding, embedded tables, or boundary-sensitive regions and are not invented as functions.
 
-- Exact manifest coverage: 127,424 / 323,264 bytes (39.417937%)
+- Exact manifest coverage: 127,424 / 323,752 bytes (39.358521%)
 - Fully covered functions: 828 / 1,273 (65.043205%)
 - Partially covered catalogue functions: 0
 - Catalogue classifications: {'asm': 34, 'c': 874, 'leaf': 259, 'stub': 106}
@@ -44,7 +44,7 @@ The survey and physical audit disagree only in terminology: the older survey lab
 
 ## Program data
 
-Initialized writable data totals 32,704 bytes; 640 bytes are presently byte-matched. Read-only data totals 13,732 bytes and includes strings, floating-point constants, jump tables, and embedded control data owned by code units.
+Initialized writable data totals 32,216 bytes; 32,216 bytes are presently byte-matched. Read-only data totals 13,732 bytes and includes strings, floating-point constants, jump tables, and embedded control data owned by code units.
 
 ## Audio structures
 

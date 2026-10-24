@@ -1,0 +1,2561 @@
+{
+ "section": ".data",
+ "vram": "0x800533E0",
+ "objects": [
+  {
+   "vram": "0x800533E0",
+   "rom": "0x53FE0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800533E0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x800533E4",
+   "rom": "0x53FE4",
+   "size": 24,
+   "section": ".data",
+   "name": "D_800533E4",
+   "rep": "struct",
+   "stype": "Struct_800533E4",
+   "stride": 8,
+   "count": 3,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u32",
+     "name": "unk_00",
+     "n": 1,
+     "unk": true
+    },
+    {
+     "off": 4,
+     "ctype": "s16",
+     "name": "field_04",
+     "n": 1
+    },
+    {
+     "off": 6,
+     "ctype": "s16",
+     "name": "field_06",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     [
+      "0x00000000"
+     ],
+     366,
+     200
+    ],
+    [
+     [
+      "0x00000000"
+     ],
+     146,
+     200
+    ],
+    [
+     [
+      "0x00000000"
+     ],
+     256,
+     200
+    ]
+   ],
+   "note": "stride 0x8 from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x800533FC",
+   "rom": "0x53FFC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800533FC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-950.0f"
+   ]
+  },
+  {
+   "vram": "0x80053400",
+   "rom": "0x54000",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053400",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80053404",
+   "rom": "0x54004",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053404",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-6000.0f"
+   ]
+  },
+  {
+   "vram": "0x80053408",
+   "rom": "0x54008",
+   "size": 8,
+   "section": ".data",
+   "name": "D_80053408",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f",
+    "1.1708476815627964e+27f"
+   ]
+  },
+  {
+   "vram": "0x80053410",
+   "rom": "0x54010",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053410",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 4 traced accesses"
+  },
+  {
+   "vram": "0x80053414",
+   "rom": "0x54014",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053414",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "element type from 10 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80053418",
+   "rom": "0x54018",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053418",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 2 traced accesses"
+  },
+  {
+   "vram": "0x8005341C",
+   "rom": "0x5401C",
+   "size": 8,
+   "section": ".data",
+   "name": "D_8005341C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element type from 14 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80053424",
+   "rom": "0x54024",
+   "size": 28,
+   "section": ".data",
+   "name": "D_80053424",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00010100",
+    "0x00000001",
+    "0x01000000",
+    "0x00010100",
+    "0x00000001",
+    "0x01000000"
+   ],
+   "note": "element u32 from 5 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053440",
+   "rom": "0x54040",
+   "size": 64,
+   "section": ".data",
+   "name": "D_80053440",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000064",
+    "0x00000067",
+    "0x00000068",
+    "0x00000069",
+    "0x0000006A",
+    "0x0000006D",
+    "0x0000006E",
+    "0x0000006F",
+    "0x00000070",
+    "0x00000073",
+    "0x00000074",
+    "0x00000075",
+    "0x00000076",
+    "0x00000079",
+    "0x0000007A",
+    "0x0000007B"
+   ],
+   "note": "element type from 3 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80053480",
+   "rom": "0x54080",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053480",
+   "rep": "typed-array",
+   "ctype": "s16",
+   "values": [
+    -200,
+    100
+   ],
+   "note": "element s16 from 13 traced accesses at 2 offsets"
+  },
+  {
+   "vram": "0x80053484",
+   "rom": "0x54084",
+   "size": 60,
+   "section": ".data",
+   "name": "D_80053484",
+   "rep": "typed-array",
+   "ctype": "s16",
+   "values": [
+    0,
+    0,
+    200,
+    100,
+    0,
+    0,
+    -200,
+    -120,
+    0,
+    0,
+    200,
+    -120,
+    0,
+    0,
+    100,
+    -100,
+    0,
+    0,
+    -200,
+    -10,
+    0,
+    0,
+    210,
+    -10,
+    0,
+    0,
+    -110,
+    -80,
+    0,
+    0
+   ],
+   "note": "s16 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)"
+  },
+  {
+   "vram": "0x800534C0",
+   "rom": "0x540C0",
+   "size": 48,
+   "section": ".data",
+   "name": "D_800534C0",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0xFB",
+    "0x00",
+    "0xE9",
+    "0x00",
+    "0xC2",
+    "0x00",
+    "0xEA",
+    "0x00",
+    "0x87",
+    "0x00",
+    "0x10",
+    "0x00",
+    "0xCD",
+    "0x00",
+    "0x8B",
+    "0x00",
+    "0x95",
+    "0x00",
+    "0x10",
+    "0x00",
+    "0xAB",
+    "0x00",
+    "0xEB",
+    "0x00",
+    "0xFA",
+    "0x00",
+    "0xDC",
+    "0x00",
+    "0x54",
+    "0x00",
+    "0x5F",
+    "0x00",
+    "0xA5",
+    "0x00",
+    "0x49",
+    "0x00",
+    "0xE5",
+    "0x00",
+    "0xB8",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0xC0",
+    "0x00",
+    "0x02",
+    "0x00",
+    "0x40"
+   ],
+   "note": "element u8 from 8 traced accesses at 3 offsets"
+  },
+  {
+   "vram": "0x800534F0",
+   "rom": "0x540F0",
+   "size": 88,
+   "section": ".data",
+   "name": "D_800534F0",
+   "rep": "struct",
+   "stype": "Struct_800534F0",
+   "stride": 4,
+   "count": 22,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "s16",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 2,
+     "ctype": "s16",
+     "name": "field_02",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     80,
+     48
+    ],
+    [
+     432,
+     48
+    ],
+    [
+     80,
+     172
+    ],
+    [
+     432,
+     172
+    ],
+    [
+     292,
+     160
+    ],
+    [
+     34,
+     116
+    ],
+    [
+     420,
+     108
+    ],
+    [
+     120,
+     152
+    ],
+    [
+     212,
+     156
+    ],
+    [
+     200,
+     108
+    ],
+    [
+     200,
+     108
+    ],
+    [
+     200,
+     108
+    ],
+    [
+     200,
+     44
+    ],
+    [
+     124,
+     99
+    ],
+    [
+     280,
+     113
+    ],
+    [
+     299,
+     61
+    ],
+    [
+     146,
+     52
+    ],
+    [
+     210,
+     31
+    ],
+    [
+     207,
+     92
+    ],
+    [
+     210,
+     147
+    ],
+    [
+     300,
+     58
+    ],
+    [
+     314,
+     123
+    ]
+   ],
+   "note": "stride 0x4 from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x80053548",
+   "rom": "0x54148",
+   "size": 36,
+   "section": ".data",
+   "name": "D_80053548",
+   "rep": "struct",
+   "stype": "Struct_80053548",
+   "stride": 4,
+   "count": 9,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u16",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 2,
+     "ctype": "u16",
+     "name": "field_02",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0000",
+     "0x0003"
+    ],
+    [
+     "0x0002",
+     "0x0002"
+    ],
+    [
+     "0x0008",
+     "0x0000"
+    ],
+    [
+     "0x0008",
+     "0x0000"
+    ],
+    [
+     "0x0000",
+     "0x0005"
+    ],
+    [
+     "0xFF00",
+     "0x0078"
+    ],
+    [
+     "0xFFCE",
+     "0x003C"
+    ],
+    [
+     "0x0100",
+     "0x0078"
+    ],
+    [
+     "0xF448",
+     "0x0000"
+    ]
+   ],
+   "note": "stride 0x4 from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x8005356C",
+   "rom": "0x5416C",
+   "size": 68,
+   "section": ".data",
+   "name": "D_8005356C",
+   "rep": "struct",
+   "stype": "Struct_8005356C",
+   "stride": 4,
+   "count": 17,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u16",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 2,
+     "ctype": "u16",
+     "name": "field_02",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0xFFF0",
+     "0xFF96"
+    ],
+    [
+     "0xFFF0",
+     "0xFFEA"
+    ],
+    [
+     "0xFFF0",
+     "0xFFEA"
+    ],
+    [
+     "0xFFF0",
+     "0xFFEA"
+    ],
+    [
+     "0xFFF0",
+     "0x003E"
+    ],
+    [
+     "0xFF96",
+     "0xFFEA"
+    ],
+    [
+     "0x004A",
+     "0xFFEA"
+    ],
+    [
+     "0x0044",
+     "0x005C"
+    ],
+    [
+     "0xFFAE",
+     "0x0062"
+    ],
+    [
+     "0x0000",
+     "0x0052"
+    ],
+    [
+     "0x0000",
+     "0x0000"
+    ],
+    [
+     "0x0000",
+     "0xFF9E"
+    ],
+    [
+     "0x005A",
+     "0x0046"
+    ],
+    [
+     "0x0064",
+     "0xFFE2"
+    ],
+    [
+     "0x4E6F",
+     "0x7465"
+    ],
+    [
+     "0x4E61",
+     "0x6D65"
+    ],
+    [
+     "0x2820",
+     "0x6368"
+    ]
+   ],
+   "note": "stride 0x4 from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x800535B0",
+   "rom": "0x541B0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800535B0",
+   "rep": "struct",
+   "stype": "Struct_800535B0",
+   "stride": 4,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u16",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 2,
+     "ctype": "s16",
+     "name": "field_02",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0028",
+     15
+    ]
+   ],
+   "note": "single struct from direct accesses; no conflicts"
+  },
+  {
+   "vram": "0x800535B4",
+   "rom": "0x541B4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800535B4",
+   "rep": "typed-array",
+   "ctype": "u16",
+   "values": [
+    "0x0028",
+    "0x0027"
+   ],
+   "note": "element u16 from 3 traced accesses at 2 offsets"
+  },
+  {
+   "vram": "0x800535B8",
+   "rom": "0x541B8",
+   "size": 16,
+   "section": ".data",
+   "name": "D_800535B8",
+   "rep": "struct",
+   "stype": "Struct_800535B8",
+   "stride": 4,
+   "count": 4,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "s16",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 2,
+     "ctype": "s16",
+     "name": "field_02",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     40,
+     15
+    ],
+    [
+     284,
+     15
+    ],
+    [
+     40,
+     201
+    ],
+    [
+     284,
+     201
+    ]
+   ],
+   "note": "stride 0x4 from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x800535C8",
+   "rom": "0x541C8",
+   "size": 16,
+   "section": ".data",
+   "name": "D_800535C8",
+   "rep": "struct",
+   "stype": "Struct_800535C8",
+   "stride": 4,
+   "count": 4,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u16",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 2,
+     "ctype": "u16",
+     "name": "field_02",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0028",
+     "0x0027"
+    ],
+    [
+     "0x011C",
+     "0x0027"
+    ],
+    [
+     "0x0028",
+     "0x00B1"
+    ],
+    [
+     "0x011C",
+     "0x00B1"
+    ]
+   ],
+   "note": "stride 0x4 from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x800535D8",
+   "rom": "0x541D8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800535D8",
+   "rep": "typed-array",
+   "ctype": "s16",
+   "values": [
+    40,
+    200
+   ],
+   "note": "element s16 from 7 traced accesses at 2 offsets"
+  },
+  {
+   "vram": "0x800535DC",
+   "rom": "0x541DC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800535DC",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 4 traced accesses"
+  },
+  {
+   "vram": "0x800535E0",
+   "rom": "0x541E0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800535E0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 11 traced accesses"
+  },
+  {
+   "vram": "0x800535E4",
+   "rom": "0x541E4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800535E4",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 7 traced accesses"
+  },
+  {
+   "vram": "0x800535E8",
+   "rom": "0x541E8",
+   "size": 28,
+   "section": ".data",
+   "name": "D_800535E8",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x80001680",
+    "0x80001678",
+    "0x80001674",
+    "0x8000166C",
+    "0x80001664",
+    "0x8000165C",
+    "0x80001650"
+   ],
+   "note": "element type from 2 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80053604",
+   "rom": "0x54204",
+   "size": 24,
+   "section": ".data",
+   "name": "D_80053604",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x05",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x02",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x04"
+   ],
+   "note": "element u8 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x8005361C",
+   "rom": "0x5421C",
+   "size": 24,
+   "section": ".data",
+   "name": "D_8005361C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000002",
+    "0x00000004",
+    "0x00000001",
+    "0x00000005",
+    "0x00000003"
+   ],
+   "note": "element type from 2 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80053634",
+   "rom": "0x54234",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053634",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 23 traced accesses"
+  },
+  {
+   "vram": "0x80053638",
+   "rom": "0x54238",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053638",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 8 traced accesses"
+  },
+  {
+   "vram": "0x8005363C",
+   "rom": "0x5423C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005363C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80053640",
+   "rom": "0x54240",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053640",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-300.0f"
+   ]
+  },
+  {
+   "vram": "0x80053644",
+   "rom": "0x54244",
+   "size": 52,
+   "section": ".data",
+   "name": "D_80053644",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-6000.0f",
+    "810.0f",
+    "0.0f",
+    "-7050.0f",
+    "500.0f",
+    "400.0f",
+    "-8000.0f",
+    "-500.0f",
+    "400.0f",
+    "-8000.0f",
+    "-810.0f",
+    "0.0f",
+    "-7050.0f"
+   ]
+  },
+  {
+   "vram": "0x80053678",
+   "rom": "0x54278",
+   "size": 20,
+   "section": ".data",
+   "name": "D_80053678",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800016D4",
+     "sym": "D_800016D4",
+     "off": 0
+    },
+    {
+     "reloc": "0x800016CC",
+     "sym": "D_800016CC",
+     "off": 0
+    },
+    {
+     "reloc": "0x800016BC",
+     "sym": "D_800016BC",
+     "off": 0
+    },
+    {
+     "reloc": "0x800016A4",
+     "sym": "D_800016A4",
+     "off": 0
+    },
+    {
+     "reloc": "0x80001688",
+     "sym": "D_80001688",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x8005368C",
+   "rom": "0x5428C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005368C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80053690",
+   "rom": "0x54290",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053690",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80053694",
+   "rom": "0x54294",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053694",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80053698",
+   "rom": "0x54298",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053698",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x8005369C",
+   "rom": "0x5429C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005369C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "20.0f"
+   ]
+  },
+  {
+   "vram": "0x800536A0",
+   "rom": "0x542A0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536A0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-2300.0f"
+   ]
+  },
+  {
+   "vram": "0x800536A4",
+   "rom": "0x542A4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536A4",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 4 traced accesses"
+  },
+  {
+   "vram": "0x800536A8",
+   "rom": "0x542A8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536A8",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x800536AC",
+   "rom": "0x542AC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536AC",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0xC6A41000"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x800536B0",
+   "rom": "0x542B0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536B0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800536B4",
+   "rom": "0x542B4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536B4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800536B8",
+   "rom": "0x542B8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536B8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800536BC",
+   "rom": "0x542BC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536BC",
+   "rep": "typed-array",
+   "ctype": "u16",
+   "values": [
+    "0x0000",
+    "0x0000"
+   ],
+   "note": "element u16 from 6 traced accesses at 2 offsets"
+  },
+  {
+   "vram": "0x800536C0",
+   "rom": "0x542C0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536C0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 4 traced accesses"
+  },
+  {
+   "vram": "0x800536C4",
+   "rom": "0x542C4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536C4",
+   "rep": "typed-array",
+   "ctype": "s16",
+   "values": [
+    0,
+    0
+   ],
+   "note": "element s16 from 6 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800536C8",
+   "rom": "0x542C8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536C8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800536CC",
+   "rom": "0x542CC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800536CC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800536D0",
+   "rom": "0x542D0",
+   "size": 44,
+   "section": ".data",
+   "name": "D_800536D0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f",
+    "-400.0f",
+    "0.0f",
+    "-4000.0f",
+    "0.0f",
+    "0.0f",
+    "-21000.0f",
+    "0.0f",
+    "0.0f",
+    "0.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800536FC",
+   "rom": "0x542FC",
+   "size": 60,
+   "section": ".data",
+   "name": "D_800536FC",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0xC3FA0000",
+    "0xC3960000",
+    "0xC57A0000",
+    "0x00000000",
+    "0x00000000",
+    "0xC6A41000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 4 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053738",
+   "rom": "0x54338",
+   "size": 60,
+   "section": ".data",
+   "name": "D_80053738",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x42480000",
+    "0xC53B8000",
+    "0x00000000",
+    "0x00000000",
+    "0xC6A41000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053774",
+   "rom": "0x54374",
+   "size": 60,
+   "section": ".data",
+   "name": "D_80053774",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0xC3480000",
+    "0x00000000",
+    "0xC53B8000",
+    "0x00000000",
+    "0x00000000",
+    "0xC6A41000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800537B0",
+   "rom": "0x543B0",
+   "size": 8,
+   "section": ".data",
+   "name": "D_800537B0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800537B8",
+   "rom": "0x543B8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800537B8",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x05",
+    "0x0B",
+    "0x16",
+    "0x2D"
+   ],
+   "note": "element u8 from 4 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800537BC",
+   "rom": "0x543BC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800537BC",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x5A",
+    "0x00",
+    "0x00",
+    "0x00"
+   ],
+   "note": "element u8 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800537C0",
+   "rom": "0x543C0",
+   "size": 20,
+   "section": ".data",
+   "name": "D_800537C0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000005",
+    "0x00000005",
+    "0x00000005",
+    "0x00000005",
+    "0x00000000"
+   ],
+   "note": "element type from 4 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x800537D4",
+   "rom": "0x543D4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800537D4",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 14 traced accesses"
+  },
+  {
+   "vram": "0x800537D8",
+   "rom": "0x543D8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800537D8",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 12 traced accesses"
+  },
+  {
+   "vram": "0x800537DC",
+   "rom": "0x543DC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800537DC",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0xFFFFFFFF"
+   ],
+   "note": "scalar type from 6 traced accesses"
+  },
+  {
+   "vram": "0x800537E0",
+   "rom": "0x543E0",
+   "size": 8,
+   "section": ".data",
+   "name": "D_800537E0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800537E8",
+   "rom": "0x543E8",
+   "size": 60,
+   "section": ".data",
+   "name": "D_800537E8",
+   "rep": "struct",
+   "stype": "Struct_800537E8",
+   "stride": 12,
+   "count": 5,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u32",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "field_04",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "field_08",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0xC3480000",
+     "0xC1A00000",
+     "0xC5034000"
+    ],
+    [
+     "0xC3820000",
+     "0x00000000",
+     "0xC5034000"
+    ],
+    [
+     "0xC30C0000",
+     "0x00000000",
+     "0xC5034000"
+    ],
+    [
+     "0xC3660000",
+     "0x42200000",
+     "0xC5034000"
+    ],
+    [
+     "0xC32A0000",
+     "0x42200000",
+     "0xC5034000"
+    ]
+   ],
+   "note": "stride 0xC from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x80053824",
+   "rom": "0x54424",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053824",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 3 traced accesses"
+  },
+  {
+   "vram": "0x80053828",
+   "rom": "0x54428",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053828",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x8005382C",
+   "rom": "0x5442C",
+   "size": 28,
+   "section": ".data",
+   "name": "D_8005382C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x0000001B",
+    "0x00000001",
+    "0x00000002",
+    "0x00000003",
+    "0x00000004",
+    "0x00000004",
+    "0x00000004"
+   ],
+   "note": "element u32 from 4 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053848",
+   "rom": "0x54448",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80053848",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000004",
+    "0x00000004",
+    "0x00000004",
+    "0x00000004"
+   ],
+   "note": "element u32 from 3 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053858",
+   "rom": "0x54458",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053858",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 2 traced accesses"
+  },
+  {
+   "vram": "0x8005385C",
+   "rom": "0x5445C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005385C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 4 traced accesses"
+  },
+  {
+   "vram": "0x80053860",
+   "rom": "0x54460",
+   "size": 144,
+   "section": ".data",
+   "name": "D_80053860",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0xFFFFFF38",
+    "0x000000C8",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0xFFFFFE70",
+    "0x00000000",
+    "0xFFFFFE70",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0xFFFFFDA8",
+    "0xFFFFFF38",
+    "0x000000C8",
+    "0x00000258",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0xFFFFFD44",
+    "0xFFFFFE5C",
+    "0xFFFFFF74",
+    "0x0000008C",
+    "0x000001A4",
+    "0x000002BC"
+   ],
+   "note": "element type from 3 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x800538F0",
+   "rom": "0x544F0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800538F0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 8 traced accesses"
+  },
+  {
+   "vram": "0x800538F4",
+   "rom": "0x544F4",
+   "size": 12,
+   "section": ".data",
+   "name": "D_800538F4",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x6C536F6E",
+    "0x6728696E"
+   ],
+   "note": "element u32 from 4 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053900",
+   "rom": "0x54500",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053900",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x80053904",
+   "rom": "0x54504",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053904",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x80053908",
+   "rom": "0x54508",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053908",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x8005390C",
+   "rom": "0x5450C",
+   "size": 28,
+   "section": ".data",
+   "name": "D_8005390C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000201",
+    "0x00000203",
+    "0x00000204",
+    "0x00000205",
+    "0x0000020B",
+    "0x0000020D"
+   ],
+   "note": "element u32 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053928",
+   "rom": "0x54528",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053928",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 3 traced accesses"
+  },
+  {
+   "vram": "0x8005392C",
+   "rom": "0x5452C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005392C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 4 traced accesses"
+  },
+  {
+   "vram": "0x80053930",
+   "rom": "0x54530",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053930",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 2 traced accesses"
+  },
+  {
+   "vram": "0x80053934",
+   "rom": "0x54534",
+   "size": 68,
+   "section": ".data",
+   "name": "D_80053934",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000080",
+    "0x00000019",
+    "0xB0111310",
+    "0xB0215C80",
+    "0xB021AC00",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000080",
+    "0x00000019",
+    "0xB0111310",
+    "0xB0215C80",
+    "0xB021AC00",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 4 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053978",
+   "rom": "0x54578",
+   "size": 8,
+   "section": ".data",
+   "name": "D_80053978",
+   "rep": "typed-array",
+   "ctype": "u16",
+   "values": [
+    "0x0000",
+    "0x0000",
+    "0x0000",
+    "0x0000"
+   ],
+   "note": "element type from 20 traced accesses, stride 2"
+  },
+  {
+   "vram": "0x80053980",
+   "rom": "0x54580",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80053980",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 5 traced accesses"
+  },
+  {
+   "vram": "0x80053984",
+   "rom": "0x54584",
+   "size": 12,
+   "section": ".data",
+   "name": "D_80053984",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x656C4E75",
+    "0x6D293B0D"
+   ],
+   "note": "element u32 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80053990",
+   "rom": "0x54590",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80053990",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0xFFFFFFFF",
+    "0xFFFFFFFF",
+    "0x73696345",
+    "0x6E64286C"
+   ],
+   "note": "element u32 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800539A0",
+   "rom": "0x545A0",
+   "size": 16,
+   "section": ".data",
+   "name": "D_800539A0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x73636F72",
+    "0x65293B0D",
+    "0x0A766F69"
+   ],
+   "note": "element u32 from 4 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800539B0",
+   "rom": "0x545B0",
+   "size": 16,
+   "section": ".data",
+   "name": "D_800539B0",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x07",
+    "0x04",
+    "0x03",
+    "0x02",
+    "0x70",
+    "0x53",
+    "0x6F",
+    "0x6E",
+    "0x67",
+    "0x28",
+    "0x69",
+    "0x6E",
+    "0x74",
+    "0x20",
+    "0x62"
+   ],
+   "note": "element u8 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800539C0",
+   "rom": "0x545C0",
+   "size": 148,
+   "section": ".data",
+   "name": "D_800539C0",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x0A",
+    "0x08",
+    "0x01",
+    "0x07",
+    "0x09",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x05",
+    "0x00",
+    "0x00",
+    "0x02",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x08",
+    "0x06",
+    "0x07",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x07",
+    "0x04",
+    "0x02",
+    "0x01",
+    "0x0A",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x06",
+    "0x00",
+    "0x00",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x05",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x07",
+    "0x01",
+    "0x07",
+    "0x09",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x09",
+    "0x01",
+    "0x07",
+    "0x08",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x05",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x02",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x0A",
+    "0x07",
+    "0x01",
+    "0x06",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00"
+   ],
+   "note": "u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)"
+  },
+  {
+   "vram": "0x80053A54",
+   "rom": "0x54654",
+   "size": 192,
+   "section": ".data",
+   "name": "D_80053A54",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x09",
+    "0x01",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x05",
+    "0x02",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x07",
+    "0x00",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x03",
+    "0x0A",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x06",
+    "0x04",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x02",
+    "0x00",
+    "0x0A",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x01",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x09",
+    "0x01",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x07",
+    "0x09",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x07",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x08",
+    "0x03",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x0A",
+    "0x00",
+    "0x05",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x02",
+    "0x04",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00"
+   ],
+   "note": "u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)"
+  },
+  {
+   "vram": "0x80053B14",
+   "rom": "0x54714",
+   "size": 192,
+   "section": ".data",
+   "name": "D_80053B14",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x0A",
+    "0x07",
+    "0x06",
+    "0x01",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x07",
+    "0x09",
+    "0x02",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x01",
+    "0x0A",
+    "0x02",
+    "0x09",
+    "0x00",
+    "0x00",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x07",
+    "0x05",
+    "0x08",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x07",
+    "0x08",
+    "0x07",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x09",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x06",
+    "0x00",
+    "0x00",
+    "0x02",
+    "0x0A",
+    "0x04",
+    "0x01",
+    "0x03",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00"
+   ],
+   "note": "u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)"
+  },
+  {
+   "vram": "0x80053BD4",
+   "rom": "0x547D4",
+   "size": 108,
+   "section": ".data",
+   "name": "D_80053BD4",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x07",
+    "0x02",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x01",
+    "0x08",
+    "0x00",
+    "0x00",
+    "0x0A",
+    "0x00",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x06",
+    "0x09",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x08",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x03",
+    "0x00",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x02",
+    "0x09",
+    "0x00",
+    "0x00",
+    "0x05",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x07",
+    "0x0A",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x08",
+    "0x03",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x02",
+    "0x00",
+    "0x07",
+    "0x00",
+    "0x00",
+    "0x09",
+    "0x0A",
+    "0x01",
+    "0x00",
+    "0x00",
+    "0x01",
+    "0x00",
+    "0x06",
+    "0x00",
+    "0x00",
+    "0x07",
+    "0x01",
+    "0x04",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00",
+    "0x00"
+   ],
+   "note": "u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)"
+  }
+ ],
+ "end": "0x80053C40",
+ "size": 2144,
+ "c_file": "data_800533E0.c"
+}

@@ -1,0 +1,772 @@
+vram_start	vram_end	size	symbol	type	align	kind	referenced_by	evidence
+0x80057280	0x80057284	0x4	D_80057280	s32	8	referenced	func_80003ACC	kinds=mem;widths=4;size=access_width
+0x80057284	0x80057290	0xC	bss_gap_80057284	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x80057290	0x80057298	0x8	D_80057290	u8[8]	8	referenced	func_80004CBC	kinds=addr;size=next_ref
+0x80057298	0x800572A0	0x8	D_80057298	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572A0	0x800572A8	0x8	D_800572A0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572A8	0x800572B0	0x8	D_800572A8	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572B0	0x800572B8	0x8	D_800572B0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572B8	0x800572C0	0x8	D_800572B8	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572C0	0x800572C8	0x8	D_800572C0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572C8	0x800572D0	0x8	D_800572C8	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572D0	0x800572D8	0x8	D_800572D0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572D8	0x800572E0	0x8	D_800572D8	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572E0	0x800572E8	0x8	D_800572E0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572E8	0x800572F0	0x8	D_800572E8	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572F0	0x800572F8	0x8	D_800572F0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800572F8	0x80057300	0x8	D_800572F8	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057300	0x80057308	0x8	D_80057300	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057308	0x80057310	0x8	D_80057308	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057310	0x80057318	0x8	D_80057310	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057318	0x80057320	0x8	D_80057318	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057320	0x80057328	0x8	D_80057320	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057328	0x80057330	0x8	D_80057328	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057330	0x80057338	0x8	D_80057330	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057338	0x80057340	0x8	D_80057338	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057340	0x80057348	0x8	D_80057340	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057348	0x80057350	0x8	D_80057348	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057350	0x80057358	0x8	D_80057350	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057358	0x80057360	0x8	D_80057358	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057360	0x80057368	0x8	D_80057360	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057368	0x80057370	0x8	D_80057368	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057370	0x80057378	0x8	D_80057370	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057378	0x80057380	0x8	D_80057378	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057380	0x80057388	0x8	D_80057380	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057388	0x80057390	0x8	D_80057388	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057390	0x80057398	0x8	D_80057390	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057398	0x800573A0	0x8	D_80057398	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800573A0	0x800573A8	0x8	D_800573A0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=access_width
+0x800573A8	0x80057408	0x60	bss_gap_800573A8	u8[96]	1	inferred-gap	-	no reference from code or initialized data
+0x80057408	0x800574A8	0xA0	D_80057408	u8[160]	8	referenced	func_80004458,func_80004CBC	candidate_globals:u32;kinds=mem;widths=4/8;size=next_ref
+0x800574A8	0x800574B0	0x8	D_800574A8	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574B0	0x800574B8	0x8	D_800574B0	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574B8	0x800574C0	0x8	D_800574B8	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574C0	0x800574C8	0x8	D_800574C0	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574C8	0x800574D0	0x8	D_800574C8	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574D0	0x800574D8	0x8	D_800574D0	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574D8	0x800574E0	0x8	D_800574D8	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574E0	0x800574E8	0x8	D_800574E0	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574E8	0x800574F0	0x8	D_800574E8	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574F0	0x800574F8	0x8	D_800574F0	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800574F8	0x80057500	0x8	D_800574F8	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057500	0x80057508	0x8	D_80057500	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057508	0x80057510	0x8	D_80057508	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057510	0x80057518	0x8	D_80057510	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057518	0x80057520	0x8	D_80057518	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057520	0x80057528	0x8	D_80057520	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057528	0x80057530	0x8	D_80057528	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057530	0x80057538	0x8	D_80057530	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057538	0x80057540	0x8	D_80057538	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057540	0x80057548	0x8	D_80057540	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057548	0x80057550	0x8	D_80057548	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057550	0x80057558	0x8	D_80057550	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057558	0x80057560	0x8	D_80057558	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057560	0x80057568	0x8	D_80057560	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057568	0x80057570	0x8	D_80057568	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057570	0x80057578	0x8	D_80057570	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057578	0x80057580	0x8	D_80057578	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057580	0x80057588	0x8	D_80057580	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057588	0x80057590	0x8	D_80057588	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057590	0x80057598	0x8	D_80057590	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x80057598	0x800575A0	0x8	D_80057598	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800575A0	0x800575A8	0x8	D_800575A0	f64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800575A8	0x800575AC	0x4	D_800575A8	s32	8	referenced	func_80004CBC	kinds=mem;widths=4;size=next_ref
+0x800575AC	0x800575B0	0x4	D_800575AC	s32	4	referenced	func_80004CBC	kinds=mem;widths=4;size=next_ref
+0x800575B0	0x800575B1	0x1	D_800575B0	u8	8	referenced	func_8000438C,func_80004458,func_80004CBC	candidate_globals:u8;kinds=mem;widths=1;size=access_width
+0x800575B1	0x800575B2	0x1	bss_gap_800575B1	u8	1	inferred-gap	-	no reference from code or initialized data
+0x800575B2	0x800575B3	0x1	D_800575B2	u8	2	referenced	func_8000438C,func_80004458	candidate_globals:u8;kinds=mem;widths=1;size=access_width
+0x800575B3	0x800575B8	0x5	bss_gap_800575B3	u8[5]	1	inferred-gap	-	no reference from code or initialized data
+0x800575B8	0x800575C0	0x8	D_800575B8	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800575C0	0x800575C8	0x8	D_800575C0	u64	8	referenced	func_80004CBC	kinds=mem;widths=8;size=next_ref
+0x800575C8	0x800575CC	0x4	D_800575C8	s32	8	referenced	func_80004BC0,func_80004CBC	kinds=mem;widths=4;size=next_ref
+0x800575CC	0x800575D0	0x4	D_800575CC	s32	4	referenced	func_80004CBC	kinds=mem;widths=4;size=access_width
+0x800575D0	0x80057C20	0x650	bss_gap_800575D0	u8[1616]	1	inferred-gap	-	no reference from code or initialized data
+0x80057C20	0x80057D40	0x120	D_80057C20	u8[288]	8	referenced	func_80004CBC	kinds=addr;size=next_ref
+0x80057D40	0x80057D44	0x4	D_80057D40	s32	8	referenced	func_80005544,func_80005610,func_80005AFC,func_8000E7C8,func_8001B800,func_8001C404,func_8001D1CC,func_8001D91C,func_80020E8C,func_8002B178,func_8002B72C,func_8002D51C,func_8002EBF0,func_8002F504,func_8002F6D0,func_8002F784,func_8002FAF8,func_80033970,func_80035D0C,func_80036138	kinds=mem;widths=4;size=access_width
+0x80057D44	0x80057D50	0xC	bss_gap_80057D44	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x80057D50	0x80057D54	0x4	D_80057D50	s32	8	referenced	func_8000FD38	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80057D54	0x80057D58	0x4	D_80057D54	s32	4	referenced	func_8000FD38	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80057D58	0x80057D5C	0x4	D_80057D58	s32	8	referenced	func_80005654,func_80005AFC,func_80005C4C,func_80005E3C,func_8000AE0C,func_8000B00C,func_80019E3C,func_8001C77C,func_800206F8,func_80020B28,func_800212D0,func_80021F10,func_800222E8,func_80023B84,func_80033970	kinds=mem;widths=4;size=next_ref
+0x80057D5C	0x80057D60	0x4	D_80057D5C	s32	4	referenced	func_800055C0,func_80005654,func_800059EC,func_80005AFC,func_80005C4C,func_80005E3C,func_80005EF8,func_80007BD0,func_800094A4,func_80009AF4,func_8000AD88,func_8000AE0C,func_8000B00C,func_8000E32C,func_8000F150,func_80010850,func_80015D70,func_80015DF4,func_800196A4,func_80019E3C,func_8001A5C0,func_8001C77C,func_8001C958,func_8001CAE4,func_8001D130,func_8001D1CC,func_8001D418,func_80020680,func_800206A8,func_800206D0,func_80020B28,func_800212D0,func_800218BC,func_80021F10,func_800222E8,func_80023B84,func_80023ECC,func_80023F50,func_8002411C,func_80024660,func_80024DF8,func_800255AC,func_80025C20,func_80025CCC,func_80025D60,func_80025E48,func_8002A640,func_8002A9D4,func_8002BD44,func_8002D4C0,func_8002DBD8,func_8002DE5C,func_8002E930,func_8002F428,func_8002F784,func_8002FEFC,func_80031408,func_80033970,func_80033E90,func_80035E74	kinds=mem;widths=4;size=access_width
+0x80057D60	0x80057D68	0x8	bss_gap_80057D60	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x80057D68	0x80057D69	0x1	D_80057D68	u8	8	referenced	func_80006F8C,func_8000715C,func_80023F50,func_80024DF8	kinds=addr+indexed;widths=1;size=next_ref
+0x80057D69	0x80057D94	0x2B	D_80057D69	u8[43]	1	referenced	func_80006F8C,func_8000715C,func_80023F50,func_80024DF8	kinds=indexed;widths=1;size=next_ref
+0x80057D94	0x80057D98	0x4	D_80057D94	s32	4	referenced	func_8000FD38,func_80010760,func_8001082C,func_800109EC,func_80010AE8,func_800160F4,func_80016138,func_80020D68,func_80020DB8,func_80033970	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80057D98	0x80057D9C	0x4	D_80057D98	s32	8	referenced	func_8000FD38	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x80057D9C	0x80057DA0	0x4	bss_gap_80057D9C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80057DA0	0x80057DA2	0x2	D_80057DA0	s16	8	referenced	func_80006404,func_80006F8C,func_8000715C,func_800235F0,func_80023F50,func_80024DF8,func_80026824	candidate_globals:s16;kinds=mem;widths=2;size=access_width
+0x80057DA2	0x80057DA8	0x6	bss_gap_80057DA2	u8[6]	1	inferred-gap	-	no reference from code or initialized data
+0x80057DA8	0x80057EE0	0x138	D_80057DA8	s32[78]	8	referenced	func_80005544,func_800055A4,func_80015DF4,func_800206F8,func_800222E8,func_8002FEFC	kinds=addr+indexed;widths=4;size=next_ref
+0x80057EE0	0x80057EE4	0x4	D_80057EE0	s32	8	referenced	func_80008E20	kinds=mem;widths=4;size=access_width
+0x80057EE4	0x80057EE8	0x4	bss_gap_80057EE4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80057EE8	0x80057EEA	0x2	D_80057EE8	s16	8	referenced	func_80008F50,func_80008FB4	kinds=addr+mem;widths=2;size=next_ref
+0x80057EEA	0x80057EEC	0x2	D_80057EEA	s16	2	referenced	func_80008F50,func_80008FB4	kinds=mem;widths=2;size=next_ref
+0x80057EEC	0x80057EEE	0x2	D_80057EEC	s16	4	referenced	func_80008F50	kinds=mem;widths=2;size=next_ref
+0x80057EEE	0x80057EF0	0x2	D_80057EEE	s16	2	referenced	func_80008F50,func_80008FB4	kinds=mem;widths=2;size=next_ref
+0x80057EF0	0x80057EF2	0x2	D_80057EF0	s16	8	referenced	func_80008F30,func_80008F40,func_80008F50,func_80008FB4	kinds=mem;widths=2;size=access_width
+0x80057EF2	0x80057EF8	0x6	bss_gap_80057EF2	u8[6]	1	inferred-gap	-	no reference from code or initialized data
+0x80057EF8	0x80057F70	0x78	D_80057EF8	u8[120]	8	referenced	func_80008E20	kinds=addr;size=next_ref
+0x80057F70	0x80058198	0x228	D_80057F70	s32[138]	8	referenced	func_800090C0,func_80009140,func_80009150,func_8000916C,func_80009194,func_800092C4,func_80009398,func_800093AC,func_80009434,func_80009464,func_80009554,func_80009634,func_80009930,func_80009C8C,func_80009FD8,func_800222E8,func_80031CB0,func_800322B8	kinds=addr+mem;widths=4;size=memset(0x228) in func_800090C0
+0x80058198	0x800581A0	0x8	bss_gap_80058198	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800581A0	0x800581A4	0x4	D_800581A0	s32	8	referenced	func_8000AE0C	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800581A4	0x800581A8	0x4	D_800581A4	s32	4	referenced	func_8000B00C	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800581A8	0x800581AC	0x4	D_800581A8	s32	8	referenced	func_8000A63C,func_8000A750,func_8000AD14	kinds=mem;widths=4;size=access_width
+0x800581AC	0x800581B0	0x4	bss_gap_800581AC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800581B0	0x800581B4	0x4	D_800581B0	s32	8	referenced	func_8000BB80,func_800149FC,func_800338F8	kinds=mem;widths=4;size=next_ref
+0x800581B4	0x800581B8	0x4	D_800581B4	s32	4	referenced	func_8000B910,func_8000C034,func_80014F00,func_800338F8	kinds=mem;widths=4;size=next_ref
+0x800581B8	0x800581BC	0x4	D_800581B8	s32	8	referenced	func_8000BDFC,func_80015740,func_800338F8	kinds=mem;widths=4;size=next_ref
+0x800581BC	0x800581C0	0x4	D_800581BC	s32	4	referenced	func_8002C168	kinds=indexed;widths=4;size=next_ref
+0x800581C0	0x800581D0	0x10	D_800581C0	s32[4]	8	referenced	func_8000D970,func_8000DFB4,func_800239E8,func_80023C40,func_80023D64,func_80025730,func_80026824,func_80027880,func_8002A640,func_8002C168	kinds=addr+indexed+mem;widths=4;size=memset(0x10) in func_8000D970
+0x800581D0	0x800581D4	0x4	D_800581D0	s32	8	referenced	func_8000D970,func_80023D64,func_80026824,func_8002A9D4,func_8002B178	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800581D4	0x800581D8	0x4	D_800581D4	s32	4	referenced	func_8000DFB4,func_8000DFD8,func_80023C40,func_80027880	kinds=mem;widths=4;size=next_ref
+0x800581D8	0x800581DC	0x4	D_800581D8	s32	8	referenced	func_8000DFB4,func_80027880	kinds=mem;widths=4;size=next_ref
+0x800581DC	0x800581E0	0x4	D_800581DC	s32	4	referenced	func_8000DFB4,func_80027880	kinds=mem;widths=4;size=next_ref
+0x800581E0	0x800581E4	0x4	D_800581E0	s32	8	referenced	func_80005C4C,func_8000DFB4,func_80023C40,func_80025730,func_80027880	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800581E4	0x800581E8	0x4	D_800581E4	s32	4	referenced	func_8000DFB4,func_80027880	kinds=mem;widths=4;size=next_ref
+0x800581E8	0x800581E9	0x1	D_800581E8	u8	8	referenced	func_8000DDAC,func_80026824	candidate_globals:s8;kinds=mem;widths=1;size=next_ref
+0x800581E9	0x800581EA	0x1	D_800581E9	u8	1	referenced	func_80005EF8,func_80006F8C,func_8000DDAC,func_8000E32C,func_80010760,func_80011DAC,func_8001260C,func_80015DF4,func_80016138,func_800162B0,func_8001ABC8,func_8001C77C,func_8001D418,func_80020D68,func_80020DB8,func_80022A50,func_80025308,func_80026824,func_8002C8CC,func_8002CA8C,func_80031710,func_80031780,func_80031804,func_8003187C,func_800319B8,func_80031CB0,func_80031EDC,func_800322B8,func_800327A0,func_80033970,func_80034978	candidate_globals:s8;kinds=mem;widths=1;size=access_width
+0x800581EA	0x800581EC	0x2	bss_gap_800581EA	u8[2]	1	inferred-gap	-	no reference from code or initialized data
+0x800581EC	0x800581F0	0x4	D_800581EC	s32	4	referenced	func_8000DDAC	candidate_globals:s16*;kinds=mem;widths=4;size=next_ref
+0x800581F0	0x800581F4	0x4	D_800581F0	s32	8	referenced	func_80005AFC,func_80005EF8,func_80006F8C,func_80009194,func_800092C4,func_8000D970,func_8000DB84,func_8000DC38,func_8000DCC8,func_8000DD60,func_8000DD74,func_8000DD88,func_8000DDAC,func_8000DE4C,func_8000DE80,func_8000DEEC,func_8000DF14,func_8000DFE4,func_8000E008,func_8000E064,func_8000E078,func_8000E108,func_8000E17C,func_8000E32C,func_80010760,func_80011DAC,func_80015DF4,func_800162B0,func_80019DE0,func_80019E3C,func_8001ABC8,func_80020874,func_80020B28,func_800211C0,func_800219EC,func_80024328,func_80025308,func_8002637C,func_80026560,func_8002673C,func_80026824,func_80031328,func_80031408,func_80031EDC,func_800322B8,func_800327A0,func_80034978	kinds=mem;widths=4;size=access_width
+0x800581F4	0x80058200	0xC	bss_gap_800581F4	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x80058200	0x80058204	0x4	D_80058200	s32	8	referenced	func_8000E1D0	candidate_globals:void *;kinds=mem;widths=4;size=access_width
+0x80058204	0x80058208	0x4	bss_gap_80058204	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80058208	0x8005820C	0x4	D_80058208	f32	8	referenced	func_8000E1D0,func_8000E32C	candidate_globals:u8[];kinds=addr+indexed;widths=4;size=next_ref
+0x8005820C	0x80058210	0x4	D_8005820C	s32	4	referenced	func_8000E1D0,func_8000E32C	kinds=indexed;widths=4;size=next_ref
+0x80058210	0x80058214	0x4	D_80058210	f32	8	referenced	func_8000E1D0,func_8000E32C	kinds=indexed;widths=4;size=next_ref
+0x80058214	0x80058218	0x4	D_80058214	s32	4	referenced	func_8000E1D0,func_8000E32C	kinds=indexed;widths=4;size=next_ref
+0x80058218	0x80058220	0x8	D_80058218	s32[2]	8	referenced	func_8000E1D0,func_8000E32C	kinds=indexed;widths=4;size=next_ref
+0x80058220	0x80058670	0x450	D_80058220	f32[276]	8	referenced	func_8000E1D0,func_8000E32C	kinds=indexed;widths=4;size=next_ref
+0x80058670	0x80058674	0x4	D_80058670	s32	8	referenced	func_8000E7C8,func_8000F34C	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80058674	0x80058678	0x4	D_80058674	s32	4	referenced	func_8000E7C8,func_8000F34C	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80058678	0x8005867C	0x4	D_80058678	s32	8	referenced	func_80010B0C,func_80010BD8	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8005867C	0x800586A8	0x2C	bss_gap_8005867C	u8[44]	1	inferred-gap	-	no reference from code or initialized data
+0x800586A8	0x800587F0	0x148	D_800586A8	u8[328]	8	referenced	func_8000E630,func_8000E680,func_8000E6F8	candidate_globals:u8[];kinds=addr;size=memset(0x148) in func_8000E680,func_8000E6F8
+0x800587F0	0x800587F4	0x4	D_800587F0	f32	8	referenced	func_8000E7C8	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800587F4	0x800587F8	0x4	bss_gap_800587F4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800587F8	0x80058878	0x80	D_800587F8	u8[128]	8	referenced	func_8000F800,func_8001E2B0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80058878	0x800588F8	0x80	D_80058878	u8[128]	8	referenced	func_8000F800,func_8001E2B0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800588F8	0x800588FC	0x4	D_800588F8	f32	8	referenced	func_8000E7C8	candidate_globals:u8[];kinds=addr+mem;widths=4;size=next_ref
+0x800588FC	0x80058900	0x4	D_800588FC	f32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058900	0x80058904	0x4	D_80058900	f32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058904	0x80058908	0x4	D_80058904	f32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058908	0x8005890C	0x4	D_80058908	f32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x8005890C	0x80058910	0x4	D_8005890C	f32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058910	0x80058914	0x4	D_80058910	f32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058914	0x80058918	0x4	D_80058914	f32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058918	0x8005891C	0x4	D_80058918	f32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x8005891C	0x80058920	0x4	D_8005891C	f32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058920	0x80058924	0x4	D_80058920	f32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058924	0x80058928	0x4	D_80058924	f32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058928	0x8005892C	0x4	D_80058928	s32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x8005892C	0x80058930	0x4	D_8005892C	s32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058930	0x80058934	0x4	D_80058930	s32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058934	0x80058938	0x4	D_80058934	s32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058938	0x8005893C	0x4	D_80058938	s32	8	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x8005893C	0x80058940	0x4	D_8005893C	s32	4	referenced	func_8000E7C8	kinds=mem;widths=4;size=next_ref
+0x80058940	0x80058950	0x10	D_80058940	u8[16]	8	referenced	func_80011098	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80058950	0x80058952	0x2	D_80058950	u16	8	referenced	func_8001116C	candidate_globals:u8[];kinds=addr+indexed;widths=2;size=next_ref
+0x80058952	0x80058953	0x1	D_80058952	u8	2	referenced	func_8001116C	kinds=indexed;widths=1;size=next_ref
+0x80058953	0x80058954	0x1	D_80058953	u8	1	referenced	func_8001116C	kinds=indexed;widths=1;size=next_ref
+0x80058954	0x80058970	0x1C	D_80058954	u8[28]	4	referenced	func_8001116C	kinds=indexed;widths=1;size=next_ref
+0x80058970	0x80058990	0x20	D_80058970	s16[16]	8	referenced	func_80011098	candidate_globals:u16;kinds=addr+mem;widths=2;size=next_ref
+0x80058990	0x80058B30	0x1A0	D_80058990	u8[416]	8	referenced	func_80010CC0,func_80010D50,func_80010EF8	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80058B30	0x80058B58	0x28	D_80058B30	u8[40]	8	referenced	func_80010CC0,func_80010E70,func_80010EF8,func_80011098,func_8001116C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80058B58	0x80058B5A	0x2	D_80058B58	s16	8	referenced	func_8000E7C8,func_8000F604,func_80010358,func_8001116C,func_80016530,func_8001B7B0,func_80022844,func_80027AB4,func_80031EDC,func_80033970,func_80034978	candidate_globals:u8[];kinds=addr+indexed;widths=2;size=next_ref
+0x80058B5A	0x80058B5C	0x2	D_80058B5A	s16	2	referenced	func_8000D838,func_8000F604,func_80010358,func_8001116C,func_80011728,func_80016530,func_8001B7B0,func_800304A4,func_800312EC,func_80034978	kinds=indexed+mem;widths=2;size=next_ref
+0x80058B5C	0x80058B5E	0x2	D_80058B5C	s16	4	referenced	func_8000E7C8,func_8001116C,func_800122A4,func_80016530,func_80022844,func_80031EDC	candidate_globals:u16;kinds=indexed+mem;widths=2;size=next_ref
+0x80058B5E	0x80058B5F	0x1	D_80058B5E	u8	2	referenced	func_80010358,func_8001116C,func_80016530,func_80031EDC	kinds=indexed;widths=1;size=next_ref
+0x80058B5F	0x80058B82	0x23	D_80058B5F	u8[35]	1	referenced	func_80010358,func_8001116C,func_80016530,func_80031EDC	kinds=indexed;widths=1;size=next_ref
+0x80058B82	0x80058B84	0x2	D_80058B82	u8[2]	2	referenced	func_80015DF4	candidate_globals:u8[];kinds=addr+indexed;widths=1;size=next_ref
+0x80058B84	0x80058B9C	0x18	D_80058B84	u8[24]	4	referenced	func_80011098	kinds=addr+indexed;widths=1;size=next_ref
+0x80058B9C	0x80058BB0	0x14	D_80058B9C	u8[20]	4	referenced	func_80010E70,func_80010EF8	candidate_globals:u8;kinds=addr+mem;widths=1;size=next_ref
+0x80058BB0	0x80058BC0	0x10	D_80058BB0	u8[16]	8	referenced	func_80011098	candidate_globals:void *[];kinds=addr;size=next_ref
+0x80058BC0	0x80058BC4	0x4	D_80058BC0	s32	8	referenced	func_80011560,func_80011728	kinds=mem;widths=4;size=next_ref
+0x80058BC4	0x80058BC8	0x4	D_80058BC4	s32	4	referenced	func_80011560,func_80011728	kinds=mem;widths=4;size=next_ref
+0x80058BC8	0x80058BCC	0x4	D_80058BC8	s32	8	referenced	func_80011560,func_80011728	kinds=mem;widths=4;size=next_ref
+0x80058BCC	0x80058BD0	0x4	D_80058BCC	s32	4	referenced	func_80011728	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80058BD0	0x80058BD4	0x4	D_80058BD0	s32	8	referenced	func_80011560,func_80011728	kinds=mem;widths=4;size=next_ref
+0x80058BD4	0x80058BD8	0x4	D_80058BD4	s32	4	referenced	func_80011560,func_80011728	kinds=mem;widths=4;size=next_ref
+0x80058BD8	0x80058BDC	0x4	D_80058BD8	s32	8	referenced	func_80011560,func_80011728	kinds=mem;widths=4;size=access_width
+0x80058BDC	0x80058BE0	0x4	bss_gap_80058BDC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80058BE0	0x80058BE4	0x4	D_80058BE0	s32	8	referenced	func_80011A40,func_80011DAC	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x80058BE4	0x80058BF0	0xC	bss_gap_80058BE4	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x80058BF0	0x80058BF4	0x4	D_80058BF0	s32	8	referenced	func_800121D0,func_80012324	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80058BF4	0x80058BF8	0x4	D_80058BF4	s32	4	referenced	func_80012264,func_80012284,func_800122A4,func_80012324	kinds=mem;widths=4;size=access_width
+0x80058BF8	0x80058C00	0x8	bss_gap_80058BF8	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x80058C00	0x80058C10	0x10	D_80058C00	s32[4]	8	referenced	func_800124A0,func_800124B0,func_800125E0,func_8001271C,func_80012A14,func_8001C77C	kinds=addr+mem;widths=4;size=memset(0x10) in func_800125E0
+0x80058C10	0x80058C14	0x4	D_80058C10	s32	8	referenced	func_80012CF8,func_80012DBC	kinds=mem;widths=4;size=access_width
+0x80058C14	0x80058C18	0x4	bss_gap_80058C14	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80058C18	0x80058C1C	0x4	D_80058C18	s32	8	referenced	func_80012CD0,func_80012D04,func_80012DBC	kinds=addr+mem;widths=4;size=next_ref
+0x80058C1C	0x80058C20	0x4	D_80058C1C	s32	4	referenced	func_80012D04,func_80012DBC	kinds=mem;widths=4;size=next_ref
+0x80058C20	0x80058C24	0x4	D_80058C20	f32	8	referenced	func_80012D04,func_80012DBC	kinds=mem;widths=4;size=next_ref
+0x80058C24	0x80058C28	0x4	D_80058C24	s32	4	referenced	func_80011DAC,func_80012CD0,func_80012D04,func_80012DBC	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80058C28	0x80058C2C	0x4	D_80058C28	s32	8	referenced	func_80012CD0,func_80012CE8,func_80012D04,func_80012DBC,func_80027AB4	kinds=mem;widths=4;size=access_width
+0x80058C2C	0x80058C30	0x4	bss_gap_80058C2C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80058C30	0x80058C34	0x4	D_80058C30	s32	8	referenced	func_80012FB0	candidate_globals:u32;kinds=mem;widths=4;size=access_width
+0x80058C34	0x80058C38	0x4	bss_gap_80058C34	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80058C38	0x80058C40	0x8	D_80058C38	s32[2]	8	referenced	func_80012FB0,func_8001313C,func_800131F8,func_80013238	kinds=addr+mem;widths=4;size=next_ref
+0x80058C40	0x80058C44	0x4	D_80058C40	s32	8	referenced	func_80012FB0,func_8001313C,func_800131F8,func_80013238,func_8001330C	candidate_globals:u8[];kinds=mem;widths=4;size=access_width
+0x80058C44	0x80058C48	0x4	bss_gap_80058C44	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80058C48	0x80058C50	0x8	D_80058C48	s32[2]	8	referenced	func_80012FB0,func_8001361C	kinds=addr+mem;widths=4;size=next_ref
+0x80058C50	0x80058C54	0x4	D_80058C50	s32	8	referenced	func_80012FB0,func_8001361C	kinds=mem;widths=4;size=access_width
+0x80058C54	0x80058C60	0xC	bss_gap_80058C54	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x80058C60	0x80058C64	0x4	D_80058C60	s32	8	referenced	func_80014F00	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x80058C64	0x80058C68	0x4	bss_gap_80058C64	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80058C68	0x80058CA8	0x40	D_80058C68	u8[64]	8	referenced	func_80015740	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80058CA8	0x80058CE8	0x40	D_80058CA8	u8[64]	8	referenced	func_80015740	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80058CE8	0x80058CEC	0x4	D_80058CE8	s32	8	referenced	func_80013BC8,func_80013EE0	candidate_globals:u64;kinds=mem;widths=4;size=next_ref
+0x80058CEC	0x80058CF0	0x4	D_80058CEC	s32	4	referenced	func_80013BC8,func_80013EE0	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80058CF0	0x800590F0	0x400	D_80058CF0	u8[1024]	8	referenced	func_80013EE0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800590F0	0x80059CF0	0xC00	D_800590F0	u8[3072]	8	referenced	func_80013EE0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80059CF0	0x80059D40	0x50	D_80059CF0	u8[80]	8	referenced	func_8000E32C,func_80011BE0,func_80017F4C,func_8001A754,func_8001B08C,func_80026824,func_800296D4,func_80029A40,func_80029BB4,func_8002B044,func_8002B2E4,func_800319B8,func_80031D80,func_80033E90,func_800344A8,func_800345EC,func_800358F0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80059D40	0x80059D44	0x4	D_80059D40	s32	8	referenced	func_8000B2C8,func_80012324,func_80012450,func_80016DB0,func_80018FFC,func_8001BDD0,func_8001D91C,func_80022844,func_80027AB4,func_80028C18,func_80028E9C,func_8002BC6C,func_80030200,func_80030350,func_800304A4,func_8003121C	kinds=mem;widths=4;size=access_width
+0x80059D44	0x80059D48	0x4	bss_gap_80059D44	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80059D48	0x80059D4C	0x4	D_80059D48	s32	8	referenced	func_80017F4C,func_8001A754,func_8001B08C,func_80026824,func_800296D4,func_80029A40,func_80029BB4,func_8002B2E4,func_80031D80,func_800344A8,func_800345EC,func_800358F0	kinds=addr+mem;widths=4;size=next_ref
+0x80059D4C	0x80059D50	0x4	D_80059D4C	s32	4	referenced	func_80017F4C,func_8001A754,func_8001B08C,func_80026824,func_800296D4,func_80029A40,func_80029BB4,func_8002B2E4,func_80031D80,func_800344A8,func_800345EC,func_800358F0	kinds=mem;widths=4;size=next_ref
+0x80059D50	0x80059D54	0x4	D_80059D50	s32	8	referenced	func_80017F4C,func_8001A754,func_8001B08C,func_80026824,func_800296D4,func_80029A40,func_80029BB4,func_8002B2E4,func_80031D80,func_800344A8,func_800345EC,func_800358F0	kinds=mem;widths=4;size=access_width
+0x80059D54	0x80059D98	0x44	bss_gap_80059D54	u8[68]	1	inferred-gap	-	no reference from code or initialized data
+0x80059D98	0x80059D9C	0x4	D_80059D98	s32	8	referenced	func_80027AB4,func_8003028C,func_80030350,func_80030624,func_8003079C,func_80030E2C	kinds=mem;widths=4;size=next_ref
+0x80059D9C	0x80059DA0	0x4	D_80059D9C	s32	4	referenced	func_80027AB4,func_8003028C,func_80030350,func_80030624,func_8003079C,func_80030E2C	kinds=mem;widths=4;size=access_width
+0x80059DA0	0x80059DA4	0x4	bss_gap_80059DA0	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80059DA4	0x80059DA8	0x4	D_80059DA4	s32	4	referenced	func_80027AB4,func_8003028C,func_80030350,func_80030624,func_8003079C,func_80030E2C	kinds=mem;widths=4;size=next_ref
+0x80059DA8	0x80059DAC	0x4	D_80059DA8	s32	8	referenced	func_8000A63C,func_8000A750,func_8000AA1C,func_8000D790,func_8000E6F8,func_800112D0,func_800124B0,func_800149FC,func_80014F00,func_80015DF4,func_8001BDD0,func_8001C59C,func_800206F8,func_8002673C,func_8002BC6C,func_800305D8,func_800306FC,func_8003099C,func_80031250,func_80033850,func_8003387C	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x80059DAC	0x80059DB0	0x4	bss_gap_80059DAC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80059DB0	0x80059DB8	0x8	D_80059DB0	u8[8]	8	referenced	func_80033850	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80059DB8	0x80059DBA	0x2	D_80059DB8	s16	8	referenced	func_80018DDC,func_80024DF8,func_80034808,func_80034978	kinds=addr+indexed+mem;widths=2;size=next_ref
+0x80059DBA	0x80059DBC	0x2	D_80059DBA	s16	2	referenced	func_80024DF8	kinds=mem;widths=2;size=access_width
+0x80059DBC	0x80059DC0	0x4	bss_gap_80059DBC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80059DC0	0x80059DC4	0x4	D_80059DC0	s32	8	referenced	func_80016830,func_800168C0,func_800169F4	candidate_globals:u8[];kinds=mem;widths=4;size=next_ref
+0x80059DC4	0x80059DC8	0x4	D_80059DC4	s32	4	referenced	func_80016830	candidate_globals:u8[];kinds=mem;widths=4;size=next_ref
+0x80059DC8	0x80059DCC	0x4	D_80059DC8	s32	8	referenced	func_80016830	candidate_globals:u32;kinds=mem;widths=4;size=access_width
+0x80059DCC	0x80059DD0	0x4	bss_gap_80059DCC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80059DD0	0x80059EC0	0xF0	D_80059DD0	s32[60]	8	referenced	func_80016BDC,func_80016DB0,func_80016F50,func_80016FE4,func_80017144,func_8001749C,func_8001757C,func_800176FC,func_800178B8,func_80017BE4,func_80017CCC,func_80017F4C,func_800182E8,func_8001885C,func_80018F04,func_8001906C,func_80019140,func_800191EC	candidate_globals:u8[];kinds=addr+indexed+mem;widths=4;size=memset(0xF0) in func_80016F50,func_8001906C
+0x80059EC0	0x80059ECC	0xC	bss_gap_80059EC0	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x80059ECC	0x80059ED0	0x4	D_80059ECC	s32	4	referenced	func_80016BDC,func_80016DB0,func_80016F50,func_80017144,func_8001757C,func_800178B8,func_80017CCC,func_800182E8,func_80018A34,func_80018DDC,func_80019140	kinds=mem;widths=4;size=next_ref
+0x80059ED0	0x80059ED4	0x4	D_80059ED0	s32	8	referenced	func_80016BDC,func_80016DB0,func_80017144,func_8001757C,func_800178B8,func_80017CCC,func_80017F4C,func_800182E8,func_80018A34,func_80018DDC,func_80018F04,func_800191EC	kinds=mem;widths=4;size=access_width
+0x80059ED4	0x80059ED8	0x4	bss_gap_80059ED4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80059ED8	0x80059F10	0x38	D_80059ED8	u8[56]	8	referenced	func_800191EC	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80059F10	0x80059F20	0x10	D_80059F10	s32[4]	8	referenced	func_800182E8,func_800191EC	kinds=addr+indexed;widths=4;size=memset(0x10) in func_800191EC
+0x80059F20	0x80059F24	0x4	D_80059F20	s32	8	referenced	func_800182E8,func_8001906C	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80059F24	0x80059F28	0x4	D_80059F24	s32	4	referenced	func_800191EC	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x80059F28	0x80059F30	0x8	bss_gap_80059F28	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x80059F30	0x8005A141	0x211	D_80059F30	u8[529]	8	referenced	func_800197C8,func_80019B00,func_80019B40,func_80019BD4,func_80019C50	kinds=addr+indexed;widths=1;size=memset(0x211) in func_80019B00
+0x8005A141	0x8005A148	0x7	bss_gap_8005A141	u8[7]	1	inferred-gap	-	no reference from code or initialized data
+0x8005A148	0x8005A98C	0x844	D_8005A148	s32[529]	8	referenced	func_800197C8,func_80019B00,func_80019B40,func_80019BD4,func_80019C50	kinds=addr+indexed;widths=4;size=memset(0x844) in func_80019B00
+0x8005A98C	0x8005A990	0x4	bss_gap_8005A98C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8005A990	0x8005B1E0	0x850	D_8005A990	s32[532]	8	referenced	func_8000D050,func_80013358,func_80019788,func_800197C8,func_80019BD4,func_80019C50,func_80019D44,func_80032870	kinds=addr+indexed;widths=4;size=next_ref
+0x8005B1E0	0x8005B1E4	0x4	D_8005B1E0	s32	8	referenced	func_8001A2B0,func_8001A50C,func_8001FFE0,func_8001FFEC	kinds=mem;widths=4;size=next_ref
+0x8005B1E4	0x8005B1E8	0x4	D_8005B1E4	s32	4	referenced	func_8001A4F4	kinds=mem;widths=4;size=next_ref
+0x8005B1E8	0x8005B1EC	0x4	D_8005B1E8	s32	8	referenced	func_8001A250,func_8001A2B0,func_8001A3EC,func_8001A50C,func_8001FFEC	kinds=addr+mem;widths=4;size=next_ref
+0x8005B1EC	0x8005B1F0	0x4	D_8005B1EC	s32	4	referenced	func_8001A250,func_8001FFEC	kinds=mem;widths=4;size=next_ref
+0x8005B1F0	0x8005B1F4	0x4	D_8005B1F0	s32	8	referenced	func_8001FFEC	kinds=mem;widths=4;size=next_ref
+0x8005B1F4	0x8005B1F8	0x4	D_8005B1F4	s32	4	referenced	func_8001A250,func_8001A3EC,func_8001FFEC	kinds=indexed+mem;widths=4;size=next_ref
+0x8005B1F8	0x8005B1FC	0x4	D_8005B1F8	s32	8	referenced	func_8001A3EC,func_8001FFEC	kinds=mem;widths=4;size=next_ref
+0x8005B1FC	0x8005B200	0x4	D_8005B1FC	s32	4	referenced	func_8001A250,func_8001FFEC	kinds=mem;widths=4;size=next_ref
+0x8005B200	0x8005B204	0x4	D_8005B200	s32	8	referenced	func_8001A250,func_8001FFEC	kinds=mem;widths=4;size=next_ref
+0x8005B204	0x8005B208	0x4	D_8005B204	s32	4	referenced	func_8001A2B0	candidate_globals:u32;kinds=mem;widths=4;size=access_width
+0x8005B208	0x8005B210	0x8	bss_gap_8005B208	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x8005B210	0x8005B214	0x4	D_8005B210	s32	8	referenced	func_8001B08C	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x8005B214	0x8005B218	0x4	D_8005B214	s32	4	referenced	func_8001A5C0,func_8001B08C,func_8001B5BC,func_8001B800,func_8001BF78,func_8001C2AC,func_8001C2C8,func_8001C340,func_8001C36C,func_8001C398,func_8001CDFC,func_8001D130,func_8001D418,func_8001D91C,func_8002A9D4,func_8002B72C,func_8002D0A8,func_8002D4C0,func_8002D51C,func_8002E930	kinds=mem;widths=4;size=next_ref
+0x8005B218	0x8005B318	0x100	D_8005B218	u8[256]	8	referenced	func_8001CDFC,func_8001CF20,func_8001D418,func_8002BD44,func_8002C168,func_8002C714,func_8002CC34,func_8002E930,func_8002FF48,func_80036138	candidate_globals:char[];kinds=addr;size=next_ref
+0x8005B318	0x8005B31C	0x4	D_8005B318	s32	8	referenced	func_80015DF4,func_8001A65C,func_8001BDD0	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8005B31C	0x8005B320	0x4	bss_gap_8005B31C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8005B320	0x8005B324	0x4	D_8005B320	s32	8	referenced	func_8001C958,func_8001CAE4,func_8001CC40	candidate_globals:u8[];kinds=addr+mem;widths=4;size=next_ref
+0x8005B324	0x8005B334	0x10	D_8005B324	s32[4]	4	referenced	func_8001C958,func_8001CAE4,func_8001CC40	kinds=indexed;widths=4;size=next_ref
+0x8005B334	0x8005B338	0x4	D_8005B334	s32	4	referenced	func_8001C958,func_8001CAE4,func_8001CC40	kinds=mem;widths=4;size=next_ref
+0x8005B338	0x8005B33C	0x4	D_8005B338	s32	8	referenced	func_8001C958,func_8001CAE4,func_8001CC40	kinds=mem;widths=4;size=next_ref
+0x8005B33C	0x8005B348	0xC	D_8005B33C	s32[3]	4	referenced	func_8001A754,func_8001B08C,func_8002B044,func_8002B2E4,func_800358F0	candidate_globals:void *;kinds=addr+mem;widths=4;size=next_ref
+0x8005B348	0x8005B7EC	0x4A4	D_8005B348	u8[1188]	8	referenced	func_8001B08C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8005B7EC	0x8005B7F0	0x4	D_8005B7EC	s32	4	referenced	func_8001B08C,func_8001B5EC,func_80022D78	kinds=mem;widths=4;size=next_ref
+0x8005B7F0	0x8005B7F2	0x2	D_8005B7F0	s16	8	referenced	func_8001B800	candidate_globals:s16;kinds=mem;widths=2;size=next_ref
+0x8005B7F2	0x8005B7F4	0x2	D_8005B7F2	s16	2	referenced	func_8001A754,func_8001A8BC,func_8001B5FC,func_8001B800,func_8001D418,func_80022A50	candidate_globals:s16;kinds=mem;widths=2;size=access_width
+0x8005B7F4	0x8005B7F8	0x4	bss_gap_8005B7F4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8005B7F8	0x8005B7FE	0x6	D_8005B7F8	u8[6]	8	referenced	func_8001D91C,func_8002D51C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8005B7FE	0x8005B7FF	0x1	D_8005B7FE	u8	2	referenced	func_8001D91C,func_8002D51C	kinds=mem;widths=1;size=next_ref
+0x8005B7FF	0x8005B800	0x1	D_8005B7FF	u8	1	referenced	func_8001D91C,func_8002D51C	kinds=mem;widths=1;size=access_width
+0x8005B800	0x8005B830	0x30	bss_gap_8005B800	u8[48]	1	inferred-gap	-	no reference from code or initialized data
+0x8005B830	0x8005B96C	0x13C	D_8005B830	s32[79]	8	referenced	func_8001E0B0,func_8001E0E0,func_8001E178,func_8001E204,func_8001E28C,func_8001E2B0	kinds=addr+mem;widths=4;size=memset(0x13C) in func_8001E0B0
+0x8005B96C	0x8005B970	0x4	D_8005B96C	s32	4	referenced	func_8000C674	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8005B970	0x8005B974	0x4	bss_gap_8005B970	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8005B974	0x8005B978	0x4	D_8005B974	s32	4	referenced	func_8001E5D0,func_8001E5F0	kinds=mem;widths=4;size=next_ref
+0x8005B978	0x8005EB78	0x3200	D_8005B978	u8[12800]	8	referenced	func_8001E5D0	kinds=addr;size=next_ref
+0x8005EB78	0x80061D78	0x3200	D_8005EB78	u8[12800]	8	referenced	func_8001E5F0	kinds=addr;size=next_ref
+0x80061D78	0x80061D7C	0x4	D_80061D78	s32	8	referenced	func_8001E5D0,func_8001E5F0,func_8001E630	kinds=mem;widths=4;size=access_width
+0x80061D7C	0x80061D80	0x4	bss_gap_80061D7C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80061D80	0x80061D84	0x4	D_80061D80	s32	8	referenced	func_8001F1C4	candidate_globals:u32;kinds=mem;widths=4;size=access_width
+0x80061D84	0x80061D90	0xC	bss_gap_80061D84	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x80061D90	0x80061D94	0x4	D_80061D90	s32	8	referenced	func_8001E650,func_8001E678,func_8001E738,func_8001E7FC	kinds=addr+mem;widths=4;size=next_ref
+0x80061D94	0x80061D98	0x4	D_80061D94	s32	4	referenced	func_8001E678,func_8001E738,func_8001E7FC	kinds=mem;widths=4;size=next_ref
+0x80061D98	0x80061D9C	0x4	D_80061D98	f32	8	referenced	func_8001E678,func_8001E738,func_8001E7FC	kinds=mem;widths=4;size=next_ref
+0x80061D9C	0x80061DA0	0x4	D_80061D9C	s32	4	referenced	func_8001E650,func_8001E678,func_8001E738,func_8001E7FC	kinds=mem;widths=4;size=next_ref
+0x80061DA0	0x80061DA4	0x4	D_80061DA0	s32	8	referenced	func_8001E650,func_8001E668,func_8001E678,func_8001E738,func_8001E7FC	kinds=mem;widths=4;size=access_width
+0x80061DA4	0x80061DA8	0x4	bss_gap_80061DA4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80061DA8	0x80061DC8	0x20	D_80061DA8	s32[8]	8	referenced	func_8001ECE4,func_8001EF08,func_8001EF98,func_8001EFC4,func_8001EFEC	kinds=addr+indexed+mem;widths=4;size=next_ref
+0x80061DC8	0x80061DCC	0x4	D_80061DC8	s32	8	referenced	func_8001EA7C,func_8001EC78,func_8001ED90,func_8001EF08	kinds=addr+indexed+mem;widths=4;size=next_ref
+0x80061DCC	0x80061DD0	0x4	D_80061DCC	s32	4	referenced	func_8001EA7C,func_8001EC78	kinds=mem;widths=4;size=next_ref
+0x80061DD0	0x80061DD4	0x4	D_80061DD0	s32	8	referenced	func_8001EA7C	candidate_globals:void *;kinds=mem;widths=4;size=access_width
+0x80061DD4	0x80061DD8	0x4	bss_gap_80061DD4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80061DD8	0x80061E00	0x28	D_80061DD8	u8[40]	8	referenced	func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80061E00	0x80061E04	0x4	D_80061E00	s32	8	referenced	func_8001E0B0,func_8001F1C4	kinds=mem;widths=4;size=access_width
+0x80061E04	0x80061E08	0x4	bss_gap_80061E04	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80061E08	0x80061E0C	0x4	D_80061E08	s32	8	referenced	func_8001EA7C	candidate_globals:u8[];kinds=addr+mem;widths=4;size=next_ref
+0x80061E0C	0x80061E10	0x4	D_80061E0C	s32	4	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E10	0x80061E14	0x4	D_80061E10	s32	8	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E14	0x80061E18	0x4	D_80061E14	s32	4	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E18	0x80061E1C	0x4	D_80061E18	s32	8	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E1C	0x80061E20	0x4	D_80061E1C	s32	4	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E20	0x80061E24	0x4	D_80061E20	s32	8	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E24	0x80061E28	0x4	D_80061E24	s32	4	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E28	0x80061E2C	0x4	D_80061E28	s32	8	referenced	func_8001EA7C	kinds=mem;widths=4;size=access_width
+0x80061E2C	0x80061E30	0x4	bss_gap_80061E2C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80061E30	0x80061E34	0x4	D_80061E30	s32	8	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E34	0x80061E38	0x4	D_80061E34	s32	4	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E38	0x80061E3C	0x4	D_80061E38	s32	8	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E3C	0x80061E40	0x4	D_80061E3C	s32	4	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E40	0x80061E44	0x4	D_80061E40	s32	8	referenced	func_8001EA7C	kinds=mem;widths=4;size=next_ref
+0x80061E44	0x80061E48	0x4	D_80061E44	s32	4	referenced	func_8001EA7C	kinds=mem;widths=4;size=access_width
+0x80061E48	0x80061E4C	0x4	bss_gap_80061E48	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80061E4C	0x80061E50	0x4	D_80061E4C	s32	4	referenced	func_8001EA7C,func_8001EC78	candidate_globals:void *;kinds=mem;widths=4;size=next_ref
+0x80061E50	0x80061E54	0x4	D_80061E50	s32	8	referenced	func_8001ECE4	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x80061E54	0x80061E58	0x4	D_80061E54	s32	4	referenced	func_80017144,func_80018A34,func_8001E7FC,func_8001EA7C,func_8001F1C4	candidate_globals:s32;kinds=addr+mem;widths=4;size=next_ref
+0x80061E58	0x80061E60	0x8	bss_gap_80061E58	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x80061E60	0x800664B0	0x4650	D_80061E60	u8[18000]	8	referenced	func_8001EA7C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800664B0	0x800664C8	0x18	D_800664B0	u8[24]	8	referenced	func_8001EDEC,func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800664C8	0x800674C8	0x1000	D_800664C8	u8[4096]	8	referenced	func_8001EA7C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800674C8	0x800674CC	0x4	D_800674C8	s32	8	referenced	func_8001EA7C	candidate_globals:u32;kinds=mem;widths=4;size=access_width
+0x800674CC	0x800674D0	0x4	bss_gap_800674CC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800674D0	0x8006D680	0x61B0	D_800674D0	u8[25008]	8	referenced	func_8001EA7C,func_8001EF08	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8006D680	0x8006D684	0x4	D_8006D680	s32	8	referenced	func_8001F588,func_8001F850,func_8001FA40,func_8001FB84,func_8001FC2C,func_8001FF3C	kinds=mem;widths=4;size=next_ref
+0x8006D684	0x8006D688	0x4	D_8006D684	s32	4	referenced	func_8001F510,func_8001F588,func_8001F850,func_8001FA40,func_8001FB84	kinds=mem;widths=4;size=next_ref
+0x8006D688	0x8006D68C	0x4	D_8006D688	s32	8	referenced	func_8001F510,func_8001F588,func_8001F850,func_8001F9F4,func_8001FA24,func_8001FA40,func_8001FF88	kinds=mem;widths=4;size=access_width
+0x8006D68C	0x8006D690	0x4	bss_gap_8006D68C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8006D690	0x8006D694	0x4	D_8006D690	s32	8	referenced	func_8001F4B0,func_80027AB4,func_80028724	kinds=addr+indexed+mem;widths=4;size=next_ref
+0x8006D694	0x8006D698	0x4	D_8006D694	s32	4	referenced	func_8001F4B0	kinds=mem;widths=4;size=next_ref
+0x8006D698	0x8006D69C	0x4	D_8006D698	s32	8	referenced	func_8001F4B0,func_8001F510,func_8001F588,func_8001FC2C,func_80028E9C	kinds=addr+indexed+mem;widths=4;size=next_ref
+0x8006D69C	0x8006D6A0	0x4	D_8006D69C	s32	4	referenced	func_80028E9C	kinds=mem;widths=4;size=next_ref
+0x8006D6A0	0x8006F6A0	0x2000	D_8006D6A0	u8[8192]	8	referenced	func_80020050,func_8002012C	candidate_globals:u8[];kinds=addr;size=memset(0x2000) in func_80020050
+0x8006F6A0	0x8006F6A1	0x1	D_8006F6A0	u8	8	referenced	func_8002012C	candidate_globals:u8[];kinds=addr+indexed;widths=1;size=next_ref
+0x8006F6A1	0x8006F6B8	0x17	D_8006F6A1	u8[23]	1	referenced	func_8002012C	kinds=indexed;widths=1;size=next_ref
+0x8006F6B8	0x8006F6BC	0x4	D_8006F6B8	s32	8	referenced	func_80020050,func_8002012C,func_80022E54	candidate_globals:s32;kinds=addr+mem;widths=4;size=next_ref
+0x8006F6BC	0x8006F6BD	0x1	D_8006F6BC	u8	4	referenced	func_8002012C,func_80022E54	kinds=indexed;widths=1;size=next_ref
+0x8006F6BD	0x8006F6BE	0x1	D_8006F6BD	u8	1	referenced	func_8002012C,func_80022E54	kinds=indexed;widths=1;size=next_ref
+0x8006F6BE	0x8006F6C0	0x2	D_8006F6BE	s16	2	referenced	func_8002012C,func_80022E54	kinds=indexed;widths=2;size=next_ref
+0x8006F6C0	0x8006F6C2	0x2	D_8006F6C0	s16	8	referenced	func_8002012C	kinds=indexed;widths=2;size=next_ref
+0x8006F6C2	0x8006F6C4	0x2	D_8006F6C2	s16	2	referenced	func_8002012C,func_80022E54	kinds=indexed;widths=2;size=next_ref
+0x8006F6C4	0x8006F6C5	0x1	D_8006F6C4	u8	4	referenced	func_8002012C,func_80022E54	kinds=indexed;widths=1;size=next_ref
+0x8006F6C5	0x8006FB70	0x4AB	D_8006F6C5	u8[1195]	1	referenced	func_8002012C,func_80022E54	kinds=indexed;widths=1;size=next_ref
+0x8006FB70	0x8006FB78	0x8	D_8006FB70	u8[8]	8	referenced	func_80020874,func_80020D34	kinds=addr+indexed;widths=1;size=next_ref
+0x8006FB78	0x8006FB7C	0x4	D_8006FB78	s32	8	referenced	func_8001C600,func_80020DB8,func_80024534	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8006FB7C	0x8006FB80	0x4	bss_gap_8006FB7C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8006FB80	0x8006FB88	0x8	D_8006FB80	s32[2]	8	referenced	func_8000A488,func_80024730,func_8002A640	candidate_globals:s32;kinds=addr+mem;widths=4;size=next_ref
+0x8006FB88	0x8006FB8C	0x4	D_8006FB88	s32	8	referenced	func_8000A488,func_8002A640	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x8006FB8C	0x8006FB90	0x4	D_8006FB8C	s32	4	referenced	func_80009DF8,func_8001C560,func_800212A4,func_80024480	kinds=addr+mem;widths=4;size=memset(0x4) in func_800212A4
+0x8006FB90	0x8006FB94	0x4	D_8006FB90	s32	8	referenced	func_800227F0,func_80022844	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x8006FB94	0x8006FB98	0x4	D_8006FB94	s32	4	referenced	func_800227F0,func_80022844	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8006FB98	0x8006FBA0	0x8	bss_gap_8006FB98	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x8006FBA0	0x8006FBA4	0x4	D_8006FBA0	s32	8	referenced	func_80024C30,func_80024D14	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8006FBA4	0x8006FBB0	0xC	bss_gap_8006FBA4	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x8006FBB0	0x8006FBF0	0x40	D_8006FBB0	s32[16]	8	referenced	func_800260D0	kinds=addr+indexed;widths=4;size=memset(0x40) in func_800260D0
+0x8006FBF0	0x8006FBF4	0x4	D_8006FBF0	s32	8	referenced	func_8002673C	candidate_globals:u8[];kinds=mem;widths=4;size=access_width
+0x8006FBF4	0x8006FBF8	0x4	bss_gap_8006FBF4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8006FBF8	0x8006FCE8	0xF0	D_8006FBF8	u8[240]	8	referenced	func_80026310	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8006FCE8	0x8006FFA0	0x2B8	D_8006FCE8	u8[696]	8	referenced	func_80026824	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8006FFA0	0x80071FB0	0x2010	D_8006FFA0	u8[8208]	8	referenced	func_80013EE0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80071FB0	0x80072160	0x1B0	D_80071FB0	u8[432]	8	referenced	func_80027A1C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80072160	0x80074310	0x21B0	D_80072160	u8[8624]	8	referenced	func_800279B0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80074310	0x80076310	0x2000	D_80074310	u8[8192]	8	referenced	func_80027A1C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80076310	0x800774C0	0x11B0	D_80076310	u8[4528]	8	referenced	func_800279B0	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800774C0	0x800774C4	0x4	D_800774C0	s32	8	referenced	func_80028C18	candidate_globals:u8[];kinds=mem;widths=4;size=access_width
+0x800774C4	0x800774D0	0xC	bss_gap_800774C4	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800774D0	0x800777F0	0x320	D_800774D0	u8[800]	8	referenced	func_80027A1C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800777F0	0x80077810	0x20	D_800777F0	u8[32]	8	referenced	func_80027A1C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80077810	0x80077828	0x18	D_80077810	u8[24]	8	referenced	func_80028B58,func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80077828	0x8007782C	0x4	D_80077828	u8[4]	8	referenced	func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8007782C	0x80077830	0x4	D_8007782C	s32	4	referenced	func_8000C674,func_8001E2B0,func_80027F48	kinds=mem;widths=4;size=next_ref
+0x80077830	0x80077834	0x4	D_80077830	s32	8	referenced	func_80013BC8,func_80029DC4,func_80032A20,func_80033144,func_8003318C,func_80033290,func_800336A4,func_8003376C	kinds=mem;widths=4;size=access_width
+0x80077834	0x80077838	0x4	bss_gap_80077834	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80077838	0x8007784C	0x14	D_80077838	u8[20]	8	referenced	data@80054350	kinds=dataptr;size=next_ref
+0x8007784C	0x80077850	0x4	D_8007784C	s32	4	referenced	func_80008770,func_8000D0AC,func_8000F800,func_80012DBC,func_80013BC8,func_80013EE0,func_800149FC,func_80014F00,func_80015740,func_8001E2B0,func_8001FC2C,func_80027AB4,func_80027FD4,func_80028724,func_8003376C	kinds=mem;widths=4;size=next_ref
+0x80077850	0x80097868	0x20018	D_80077850	u8[131096]	8	referenced	func_80013EE0,func_80027AB4,func_80027FD4,func_80028724,func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80097868	0x8009786C	0x4	D_80097868	s32	8	referenced	func_80027AB4,func_80027FD4,func_80028C18,func_80028E9C	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8009786C	0x80097870	0x4	bss_gap_8009786C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x80097870	0x80097874	0x4	D_80097870	s32	8	referenced	func_80027AB4,func_80027FD4,func_80028C18	candidate_globals:u64;kinds=mem;widths=4;size=next_ref
+0x80097874	0x80097878	0x4	D_80097874	s32	4	referenced	func_80027AB4,func_80027FD4,func_80028C18	kinds=mem;widths=4;size=next_ref
+0x80097878	0x80097B00	0x288	D_80097878	u8[648]	8	referenced	func_8001EA7C,func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80097B00	0x80097B04	0x4	D_80097B00	s32	8	referenced	func_80027AB4,func_80027FD4,func_80028724	candidate_globals:u64;kinds=mem;widths=4;size=next_ref
+0x80097B04	0x80097B08	0x4	D_80097B04	s32	4	referenced	func_80027AB4,func_80027FD4,func_80028724	kinds=mem;widths=4;size=access_width
+0x80097B08	0x80099B08	0x2000	bss_gap_80097B08	u8[8192]	1	inferred-gap	-	no reference from code or initialized data
+0x80099B08	0x80099B10	0x8	D_80099B08	s32[2]	8	referenced	func_80027F48,func_80028C18	candidate_globals:u32;kinds=addr+mem;widths=4;size=next_ref
+0x80099B10	0x80099B30	0x20	D_80099B10	u8[32]	8	referenced	func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x80099B30	0x80099B34	0x4	D_80099B30	s32	8	referenced	func_80009634,func_80009DF8,func_80009FD8,func_8000A488,func_8000C674,func_80024C30,func_80024D14,func_80027AB4,func_80027F48,func_80027FD4,func_80028724,func_80028C18,func_8002A640	kinds=addr+mem;widths=4;size=next_ref
+0x80099B34	0x80099B38	0x4	D_80099B34	s32	4	referenced	func_80027AB4,func_80027F48,func_80027FD4	candidate_globals:u32;kinds=mem;widths=4;size=access_width
+0x80099B38	0x80099B40	0x8	bss_gap_80099B38	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x80099B40	0x8009BB48	0x2008	D_80099B40	u8[8200]	8	referenced	func_80028C18	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8009BB48	0x8009BB4C	0x4	D_8009BB48	s32	8	referenced	func_80027F48	candidate_globals:u32;kinds=mem;widths=4;size=next_ref
+0x8009BB4C	0x8009BB50	0x4	D_8009BB4C	s32	4	referenced	func_80027AB4,func_80027FD4,func_80028724	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x8009BB50	0x8009C350	0x800	bss_gap_8009BB50	u8[2048]	1	inferred-gap	-	no reference from code or initialized data
+0x8009C350	0x8009C354	0x4	D_8009C350	s32	8	referenced	func_80013EE0,func_80028C18	candidate_globals:void *;kinds=mem;widths=4;size=access_width
+0x8009C354	0x8009C358	0x4	bss_gap_8009C354	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x8009C358	0x8009C3B8	0x60	D_8009C358	u8[96]	8	referenced	func_80013B40,func_80015740,func_80027AB4,func_80027FD4,func_80028724	candidate_globals:u8[];kinds=addr;size=next_ref
+0x8009C3B8	0x8009C3BC	0x4	D_8009C3B8	s32	8	referenced	func_80027AB4,func_80027FD4,func_80028724	kinds=indexed;widths=4;size=next_ref
+0x8009C3BC	0x8009C3C0	0x4	D_8009C3BC	s32	4	referenced	func_80027AB4,func_80027FD4,func_80028724	kinds=indexed;widths=4;size=next_ref
+0x8009C3C0	0x800AAAC0	0xE700	D_8009C3C0	u8[59136]	8	referenced	func_80027AB4,func_8003376C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800AAAC0	0x800AAAC2	0x2	D_800AAAC0	s16	8	referenced	func_80013B40	kinds=mem;widths=2;size=access_width
+0x800AAAC2	0x800AAAE0	0x1E	bss_gap_800AAAC2	u8[30]	1	inferred-gap	-	no reference from code or initialized data
+0x800AAAE0	0x800AAAE4	0x4	D_800AAAE0	s32	8	referenced	func_80013B40	kinds=mem;widths=4;size=access_width
+0x800AAAE4	0x800B9250	0xE76C	bss_gap_800AAAE4	u8[59244]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9250	0x800B9252	0x2	D_800B9250	s16	8	referenced	func_80013B40	kinds=mem;widths=2;size=access_width
+0x800B9252	0x800B9270	0x1E	bss_gap_800B9252	u8[30]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9270	0x800B9274	0x4	D_800B9270	s32	8	referenced	func_80013B40	kinds=mem;widths=4;size=access_width
+0x800B9274	0x800B9280	0xC	bss_gap_800B9274	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9280	0x800B9284	0x4	D_800B9280	s32	8	referenced	func_80023D64,func_80028F80,func_8002A9D4,func_8002B178	candidate_globals:u32;kinds=addr+mem;widths=4;size=next_ref
+0x800B9284	0x800B9288	0x4	D_800B9284	s32	4	referenced	func_80028F80,func_800292D0,func_80029544,func_8002A9D4,func_8002B178	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800B9288	0x800B9290	0x8	bss_gap_800B9288	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9290	0x800B9294	0x4	D_800B9290	s32	8	referenced	func_80029580,func_800296D4,func_8002987C,func_80029A40	candidate_globals:u8[];kinds=addr+mem;widths=4;size=next_ref
+0x800B9294	0x800B9298	0x4	D_800B9294	s32	4	referenced	func_80029580,func_800296D4,func_80029A40	kinds=mem;widths=4;size=next_ref
+0x800B9298	0x800B929C	0x4	D_800B9298	s32	8	referenced	func_80029580,func_8002987C,func_8002BFF0	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800B929C	0x800B92A0	0x4	bss_gap_800B929C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800B92A0	0x800B92A4	0x4	D_800B92A0	s32	8	referenced	func_8002A1B4	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800B92A4	0x800B92A8	0x4	bss_gap_800B92A4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800B92A8	0x800B92BC	0x14	D_800B92A8	f32[5]	8	referenced	func_80026824,func_8002A110,func_8002A13C,func_8002A154	kinds=addr+mem;widths=4;size=memset(0x14) in func_8002A110
+0x800B92BC	0x800B92C0	0x4	bss_gap_800B92BC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800B92C0	0x800B92C4	0x4	D_800B92C0	s32	8	referenced	func_8002A9D4	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92C4	0x800B92C8	0x4	D_800B92C4	s32	4	referenced	func_8002A9D4	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92C8	0x800B92CC	0x4	D_800B92C8	s32	8	referenced	func_8002A9D4	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92CC	0x800B92D0	0x4	D_800B92CC	s32	4	referenced	func_8002A9D4	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92D0	0x800B92D4	0x4	D_800B92D0	s32	8	referenced	func_8002A9D4	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92D4	0x800B92D8	0x4	D_800B92D4	s32	4	referenced	func_8002C168	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92D8	0x800B92DC	0x4	D_800B92D8	s32	8	referenced	func_8002C168	candidate_globals:s32;kinds=addr+mem;widths=4;size=next_ref
+0x800B92DC	0x800B92E0	0x4	D_800B92DC	s32	4	referenced	func_8002CC34	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92E0	0x800B92E4	0x4	D_800B92E0	s32	8	referenced	func_8002CC34	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92E4	0x800B92E8	0x4	D_800B92E4	s32	4	referenced	func_8002CC34	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92E8	0x800B92EC	0x4	D_800B92E8	s32	8	referenced	func_8000A488,func_8002A640	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B92EC	0x800B92EE	0x2	D_800B92EC	s16	4	referenced	func_8002B2E4,func_8002B530,func_8002B72C,func_8002D404,func_8002DA20	candidate_globals:s16;kinds=mem;widths=2;size=next_ref
+0x800B92EE	0x800B92F0	0x2	D_800B92EE	s16	2	referenced	func_8002B72C	candidate_globals:s16;kinds=mem;widths=2;size=next_ref
+0x800B92F0	0x800B92F4	0x4	D_800B92F0	s32	8	referenced	func_8002DBD8,func_8002DE5C,func_8002E0E0	kinds=mem;widths=4;size=next_ref
+0x800B92F4	0x800B92F8	0x4	D_800B92F4	s32	4	referenced	func_8002E1A8,func_8002E478,func_8002E5B8,func_8002E654	kinds=mem;widths=4;size=next_ref
+0x800B92F8	0x800B92FC	0x4	D_800B92F8	s32	8	referenced	func_8002DBD8,func_8002DE5C,func_8002E0E0	kinds=mem;widths=4;size=access_width
+0x800B92FC	0x800B9300	0x4	bss_gap_800B92FC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9300	0x800B9304	0x4	D_800B9300	s32	8	referenced	func_8002EBF0,func_8002F504	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B9304	0x800B9308	0x4	D_800B9304	s32	4	referenced	func_8002EBF0,func_8002F504,func_8002F6D0	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B9308	0x800B930C	0x4	D_800B9308	s32	8	referenced	func_8002EBF0,func_8002FAF8	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B930C	0x800B9310	0x4	D_800B930C	s32	4	referenced	func_8002EBF0	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B9310	0x800B9314	0x4	D_800B9310	s32	8	referenced	func_8002EBF0,func_8002F428,func_8002F504,func_8002F6D0	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B9314	0x800B9318	0x4	D_800B9314	s32	4	referenced	func_8002EBF0,func_8002F784,func_8002FAF8	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B9318	0x800B931C	0x4	D_800B9318	s32	8	referenced	func_8002E8F0,func_8002E930	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800B931C	0x800B9320	0x4	bss_gap_800B931C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9320	0x800B9321	0x1	D_800B9320	u8	8	referenced	func_8002FEC4,func_8002FED0	kinds=mem;widths=1;size=next_ref
+0x800B9321	0x800B9322	0x1	D_800B9321	u8	1	referenced	func_8002FEE0,func_8002FEEC	kinds=mem;widths=1;size=access_width
+0x800B9322	0x800B9324	0x2	bss_gap_800B9322	u8[2]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9324	0x800B9328	0x4	D_800B9324	s32	4	referenced	func_8002FEA8,func_8002FEB4	kinds=mem;widths=4;size=access_width
+0x800B9328	0x800B9330	0x8	bss_gap_800B9328	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9330	0x800B9334	0x4	D_800B9330	s32	8	referenced	func_80030200,func_80030238,func_800304A4	kinds=mem;widths=4;size=next_ref
+0x800B9334	0x800B9338	0x4	D_800B9334	s32	4	referenced	func_80030200,func_80030238	kinds=mem;widths=4;size=next_ref
+0x800B9338	0x800B933C	0x4	D_800B9338	s32	8	referenced	func_80030A34,func_80030AB4,func_80030CC8,func_80030DC8,func_80031110,func_800311E8	kinds=mem;widths=4;size=next_ref
+0x800B933C	0x800B9340	0x4	D_800B933C	s32	4	referenced	func_80030350,func_80030590,func_800305D8,func_80030E2C,func_80031250	kinds=mem;widths=4;size=next_ref
+0x800B9340	0x800B9344	0x4	D_800B9340	s32	8	referenced	func_800311E8,func_8003121C	kinds=mem;widths=4;size=next_ref
+0x800B9344	0x800B9348	0x4	D_800B9344	s32	4	referenced	func_800191EC,func_8003079C,func_80030840,func_80030914,func_800309C4,func_80030A34,func_80030AB4,func_80030B30,func_80030B84,func_80030BE8,func_80030CC8	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B9348	0x800B9360	0x18	D_800B9348	u8[24]	8	referenced	func_80030350	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800B9360	0x800B9364	0x4	D_800B9360	s32	8	referenced	func_80031CB0,func_80031EDC	kinds=mem;widths=4;size=next_ref
+0x800B9364	0x800B9366	0x2	D_800B9364	s16	4	referenced	func_80031328,func_80031408	candidate_globals:s16;kinds=mem;widths=2;size=access_width
+0x800B9366	0x800B9368	0x2	bss_gap_800B9366	u8[2]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9368	0x800B936C	0x4	D_800B9368	s32	8	referenced	func_80031D80	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800B936C	0x800B9370	0x4	D_800B936C	s32	4	referenced	func_80031328,func_80031408	kinds=mem;widths=4;size=next_ref
+0x800B9370	0x800B9371	0x1	D_800B9370	u8	8	referenced	func_80031D80,func_80031EDC,func_800322B8	candidate_globals:u8;kinds=mem;widths=1;size=next_ref
+0x800B9371	0x800B9372	0x1	D_800B9371	u8	1	referenced	func_80031D80,func_80031EDC,func_800322B8	candidate_globals:u8;kinds=mem;widths=1;size=access_width
+0x800B9372	0x800B9378	0x6	bss_gap_800B9372	u8[6]	1	inferred-gap	-	no reference from code or initialized data
+0x800B9378	0x800B9394	0x1C	D_800B9378	u8[28]	8	referenced	func_80031780,func_80031804,func_80031C2C,func_80031CB0,func_80031EDC,func_800322B8	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800B9394	0x800C1378	0x7FE4	D_800B9394	s32[8185]	4	referenced	func_80031C2C	kinds=indexed;widths=4;size=next_ref
+0x800C1378	0x800C33BC	0x2044	D_800C1378	u8[8260]	8	referenced	func_80031710	kinds=addr;size=next_ref
+0x800C33BC	0x800C33C0	0x4	D_800C33BC	s32	4	referenced	func_80031710,func_80031780,func_80031804,func_80031CB0,func_80031EDC,func_800322B8	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800C33C0	0x800C33C2	0x2	D_800C33C0	s16	8	referenced	func_800149FC,func_80014F00,func_80031408,func_8003187C,func_80031C2C,func_80031CB0,func_80031EDC	candidate_globals:u8[];kinds=addr+mem;widths=2;size=next_ref
+0x800C33C2	0x800C33C4	0x2	D_800C33C2	s16	2	referenced	func_800149FC,func_80014F00,func_8003187C,func_80031C2C,func_80031CB0	kinds=mem;widths=2;size=next_ref
+0x800C33C4	0x800C33C6	0x2	D_800C33C4	s16	4	referenced	func_800149FC,func_80014F00,func_80031408,func_80031CB0	kinds=mem;widths=2;size=access_width
+0x800C33C6	0x800C33C8	0x2	bss_gap_800C33C6	u8[2]	1	inferred-gap	-	no reference from code or initialized data
+0x800C33C8	0x800C33CC	0x4	D_800C33C8	s32	8	referenced	func_8003187C,func_80031C2C,func_80031EDC	kinds=mem;widths=4;size=next_ref
+0x800C33CC	0x800C33D0	0x4	D_800C33CC	s32	4	referenced	func_80031408,func_8003187C,func_80031C2C,func_80031CB0,func_800327A0	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800C33D0	0x800C33D4	0x4	D_800C33D0	s32	8	referenced	func_80031408,func_8003187C,func_80031C2C,func_80031CB0	kinds=mem;widths=4;size=access_width
+0x800C33D4	0x800C33D8	0x4	bss_gap_800C33D4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C33D8	0x800C3414	0x3C	D_800C33D8	s32[15]	8	referenced	func_8000E7C8,func_8000F34C,func_8000F4E4,func_8002673C,func_8003187C,func_80031CB0	candidate_globals:u8[];kinds=addr+mem;widths=4;size=memset(0x3C) in func_8002673C
+0x800C3414	0x800C3420	0xC	bss_gap_800C3414	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3420	0x800C3CE0	0x8C0	D_800C3420	u8[2240]	8	referenced	func_80033290	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800C3CE0	0x800C3D68	0x88	D_800C3CE0	u8[136]	8	referenced	func_800336A4	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800C3D68	0x800C3D70	0x8	D_800C3D68	u8[8]	8	referenced	func_8003387C	candidate_globals:u8[];kinds=addr;size=next_ref
+0x800C3D70	0x800C3D72	0x2	D_800C3D70	s16	8	referenced	func_8003387C	kinds=mem;widths=2;size=next_ref
+0x800C3D72	0x800C3D74	0x2	D_800C3D72	s16	2	referenced	func_8003387C	kinds=mem;widths=2;size=next_ref
+0x800C3D74	0x800C3D78	0x4	D_800C3D74	s32	4	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D78	0x800C3D7C	0x4	D_800C3D78	s32	8	referenced	func_8003387C	kinds=mem;widths=4;size=access_width
+0x800C3D7C	0x800C3D80	0x4	bss_gap_800C3D7C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3D80	0x800C3D84	0x4	D_800C3D80	s32	8	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D84	0x800C3D88	0x4	D_800C3D84	s32	4	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D88	0x800C3D8C	0x4	D_800C3D88	s32	8	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D8C	0x800C3D90	0x4	D_800C3D8C	s32	4	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D90	0x800C3D94	0x4	D_800C3D90	s32	8	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D94	0x800C3D98	0x4	D_800C3D94	s32	4	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D98	0x800C3D9C	0x4	D_800C3D98	s32	8	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3D9C	0x800C3DA0	0x4	D_800C3D9C	s32	4	referenced	func_8003387C	kinds=mem;widths=4;size=next_ref
+0x800C3DA0	0x800C3DA4	0x4	D_800C3DA0	s32	8	referenced	func_80033970	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800C3DA4	0x800C3DB0	0xC	bss_gap_800C3DA4	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3DB0	0x800C3DB4	0x4	D_800C3DB0	s32	8	referenced	func_800345EC,func_80034808,func_80034978	candidate_globals:u8[];kinds=addr+indexed+mem;widths=4;size=next_ref
+0x800C3DB4	0x800C3DB8	0x4	D_800C3DB4	s32	4	referenced	func_80034978	kinds=mem;widths=4;size=next_ref
+0x800C3DB8	0x800C3DBC	0x4	D_800C3DB8	s32	8	referenced	func_80034978	kinds=indexed+mem;widths=4;size=next_ref
+0x800C3DBC	0x800C3DE4	0x28	D_800C3DBC	s32[10]	4	referenced	func_80034978	kinds=indexed;widths=4;size=next_ref
+0x800C3DE4	0x800C3DE8	0x4	D_800C3DE4	s32	4	referenced	func_80034978	kinds=indexed;widths=4;size=next_ref
+0x800C3DE8	0x800C3DEC	0x4	D_800C3DE8	s32	8	referenced	func_80034808,func_80034978	kinds=mem;widths=4;size=next_ref
+0x800C3DEC	0x800C3DF0	0x4	D_800C3DEC	s32	4	referenced	func_80034978	kinds=mem;widths=4;size=access_width
+0x800C3DF0	0x800C3E20	0x30	bss_gap_800C3DF0	u8[48]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3E20	0x800C3E24	0x4	D_800C3E20	s32	8	referenced	func_80034978	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800C3E24	0x800C3E28	0x4	D_800C3E24	s32	4	referenced	func_80023360,func_80034350,func_80034978	kinds=mem;widths=4;size=next_ref
+0x800C3E28	0x800C3E2C	0x4	D_800C3E28	s32	8	referenced	func_80023360,func_80034808,func_80034978	kinds=mem;widths=4;size=next_ref
+0x800C3E2C	0x800C3E30	0x4	D_800C3E2C	s32	4	referenced	func_80034978	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800C3E30	0x800C3E34	0x4	D_800C3E30	s32	8	referenced	func_80023360,func_80034350,func_80034978	kinds=mem;widths=4;size=access_width
+0x800C3E34	0x800C3E38	0x4	bss_gap_800C3E34	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3E38	0x800C3E40	0x8	D_800C3E38	s32[2]	8	referenced	func_80034808,func_80034978	kinds=addr+indexed;widths=4;size=next_ref
+0x800C3E40	0x800C3E44	0x4	D_800C3E40	s32	8	referenced	func_80035A2C,func_80035BD0	candidate_globals:u8[];kinds=mem;widths=4;size=next_ref
+0x800C3E44	0x800C3E46	0x2	D_800C3E44	s16	4	referenced	func_800231B4,func_800358F0,func_80035A2C,func_80035D0C,func_80035E74,func_80036138	candidate_globals:s16;kinds=mem;widths=2;size=access_width
+0x800C3E46	0x800C3E48	0x2	bss_gap_800C3E46	u8[2]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3E48	0x800C3E54	0xC	D_800C3E48	u8[12]	8	referenced	func_80035E74	kinds=addr+indexed;widths=1;size=memset(0xC) in func_80035E74
+0x800C3E54	0x800C3E60	0xC	bss_gap_800C3E54	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3E60	0x800C3E64	0x4	D_800C3E60	s32	8	referenced	func_80038F60,func_800398E0,func_8003A57C,func_8003A5D4,func_8003A648	kinds=mem;widths=4;size=next_ref
+0x800C3E64	0x800C3E68	0x4	D_800C3E64	s32	4	referenced	func_80038F60,func_8003A5D4,func_8003A648	kinds=mem;widths=4;size=next_ref
+0x800C3E68	0x800C3E6C	0x4	D_800C3E68	s32	8	referenced	func_80038F60,func_800398E0,func_8003A57C,func_8003A5D4,func_8003A648	kinds=mem;widths=4;size=next_ref
+0x800C3E6C	0x800C3E70	0x4	D_800C3E6C	s32	4	referenced	func_80038F60,func_8003A57C,func_8003A5D4,func_8003A648	kinds=mem;widths=4;size=next_ref
+0x800C3E70	0x800C3E74	0x4	D_800C3E70	s32	8	referenced	func_80039024,func_80039068,func_800398E0	kinds=mem;widths=4;size=next_ref
+0x800C3E74	0x800C3E75	0x1	D_800C3E74	u8	4	referenced	func_800391BC,func_800396E0,func_800398E0	kinds=mem;widths=1;size=access_width
+0x800C3E75	0x800C3E78	0x3	bss_gap_800C3E75	u8[3]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3E78	0x800C3E7C	0x4	D_800C3E78	u8[4]	8	referenced	func_8003931C,func_80039634	candidate_globals:char[];kinds=addr+mem;widths=4;size=next_ref
+0x800C3E7C	0x800C3EA0	0x24	bss_gap_800C3E7C	u8[36]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3EA0	0x800C3EA1	0x1	D_800C3EA0	u8	8	referenced	func_800398E0	candidate_globals:char[];kinds=addr+mem;widths=1;size=next_ref
+0x800C3EA1	0x800C3EA2	0x1	D_800C3EA1	u8	1	referenced	func_800398E0	kinds=addr+indexed+mem;widths=1;size=next_ref
+0x800C3EA2	0x800C3EA3	0x1	D_800C3EA2	u8	2	referenced	func_800398E0	kinds=mem;widths=1;size=next_ref
+0x800C3EA3	0x800C3EA4	0x1	D_800C3EA3	u8	1	referenced	func_800398E0	kinds=mem;widths=1;size=access_width
+0x800C3EA4	0x800C3FA0	0xFC	bss_gap_800C3EA4	u8[252]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3FA0	0x800C3FB0	0x10	D_800C3FA0	s32[4]	8	referenced	func_80039024,func_80039068,func_800398E0,func_8003A840,func_8003A874	kinds=addr+mem;widths=4;size=next_ref
+0x800C3FB0	0x800C3FB4	0x4	D_800C3FB0	s32	8	referenced	func_8003AFB0	kinds=mem;widths=4;size=access_width
+0x800C3FB4	0x800C3FC0	0xC	bss_gap_800C3FB4	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3FC0	0x800C3FC4	0x4	D_800C3FC0	s32	8	referenced	func_8003B76C	candidate_globals:s32;kinds=addr+mem;widths=4;size=next_ref
+0x800C3FC4	0x800C3FC8	0x4	D_800C3FC4	s32	4	referenced	func_8003B76C	candidate_globals:s32*;kinds=mem;widths=4;size=next_ref
+0x800C3FC8	0x800C3FCC	0x4	D_800C3FC8	s32	8	referenced	func_8003B76C	candidate_globals:void *;kinds=mem;widths=4;size=access_width
+0x800C3FCC	0x800C3FD4	0x8	bss_gap_800C3FCC	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800C3FD4	0x800C3FD8	0x4	D_800C3FD4	s32	4	referenced	func_8003B76C,func_8003BA50,func_8003BD20,func_8003BE38,func_8003BF04,func_8003BF84,func_8003C038,func_8003C090,func_8003C0F0,func_8003C160,func_8003C1D0,func_8003C25C,func_8003C378,func_8003C578,func_8003C5DC,func_8003C7DC,func_8003DDB8,func_8003E068,func_8003E47C,func_8003E674,func_8003ECD8	kinds=mem;widths=4;size=next_ref
+0x800C3FD8	0x800C3FDC	0x4	D_800C3FD8	s32	8	referenced	func_8003B76C,func_8003C7DC,func_8003CACC,func_8003D014,func_8003D090,func_8003D1E4	kinds=mem;widths=4;size=next_ref
+0x800C3FDC	0x800C3FE0	0x4	D_800C3FDC	s32	4	referenced	func_8003B76C,func_8003BA50,func_8003BE38,func_8003BF04,func_8003BF84,func_8003C038,func_8003C090,func_8003C0F0,func_8003C160,func_8003C1D0,func_8003C25C,func_8003C378,func_8003C578,func_8003C5DC,func_8003C7DC,func_8003DDB8,func_8003E210,func_8003E47C,func_8003E674,func_8003ECD8	kinds=mem;widths=4;size=next_ref
+0x800C3FE0	0x800C3FE4	0x4	D_800C3FE0	s32	8	referenced	func_8003B76C,func_8003BD20,func_8003DDB8,func_8003E068	kinds=mem;widths=4;size=next_ref
+0x800C3FE4	0x800C3FE8	0x4	D_800C3FE4	s32	4	referenced	func_8003B76C,func_8003DC7C,func_8003E674	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800C3FE8	0x800C3FEC	0x4	D_800C3FE8	s32	8	referenced	func_8003B76C,func_8003C7DC,func_8003CACC,func_8003D090	candidate_globals:s32;kinds=mem;widths=4;size=next_ref
+0x800C3FEC	0x800C3FEE	0x2	D_800C3FEC	s16	4	referenced	func_8003B9F4,func_8003D090	kinds=mem;widths=2;size=next_ref
+0x800C3FEE	0x800C3FF0	0x2	D_800C3FEE	s16	2	referenced	func_8003B9F4,func_8003D090	kinds=mem;widths=2;size=next_ref
+0x800C3FF0	0x800C3FF4	0x4	D_800C3FF0	s32	8	referenced	func_8003B76C,func_8003DFB8,func_8003E068,func_8003E210	kinds=mem;widths=4;size=next_ref
+0x800C3FF4	0x800C3FF8	0x4	D_800C3FF4	s32	4	referenced	func_8003B76C,func_8003DBE8	kinds=mem;widths=4;size=next_ref
+0x800C3FF8	0x800C3FFC	0x4	D_800C3FF8	s32	8	referenced	func_8003B76C,func_8003BCA0,func_8003BD20,func_8003C320,func_8003DC7C,func_8003E210	kinds=mem;widths=4;size=next_ref
+0x800C3FFC	0x800C4000	0x4	D_800C3FFC	s32	4	referenced	func_8003B76C,func_8003C2E4,func_8003C348,func_8003C36C,func_8003DC7C	kinds=mem;widths=4;size=next_ref
+0x800C4000	0x800C4004	0x4	D_800C4000	s32	8	referenced	func_8003C450,func_8003EDF4	kinds=mem;widths=4;size=next_ref
+0x800C4004	0x800C4008	0x4	D_800C4004	s32	4	referenced	func_8003B76C,func_8003C420,func_8003C450	kinds=mem;widths=4;size=next_ref
+0x800C4008	0x800C400C	0x4	D_800C4008	s32	8	referenced	func_8003B76C,func_8003BCA0,func_8003BD20,func_8003C4AC,func_8003C538,func_8003C550	kinds=mem;widths=4;size=next_ref
+0x800C400C	0x800C4010	0x4	D_800C400C	s32	4	referenced	func_8003B76C,func_8003BCA0,func_8003BD20,func_8003C544	kinds=mem;widths=4;size=next_ref
+0x800C4010	0x800C4014	0x4	D_800C4010	s32	8	referenced	func_8003B76C,func_8003C654,func_8003EE38	kinds=mem;widths=4;size=next_ref
+0x800C4014	0x800C4018	0x4	D_800C4014	s32	4	referenced	func_8003C660,func_8003C744,func_8003C7DC	kinds=mem;widths=4;size=next_ref
+0x800C4018	0x800C401C	0x4	D_800C4018	s32	8	referenced	func_8003C660,func_8003C744,func_8003C7DC	kinds=mem;widths=4;size=next_ref
+0x800C401C	0x800C4020	0x4	D_800C401C	s32	4	referenced	func_8003C660,func_8003C744,func_8003C7DC	kinds=mem;widths=4;size=next_ref
+0x800C4020	0x800C4024	0x4	D_800C4020	s32	8	referenced	func_8003C660,func_8003C744,func_8003C7DC	kinds=mem;widths=4;size=access_width
+0x800C4024	0x800C4030	0xC	bss_gap_800C4024	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4030	0x800C4034	0x4	D_800C4030	s32	8	referenced	func_8003B76C,func_8004290C	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800C4034	0x800C4040	0xC	bss_gap_800C4034	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4040	0x800C4044	0x4	D_800C4040	s32	8	referenced	func_80041E00,func_80042270,func_800425F0	kinds=mem;widths=4;size=access_width
+0x800C4044	0x800C4050	0xC	bss_gap_800C4044	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4050	0x800C4054	0x4	D_800C4050	s32	8	referenced	func_80042128,func_80042270	kinds=mem;widths=4;size=next_ref
+0x800C4054	0x800C4058	0x4	D_800C4054	s32	4	referenced	func_80042128,func_80042270	kinds=mem;widths=4;size=next_ref
+0x800C4058	0x800C405C	0x4	D_800C4058	s32	8	referenced	func_80042128,func_80042270	kinds=addr+mem;widths=4;size=next_ref
+0x800C405C	0x800C4060	0x4	D_800C405C	s32	4	referenced	func_80042128,func_80042270	kinds=mem;widths=4;size=next_ref
+0x800C4060	0x800C4064	0x4	D_800C4060	s32	8	referenced	func_80042128,func_80042270	kinds=mem;widths=4;size=next_ref
+0x800C4064	0x800C4068	0x4	D_800C4064	s32	4	referenced	func_80042128,func_80042270	kinds=mem;widths=4;size=access_width
+0x800C4068	0x800C4070	0x8	bss_gap_800C4068	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4070	0x800C4074	0x4	D_800C4070	s32	8	referenced	func_80042650,func_800427C4,func_8004290C	kinds=mem;widths=4;size=next_ref
+0x800C4074	0x800C4078	0x4	D_800C4074	s32	4	referenced	func_80042650,func_800427C4,func_8004290C	kinds=mem;widths=4;size=next_ref
+0x800C4078	0x800C407C	0x4	D_800C4078	s32	8	referenced	func_80042650	kinds=mem;widths=4;size=next_ref
+0x800C407C	0x800C4080	0x4	D_800C407C	s32	4	referenced	func_80042650,func_8004290C	kinds=mem;widths=4;size=next_ref
+0x800C4080	0x800C4084	0x4	D_800C4080	s32	8	referenced	func_80042650	kinds=mem;widths=4;size=next_ref
+0x800C4084	0x800C4088	0x4	D_800C4084	s32	4	referenced	func_80042650,func_8004290C	kinds=mem;widths=4;size=next_ref
+0x800C4088	0x800C408C	0x4	D_800C4088	s32	8	referenced	func_80042650,func_800427C4,func_8004290C	kinds=mem;widths=4;size=access_width
+0x800C408C	0x800C4090	0x4	bss_gap_800C408C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4090	0x800C40A8	0x18	D_800C4090	u8[24]	8	referenced	func_80042650,func_800427C4,func_8004290C	kinds=addr;size=next_ref
+0x800C40A8	0x800C40AC	0x4	D_800C40A8	s32	8	referenced	func_80042650,func_8004290C	kinds=mem;widths=4;size=access_width
+0x800C40AC	0x800C40B0	0x4	bss_gap_800C40AC	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C40B0	0x800C40B4	0x4	D_800C40B0	s32	8	referenced	func_8003B76C,func_8004290C	candidate_globals:s32;kinds=mem;widths=4;size=access_width
+0x800C40B4	0x800C40C0	0xC	bss_gap_800C40B4	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C40C0	0x800C40C4	0x4	D_800C40C0	s32	8	referenced	func_80042AA0,func_80042AAC,func_80042B70	kinds=mem;widths=4;size=next_ref
+0x800C40C4	0x800C40C8	0x4	D_800C40C4	s32	4	referenced	func_80042AAC,func_80042B10,func_80042B70	kinds=mem;widths=4;size=access_width
+0x800C40C8	0x800C40D0	0x8	bss_gap_800C40C8	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800C40D0	0x800C4280	0x1B0	D_800C40D0	u8[432]	8	referenced	func_80042C50	kinds=addr;size=next_ref
+0x800C4280	0x800C4284	0x4	D_800C4280	s32	8	referenced	func_80042C50	kinds=mem;widths=4;size=next_ref
+0x800C4284	0x800C4288	0x4	D_800C4284	s32	4	referenced	func_80042C50,func_80042D88	kinds=mem;widths=4;size=next_ref
+0x800C4288	0x800C428C	0x4	D_800C4288	s32	8	referenced	func_80042C50,func_80042D88	kinds=mem;widths=4;size=access_width
+0x800C428C	0x800C4290	0x4	bss_gap_800C428C	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4290	0x800C42E0	0x50	D_800C4290	u8[80]	8	referenced	func_80042C50	kinds=addr;size=next_ref
+0x800C42E0	0x800C42E4	0x4	D_800C42E0	s32	8	referenced	func_80042F34,func_80042FD4	kinds=mem;widths=4;size=next_ref
+0x800C42E4	0x800C42E8	0x4	D_800C42E4	s32	4	referenced	func_80042F34,func_80042FD4	kinds=mem;widths=4;size=next_ref
+0x800C42E8	0x800C42EC	0x4	D_800C42E8	s32	8	referenced	func_80042F34,func_80042FD4	kinds=mem;widths=4;size=next_ref
+0x800C42EC	0x800C42F0	0x4	D_800C42EC	s32	4	referenced	func_80042F34,func_80042FD4	kinds=mem;widths=4;size=next_ref
+0x800C42F0	0x800C42F4	0x4	D_800C42F0	s32	8	referenced	func_80043060,func_800430AC,func_800430DC,func_800430F4	kinds=addr+mem;widths=4;size=next_ref
+0x800C42F4	0x800C42F8	0x4	D_800C42F4	s32	4	referenced	func_800430DC	kinds=mem;widths=4;size=access_width
+0x800C42F8	0x800C4300	0x8	bss_gap_800C42F8	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4300	0x800C4304	0x4	D_800C4300	s32	8	referenced	func_800431A0,func_800432B4,func_800433F4,func_800434F8,func_80043554,func_800435B4,func_8004381C	kinds=mem;widths=4;size=next_ref
+0x800C4304	0x800C4306	0x2	D_800C4304	s16	4	referenced	func_800431A0,func_800432B4,func_800433F4,func_800434F8,func_80043554,func_800435B4,func_8004381C	kinds=mem;widths=2;size=next_ref
+0x800C4306	0x800C4308	0x2	D_800C4306	s16	2	referenced	func_800431A0,func_800433F4	kinds=mem;widths=2;size=next_ref
+0x800C4308	0x800C430C	0x4	D_800C4308	s32	8	referenced	func_800431A0,func_800432B4	kinds=mem;widths=4;size=next_ref
+0x800C430C	0x800C4310	0x4	D_800C430C	s32	4	referenced	func_800431A0,func_800433F4	kinds=mem;widths=4;size=next_ref
+0x800C4310	0x800C4314	0x4	D_800C4310	s32	8	referenced	func_80048AB0	kinds=mem;widths=4;size=access_width
+0x800C4314	0x800C4320	0xC	bss_gap_800C4314	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4320	0x800C4340	0x20	D_800C4320	u8[32]	8	referenced	func_80047FC0	kinds=addr;size=next_ref
+0x800C4340	0x800C4348	0x8	D_800C4340	u64	8	referenced	func_80047FC0	kinds=mem;widths=8;size=access_width
+0x800C4348	0x800C4378	0x30	bss_gap_800C4348	u8[48]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4378	0x800C4380	0x8	D_800C4378	u64	8	referenced	func_80047FC0	kinds=mem;widths=8;size=next_ref
+0x800C4380	0x800C4388	0x8	D_800C4380	u64	8	referenced	func_80047FC0	kinds=mem;widths=8;size=next_ref
+0x800C4388	0x800C4390	0x8	D_800C4388	u64	8	referenced	func_80047FC0	kinds=mem;widths=8;size=access_width
+0x800C4390	0x800C4438	0xA8	bss_gap_800C4390	u8[168]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4438	0x800C443C	0x4	D_800C4438	s32	8	referenced	func_80047FC0	kinds=mem;widths=4;size=access_width
+0x800C443C	0x800C44D0	0x94	bss_gap_800C443C	u8[148]	1	inferred-gap	-	no reference from code or initialized data
+0x800C44D0	0x800C44D4	0x4	D_800C44D0	s32	8	referenced	func_80048524,func_80049030	kinds=addr+indexed;widths=4;size=next_ref
+0x800C44D4	0x800C4510	0x3C	D_800C44D4	s32[15]	4	referenced	func_80048524,func_80049030	kinds=indexed;widths=4;size=next_ref
+0x800C4510	0x800C4514	0x4	D_800C4510	s32	8	referenced	func_8005067C	kinds=mem;widths=4;size=next_ref
+0x800C4514	0x800C4518	0x4	D_800C4514	s32	4	referenced	func_8005067C	kinds=mem;widths=4;size=access_width
+0x800C4518	0x800C4550	0x38	bss_gap_800C4518	u8[56]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4550	0x800C4554	0x4	D_800C4550	s32	8	referenced	func_80048A10,func_800492C0,func_80052378	kinds=mem;widths=4;size=next_ref
+0x800C4554	0x800C4558	0x4	D_800C4554	s32	4	referenced	func_800492C0,func_80052378	kinds=mem;widths=4;size=next_ref
+0x800C4558	0x800C455C	0x4	D_800C4558	s32	8	referenced	func_80048A10,func_800492C0,func_80052378	kinds=mem;widths=4;size=next_ref
+0x800C455C	0x800C4560	0x4	D_800C455C	s32	4	referenced	func_80048A10,func_800492C0,func_80052378	kinds=mem;widths=4;size=next_ref
+0x800C4560	0x800C4564	0x4	D_800C4560	s32	8	referenced	func_80049314,func_80049450	kinds=mem;widths=4;size=access_width
+0x800C4564	0x800C4570	0xC	bss_gap_800C4564	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4570	0x800C4590	0x20	D_800C4570	u8[32]	8	referenced	data@80056080	kinds=dataptr;size=next_ref
+0x800C4590	0x800C45A0	0x10	D_800C4590	u8[16]	8	referenced	func_8004DDD0,func_8004DE24	kinds=addr;size=next_ref
+0x800C45A0	0x800C45E0	0x40	D_800C45A0	u8[64]	8	referenced	func_8004DDD0,func_8004DE24,func_8004DE90	kinds=addr;size=next_ref
+0x800C45E0	0x800C45F8	0x18	D_800C45E0	u8[24]	8	referenced	func_8004DEC0	kinds=addr;size=next_ref
+0x800C45F8	0x800C45FC	0x4	D_800C45F8	u8[4]	8	referenced	func_8004DEC0	kinds=addr;size=next_ref
+0x800C45FC	0x800C45FD	0x1	D_800C45FC	u8	4	referenced	func_8004DBB8,func_8004DC54,func_8004DEC0,func_8004E05C,func_8004E110,func_8004E270,func_8004E3EC,func_8004E490	kinds=mem;widths=1;size=access_width
+0x800C45FD	0x800C4600	0x3	bss_gap_800C45FD	u8[3]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4600	0x800C4638	0x38	D_800C4600	u8[56]	8	referenced	func_8004DB30,func_8004DBB8,func_8004DC54,func_8004DEC0,func_8004E05C	kinds=addr;size=next_ref
+0x800C4638	0x800C463C	0x4	D_800C4638	u8[4]	8	referenced	func_8004E110	kinds=addr;size=next_ref
+0x800C463C	0x800C4640	0x4	D_800C463C	s32	4	referenced	func_8004DC54,func_8004E110	kinds=addr+mem;widths=4;size=next_ref
+0x800C4640	0x800C4641	0x1	D_800C4640	u8	8	referenced	func_8004DB30,func_8004DEC0,func_8004E3EC,func_8004E550,func_8004E710,func_8004EE50,func_8004F220,func_8004F6C0	kinds=mem;widths=1;size=access_width
+0x800C4641	0x800C4650	0xF	bss_gap_800C4641	u8[15]	1	inferred-gap	-	no reference from code or initialized data
+0x800C4650	0x800C468C	0x3C	D_800C4650	u8[60]	8	referenced	func_8004E270,func_8004E3EC,func_8004E490,func_8004E550,func_8004E710,func_8004EE50,func_8004F084,func_8004F220,func_8004F440,func_8004F5E0,func_8004F750	kinds=addr;size=next_ref
+0x800C468C	0x800C4690	0x4	D_800C468C	s32	4	referenced	func_8004E3EC,func_8004F084,func_8004F440,func_8004F6C0	kinds=addr+mem;widths=4;size=next_ref
+0x800C4690	0x800C4790	0x100	D_800C4690	u8[256]	8	referenced	func_8004E710,func_8004E8D0	kinds=addr;size=next_ref
+0x800C4790	0x800C47B0	0x20	D_800C4790	u8[32]	8	referenced	func_8004E710,func_8004E8D0	kinds=addr+indexed;widths=1;size=next_ref
+0x800C47B0	0x800C48B0	0x100	D_800C47B0	u8[256]	8	referenced	func_8004E550,func_8004E8D0	kinds=addr;size=next_ref
+0x800C48B0	0x800C48D0	0x20	D_800C48B0	u8[32]	8	referenced	func_8004E550,func_8004E8D0	kinds=addr+indexed;widths=1;size=next_ref
+0x800C48D0	0x800C5A80	0x11B0	D_800C48D0	u8[4528]	8	referenced	func_8004F870	kinds=addr;size=next_ref
+0x800C5A80	0x800C5A98	0x18	D_800C5A80	u8[24]	8	referenced	func_8004F870	kinds=addr;size=next_ref
+0x800C5A98	0x800C5AA0	0x8	D_800C5A98	u8[8]	8	referenced	func_8004F870	kinds=addr;size=next_ref
+0x800C5AA0	0x800C5AA4	0x4	D_800C5AA0	s32	8	referenced	data@80057230,func_8004FEC0	kinds=addr+dataptr+mem;widths=4;size=next_ref
+0x800C5AA4	0x800C5AA5	0x1	D_800C5AA4	u8	4	referenced	func_8004FEC0	kinds=mem;widths=1;size=next_ref
+0x800C5AA5	0x800C5AA6	0x1	D_800C5AA5	u8	1	referenced	func_8004FEC0	kinds=mem;widths=1;size=next_ref
+0x800C5AA6	0x800C5AA7	0x1	D_800C5AA6	u8	2	referenced	func_8004FEC0	kinds=mem;widths=1;size=next_ref
+0x800C5AA7	0x800C5AA8	0x1	D_800C5AA7	u8	1	referenced	func_8004FEC0	kinds=mem;widths=1;size=next_ref
+0x800C5AA8	0x800C5AA9	0x1	D_800C5AA8	u8	8	referenced	func_8004FEC0	kinds=mem;widths=1;size=next_ref
+0x800C5AA9	0x800C5AAA	0x1	D_800C5AA9	u8	1	referenced	func_8004FEC0	kinds=mem;widths=1;size=access_width
+0x800C5AAA	0x800C5AAC	0x2	bss_gap_800C5AAA	u8[2]	1	inferred-gap	-	no reference from code or initialized data
+0x800C5AAC	0x800C5AB0	0x4	D_800C5AAC	s32	4	referenced	func_8004FEC0	kinds=addr+mem;widths=4;size=next_ref
+0x800C5AB0	0x800C5AB4	0x4	D_800C5AB0	s32	8	referenced	func_8004FEC0	kinds=mem;widths=4;size=next_ref
+0x800C5AB4	0x800C5B14	0x60	D_800C5AB4	u8[96]	4	referenced	func_8004FEC0	kinds=addr;size=bzero(0x60) in func_8004FEC0
+0x800C5B14	0x800C5B20	0xC	bss_gap_800C5B14	u8[12]	1	inferred-gap	-	no reference from code or initialized data
+0x800C5B20	0x800C5B24	0x4	D_800C5B20	s32	8	referenced	data@80057234,func_8004FFA0	kinds=dataptr+mem;widths=4;size=next_ref
+0x800C5B24	0x800C5B25	0x1	D_800C5B24	u8	4	referenced	func_8004FFA0	kinds=addr+mem;widths=1;size=next_ref
+0x800C5B25	0x800C5B26	0x1	D_800C5B25	u8	1	referenced	func_8004FFA0	kinds=mem;widths=1;size=next_ref
+0x800C5B26	0x800C5B27	0x1	D_800C5B26	u8	2	referenced	func_8004FFA0	kinds=mem;widths=1;size=next_ref
+0x800C5B27	0x800C5B28	0x1	D_800C5B27	u8	1	referenced	func_8004FFA0	kinds=mem;widths=1;size=next_ref
+0x800C5B28	0x800C5B29	0x1	D_800C5B28	u8	8	referenced	func_8004FFA0	kinds=mem;widths=1;size=next_ref
+0x800C5B29	0x800C5B2A	0x1	D_800C5B29	u8	1	referenced	func_8004FFA0	kinds=mem;widths=1;size=access_width
+0x800C5B2A	0x800C5B2C	0x2	bss_gap_800C5B2A	u8[2]	1	inferred-gap	-	no reference from code or initialized data
+0x800C5B2C	0x800C5B30	0x4	D_800C5B2C	s32	4	referenced	func_8004FFA0	kinds=mem;widths=4;size=next_ref
+0x800C5B30	0x800C5B34	0x4	D_800C5B30	s32	8	referenced	func_8004FFA0	kinds=mem;widths=4;size=next_ref
+0x800C5B34	0x800C5B94	0x60	D_800C5B34	u8[96]	4	referenced	func_8004FFA0	kinds=addr;size=bzero(0x60) in func_8004FFA0
+0x800C5B94	0x800C5B98	0x4	D_800C5B94	s32	4	referenced	func_8004FFA0,func_800500A0,func_800505AC	kinds=mem;widths=4;size=access_width
+0x800C5B98	0x800C5BA0	0x8	bss_gap_800C5B98	u8[8]	1	inferred-gap	-	no reference from code or initialized data
+0x800C5BA0	0x800C6BA0	0x1000	D_800C5BA0	u8[4096]	8	referenced	func_80047FEC	kinds=addr;size=next_ref
+0x800C6BA0	0x800C6BB0	0x10	D_800C6BA0	u8[16]	8	referenced	func_80050EB0,func_80050F04	kinds=addr;size=next_ref
+0x800C6BB0	0x800C6BD0	0x20	D_800C6BB0	u8[32]	8	referenced	func_8004F870,func_80050EB0,func_80050F04,func_80050F70	kinds=addr;size=next_ref
+0x800C6BD0	0x800C6BD4	0x4	D_800C6BD0	u8[4]	8	referenced	func_80051D40	kinds=addr;size=next_ref
+0x800C6BD4	0x800C6BD8	0x4	D_800C6BD4	s32	4	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6BD8	0x800C6BDC	0x4	D_800C6BD8	s32	8	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6BDC	0x800C6BE0	0x4	D_800C6BDC	s32	4	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6BE0	0x800C6BE4	0x4	D_800C6BE0	s32	8	referenced	func_80051D40	kinds=mem;widths=4;size=access_width
+0x800C6BE4	0x800C6BE8	0x4	bss_gap_800C6BE4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C6BE8	0x800C6BEC	0x4	D_800C6BE8	s32	8	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6BEC	0x800C6BF0	0x4	D_800C6BEC	s32	4	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6BF0	0x800C6BF4	0x4	D_800C6BF0	s32	8	referenced	func_80051D40	kinds=mem;widths=4;size=access_width
+0x800C6BF4	0x800C6BF8	0x4	bss_gap_800C6BF4	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C6BF8	0x800C6BFC	0x4	D_800C6BF8	s32	8	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6BFC	0x800C6C00	0x4	D_800C6BFC	s32	4	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6C00	0x800C6C04	0x4	D_800C6C00	s32	8	referenced	func_80051D40	kinds=mem;widths=4;size=access_width
+0x800C6C04	0x800C6C08	0x4	bss_gap_800C6C04	u8[4]	1	inferred-gap	-	no reference from code or initialized data
+0x800C6C08	0x800C6C0C	0x4	D_800C6C08	s32	8	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6C0C	0x800C6C10	0x4	D_800C6C0C	s32	4	referenced	func_80051D40	kinds=mem;widths=4;size=next_ref
+0x800C6C10	0x800C6C12	0x2	D_800C6C10	s16	8	referenced	func_80052378	kinds=mem;widths=2;size=access_width
+0x800C6C12	0x800C6C18	0x6	bss_gap_800C6C12	u8[6]	1	inferred-gap	-	no reference from code or initialized data
+0x800C6C18	0x800C7DD0	0x11B8	D_800C6C18	u8[4536]	8	referenced	func_800521E0	kinds=addr;size=next_ref
+0x800C7DD0	0x800C7DE8	0x18	D_800C7DD0	u8[24]	8	referenced	func_800521E0	kinds=addr;size=next_ref
+0x800C7DE8	0x800C7E00	0x18	D_800C7DE8	u8[24]	8	referenced	func_800521E0	kinds=addr;size=next_ref
+0x800C7E00	0x800C7E02	0x2	D_800C7E00	s16	8	referenced	func_800521E0	kinds=addr+mem;widths=2;size=next_ref
+0x800C7E02	0x800C7E03	0x1	D_800C7E02	u8	2	referenced	func_800521E0	kinds=mem;widths=1;size=access_width
+0x800C7E03	0x800C7E04	0x1	bss_gap_800C7E03	u8	1	inferred-gap	-	no reference from code or initialized data
+0x800C7E04	0x800C7E08	0x4	D_800C7E04	s32	4	referenced	func_800521E0	kinds=mem;widths=4;size=access_width
+0x800C7E08	0x800C7E18	0x10	bss_gap_800C7E08	u8[16]	1	inferred-gap	-	no reference from code or initialized data
+0x800C7E18	0x800C7E1A	0x2	D_800C7E18	s16	8	referenced	func_800521E0	kinds=addr+mem;widths=2;size=next_ref
+0x800C7E1A	0x800C7E1B	0x1	D_800C7E1A	u8	2	referenced	func_800521E0	kinds=mem;widths=1;size=access_width
+0x800C7E1B	0x800C7E1C	0x1	bss_gap_800C7E1B	u8	1	inferred-gap	-	no reference from code or initialized data
+0x800C7E1C	0x800C7E20	0x4	D_800C7E1C	s32	4	referenced	func_800521E0	kinds=mem;widths=4;size=access_width
+0x800C7E20	0x800C7E30	0x10	bss_gap_800C7E20	u8[16]	1	inferred-gap	-	no reference from code or initialized data
+0x80058174	0x80058178	0x4	D_80058174	s32	1	alias	func_80009930,func_80009C8C,func_800222E8,func_80031CB0	inside D_80057F70;kinds=mem
+0x80058178	0x8005817C	0x4	D_80058178	s32	1	alias	func_800090C0,func_80009398,func_800093AC,func_80009434,func_8001D0F0	inside D_80057F70;kinds=mem
+0x8005817C	0x80058180	0x4	D_8005817C	s32	1	alias	func_80009398,func_800093AC,func_80009434	inside D_80057F70;kinds=mem
+0x80058180	0x80058184	0x4	D_80058180	s32	1	alias	func_800090C0,func_800093D0,func_800093DC,func_80009634,func_8001D034,func_800322B8	inside D_80057F70;kinds=mem
+0x80058184	0x80058188	0x4	D_80058184	s32	1	alias	func_80009464,func_80009554,func_800222E8	inside D_80057F70;kinds=mem
+0x80058188	0x8005818C	0x4	D_80058188	s32	1	alias	func_80009464,func_80009554,func_80009610,func_80009634,func_80009930,func_80009FD8,func_800322B8	inside D_80057F70;kinds=mem
+0x8005818C	0x80058190	0x4	D_8005818C	s32	1	alias	func_80009930,func_80031C2C,func_80031CB0,func_80031EDC,func_800322B8	inside D_80057F70;kinds=mem
+0x80058190	0x80058194	0x4	D_80058190	s32	1	alias	func_80009634,func_80009930,func_80009FD8	inside D_80057F70;kinds=mem
+0x80058194	0x80058198	0x4	D_80058194	s32	1	alias	func_80009634,func_80009930,func_80009C8C,func_80009FD8,func_800222E8	inside D_80057F70;kinds=mem
+0x800581C4	0x800581C8	0x4	D_800581C4	s32	1	alias	func_80025730	inside D_800581C0;kinds=mem
+0x800581C8	0x800581CC	0x4	D_800581C8	s32	1	alias	func_80025730	inside D_800581C0;kinds=mem
+0x800581CC	0x800581D0	0x4	D_800581CC	s32	1	alias	func_80025730	inside D_800581C0;kinds=mem
+0x80058C04	0x80058C08	0x4	D_80058C04	s32	1	alias	func_8001C77C	inside D_80058C00;kinds=mem
+0x80058C08	0x80058C0C	0x4	D_80058C08	s32	1	alias	func_8001C77C	inside D_80058C00;kinds=mem
+0x80058C0C	0x80058C0D	0x1	D_80058C0C	u8	1	alias	func_80012A14,func_80012BBC	inside D_80058C00;kinds=addr+mem
+0x80058C0D	0x80058C0E	0x1	D_80058C0D	u8	1	alias	func_80012A14	inside D_80058C00;kinds=mem
+0x80059DD8	0x80059DDA	0x2	D_80059DD8	s16	1	alias	func_80016F50,func_80017144,func_8001757C,func_80019140	inside D_80059DD0;kinds=indexed+mem
+0x80059DDA	0x80059DDB	0x1	D_80059DDA	u8	1	alias	func_80016BDC,func_80016DB0,func_80016F50,func_80017144,func_800178B8,func_80017CCC,func_800182E8,func_80019140	inside D_80059DD0;kinds=addr+indexed+mem
+0x80059DDE	0x80059DDF	0x1	D_80059DDE	u8	1	alias	func_80016F50,func_80019140	inside D_80059DD0;kinds=mem
+0x80059DE8	0x80059DEC	0x4	D_80059DE8	s32	1	alias	func_800178B8,func_80017CCC,func_80018A34	inside D_80059DD0;kinds=addr+indexed
+0x80059DF2	0x80059DF3	0x1	D_80059DF2	u8	1	alias	func_80018A34	inside D_80059DD0;kinds=indexed
+0x8005B213	0x8005B214	0x1	D_8005B213	u8	1	alias	func_8001B08C	inside D_8005B210;kinds=mem
+0x8005B7EF	0x8005B7F0	0x1	D_8005B7EF	u8	1	alias	func_8001B08C	inside D_8005B7EC;kinds=mem
+0x8005B834	0x8005B838	0x4	D_8005B834	s32	1	alias	func_8001E0E0,func_8001E204,func_8001E2B0	inside D_8005B830;kinds=mem
+0x8005B838	0x8005B83C	0x4	D_8005B838	s32	1	alias	func_8001E0E0,func_8001E178,func_8001E2B0	inside D_8005B830;kinds=mem
+0x8005B83C	0x8005B840	0x4	D_8005B83C	s32	1	alias	func_8001E178	inside D_8005B830;kinds=indexed
+0x8005B840	0x8005B844	0x4	D_8005B840	s32	1	alias	func_8001E178	inside D_8005B830;kinds=indexed
+0x8005B8DC	0x8005B8E0	0x4	D_8005B8DC	s32	1	alias	func_8001E168,func_8001E28C,func_8001E2B0	inside D_8005B830;kinds=mem
+0x8005B8E0	0x8005B8E4	0x4	D_8005B8E0	s32	1	alias	func_8001E204,func_8001E2B0	inside D_8005B830;kinds=mem
+0x8005B968	0x8005B96C	0x4	D_8005B968	s32	1	alias	func_8001E28C	inside D_8005B830;kinds=mem
+0x80061E56	0x80061E58	0x2	D_80061E56	u16	1	alias	func_8001F1C4	inside D_80061E54;kinds=mem
+0x8006FBE0	0x8006FBE1	0x1	D_8006FBE0	u8	1	alias	func_80026824	inside D_8006FBB0;kinds=addr
+0x80099B33	0x80099B34	0x1	D_80099B33	u8	1	alias	func_8000C674,func_800197C8	inside D_80099B30;kinds=mem
+0x800B9296	0x800B9298	0x2	D_800B9296	u16	1	alias	func_800296D4,func_800299A8	inside D_800B9294;kinds=mem
+0x800B92AC	0x800B92B0	0x4	D_800B92AC	f32	1	alias	func_80026824,func_8002A154	inside D_800B92A8;kinds=mem
+0x800B92B0	0x800B92B4	0x4	D_800B92B0	f32	1	alias	func_80026824	inside D_800B92A8;kinds=mem
+0x800B92B4	0x800B92B8	0x4	D_800B92B4	s32	1	alias	func_8002A13C,func_8002A154	inside D_800B92A8;kinds=mem
+0x800B92B8	0x800B92BC	0x4	D_800B92B8	s32	1	alias	func_8002A13C,func_8002A154	inside D_800B92A8;kinds=mem
+0x800C33BE	0x800C33C0	0x2	D_800C33BE	s16	1	alias	func_800322B8	inside D_800C33BC;kinds=mem
+0x800C33DC	0x800C33E0	0x4	D_800C33DC	s32	1	alias	func_8000E7C8,func_8003187C	inside D_800C33D8;kinds=mem
+0x800C33E0	0x800C33E4	0x4	D_800C33E0	u8[4]	1	alias	func_8000E7C8,func_8000F4E4,func_8003187C	inside D_800C33D8;kinds=mem
+0x800C33E4	0x800C33E8	0x4	D_800C33E4	u8[4]	1	alias	func_8000E7C8,func_8000F34C,func_80031CB0	inside D_800C33D8;kinds=mem
+0x800C33E8	0x800C33EC	0x4	D_800C33E8	s32	1	alias	func_8000E7C8	inside D_800C33D8;kinds=mem
+0x800C33EC	0x800C33F0	0x4	D_800C33EC	u8[4]	1	alias	func_8000E7C8,func_8000F34C,func_80031CB0	inside D_800C33D8;kinds=mem
+0x800C33F0	0x800C33F4	0x4	D_800C33F0	s32	1	alias	func_8000E7C8,func_8000F34C	inside D_800C33D8;kinds=mem
+0x800C33F4	0x800C33F8	0x4	D_800C33F4	s32	1	alias	func_8000E7C8,func_8000F34C	inside D_800C33D8;kinds=mem
+0x800C33F8	0x800C33FC	0x4	D_800C33F8	s32	1	alias	func_8000E7C8	inside D_800C33D8;kinds=mem
+0x800C3400	0x800C3404	0x4	D_800C3400	s32	1	alias	func_8000E7C8	inside D_800C33D8;kinds=mem
+0x800C3404	0x800C3408	0x4	D_800C3404	s32	1	alias	func_8000E7C8,func_8003187C	inside D_800C33D8;kinds=mem
+0x800C3408	0x800C340C	0x4	D_800C3408	f32	1	alias	func_8000E7C8	inside D_800C33D8;kinds=mem
+0x800C3410	0x800C3414	0x4	D_800C3410	f32	1	alias	func_8000E7C8	inside D_800C33D8;kinds=mem
+0x800C3E50	0x800C3E54	0x4	D_800C3E50	s32	1	alias	func_80035890,func_80035D0C,func_80035E74,func_80036138	inside D_800C3E48;kinds=addr+indexed
+0x800C3E7B	0x800C3E7C	0x1	D_800C3E7B	u8[1]	1	alias	func_8003931C	inside D_800C3E78;kinds=mem

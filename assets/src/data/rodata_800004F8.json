@@ -1,0 +1,2431 @@
+{
+ "section": ".rodata",
+ "vram": "0x800004F8",
+ "objects": [
+  {
+   "vram": "0x800004F8",
+   "rom": "0x10F8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800004F8",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x00194649",
+    "0x4C455F42"
+   ],
+   "literal": "\"\\000\\031FILE_B\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_80004458"
+  },
+  {
+   "vram": "0x80000500",
+   "rom": "0x1100",
+   "size": 40,
+   "section": ".rodata",
+   "name": "jtbl_80000500",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80004624",
+     "sym": "func_80004458",
+     "off": 460
+    },
+    {
+     "reloc": "0x80004550",
+     "sym": "func_80004458",
+     "off": 248
+    },
+    {
+     "reloc": "0x80004558",
+     "sym": "func_80004458",
+     "off": 256
+    },
+    {
+     "reloc": "0x80004594",
+     "sym": "func_80004458",
+     "off": 316
+    },
+    {
+     "reloc": "0x800045AC",
+     "sym": "func_80004458",
+     "off": 340
+    },
+    {
+     "reloc": "0x800045C0",
+     "sym": "func_80004458",
+     "off": 360
+    },
+    {
+     "reloc": "0x800045D0",
+     "sym": "func_80004458",
+     "off": 376
+    },
+    {
+     "reloc": "0x800045FC",
+     "sym": "func_80004458",
+     "off": 420
+    },
+    {
+     "reloc": "0x8000460C",
+     "sym": "func_80004458",
+     "off": 436
+    },
+    {
+     "reloc": "0x8000461C",
+     "sym": "func_80004458",
+     "off": 452
+    }
+   ]
+  },
+  {
+   "vram": "0x80000528",
+   "rom": "0x1128",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000528",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x424F4152",
+    "0x445F444F"
+   ],
+   "literal": "\"BOARD_DO\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_80004458, func_80005EF8"
+  },
+  {
+   "vram": "0x80000530",
+   "rom": "0x1130",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000530",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1500.0f"
+   ]
+  },
+  {
+   "vram": "0x80000534",
+   "rom": "0x1134",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000534",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "500.0f"
+   ]
+  },
+  {
+   "vram": "0x80000538",
+   "rom": "0x1138",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000538",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "900.0f"
+   ]
+  },
+  {
+   "vram": "0x8000053C",
+   "rom": "0x113C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000053C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "600.0f"
+   ]
+  },
+  {
+   "vram": "0x80000540",
+   "rom": "0x1140",
+   "size": 32,
+   "section": ".rodata",
+   "name": "jtbl_80000540",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800066F0",
+     "sym": "func_800065FC",
+     "off": 244
+    },
+    {
+     "reloc": "0x800066E4",
+     "sym": "func_800065FC",
+     "off": 232
+    },
+    {
+     "reloc": "0x800066B4",
+     "sym": "func_800065FC",
+     "off": 184
+    },
+    {
+     "reloc": "0x800066CC",
+     "sym": "func_800065FC",
+     "off": 208
+    },
+    {
+     "reloc": "0x80006670",
+     "sym": "func_800065FC",
+     "off": 116
+    },
+    {
+     "reloc": "0x80006678",
+     "sym": "func_800065FC",
+     "off": 124
+    },
+    {
+     "reloc": "0x80006680",
+     "sym": "func_800065FC",
+     "off": 132
+    },
+    {
+     "reloc": "0x80006688",
+     "sym": "func_800065FC",
+     "off": 140
+    }
+   ]
+  },
+  {
+   "vram": "0x80000560",
+   "rom": "0x1160",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000560",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "225.0f"
+   ]
+  },
+  {
+   "vram": "0x80000564",
+   "rom": "0x1164",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000564",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "75.0f"
+   ]
+  },
+  {
+   "vram": "0x80000568",
+   "rom": "0x1168",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000568",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.3125"
+   ]
+  },
+  {
+   "vram": "0x80000570",
+   "rom": "0x1170",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000570",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "360.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80000578",
+   "rom": "0x1178",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000578",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "6.283185307"
+   ]
+  },
+  {
+   "vram": "0x80000580",
+   "rom": "0x1180",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000580",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "360.0"
+   ]
+  },
+  {
+   "vram": "0x80000588",
+   "rom": "0x1188",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000588",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "360.0"
+   ]
+  },
+  {
+   "vram": "0x80000590",
+   "rom": "0x1190",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000590",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "360.0"
+   ]
+  },
+  {
+   "vram": "0x80000598",
+   "rom": "0x1198",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000598",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "90.0"
+   ]
+  },
+  {
+   "vram": "0x800005A0",
+   "rom": "0x11A0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800005A0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "360.0"
+   ]
+  },
+  {
+   "vram": "0x800005A8",
+   "rom": "0x11A8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800005A8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "360.0"
+   ]
+  },
+  {
+   "vram": "0x800005B0",
+   "rom": "0x11B0",
+   "size": 20,
+   "section": ".rodata",
+   "name": "jtbl_800005B0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80007248",
+     "sym": "func_8000715C",
+     "off": 236
+    },
+    {
+     "reloc": "0x80007260",
+     "sym": "func_8000715C",
+     "off": 260
+    },
+    {
+     "reloc": "0x80007278",
+     "sym": "func_8000715C",
+     "off": 284
+    },
+    {
+     "reloc": "0x80007290",
+     "sym": "func_8000715C",
+     "off": 308
+    },
+    {
+     "reloc": "0x80007248",
+     "sym": "func_8000715C",
+     "off": 236
+    }
+   ]
+  },
+  {
+   "vram": "0x800005C4",
+   "rom": "0x11C4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_800005C4",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x800005C8",
+   "rom": "0x11C8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800005C8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "360.0"
+   ]
+  },
+  {
+   "vram": "0x800005D0",
+   "rom": "0x11D0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800005D0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "600.0f"
+   ]
+  },
+  {
+   "vram": "0x800005D4",
+   "rom": "0x11D4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800005D4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.5f"
+   ]
+  },
+  {
+   "vram": "0x800005D8",
+   "rom": "0x11D8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800005D8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "90.0"
+   ]
+  },
+  {
+   "vram": "0x800005E0",
+   "rom": "0x11E0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800005E0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f",
+    "14174538170368.0f",
+    "226849996800.0f",
+    "1.2696581934441038e+19f"
+   ]
+  },
+  {
+   "vram": "0x800005F0",
+   "rom": "0x11F0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800005F0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x800005F4",
+   "rom": "0x11F4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800005F4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x800005F8",
+   "rom": "0x11F8",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_800005F8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f",
+    "805.3482055664062f",
+    "788.5040283203125f",
+    "2820953042059264.0f",
+    "222403510272.0f",
+    "4.675621868843738e-19f"
+   ]
+  },
+  {
+   "vram": "0x80000610",
+   "rom": "0x1210",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000610",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80000614",
+   "rom": "0x1214",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000614",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-1.0f"
+   ]
+  },
+  {
+   "vram": "0x80000618",
+   "rom": "0x1218",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000618",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-1.0f"
+   ]
+  },
+  {
+   "vram": "0x8000061C",
+   "rom": "0x121C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000061C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0000000116860974e-07f"
+   ]
+  },
+  {
+   "vram": "0x80000620",
+   "rom": "0x1220",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000620",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.0"
+   ]
+  },
+  {
+   "vram": "0x80000628",
+   "rom": "0x1228",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000628",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0000000116860974e-07f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80000630",
+   "rom": "0x1230",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000630",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x25730000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 78 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80000638",
+   "rom": "0x1238",
+   "size": 24,
+   "section": ".rodata",
+   "name": "jtbl_80000638",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800096AC",
+     "sym": "func_80009634",
+     "off": 120
+    },
+    {
+     "reloc": "0x8000985C",
+     "sym": "func_80009634",
+     "off": 552
+    },
+    {
+     "reloc": "0x8000985C",
+     "sym": "func_80009634",
+     "off": 552
+    },
+    {
+     "reloc": "0x80009910",
+     "sym": "func_80009634",
+     "off": 732
+    },
+    {
+     "reloc": "0x80009908",
+     "sym": "func_80009634",
+     "off": 724
+    },
+    {
+     "reloc": "0x80009910",
+     "sym": "func_80009634",
+     "off": 732
+    }
+   ]
+  },
+  {
+   "vram": "0x80000650",
+   "rom": "0x1250",
+   "size": 24,
+   "section": ".rodata",
+   "name": "jtbl_80000650",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800097D8",
+     "sym": "func_80009634",
+     "off": 420
+    },
+    {
+     "reloc": "0x800097E8",
+     "sym": "func_80009634",
+     "off": 436
+    },
+    {
+     "reloc": "0x800097F0",
+     "sym": "func_80009634",
+     "off": 444
+    },
+    {
+     "reloc": "0x800097D8",
+     "sym": "func_80009634",
+     "off": 420
+    },
+    {
+     "reloc": "0x800097E0",
+     "sym": "func_80009634",
+     "off": 428
+    },
+    {
+     "reloc": "0x800097F8",
+     "sym": "func_80009634",
+     "off": 452
+    }
+   ]
+  },
+  {
+   "vram": "0x80000668",
+   "rom": "0x1268",
+   "size": 24,
+   "section": ".rodata",
+   "name": "jtbl_80000668",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80009980",
+     "sym": "func_80009930",
+     "off": 80
+    },
+    {
+     "reloc": "0x80009A24",
+     "sym": "func_80009930",
+     "off": 244
+    },
+    {
+     "reloc": "0x80009AD4",
+     "sym": "func_80009930",
+     "off": 420
+    },
+    {
+     "reloc": "0x80009A8C",
+     "sym": "func_80009930",
+     "off": 348
+    },
+    {
+     "reloc": "0x80009ACC",
+     "sym": "func_80009930",
+     "off": 412
+    },
+    {
+     "reloc": "0x80009AD4",
+     "sym": "func_80009930",
+     "off": 420
+    }
+   ]
+  },
+  {
+   "vram": "0x80000680",
+   "rom": "0x1280",
+   "size": 24,
+   "section": ".rodata",
+   "name": "jtbl_80000680",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8000A054",
+     "sym": "func_80009FD8",
+     "off": 124
+    },
+    {
+     "reloc": "0x8000A1CC",
+     "sym": "func_80009FD8",
+     "off": 500
+    },
+    {
+     "reloc": "0x8000A460",
+     "sym": "func_80009FD8",
+     "off": 1160
+    },
+    {
+     "reloc": "0x8000A460",
+     "sym": "func_80009FD8",
+     "off": 1160
+    },
+    {
+     "reloc": "0x8000A0FC",
+     "sym": "func_80009FD8",
+     "off": 292
+    },
+    {
+     "reloc": "0x8000A28C",
+     "sym": "func_80009FD8",
+     "off": 692
+    }
+   ]
+  },
+  {
+   "vram": "0x80000698",
+   "rom": "0x1298",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000698",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "600.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800006A0",
+   "rom": "0x12A0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800006A0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.03260869565217391"
+   ]
+  },
+  {
+   "vram": "0x800006A8",
+   "rom": "0x12A8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800006A8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "350.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800006B0",
+   "rom": "0x12B0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800006B0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.2"
+   ]
+  },
+  {
+   "vram": "0x800006B8",
+   "rom": "0x12B8",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800006B8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "25.0f"
+   ]
+  },
+  {
+   "vram": "0x800006BC",
+   "rom": "0x12BC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800006BC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.5f"
+   ]
+  },
+  {
+   "vram": "0x800006C0",
+   "rom": "0x12C0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_800006C0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "90.0f",
+    "2.525202305882768e-29f",
+    "0.0f",
+    "6.406976416480803e-25f"
+   ]
+  },
+  {
+   "vram": "0x800006D0",
+   "rom": "0x12D0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800006D0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x800006D8",
+   "rom": "0x12D8",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800006D8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "100.0f"
+   ]
+  },
+  {
+   "vram": "0x800006DC",
+   "rom": "0x12DC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800006DC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "100000.0f"
+   ]
+  },
+  {
+   "vram": "0x800006E0",
+   "rom": "0x12E0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_800006E0",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "zero gap between literals of func_8000C034 (alignment padding or an unused zero/empty-string literal)"
+  },
+  {
+   "vram": "0x800006E4",
+   "rom": "0x12E4",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_800006E4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Door Down\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800006F0",
+   "rom": "0x12F0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800006F0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Door Up\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800006F8",
+   "rom": "0x12F8",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_800006F8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Door Right\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000704",
+   "rom": "0x1304",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000704",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Door Left\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000710",
+   "rom": "0x1310",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000710",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Board Start\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000071C",
+   "rom": "0x131C",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_8000071C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Room End\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000728",
+   "rom": "0x1328",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000728",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Room Start\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000734",
+   "rom": "0x1334",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000734",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"Turtle\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000073C",
+   "rom": "0x133C",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_8000073C",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x50617468",
+    "0x005F5052",
+    "0x45445241",
+    "0x575F3036",
+    "0x52000008"
+   ],
+   "literal": "\"Path\\000_PREDRAW_06R\\000\\000\\010\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_8000E1D0"
+  },
+  {
+   "vram": "0x80000750",
+   "rom": "0x1350",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000750",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.75"
+   ]
+  },
+  {
+   "vram": "0x80000758",
+   "rom": "0x1358",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000758",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "300.0f"
+   ]
+  },
+  {
+   "vram": "0x8000075C",
+   "rom": "0x135C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000075C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "65535.0f"
+   ]
+  },
+  {
+   "vram": "0x80000760",
+   "rom": "0x1360",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000760",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "5.0f"
+   ]
+  },
+  {
+   "vram": "0x80000764",
+   "rom": "0x1364",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000764",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1000.0f"
+   ]
+  },
+  {
+   "vram": "0x80000768",
+   "rom": "0x1368",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000768",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "300.0f"
+   ]
+  },
+  {
+   "vram": "0x8000076C",
+   "rom": "0x136C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000076C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "65535.0f"
+   ]
+  },
+  {
+   "vram": "0x80000770",
+   "rom": "0x1370",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000770",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.75"
+   ]
+  },
+  {
+   "vram": "0x80000778",
+   "rom": "0x1378",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000778",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.75f",
+    "836693.9375f"
+   ]
+  },
+  {
+   "vram": "0x80000780",
+   "rom": "0x1380",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000780",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80000784",
+   "rom": "0x1384",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000784",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "50.0f"
+   ]
+  },
+  {
+   "vram": "0x80000788",
+   "rom": "0x1388",
+   "size": 92,
+   "section": ".rodata",
+   "name": "jtbl_80000788",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8000E83C",
+     "sym": "func_8000E7C8",
+     "off": 116
+    },
+    {
+     "reloc": "0x8000E88C",
+     "sym": "func_8000E7C8",
+     "off": 196
+    },
+    {
+     "reloc": "0x8000EC64",
+     "sym": "func_8000E7C8",
+     "off": 1180
+    },
+    {
+     "reloc": "0x8000EE6C",
+     "sym": "func_8000E7C8",
+     "off": 1700
+    },
+    {
+     "reloc": "0x8000F0CC",
+     "sym": "func_8000E7C8",
+     "off": 2308
+    },
+    {
+     "reloc": "0x8000EE24",
+     "sym": "func_8000E7C8",
+     "off": 1628
+    },
+    {
+     "reloc": "0x8000EE24",
+     "sym": "func_8000E7C8",
+     "off": 1628
+    },
+    {
+     "reloc": "0x8000EE24",
+     "sym": "func_8000E7C8",
+     "off": 1628
+    },
+    {
+     "reloc": "0x8000EE24",
+     "sym": "func_8000E7C8",
+     "off": 1628
+    },
+    {
+     "reloc": "0x8000EE24",
+     "sym": "func_8000E7C8",
+     "off": 1628
+    },
+    {
+     "reloc": "0x8000F12C",
+     "sym": "func_8000E7C8",
+     "off": 2404
+    },
+    {
+     "reloc": "0x8000EE40",
+     "sym": "func_8000E7C8",
+     "off": 1656
+    },
+    {
+     "reloc": "0x8000F12C",
+     "sym": "func_8000E7C8",
+     "off": 2404
+    },
+    {
+     "reloc": "0x8000EE7C",
+     "sym": "func_8000E7C8",
+     "off": 1716
+    },
+    {
+     "reloc": "0x8000EE88",
+     "sym": "func_8000E7C8",
+     "off": 1728
+    },
+    {
+     "reloc": "0x8000F008",
+     "sym": "func_8000E7C8",
+     "off": 2112
+    },
+    {
+     "reloc": "0x8000F09C",
+     "sym": "func_8000E7C8",
+     "off": 2260
+    },
+    {
+     "reloc": "0x8000F0EC",
+     "sym": "func_8000E7C8",
+     "off": 2340
+    },
+    {
+     "reloc": "0x8000F0FC",
+     "sym": "func_8000E7C8",
+     "off": 2356
+    },
+    {
+     "reloc": "0x8000F10C",
+     "sym": "func_8000E7C8",
+     "off": 2372
+    },
+    {
+     "reloc": "0x8000F124",
+     "sym": "func_8000E7C8",
+     "off": 2396
+    },
+    {
+     "reloc": "0x8000F10C",
+     "sym": "func_8000E7C8",
+     "off": 2372
+    },
+    {
+     "reloc": "0x8000F124",
+     "sym": "func_8000E7C8",
+     "off": 2396
+    }
+   ]
+  },
+  {
+   "vram": "0x800007E4",
+   "rom": "0x13E4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800007E4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "110.0f"
+   ]
+  },
+  {
+   "vram": "0x800007E8",
+   "rom": "0x13E8",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800007E8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "165.0f"
+   ]
+  },
+  {
+   "vram": "0x800007EC",
+   "rom": "0x13EC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800007EC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "400.0f"
+   ]
+  },
+  {
+   "vram": "0x800007F0",
+   "rom": "0x13F0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800007F0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1900.0f"
+   ]
+  },
+  {
+   "vram": "0x800007F4",
+   "rom": "0x13F4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800007F4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "450.0f"
+   ]
+  },
+  {
+   "vram": "0x800007F8",
+   "rom": "0x13F8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800007F8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "233.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80000800",
+   "rom": "0x1400",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000800",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x80000808",
+   "rom": "0x1408",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000808",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x80000810",
+   "rom": "0x1410",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000810",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x80000818",
+   "rom": "0x1418",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000818",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x80000820",
+   "rom": "0x1420",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000820",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x80000828",
+   "rom": "0x1428",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000828",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x80000830",
+   "rom": "0x1430",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000830",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "300.0f"
+   ]
+  },
+  {
+   "vram": "0x80000834",
+   "rom": "0x1434",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000834",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "400.0f"
+   ]
+  },
+  {
+   "vram": "0x80000838",
+   "rom": "0x1438",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000838",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "10.0f"
+   ]
+  },
+  {
+   "vram": "0x8000083C",
+   "rom": "0x143C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000083C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "250.0f"
+   ]
+  },
+  {
+   "vram": "0x80000840",
+   "rom": "0x1440",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000840",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80000844",
+   "rom": "0x1444",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000844",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f"
+   ]
+  },
+  {
+   "vram": "0x80000848",
+   "rom": "0x1448",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000848",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80000850",
+   "rom": "0x1450",
+   "size": 20,
+   "section": ".rodata",
+   "name": "jtbl_80000850",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8000FE3C",
+     "sym": "func_8000FDAC",
+     "off": 144
+    },
+    {
+     "reloc": "0x8000FF44",
+     "sym": "func_8000FDAC",
+     "off": 408
+    },
+    {
+     "reloc": "0x8000FF78",
+     "sym": "func_8000FDAC",
+     "off": 460
+    },
+    {
+     "reloc": "0x80010008",
+     "sym": "func_8000FDAC",
+     "off": 604
+    },
+    {
+     "reloc": "0x80010040",
+     "sym": "func_8000FDAC",
+     "off": 660
+    }
+   ]
+  },
+  {
+   "vram": "0x80000864",
+   "rom": "0x1464",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000864",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f"
+   ]
+  },
+  {
+   "vram": "0x80000868",
+   "rom": "0x1468",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000868",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f"
+   ]
+  },
+  {
+   "vram": "0x8000086C",
+   "rom": "0x146C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000086C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f"
+   ]
+  },
+  {
+   "vram": "0x80000870",
+   "rom": "0x1470",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000870",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80000878",
+   "rom": "0x1478",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80000878",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.5"
+   ]
+  },
+  {
+   "vram": "0x80000880",
+   "rom": "0x1480",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000880",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "400.0f"
+   ]
+  },
+  {
+   "vram": "0x80000884",
+   "rom": "0x1484",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000884",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f"
+   ]
+  },
+  {
+   "vram": "0x80000888",
+   "rom": "0x1488",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000888",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f"
+   ]
+  },
+  {
+   "vram": "0x8000088C",
+   "rom": "0x148C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000088C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f"
+   ]
+  },
+  {
+   "vram": "0x80000890",
+   "rom": "0x1490",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000890",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "200.0f"
+   ]
+  },
+  {
+   "vram": "0x80000894",
+   "rom": "0x1494",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000894",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "400.0f"
+   ]
+  },
+  {
+   "vram": "0x80000898",
+   "rom": "0x1498",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000898",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "50.0f"
+   ]
+  },
+  {
+   "vram": "0x8000089C",
+   "rom": "0x149C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000089C",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "4.0f"
+   ]
+  },
+  {
+   "vram": "0x800008A0",
+   "rom": "0x14A0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800008A0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "600.0f"
+   ]
+  },
+  {
+   "vram": "0x800008A4",
+   "rom": "0x14A4",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800008A4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "600.0f"
+   ]
+  },
+  {
+   "vram": "0x800008A8",
+   "rom": "0x14A8",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800008A8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-1.5707963705062866f"
+   ]
+  },
+  {
+   "vram": "0x800008AC",
+   "rom": "0x14AC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800008AC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.5707963705062866f"
+   ]
+  },
+  {
+   "vram": "0x800008B0",
+   "rom": "0x14B0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800008B0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "180.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800008B8",
+   "rom": "0x14B8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800008B8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "30.0"
+   ]
+  },
+  {
+   "vram": "0x800008C0",
+   "rom": "0x14C0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800008C0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "3.141592654"
+   ]
+  },
+  {
+   "vram": "0x800008C8",
+   "rom": "0x14C8",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800008C8",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "-1.5707963705062866f"
+   ]
+  },
+  {
+   "vram": "0x800008CC",
+   "rom": "0x14CC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800008CC",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.5707963705062866f"
+   ]
+  },
+  {
+   "vram": "0x800008D0",
+   "rom": "0x14D0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800008D0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "180.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800008D8",
+   "rom": "0x14D8",
+   "size": 40,
+   "section": ".rodata",
+   "name": "D_800008D8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "3.141592654",
+    "1.103604645911478e+31",
+    "7.2746342203259665e+199",
+    "9.4896932302241e+170",
+    "4.784747100165244e+180"
+   ]
+  },
+  {
+   "vram": "0x80000900",
+   "rom": "0x1500",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000900",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "20.0f"
+   ]
+  },
+  {
+   "vram": "0x80000904",
+   "rom": "0x1504",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000904",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "50.0f",
+    "1.6282089083761684e-27f",
+    "2.525202305882768e-29f"
+   ]
+  },
+  {
+   "vram": "0x80000910",
+   "rom": "0x1510",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000910",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "1.0f",
+    "4.004360260300502e-26f",
+    "3573.204345703125f",
+    "210.27081298828125f"
+   ]
+  },
+  {
+   "vram": "0x80000920",
+   "rom": "0x1520",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80000920",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0001220703125f"
+   ],
+   "note": "unreferenced f32 literal by value; constant pool of func_80011400"
+  },
+  {
+   "vram": "0x80000924",
+   "rom": "0x1524",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000924",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Geoff Todebush-Matt Welton\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000940",
+   "rom": "0x1540",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000940",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Kyra Reppen-Ann Sarnoff\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x8000095C",
+   "rom": "0x155C",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_8000095C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Janet Muldoon-Aly Peduto\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000978",
+   "rom": "0x1578",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000978",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Steve Gold-Lora Lee\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000990",
+   "rom": "0x1590",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000990",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Sergio Cuan-Paul De Mayer\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800009AC",
+   "rom": "0x15AC",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_800009AC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Cricket Benevento-Tim Blankley\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800009CC",
+   "rom": "0x15CC",
+   "size": 44,
+   "section": ".rodata",
+   "name": "D_800009CC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Nickelodeon Software would like to thank:\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x800009F8",
+   "rom": "0x15F8",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_800009F8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Steve Youngwood\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A0C",
+   "rom": "0x160C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000A0C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Seth Jacobson\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A1C",
+   "rom": "0x161C",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000A1C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Directors\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A28",
+   "rom": "0x1628",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000A28",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Erika Ortiz\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A38",
+   "rom": "0x1638",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000A38",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Project Coordinator\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A50",
+   "rom": "0x1650",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000A50",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Syma Sambar\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A60",
+   "rom": "0x1660",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000A60",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Producer/Product Manager\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A7C",
+   "rom": "0x167C",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000A7C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Nickelodeon Software:\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000A94",
+   "rom": "0x1694",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000A94",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"0Nickelodeon\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000AA4",
+   "rom": "0x16A4",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000AA4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Brian Farrell\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000AB4",
+   "rom": "0x16B4",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000AB4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Jeff Lapin\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000AC0",
+   "rom": "0x16C0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000AC0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Dave Anderson\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000AD0",
+   "rom": "0x16D0",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000AD0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Dan Offner\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000ADC",
+   "rom": "0x16DC",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000ADC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Joseph Adney III\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000AF0",
+   "rom": "0x16F0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000AF0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Tiffany Ternan\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B00",
+   "rom": "0x1700",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000B00",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Alison Locke\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B10",
+   "rom": "0x1710",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000B10",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Germaine Gioia\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B20",
+   "rom": "0x1720",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000B20",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Steve Ryno\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B2C",
+   "rom": "0x172C",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000B2C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Jym Killy\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B38",
+   "rom": "0x1738",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000B38",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1THQ would like to thank:\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B54",
+   "rom": "0x1754",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000B54",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Erik van Rooy\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B64",
+   "rom": "0x1764",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80000B64",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Christian Lee-Gregg Nakawatase\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B84",
+   "rom": "0x1784",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000B84",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Jun Caliva-Mike Sparks\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000B9C",
+   "rom": "0x179C",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000B9C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Ryan Kull-James Ritchie\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000BB8",
+   "rom": "0x17B8",
+   "size": 24,
+   "section": ".rodata",
+   "name": "D_80000BB8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Lee Liu-Jason Pislaan\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000BD0",
+   "rom": "0x17D0",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80000BD0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Jason Predmore-Carlos Ramirez\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000BF0",
+   "rom": "0x17F0",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80000BF0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"4Tom Anderson-Jason de Heras\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C10",
+   "rom": "0x1810",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000C10",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Testers\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C1C",
+   "rom": "0x181C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000C1C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Edward Ramiro\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C2C",
+   "rom": "0x182C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000C2C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Lead Tester\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C3C",
+   "rom": "0x183C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000C3C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Donn Nauert\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C4C",
+   "rom": "0x184C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000C4C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Director of QA\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C5C",
+   "rom": "0x185C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000C5C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Kevin Hooper\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C6C",
+   "rom": "0x186C",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80000C6C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Associate Product Manager\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C88",
+   "rom": "0x1888",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000C88",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2John Ardell\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000C98",
+   "rom": "0x1898",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000C98",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Product Manager\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000CAC",
+   "rom": "0x18AC",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80000CAC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Leland Mah\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000CB8",
+   "rom": "0x18B8",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000CB8",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Associate Producer\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000CCC",
+   "rom": "0x18CC",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000CCC",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Carolina Beroza\\000\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000CE0",
+   "rom": "0x18E0",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000CE0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Scott Krager\\000\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000CF0",
+   "rom": "0x18F0",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000CF0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Michael Rubinelli\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000D04",
+   "rom": "0x1904",
+   "size": 40,
+   "section": ".rodata",
+   "name": "D_80000D04",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"1Vice President of Product Development\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000D2C",
+   "rom": "0x192C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000D2C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"0- THQ, Inc. -\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000D3C",
+   "rom": "0x193C",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80000D3C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Mutato Muzika\\000\\000\"",
+   "note": ""
+  },
+  {
+   "vram": "0x80000D4C",
+   "rom": "0x194C",
+   "size": 20,
+   "section": ".rodata",
+   "name": "D_80000D4C",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"2Mark Mothersbaugh\\000\\000\"",
+   "note": ""
+  }
+ ],
+ "end": "0x80000D60",
+ "size": 2152,
+ "c_file": "rodata_800004F8.c"
+}

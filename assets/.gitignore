@@ -1,0 +1,6 @@
+# local verification outputs; never commit
+private_extracted/
+verification/*.log
+verification/results.json
+verification/roundtrip.tsv
+__pycache__/

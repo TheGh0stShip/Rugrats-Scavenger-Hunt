@@ -36,3 +36,10 @@ verify-matching: verify-rom
 survey: verify-rom
 	$(N64DK) survey "$(ROM)" --out analysis/survey
 
+
+.PHONY: data-roundtrip data-tests
+data-roundtrip: verify-rom
+	ROM=$(ROM) PROJECT_ROOT=. N64DK_ROOT=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(PYTHON) assets/tools/rebuild_rom.py $(ROM)
+
+data-tests: verify-rom
+	ROM=$(ROM) PROJECT_ROOT=. N64DK_ROOT=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(PYTHON) -m unittest discover -s assets/tests

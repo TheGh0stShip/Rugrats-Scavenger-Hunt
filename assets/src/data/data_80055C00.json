@@ -1,0 +1,1633 @@
+{
+ "section": ".data",
+ "vram": "0x80055C00",
+ "objects": [
+  {
+   "vram": "0x80055C00",
+   "rom": "0x56800",
+   "size": 104,
+   "section": ".data",
+   "name": "D_80055C00",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    3,
+    4000,
+    0,
+    2160,
+    9830,
+    -9830,
+    0,
+    0,
+    0,
+    0,
+    760,
+    1520,
+    3276,
+    -3276,
+    16383,
+    0,
+    0,
+    0,
+    0,
+    2400,
+    5000,
+    0,
+    0,
+    0,
+    0,
+    20480
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=3, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055C68",
+   "rom": "0x56868",
+   "size": 136,
+   "section": ".data",
+   "name": "D_80055C68",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    4,
+    4000,
+    0,
+    2640,
+    9830,
+    -9830,
+    0,
+    0,
+    0,
+    0,
+    880,
+    2160,
+    3276,
+    -3276,
+    16383,
+    0,
+    0,
+    0,
+    2640,
+    3640,
+    3276,
+    -3276,
+    16383,
+    0,
+    0,
+    0,
+    0,
+    3760,
+    8000,
+    0,
+    0,
+    0,
+    0,
+    20480
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=4, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055CF0",
+   "rom": "0x568F0",
+   "size": 40,
+   "section": ".data",
+   "name": "D_80055CF0",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    8000,
+    0,
+    7160,
+    12000,
+    0,
+    32767,
+    0,
+    0,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055D18",
+   "rom": "0x56918",
+   "size": 40,
+   "section": ".data",
+   "name": "D_80055D18",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    800,
+    0,
+    200,
+    16384,
+    0,
+    32767,
+    7600,
+    700,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055D40",
+   "rom": "0x56940",
+   "size": 40,
+   "section": ".data",
+   "name": "D_80055D40",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    800,
+    0,
+    200,
+    0,
+    24575,
+    32767,
+    380,
+    500,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055D68",
+   "rom": "0x56968",
+   "size": 56,
+   "section": ".data",
+   "name": "D_80055D68",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0xC1200000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element type from 13 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80055DA0",
+   "rom": "0x569A0",
+   "size": 104,
+   "section": ".data",
+   "name": "D_80055DA0",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    3,
+    4000,
+    0,
+    2160,
+    9830,
+    -9830,
+    0,
+    0,
+    0,
+    0,
+    760,
+    1520,
+    3276,
+    -3276,
+    16383,
+    0,
+    0,
+    0,
+    0,
+    2400,
+    5000,
+    0,
+    0,
+    0,
+    0,
+    20480
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=3, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055E08",
+   "rom": "0x56A08",
+   "size": 136,
+   "section": ".data",
+   "name": "D_80055E08",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    4,
+    4000,
+    0,
+    2640,
+    9830,
+    -9830,
+    0,
+    0,
+    0,
+    0,
+    880,
+    2160,
+    3276,
+    -3276,
+    16383,
+    0,
+    0,
+    0,
+    2640,
+    3640,
+    3276,
+    -3276,
+    16383,
+    0,
+    0,
+    0,
+    0,
+    3760,
+    8000,
+    0,
+    0,
+    0,
+    0,
+    20480
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=4, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055E90",
+   "rom": "0x56A90",
+   "size": 40,
+   "section": ".data",
+   "name": "D_80055E90",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    8000,
+    0,
+    7160,
+    12000,
+    0,
+    32767,
+    0,
+    0,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055EB8",
+   "rom": "0x56AB8",
+   "size": 136,
+   "section": ".data",
+   "name": "D_80055EB8",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    800,
+    0,
+    200,
+    16384,
+    0,
+    32767,
+    7600,
+    700,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words, followed by 24 zero words"
+  },
+  {
+   "vram": "0x80055F40",
+   "rom": "0x56B40",
+   "size": 40,
+   "section": ".data",
+   "name": "D_80055F40",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    800,
+    0,
+    200,
+    0,
+    24575,
+    32767,
+    380,
+    500,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x80055F68",
+   "rom": "0x56B68",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80055F68",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000001"
+   ],
+   "note": "scalar type from 2 traced accesses"
+  },
+  {
+   "vram": "0x80055F6C",
+   "rom": "0x56B6C",
+   "size": 36,
+   "section": ".data",
+   "name": "D_80055F6C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000320",
+    "0x00000000",
+    "0x000000C8",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80055F90",
+   "rom": "0x56B90",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80055F90",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000006"
+   ],
+   "note": "scalar type from 1 traced accesses"
+  },
+  {
+   "vram": "0x80055F94",
+   "rom": "0x56B94",
+   "size": 28,
+   "section": ".data",
+   "name": "D_80055F94",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80055F68",
+     "sym": "D_80055F68",
+     "off": 0
+    },
+    "0x80055DA0",
+    "0x80055E08",
+    "0x80055EB8",
+    "0x80055F40",
+    "0x80055E90",
+    "0x00000000"
+   ],
+   "note": "element type from 10 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80055FB0",
+   "rom": "0x56BB0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80055FB0",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80042AAC",
+     "sym": "func_80042AAC",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x80055FB4",
+   "rom": "0x56BB4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80055FB4",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80042B10",
+     "sym": "func_80042B10",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x80055FB8",
+   "rom": "0x56BB8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80055FB8",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80042B70",
+     "sym": "func_80042B70",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x80055FBC",
+   "rom": "0x56BBC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80055FBC",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80055FB0",
+     "sym": "D_80055FB0",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x80055FC0",
+   "rom": "0x56BC0",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80055FC0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80055FD0",
+   "rom": "0x56BD0",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80055FD0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000001",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 5 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80055FE0",
+   "rom": "0x56BE0",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80055FE0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.01745329238474369f",
+    "0.0f",
+    "0.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80055FF0",
+   "rom": "0x56BF0",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80055FF0",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.01745329238474369f",
+    "0.0f",
+    "0.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80056000",
+   "rom": "0x56C00",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80056000",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.01745329238474369f",
+    "0.0f",
+    "0.0f",
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x80056010",
+   "rom": "0x56C10",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80056010",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x0A6B99CD",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80056020",
+   "rom": "0x56C20",
+   "size": 32,
+   "section": ".data",
+   "name": "D_80056020",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80056040",
+   "rom": "0x56C40",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056040",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 6 traced accesses"
+  },
+  {
+   "vram": "0x80056044",
+   "rom": "0x56C44",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056044",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x03B9ACA0"
+   ],
+   "note": "scalar type from 6 traced accesses"
+  },
+  {
+   "vram": "0x80056048",
+   "rom": "0x56C48",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056048",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "3.391675898121272e-37f"
+   ]
+  },
+  {
+   "vram": "0x8005604C",
+   "rom": "0x56C4C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005604C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 3 traced accesses"
+  },
+  {
+   "vram": "0x80056050",
+   "rom": "0x56C50",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80056050",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x003FFF01",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 28 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80056060",
+   "rom": "0x56C60",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056060",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 32 traced accesses"
+  },
+  {
+   "vram": "0x80056064",
+   "rom": "0x56C64",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056064",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0xFFFFFFFF"
+   ],
+   "note": "scalar type from 14 traced accesses"
+  },
+  {
+   "vram": "0x80056068",
+   "rom": "0x56C68",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056068",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80056060",
+     "sym": "D_80056060",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x8005606C",
+   "rom": "0x56C6C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005606C",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80056060",
+     "sym": "D_80056060",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x80056070",
+   "rom": "0x56C70",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056070",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 14 traced accesses"
+  },
+  {
+   "vram": "0x80056074",
+   "rom": "0x56C74",
+   "size": 12,
+   "section": ".data",
+   "name": "D_80056074",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80056080",
+   "rom": "0x56C80",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80056080",
+   "rep": "struct",
+   "stype": "Struct_80056080",
+   "stride": 16,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "ptr",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "unk_04",
+     "n": 3,
+     "unk": true
+    }
+   ],
+   "values": [
+    [
+     {
+      "reloc": "0x800C4570",
+      "sym": "D_800C4570",
+      "off": 0
+     },
+     [
+      "0x00000000",
+      "0x00000000",
+      "0x00000000"
+     ]
+    ]
+   ],
+   "note": "single struct from direct accesses; +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x80056090",
+   "rom": "0x56C90",
+   "size": 104,
+   "section": ".data",
+   "name": "D_80056090",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    3,
+    4000,
+    0,
+    2160,
+    9830,
+    -9830,
+    0,
+    0,
+    0,
+    0,
+    760,
+    1520,
+    3276,
+    -3276,
+    16383,
+    0,
+    0,
+    0,
+    0,
+    2400,
+    5000,
+    0,
+    0,
+    0,
+    0,
+    20480
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=3, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x800560F8",
+   "rom": "0x56CF8",
+   "size": 128,
+   "section": ".data",
+   "name": "D_800560F8",
+   "note": "element u32 from 25 traced accesses at 2 offsets",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000004",
+    "0x00000FA0",
+    "0x00000000",
+    "0x00000A50",
+    "0x00002666",
+    "0xFFFFD99A",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000370",
+    "0x00000870",
+    "0x00000CCC",
+    "0xFFFFF334",
+    "0x00003FFF",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000A50",
+    "0x00000E38",
+    "0x00000CCC",
+    "0xFFFFF334",
+    "0x00003FFF",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000EB0",
+    "0x00001F40",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ]
+  },
+  {
+   "vram": "0x80056178",
+   "rom": "0x56D78",
+   "size": 8,
+   "section": ".data",
+   "name": "D_80056178",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00005000"
+   ],
+   "note": "element u32 from 4 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80056180",
+   "rom": "0x56D80",
+   "size": 40,
+   "section": ".data",
+   "name": "D_80056180",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    8000,
+    0,
+    7160,
+    12000,
+    0,
+    32767,
+    0,
+    0,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x800561A8",
+   "rom": "0x56DA8",
+   "size": 40,
+   "section": ".data",
+   "name": "D_800561A8",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    800,
+    0,
+    200,
+    16384,
+    0,
+    32767,
+    7600,
+    700,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x800561D0",
+   "rom": "0x56DD0",
+   "size": 40,
+   "section": ".data",
+   "name": "D_800561D0",
+   "rep": "typed-array",
+   "ctype": "s32",
+   "values": [
+    1,
+    800,
+    0,
+    200,
+    0,
+    24575,
+    32767,
+    380,
+    500,
+    0
+   ],
+   "note": "libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words"
+  },
+  {
+   "vram": "0x800561F8",
+   "rom": "0x56DF8",
+   "size": 40,
+   "section": ".data",
+   "name": "D_800561F8",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element type from 13 traced accesses, stride 4"
+  },
+  {
+   "vram": "0x80056220",
+   "rom": "0x56E20",
+   "size": 288,
+   "section": ".data",
+   "name": "D_80056220",
+   "rep": "typed-array",
+   "ctype": "s16",
+   "values": [
+    32767,
+    32764,
+    32757,
+    32744,
+    32727,
+    32704,
+    32677,
+    32644,
+    32607,
+    32564,
+    32517,
+    32464,
+    32407,
+    32344,
+    32277,
+    32205,
+    32127,
+    32045,
+    31958,
+    31866,
+    31770,
+    31668,
+    31561,
+    31450,
+    31334,
+    31213,
+    31087,
+    30957,
+    30822,
+    30682,
+    30537,
+    30388,
+    30234,
+    30075,
+    29912,
+    29744,
+    29572,
+    29395,
+    29214,
+    29028,
+    28838,
+    28643,
+    28444,
+    28241,
+    28033,
+    27821,
+    27605,
+    27385,
+    27160,
+    26931,
+    26698,
+    26461,
+    26220,
+    25975,
+    25726,
+    25473,
+    25216,
+    24956,
+    24691,
+    24423,
+    24151,
+    23875,
+    23596,
+    23313,
+    23026,
+    22736,
+    22442,
+    22145,
+    21845,
+    21541,
+    21234,
+    20924,
+    20610,
+    20294,
+    19974,
+    19651,
+    19325,
+    18997,
+    18665,
+    18331,
+    17993,
+    17653,
+    17310,
+    16965,
+    16617,
+    16266,
+    15913,
+    15558,
+    15200,
+    14840,
+    14477,
+    14113,
+    13746,
+    13377,
+    13006,
+    12633,
+    12258,
+    11881,
+    11503,
+    11122,
+    10740,
+    10357,
+    9971,
+    9584,
+    9196,
+    8806,
+    8415,
+    8023,
+    7630,
+    7235,
+    6839,
+    6442,
+    6044,
+    5646,
+    5246,
+    4845,
+    4444,
+    4042,
+    3640,
+    3237,
+    2833,
+    2429,
+    2025,
+    1620,
+    1216,
+    810,
+    405,
+    0,
+    0,
+    16,
+    0,
+    16,
+    0,
+    32,
+    0,
+    0,
+    -16096,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "note": "element type from 11 traced accesses, stride 2"
+  },
+  {
+   "vram": "0x80056340",
+   "rom": "0x56F40",
+   "size": 16,
+   "section": ".data",
+   "name": "D_80056340",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 8 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x80056350",
+   "rom": "0x56F50",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056350",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 5 traced accesses"
+  },
+  {
+   "vram": "0x80056354",
+   "rom": "0x56F54",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056354",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 2 traced accesses"
+  },
+  {
+   "vram": "0x80056358",
+   "rom": "0x56F58",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056358",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 2 traced accesses"
+  },
+  {
+   "vram": "0x8005635C",
+   "rom": "0x56F5C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005635C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 13 traced accesses"
+  },
+  {
+   "vram": "0x80056360",
+   "rom": "0x56F60",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056360",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 284 traced accesses"
+  },
+  {
+   "vram": "0x80056364",
+   "rom": "0x56F64",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056364",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "u32 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)"
+  },
+  {
+   "vram": "0x80056368",
+   "rom": "0x56F68",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056368",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "u32 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)"
+  },
+  {
+   "vram": "0x8005636C",
+   "rom": "0x56F6C",
+   "size": 36,
+   "section": ".data",
+   "name": "D_8005636C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "u32 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)"
+  },
+  {
+   "vram": "0x80056390",
+   "rom": "0x56F90",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056390",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 939 traced accesses"
+  },
+  {
+   "vram": "0x80056394",
+   "rom": "0x56F94",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056394",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 111 traced accesses"
+  },
+  {
+   "vram": "0x80056398",
+   "rom": "0x56F98",
+   "size": 4,
+   "section": ".data",
+   "name": "D_80056398",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 116 traced accesses"
+  },
+  {
+   "vram": "0x8005639C",
+   "rom": "0x56F9C",
+   "size": 4,
+   "section": ".data",
+   "name": "D_8005639C",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 308 traced accesses"
+  },
+  {
+   "vram": "0x800563A0",
+   "rom": "0x56FA0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800563A0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 2 traced accesses"
+  },
+  {
+   "vram": "0x800563A4",
+   "rom": "0x56FA4",
+   "size": 12,
+   "section": ".data",
+   "name": "D_800563A4",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000",
+    "0x00000000",
+    "0x00000000"
+   ],
+   "note": "element u32 from 2 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800563B0",
+   "rom": "0x56FB0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800563B0",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 57 traced accesses"
+  },
+  {
+   "vram": "0x800563B4",
+   "rom": "0x56FB4",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800563B4",
+   "rep": "f32",
+   "ctype": "f32",
+   "values": [
+    "0.0f"
+   ]
+  },
+  {
+   "vram": "0x800563B8",
+   "rom": "0x56FB8",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800563B8",
+   "rep": "typed-array",
+   "ctype": "u16",
+   "values": [
+    "0x0000",
+    "0x0000"
+   ],
+   "note": "element u16 from 32 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800563BC",
+   "rom": "0x56FBC",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800563BC",
+   "rep": "typed-array",
+   "ctype": "u32",
+   "values": [
+    "0x00000000"
+   ],
+   "note": "scalar type from 94 traced accesses"
+  },
+  {
+   "vram": "0x800563C0",
+   "rom": "0x56FC0",
+   "size": 4,
+   "section": ".data",
+   "name": "D_800563C0",
+   "rep": "pointer",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80056360",
+     "sym": "D_80056360",
+     "off": 0
+    }
+   ],
+   "note": "pointer use confirmed: +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x800563C4",
+   "rom": "0x56FC4",
+   "size": 12,
+   "section": ".data",
+   "name": "D_800563C4",
+   "rep": "struct",
+   "stype": "Struct_800563C4",
+   "stride": 12,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "ptr",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "unk_04",
+     "n": 2,
+     "unk": true
+    }
+   ],
+   "values": [
+    [
+     {
+      "reloc": "0x80056390",
+      "sym": "D_80056390",
+      "off": 0
+     },
+     [
+      "0x00000000",
+      "0x00000000"
+     ]
+    ]
+   ],
+   "note": "single struct from direct accesses; +0x0 pointer (use confirmed)"
+  },
+  {
+   "vram": "0x800563D0",
+   "rom": "0x56FD0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLpn1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x00",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000320E",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020D",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000280",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 0); identified by layout: type byte, zero pad, VI ctrl/width"
+  }
+ ],
+ "end": "0x80056420",
+ "size": 2080,
+ "c_file": "data_80055C00.c"
+}

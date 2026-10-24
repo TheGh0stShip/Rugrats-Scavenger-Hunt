@@ -1,0 +1,1230 @@
+{
+ "section": ".rodata",
+ "vram": "0x80003690",
+ "objects": [
+  {
+   "vram": "0x80003690",
+   "rom": "0x4290",
+   "size": 32,
+   "section": ".rodata",
+   "name": "D_80003690",
+   "rep": "typed-array",
+   "ctype": "u8",
+   "values": [
+    "0x00",
+    "0x14",
+    "0x18",
+    "0x18",
+    "0x1C",
+    "0x1C",
+    "0x1C",
+    "0x1C",
+    "0x20",
+    "0x20",
+    "0x20",
+    "0x20",
+    "0x20",
+    "0x20",
+    "0x20",
+    "0x20",
+    "0x00",
+    "0x04",
+    "0x08",
+    "0x08",
+    "0x0C",
+    "0x0C",
+    "0x0C",
+    "0x0C",
+    "0x10",
+    "0x10",
+    "0x10",
+    "0x10",
+    "0x10",
+    "0x10",
+    "0x10",
+    "0x10"
+   ],
+   "note": "element u8 from 1 traced accesses at 1 offsets"
+  },
+  {
+   "vram": "0x800036B0",
+   "rom": "0x42B0",
+   "size": 36,
+   "section": ".rodata",
+   "name": "jtbl_800036B0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x800484A8",
+     "sym": "func_80047FEC",
+     "off": 1212
+    },
+    {
+     "reloc": "0x8004846C",
+     "sym": "func_80047FEC",
+     "off": 1152
+    },
+    {
+     "reloc": "0x80048448",
+     "sym": "func_80047FEC",
+     "off": 1116
+    },
+    {
+     "reloc": "0x80048298",
+     "sym": "func_80047FEC",
+     "off": 684
+    },
+    {
+     "reloc": "0x80048240",
+     "sym": "func_80047FEC",
+     "off": 596
+    },
+    {
+     "reloc": "0x800483E4",
+     "sym": "func_80047FEC",
+     "off": 1016
+    },
+    {
+     "reloc": "0x80048204",
+     "sym": "func_80047FEC",
+     "off": 536
+    },
+    {
+     "reloc": "0x80048210",
+     "sym": "func_80047FEC",
+     "off": 548
+    },
+    {
+     "reloc": "0x8004821C",
+     "sym": "func_80047FEC",
+     "off": 560
+    }
+   ]
+  },
+  {
+   "vram": "0x800036D4",
+   "rom": "0x42D4",
+   "size": 12,
+   "section": ".rodata",
+   "name": "pad_800036D4",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x800036E0",
+   "rom": "0x42E0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800036E0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "16384.0"
+   ]
+  },
+  {
+   "vram": "0x800036E8",
+   "rom": "0x42E8",
+   "size": 24,
+   "section": ".rodata",
+   "name": "jtbl_800036E8",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80049820",
+     "sym": "func_80049794",
+     "off": 140
+    },
+    {
+     "reloc": "0x8004982C",
+     "sym": "func_80049794",
+     "off": 152
+    },
+    {
+     "reloc": "0x80049844",
+     "sym": "func_80049794",
+     "off": 176
+    },
+    {
+     "reloc": "0x80049850",
+     "sym": "func_80049794",
+     "off": 188
+    },
+    {
+     "reloc": "0x80049838",
+     "sym": "func_80049794",
+     "off": 164
+    },
+    {
+     "reloc": "0x8004985C",
+     "sym": "func_80049794",
+     "off": 200
+    }
+   ]
+  },
+  {
+   "vram": "0x80003700",
+   "rom": "0x4300",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003700",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "16384.0"
+   ]
+  },
+  {
+   "vram": "0x80003708",
+   "rom": "0x4308",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003708",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "173123.404906676"
+   ]
+  },
+  {
+   "vram": "0x80003710",
+   "rom": "0x4310",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80003710",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0",
+    "0.0"
+   ]
+  },
+  {
+   "vram": "0x80003720",
+   "rom": "0x4320",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80003720",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\""
+  },
+  {
+   "vram": "0x80003724",
+   "rom": "0x4324",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003724",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"env.c\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x8000372C",
+   "rom": "0x432C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_8000372C",
+   "rep": "typed-array",
+   "ctype": "u16",
+   "values": [
+    "0x0000",
+    "0x0000"
+   ],
+   "note": "element u16 from 2 traced accesses at 2 offsets"
+  },
+  {
+   "vram": "0x80003730",
+   "rom": "0x4330",
+   "size": 68,
+   "section": ".rodata",
+   "name": "jtbl_80003730",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8004AF8C",
+     "sym": "func_8004AB40",
+     "off": 1100
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AFB0",
+     "sym": "func_8004AB40",
+     "off": 1136
+    },
+    {
+     "reloc": "0x8004AD58",
+     "sym": "func_8004AB40",
+     "off": 536
+    },
+    {
+     "reloc": "0x8004AD58",
+     "sym": "func_8004AB40",
+     "off": 536
+    },
+    {
+     "reloc": "0x8004AC28",
+     "sym": "func_8004AB40",
+     "off": 232
+    },
+    {
+     "reloc": "0x8004AF0C",
+     "sym": "func_8004AB40",
+     "off": 972
+    },
+    {
+     "reloc": "0x8004AF50",
+     "sym": "func_8004AB40",
+     "off": 1040
+    },
+    {
+     "reloc": "0x8004AD58",
+     "sym": "func_8004AB40",
+     "off": 536
+    }
+   ]
+  },
+  {
+   "vram": "0x80003774",
+   "rom": "0x4374",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_80003774",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80003778",
+   "rom": "0x4378",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003778",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.0"
+   ]
+  },
+  {
+   "vram": "0x80003780",
+   "rom": "0x4380",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003780",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.5"
+   ]
+  },
+  {
+   "vram": "0x80003788",
+   "rom": "0x4388",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003788",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.5"
+   ]
+  },
+  {
+   "vram": "0x80003790",
+   "rom": "0x4390",
+   "size": 64,
+   "section": ".rodata",
+   "name": "D_80003790",
+   "rep": "struct",
+   "stype": "Struct_80003790",
+   "stride": 16,
+   "count": 4,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u32",
+     "name": "field_00",
+     "n": 1
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "field_04",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "field_08",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "field_0C",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0xBFED3380",
+     "0xCB6C7A7D",
+     "0xBFE810F9",
+     "0x4C87980F"
+    ],
+    [
+     "0xBFE37223",
+     "0x9E6AB9B2",
+     "0xBFDE7DF5",
+     "0xCF2495E1"
+    ],
+    [
+     "0xBFD6CB10",
+     "0x342AA9F8",
+     "0xBFCF5FD4",
+     "0x7BEDB728"
+    ],
+    [
+     "0xBFC22DAD",
+     "0xB8348F54",
+     "0xBFA7739F",
+     "0x340D4DC6"
+    ]
+   ],
+   "note": "stride 0x10 from traced loop/index accesses; no conflicts"
+  },
+  {
+   "vram": "0x800037D0",
+   "rom": "0x43D0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800037D0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.0"
+   ]
+  },
+  {
+   "vram": "0x800037D8",
+   "rom": "0x43D8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800037D8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1073741824.0"
+   ]
+  },
+  {
+   "vram": "0x800037E0",
+   "rom": "0x43E0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800037E0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.0"
+   ]
+  },
+  {
+   "vram": "0x800037E8",
+   "rom": "0x43E8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800037E8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.5"
+   ]
+  },
+  {
+   "vram": "0x800037F0",
+   "rom": "0x43F0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800037F0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.5"
+   ]
+  },
+  {
+   "vram": "0x800037F8",
+   "rom": "0x43F8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800037F8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "16.0"
+   ]
+  },
+  {
+   "vram": "0x80003800",
+   "rom": "0x4400",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003800",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.6931471805599453"
+   ]
+  },
+  {
+   "vram": "0x80003808",
+   "rom": "0x4408",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003808",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1073741824.0"
+   ]
+  },
+  {
+   "vram": "0x80003810",
+   "rom": "0x4410",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003810",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.0"
+   ]
+  },
+  {
+   "vram": "0x80003818",
+   "rom": "0x4418",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003818",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "65535.0"
+   ]
+  },
+  {
+   "vram": "0x80003820",
+   "rom": "0x4420",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003820",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.99996"
+   ]
+  },
+  {
+   "vram": "0x80003828",
+   "rom": "0x4428",
+   "size": 36,
+   "section": ".rodata",
+   "name": "jtbl_80003828",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8004BC2C",
+     "sym": "func_8004BBFC",
+     "off": 48
+    },
+    {
+     "reloc": "0x8004BC94",
+     "sym": "func_8004BBFC",
+     "off": 152
+    },
+    {
+     "reloc": "0x8004BC94",
+     "sym": "func_8004BBFC",
+     "off": 152
+    },
+    {
+     "reloc": "0x8004BC34",
+     "sym": "func_8004BBFC",
+     "off": 56
+    },
+    {
+     "reloc": "0x8004BC94",
+     "sym": "func_8004BBFC",
+     "off": 152
+    },
+    {
+     "reloc": "0x8004BC94",
+     "sym": "func_8004BBFC",
+     "off": 152
+    },
+    {
+     "reloc": "0x8004BC80",
+     "sym": "func_8004BBFC",
+     "off": 132
+    },
+    {
+     "reloc": "0x8004BC88",
+     "sym": "func_8004BBFC",
+     "off": 140
+    },
+    {
+     "reloc": "0x8004BC60",
+     "sym": "func_8004BBFC",
+     "off": 100
+    }
+   ]
+  },
+  {
+   "vram": "0x8000384C",
+   "rom": "0x444C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_8000384C",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80003850",
+   "rom": "0x4450",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80003850",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\""
+  },
+  {
+   "vram": "0x80003854",
+   "rom": "0x4454",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80003854",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"reverb.c\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003860",
+   "rom": "0x4460",
+   "size": 32,
+   "section": ".rodata",
+   "name": "jtbl_80003860",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x8004C0D4",
+     "sym": "func_8004C084",
+     "off": 80
+    },
+    {
+     "reloc": "0x8004C0F8",
+     "sym": "func_8004C084",
+     "off": 116
+    },
+    {
+     "reloc": "0x8004C138",
+     "sym": "func_8004C084",
+     "off": 180
+    },
+    {
+     "reloc": "0x8004C11C",
+     "sym": "func_8004C084",
+     "off": 152
+    },
+    {
+     "reloc": "0x8004C154",
+     "sym": "func_8004C084",
+     "off": 208
+    },
+    {
+     "reloc": "0x8004C170",
+     "sym": "func_8004C084",
+     "off": 236
+    },
+    {
+     "reloc": "0x8004C1C4",
+     "sym": "func_8004C084",
+     "off": 320
+    },
+    {
+     "reloc": "0x8004C230",
+     "sym": "func_8004C084",
+     "off": 428
+    }
+   ]
+  },
+  {
+   "vram": "0x80003880",
+   "rom": "0x4480",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003880",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "173123.404906676"
+   ]
+  },
+  {
+   "vram": "0x80003888",
+   "rom": "0x4488",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003888",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0"
+   ]
+  },
+  {
+   "vram": "0x80003890",
+   "rom": "0x4490",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003890",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.0"
+   ]
+  },
+  {
+   "vram": "0x80003898",
+   "rom": "0x4498",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_80003898",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "2.0"
+   ]
+  },
+  {
+   "vram": "0x800038A0",
+   "rom": "0x44A0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800038A0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4.0"
+   ]
+  },
+  {
+   "vram": "0x800038A8",
+   "rom": "0x44A8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800038A8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1.0"
+   ]
+  },
+  {
+   "vram": "0x800038B0",
+   "rom": "0x44B0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800038B0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\""
+  },
+  {
+   "vram": "0x800038B4",
+   "rom": "0x44B4",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800038B4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"save.c\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x800038BC",
+   "rom": "0x44BC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800038BC",
+   "rep": "typed-array",
+   "ctype": "u16",
+   "values": [
+    "0x0000",
+    "0x0000"
+   ],
+   "note": "element u16 from 2 traced accesses at 2 offsets"
+  },
+  {
+   "vram": "0x800038C0",
+   "rom": "0x44C0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800038C0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1000000.0"
+   ]
+  },
+  {
+   "vram": "0x800038C8",
+   "rom": "0x44C8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800038C8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.5"
+   ]
+  },
+  {
+   "vram": "0x800038D0",
+   "rom": "0x44D0",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800038D0",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "1000000.0"
+   ]
+  },
+  {
+   "vram": "0x800038D8",
+   "rom": "0x44D8",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800038D8",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "0.5"
+   ]
+  },
+  {
+   "vram": "0x800038E0",
+   "rom": "0x44E0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800038E0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x800038E4",
+   "rom": "0x44E4",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_800038E4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"synthesizer.c\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003900",
+   "rom": "0x4500",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80003900",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0",
+    "0.0"
+   ]
+  },
+  {
+   "vram": "0x80003910",
+   "rom": "0x4510",
+   "size": 16,
+   "section": ".rodata",
+   "name": "D_80003910",
+   "rep": "f64",
+   "ctype": "f64",
+   "values": [
+    "4294967296.0",
+    "0.0"
+   ]
+  },
+  {
+   "vram": "0x80003920",
+   "rom": "0x4520",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80003920",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003924",
+   "rom": "0x4524",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80003924",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"sirawread.c\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003930",
+   "rom": "0x4530",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80003930",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003934",
+   "rom": "0x4534",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80003934",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x73697261",
+    "0x77777269",
+    "0x74652E63",
+    "0x00000000",
+    "0x000E4143",
+    "0x54535441",
+    "0x54455F41"
+   ],
+   "literal": "\"sirawwrite.c\\000\\000\\000\\000\\000\\016ACTSTATE_A\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_8004DAC0, func_8004DD10"
+  },
+  {
+   "vram": "0x80003950",
+   "rom": "0x4550",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80003950",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003954",
+   "rom": "0x4554",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80003954",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"sirawdma.c\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003960",
+   "rom": "0x4560",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80003960",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\""
+  },
+  {
+   "vram": "0x80003964",
+   "rom": "0x4564",
+   "size": 12,
+   "section": ".rodata",
+   "name": "D_80003964",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"pirawread.c\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003970",
+   "rom": "0x4570",
+   "size": 28,
+   "section": ".rodata",
+   "name": "jtbl_80003970",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80050A74",
+     "sym": "func_80050730",
+     "off": 836
+    },
+    {
+     "reloc": "0x80050994",
+     "sym": "func_80050730",
+     "off": 612
+    },
+    {
+     "reloc": "0x800509C8",
+     "sym": "func_80050730",
+     "off": 664
+    },
+    {
+     "reloc": "0x80050A84",
+     "sym": "func_80050730",
+     "off": 852
+    },
+    {
+     "reloc": "0x80050A84",
+     "sym": "func_80050730",
+     "off": 852
+    },
+    {
+     "reloc": "0x800509FC",
+     "sym": "func_80050730",
+     "off": 716
+    },
+    {
+     "reloc": "0x80050A38",
+     "sym": "func_80050730",
+     "off": 776
+    }
+   ]
+  },
+  {
+   "vram": "0x8000398C",
+   "rom": "0x458C",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_8000398C",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "vram": "0x80003990",
+   "rom": "0x4590",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_80003990",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x80003994",
+   "rom": "0x4594",
+   "size": 28,
+   "section": ".rodata",
+   "name": "D_80003994",
+   "rep": "string",
+   "ctype": "char",
+   "values": [
+    "0x65706972",
+    "0x61777265",
+    "0x61642E63",
+    "0x00000000",
+    "0x32306661",
+    "0x6B650B41",
+    "0x43544F52"
+   ],
+   "literal": "\"epirawread.c\\000\\000\\000\\00020fake\\013ACTOR\"",
+   "note": "char data by value (text bytes, not NUL-terminated); constant pool of func_80050BD0, func_8005155C, func_8005166C"
+  },
+  {
+   "vram": "0x800039B0",
+   "rom": "0x45B0",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800039B0",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"EX\\000\\000\""
+  },
+  {
+   "vram": "0x800039B4",
+   "rom": "0x45B4",
+   "size": 8,
+   "section": ".rodata",
+   "name": "D_800039B4",
+   "rep": "string",
+   "ctype": "char",
+   "literal": "\"sched.c\\000\"",
+   "note": "text; byte accesses only"
+  },
+  {
+   "vram": "0x800039BC",
+   "rom": "0x45BC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "D_800039BC",
+   "rep": "typed-array",
+   "ctype": "u16",
+   "values": [
+    "0x0000",
+    "0x0000"
+   ],
+   "note": "element u16 from 2 traced accesses at 2 offsets"
+  },
+  {
+   "vram": "0x800039C0",
+   "rom": "0x45C0",
+   "size": 28,
+   "section": ".rodata",
+   "name": "jtbl_800039C0",
+   "rep": "jtbl",
+   "ctype": "u32",
+   "values": [
+    {
+     "reloc": "0x80051C34",
+     "sym": "func_80051A68",
+     "off": 460
+    },
+    {
+     "reloc": "0x80051BD8",
+     "sym": "func_80051A68",
+     "off": 368
+    },
+    {
+     "reloc": "0x80051B58",
+     "sym": "func_80051A68",
+     "off": 240
+    },
+    {
+     "reloc": "0x80051C34",
+     "sym": "func_80051A68",
+     "off": 460
+    },
+    {
+     "reloc": "0x80051C34",
+     "sym": "func_80051A68",
+     "off": 460
+    },
+    {
+     "reloc": "0x80051BD8",
+     "sym": "func_80051A68",
+     "off": 368
+    },
+    {
+     "reloc": "0x80051BD8",
+     "sym": "func_80051A68",
+     "off": 368
+    }
+   ]
+  },
+  {
+   "vram": "0x800039DC",
+   "rom": "0x45DC",
+   "size": 4,
+   "section": ".rodata",
+   "name": "pad_800039DC",
+   "rep": "padding",
+   "ctype": "u8",
+   "values": [
+    0,
+    0,
+    0,
+    0
+   ]
+  }
+ ],
+ "end": "0x800039E0",
+ "size": 848,
+ "c_file": "rodata_80003690.c"
+}

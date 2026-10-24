@@ -20,10 +20,10 @@ class DecompReportTests(unittest.TestCase):
         report = REPORT.build_report()
         totals = report["measures"]
 
-        self.assertEqual(totals["total_code"], "323264")
+        self.assertEqual(totals["total_code"], "323752")
         self.assertEqual(totals["matched_code"], "127424")
-        self.assertEqual(totals["total_data"], "32704")
-        self.assertEqual(totals["matched_data"], "640")
+        self.assertEqual(totals["total_data"], "32216")
+        self.assertEqual(totals["matched_data"], "32216")
 
         categories = {
             category["id"]: category["measures"]
@@ -35,16 +35,20 @@ class DecompReportTests(unittest.TestCase):
                 "code",
                 "program_data",
                 "assets_extracted",
+                "asset_roundtrip",
+                "noncode_roundtrip",
                 "asset_inventory",
                 "audio_inventory",
                 "resource_inventory",
                 "rom_inventory",
             },
         )
-        self.assertEqual(categories["program_data"]["total_code"], "32704")
-        self.assertEqual(categories["program_data"]["total_data"], "32704")
-        self.assertEqual(categories["program_data"]["matched_data"], "640")
+        self.assertEqual(categories["program_data"]["total_code"], "32216")
+        self.assertEqual(categories["program_data"]["total_data"], "32216")
+        self.assertEqual(categories["program_data"]["matched_data"], "32216")
         self.assertEqual(categories["assets_extracted"]["matched_data"], "0")
+        self.assertEqual(categories["asset_roundtrip"]["matched_data"], "15686080")
+        self.assertEqual(categories["noncode_roundtrip"]["matched_data"], "16453464")
         self.assertEqual(categories["asset_inventory"]["matched_data"], "15686080")
         self.assertEqual(categories["rom_inventory"]["matched_data"], "16777216")
 

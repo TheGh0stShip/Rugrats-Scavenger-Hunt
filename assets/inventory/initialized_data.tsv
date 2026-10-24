@@ -1,0 +1,1290 @@
+rom_start	vram	size	section	symbol	type	representation	verified	source	notes
+0x103C	0x8000043C	188	.text	8000043C	asm	code	assembled	src/asm/ctors_8000043C.s	func_8000043C+func_80000498 (+4 nop pad); NOT DATA: owned by the code decompilation effort; local evidence only, excluded from the integration patch
+0x53474	0x80052874	300	.text	80052874	asm	code	assembled	src/asm/bcopy_tail_80052874.s	func_80052680 tail (bcopy) (+4 nop pad); NOT DATA: owned by the code decompilation effort; local evidence only, excluded from the integration patch
+0x45E0	0x800039E0	4	.data	D_800039E0	char	string	compiled+materialized	src/data/data_800039E0.c	text; byte accesses only
+0x45E4	0x800039E4	12	.data	D_800039E4	char	string	compiled+materialized	src/data/data_800039E0.c	text; byte accesses only
+0x535A0	0x800529A0	8	.data	D_800529A0	Struct_800529A0	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x8 from traced loop/index accesses; no conflicts
+0x535A8	0x800529A8	16	.data	D_800529A8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 1 traced accesses at 1 offsets
+0x535B8	0x800529B8	56	.data	D_800529B8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 1 traced accesses at 1 offsets
+0x535F0	0x800529F0	4	.data	D_800529F0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 33 traced accesses
+0x535F4	0x800529F4	4	.data	D_800529F4	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 6 traced accesses
+0x535F8	0x800529F8	4	.data	D_800529F8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 34 traced accesses
+0x535FC	0x800529FC	20	.data	D_800529FC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 4 traced accesses, stride 4
+0x53610	0x80052A10	4	.data	D_80052A10	f32	f32	compiled+materialized	src/data/data_800529A0.c	-
+0x53614	0x80052A14	4	.data	D_80052A14	f32	f32	compiled+materialized	src/data/data_800529A0.c	-
+0x53618	0x80052A18	4	.data	D_80052A18	f32	f32	compiled+materialized	src/data/data_800529A0.c	-
+0x5361C	0x80052A1C	4	.data	D_80052A1C	f32	f32	compiled+materialized	src/data/data_800529A0.c	-
+0x53620	0x80052A20	64	.data	D_80052A20	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	element s16 from 3 traced accesses at 2 offsets
+0x53660	0x80052A60	24	.data	D_80052A60	Struct_80052A60	struct	compiled+materialized	src/data/data_800529A0.c	stride 0xC from traced loop/index accesses; no conflicts
+0x53678	0x80052A78	24	.data	D_80052A78	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 5 traced accesses, stride 4
+0x53690	0x80052A90	8	.data	D_80052A90	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 4 traced accesses at 1 offsets
+0x53698	0x80052A98	4	.data	D_80052A98	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 8 traced accesses
+0x5369C	0x80052A9C	8	.data	D_80052A9C	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 3 traced accesses at 1 offsets
+0x536A4	0x80052AA4	4	.data	D_80052AA4	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 7 traced accesses
+0x536A8	0x80052AA8	4	.data	D_80052AA8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 5 traced accesses
+0x536AC	0x80052AAC	8	.data	D_80052AAC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 3 traced accesses at 1 offsets
+0x536B4	0x80052AB4	4	.data	D_80052AB4	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 5 traced accesses
+0x536B8	0x80052AB8	48	.data	D_80052AB8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 10 traced accesses at 1 offsets
+0x536E8	0x80052AE8	16	.data	D_80052AE8	u16	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 2 traced accesses, stride 2
+0x536F8	0x80052AF8	48	.data	D_80052AF8	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	s16 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x80052B90)
+0x53728	0x80052B28	8	.data	D_80052B28	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 2 traced accesses, stride 2
+0x53730	0x80052B30	24	.data	D_80052B30	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	s16 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x80052B90)
+0x53748	0x80052B48	24	.data	D_80052B48	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	s16 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x80052B90)
+0x53760	0x80052B60	24	.data	D_80052B60	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	s16 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x80052B90)
+0x53778	0x80052B78	24	.data	D_80052B78	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	s16 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x80052B90)
+0x53790	0x80052B90	32	.data	D_80052B90	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 2 traced accesses, stride 4
+0x537B0	0x80052BB0	4	.data	D_80052BB0	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	element s16 from 5 traced accesses at 1 offsets
+0x537B4	0x80052BB4	52	.data	D_80052BB4	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 2 traced accesses at 1 offsets
+0x537E8	0x80052BE8	8	.data	D_80052BE8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 2 traced accesses at 1 offsets
+0x537F0	0x80052BF0	16	.data	D_80052BF0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 4 traced accesses at 1 offsets
+0x53800	0x80052C00	4	.data	D_80052C00	u8	typed-array	compiled+materialized	src/data/data_800529A0.c	element u8 from 8 traced accesses at 2 offsets
+0x53804	0x80052C04	4	.data	D_80052C04	u8	typed-array	compiled+materialized	src/data/data_800529A0.c	element u8 from 7 traced accesses at 1 offsets
+0x53808	0x80052C08	4	.data	D_80052C08	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 1 traced accesses
+0x5380C	0x80052C0C	52	.data	D_80052C0C	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 6 traced accesses, stride 4
+0x53840	0x80052C40	592	.data	D_80052C40	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 6 traced accesses, stride 4
+0x53A90	0x80052E90	4	.data	D_80052E90	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 6 traced accesses
+0x53A94	0x80052E94	4	.data	D_80052E94	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 3 traced accesses
+0x53A98	0x80052E98	4	.data	D_80052E98	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 5 traced accesses
+0x53A9C	0x80052E9C	20	.data	D_80052E9C	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 1 traced accesses at 1 offsets
+0x53AB0	0x80052EB0	8	.data	D_80052EB0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 9 traced accesses at 1 offsets
+0x53AB8	0x80052EB8	8	.data	D_80052EB8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 1 traced accesses at 1 offsets
+0x53AC0	0x80052EC0	8	.data	D_80052EC0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 3 traced accesses at 1 offsets
+0x53AC8	0x80052EC8	4	.data	D_80052EC8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 9 traced accesses
+0x53ACC	0x80052ECC	4	.data	D_80052ECC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 2 traced accesses
+0x53AD0	0x80052ED0	16	.data	D_80052ED0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 5 traced accesses at 1 offsets
+0x53AE0	0x80052EE0	4	.data	D_80052EE0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 15 traced accesses
+0x53AE4	0x80052EE4	4	.data	D_80052EE4	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 14 traced accesses
+0x53AE8	0x80052EE8	4	.data	D_80052EE8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 11 traced accesses
+0x53AEC	0x80052EEC	4	.data	D_80052EEC	u8	typed-array	compiled+materialized	src/data/data_800529A0.c	element u8 from 18 traced accesses at 4 offsets
+0x53AF0	0x80052EF0	4	.data	D_80052EF0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 2 traced accesses
+0x53AF4	0x80052EF4	4	.data	D_80052EF4	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 2 traced accesses
+0x53AF8	0x80052EF8	4	.data	D_80052EF8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 2 traced accesses
+0x53AFC	0x80052EFC	4	.data	D_80052EFC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 1 traced accesses
+0x53B00	0x80052F00	4	.data	D_80052F00	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 3 traced accesses
+0x53B04	0x80052F04	4	.data	D_80052F04	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 87 traced accesses
+0x53B08	0x80052F08	8	.data	D_80052F08	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 2 traced accesses at 1 offsets
+0x53B10	0x80052F10	4	.data	D_80052F10	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 4 traced accesses
+0x53B14	0x80052F14	4	.data	D_80052F14	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 9 traced accesses
+0x53B18	0x80052F18	4	.data	D_80052F18	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 269 traced accesses
+0x53B1C	0x80052F1C	4	.data	D_80052F1C	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 11 traced accesses
+0x53B20	0x80052F20	4	.data	D_80052F20	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 14 traced accesses
+0x53B24	0x80052F24	4	.data	D_80052F24	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 21 traced accesses
+0x53B28	0x80052F28	4	.data	D_80052F28	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 2 traced accesses
+0x53B2C	0x80052F2C	4	.data	D_80052F2C	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 1 traced accesses
+0x53B30	0x80052F30	4	.data	D_80052F30	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 1 traced accesses
+0x53B34	0x80052F34	4	.data	D_80052F34	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 16 traced accesses
+0x53B38	0x80052F38	4	.data	D_80052F38	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 1 traced accesses
+0x53B3C	0x80052F3C	4	.data	D_80052F3C	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 1 traced accesses
+0x53B40	0x80052F40	4	.data	D_80052F40	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 1 traced accesses
+0x53B44	0x80052F44	4	.data	D_80052F44	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 15 traced accesses
+0x53B48	0x80052F48	4	.data	D_80052F48	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 13 traced accesses
+0x53B4C	0x80052F4C	48	.data	D_80052F4C	Struct_80052F4C	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; no conflicts
+0x53B7C	0x80052F7C	4	.data	D_80052F7C	u32	typed-raw	compiled+materialized	src/data/data_800529A0.c	 | untyped: address formed at 0x800190FC as D_80052F4C+48 (struct Struct_80052F4C); the distance/size is not a whole element of that layout and the derived pointer is not dereferenced in traced code
+0x53B80	0x80052F80	16	.data	D_80052F80	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 4 traced accesses, stride 4
+0x53B90	0x80052F90	64	.data	D_80052F90	Struct_80052F90	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x8 from traced loop/index accesses; +0x0 f32 access but non-literal bits; +0x4 f32 access but non-literal bits
+0x53BD0	0x80052FD0	28	.data	D_80052FD0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 13 traced accesses, stride 4
+0x53BEC	0x80052FEC	16	.data	D_80052FEC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 4 traced accesses, stride 4
+0x53BFC	0x80052FFC	16	.data	D_80052FFC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 5 traced accesses, stride 4
+0x53C0C	0x8005300C	16	.data	D_8005300C	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element type from 19 traced accesses, stride 4
+0x53C1C	0x8005301C	4	.data	D_8005301C	u16	typed-array	compiled+materialized	src/data/data_800529A0.c	element u16 from 1 traced accesses at 1 offsets
+0x53C20	0x80053020	16	.data	D_80053020	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 3 traced accesses at 1 offsets
+0x53C30	0x80053030	96	.data	D_80053030	Struct_80053030	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x8 from traced loop/index accesses; +0x4 pointer (use confirmed)
+0x53C90	0x80053090	60	.data	D_80053090	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 1 traced accesses at 1 offsets
+0x53CCC	0x800530CC	4	.data	D_800530CC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 5 traced accesses
+0x53CD0	0x800530D0	52	.data	D_800530D0	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 2 traced accesses at 1 offsets
+0x53D04	0x80053104	16	.data	D_80053104	Struct_80053104	struct	compiled+materialized	src/data/data_800529A0.c	same layout as D_80053114 (stride 0x10): code at 0x80016CFC forms 0x80053104 + 0x10 = element 1 of one array spanning both objects
+0x53D14	0x80053114	16	.data	D_80053114	Struct_80053114	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; +0x0 pointer (use confirmed)
+0x53D24	0x80053124	48	.data	D_80053124	Struct_80053124	struct	compiled+materialized	src/data/data_800529A0.c	same layout as D_80053154 (stride 0x10): code at 0x80017018 forms 0x80053124 + 0x30 = element 3 of one array spanning both objects
+0x53D54	0x80053154	16	.data	D_80053154	Struct_80053154	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; +0x0 pointer (use confirmed)
+0x53D64	0x80053164	32	.data	D_80053164	Struct_80053164	struct	compiled+materialized	src/data/data_800529A0.c	same layout as D_80053184 (stride 0x10): code at 0x800174BC forms 0x80053164 + 0x20 = element 2 of one array spanning both objects
+0x53D84	0x80053184	16	.data	D_80053184	Struct_80053184	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; +0x0 pointer (use confirmed)
+0x53D94	0x80053194	64	.data	D_80053194	Struct_80053194	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; no conflicts
+0x53DD4	0x800531D4	64	.data	D_800531D4	Struct_800531D4	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; no conflicts
+0x53E14	0x80053214	16	.data	D_80053214	Struct_80053214	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; +0x0 pointer (use confirmed)
+0x53E24	0x80053224	128	.data	D_80053224	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	element u32 from 1 traced accesses at 1 offsets
+0x53EA4	0x800532A4	32	.data	D_800532A4	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	element s16 from 5 traced accesses at 2 offsets
+0x53EC4	0x800532C4	16	.data	D_800532C4	s16	typed-array	compiled+materialized	src/data/data_800529A0.c	element s16 from 2 traced accesses at 1 offsets
+0x53ED4	0x800532D4	240	.data	D_800532D4	Struct_800532D4	struct	compiled+materialized	src/data/data_800529A0.c	stride 0x10 from traced loop/index accesses; no conflicts
+0x53FC4	0x800533C4	20	.data	D_800533C4	u8	typed-array	compiled+materialized	src/data/data_800529A0.c	element u8 from 2 traced accesses at 1 offsets
+0x53FD8	0x800533D8	4	.data	D_800533D8	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 38 traced accesses
+0x53FDC	0x800533DC	4	.data	D_800533DC	u32	typed-array	compiled+materialized	src/data/data_800529A0.c	scalar type from 22 traced accesses
+0x53FE0	0x800533E0	4	.data	D_800533E0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 1 traced accesses
+0x53FE4	0x800533E4	24	.data	D_800533E4	Struct_800533E4	struct	compiled+materialized	src/data/data_800533E0.c	stride 0x8 from traced loop/index accesses; no conflicts
+0x53FFC	0x800533FC	4	.data	D_800533FC	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54000	0x80053400	4	.data	D_80053400	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54004	0x80053404	4	.data	D_80053404	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54008	0x80053408	8	.data	D_80053408	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54010	0x80053410	4	.data	D_80053410	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 4 traced accesses
+0x54014	0x80053414	4	.data	D_80053414	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 10 traced accesses, stride 4
+0x54018	0x80053418	4	.data	D_80053418	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 2 traced accesses
+0x5401C	0x8005341C	8	.data	D_8005341C	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 14 traced accesses, stride 4
+0x54024	0x80053424	28	.data	D_80053424	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 5 traced accesses at 1 offsets
+0x54040	0x80053440	64	.data	D_80053440	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 3 traced accesses, stride 4
+0x54080	0x80053480	4	.data	D_80053480	s16	typed-array	compiled+materialized	src/data/data_800533E0.c	element s16 from 13 traced accesses at 2 offsets
+0x54084	0x80053484	60	.data	D_80053484	s16	typed-array	compiled+materialized	src/data/data_800533E0.c	s16 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)
+0x540C0	0x800534C0	48	.data	D_800534C0	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	element u8 from 8 traced accesses at 3 offsets
+0x540F0	0x800534F0	88	.data	D_800534F0	Struct_800534F0	struct	compiled+materialized	src/data/data_800533E0.c	stride 0x4 from traced loop/index accesses; no conflicts
+0x54148	0x80053548	36	.data	D_80053548	Struct_80053548	struct	compiled+materialized	src/data/data_800533E0.c	stride 0x4 from traced loop/index accesses; no conflicts
+0x5416C	0x8005356C	68	.data	D_8005356C	Struct_8005356C	struct	compiled+materialized	src/data/data_800533E0.c	stride 0x4 from traced loop/index accesses; no conflicts
+0x541B0	0x800535B0	4	.data	D_800535B0	Struct_800535B0	struct	compiled+materialized	src/data/data_800533E0.c	single struct from direct accesses; no conflicts
+0x541B4	0x800535B4	4	.data	D_800535B4	u16	typed-array	compiled+materialized	src/data/data_800533E0.c	element u16 from 3 traced accesses at 2 offsets
+0x541B8	0x800535B8	16	.data	D_800535B8	Struct_800535B8	struct	compiled+materialized	src/data/data_800533E0.c	stride 0x4 from traced loop/index accesses; no conflicts
+0x541C8	0x800535C8	16	.data	D_800535C8	Struct_800535C8	struct	compiled+materialized	src/data/data_800533E0.c	stride 0x4 from traced loop/index accesses; no conflicts
+0x541D8	0x800535D8	4	.data	D_800535D8	s16	typed-array	compiled+materialized	src/data/data_800533E0.c	element s16 from 7 traced accesses at 2 offsets
+0x541DC	0x800535DC	4	.data	D_800535DC	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 4 traced accesses
+0x541E0	0x800535E0	4	.data	D_800535E0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 11 traced accesses
+0x541E4	0x800535E4	4	.data	D_800535E4	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 7 traced accesses
+0x541E8	0x800535E8	28	.data	D_800535E8	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 2 traced accesses, stride 4
+0x54204	0x80053604	24	.data	D_80053604	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	element u8 from 2 traced accesses at 1 offsets
+0x5421C	0x8005361C	24	.data	D_8005361C	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 2 traced accesses, stride 4
+0x54234	0x80053634	4	.data	D_80053634	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 23 traced accesses
+0x54238	0x80053638	4	.data	D_80053638	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 8 traced accesses
+0x5423C	0x8005363C	4	.data	D_8005363C	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54240	0x80053640	4	.data	D_80053640	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54244	0x80053644	52	.data	D_80053644	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54278	0x80053678	20	.data	D_80053678	u32	pointer	compiled+materialized	src/data/data_800533E0.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x5428C	0x8005368C	4	.data	D_8005368C	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54290	0x80053690	4	.data	D_80053690	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54294	0x80053694	4	.data	D_80053694	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x54298	0x80053698	4	.data	D_80053698	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x5429C	0x8005369C	4	.data	D_8005369C	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542A0	0x800536A0	4	.data	D_800536A0	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542A4	0x800536A4	4	.data	D_800536A4	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 4 traced accesses
+0x542A8	0x800536A8	4	.data	D_800536A8	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 1 traced accesses
+0x542AC	0x800536AC	4	.data	D_800536AC	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 1 traced accesses
+0x542B0	0x800536B0	4	.data	D_800536B0	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542B4	0x800536B4	4	.data	D_800536B4	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542B8	0x800536B8	4	.data	D_800536B8	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542BC	0x800536BC	4	.data	D_800536BC	u16	typed-array	compiled+materialized	src/data/data_800533E0.c	element u16 from 6 traced accesses at 2 offsets
+0x542C0	0x800536C0	4	.data	D_800536C0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 4 traced accesses
+0x542C4	0x800536C4	4	.data	D_800536C4	s16	typed-array	compiled+materialized	src/data/data_800533E0.c	element s16 from 6 traced accesses at 1 offsets
+0x542C8	0x800536C8	4	.data	D_800536C8	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542CC	0x800536CC	4	.data	D_800536CC	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542D0	0x800536D0	44	.data	D_800536D0	f32	f32	compiled+materialized	src/data/data_800533E0.c	-
+0x542FC	0x800536FC	60	.data	D_800536FC	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 4 traced accesses at 1 offsets
+0x54338	0x80053738	60	.data	D_80053738	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 2 traced accesses at 1 offsets
+0x54374	0x80053774	60	.data	D_80053774	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 1 traced accesses at 1 offsets
+0x543B0	0x800537B0	8	.data	D_800537B0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 1 traced accesses at 1 offsets
+0x543B8	0x800537B8	4	.data	D_800537B8	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	element u8 from 4 traced accesses at 1 offsets
+0x543BC	0x800537BC	4	.data	D_800537BC	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	element u8 from 1 traced accesses at 1 offsets
+0x543C0	0x800537C0	20	.data	D_800537C0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 4 traced accesses, stride 4
+0x543D4	0x800537D4	4	.data	D_800537D4	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 14 traced accesses
+0x543D8	0x800537D8	4	.data	D_800537D8	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 12 traced accesses
+0x543DC	0x800537DC	4	.data	D_800537DC	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 6 traced accesses
+0x543E0	0x800537E0	8	.data	D_800537E0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 2 traced accesses at 1 offsets
+0x543E8	0x800537E8	60	.data	D_800537E8	Struct_800537E8	struct	compiled+materialized	src/data/data_800533E0.c	stride 0xC from traced loop/index accesses; no conflicts
+0x54424	0x80053824	4	.data	D_80053824	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 3 traced accesses
+0x54428	0x80053828	4	.data	D_80053828	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 1 traced accesses
+0x5442C	0x8005382C	28	.data	D_8005382C	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 4 traced accesses at 1 offsets
+0x54448	0x80053848	16	.data	D_80053848	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 3 traced accesses at 1 offsets
+0x54458	0x80053858	4	.data	D_80053858	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 2 traced accesses
+0x5445C	0x8005385C	4	.data	D_8005385C	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 4 traced accesses
+0x54460	0x80053860	144	.data	D_80053860	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 3 traced accesses, stride 4
+0x544F0	0x800538F0	4	.data	D_800538F0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 8 traced accesses
+0x544F4	0x800538F4	12	.data	D_800538F4	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 4 traced accesses at 1 offsets
+0x54500	0x80053900	4	.data	D_80053900	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 1 traced accesses
+0x54504	0x80053904	4	.data	D_80053904	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 1 traced accesses
+0x54508	0x80053908	4	.data	D_80053908	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 1 traced accesses
+0x5450C	0x8005390C	28	.data	D_8005390C	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 1 traced accesses at 1 offsets
+0x54528	0x80053928	4	.data	D_80053928	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 3 traced accesses
+0x5452C	0x8005392C	4	.data	D_8005392C	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 4 traced accesses
+0x54530	0x80053930	4	.data	D_80053930	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 2 traced accesses
+0x54534	0x80053934	68	.data	D_80053934	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 4 traced accesses at 1 offsets
+0x54578	0x80053978	8	.data	D_80053978	u16	typed-array	compiled+materialized	src/data/data_800533E0.c	element type from 20 traced accesses, stride 2
+0x54580	0x80053980	4	.data	D_80053980	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	scalar type from 5 traced accesses
+0x54584	0x80053984	12	.data	D_80053984	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 2 traced accesses at 1 offsets
+0x54590	0x80053990	16	.data	D_80053990	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 2 traced accesses at 1 offsets
+0x545A0	0x800539A0	16	.data	D_800539A0	u32	typed-array	compiled+materialized	src/data/data_800533E0.c	element u32 from 4 traced accesses at 1 offsets
+0x545B0	0x800539B0	16	.data	D_800539B0	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	element u8 from 2 traced accesses at 1 offsets
+0x545C0	0x800539C0	148	.data	D_800539C0	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54654	0x80053A54	192	.data	D_80053A54	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54714	0x80053B14	192	.data	D_80053B14	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x547D4	0x80053BD4	108	.data	D_80053BD4	u8	typed-array	compiled+materialized	src/data/data_800533E0.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54840	0x80053C40	100	.data	D_80053C40	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x548A4	0x80053CA4	52	.data	D_80053CA4	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	element u8 from 8 traced accesses at 1 offsets
+0x548D8	0x80053CD8	100	.data	D_80053CD8	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x5493C	0x80053D3C	100	.data	D_80053D3C	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x549A0	0x80053DA0	100	.data	D_80053DA0	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54A04	0x80053E04	56	.data	D_80053E04	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54A3C	0x80053E3C	56	.data	D_80053E3C	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54A74	0x80053E74	56	.data	D_80053E74	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54AAC	0x80053EAC	100	.data	D_80053EAC	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54B10	0x80053F10	100	.data	D_80053F10	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54B74	0x80053F74	100	.data	D_80053F74	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54BD8	0x80053FD8	76	.data	D_80053FD8	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4)
+0x54C24	0x80054024	40	.data	D_80054024	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4, table 0x80054194)
+0x54C4C	0x8005404C	40	.data	D_8005404C	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4, table 0x80054194)
+0x54C74	0x80054074	40	.data	D_80054074	u8	typed-array	compiled+materialized	src/data/data_80053C40.c	u8 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (table 0x800540A4, table 0x80054194)
+0x54C9C	0x8005409C	260	.data	D_8005409C	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element type from 14 traced accesses, stride 4
+0x54DA0	0x800541A0	104	.data	D_800541A0	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element type from 4 traced accesses, stride 4
+0x54E08	0x80054208	56	.data	D_80054208	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element type from 2 traced accesses, stride 4
+0x54E40	0x80054240	40	.data	D_80054240	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element type from 10 traced accesses, stride 4
+0x54E68	0x80054268	116	.data	D_80054268	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 2 traced accesses at 1 offsets
+0x54EDC	0x800542DC	72	.data	D_800542DC	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element type from 2 traced accesses, stride 4
+0x54F24	0x80054324	4	.data	D_80054324	f32	f32	compiled+materialized	src/data/data_80053C40.c	-
+0x54F28	0x80054328	8	.data	D_80054328	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 1 traced accesses at 1 offsets
+0x54F30	0x80054330	4	.data	D_80054330	f32	f32	compiled+materialized	src/data/data_80053C40.c	-
+0x54F34	0x80054334	12	.data	D_80054334	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 4 traced accesses at 1 offsets
+0x54F40	0x80054340	4	.data	D_80054340	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	scalar type from 20 traced accesses
+0x54F44	0x80054344	4	.data	D_80054344	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	scalar type from 40 traced accesses
+0x54F48	0x80054348	4	.data	D_80054348	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	scalar type from 4 traced accesses
+0x54F4C	0x8005434C	12	.data	D_8005434C	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 2 traced accesses at 1 offsets
+0x54F58	0x80054358	4	.data	D_80054358	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	scalar type from 25 traced accesses
+0x54F5C	0x8005435C	4	.data	D_8005435C	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	scalar type from 11 traced accesses
+0x54F60	0x80054360	16	.data	D_80054360	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 2 traced accesses at 1 offsets
+0x54F70	0x80054370	4	.data	D_80054370	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	scalar type from 3 traced accesses
+0x54F74	0x80054374	4	.data	D_80054374	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	scalar type from 2 traced accesses
+0x54F78	0x80054378	20	.data	D_80054378	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 4 traced accesses at 1 offsets
+0x54F8C	0x8005438C	4	.data	D_8005438C	s16	typed-array	compiled+materialized	src/data/data_80053C40.c	element s16 from 12 traced accesses at 1 offsets
+0x54F90	0x80054390	128	.data	D_80054390	f32	f32	compiled+materialized	src/data/data_80053C40.c	-
+0x55010	0x80054410	16	.data	D_80054410	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 2 traced accesses at 1 offsets
+0x55020	0x80054420	64	.data	D_80054420	u32	typed-array	compiled+materialized	src/data/data_80053C40.c	element u32 from 7 traced accesses at 1 offsets
+0x55060	0x80054460	24	.data	D_80054460	u8	typed-array	compiled+materialized	src/data/data_80054460.c	element u8 from 2 traced accesses at 1 offsets
+0x55078	0x80054478	24	.data	D_80054478	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element type from 2 traced accesses, stride 4
+0x55090	0x80054490	48	.data	D_80054490	Struct_80054490	struct	compiled+materialized	src/data/data_80054460.c	stride 0x18 from traced loop/index accesses; no conflicts
+0x550C0	0x800544C0	16	.data	D_800544C0	u32	typed-raw	compiled+materialized	src/data/data_80054460.c	 | untyped: no reference anywhere: no data word points into it and no lui/lo pair or immediate in the program text forms its address; as f32 the words read (-810.0, 0.0, -7050.0, 6.539821638319488e-36); possibly trailing element(s) of D_80054490, not provable
+0x550D0	0x800544D0	4	.data	D_800544D0	u8	typed-array	compiled+materialized	src/data/data_80054460.c	element u8 from 1 traced accesses at 1 offsets
+0x550D4	0x800544D4	4	.data	D_800544D4	u16	typed-array	compiled+materialized	src/data/data_80054460.c	element u16 from 3 traced accesses at 2 offsets
+0x550D8	0x800544D8	8	.data	D_800544D8	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x550E0	0x800544E0	4	.data	D_800544E0	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x550E4	0x800544E4	4	.data	D_800544E4	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x550E8	0x800544E8	4	.data	D_800544E8	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x550EC	0x800544EC	4	.data	D_800544EC	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x550F0	0x800544F0	4	.data	D_800544F0	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x550F4	0x800544F4	4	.data	D_800544F4	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x550F8	0x800544F8	4	.data	D_800544F8	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 4 traced accesses
+0x550FC	0x800544FC	4	.data	D_800544FC	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 1 traced accesses
+0x55100	0x80054500	4	.data	D_80054500	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 1 traced accesses
+0x55104	0x80054504	4	.data	D_80054504	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x55108	0x80054508	4	.data	D_80054508	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x5510C	0x8005450C	4	.data	D_8005450C	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x55110	0x80054510	4	.data	D_80054510	u16	typed-array	compiled+materialized	src/data/data_80054460.c	element u16 from 6 traced accesses at 2 offsets
+0x55114	0x80054514	4	.data	D_80054514	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 4 traced accesses
+0x55118	0x80054518	4	.data	D_80054518	s16	typed-array	compiled+materialized	src/data/data_80054460.c	element s16 from 6 traced accesses at 1 offsets
+0x5511C	0x8005451C	4	.data	D_8005451C	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x55120	0x80054520	48	.data	D_80054520	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x55150	0x80054550	8	.data	D_80054550	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 4 traced accesses at 1 offsets
+0x55158	0x80054558	4	.data	D_80054558	s16	typed-array	compiled+materialized	src/data/data_80054460.c	element s16 from 5 traced accesses at 2 offsets
+0x5515C	0x8005455C	4	.data	D_8005455C	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 2 traced accesses
+0x55160	0x80054560	4	.data	D_80054560	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 3 traced accesses
+0x55164	0x80054564	4	.data	D_80054564	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 14 traced accesses
+0x55168	0x80054568	8	.data	D_80054568	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 2 traced accesses at 1 offsets
+0x55170	0x80054570	32	.data	D_80054570	Struct_80054570	struct	compiled+materialized	src/data/data_80054460.c	stride 0x8 from traced loop/index accesses; no conflicts
+0x55190	0x80054590	48	.data	D_80054590	Struct_80054590	struct	compiled+materialized	src/data/data_80054460.c	stride 0x8 from traced loop/index accesses; no conflicts
+0x551C0	0x800545C0	4	.data	D_800545C0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 3 traced accesses
+0x551C4	0x800545C4	28	.data	D_800545C4	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element type from 2 traced accesses, stride 4
+0x551E0	0x800545E0	4	.data	D_800545E0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 3 traced accesses
+0x551E4	0x800545E4	4	.data	D_800545E4	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 7 traced accesses
+0x551E8	0x800545E8	84	.data	D_800545E8	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 3 traced accesses at 1 offsets
+0x5523C	0x8005463C	4	.data	D_8005463C	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 1 traced accesses
+0x55240	0x80054640	4	.data	D_80054640	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 2 traced accesses
+0x55244	0x80054644	28	.data	D_80054644	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 2 traced accesses at 1 offsets
+0x55260	0x80054660	44	.data	D_80054660	u32	typed-raw	compiled+materialized	src/data/data_80054460.c	 | untyped: address formed at 0x80032728 as D_800547DC-380 (struct Struct_800547DC); the distance/size is not a whole element of that layout and the derived pointer is not dereferenced in traced code
+0x5528C	0x8005468C	52	.data	D_8005468C	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 2 traced accesses at 1 offsets
+0x552C0	0x800546C0	48	.data	D_800546C0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element type from 4 traced accesses, stride 4
+0x552F0	0x800546F0	52	.data	D_800546F0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 19 traced accesses at 1 offsets
+0x55324	0x80054724	56	.data	D_80054724	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 19 traced accesses at 1 offsets
+0x5535C	0x8005475C	36	.data	D_8005475C	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 19 traced accesses at 1 offsets
+0x55380	0x80054780	48	.data	D_80054780	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element type from 5 traced accesses, stride 4
+0x553B0	0x800547B0	4	.data	D_800547B0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 3 traced accesses
+0x553B4	0x800547B4	12	.data	D_800547B4	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 7 traced accesses at 1 offsets
+0x553C0	0x800547C0	4	.data	D_800547C0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 3 traced accesses
+0x553C4	0x800547C4	4	.data	D_800547C4	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 3 traced accesses
+0x553C8	0x800547C8	4	.data	D_800547C8	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 2 traced accesses
+0x553CC	0x800547CC	4	.data	D_800547CC	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x553D0	0x800547D0	4	.data	D_800547D0	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x553D4	0x800547D4	4	.data	D_800547D4	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x553D8	0x800547D8	4	.data	D_800547D8	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 5 traced accesses
+0x553DC	0x800547DC	48	.data	D_800547DC	Struct_800547DC	struct	compiled+materialized	src/data/data_80054460.c	stride 0xC from traced loop/index accesses; no conflicts
+0x5540C	0x8005480C	4	.data	D_8005480C	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 16 traced accesses
+0x55410	0x80054810	4	.data	D_80054810	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 5 traced accesses
+0x55414	0x80054814	12	.data	D_80054814	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x55420	0x80054820	4	.data	D_80054820	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 7 traced accesses
+0x55424	0x80054824	20	.data	D_80054824	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 6 traced accesses at 1 offsets
+0x55438	0x80054838	8	.data	D_80054838	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 2 traced accesses at 1 offsets
+0x55440	0x80054840	48	.data	D_80054840	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 6 traced accesses at 1 offsets
+0x55470	0x80054870	4	.data	D_80054870	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 4 traced accesses
+0x55474	0x80054874	4	.data	D_80054874	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 1 traced accesses
+0x55478	0x80054878	4	.data	D_80054878	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 1 traced accesses
+0x5547C	0x8005487C	120	.data	D_8005487C	Struct_8005487C	struct	compiled+materialized	src/data/data_80054460.c	stride 0xC from traced loop/index accesses; no conflicts
+0x554F4	0x800548F4	60	.data	D_800548F4	Struct_800548F4	struct	compiled+materialized	src/data/data_80054460.c	stride 0xC from traced loop/index accesses; no conflicts
+0x55530	0x80054930	52	.data	D_80054930	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element type from 6 traced accesses, stride 4
+0x55564	0x80054964	8	.data	D_80054964	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x5556C	0x8005496C	16	.data	D_8005496C	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x5557C	0x8005497C	8	.data	D_8005497C	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x55584	0x80054984	16	.data	D_80054984	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x55594	0x80054994	24	.data	D_80054994	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x555AC	0x800549AC	12	.data	D_800549AC	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x555B8	0x800549B8	32	.data	D_800549B8	u32	pointer	compiled+materialized	src/data/data_80054460.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x555D8	0x800549D8	24	.data	D_800549D8	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element type from 2 traced accesses, stride 4
+0x555F0	0x800549F0	12	.data	D_800549F0	Struct_800549F0	struct	compiled+materialized	src/data/data_80054460.c	stride 0x4 from traced loop/index accesses; no conflicts
+0x555FC	0x800549FC	16	.data	D_800549FC	Struct_800549FC	struct	compiled+materialized	src/data/data_80054460.c	stride 0x4 from traced loop/index accesses; no conflicts
+0x5560C	0x80054A0C	36	.data	D_80054A0C	Struct_80054A0C	struct	compiled+materialized	src/data/data_80054460.c	stride 0xC from traced loop/index accesses; no conflicts
+0x55630	0x80054A30	96	.data	D_80054A30	Struct_80054A30	struct	compiled+materialized	src/data/data_80054460.c	stride 0x18 from traced loop/index accesses; no conflicts
+0x55690	0x80054A90	12	.data	D_80054A90	u32	typed-raw	compiled+materialized	src/data/data_80054460.c	 | untyped: no reference anywhere: no data word points into it and no lui/lo pair or immediate in the program text forms its address; as f32 the words read (0.0, -100.0, -6000.0); possibly trailing element(s) of D_80054A30, not provable
+0x5569C	0x80054A9C	4	.data	D_80054A9C	f32	f32	compiled+materialized	src/data/data_80054460.c	-
+0x556A0	0x80054AA0	4	.data	D_80054AA0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 5 traced accesses
+0x556A4	0x80054AA4	4	.data	D_80054AA4	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 2 traced accesses
+0x556A8	0x80054AA8	8	.data	D_80054AA8	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element u32 from 7 traced accesses at 1 offsets
+0x556B0	0x80054AB0	4	.data	D_80054AB0	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 23 traced accesses
+0x556B4	0x80054AB4	4	.data	D_80054AB4	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 2 traced accesses
+0x556B8	0x80054AB8	4	.data	D_80054AB8	u32	typed-array	compiled+materialized	src/data/data_80054460.c	scalar type from 4 traced accesses
+0x556BC	0x80054ABC	40	.data	D_80054ABC	u32	typed-array	compiled+materialized	src/data/data_80054460.c	element type from 4 traced accesses, stride 4
+0x556E4	0x80054AE4	36	.data	D_80054AE4	Struct_80054AE4	struct	compiled+materialized	src/data/data_80054460.c	stride 0xC from traced loop/index accesses; no conflicts
+0x55708	0x80054B08	180	.data	D_80054B08	Struct_80054B08	struct	compiled+materialized	src/data/data_80054460.c	stride 0x3C from traced loop/index accesses; no conflicts
+0x557BC	0x80054BBC	4	.data	pad_80054BBC	u8	padding	compiled+materialized	src/data/data_80054460.c	-
+0x557C0	0x80054BC0	2048	.data	D_80054BC0	u32	ucode-data	compiled+materialized	src/data/data_80054460.c	F3DEX 1.23 RSP data image (contains "RSP Gfx ucode F3DEX 1.23" at +0x2B0); stored to OSTask.ucode_data at 0x80013F90 with ucode_data_size 0x800
+0x55FC0	0x800553C0	688	.data	D_800553C0	u32	ucode-data	compiled+materialized	src/data/data_800553C0.c	audio RSP ucode data image; stored to OSTask.ucode_data (sp+0x1C) at 0x80042DC4 next to ucode text 0x80037CF0
+0x56270	0x80055670	512	.data	D_80055670	Struct_80055670	struct	compiled+materialized	src/data/data_800553C0.c	stride 0x8 from traced loop/index accesses; no conflicts
+0x56470	0x80055870	20	.data	D_80055870	char	string	compiled+materialized	src/data/data_800553C0.c	text; byte accesses only
+0x56484	0x80055884	20	.data	D_80055884	char	string	compiled+materialized	src/data/data_800553C0.c	text; byte accesses only
+0x56498	0x80055898	72	.data	D_80055898	f64	f64	compiled+materialized	src/data/data_800553C0.c	-
+0x564E0	0x800558E0	80	.data	D_800558E0	f64	f64	compiled+materialized	src/data/data_800553C0.c	-
+0x56530	0x80055930	256	.data	D_80055930	s8	typed-array	compiled+materialized	src/data/data_800553C0.c	element s8 from 3 traced accesses at 1 offsets
+0x56630	0x80055A30	192	.data	D_80055A30	u32	pointer	compiled+materialized	src/data/data_800553C0.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x566F0	0x80055AF0	4	.data	D_80055AF0	u32	typed-array	compiled+materialized	src/data/data_800553C0.c	scalar type from 7 traced accesses
+0x566F4	0x80055AF4	12	.data	D_80055AF4	u32	typed-array	compiled+materialized	src/data/data_800553C0.c	element u32 from 62 traced accesses at 1 offsets
+0x56700	0x80055B00	256	.data	D_80055B00	s16	typed-array	compiled+materialized	src/data/data_800553C0.c	element type from 11 traced accesses, stride 2
+0x56800	0x80055C00	104	.data	D_80055C00	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=3, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56868	0x80055C68	136	.data	D_80055C68	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=4, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x568F0	0x80055CF0	40	.data	D_80055CF0	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56918	0x80055D18	40	.data	D_80055D18	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56940	0x80055D40	40	.data	D_80055D40	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56968	0x80055D68	56	.data	D_80055D68	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element type from 13 traced accesses, stride 4
+0x569A0	0x80055DA0	104	.data	D_80055DA0	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=3, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56A08	0x80055E08	136	.data	D_80055E08	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=4, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56A90	0x80055E90	40	.data	D_80055E90	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56AB8	0x80055EB8	136	.data	D_80055EB8	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words, followed by 24 zero words
+0x56B40	0x80055F40	40	.data	D_80055F40	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56B68	0x80055F68	4	.data	D_80055F68	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 2 traced accesses
+0x56B6C	0x80055F6C	36	.data	D_80055F6C	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 1 traced accesses at 1 offsets
+0x56B90	0x80055F90	4	.data	D_80055F90	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 1 traced accesses
+0x56B94	0x80055F94	28	.data	D_80055F94	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element type from 10 traced accesses, stride 4
+0x56BB0	0x80055FB0	4	.data	D_80055FB0	u32	pointer	compiled+materialized	src/data/data_80055C00.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x56BB4	0x80055FB4	4	.data	D_80055FB4	u32	pointer	compiled+materialized	src/data/data_80055C00.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x56BB8	0x80055FB8	4	.data	D_80055FB8	u32	pointer	compiled+materialized	src/data/data_80055C00.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x56BBC	0x80055FBC	4	.data	D_80055FBC	u32	pointer	compiled+materialized	src/data/data_80055C00.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x56BC0	0x80055FC0	16	.data	D_80055FC0	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 2 traced accesses at 1 offsets
+0x56BD0	0x80055FD0	16	.data	D_80055FD0	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 5 traced accesses at 1 offsets
+0x56BE0	0x80055FE0	16	.data	D_80055FE0	f32	f32	compiled+materialized	src/data/data_80055C00.c	-
+0x56BF0	0x80055FF0	16	.data	D_80055FF0	f32	f32	compiled+materialized	src/data/data_80055C00.c	-
+0x56C00	0x80056000	16	.data	D_80056000	f32	f32	compiled+materialized	src/data/data_80055C00.c	-
+0x56C10	0x80056010	16	.data	D_80056010	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 2 traced accesses at 1 offsets
+0x56C20	0x80056020	32	.data	D_80056020	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 1 traced accesses at 1 offsets
+0x56C40	0x80056040	4	.data	D_80056040	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 6 traced accesses
+0x56C44	0x80056044	4	.data	D_80056044	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 6 traced accesses
+0x56C48	0x80056048	4	.data	D_80056048	f32	f32	compiled+materialized	src/data/data_80055C00.c	-
+0x56C4C	0x8005604C	4	.data	D_8005604C	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 3 traced accesses
+0x56C50	0x80056050	16	.data	D_80056050	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 28 traced accesses at 1 offsets
+0x56C60	0x80056060	4	.data	D_80056060	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 32 traced accesses
+0x56C64	0x80056064	4	.data	D_80056064	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 14 traced accesses
+0x56C68	0x80056068	4	.data	D_80056068	u32	pointer	compiled+materialized	src/data/data_80055C00.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x56C6C	0x8005606C	4	.data	D_8005606C	u32	pointer	compiled+materialized	src/data/data_80055C00.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x56C70	0x80056070	4	.data	D_80056070	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 14 traced accesses
+0x56C74	0x80056074	12	.data	D_80056074	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 1 traced accesses at 1 offsets
+0x56C80	0x80056080	16	.data	D_80056080	Struct_80056080	struct	compiled+materialized	src/data/data_80055C00.c	single struct from direct accesses; +0x0 pointer (use confirmed)
+0x56C90	0x80056090	104	.data	D_80056090	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=3, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56CF8	0x800560F8	128	.data	D_800560F8	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 25 traced accesses at 2 offsets
+0x56D78	0x80056178	8	.data	D_80056178	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 4 traced accesses at 1 offsets
+0x56D80	0x80056180	40	.data	D_80056180	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56DA8	0x800561A8	40	.data	D_800561A8	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56DD0	0x800561D0	40	.data	D_800561D0	s32	typed-array	compiled+materialized	src/data/data_80055C00.c	libaudio ALFx reverb parameter list: s32 {sectionCount=1, length, then per section input, output, fbcoef, ffcoef, gain, chorusRate, chorusDepth, lowpass}; layout proven by size == (2 + 8*sectionCount) words
+0x56DF8	0x800561F8	40	.data	D_800561F8	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element type from 13 traced accesses, stride 4
+0x56E20	0x80056220	288	.data	D_80056220	s16	typed-array	compiled+materialized	src/data/data_80055C00.c	element type from 11 traced accesses, stride 2
+0x56F40	0x80056340	16	.data	D_80056340	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 8 traced accesses at 1 offsets
+0x56F50	0x80056350	4	.data	D_80056350	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 5 traced accesses
+0x56F54	0x80056354	4	.data	D_80056354	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 2 traced accesses
+0x56F58	0x80056358	4	.data	D_80056358	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 2 traced accesses
+0x56F5C	0x8005635C	4	.data	D_8005635C	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 13 traced accesses
+0x56F60	0x80056360	4	.data	D_80056360	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 284 traced accesses
+0x56F64	0x80056364	4	.data	D_80056364	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	u32 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)
+0x56F68	0x80056368	4	.data	D_80056368	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	u32 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)
+0x56F6C	0x8005636C	36	.data	D_8005636C	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	u32 elements: indexed accesses through a pointer loaded from data / passed in a0-a3 (ptrflow)
+0x56F90	0x80056390	4	.data	D_80056390	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 939 traced accesses
+0x56F94	0x80056394	4	.data	D_80056394	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 111 traced accesses
+0x56F98	0x80056398	4	.data	D_80056398	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 116 traced accesses
+0x56F9C	0x8005639C	4	.data	D_8005639C	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 308 traced accesses
+0x56FA0	0x800563A0	4	.data	D_800563A0	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 2 traced accesses
+0x56FA4	0x800563A4	12	.data	D_800563A4	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	element u32 from 2 traced accesses at 1 offsets
+0x56FB0	0x800563B0	4	.data	D_800563B0	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 57 traced accesses
+0x56FB4	0x800563B4	4	.data	D_800563B4	f32	f32	compiled+materialized	src/data/data_80055C00.c	-
+0x56FB8	0x800563B8	4	.data	D_800563B8	u16	typed-array	compiled+materialized	src/data/data_80055C00.c	element u16 from 32 traced accesses at 1 offsets
+0x56FBC	0x800563BC	4	.data	D_800563BC	u32	typed-array	compiled+materialized	src/data/data_80055C00.c	scalar type from 94 traced accesses
+0x56FC0	0x800563C0	4	.data	D_800563C0	u32	pointer	compiled+materialized	src/data/data_80055C00.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x56FC4	0x800563C4	12	.data	D_800563C4	Struct_800563C4	struct	compiled+materialized	src/data/data_80055C00.c	single struct from direct accesses; +0x0 pointer (use confirmed)
+0x56FD0	0x800563D0	80	.data	osViModeNtscLpn1	OSViMode	struct	compiled+materialized	src/data/data_80055C00.c	libultra OSViMode (type 0); identified by layout: type byte, zero pad, VI ctrl/width
+0x57020	0x80056420	80	.data	osViModeNtscLpf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 1); identified by layout: type byte, zero pad, VI ctrl/width
+0x57070	0x80056470	80	.data	osViModeNtscLan1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 2); identified by layout: type byte, zero pad, VI ctrl/width
+0x570C0	0x800564C0	80	.data	osViModeNtscLaf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 3); identified by layout: type byte, zero pad, VI ctrl/width
+0x57110	0x80056510	80	.data	osViModeNtscLpn2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 4); identified by layout: type byte, zero pad, VI ctrl/width
+0x57160	0x80056560	80	.data	osViModeNtscLpf2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 5); identified by layout: type byte, zero pad, VI ctrl/width
+0x571B0	0x800565B0	80	.data	osViModeNtscLan2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 6); identified by layout: type byte, zero pad, VI ctrl/width
+0x57200	0x80056600	80	.data	osViModeNtscLaf2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 7); identified by layout: type byte, zero pad, VI ctrl/width
+0x57250	0x80056650	80	.data	osViModeNtscHpn1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 8); identified by layout: type byte, zero pad, VI ctrl/width
+0x572A0	0x800566A0	80	.data	osViModeNtscHpf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 9); identified by layout: type byte, zero pad, VI ctrl/width
+0x572F0	0x800566F0	80	.data	osViModeNtscHan1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 10); identified by layout: type byte, zero pad, VI ctrl/width
+0x57340	0x80056740	80	.data	osViModeNtscHaf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 11); identified by layout: type byte, zero pad, VI ctrl/width
+0x57390	0x80056790	80	.data	osViModeNtscHpn2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 12); identified by layout: type byte, zero pad, VI ctrl/width
+0x573E0	0x800567E0	80	.data	osViModeNtscHpf2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 13); identified by layout: type byte, zero pad, VI ctrl/width
+0x57430	0x80056830	80	.data	osViModePalLpn1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 14); identified by layout: type byte, zero pad, VI ctrl/width
+0x57480	0x80056880	80	.data	osViModePalLpf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 15); identified by layout: type byte, zero pad, VI ctrl/width
+0x574D0	0x800568D0	80	.data	osViModePalLan1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 16); identified by layout: type byte, zero pad, VI ctrl/width
+0x57520	0x80056920	80	.data	osViModePalLaf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 17); identified by layout: type byte, zero pad, VI ctrl/width
+0x57570	0x80056970	80	.data	osViModePalLpn2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 18); identified by layout: type byte, zero pad, VI ctrl/width
+0x575C0	0x800569C0	80	.data	osViModePalLpf2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 19); identified by layout: type byte, zero pad, VI ctrl/width
+0x57610	0x80056A10	80	.data	osViModePalLan2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 20); identified by layout: type byte, zero pad, VI ctrl/width
+0x57660	0x80056A60	80	.data	osViModePalLaf2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 21); identified by layout: type byte, zero pad, VI ctrl/width
+0x576B0	0x80056AB0	80	.data	osViModePalHpn1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 22); identified by layout: type byte, zero pad, VI ctrl/width
+0x57700	0x80056B00	80	.data	osViModePalHpf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 23); identified by layout: type byte, zero pad, VI ctrl/width
+0x57750	0x80056B50	80	.data	osViModePalHan1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 24); identified by layout: type byte, zero pad, VI ctrl/width
+0x577A0	0x80056BA0	80	.data	osViModePalHaf1	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 25); identified by layout: type byte, zero pad, VI ctrl/width
+0x577F0	0x80056BF0	80	.data	osViModePalHpn2	OSViMode	struct	compiled+materialized	src/data/data_80056420.c	libultra OSViMode (type 26); identified by layout: type byte, zero pad, VI ctrl/width
+0x57840	0x80056C40	80	.data	osViModePalHpf2	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 27); identified by layout: type byte, zero pad, VI ctrl/width
+0x57890	0x80056C90	80	.data	osViModeMpalLpn1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 28); identified by layout: type byte, zero pad, VI ctrl/width
+0x578E0	0x80056CE0	80	.data	osViModeMpalLpf1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 29); identified by layout: type byte, zero pad, VI ctrl/width
+0x57930	0x80056D30	80	.data	osViModeMpalLan1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 30); identified by layout: type byte, zero pad, VI ctrl/width
+0x57980	0x80056D80	80	.data	osViModeMpalLaf1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 31); identified by layout: type byte, zero pad, VI ctrl/width
+0x579D0	0x80056DD0	80	.data	osViModeMpalLpn2	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 32); identified by layout: type byte, zero pad, VI ctrl/width
+0x57A20	0x80056E20	80	.data	osViModeMpalLpf2	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 33); identified by layout: type byte, zero pad, VI ctrl/width
+0x57A70	0x80056E70	80	.data	osViModeMpalLan2	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 34); identified by layout: type byte, zero pad, VI ctrl/width
+0x57AC0	0x80056EC0	80	.data	osViModeMpalLaf2	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 35); identified by layout: type byte, zero pad, VI ctrl/width
+0x57B10	0x80056F10	80	.data	osViModeMpalHpn1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 36); identified by layout: type byte, zero pad, VI ctrl/width
+0x57B60	0x80056F60	80	.data	osViModeMpalHpf1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 37); identified by layout: type byte, zero pad, VI ctrl/width
+0x57BB0	0x80056FB0	80	.data	osViModeMpalHan1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 38); identified by layout: type byte, zero pad, VI ctrl/width
+0x57C00	0x80057000	80	.data	osViModeMpalHaf1	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 39); identified by layout: type byte, zero pad, VI ctrl/width
+0x57C50	0x80057050	80	.data	osViModeMpalHpn2	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 40); identified by layout: type byte, zero pad, VI ctrl/width
+0x57CA0	0x800570A0	80	.data	osViModeMpalHpf2	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 41); identified by layout: type byte, zero pad, VI ctrl/width
+0x57CF0	0x800570F0	16	.data	D_800570F0	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	element u32 from 3 traced accesses at 1 offsets
+0x57D00	0x80057100	16	.data	D_80057100	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	element u32 from 1 traced accesses at 1 offsets
+0x57D10	0x80057110	16	.data	D_80057110	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	element type from 4 traced accesses, stride 4
+0x57D20	0x80057120	80	.data	D_80057120	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 2); identified by layout: type byte, zero pad, VI ctrl/width
+0x57D70	0x80057170	80	.data	D_80057170	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 16); identified by layout: type byte, zero pad, VI ctrl/width
+0x57DC0	0x800571C0	80	.data	D_800571C0	OSViMode	struct	compiled+materialized	src/data/data_80056C40.c	libultra OSViMode (type 30); identified by layout: type byte, zero pad, VI ctrl/width
+0x57E10	0x80057210	4	.data	D_80057210	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 6 traced accesses
+0x57E14	0x80057214	4	.data	D_80057214	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E18	0x80057218	4	.data	D_80057218	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 2 traced accesses
+0x57E1C	0x8005721C	4	.data	D_8005721C	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E20	0x80057220	4	.data	D_80057220	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E24	0x80057224	4	.data	D_80057224	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E28	0x80057228	4	.data	D_80057228	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E2C	0x8005722C	4	.data	D_8005722C	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 4 traced accesses
+0x57E30	0x80057230	16	.data	D_80057230	u32	pointer	compiled+materialized	src/data/data_80056C40.c	pointer use confirmed: +0x0 pointer (use confirmed)
+0x57E40	0x80057240	20	.data	D_80057240	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	element u32 from 4 traced accesses at 1 offsets
+0x57E54	0x80057254	4	.data	D_80057254	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E58	0x80057258	4	.data	D_80057258	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E5C	0x8005725C	4	.data	D_8005725C	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 2 traced accesses
+0x57E60	0x80057260	4	.data	D_80057260	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 3 traced accesses
+0x57E64	0x80057264	4	.data	D_80057264	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E68	0x80057268	4	.data	D_80057268	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E6C	0x8005726C	4	.data	D_8005726C	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E70	0x80057270	4	.data	D_80057270	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E74	0x80057274	4	.data	D_80057274	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	scalar type from 1 traced accesses
+0x57E78	0x80057278	8	.data	D_80057278	u32	typed-array	compiled+materialized	src/data/data_80056C40.c	element u32 from 1 traced accesses at 1 offsets
+0x10F8	0x800004F8	8	.rodata	D_800004F8	char	string	compiled+materialized	src/data/rodata_800004F8.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80004458
+0x1100	0x80000500	40	.rodata	jtbl_80000500	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1128	0x80000528	8	.rodata	D_80000528	char	string	compiled+materialized	src/data/rodata_800004F8.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80004458, func_80005EF8
+0x1130	0x80000530	4	.rodata	D_80000530	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1134	0x80000534	4	.rodata	D_80000534	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1138	0x80000538	4	.rodata	D_80000538	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x113C	0x8000053C	4	.rodata	D_8000053C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1140	0x80000540	32	.rodata	jtbl_80000540	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1160	0x80000560	4	.rodata	D_80000560	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1164	0x80000564	4	.rodata	D_80000564	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1168	0x80000568	8	.rodata	D_80000568	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1170	0x80000570	8	.rodata	D_80000570	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1178	0x80000578	8	.rodata	D_80000578	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1180	0x80000580	8	.rodata	D_80000580	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1188	0x80000588	8	.rodata	D_80000588	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1190	0x80000590	8	.rodata	D_80000590	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1198	0x80000598	8	.rodata	D_80000598	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11A0	0x800005A0	8	.rodata	D_800005A0	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11A8	0x800005A8	8	.rodata	D_800005A8	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11B0	0x800005B0	20	.rodata	jtbl_800005B0	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11C4	0x800005C4	4	.rodata	pad_800005C4	u8	padding	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11C8	0x800005C8	8	.rodata	D_800005C8	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11D0	0x800005D0	4	.rodata	D_800005D0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11D4	0x800005D4	4	.rodata	D_800005D4	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11D8	0x800005D8	8	.rodata	D_800005D8	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11E0	0x800005E0	16	.rodata	D_800005E0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11F0	0x800005F0	4	.rodata	D_800005F0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11F4	0x800005F4	4	.rodata	D_800005F4	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x11F8	0x800005F8	24	.rodata	D_800005F8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1210	0x80000610	4	.rodata	D_80000610	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1214	0x80000614	4	.rodata	D_80000614	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1218	0x80000618	4	.rodata	D_80000618	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x121C	0x8000061C	4	.rodata	D_8000061C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1220	0x80000620	8	.rodata	D_80000620	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1228	0x80000628	8	.rodata	D_80000628	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1230	0x80000630	8	.rodata	D_80000630	u32	typed-array	compiled+materialized	src/data/rodata_800004F8.c	element u32 from 78 traced accesses at 1 offsets
+0x1238	0x80000638	24	.rodata	jtbl_80000638	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1250	0x80000650	24	.rodata	jtbl_80000650	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1268	0x80000668	24	.rodata	jtbl_80000668	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1280	0x80000680	24	.rodata	jtbl_80000680	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1298	0x80000698	8	.rodata	D_80000698	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12A0	0x800006A0	8	.rodata	D_800006A0	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12A8	0x800006A8	8	.rodata	D_800006A8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12B0	0x800006B0	8	.rodata	D_800006B0	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12B8	0x800006B8	4	.rodata	D_800006B8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12BC	0x800006BC	4	.rodata	D_800006BC	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12C0	0x800006C0	16	.rodata	D_800006C0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12D0	0x800006D0	8	.rodata	D_800006D0	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12D8	0x800006D8	4	.rodata	D_800006D8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12DC	0x800006DC	4	.rodata	D_800006DC	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12E0	0x800006E0	4	.rodata	pad_800006E0	u8	padding	compiled+materialized	src/data/rodata_800004F8.c	zero gap between literals of func_8000C034 (alignment padding or an unused zero/empty-string literal)
+0x12E4	0x800006E4	12	.rodata	D_800006E4	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12F0	0x800006F0	8	.rodata	D_800006F0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x12F8	0x800006F8	12	.rodata	D_800006F8	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1304	0x80000704	12	.rodata	D_80000704	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1310	0x80000710	12	.rodata	D_80000710	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x131C	0x8000071C	12	.rodata	D_8000071C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1328	0x80000728	12	.rodata	D_80000728	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1334	0x80000734	8	.rodata	D_80000734	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x133C	0x8000073C	20	.rodata	D_8000073C	char	string	compiled+materialized	src/data/rodata_800004F8.c	char data by value (text bytes, not NUL-terminated); constant pool of func_8000E1D0
+0x1350	0x80000750	8	.rodata	D_80000750	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1358	0x80000758	4	.rodata	D_80000758	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x135C	0x8000075C	4	.rodata	D_8000075C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1360	0x80000760	4	.rodata	D_80000760	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1364	0x80000764	4	.rodata	D_80000764	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1368	0x80000768	4	.rodata	D_80000768	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x136C	0x8000076C	4	.rodata	D_8000076C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1370	0x80000770	8	.rodata	D_80000770	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1378	0x80000778	8	.rodata	D_80000778	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1380	0x80000780	4	.rodata	D_80000780	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1384	0x80000784	4	.rodata	D_80000784	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1388	0x80000788	92	.rodata	jtbl_80000788	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x13E4	0x800007E4	4	.rodata	D_800007E4	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x13E8	0x800007E8	4	.rodata	D_800007E8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x13EC	0x800007EC	4	.rodata	D_800007EC	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x13F0	0x800007F0	4	.rodata	D_800007F0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x13F4	0x800007F4	4	.rodata	D_800007F4	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x13F8	0x800007F8	8	.rodata	D_800007F8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1400	0x80000800	8	.rodata	D_80000800	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1408	0x80000808	8	.rodata	D_80000808	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1410	0x80000810	8	.rodata	D_80000810	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1418	0x80000818	8	.rodata	D_80000818	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1420	0x80000820	8	.rodata	D_80000820	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1428	0x80000828	8	.rodata	D_80000828	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1430	0x80000830	4	.rodata	D_80000830	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1434	0x80000834	4	.rodata	D_80000834	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1438	0x80000838	4	.rodata	D_80000838	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x143C	0x8000083C	4	.rodata	D_8000083C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1440	0x80000840	4	.rodata	D_80000840	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1444	0x80000844	4	.rodata	D_80000844	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1448	0x80000848	8	.rodata	D_80000848	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1450	0x80000850	20	.rodata	jtbl_80000850	u32	jtbl	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1464	0x80000864	4	.rodata	D_80000864	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1468	0x80000868	4	.rodata	D_80000868	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x146C	0x8000086C	4	.rodata	D_8000086C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1470	0x80000870	8	.rodata	D_80000870	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1478	0x80000878	8	.rodata	D_80000878	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1480	0x80000880	4	.rodata	D_80000880	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1484	0x80000884	4	.rodata	D_80000884	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1488	0x80000888	4	.rodata	D_80000888	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x148C	0x8000088C	4	.rodata	D_8000088C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1490	0x80000890	4	.rodata	D_80000890	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1494	0x80000894	4	.rodata	D_80000894	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1498	0x80000898	4	.rodata	D_80000898	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x149C	0x8000089C	4	.rodata	D_8000089C	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14A0	0x800008A0	4	.rodata	D_800008A0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14A4	0x800008A4	4	.rodata	D_800008A4	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14A8	0x800008A8	4	.rodata	D_800008A8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14AC	0x800008AC	4	.rodata	D_800008AC	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14B0	0x800008B0	8	.rodata	D_800008B0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14B8	0x800008B8	8	.rodata	D_800008B8	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14C0	0x800008C0	8	.rodata	D_800008C0	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14C8	0x800008C8	4	.rodata	D_800008C8	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14CC	0x800008CC	4	.rodata	D_800008CC	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14D0	0x800008D0	8	.rodata	D_800008D0	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x14D8	0x800008D8	40	.rodata	D_800008D8	f64	f64	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1500	0x80000900	4	.rodata	D_80000900	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1504	0x80000904	12	.rodata	D_80000904	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1510	0x80000910	16	.rodata	D_80000910	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1520	0x80000920	4	.rodata	D_80000920	f32	f32	compiled+materialized	src/data/rodata_800004F8.c	unreferenced f32 literal by value; constant pool of func_80011400
+0x1524	0x80000924	28	.rodata	D_80000924	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1540	0x80000940	28	.rodata	D_80000940	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x155C	0x8000095C	28	.rodata	D_8000095C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1578	0x80000978	24	.rodata	D_80000978	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1590	0x80000990	28	.rodata	D_80000990	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x15AC	0x800009AC	32	.rodata	D_800009AC	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x15CC	0x800009CC	44	.rodata	D_800009CC	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x15F8	0x800009F8	20	.rodata	D_800009F8	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x160C	0x80000A0C	16	.rodata	D_80000A0C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x161C	0x80000A1C	12	.rodata	D_80000A1C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1628	0x80000A28	16	.rodata	D_80000A28	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1638	0x80000A38	24	.rodata	D_80000A38	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1650	0x80000A50	16	.rodata	D_80000A50	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1660	0x80000A60	28	.rodata	D_80000A60	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x167C	0x80000A7C	24	.rodata	D_80000A7C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1694	0x80000A94	16	.rodata	D_80000A94	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x16A4	0x80000AA4	16	.rodata	D_80000AA4	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x16B4	0x80000AB4	12	.rodata	D_80000AB4	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x16C0	0x80000AC0	16	.rodata	D_80000AC0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x16D0	0x80000AD0	12	.rodata	D_80000AD0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x16DC	0x80000ADC	20	.rodata	D_80000ADC	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x16F0	0x80000AF0	16	.rodata	D_80000AF0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1700	0x80000B00	16	.rodata	D_80000B00	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1710	0x80000B10	16	.rodata	D_80000B10	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1720	0x80000B20	12	.rodata	D_80000B20	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x172C	0x80000B2C	12	.rodata	D_80000B2C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1738	0x80000B38	28	.rodata	D_80000B38	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1754	0x80000B54	16	.rodata	D_80000B54	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1764	0x80000B64	32	.rodata	D_80000B64	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1784	0x80000B84	24	.rodata	D_80000B84	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x179C	0x80000B9C	28	.rodata	D_80000B9C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x17B8	0x80000BB8	24	.rodata	D_80000BB8	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x17D0	0x80000BD0	32	.rodata	D_80000BD0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x17F0	0x80000BF0	32	.rodata	D_80000BF0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1810	0x80000C10	12	.rodata	D_80000C10	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x181C	0x80000C1C	16	.rodata	D_80000C1C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x182C	0x80000C2C	16	.rodata	D_80000C2C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x183C	0x80000C3C	16	.rodata	D_80000C3C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x184C	0x80000C4C	16	.rodata	D_80000C4C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x185C	0x80000C5C	16	.rodata	D_80000C5C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x186C	0x80000C6C	28	.rodata	D_80000C6C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1888	0x80000C88	16	.rodata	D_80000C88	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1898	0x80000C98	20	.rodata	D_80000C98	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x18AC	0x80000CAC	12	.rodata	D_80000CAC	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x18B8	0x80000CB8	20	.rodata	D_80000CB8	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x18CC	0x80000CCC	20	.rodata	D_80000CCC	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x18E0	0x80000CE0	16	.rodata	D_80000CE0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x18F0	0x80000CF0	20	.rodata	D_80000CF0	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1904	0x80000D04	40	.rodata	D_80000D04	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x192C	0x80000D2C	16	.rodata	D_80000D2C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x193C	0x80000D3C	16	.rodata	D_80000D3C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x194C	0x80000D4C	20	.rodata	D_80000D4C	char	string	compiled+materialized	src/data/rodata_800004F8.c	-
+0x1960	0x80000D60	12	.rodata	D_80000D60	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x196C	0x80000D6C	28	.rodata	D_80000D6C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1988	0x80000D88	32	.rodata	D_80000D88	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x19A8	0x80000DA8	16	.rodata	D_80000DA8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x19B8	0x80000DB8	16	.rodata	D_80000DB8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x19C8	0x80000DC8	16	.rodata	D_80000DC8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x19D8	0x80000DD8	12	.rodata	D_80000DD8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x19E4	0x80000DE4	8	.rodata	D_80000DE4	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x19EC	0x80000DEC	20	.rodata	D_80000DEC	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1A00	0x80000E00	16	.rodata	D_80000E00	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1A10	0x80000E10	24	.rodata	D_80000E10	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1A28	0x80000E28	20	.rodata	D_80000E28	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1A3C	0x80000E3C	36	.rodata	D_80000E3C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1A60	0x80000E60	36	.rodata	D_80000E60	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1A84	0x80000E84	16	.rodata	D_80000E84	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1A94	0x80000E94	12	.rodata	D_80000E94	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1AA0	0x80000EA0	16	.rodata	D_80000EA0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1AB0	0x80000EB0	16	.rodata	D_80000EB0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1AC0	0x80000EC0	16	.rodata	D_80000EC0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1AD0	0x80000ED0	16	.rodata	D_80000ED0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1AE0	0x80000EE0	16	.rodata	D_80000EE0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1AF0	0x80000EF0	16	.rodata	D_80000EF0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B00	0x80000F00	32	.rodata	D_80000F00	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B20	0x80000F20	16	.rodata	D_80000F20	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B30	0x80000F30	28	.rodata	D_80000F30	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B4C	0x80000F4C	12	.rodata	D_80000F4C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B58	0x80000F58	20	.rodata	D_80000F58	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B6C	0x80000F6C	24	.rodata	D_80000F6C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B84	0x80000F84	24	.rodata	D_80000F84	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1B9C	0x80000F9C	16	.rodata	D_80000F9C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1BAC	0x80000FAC	16	.rodata	D_80000FAC	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1BBC	0x80000FBC	16	.rodata	D_80000FBC	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1BCC	0x80000FCC	12	.rodata	D_80000FCC	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1BD8	0x80000FD8	32	.rodata	D_80000FD8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1BF8	0x80000FF8	24	.rodata	D_80000FF8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1C10	0x80001010	16	.rodata	D_80001010	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1C20	0x80001020	20	.rodata	D_80001020	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1C34	0x80001034	12	.rodata	D_80001034	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1C40	0x80001040	16	.rodata	D_80001040	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1C50	0x80001050	20	.rodata	D_80001050	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1C64	0x80001064	4	.rodata	D_80001064	u8	typed-array	compiled+materialized	src/data/rodata_80000D60.c	element u8 from 128 traced accesses at 4 offsets
+0x1C68	0x80001068	32	.rodata	D_80001068	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1C88	0x80001088	40	.rodata	jtbl_80001088	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CB0	0x800010B0	4	.rodata	D_800010B0	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CB4	0x800010B4	4	.rodata	D_800010B4	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CB8	0x800010B8	4	.rodata	D_800010B8	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CBC	0x800010BC	4	.rodata	D_800010BC	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CC0	0x800010C0	4	.rodata	D_800010C0	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CC4	0x800010C4	4	.rodata	D_800010C4	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CC8	0x800010C8	4	.rodata	D_800010C8	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CCC	0x800010CC	4	.rodata	D_800010CC	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CD0	0x800010D0	16	.rodata	D_800010D0	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1CE0	0x800010E0	16	.rodata	D_800010E0	char	string	compiled+materialized	src/data/rodata_80000D60.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80011DAC, func_8001298C
+0x1CF0	0x800010F0	52	.rodata	jtbl_800010F0	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1D24	0x80001124	12	.rodata	D_80001124	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1D30	0x80001130	4	.rodata	D_80001130	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1D34	0x80001134	4	.rodata	D_80001134	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1D38	0x80001138	8	.rodata	D_80001138	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1D40	0x80001140	16	.rodata	D_80001140	u32	typed-array	compiled+materialized	src/data/rodata_80000D60.c	element u32 from 1 traced accesses at 1 offsets
+0x1D50	0x80001150	44	.rodata	jtbl_80001150	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1D7C	0x8000117C	4	.rodata	pad_8000117C	u8	padding	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1D80	0x80001180	44	.rodata	jtbl_80001180	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1DAC	0x800011AC	4	.rodata	pad_800011AC	u8	padding	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1DB0	0x800011B0	44	.rodata	jtbl_800011B0	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1DDC	0x800011DC	4	.rodata	pad_800011DC	u8	padding	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1DE0	0x800011E0	44	.rodata	jtbl_800011E0	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E0C	0x8000120C	4	.rodata	pad_8000120C	u8	padding	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E10	0x80001210	44	.rodata	jtbl_80001210	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E3C	0x8000123C	4	.rodata	pad_8000123C	u8	padding	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E40	0x80001240	44	.rodata	jtbl_80001240	u32	jtbl	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E6C	0x8000126C	4	.rodata	D_8000126C	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E70	0x80001270	4	.rodata	D_80001270	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E74	0x80001274	4	.rodata	D_80001274	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E78	0x80001278	8	.rodata	D_80001278	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E80	0x80001280	8	.rodata	D_80001280	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E88	0x80001288	8	.rodata	D_80001288	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E90	0x80001290	12	.rodata	D_80001290	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1E9C	0x8000129C	8	.rodata	D_8000129C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1EA4	0x800012A4	4	.rodata	D_800012A4	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1EA8	0x800012A8	8	.rodata	D_800012A8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1EB0	0x800012B0	8	.rodata	D_800012B0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1EB8	0x800012B8	24	.rodata	D_800012B8	char	string	compiled+materialized	src/data/rodata_80000D60.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80016530
+0x1ED0	0x800012D0	4	.rodata	D_800012D0	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1ED4	0x800012D4	172	.rodata	D_800012D4	f32	f32	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1F80	0x80001380	16	.rodata	D_80001380	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1F90	0x80001390	8	.rodata	D_80001390	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1F98	0x80001398	8	.rodata	D_80001398	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FA0	0x800013A0	16	.rodata	D_800013A0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FB0	0x800013B0	16	.rodata	D_800013B0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FC0	0x800013C0	8	.rodata	D_800013C0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FC8	0x800013C8	8	.rodata	D_800013C8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FD0	0x800013D0	4	.rodata	D_800013D0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FD4	0x800013D4	16	.rodata	D_800013D4	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FE4	0x800013E4	16	.rodata	D_800013E4	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x1FF4	0x800013F4	24	.rodata	D_800013F4	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x200C	0x8000140C	20	.rodata	D_8000140C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2020	0x80001420	12	.rodata	D_80001420	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x202C	0x8000142C	8	.rodata	D_8000142C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2034	0x80001434	8	.rodata	D_80001434	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x203C	0x8000143C	8	.rodata	D_8000143C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2044	0x80001444	16	.rodata	D_80001444	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2054	0x80001454	4	.rodata	pad_80001454	u8	padding	compiled+materialized	src/data/rodata_80000D60.c	zero gap between literals of unknown (alignment padding or an unused zero/empty-string literal)
+0x2058	0x80001458	20	.rodata	D_80001458	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x206C	0x8000146C	8	.rodata	D_8000146C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2074	0x80001474	16	.rodata	D_80001474	char	string	compiled+materialized	src/data/rodata_80000D60.c	text; byte accesses only
+0x2084	0x80001484	12	.rodata	D_80001484	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2090	0x80001490	16	.rodata	D_80001490	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20A0	0x800014A0	16	.rodata	D_800014A0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20B0	0x800014B0	12	.rodata	D_800014B0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20BC	0x800014BC	12	.rodata	D_800014BC	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20C8	0x800014C8	8	.rodata	D_800014C8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20D0	0x800014D0	12	.rodata	D_800014D0	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20DC	0x800014DC	16	.rodata	D_800014DC	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20EC	0x800014EC	12	.rodata	D_800014EC	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x20F8	0x800014F8	8	.rodata	D_800014F8	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2100	0x80001500	8	.rodata	D_80001500	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2108	0x80001508	12	.rodata	D_80001508	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2114	0x80001514	12	.rodata	D_80001514	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2120	0x80001520	12	.rodata	D_80001520	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x212C	0x8000152C	12	.rodata	D_8000152C	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x2138	0x80001538	20	.rodata	D_80001538	char	string	compiled+materialized	src/data/rodata_80000D60.c	-
+0x214C	0x8000154C	48	.rodata	D_8000154C	char	string	compiled+materialized	src/data/rodata_80000D60.c	text; byte accesses only
+0x217C	0x8000157C	4	.rodata	D_8000157C	char	string	compiled+materialized	src/data/rodata_80000D60.c	text; byte accesses only
+0x2180	0x80001580	4	.rodata	D_80001580	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2184	0x80001584	8	.rodata	D_80001584	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x218C	0x8000158C	8	.rodata	D_8000158C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2194	0x80001594	20	.rodata	D_80001594	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x21A8	0x800015A8	20	.rodata	D_800015A8	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x21BC	0x800015BC	4	.rodata	D_800015BC	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x21C0	0x800015C0	32	.rodata	jtbl_800015C0	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x21E0	0x800015E0	40	.rodata	jtbl_800015E0	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x2208	0x80001608	40	.rodata	jtbl_80001608	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x2230	0x80001630	16	.rodata	D_80001630	u32	typed-array	compiled+materialized	src/data/rodata_80001580.c	element u32 from 1 traced accesses at 1 offsets
+0x2240	0x80001640	16	.rodata	D_80001640	char	string	compiled+materialized	src/data/rodata_80001580.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80019788
+0x2250	0x80001650	12	.rodata	D_80001650	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x225C	0x8000165C	8	.rodata	D_8000165C	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x2264	0x80001664	8	.rodata	D_80001664	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x226C	0x8000166C	8	.rodata	D_8000166C	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x2274	0x80001674	4	.rodata	D_80001674	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x2278	0x80001678	8	.rodata	D_80001678	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x2280	0x80001680	8	.rodata	D_80001680	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x2288	0x80001688	28	.rodata	D_80001688	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x22A4	0x800016A4	24	.rodata	D_800016A4	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x22BC	0x800016BC	16	.rodata	D_800016BC	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x22CC	0x800016CC	8	.rodata	D_800016CC	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x22D4	0x800016D4	16	.rodata	D_800016D4	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x22E4	0x800016E4	408	.rodata	D_800016E4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x247C	0x8000187C	12	.rodata	D_8000187C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2488	0x80001888	4	.rodata	D_80001888	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x248C	0x8000188C	4	.rodata	D_8000188C	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2490	0x80001890	4	.rodata	D_80001890	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2494	0x80001894	4	.rodata	D_80001894	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2498	0x80001898	4	.rodata	D_80001898	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x249C	0x8000189C	8	.rodata	D_8000189C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x24A4	0x800018A4	8	.rodata	D_800018A4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x24AC	0x800018AC	12	.rodata	D_800018AC	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x24B8	0x800018B8	8	.rodata	D_800018B8	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x24C0	0x800018C0	8	.rodata	D_800018C0	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x24C8	0x800018C8	24	.rodata	jtbl_800018C8	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x24E0	0x800018E0	16	.rodata	D_800018E0	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x24F0	0x800018F0	40	.rodata	jtbl_800018F0	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x2518	0x80001918	4	.rodata	D_80001918	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x251C	0x8000191C	20	.rodata	D_8000191C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2530	0x80001930	64	.rodata	D_80001930	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2570	0x80001970	12	.rodata	D_80001970	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x257C	0x8000197C	16	.rodata	D_8000197C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x258C	0x8000198C	12	.rodata	D_8000198C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2598	0x80001998	12	.rodata	D_80001998	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x25A4	0x800019A4	16	.rodata	D_800019A4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x25B4	0x800019B4	16	.rodata	D_800019B4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x25C4	0x800019C4	16	.rodata	D_800019C4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x25D4	0x800019D4	4	.rodata	D_800019D4	f32	f32	compiled+materialized	src/data/rodata_80001580.c	unreferenced f32 literal by value; constant pool of func_8001D418
+0x25D8	0x800019D8	8	.rodata	D_800019D8	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x25E0	0x800019E0	20	.rodata	D_800019E0	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x25F4	0x800019F4	8	.rodata	D_800019F4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x25FC	0x800019FC	16	.rodata	D_800019FC	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x260C	0x80001A0C	16	.rodata	D_80001A0C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x261C	0x80001A1C	16	.rodata	D_80001A1C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x262C	0x80001A2C	16	.rodata	D_80001A2C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x263C	0x80001A3C	24	.rodata	D_80001A3C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2654	0x80001A54	8	.rodata	D_80001A54	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x265C	0x80001A5C	8	.rodata	D_80001A5C	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2664	0x80001A64	16	.rodata	D_80001A64	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2674	0x80001A74	16	.rodata	D_80001A74	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2684	0x80001A84	16	.rodata	D_80001A84	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2694	0x80001A94	12	.rodata	D_80001A94	char	string	compiled+materialized	src/data/rodata_80001580.c	-
+0x26A0	0x80001AA0	4	.rodata	pad_80001AA0	u8	padding	compiled+materialized	src/data/rodata_80001580.c	zero gap between literals of func_8001D418 (alignment padding or an unused zero/empty-string literal)
+0x26A4	0x80001AA4	16	.rodata	D_80001AA4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x26B4	0x80001AB4	16	.rodata	D_80001AB4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x26C4	0x80001AC4	4	.rodata	D_80001AC4	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x26C8	0x80001AC8	56	.rodata	jtbl_80001AC8	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x2700	0x80001B00	4	.rodata	D_80001B00	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2704	0x80001B04	4	.rodata	D_80001B04	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2708	0x80001B08	4	.rodata	D_80001B08	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x270C	0x80001B0C	4	.rodata	D_80001B0C	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2710	0x80001B10	4	.rodata	D_80001B10	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2714	0x80001B14	12	.rodata	D_80001B14	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2720	0x80001B20	16	.rodata	D_80001B20	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2730	0x80001B30	16	.rodata	D_80001B30	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2740	0x80001B40	16	.rodata	D_80001B40	char	string	compiled+materialized	src/data/rodata_80001580.c	text; byte accesses only
+0x2750	0x80001B50	180	.rodata	jtbl_80001B50	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x2804	0x80001C04	4	.rodata	pad_80001C04	u8	padding	compiled+materialized	src/data/rodata_80001580.c	-
+0x2808	0x80001C08	152	.rodata	jtbl_80001C08	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x28A0	0x80001CA0	192	.rodata	jtbl_80001CA0	u32	jtbl	compiled+materialized	src/data/rodata_80001580.c	-
+0x2960	0x80001D60	4	.rodata	D_80001D60	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2964	0x80001D64	12	.rodata	D_80001D64	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2970	0x80001D70	4	.rodata	D_80001D70	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2974	0x80001D74	4	.rodata	D_80001D74	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2978	0x80001D78	4	.rodata	D_80001D78	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x297C	0x80001D7C	4	.rodata	D_80001D7C	f32	f32	compiled+materialized	src/data/rodata_80001580.c	-
+0x2980	0x80001D80	4	.rodata	D_80001D80	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2984	0x80001D84	4	.rodata	D_80001D84	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2988	0x80001D88	24	.rodata	D_80001D88	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29A0	0x80001DA0	4	.rodata	D_80001DA0	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29A4	0x80001DA4	4	.rodata	D_80001DA4	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29A8	0x80001DA8	8	.rodata	D_80001DA8	f64	f64	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29B0	0x80001DB0	8	.rodata	D_80001DB0	f64	f64	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29B8	0x80001DB8	8	.rodata	D_80001DB8	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29C0	0x80001DC0	52	.rodata	jtbl_80001DC0	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29F4	0x80001DF4	4	.rodata	pad_80001DF4	u8	padding	compiled+materialized	src/data/rodata_80001D80.c	-
+0x29F8	0x80001DF8	20	.rodata	jtbl_80001DF8	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2A0C	0x80001E0C	4	.rodata	D_80001E0C	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2A10	0x80001E10	8	.rodata	D_80001E10	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2A18	0x80001E18	136	.rodata	jtbl_80001E18	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2AA0	0x80001EA0	8	.rodata	D_80001EA0	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2AA8	0x80001EA8	8	.rodata	D_80001EA8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2AB0	0x80001EB0	8	.rodata	D_80001EB0	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2AB8	0x80001EB8	8	.rodata	D_80001EB8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2AC0	0x80001EC0	16	.rodata	D_80001EC0	char	string	compiled+materialized	src/data/rodata_80001D80.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80022844, func_800235F0
+0x2AD0	0x80001ED0	60	.rodata	jtbl_80001ED0	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2B0C	0x80001F0C	4	.rodata	pad_80001F0C	u8	padding	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2B10	0x80001F10	20	.rodata	jtbl_80001F10	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2B24	0x80001F24	4	.rodata	pad_80001F24	u8	padding	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2B28	0x80001F28	144	.rodata	jtbl_80001F28	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2BB8	0x80001FB8	144	.rodata	jtbl_80001FB8	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2C48	0x80002048	144	.rodata	jtbl_80002048	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CD8	0x800020D8	8	.rodata	D_800020D8	u32	typed-raw	compiled+materialized	src/data/rodata_80001D80.c	 | untyped: unreferenced; values are neither text, f32/f64 literals nor zero (4e31520000ab0100); constant pool of func_80025730, func_80026824
+0x2CE0	0x800020E0	4	.rodata	D_800020E0	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CE4	0x800020E4	4	.rodata	D_800020E4	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CE8	0x800020E8	4	.rodata	D_800020E8	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CEC	0x800020EC	4	.rodata	D_800020EC	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CF0	0x800020F0	4	.rodata	D_800020F0	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CF4	0x800020F4	4	.rodata	D_800020F4	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CF8	0x800020F8	4	.rodata	D_800020F8	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2CFC	0x800020FC	4	.rodata	D_800020FC	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D00	0x80002100	4	.rodata	D_80002100	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D04	0x80002104	4	.rodata	D_80002104	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D08	0x80002108	4	.rodata	D_80002108	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D0C	0x8000210C	4	.rodata	D_8000210C	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D10	0x80002110	4	.rodata	D_80002110	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D14	0x80002114	4	.rodata	D_80002114	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D18	0x80002118	4	.rodata	D_80002118	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D1C	0x8000211C	4	.rodata	D_8000211C	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D20	0x80002120	4	.rodata	D_80002120	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D24	0x80002124	4	.rodata	D_80002124	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D28	0x80002128	8	.rodata	D_80002128	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D30	0x80002130	16	.rodata	D_80002130	char	string	compiled+materialized	src/data/rodata_80001D80.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80026824, func_80028F80
+0x2D40	0x80002140	20	.rodata	jtbl_80002140	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D54	0x80002154	4	.rodata	D_80002154	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D58	0x80002158	8	.rodata	D_80002158	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D60	0x80002160	8	.rodata	D_80002160	f64	f64	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D68	0x80002168	8	.rodata	D_80002168	f64	f64	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D70	0x80002170	4	.rodata	D_80002170	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D74	0x80002174	4	.rodata	D_80002174	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2D78	0x80002178	44	.rodata	D_80002178	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2DA4	0x800021A4	4	.rodata	D_800021A4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2DA8	0x800021A8	4	.rodata	D_800021A8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2DAC	0x800021AC	24	.rodata	D_800021AC	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2DC4	0x800021C4	40	.rodata	D_800021C4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2DEC	0x800021EC	4	.rodata	D_800021EC	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2DF0	0x800021F0	4	.rodata	D_800021F0	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2DF4	0x800021F4	4	.rodata	D_800021F4	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2DF8	0x800021F8	4	.rodata	D_800021F8	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2DFC	0x800021FC	24	.rodata	D_800021FC	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2E14	0x80002214	12	.rodata	D_80002214	u32	typed-raw	compiled+materialized	src/data/rodata_80001D80.c	 | untyped: unreferenced; values are neither text, f32/f64 literals nor zero (5a6f6e650000b40100001000); constant pool of func_80029D68, func_8002A154
+0x2E20	0x80002220	8	.rodata	D_80002220	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2E28	0x80002228	32	.rodata	jtbl_80002228	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2E48	0x80002248	8	.rodata	D_80002248	u32	typed-raw	compiled+materialized	src/data/rodata_80001D80.c	 | untyped: unreferenced; values are neither text, f32/f64 literals nor zero (10000b0000000000); constant pool of func_8002A1B4
+0x2E50	0x80002250	8	.rodata	D_80002250	char	string	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2E58	0x80002258	16	.rodata	D_80002258	char	string	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2E68	0x80002268	36	.rodata	D_80002268	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2E8C	0x8000228C	32	.rodata	D_8000228C	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2EAC	0x800022AC	28	.rodata	D_800022AC	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2EC8	0x800022C8	20	.rodata	D_800022C8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2EDC	0x800022DC	8	.rodata	D_800022DC	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2EE4	0x800022E4	4	.rodata	D_800022E4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2EE8	0x800022E8	8	.rodata	D_800022E8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2EF0	0x800022F0	12	.rodata	D_800022F0	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2EFC	0x800022FC	4	.rodata	D_800022FC	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2F00	0x80002300	4	.rodata	D_80002300	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2F04	0x80002304	4	.rodata	D_80002304	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2F08	0x80002308	48	.rodata	D_80002308	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2F38	0x80002338	20	.rodata	D_80002338	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2F4C	0x8000234C	4	.rodata	D_8000234C	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2F50	0x80002350	4	.rodata	D_80002350	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2F54	0x80002354	4	.rodata	D_80002354	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2F58	0x80002358	4	.rodata	D_80002358	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x2F5C	0x8000235C	12	.rodata	D_8000235C	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2F68	0x80002368	12	.rodata	D_80002368	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2F74	0x80002374	16	.rodata	D_80002374	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2F84	0x80002384	12	.rodata	D_80002384	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2F90	0x80002390	12	.rodata	D_80002390	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2F9C	0x8000239C	8	.rodata	D_8000239C	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2FA4	0x800023A4	16	.rodata	D_800023A4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2FB4	0x800023B4	16	.rodata	D_800023B4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2FC4	0x800023C4	16	.rodata	D_800023C4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2FD4	0x800023D4	16	.rodata	D_800023D4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2FE4	0x800023E4	8	.rodata	D_800023E4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2FEC	0x800023EC	12	.rodata	D_800023EC	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x2FF8	0x800023F8	16	.rodata	D_800023F8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x3008	0x80002408	4	.rodata	pad_80002408	u8	padding	compiled+materialized	src/data/rodata_80001D80.c	zero gap between literals of func_8002BD44 (alignment padding or an unused zero/empty-string literal)
+0x300C	0x8000240C	4	.rodata	D_8000240C	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x3010	0x80002410	8	.rodata	D_80002410	char	string	compiled+materialized	src/data/rodata_80001D80.c	char data by value (text bytes, not NUL-terminated); constant pool of func_8002BD44
+0x3018	0x80002418	52	.rodata	jtbl_80002418	u32	jtbl	compiled+materialized	src/data/rodata_80001D80.c	-
+0x304C	0x8000244C	4	.rodata	D_8000244C	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x3050	0x80002450	4	.rodata	D_80002450	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x3054	0x80002454	4	.rodata	D_80002454	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x3058	0x80002458	64	.rodata	D_80002458	f32	f32	compiled+materialized	src/data/rodata_80001D80.c	-
+0x3098	0x80002498	44	.rodata	D_80002498	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x30C4	0x800024C4	44	.rodata	D_800024C4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x30F0	0x800024F0	44	.rodata	D_800024F0	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x311C	0x8000251C	52	.rodata	D_8000251C	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x3150	0x80002550	52	.rodata	D_80002550	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x3184	0x80002584	48	.rodata	D_80002584	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x31B4	0x800025B4	36	.rodata	D_800025B4	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x31D8	0x800025D8	16	.rodata	D_800025D8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x31E8	0x800025E8	20	.rodata	D_800025E8	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x31FC	0x800025FC	8	.rodata	D_800025FC	char	string	compiled+materialized	src/data/rodata_80001D80.c	text; byte accesses only
+0x3204	0x80002604	12	.rodata	D_80002604	char	string	compiled+materialized	src/data/rodata_80001D80.c	char data by value (text bytes, not NUL-terminated); constant pool of func_8002C168
+0x3210	0x80002610	36	.rodata	jtbl_80002610	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x3234	0x80002634	12	.rodata	D_80002634	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3240	0x80002640	12	.rodata	D_80002640	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x324C	0x8000264C	12	.rodata	D_8000264C	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3258	0x80002658	16	.rodata	D_80002658	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3268	0x80002668	8	.rodata	D_80002668	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3270	0x80002670	16	.rodata	D_80002670	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3280	0x80002680	16	.rodata	D_80002680	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3290	0x80002690	180	.rodata	jtbl_80002690	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x3344	0x80002744	4	.rodata	pad_80002744	u8	padding	compiled+materialized	src/data/rodata_80002610.c	-
+0x3348	0x80002748	152	.rodata	jtbl_80002748	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x33E0	0x800027E0	204	.rodata	jtbl_800027E0	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x34AC	0x800028AC	4	.rodata	D_800028AC	f32	f32	compiled+materialized	src/data/rodata_80002610.c	unreferenced f32 literal by value; constant pool of func_8002D51C, func_8002DA20
+0x34B0	0x800028B0	164	.rodata	jtbl_800028B0	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x3554	0x80002954	12	.rodata	D_80002954	u32	typed-raw	compiled+materialized	src/data/rodata_80002610.c	 | untyped: unreferenced; values are neither text, f32/f64 literals nor zero (0000e701000010000b000000); constant pool of func_8002DA20, func_8002E930
+0x3560	0x80002960	8	.rodata	D_80002960	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3568	0x80002968	4	.rodata	D_80002968	u32	typed-array	compiled+materialized	src/data/rodata_80002610.c	scalar type from 78 traced accesses
+0x356C	0x8000296C	4	.rodata	D_8000296C	u32	typed-array	compiled+materialized	src/data/rodata_80002610.c	scalar type from 79 traced accesses
+0x3570	0x80002970	92	.rodata	jtbl_80002970	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x35CC	0x800029CC	56	.rodata	D_800029CC	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3604	0x80002A04	28	.rodata	D_80002A04	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3620	0x80002A20	28	.rodata	D_80002A20	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x363C	0x80002A3C	60	.rodata	D_80002A3C	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3678	0x80002A78	16	.rodata	D_80002A78	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3688	0x80002A88	24	.rodata	jtbl_80002A88	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x36A0	0x80002AA0	16	.rodata	D_80002AA0	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x36B0	0x80002AB0	48	.rodata	D_80002AB0	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x36E0	0x80002AE0	24	.rodata	jtbl_80002AE0	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x36F8	0x80002AF8	36	.rodata	jtbl_80002AF8	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x371C	0x80002B1C	4	.rodata	pad_80002B1C	u8	padding	compiled+materialized	src/data/rodata_80002610.c	-
+0x3720	0x80002B20	20	.rodata	jtbl_80002B20	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x3734	0x80002B34	28	.rodata	D_80002B34	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3750	0x80002B50	4	.rodata	D_80002B50	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x3754	0x80002B54	4	.rodata	D_80002B54	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x3758	0x80002B58	4	.rodata	D_80002B58	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x375C	0x80002B5C	4	.rodata	D_80002B5C	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x3760	0x80002B60	4	.rodata	D_80002B60	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x3764	0x80002B64	4	.rodata	D_80002B64	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x3768	0x80002B68	4	.rodata	D_80002B68	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x376C	0x80002B6C	24	.rodata	D_80002B6C	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3784	0x80002B84	12	.rodata	D_80002B84	char	string	compiled+materialized	src/data/rodata_80002610.c	text; byte accesses only
+0x3790	0x80002B90	4	.rodata	D_80002B90	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x3794	0x80002B94	4	.rodata	D_80002B94	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x3798	0x80002B98	4	.rodata	D_80002B98	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x379C	0x80002B9C	4	.rodata	D_80002B9C	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x37A0	0x80002BA0	4	.rodata	D_80002BA0	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x37A4	0x80002BA4	12	.rodata	D_80002BA4	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x37B0	0x80002BB0	16	.rodata	D_80002BB0	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x37C0	0x80002BC0	20	.rodata	jtbl_80002BC0	u32	jtbl	compiled+materialized	src/data/rodata_80002610.c	-
+0x37D4	0x80002BD4	28	.rodata	D_80002BD4	char	string	compiled+materialized	src/data/rodata_80002610.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80033970, func_80033E90
+0x37F0	0x80002BF0	4	.rodata	D_80002BF0	f32	f32	compiled+materialized	src/data/rodata_80002610.c	-
+0x37F4	0x80002BF4	12	.rodata	D_80002BF4	Struct_80002BF4	struct	compiled+materialized	src/data/rodata_80002610.c	single struct from direct accesses; no conflicts
+0x3800	0x80002C00	8	.rodata	D_80002C00	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3808	0x80002C08	16	.rodata	D_80002C08	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3818	0x80002C18	12	.rodata	D_80002C18	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3824	0x80002C24	12	.rodata	D_80002C24	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3830	0x80002C30	20	.rodata	D_80002C30	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3844	0x80002C44	44	.rodata	D_80002C44	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3870	0x80002C70	16	.rodata	D_80002C70	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3880	0x80002C80	28	.rodata	D_80002C80	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x389C	0x80002C9C	16	.rodata	D_80002C9C	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x38AC	0x80002CAC	20	.rodata	D_80002CAC	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x38C0	0x80002CC0	20	.rodata	D_80002CC0	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x38D4	0x80002CD4	28	.rodata	D_80002CD4	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x38F0	0x80002CF0	40	.rodata	D_80002CF0	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3918	0x80002D18	4	.rodata	D_80002D18	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x391C	0x80002D1C	4	.rodata	D_80002D1C	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3920	0x80002D20	8	.rodata	D_80002D20	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3928	0x80002D28	8	.rodata	D_80002D28	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3930	0x80002D30	8	.rodata	D_80002D30	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3938	0x80002D38	8	.rodata	D_80002D38	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3940	0x80002D40	4	.rodata	D_80002D40	u8	typed-array	compiled+materialized	src/data/rodata_80002610.c	element u8 from 18 traced accesses at 3 offsets
+0x3944	0x80002D44	4	.rodata	D_80002D44	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3948	0x80002D48	36	.rodata	D_80002D48	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x396C	0x80002D6C	32	.rodata	D_80002D6C	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x398C	0x80002D8C	36	.rodata	D_80002D8C	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x39B0	0x80002DB0	32	.rodata	D_80002DB0	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x39D0	0x80002DD0	32	.rodata	D_80002DD0	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x39F0	0x80002DF0	28	.rodata	D_80002DF0	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3A0C	0x80002E0C	28	.rodata	D_80002E0C	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3A28	0x80002E28	20	.rodata	D_80002E28	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3A3C	0x80002E3C	24	.rodata	D_80002E3C	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3A54	0x80002E54	12	.rodata	D_80002E54	char	string	compiled+materialized	src/data/rodata_80002610.c	-
+0x3A60	0x80002E60	20	.rodata	D_80002E60	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3A74	0x80002E74	24	.rodata	D_80002E74	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3A8C	0x80002E8C	28	.rodata	D_80002E8C	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3AA8	0x80002EA8	20	.rodata	D_80002EA8	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3ABC	0x80002EBC	28	.rodata	D_80002EBC	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3AD8	0x80002ED8	24	.rodata	D_80002ED8	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3AF0	0x80002EF0	16	.rodata	D_80002EF0	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3B00	0x80002F00	16	.rodata	D_80002F00	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3B10	0x80002F10	16	.rodata	D_80002F10	char	string	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3B20	0x80002F20	16	.rodata	D_80002F20	char	string	compiled+materialized	src/data/rodata_80002E60.c	char data by value (text bytes, not NUL-terminated); constant pool of func_800344A8
+0x3B30	0x80002F30	4	.rodata	D_80002F30	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3B34	0x80002F34	4	.rodata	D_80002F34	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3B38	0x80002F38	12	.rodata	D_80002F38	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3B44	0x80002F44	28	.rodata	D_80002F44	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3B60	0x80002F60	16	.rodata	D_80002F60	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3B70	0x80002F70	8	.rodata	D_80002F70	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3B78	0x80002F78	24	.rodata	D_80002F78	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3B90	0x80002F90	16	.rodata	D_80002F90	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3BA0	0x80002FA0	28	.rodata	jtbl_80002FA0	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BBC	0x80002FBC	4	.rodata	pad_80002FBC	u8	padding	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BC0	0x80002FC0	20	.rodata	jtbl_80002FC0	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BD4	0x80002FD4	4	.rodata	D_80002FD4	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BD8	0x80002FD8	8	.rodata	D_80002FD8	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BE0	0x80002FE0	4	.rodata	D_80002FE0	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BE4	0x80002FE4	4	.rodata	D_80002FE4	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BE8	0x80002FE8	4	.rodata	D_80002FE8	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3BEC	0x80002FEC	24	.rodata	D_80002FEC	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3C04	0x80003004	52	.rodata	D_80003004	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3C38	0x80003038	28	.rodata	D_80003038	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3C54	0x80003054	20	.rodata	D_80003054	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3C68	0x80003068	36	.rodata	jtbl_80003068	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3C8C	0x8000308C	4	.rodata	D_8000308C	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	unreferenced f32 literal by value; constant pool of func_80036138, func_80038950
+0x3C90	0x80003090	8	.rodata	D_80003090	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3C98	0x80003098	8	.rodata	D_80003098	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CA0	0x800030A0	8	.rodata	D_800030A0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CA8	0x800030A8	8	.rodata	D_800030A8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CB0	0x800030B0	8	.rodata	D_800030B0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CB8	0x800030B8	8	.rodata	D_800030B8	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3CC0	0x800030C0	8	.rodata	D_800030C0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CC8	0x800030C8	8	.rodata	D_800030C8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CD0	0x800030D0	8	.rodata	D_800030D0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CD8	0x800030D8	8	.rodata	D_800030D8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CE0	0x800030E0	16	.rodata	D_800030E0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3CF0	0x800030F0	4	.rodata	D_800030F0	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3CF4	0x800030F4	4	.rodata	D_800030F4	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3CF8	0x800030F8	8	.rodata	D_800030F8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D00	0x80003100	8	.rodata	D_80003100	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D08	0x80003108	8	.rodata	D_80003108	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D10	0x80003110	8	.rodata	D_80003110	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D18	0x80003118	8	.rodata	D_80003118	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D20	0x80003120	8	.rodata	D_80003120	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D28	0x80003128	8	.rodata	D_80003128	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D30	0x80003130	8	.rodata	D_80003130	char	string	compiled+materialized	src/data/rodata_80002E60.c	text; byte accesses only
+0x3D38	0x80003138	68	.rodata	jtbl_80003138	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D7C	0x8000317C	4	.rodata	pad_8000317C	u8	padding	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3D80	0x80003180	208	.rodata	jtbl_80003180	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E50	0x80003250	8	.rodata	D_80003250	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E58	0x80003258	8	.rodata	D_80003258	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E60	0x80003260	8	.rodata	D_80003260	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E68	0x80003268	8	.rodata	D_80003268	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E70	0x80003270	8	.rodata	D_80003270	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E78	0x80003278	8	.rodata	D_80003278	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E80	0x80003280	8	.rodata	D_80003280	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E88	0x80003288	8	.rodata	D_80003288	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E90	0x80003290	8	.rodata	D_80003290	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3E98	0x80003298	8	.rodata	D_80003298	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EA0	0x800032A0	8	.rodata	D_800032A0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EA8	0x800032A8	8	.rodata	D_800032A8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EB0	0x800032B0	8	.rodata	D_800032B0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EB8	0x800032B8	8	.rodata	D_800032B8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EC0	0x800032C0	8	.rodata	D_800032C0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EC8	0x800032C8	8	.rodata	D_800032C8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3ED0	0x800032D0	8	.rodata	D_800032D0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3ED8	0x800032D8	8	.rodata	D_800032D8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EE0	0x800032E0	8	.rodata	D_800032E0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EE8	0x800032E8	8	.rodata	D_800032E8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EF0	0x800032F0	8	.rodata	D_800032F0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3EF8	0x800032F8	8	.rodata	D_800032F8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F00	0x80003300	8	.rodata	D_80003300	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F08	0x80003308	8	.rodata	D_80003308	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F10	0x80003310	8	.rodata	D_80003310	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F18	0x80003318	8	.rodata	D_80003318	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F20	0x80003320	8	.rodata	D_80003320	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F28	0x80003328	8	.rodata	D_80003328	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F30	0x80003330	8	.rodata	D_80003330	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F38	0x80003338	8	.rodata	D_80003338	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F40	0x80003340	8	.rodata	D_80003340	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F48	0x80003348	8	.rodata	D_80003348	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F50	0x80003350	8	.rodata	D_80003350	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F58	0x80003358	8	.rodata	D_80003358	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F60	0x80003360	8	.rodata	D_80003360	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F68	0x80003368	8	.rodata	D_80003368	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F70	0x80003370	8	.rodata	D_80003370	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F78	0x80003378	8	.rodata	D_80003378	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F80	0x80003380	8	.rodata	D_80003380	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F88	0x80003388	8	.rodata	D_80003388	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F90	0x80003390	8	.rodata	D_80003390	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3F98	0x80003398	8	.rodata	D_80003398	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3FA0	0x800033A0	8	.rodata	D_800033A0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3FA8	0x800033A8	8	.rodata	D_800033A8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3FB0	0x800033B0	16	.rodata	D_800033B0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x3FC0	0x800033C0	68	.rodata	jtbl_800033C0	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4004	0x80003404	4	.rodata	pad_80003404	u8	padding	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4008	0x80003408	8	.rodata	D_80003408	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4010	0x80003410	8	.rodata	D_80003410	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4018	0x80003418	8	.rodata	D_80003418	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4020	0x80003420	16	.rodata	D_80003420	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4030	0x80003430	16	.rodata	D_80003430	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4040	0x80003440	8	.rodata	D_80003440	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4048	0x80003448	8	.rodata	D_80003448	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4050	0x80003450	8	.rodata	D_80003450	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4058	0x80003458	8	.rodata	D_80003458	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4060	0x80003460	24	.rodata	jtbl_80003460	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4078	0x80003478	8	.rodata	D_80003478	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4080	0x80003480	16	.rodata	D_80003480	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4090	0x80003490	32	.rodata	jtbl_80003490	u32	jtbl	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40B0	0x800034B0	8	.rodata	D_800034B0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40B8	0x800034B8	8	.rodata	D_800034B8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40C0	0x800034C0	16	.rodata	D_800034C0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40D0	0x800034D0	8	.rodata	D_800034D0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40D8	0x800034D8	16	.rodata	D_800034D8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40E8	0x800034E8	8	.rodata	D_800034E8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40F0	0x800034F0	8	.rodata	D_800034F0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x40F8	0x800034F8	8	.rodata	D_800034F8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4100	0x80003500	8	.rodata	D_80003500	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4108	0x80003508	8	.rodata	D_80003508	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4110	0x80003510	8	.rodata	D_80003510	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4118	0x80003518	8	.rodata	D_80003518	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4120	0x80003520	8	.rodata	D_80003520	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4128	0x80003528	8	.rodata	D_80003528	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4130	0x80003530	16	.rodata	D_80003530	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4140	0x80003540	16	.rodata	D_80003540	u32	typed-array	compiled+materialized	src/data/rodata_80002E60.c	element u32 from 2 traced accesses at 1 offsets
+0x4150	0x80003550	8	.rodata	D_80003550	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4158	0x80003558	4	.rodata	D_80003558	u32	typed-array	compiled+materialized	src/data/rodata_80002E60.c	scalar type from 1 traced accesses
+0x415C	0x8000355C	4	.rodata	D_8000355C	u32	typed-array	compiled+materialized	src/data/rodata_80002E60.c	scalar type from 1 traced accesses
+0x4160	0x80003560	8	.rodata	D_80003560	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4168	0x80003568	4	.rodata	D_80003568	u32	typed-array	compiled+materialized	src/data/rodata_80002E60.c	scalar type from 1 traced accesses
+0x416C	0x8000356C	4	.rodata	D_8000356C	u32	typed-array	compiled+materialized	src/data/rodata_80002E60.c	scalar type from 1 traced accesses
+0x4170	0x80003570	8	.rodata	D_80003570	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4178	0x80003578	8	.rodata	D_80003578	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4180	0x80003580	8	.rodata	D_80003580	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4188	0x80003588	8	.rodata	D_80003588	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4190	0x80003590	8	.rodata	D_80003590	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4198	0x80003598	8	.rodata	D_80003598	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41A0	0x800035A0	8	.rodata	D_800035A0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41A8	0x800035A8	16	.rodata	D_800035A8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41B8	0x800035B8	8	.rodata	D_800035B8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41C0	0x800035C0	8	.rodata	D_800035C0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41C8	0x800035C8	8	.rodata	D_800035C8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41D0	0x800035D0	8	.rodata	D_800035D0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41D8	0x800035D8	8	.rodata	D_800035D8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41E0	0x800035E0	8	.rodata	D_800035E0	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41E8	0x800035E8	8	.rodata	D_800035E8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41F0	0x800035F0	8	.rodata	D_800035F0	f32	f32	compiled+materialized	src/data/rodata_80002E60.c	-
+0x41F8	0x800035F8	8	.rodata	D_800035F8	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4200	0x80003600	16	.rodata	D_80003600	f64	f64	compiled+materialized	src/data/rodata_80002E60.c	-
+0x4210	0x80003610	128	.rodata	D_80003610	u16	typed-array	compiled+materialized	src/data/rodata_80002E60.c	element type from 3 traced accesses, stride 2
+0x4290	0x80003690	32	.rodata	D_80003690	u8	typed-array	compiled+materialized	src/data/rodata_80003690.c	element u8 from 1 traced accesses at 1 offsets
+0x42B0	0x800036B0	36	.rodata	jtbl_800036B0	u32	jtbl	compiled+materialized	src/data/rodata_80003690.c	-
+0x42D4	0x800036D4	12	.rodata	pad_800036D4	u8	padding	compiled+materialized	src/data/rodata_80003690.c	-
+0x42E0	0x800036E0	8	.rodata	D_800036E0	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x42E8	0x800036E8	24	.rodata	jtbl_800036E8	u32	jtbl	compiled+materialized	src/data/rodata_80003690.c	-
+0x4300	0x80003700	8	.rodata	D_80003700	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4308	0x80003708	8	.rodata	D_80003708	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4310	0x80003710	16	.rodata	D_80003710	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4320	0x80003720	4	.rodata	D_80003720	char	string	compiled+materialized	src/data/rodata_80003690.c	-
+0x4324	0x80003724	8	.rodata	D_80003724	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x432C	0x8000372C	4	.rodata	D_8000372C	u16	typed-array	compiled+materialized	src/data/rodata_80003690.c	element u16 from 2 traced accesses at 2 offsets
+0x4330	0x80003730	68	.rodata	jtbl_80003730	u32	jtbl	compiled+materialized	src/data/rodata_80003690.c	-
+0x4374	0x80003774	4	.rodata	pad_80003774	u8	padding	compiled+materialized	src/data/rodata_80003690.c	-
+0x4378	0x80003778	8	.rodata	D_80003778	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4380	0x80003780	8	.rodata	D_80003780	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4388	0x80003788	8	.rodata	D_80003788	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4390	0x80003790	64	.rodata	D_80003790	Struct_80003790	struct	compiled+materialized	src/data/rodata_80003690.c	stride 0x10 from traced loop/index accesses; no conflicts
+0x43D0	0x800037D0	8	.rodata	D_800037D0	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x43D8	0x800037D8	8	.rodata	D_800037D8	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x43E0	0x800037E0	8	.rodata	D_800037E0	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x43E8	0x800037E8	8	.rodata	D_800037E8	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x43F0	0x800037F0	8	.rodata	D_800037F0	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x43F8	0x800037F8	8	.rodata	D_800037F8	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4400	0x80003800	8	.rodata	D_80003800	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4408	0x80003808	8	.rodata	D_80003808	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4410	0x80003810	8	.rodata	D_80003810	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4418	0x80003818	8	.rodata	D_80003818	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4420	0x80003820	8	.rodata	D_80003820	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4428	0x80003828	36	.rodata	jtbl_80003828	u32	jtbl	compiled+materialized	src/data/rodata_80003690.c	-
+0x444C	0x8000384C	4	.rodata	pad_8000384C	u8	padding	compiled+materialized	src/data/rodata_80003690.c	-
+0x4450	0x80003850	4	.rodata	D_80003850	char	string	compiled+materialized	src/data/rodata_80003690.c	-
+0x4454	0x80003854	12	.rodata	D_80003854	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4460	0x80003860	32	.rodata	jtbl_80003860	u32	jtbl	compiled+materialized	src/data/rodata_80003690.c	-
+0x4480	0x80003880	8	.rodata	D_80003880	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4488	0x80003888	8	.rodata	D_80003888	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4490	0x80003890	8	.rodata	D_80003890	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4498	0x80003898	8	.rodata	D_80003898	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x44A0	0x800038A0	8	.rodata	D_800038A0	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x44A8	0x800038A8	8	.rodata	D_800038A8	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x44B0	0x800038B0	4	.rodata	D_800038B0	char	string	compiled+materialized	src/data/rodata_80003690.c	-
+0x44B4	0x800038B4	8	.rodata	D_800038B4	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x44BC	0x800038BC	4	.rodata	D_800038BC	u16	typed-array	compiled+materialized	src/data/rodata_80003690.c	element u16 from 2 traced accesses at 2 offsets
+0x44C0	0x800038C0	8	.rodata	D_800038C0	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x44C8	0x800038C8	8	.rodata	D_800038C8	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x44D0	0x800038D0	8	.rodata	D_800038D0	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x44D8	0x800038D8	8	.rodata	D_800038D8	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x44E0	0x800038E0	4	.rodata	D_800038E0	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x44E4	0x800038E4	28	.rodata	D_800038E4	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4500	0x80003900	16	.rodata	D_80003900	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4510	0x80003910	16	.rodata	D_80003910	f64	f64	compiled+materialized	src/data/rodata_80003690.c	-
+0x4520	0x80003920	4	.rodata	D_80003920	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4524	0x80003924	12	.rodata	D_80003924	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4530	0x80003930	4	.rodata	D_80003930	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4534	0x80003934	28	.rodata	D_80003934	char	string	compiled+materialized	src/data/rodata_80003690.c	char data by value (text bytes, not NUL-terminated); constant pool of func_8004DAC0, func_8004DD10
+0x4550	0x80003950	4	.rodata	D_80003950	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4554	0x80003954	12	.rodata	D_80003954	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4560	0x80003960	4	.rodata	D_80003960	char	string	compiled+materialized	src/data/rodata_80003690.c	-
+0x4564	0x80003964	12	.rodata	D_80003964	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4570	0x80003970	28	.rodata	jtbl_80003970	u32	jtbl	compiled+materialized	src/data/rodata_80003690.c	-
+0x458C	0x8000398C	4	.rodata	pad_8000398C	u8	padding	compiled+materialized	src/data/rodata_80003690.c	-
+0x4590	0x80003990	4	.rodata	D_80003990	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x4594	0x80003994	28	.rodata	D_80003994	char	string	compiled+materialized	src/data/rodata_80003690.c	char data by value (text bytes, not NUL-terminated); constant pool of func_80050BD0, func_8005155C, func_8005166C
+0x45B0	0x800039B0	4	.rodata	D_800039B0	char	string	compiled+materialized	src/data/rodata_80003690.c	-
+0x45B4	0x800039B4	8	.rodata	D_800039B4	char	string	compiled+materialized	src/data/rodata_80003690.c	text; byte accesses only
+0x45BC	0x800039BC	4	.rodata	D_800039BC	u16	typed-array	compiled+materialized	src/data/rodata_80003690.c	element u16 from 2 traced accesses at 2 offsets
+0x45C0	0x800039C0	28	.rodata	jtbl_800039C0	u32	jtbl	compiled+materialized	src/data/rodata_80003690.c	-
+0x45DC	0x800039DC	4	.rodata	pad_800039DC	u8	padding	compiled+materialized	src/data/rodata_80003690.c	-

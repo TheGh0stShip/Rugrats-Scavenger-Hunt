@@ -1,0 +1,4429 @@
+{
+ "section": ".data",
+ "vram": "0x80056420",
+ "objects": [
+  {
+   "vram": "0x80056420",
+   "rom": "0x57020",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLpf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x01",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324E",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x01000400",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000280",
+     "0x03000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 1); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056470",
+   "rom": "0x57070",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLan1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x02",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000311E",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020D",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000280",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 2); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x800564C0",
+   "rom": "0x570C0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLaf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x03",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305E",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x01000400",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000280",
+     "0x03000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 3); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056510",
+   "rom": "0x57110",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLpn2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x04",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000330F",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020D",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000500",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 4); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056560",
+   "rom": "0x57160",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLpf2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x05",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324F",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x01000400",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000500",
+     "0x03000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 5); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x800565B0",
+   "rom": "0x571B0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLan2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x06",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000301F",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020D",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000500",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 6); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056600",
+   "rom": "0x57200",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscLaf2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x07",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305F",
+     "0x00000140",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x01000400",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000500",
+     "0x03000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 7); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056650",
+   "rom": "0x57250",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscHpn1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x08",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324E",
+     "0x00000500",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000A00",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 8); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x800566A0",
+   "rom": "0x572A0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscHpf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x09",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324E",
+     "0x00000280",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x02000800",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000A00",
+     "0x02000800",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 9); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x800566F0",
+   "rom": "0x572F0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscHan1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0A",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305E",
+     "0x00000500",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000A00",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 10); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056740",
+   "rom": "0x57340",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscHaf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0B",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305E",
+     "0x00000280",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x02000800",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00000A00",
+     "0x02000800",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 11); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056790",
+   "rom": "0x57390",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscHpn2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0C",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000334F",
+     "0x00000500",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000400",
+     "0x00000000",
+     "0x00000A00",
+     "0x00000400",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00001400",
+     "0x00000400",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 12); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x800567E0",
+   "rom": "0x573E0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModeNtscHpf2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0D",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324F",
+     "0x00000280",
+     "0x03E52239",
+     "0x0000020C",
+     "0x00000C15",
+     "0x0C150C15",
+     "0x006C02EC",
+     "0x00000400",
+     "0x00000000",
+     "0x00000A00",
+     "0x02000800",
+     "0x002301FD",
+     "0x000E0204",
+     "0x00000002",
+     "0x00001400",
+     "0x02000800",
+     "0x002501FF",
+     "0x000E0204",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 13); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056830",
+   "rom": "0x57430",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLpn1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0E",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000320E",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000271",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000280",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 14); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056880",
+   "rom": "0x57480",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLpf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x0F",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324E",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x01000400",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000280",
+     "0x03000400",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 15); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x800568D0",
+   "rom": "0x574D0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLan1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x10",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000311E",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000271",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000280",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 16); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056920",
+   "rom": "0x57520",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLaf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x11",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305E",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000280",
+     "0x01000400",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000280",
+     "0x03000400",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 17); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056970",
+   "rom": "0x57570",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLpn2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x12",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000330F",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000271",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000500",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 18); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x800569C0",
+   "rom": "0x575C0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLpf2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x13",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324F",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x01000400",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000500",
+     "0x03000400",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 19); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056A10",
+   "rom": "0x57610",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLan2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x14",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000301F",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000271",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000500",
+     "0x00000400",
+     "0x005F0239",
+     "0x0009026B",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 20); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056A60",
+   "rom": "0x57660",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalLaf2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x15",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305F",
+     "0x00000140",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000200",
+     "0x00000000",
+     "0x00000500",
+     "0x01000400",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000500",
+     "0x03000400",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 21); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056AB0",
+   "rom": "0x576B0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalHpn1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x16",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324E",
+     "0x00000500",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000A00",
+     "0x00000400",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 22); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056B00",
+   "rom": "0x57700",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalHpf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x17",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000324E",
+     "0x00000280",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x02000800",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000A00",
+     "0x02000800",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 23); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056B50",
+   "rom": "0x57750",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalHan1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x18",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305E",
+     "0x00000500",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x00000400",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000A00",
+     "0x00000400",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 24); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056BA0",
+   "rom": "0x577A0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalHaf1",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x19",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000305E",
+     "0x00000280",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000400",
+     "0x00000000",
+     "0x00000500",
+     "0x02000800",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00000A00",
+     "0x02000800",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 25); identified by layout: type byte, zero pad, VI ctrl/width"
+  },
+  {
+   "vram": "0x80056BF0",
+   "rom": "0x577F0",
+   "size": 80,
+   "section": ".data",
+   "name": "osViModePalHpn2",
+   "rep": "struct",
+   "stype": "OSViMode",
+   "stride": 80,
+   "count": 1,
+   "fields": [
+    {
+     "off": 0,
+     "ctype": "u8",
+     "name": "type",
+     "n": 1
+    },
+    {
+     "off": 1,
+     "ctype": "u8",
+     "name": "pad",
+     "n": 3,
+     "implicit": true
+    },
+    {
+     "off": 4,
+     "ctype": "u32",
+     "name": "comRegs.ctrl",
+     "n": 1
+    },
+    {
+     "off": 8,
+     "ctype": "u32",
+     "name": "comRegs.width",
+     "n": 1
+    },
+    {
+     "off": 12,
+     "ctype": "u32",
+     "name": "comRegs.burst",
+     "n": 1
+    },
+    {
+     "off": 16,
+     "ctype": "u32",
+     "name": "comRegs.vSync",
+     "n": 1
+    },
+    {
+     "off": 20,
+     "ctype": "u32",
+     "name": "comRegs.hSync",
+     "n": 1
+    },
+    {
+     "off": 24,
+     "ctype": "u32",
+     "name": "comRegs.leap",
+     "n": 1
+    },
+    {
+     "off": 28,
+     "ctype": "u32",
+     "name": "comRegs.hStart",
+     "n": 1
+    },
+    {
+     "off": 32,
+     "ctype": "u32",
+     "name": "comRegs.xScale",
+     "n": 1
+    },
+    {
+     "off": 36,
+     "ctype": "u32",
+     "name": "comRegs.vCurrent",
+     "n": 1
+    },
+    {
+     "off": 40,
+     "ctype": "u32",
+     "name": "fldRegs[0].origin",
+     "n": 1
+    },
+    {
+     "off": 44,
+     "ctype": "u32",
+     "name": "fldRegs[0].yScale",
+     "n": 1
+    },
+    {
+     "off": 48,
+     "ctype": "u32",
+     "name": "fldRegs[0].vStart",
+     "n": 1
+    },
+    {
+     "off": 52,
+     "ctype": "u32",
+     "name": "fldRegs[0].vBurst",
+     "n": 1
+    },
+    {
+     "off": 56,
+     "ctype": "u32",
+     "name": "fldRegs[0].vIntr",
+     "n": 1
+    },
+    {
+     "off": 60,
+     "ctype": "u32",
+     "name": "fldRegs[1].origin",
+     "n": 1
+    },
+    {
+     "off": 64,
+     "ctype": "u32",
+     "name": "fldRegs[1].yScale",
+     "n": 1
+    },
+    {
+     "off": 68,
+     "ctype": "u32",
+     "name": "fldRegs[1].vStart",
+     "n": 1
+    },
+    {
+     "off": 72,
+     "ctype": "u32",
+     "name": "fldRegs[1].vBurst",
+     "n": 1
+    },
+    {
+     "off": 76,
+     "ctype": "u32",
+     "name": "fldRegs[1].vIntr",
+     "n": 1
+    }
+   ],
+   "values": [
+    [
+     "0x1A",
+     [
+      "0x00",
+      "0x00",
+      "0x00"
+     ],
+     "0x0000334F",
+     "0x00000500",
+     "0x04541E3A",
+     "0x00000270",
+     "0x00170C69",
+     "0x0C6F0C6D",
+     "0x00800300",
+     "0x00000400",
+     "0x00000000",
+     "0x00000A00",
+     "0x00000400",
+     "0x005D0237",
+     "0x0009026B",
+     "0x00000002",
+     "0x00001400",
+     "0x00000400",
+     "0x005F0239",
+     "0x000D0269",
+     "0x00000002"
+    ]
+   ],
+   "note": "libultra OSViMode (type 26); identified by layout: type byte, zero pad, VI ctrl/width"
+  }
+ ],
+ "end": "0x80056C40",
+ "size": 2080,
+ "c_file": "data_80056420.c"
+}

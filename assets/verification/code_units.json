@@ -1,0 +1,5705 @@
+{
+ "clone_head": "f50a0d7d52c5ebc6c0fb8fb0c873f5730367bafd",
+ "command": "make verify-matching N64DK_ROOT=$N64DK_ROOT N64DK_TOOLCHAIN=$N64DK_TOOLCHAIN",
+ "summaries": [
+  "Verified 293/293 units, 17064 code bytes, 52 data bytes (kmc+asn64 13/13, kmc+builtin 280/280)",
+  "verified 20 normalized KMC unit(s), 2180 exact bytes",
+  "Verified 252/252 units, 62976 code bytes, 1672 data bytes (kmc+as 252/252)",
+  "Verified 94/94 units, 4796 code bytes, 44 data bytes (sn 94/94)",
+  "verified 142 normalized SN unit(s), 38724 exact bytes",
+  "Verified 6/6 units, 236 code bytes, 0 data bytes (ido5.3 6/6)"
+ ],
+ "units": [
+  {
+   "rom_start": 210268,
+   "size": 104,
+   "source": "src/game/func_8003295C.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 210372,
+   "size": 92,
+   "source": "src/game/func_800329C4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 244176,
+   "size": 208,
+   "source": "src/game/func_8003ADD0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 146516,
+   "size": 188,
+   "source": "src/game/func_80023054.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 236580,
+   "size": 68,
+   "source": "src/game/format_unsigned_digits.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18124,
+   "size": 72,
+   "source": "src/runtime/spin_counter.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 58216,
+   "size": 36,
+   "source": "src/game/call_func_80019bd4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55496,
+   "size": 28,
+   "source": "src/game/get_nested_flags.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 301392,
+   "size": 16,
+   "source": "src/runtime/set_fpc_control_status.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 76120,
+   "size": 84,
+   "source": "src/game/update_resource_when_enabled.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 83448,
+   "size": 84,
+   "source": "src/game/draw_with_flag_8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 83532,
+   "size": 84,
+   "source": "src/game/draw_with_flag_16.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 83616,
+   "size": 84,
+   "source": "src/game/draw_with_flag_4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 274792,
+   "size": 68,
+   "source": "src/game/get_max_object_word_0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 274860,
+   "size": 68,
+   "source": "src/game/get_max_object_word_4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 165108,
+   "size": 68,
+   "source": "src/game/release_identifier_range.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 216832,
+   "size": 68,
+   "source": "src/game/release_scene_identifiers.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 36416,
+   "size": 76,
+   "source": "src/game/process_linked_objects.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60232,
+   "size": 76,
+   "source": "src/game/id_in_known_ranges.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 74992,
+   "size": 64,
+   "source": "src/game/enable_player_state.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 108288,
+   "size": 64,
+   "source": "src/game/init_input_ranges.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 130216,
+   "size": 64,
+   "source": "src/game/set_resource_pair.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 130924,
+   "size": 60,
+   "source": "src/game/release_loaded_identifier.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 158820,
+   "size": 52,
+   "source": "src/game/insert_object_slot.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 58640,
+   "size": 56,
+   "source": "src/game/process_object_30.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 158872,
+   "size": 56,
+   "source": "src/game/shift_two_slots.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 202488,
+   "size": 56,
+   "source": "src/game/run_cleanup_sequence.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 256896,
+   "size": 56,
+   "source": "src/game/offset_nonnull_words.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 158660,
+   "size": 24,
+   "source": "src/game/object_index_is_current.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 36496,
+   "size": 40,
+   "source": "src/game/copy_matrix_words.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24832,
+   "size": 12,
+   "source": "src/game/object_state.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24844,
+   "size": 8,
+   "source": "src/game/set_object_word_100.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24852,
+   "size": 8,
+   "source": "src/game/set_object_word_108.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24860,
+   "size": 12,
+   "source": "src/game/get_object_word_108.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24936,
+   "size": 48,
+   "source": "src/game/is_current_player.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24984,
+   "size": 12,
+   "source": "src/game/object_has_valid_index.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 25024,
+   "size": 40,
+   "source": "src/game/get_relative_player_slot.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 25064,
+   "size": 40,
+   "source": "src/game/get_object_node_value.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 34188,
+   "size": 36,
+   "source": "src/game/move_object_bytes.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 35568,
+   "size": 12,
+   "source": "src/game/clear_pair.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 39728,
+   "size": 16,
+   "source": "src/game/get_state_halfword.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 40256,
+   "size": 16,
+   "source": "src/game/get_state_word_7f70.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 46560,
+   "size": 60,
+   "source": "src/game/update_object_variant.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 50356,
+   "size": 16,
+   "source": "src/game/get_state_word_52ab8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 58696,
+   "size": 32,
+   "source": "src/game/call_func_80033e1c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60224,
+   "size": 8,
+   "source": "src/game/mask_id.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60308,
+   "size": 16,
+   "source": "src/game/is_id_245_to_248.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60324,
+   "size": 16,
+   "source": "src/game/is_id_249_to_252.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 62400,
+   "size": 8,
+   "source": "src/game/noop_8000e7c0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 67996,
+   "size": 16,
+   "source": "src/game/stack_frame_8000fd9c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 72840,
+   "size": 16,
+   "source": "src/game/get_state_word_52c08.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 74012,
+   "size": 60,
+   "source": "src/game/advance_idle_state.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 77460,
+   "size": 16,
+   "source": "src/game/get_state_word_52e90.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 77960,
+   "size": 16,
+   "source": "src/game/get_state_word_52e94.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 77984,
+   "size": 16,
+   "source": "src/game/get_state_word_58c00.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 79772,
+   "size": 32,
+   "source": "src/game/call_func_80012bbc.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 80104,
+   "size": 16,
+   "source": "src/game/get_state_word_58c28.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 80252,
+   "size": 32,
+   "source": "src/game/start_state_timer.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 80284,
+   "size": 32,
+   "source": "src/game/start_state_timer_inactive.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 81392,
+   "size": 8,
+   "source": "src/game/noop_800131f0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82244,
+   "size": 44,
+   "source": "src/game/get_resource_field_8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82544,
+   "size": 16,
+   "source": "src/game/get_state_word_52ed0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82560,
+   "size": 44,
+   "source": "src/game/set_color_gray_7f.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82604,
+   "size": 44,
+   "source": "src/game/set_color_white.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82648,
+   "size": 44,
+   "source": "src/game/set_color_yellow.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82692,
+   "size": 32,
+   "source": "src/game/set_color_gray_opaque.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82724,
+   "size": 32,
+   "source": "src/game/set_color_white_opaque.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82756,
+   "size": 32,
+   "source": "src/game/set_color_yellow_opaque.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82788,
+   "size": 44,
+   "source": "src/game/set_color_red.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82832,
+   "size": 44,
+   "source": "src/game/set_color_green.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82876,
+   "size": 44,
+   "source": "src/game/set_color_blue.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 92364,
+   "size": 16,
+   "source": "src/game/noop_80015ccc.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 95240,
+   "size": 40,
+   "source": "src/game/noop_group_80016808.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 115180,
+   "size": 16,
+   "source": "src/game/get_state_word_5b7ec.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 117184,
+   "size": 16,
+   "source": "src/game/noop_group_8001bdc0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 118584,
+   "size": 8,
+   "source": "src/game/return_zero_8001c338.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 125664,
+   "size": 8,
+   "source": "src/game/noop_8001dee0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 131200,
+   "size": 44,
+   "source": "src/game/flush_resource_ranges.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127736,
+   "size": 32,
+   "source": "src/game/enable_resource_mode.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127768,
+   "size": 32,
+   "source": "src/game/disable_resource_mode.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127932,
+   "size": 32,
+   "source": "src/game/enable_resource_flag.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127964,
+   "size": 32,
+   "source": "src/game/disable_resource_flag.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 129484,
+   "size": 32,
+   "source": "src/game/finalize_resources.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 130080,
+   "size": 36,
+   "source": "src/game/activate_resource_mode_2.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 130116,
+   "size": 32,
+   "source": "src/game/clear_resource_binding.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 130148,
+   "size": 36,
+   "source": "src/game/activate_resource_mode_1.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 130184,
+   "size": 32,
+   "source": "src/game/release_resource.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 132644,
+   "size": 28,
+   "source": "src/game/get_active_resource_field.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 126312,
+   "size": 16,
+   "source": "src/game/get_state_word_5b8dc.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127592,
+   "size": 16,
+   "source": "src/game/get_state_word_61da0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 129708,
+   "size": 16,
+   "source": "src/game/get_state_word_53928.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 133940,
+   "size": 8,
+   "source": "src/game/noop_8001ff34.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 175376,
+   "size": 44,
+   "source": "src/game/reset_state_b92a8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 176560,
+   "size": 24,
+   "source": "src/game/set_active_field_28.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 176620,
+   "size": 24,
+   "source": "src/game/set_active_field_2c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 188380,
+   "size": 32,
+   "source": "src/game/refresh_object_state.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 188412,
+   "size": 8,
+   "source": "src/game/noop_8002d3fc.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 190412,
+   "size": 12,
+   "source": "src/game/enable_object_word_190.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 199348,
+   "size": 16,
+   "source": "src/game/get_state_word_b9324.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 199376,
+   "size": 16,
+   "source": "src/game/get_state_byte_b9320.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 199404,
+   "size": 16,
+   "source": "src/game/get_state_byte_b9321.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 201412,
+   "size": 8,
+   "source": "src/game/noop_800306c4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 204560,
+   "size": 12,
+   "source": "src/game/id_group_index.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 204572,
+   "size": 12,
+   "source": "src/game/is_id_380_to_383.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 215564,
+   "size": 24,
+   "source": "src/game/noop_group_80033e0c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 223484,
+   "size": 16,
+   "source": "src/game/noop_80035cfc.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 247284,
+   "size": 44,
+   "source": "src/game/set_control_halfwords.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249672,
+   "size": 36,
+   "source": "src/game/store_negative_object.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250204,
+   "size": 8,
+   "source": "src/game/set_object_word_10.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258256,
+   "size": 32,
+   "source": "src/game/parser_reset_object.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258288,
+   "size": 48,
+   "source": "src/game/parser_read_var_ae.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258336,
+   "size": 32,
+   "source": "src/game/parser_read_b8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258924,
+   "size": 36,
+   "source": "src/game/parser_read_b2.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258904,
+   "size": 20,
+   "source": "src/game/parser_read_b4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258368,
+   "size": 12,
+   "source": "src/game/parser_clear_b8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259188,
+   "size": 16,
+   "source": "src/game/parser_clear_d5_68.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259252,
+   "size": 16,
+   "source": "src/game/parser_set_b7.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259268,
+   "size": 16,
+   "source": "src/game/parser_read_b9.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259284,
+   "size": 16,
+   "source": "src/game/parser_set_ba.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259388,
+   "size": 16,
+   "source": "src/game/parser_set_d6.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259404,
+   "size": 12,
+   "source": "src/game/parser_clear_d6.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259416,
+   "size": 16,
+   "source": "src/game/parser_set_d7.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259432,
+   "size": 12,
+   "source": "src/game/parser_clear_d7.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259708,
+   "size": 40,
+   "source": "src/game/parser_read_d8_ce_cf.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259748,
+   "size": 12,
+   "source": "src/game/parser_clear_ce.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259760,
+   "size": 16,
+   "source": "src/game/parser_set_d2.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259776,
+   "size": 12,
+   "source": "src/game/parser_clear_d2.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259788,
+   "size": 20,
+   "source": "src/game/parser_read_d3.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259808,
+   "size": 20,
+   "source": "src/game/parser_read_bd.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259828,
+   "size": 8,
+   "source": "src/game/parser_skip_two.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259908,
+   "size": 12,
+   "source": "src/game/parser_clear_84.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 182352,
+   "size": 28,
+   "source": "src/game/init_state_544e0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 317056,
+   "size": 64,
+   "source": "src/runtime/init_aligned_arena.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18008,
+   "size": 56,
+   "source": "src/runtime/pi_wait_and_store.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18064,
+   "size": 60,
+   "source": "src/runtime/pi_read_word.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 277760,
+   "size": 44,
+   "source": "src/game/fill_bytes.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259204,
+   "size": 48,
+   "source": "src/game/parser_read_var_ac.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 177572,
+   "size": 48,
+   "source": "src/game/get_object_node_field_2c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259836,
+   "size": 72,
+   "source": "src/game/parser_select_record_84.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259928,
+   "size": 112,
+   "source": "src/game/parser_set_position.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258172,
+   "size": 84,
+   "source": "src/game/update_matching_records.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259920,
+   "size": 8,
+   "source": "src/game/parser_skip_one.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260040,
+   "size": 16,
+   "source": "src/game/parser_read_ca.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260296,
+   "size": 16,
+   "source": "src/game/parser_read_bc.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260580,
+   "size": 16,
+   "source": "src/game/parser_read_d4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 266304,
+   "size": 16,
+   "source": "src/game/clear_pointed_state_55af4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 268244,
+   "size": 24,
+   "source": "src/game/push_object_node.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 274768,
+   "size": 24,
+   "source": "src/game/init_object_mode_6.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 277724,
+   "size": 24,
+   "source": "src/game/get_state_span.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 312432,
+   "size": 16,
+   "source": "src/game/noop_8004b870.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 292720,
+   "size": 400,
+   "source": "src/runtime/matrix_concatenate.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 297648,
+   "size": 48,
+   "source": "src/runtime/create_message_queue.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 312448,
+   "size": 32,
+   "source": "src/runtime/init_record.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 302784,
+   "size": 84,
+   "source": "src/runtime/init_timer_services.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 302720,
+   "size": 64,
+   "source": "src/runtime/dequeue_thread.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 312800,
+   "size": 48,
+   "source": "src/runtime/append_record_word.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 314480,
+   "size": 20,
+   "source": "src/runtime/store_when_mode_one.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 299876,
+   "size": 16,
+   "source": "src/runtime/advance_list_head.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 316832,
+   "size": 48,
+   "source": "src/runtime/store_record_mode.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 316972,
+   "size": 32,
+   "source": "src/runtime/prepend_doubly_linked_node.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 317200,
+   "size": 64,
+   "source": "src/runtime/copy_bytes_positive.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318412,
+   "size": 44,
+   "source": "src/runtime/pop_runtime_node.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318456,
+   "size": 24,
+   "source": "src/runtime/push_runtime_node.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 321184,
+   "size": 32,
+   "source": "src/runtime/si_status_active.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 319616,
+   "size": 32,
+   "source": "src/runtime/audio_interface_status_negative.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 326048,
+   "size": 72,
+   "source": "src/runtime/controller_address_checksum.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 326120,
+   "size": 104,
+   "source": "src/runtime/controller_data_checksum.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 330400,
+   "size": 32,
+   "source": "src/runtime/get_active_state_7218.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 338816,
+   "size": 32,
+   "source": "src/runtime/sp_dma_active.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 338864,
+   "size": 48,
+   "source": "src/runtime/set_sp_pc.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 338208,
+   "size": 32,
+   "source": "src/runtime/dp_status_active.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318944,
+   "size": 16,
+   "source": "src/game/clear_pointed_word.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335696,
+   "size": 8,
+   "source": "src/game/get_object_field_78_address.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 176584,
+   "size": 36,
+   "source": "src/game/get_active_field_28.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 176644,
+   "size": 36,
+   "source": "src/game/get_active_field_2c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 50412,
+   "size": 24,
+   "source": "src/game/state_high_nibble_is_clear.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 59744,
+   "size": 20,
+   "source": "src/game/get_active_header_halfword_2.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 59764,
+   "size": 20,
+   "source": "src/game/get_active_header_halfword_0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60516,
+   "size": 20,
+   "source": "src/game/get_active_header_halfword_a.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 117540,
+   "size": 24,
+   "source": "src/game/set_active_field_2c_if_present.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 117504,
+   "size": 36,
+   "source": "src/game/get_active_field_28_or_negative.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 117564,
+   "size": 36,
+   "source": "src/game/get_active_field_2c_or_negative.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 40272,
+   "size": 28,
+   "source": "src/game/get_state_array_word_5811c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55472,
+   "size": 24,
+   "source": "src/game/enable_nested_flags.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55524,
+   "size": 36,
+   "source": "src/game/disable_nested_flags.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 83700,
+   "size": 32,
+   "source": "src/game/call_func_8001ff88.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 94444,
+   "size": 32,
+   "source": "src/game/call_func_8001a3ec_800164ec.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 94476,
+   "size": 32,
+   "source": "src/game/call_func_80033e1c_8001650c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 120120,
+   "size": 32,
+   "source": "src/game/call_func_80009634.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 125632,
+   "size": 32,
+   "source": "src/game/call_func_8001a3ec_8001dec0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 137836,
+   "size": 32,
+   "source": "src/game/call_func_8001a3ec_80020e6c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 165176,
+   "size": 32,
+   "source": "src/game/call_func_8001a3ec_80027938.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 165208,
+   "size": 32,
+   "source": "src/game/call_func_80033e1c_80027958.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 215664,
+   "size": 32,
+   "source": "src/game/call_func_8001def8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 254292,
+   "size": 28,
+   "source": "src/game/reset_parser_runtime_fields.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 67304,
+   "size": 32,
+   "source": "src/game/relocate_header_offsets.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 34560,
+   "size": 36,
+   "source": "src/game/call_with_unit_scale.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60848,
+   "size": 24,
+   "source": "src/game/remap_high_identifier.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 83732,
+   "size": 40,
+   "source": "src/game/finalize_resource_state.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 43108,
+   "size": 40,
+   "source": "src/game/call_state_handler_9194.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 119580,
+   "size": 48,
+   "source": "src/game/finish_when_ready_8001c71c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 119628,
+   "size": 48,
+   "source": "src/game/finish_when_ready_8001c74c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 78304,
+   "size": 44,
+   "source": "src/game/clear_state_timer_block.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 138916,
+   "size": 44,
+   "source": "src/game/clear_state_pointer_fb8c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 200488,
+   "size": 40,
+   "source": "src/game/finalize_scene_state.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 242752,
+   "size": 52,
+   "source": "src/game/next_random_value.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 200136,
+   "size": 48,
+   "source": "src/game/range_entry_is_complete.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55632,
+   "size": 60,
+   "source": "src/game/set_record_flag_bits.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55692,
+   "size": 60,
+   "source": "src/game/clear_record_flag_bits.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55752,
+   "size": 64,
+   "source": "src/game/get_record_link_value.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60460,
+   "size": 56,
+   "source": "src/game/get_large_record_halfword.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 17904,
+   "size": 56,
+   "source": "src/runtime/disable_interrupt_bit.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 17960,
+   "size": 48,
+   "source": "src/runtime/enable_interrupt_bits.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18544,
+   "size": 60,
+   "source": "src/runtime/store_unaligned_byte.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18196,
+   "size": 64,
+   "source": "src/runtime/read_unaligned_byte.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18260,
+   "size": 64,
+   "source": "src/runtime/read_unaligned_byte_alt.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 21376,
+   "size": 76,
+   "source": "src/runtime/run_protected_command.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 201420,
+   "size": 48,
+   "source": "src/game/finalize_scene_state_extended.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 222308,
+   "size": 40,
+   "source": "src/game/enable_state_and_clear_field_f4.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 30044,
+   "size": 108,
+   "source": "src/game/remap_identifier_neighbor.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 39376,
+   "size": 72,
+   "source": "src/game/init_object_matrix.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 201104,
+   "size": 72,
+   "source": "src/game/initialize_active_scene.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 158212,
+   "size": 68,
+   "source": "src/game/clear_matching_link_tag.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 158784,
+   "size": 36,
+   "source": "src/game/initialize_index_slot.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22692,
+   "size": 12,
+   "source": "src/runtime/read_cop0_status.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22704,
+   "size": 12,
+   "source": "src/runtime/write_cop0_status.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 300704,
+   "size": 16,
+   "source": "src/runtime/read_cop0_count.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 301408,
+   "size": 16,
+   "source": "src/runtime/write_cop0_status_delayed.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 303552,
+   "size": 16,
+   "source": "src/runtime/write_cop0_compare.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 301248,
+   "size": 16,
+   "source": "src/runtime/read_cop0_status_alt.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 300288,
+   "size": 32,
+   "source": "src/runtime/disable_interrupts.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 300320,
+   "size": 32,
+   "source": "src/runtime/enable_interrupt_mask.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22636,
+   "size": 28,
+   "source": "src/runtime/invalidate_instruction_cache.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22664,
+   "size": 28,
+   "source": "src/runtime/invalidate_data_cache.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 309004,
+   "size": 52,
+   "source": "src/game/append_mode_two_word.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22392,
+   "size": 16,
+   "source": "src/runtime/jump_to_exception_entry_194.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22448,
+   "size": 16,
+   "source": "src/runtime/jump_to_exception_entry_14.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 297904,
+   "size": 16,
+   "source": "src/runtime/jump_to_thread_entry.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 74072,
+   "size": 8,
+   "source": "src/game/jump_to_state_handler.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 244528,
+   "size": 20,
+   "source": "src/game/return_command_token.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 226348,
+   "size": 24,
+   "source": "src/runtime/clear_watchpoint.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 297600,
+   "size": 48,
+   "source": "src/runtime/writeback_data_cache_all.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22352,
+   "size": 40,
+   "source": "src/runtime/jump_to_exception_dispatch.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 297472,
+   "size": 128,
+   "source": "src/runtime/writeback_data_cache_range.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 301264,
+   "size": 128,
+   "source": "src/runtime/invalidate_instruction_cache_range.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 301424,
+   "size": 96,
+   "source": "src/runtime/map_debug_tlb_entry.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 297312,
+   "size": 160,
+   "source": "src/runtime/set_interrupt_mask.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 303664,
+   "size": 192,
+   "source": "src/runtime/probe_tlb.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 297040,
+   "size": 272,
+   "source": "src/runtime/invalidate_data_cache_range.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22464,
+   "size": 172,
+   "source": "src/runtime/install_exception_vectors.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 299540,
+   "size": 264,
+   "source": "src/runtime/enqueue_and_yield.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 299892,
+   "size": 380,
+   "source": "src/runtime/dispatch_thread.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 212248,
+   "size": 44,
+   "source": "src/game/set_primitive_color_white.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 31100,
+   "size": 52,
+   "source": "src/game/get_angle_step.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 317120,
+   "size": 80,
+   "source": "src/runtime/allocate_aligned_array.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259444,
+   "size": 108,
+   "source": "src/game/append_parser_record_8003e974.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259552,
+   "size": 156,
+   "source": "src/libmus/player_fnext.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 152060,
+   "size": 100,
+   "source": "src/game/prepare_runtime_transition.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 153564,
+   "size": 84,
+   "source": "src/game/start_runtime_sequence.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 154028,
+   "size": 76,
+   "source": "src/game/activate_runtime_object.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 174440,
+   "size": 92,
+   "source": "src/game/start_fixed_runtime_effects.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 72628,
+   "size": 80,
+   "source": "src/game/update_indexed_state_byte.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 253680,
+   "size": 112,
+   "source": "src/game/update_runtime_bounds_8003d2f0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 262888,
+   "size": 164,
+   "source": "src/game/update_runtime_mode_8003f6e8.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 30432,
+   "size": 88,
+   "source": "src/game/transform_runtime_coordinates.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 30976,
+   "size": 124,
+   "source": "src/game/get_runtime_angle_delta.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 34224,
+   "size": 120,
+   "source": "src/game/advance_object_runtime_index.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 35996,
+   "size": 124,
+   "source": "src/game/unlink_runtime_node.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 36120,
+   "size": 92,
+   "source": "src/game/process_runtime_callbacks.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 36212,
+   "size": 108,
+   "source": "src/game/process_runtime_update_callbacks.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 36320,
+   "size": 96,
+   "source": "src/game/remove_flagged_runtime_nodes.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55932,
+   "size": 112,
+   "source": "src/game/set_runtime_entry_fields.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 56400,
+   "size": 92,
+   "source": "src/game/get_or_create_runtime_object.c",
+   "tool": "kmc+asn64",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 277804,
+   "size": 116,
+   "source": "src/game/copy_overlapping_bytes_8004312c.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 272608,
+   "size": 80,
+   "source": "src/libultra/n_al_save_pull.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 272688,
+   "size": 128,
+   "source": "src/libultra/n_al_main_bus_pull.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 96132,
+   "size": 88,
+   "source": "src/game/update_runtime_transition_pair.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 21452,
+   "size": 144,
+   "source": "src/game/read_runtime_command_value.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 21596,
+   "size": 144,
+   "source": "src/runtime/host_file_open.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 21740,
+   "size": 104,
+   "source": "src/runtime/host_file_close.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 22240,
+   "size": 112,
+   "source": "src/runtime/host_file_seek.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 87460,
+   "size": 88,
+   "source": "src/game/find_indexed_type_17_item.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 138468,
+   "size": 220,
+   "source": "src/game/copy_actor_transition_state.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 21192,
+   "size": 184,
+   "source": "src/runtime/execute_host_command.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 236176,
+   "size": 160,
+   "source": "src/runtime/fill_aligned_bytes.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 242464,
+   "size": 176,
+   "source": "src/runtime/split_double_fraction.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 53164,
+   "size": 228,
+   "source": "src/game/apply_track_position_offsets.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 193532,
+   "size": 240,
+   "source": "src/game/initialize_random_slot_values.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 235920,
+   "size": 256,
+   "source": "src/runtime/copy_aligned_bytes.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 75056,
+   "size": 272,
+   "source": "src/game/apply_directional_track_offsets.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18324,
+   "size": 220,
+   "source": "src/runtime/func_80003B94.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 18604,
+   "size": 276,
+   "source": "src/runtime/func_80003CAC.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 20568,
+   "size": 592,
+   "source": "src/game/func_80004458.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 242816,
+   "size": 544,
+   "source": "src/game/func_8003A880.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 267216,
+   "size": 624,
+   "source": "src/libultra/n_al_syn_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 270848,
+   "size": 496,
+   "source": "src/libultra/n_al_fx_param.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 271344,
+   "size": 528,
+   "source": "src/libultra/n_al_load_output_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 263052,
+   "size": 864,
+   "source": "src/libultra/n_al_env_mixer_commands.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 273000,
+   "size": 624,
+   "source": "src/libultra/n_al_syn_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 264000,
+   "size": 1096,
+   "source": "src/libultra/n_al_adpcm_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 265096,
+   "size": 396,
+   "source": "src/libultra/n_al_load_param.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 265492,
+   "size": 332,
+   "source": "src/libultra/n_al_decode_chunk.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 265824,
+   "size": 444,
+   "source": "src/libultra/n_al_resample_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 276140,
+   "size": 100,
+   "source": "src/libmus/install_scheduler_client.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 274928,
+   "size": 96,
+   "source": "src/libmus/change_custom_effect.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 305196,
+   "size": 184,
+   "source": "src/libultra/al_env_mixer_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 305556,
+   "size": 140,
+   "source": "src/libultra/al_resample_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 305380,
+   "size": 176,
+   "source": "src/libultra/al_load_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 305696,
+   "size": 184,
+   "source": "src/libultra/al_bus_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 323184,
+   "size": 380,
+   "source": "src/libultra/os_pfs_is_plug.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 322832,
+   "size": 192,
+   "source": "src/libultra/os_cont_pack_request_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 322652,
+   "size": 180,
+   "source": "src/libultra/os_cont_get_init_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 323564,
+   "size": 164,
+   "source": "src/libultra/os_pfs_request_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 323728,
+   "size": 192,
+   "source": "src/libultra/os_pfs_get_init_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 330432,
+   "size": 224,
+   "source": "src/libultra/os_cart_rom_init.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 330656,
+   "size": 256,
+   "source": "src/libultra/os_leo_disk_init.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 330912,
+   "size": 1292,
+   "source": "src/libultra/os_leo_interrupt.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 332204,
+   "size": 208,
+   "source": "src/libultra/os_leo_abnormal_resume.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 332412,
+   "size": 180,
+   "source": "src/libultra/os_leo_resume.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 332592,
+   "size": 960,
+   "source": "src/libultra/os_device_manager.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 333776,
+   "size": 400,
+   "source": "src/libultra/os_epi_raw_read_io.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 334176,
+   "size": 336,
+   "source": "src/libultra/os_epi_raw_write_io.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 328528,
+   "size": 128,
+   "source": "src/libultra/os_pfs_get_one_channel_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 328656,
+   "size": 160,
+   "source": "src/libultra/os_pi_raw_read_io.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 329248,
+   "size": 208,
+   "source": "src/libultra/os_pi_raw_start_dma.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 329456,
+   "size": 464,
+   "source": "src/libultra/os_epi_raw_start_dma.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 328160,
+   "size": 224,
+   "source": "src/libultra/os_pfs_get_status.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 321328,
+   "size": 136,
+   "source": "src/libultra/os_cont_start_read_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 321464,
+   "size": 156,
+   "source": "src/libultra/os_cont_get_read_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 321620,
+   "size": 188,
+   "source": "src/libultra/os_pack_read_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 321808,
+   "size": 192,
+   "source": "src/libultra/os_si_raw_start_dma.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 236336,
+   "size": 48,
+   "source": "src/game/fill_memory_wrapper.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260800,
+   "size": 80,
+   "source": "src/game/prepend_active_object.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260880,
+   "size": 68,
+   "source": "src/game/set_active_object_once.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 277600,
+   "size": 76,
+   "source": "src/game/initialize_state_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 242640,
+   "size": 64,
+   "source": "src/game/remap_mode_ten.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249572,
+   "size": 60,
+   "source": "src/game/register_first_object.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260948,
+   "size": 60,
+   "source": "src/game/clear_active_object_links.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 268364,
+   "size": 56,
+   "source": "src/game/relink_object_node.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 277676,
+   "size": 48,
+   "source": "src/game/create_state_span.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 242804,
+   "size": 12,
+   "source": "src/game/set_state_word_c3fa0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 244548,
+   "size": 36,
+   "source": "src/game/dispatch_fe00.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 244584,
+   "size": 28,
+   "source": "src/game/dispatch_fe01.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 247328,
+   "size": 48,
+   "source": "src/game/create_enabled_object.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249632,
+   "size": 40,
+   "source": "src/game/select_negative_object.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249708,
+   "size": 12,
+   "source": "src/game/get_state_word_c3ffc.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250160,
+   "size": 8,
+   "source": "src/game/get_object_word_4.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250168,
+   "size": 12,
+   "source": "src/game/set_state_word_c4008.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250180,
+   "size": 12,
+   "source": "src/game/set_state_word_c400c.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250192,
+   "size": 12,
+   "source": "src/game/get_state_word_c4008.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250212,
+   "size": 8,
+   "source": "src/game/get_object_word_10.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250220,
+   "size": 12,
+   "source": "src/game/set_state_word_55fbc.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250452,
+   "size": 12,
+   "source": "src/game/set_state_word_c4010.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258960,
+   "size": 112,
+   "source": "src/game/parser_read_motion_scale.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260520,
+   "size": 60,
+   "source": "src/game/parser_read_scale_6c.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260596,
+   "size": 68,
+   "source": "src/game/parser_conditional_callback.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 275604,
+   "size": 12,
+   "source": "src/game/get_callback_800428a0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 276128,
+   "size": 12,
+   "source": "src/game/set_state_word_c40c0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 277748,
+   "size": 12,
+   "source": "src/game/get_state_address_c42f0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 297696,
+   "size": 208,
+   "source": "src/runtime/create_thread.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 295184,
+   "size": 224,
+   "source": "src/runtime/matrix_scale.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 295824,
+   "size": 208,
+   "source": "src/runtime/matrix_translate.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 293120,
+   "size": 256,
+   "source": "src/runtime/matrix_fixed_wrappers.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 292080,
+   "size": 640,
+   "source": "src/runtime/matrix_convert.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 293376,
+   "size": 176,
+   "source": "src/runtime/normalize_vector.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 296992,
+   "size": 48,
+   "source": "src/runtime/random_number.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 316880,
+   "size": 44,
+   "source": "src/runtime/init_runtime_state.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 316924,
+   "size": 48,
+   "source": "src/runtime/clear_runtime_state.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 300560,
+   "size": 144,
+   "source": "src/runtime/get_time.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 301520,
+   "size": 304,
+   "source": "src/runtime/receive_message.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 301824,
+   "size": 304,
+   "source": "src/runtime/send_message.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 302128,
+   "size": 96,
+   "source": "src/runtime/set_event_message.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 300352,
+   "size": 208,
+   "source": "src/runtime/destroy_thread.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 302224,
+   "size": 208,
+   "source": "src/runtime/set_thread_priority.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 302432,
+   "size": 288,
+   "source": "src/runtime/start_thread.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 302868,
+   "size": 316,
+   "source": "src/runtime/timer_interrupt.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 303184,
+   "size": 96,
+   "source": "src/runtime/set_timer_interrupt.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 303280,
+   "size": 272,
+   "source": "src/runtime/insert_timer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 303568,
+   "size": 96,
+   "source": "src/runtime/virtual_to_physical.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 305880,
+   "size": 72,
+   "source": "src/runtime/init_runtime_record_defaults.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318480,
+   "size": 84,
+   "source": "src/runtime/move_all_runtime_nodes.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318564,
+   "size": 64,
+   "source": "src/runtime/activate_runtime_node.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318776,
+   "size": 168,
+   "source": "src/runtime/select_earliest_runtime_node.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 322000,
+   "size": 84,
+   "source": "src/runtime/create_si_access_queue.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 322084,
+   "size": 108,
+   "source": "src/runtime/get_si_access.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 319120,
+   "size": 16,
+   "source": "src/runtime/read_audio_interface_dram_addr.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 319136,
+   "size": 16,
+   "source": "src/runtime/read_audio_interface_status.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 319152,
+   "size": 304,
+   "source": "src/runtime/set_audio_frequency.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 319456,
+   "size": 160,
+   "source": "src/runtime/set_audio_next_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 319648,
+   "size": 368,
+   "source": "src/runtime/set_vi_special_features.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 322192,
+   "size": 48,
+   "source": "src/runtime/init_queue_800c45a0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 323024,
+   "size": 160,
+   "source": "src/runtime/set_timer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 329920,
+   "size": 160,
+   "source": "src/runtime/start_extended_pi_dma.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 338848,
+   "size": 16,
+   "source": "src/runtime/write_sp_status.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 339280,
+   "size": 16,
+   "source": "src/runtime/read_sp_status.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 340240,
+   "size": 16,
+   "source": "src/game/get_state_word_563c0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 329216,
+   "size": 32,
+   "source": "src/runtime/get_record_word_4.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 333552,
+   "size": 80,
+   "source": "src/runtime/disable_runtime_flags.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 333632,
+   "size": 64,
+   "source": "src/runtime/enable_runtime_flags.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 333696,
+   "size": 80,
+   "source": "src/runtime/yield_thread.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 334512,
+   "size": 84,
+   "source": "src/runtime/create_pi_access_queue.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 334596,
+   "size": 108,
+   "source": "src/runtime/get_pi_access.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 334704,
+   "size": 48,
+   "source": "src/runtime/init_queue_800c6bb0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 334752,
+   "size": 176,
+   "source": "src/runtime/start_pi_dma.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335088,
+   "size": 20,
+   "source": "src/runtime/diagnostic_stub_800510f0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335108,
+   "size": 28,
+   "source": "src/runtime/diagnostic_stub_80051104.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335136,
+   "size": 328,
+   "source": "src/runtime/create_scheduler.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335464,
+   "size": 88,
+   "source": "src/runtime/add_scheduler_client.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335552,
+   "size": 144,
+   "source": "src/runtime/remove_scheduler_client.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335704,
+   "size": 260,
+   "source": "src/runtime/scheduler_main.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 335964,
+   "size": 256,
+   "source": "src/runtime/scheduler_handle_retrace.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 336220,
+   "size": 272,
+   "source": "src/runtime/scheduler_handle_rsp.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 336492,
+   "size": 224,
+   "source": "src/runtime/scheduler_handle_rdp.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 336716,
+   "size": 84,
+   "source": "src/runtime/scheduler_task_ready.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 336800,
+   "size": 176,
+   "source": "src/runtime/scheduler_task_complete.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 336976,
+   "size": 172,
+   "source": "src/runtime/scheduler_append_task.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 337148,
+   "size": 308,
+   "source": "src/runtime/scheduler_execute_tasks.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 337456,
+   "size": 592,
+   "source": "src/runtime/scheduler_select_tasks.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 338048,
+   "size": 160,
+   "source": "src/runtime/set_dp_next_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 338240,
+   "size": 576,
+   "source": "src/runtime/load_sp_task.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 338912,
+   "size": 256,
+   "source": "src/runtime/start_sp_raw_dma.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 339296,
+   "size": 64,
+   "source": "src/runtime/get_queue_value_63c0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 339360,
+   "size": 64,
+   "source": "src/runtime/get_queue_value_63c4.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 339424,
+   "size": 816,
+   "source": "src/runtime/create_vi_manager.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 340256,
+   "size": 96,
+   "source": "src/runtime/set_vi_event.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 340352,
+   "size": 80,
+   "source": "src/runtime/set_vi_mode.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 340432,
+   "size": 80,
+   "source": "src/runtime/swap_vi_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 340512,
+   "size": 96,
+   "source": "src/runtime/set_vi_black.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 339168,
+   "size": 32,
+   "source": "src/runtime/set_sp_status_400.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 339200,
+   "size": 80,
+   "source": "src/runtime/check_sp_task_yielded.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 294448,
+   "size": 736,
+   "source": "src/runtime/matrix_rotate.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 293552,
+   "size": 896,
+   "source": "src/runtime/matrix_perspective.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260776,
+   "size": 24,
+   "source": "src/game/parser_clear_ac.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 244768,
+   "size": 20,
+   "source": "src/game/return_zero_8003b020.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 266268,
+   "size": 36,
+   "source": "src/game/reset_control_object.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 317004,
+   "size": 52,
+   "source": "src/runtime/unlink_doubly_linked_node.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 288992,
+   "size": 16,
+   "source": "src/game/square_root.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249812,
+   "size": 36,
+   "source": "src/game/submit_mode_0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249848,
+   "size": 40,
+   "source": "src/game/submit_mode_1.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249888,
+   "size": 48,
+   "source": "src/game/submit_mode_2.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 244612,
+   "size": 44,
+   "source": "src/game/dispatch_fe02.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 268200,
+   "size": 44,
+   "source": "src/game/pop_object_node.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260056,
+   "size": 80,
+   "source": "src/game/parser_accumulate_b9.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260136,
+   "size": 80,
+   "source": "src/game/parser_accumulate_bc.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260216,
+   "size": 80,
+   "source": "src/game/parser_accumulate_bd.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318628,
+   "size": 72,
+   "source": "src/runtime/scale_runtime_value.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318700,
+   "size": 76,
+   "source": "src/runtime/scale_runtime_value_aligned.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259300,
+   "size": 88,
+   "source": "src/game/parser_adjust_float_30.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 259072,
+   "size": 116,
+   "source": "src/game/parser_read_inverse_motion.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258380,
+   "size": 296,
+   "source": "src/game/parser_read_interpolation.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 318960,
+   "size": 160,
+   "source": "src/runtime/create_indexed_runtime_record.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 311616,
+   "size": 36,
+   "source": "src/runtime/scale_double_power_two.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 242704,
+   "size": 48,
+   "source": "src/game/dispatch_and_return_value.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 330080,
+   "size": 320,
+   "source": "src/runtime/jam_message.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 328384,
+   "size": 144,
+   "source": "src/libultra/os_pfs_request_status.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 328816,
+   "size": 400,
+   "source": "src/libultra/os_create_pi_manager.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 326788,
+   "size": 400,
+   "source": "src/libultra/os_pack_ram_read_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 327744,
+   "size": 416,
+   "source": "src/libultra/os_pack_ram_write_data.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 326224,
+   "size": 564,
+   "source": "src/libultra/os_cont_ram_read.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 327200,
+   "size": 544,
+   "source": "src/libultra/os_cont_ram_write.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 323920,
+   "size": 448,
+   "source": "src/libultra/os_motor_stop.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 324368,
+   "size": 448,
+   "source": "src/libultra/os_motor_start.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 324816,
+   "size": 1232,
+   "source": "src/libultra/os_motor_init.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 289936,
+   "size": 336,
+   "source": "src/libultra/gu_cosf.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 295408,
+   "size": 416,
+   "source": "src/libultra/gu_sinf.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 296032,
+   "size": 472,
+   "source": "src/libultra/gu_position_f.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 290272,
+   "size": 896,
+   "source": "src/libultra/gu_look_at_f.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 291168,
+   "size": 912,
+   "source": "src/libultra/gu_look_at.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 289008,
+   "size": 460,
+   "source": "src/libultra/gu_align_f.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 289468,
+   "size": 468,
+   "source": "src/libultra/gu_align.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 320016,
+   "size": 272,
+   "source": "src/libultra/os_vi_init.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 320288,
+   "size": 752,
+   "source": "src/libultra/os_vi_swap_context.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 248888,
+   "size": 88,
+   "source": "src/game/count_resource_matches_8003c038.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250464,
+   "size": 100,
+   "source": "src/game/init_resource_pool_8003c660.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 322240,
+   "size": 412,
+   "source": "src/libultra/os_cont_init.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250564,
+   "size": 128,
+   "source": "src/game/process_resource_command_8003c6c4.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250692,
+   "size": 152,
+   "source": "src/game/push_resource_queue_8003c744.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249936,
+   "size": 92,
+   "source": "src/game/set_active_resource_8003c450.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 312292,
+   "size": 140,
+   "source": "src/libultra/al_get_vol.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 311392,
+   "size": 224,
+   "source": "src/libultra/al_frexpf.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 310412,
+   "size": 212,
+   "source": "src/libultra/al_env_mixer_param.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 308784,
+   "size": 220,
+   "source": "src/libultra/al_aux_bus_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 254504,
+   "size": 88,
+   "source": "src/game/update_runtime_counter_8003d628.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 268420,
+   "size": 80,
+   "source": "src/game/scale_runtime_duration.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 316268,
+   "size": 156,
+   "source": "src/libultra/al_filter_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 254592,
+   "size": 100,
+   "source": "src/game/update_runtime_float_8003d680.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 312480,
+   "size": 320,
+   "source": "src/libultra/al_main_bus_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 266480,
+   "size": 144,
+   "source": "src/game/queue_runtime_value_800404f0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 315532,
+   "size": 368,
+   "source": "src/libultra/al_load_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 315900,
+   "size": 368,
+   "source": "src/libultra/al_save_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 266320,
+   "size": 160,
+   "source": "src/game/queue_runtime_clamped_value_80040450.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 266624,
+   "size": 144,
+   "source": "src/game/queue_runtime_float_80040580.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 266768,
+   "size": 176,
+   "source": "src/game/queue_runtime_extended_80040610.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 266944,
+   "size": 144,
+   "source": "src/game/queue_runtime_tagged_800406c0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 307968,
+   "size": 428,
+   "source": "src/libultra/al_load_param.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 267088,
+   "size": 128,
+   "source": "src/game/queue_runtime_marker_80040750.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 268268,
+   "size": 96,
+   "source": "src/game/release_runtime_list_80040bec.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 268500,
+   "size": 92,
+   "source": "src/game/scale_runtime_units_80040cd4.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 252948,
+   "size": 124,
+   "source": "src/game/update_indexed_runtime_owner_8003d014.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 311652,
+   "size": 640,
+   "source": "src/libultra/al_get_rate.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 255976,
+   "size": 148,
+   "source": "src/game/random_scaled_value_8003dbe8.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 312848,
+   "size": 492,
+   "source": "src/libultra/al_resample_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 256952,
+   "size": 176,
+   "source": "src/game/init_runtime_record_8003dfb8.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 314996,
+   "size": 536,
+   "source": "src/libultra/al_load_output_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 317980,
+   "size": 432,
+   "source": "src/libultra/al_audio_frame.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 272896,
+   "size": 104,
+   "source": "src/game/init_runtime_manager_80041e00.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 268752,
+   "size": 1004,
+   "source": "src/libultra/n_al_fx_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 269756,
+   "size": 308,
+   "source": "src/libultra/n_al_pvoice_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 271872,
+   "size": 296,
+   "source": "src/libultra/n_al_load_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 272168,
+   "size": 280,
+   "source": "src/libultra/n_al_save_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 272448,
+   "size": 160,
+   "source": "src/libultra/n_al_filter_buffer.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 272816,
+   "size": 80,
+   "source": "src/game/get_prepared_runtime_word_80041db0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 317264,
+   "size": 716,
+   "source": "src/libultra/al_syn_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 307044,
+   "size": 924,
+   "source": "src/libultra/al_raw16_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 305952,
+   "size": 1092,
+   "source": "src/libultra/al_adpcm_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 314500,
+   "size": 496,
+   "source": "src/libultra/al_fx_param_hdl.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 300720,
+   "size": 528,
+   "source": "src/libultra/os_initialize.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 273624,
+   "size": 80,
+   "source": "src/game/get_runtime_entry_800420d8.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 303856,
+   "size": 164,
+   "source": "src/libultra/al_init_lpfilter.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 50264,
+   "size": 80,
+   "source": "src/game/find_sorted_runtime_value.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 310624,
+   "size": 768,
+   "source": "src/libultra/al_pull_sub_frame.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 276240,
+   "size": 96,
+   "source": "src/game/wait_for_runtime_signal_80042b10.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 280804,
+   "size": 172,
+   "source": "src/game/submit_runtime_request_80043ce4.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249720,
+   "size": 92,
+   "source": "src/game/find_resource_value_8003c378.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 250332,
+   "size": 120,
+   "source": "src/game/find_resource_nested_value_8003c5dc.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249296,
+   "size": 140,
+   "source": "src/game/scale_matching_resources_8003c1d0.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 248976,
+   "size": 96,
+   "source": "src/game/set_matching_resource_value_8003c090.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249184,
+   "size": 112,
+   "source": "src/game/add_matching_resource_float_8003c160.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 249436,
+   "size": 136,
+   "source": "src/game/set_matching_resource_byte_8003c25c.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 247376,
+   "size": 592,
+   "source": "src/libmus/start_song_from_marker.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 257552,
+   "size": 620,
+   "source": "src/libmus/player_start.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 258676,
+   "size": 228,
+   "source": "src/libmus/player_ftempo.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260312,
+   "size": 208,
+   "source": "src/libmus/player_fstartfx.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 244656,
+   "size": 112,
+   "source": "src/runtime/handle_math_exception.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 242368,
+   "size": 96,
+   "source": "src/runtime/scan_last_character.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 247968,
+   "size": 128,
+   "source": "src/runtime/process_pending_runtime_object.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 236856,
+   "size": 132,
+   "source": "src/runtime/round_decimal_digits.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 236384,
+   "size": 196,
+   "source": "src/runtime/append_formatted_character.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 236988,
+   "size": 352,
+   "source": "src/runtime/format_exponent_digits.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 321040,
+   "size": 144,
+   "source": "src/libultra/os_si_raw_read_io.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 321216,
+   "size": 112,
+   "source": "src/libultra/os_si_raw_write_io.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 313536,
+   "size": 944,
+   "source": "src/libultra/al_fx_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 309056,
+   "size": 1356,
+   "source": "src/libultra/al_env_mixer_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 304020,
+   "size": 1176,
+   "source": "src/libultra/al_fx_new.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 261488,
+   "size": 1400,
+   "source": "src/libultra/n_al_env_mixer_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 212292,
+   "size": 72,
+   "source": "src/game/append_primitive_color.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 59784,
+   "size": 36,
+   "source": "src/game/get_indexed_runtime_record.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 108624,
+   "size": 76,
+   "source": "src/game/activate_staged_resource.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 21160,
+   "size": 32,
+   "source": "src/runtime/string_storage_size.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 74080,
+   "size": 52,
+   "source": "src/game/clear_runtime_words.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 108048,
+   "size": 60,
+   "source": "src/game/relocate_pair_once.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 204264,
+   "size": 52,
+   "source": "src/game/update_primary_countdown.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 204316,
+   "size": 52,
+   "source": "src/game/update_secondary_countdown.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60340,
+   "size": 36,
+   "source": "src/game/set_runtime_arguments.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60756,
+   "size": 40,
+   "source": "src/game/get_halfword_table_entry.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82932,
+   "size": 24,
+   "source": "src/game/clear_state_flags_52ed0.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24872,
+   "size": 28,
+   "source": "src/game/update_object_halfword.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24900,
+   "size": 36,
+   "source": "src/game/get_current_player.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 24996,
+   "size": 28,
+   "source": "src/game/get_player_slot.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 39744,
+   "size": 16,
+   "source": "src/game/reset_state_halfword.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 40912,
+   "size": 12,
+   "source": "src/game/set_state_word_58180.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 50344,
+   "size": 12,
+   "source": "src/game/set_state_word_52ab8.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 50436,
+   "size": 12,
+   "source": "src/game/clear_state_word_52ab8.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60376,
+   "size": 12,
+   "source": "src/game/clear_state_word_581d4.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 77444,
+   "size": 16,
+   "source": "src/game/set_state_word_58bf4.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 80120,
+   "size": 12,
+   "source": "src/game/set_state_word_58c10.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 82920,
+   "size": 12,
+   "source": "src/game/set_state_word_52ed0.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 125672,
+   "size": 16,
+   "source": "src/game/enable_state_word_52f10.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 125688,
+   "size": 12,
+   "source": "src/game/disable_state_word_52f10.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 126004,
+   "size": 44,
+   "source": "src/game/copy_words.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127440,
+   "size": 32,
+   "source": "src/game/init_resource_arena.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 129724,
+   "size": 20,
+   "source": "src/game/copy_state_word_53928.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 134112,
+   "size": 12,
+   "source": "src/game/clear_state_word_5b1e0.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 176680,
+   "size": 24,
+   "source": "src/game/get_active_array_entry.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 199336,
+   "size": 12,
+   "source": "src/game/set_state_word_b9324.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 199364,
+   "size": 12,
+   "source": "src/game/set_state_byte_b9320.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 199392,
+   "size": 12,
+   "source": "src/game/set_state_byte_b9321.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127536,
+   "size": 24,
+   "source": "src/game/allocate_resource_block.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127568,
+   "size": 24,
+   "source": "src/game/reset_resource_indices.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 31152,
+   "size": 28,
+   "source": "src/game/select_count.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 175420,
+   "size": 24,
+   "source": "src/game/enable_state_b92a8.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 50372,
+   "size": 20,
+   "source": "src/game/get_state_flag_10000000.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 50392,
+   "size": 20,
+   "source": "src/game/get_state_flag_20000000.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 72708,
+   "size": 24,
+   "source": "src/game/get_state_byte_52c04.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 110836,
+   "size": 24,
+   "source": "src/game/advance_aligned_state_5b1e4.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 117600,
+   "size": 24,
+   "source": "src/game/get_active_array_address.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 117464,
+   "size": 40,
+   "source": "src/game/set_active_field_28_and_track.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55560,
+   "size": 28,
+   "source": "src/game/get_nested_record_address.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60388,
+   "size": 36,
+   "source": "src/game/get_active_record_halfword_201e.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60424,
+   "size": 36,
+   "source": "src/game/get_active_record_halfword_2020.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 77412,
+   "size": 32,
+   "source": "src/game/reset_timed_state.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 118444,
+   "size": 28,
+   "source": "src/game/clamp_active_signed_byte.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 204524,
+   "size": 36,
+   "source": "src/game/latch_input_flag_4000.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 115132,
+   "size": 48,
+   "source": "src/game/get_active_limited_delta.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 158736,
+   "size": 48,
+   "source": "src/game/count_object_entries.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 200332,
+   "size": 44,
+   "source": "src/game/set_runtime_callbacks.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 56044,
+   "size": 36,
+   "source": "src/game/record_field_is_set.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 118592,
+   "size": 44,
+   "source": "src/game/current_input_has_flag_10.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 118636,
+   "size": 44,
+   "source": "src/game/current_input_has_flag_40.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 158684,
+   "size": 52,
+   "source": "src/game/count_inactive_object_slots.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 109024,
+   "size": 92,
+   "source": "src/game/get_record_pair.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 108500,
+   "size": 124,
+   "source": "src/game/release_active_resource.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 110160,
+   "size": 96,
+   "source": "src/game/measure_heap_gap.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 110572,
+   "size": 264,
+   "source": "src/game/free_heap_block.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55588,
+   "size": 44,
+   "source": "src/game/get_record_flag_mask.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 55888,
+   "size": 44,
+   "source": "src/game/get_scaled_record_value.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 40300,
+   "size": 40,
+   "source": "src/game/set_grid_halfword.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 191868,
+   "size": 44,
+   "source": "src/game/update_object_counter_194.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 117132,
+   "size": 52,
+   "source": "src/game/initialize_fixed_identifiers.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 77904,
+   "size": 56,
+   "source": "src/game/initialize_state_52e94.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 95184,
+   "size": 56,
+   "source": "src/game/validate_indexed_records.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 200192,
+   "size": 56,
+   "source": "src/game/reset_scene_timing.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127472,
+   "size": 64,
+   "source": "src/game/advance_wrapped_resource_pointer.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 107172,
+   "size": 68,
+   "source": "src/game/count_active_mode_slots.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 81400,
+   "size": 64,
+   "source": "src/game/get_table_record_word.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 133948,
+   "size": 76,
+   "source": "src/game/initialize_resource_rows.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 126048,
+   "size": 76,
+   "source": "src/game/copy_selected_halfwords.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 134124,
+   "size": 88,
+   "source": "src/game/init_aligned_resource_pool.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60140,
+   "size": 40,
+   "source": "src/game/set_grid_record_halfword.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 60180,
+   "size": 44,
+   "source": "src/game/get_grid_record_halfword.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 59980,
+   "size": 52,
+   "source": "src/game/clear_grid_record_flag.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 29132,
+   "size": 48,
+   "source": "src/game/convert_world_coordinates.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 129424,
+   "size": 60,
+   "source": "src/game/apply_current_resource.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 41060,
+   "size": 64,
+   "source": "src/game/toggle_runtime_object_state.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 175444,
+   "size": 96,
+   "source": "src/game/advance_runtime_float_sequence.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 260664,
+   "size": 112,
+   "source": "src/game/parse_runtime_callback_8003ee38.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 31180,
+   "size": 96,
+   "source": "src/game/wrap_runtime_angle.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 39760,
+   "size": 100,
+   "source": "src/game/set_runtime_fade.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 36536,
+   "size": 136,
+   "source": "src/game/build_runtime_matrix.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 36672,
+   "size": 140,
+   "source": "src/game/build_runtime_matrix_from_axes.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 80132,
+   "size": 120,
+   "source": "src/game/configure_runtime_fade.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 131344,
+   "size": 120,
+   "source": "src/game/select_matching_runtime_slot.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 135808,
+   "size": 40,
+   "source": "src/game/get_object_at_count_80020680.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 129944,
+   "size": 44,
+   "source": "src/game/query_current_resource_8001ef98.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 129988,
+   "size": 40,
+   "source": "src/game/release_current_resource_8001efc4.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127608,
+   "size": 128,
+   "source": "src/game/start_fade_mode0_8001e678.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 127800,
+   "size": 132,
+   "source": "src/game/start_fade_mode1_8001e738.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 130028,
+   "size": 52,
+   "source": "src/game/query_resource_slot_8001efec.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 135888,
+   "size": 40,
+   "source": "src/game/get_object_at_count_800206d0.c",
+   "tool": "sn",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 282168,
+   "size": 32,
+   "source": "src/game/advance_object_state.c",
+   "tool": "ido5.3",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 282200,
+   "size": 16,
+   "source": "src/game/set_object_state_4.c",
+   "tool": "ido5.3",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 126604,
+   "size": 36,
+   "source": "src/game/offset_resource_bounds.c",
+   "tool": "ido5.3",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 80080,
+   "size": 24,
+   "source": "src/game/reset_state_indices_58c18.c",
+   "tool": "ido5.3",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 40856,
+   "size": 20,
+   "source": "src/game/set_state_pair_58178.c",
+   "tool": "ido5.3",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 282060,
+   "size": 108,
+   "source": "src/game/update_stream_progress_800441cc.c",
+   "tool": "ido5.3",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 107240,
+   "size": 76,
+   "source": "src/game/func_800196E8.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 122096,
+   "size": 64,
+   "source": "src/game/func_8001D0F0.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 144224,
+   "size": 140,
+   "source": "src/game/func_80022760.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 147780,
+   "size": 168,
+   "source": "src/game/func_80023544.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 153876,
+   "size": 152,
+   "source": "src/game/func_80024D14.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 105468,
+   "size": 112,
+   "source": "src/game/func_80018FFC.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 132596,
+   "size": 48,
+   "source": "src/game/func_8001F9F4.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 146868,
+   "size": 192,
+   "source": "src/game/func_800231B4.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 112508,
+   "size": 76,
+   "source": "src/game/func_8001AB7C.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 151336,
+   "size": 344,
+   "source": "src/game/func_80024328.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 107328,
+   "size": 72,
+   "source": "src/game/func_80019740.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 95912,
+   "size": 80,
+   "source": "src/game/func_80016AA8.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 204368,
+   "size": 156,
+   "source": "src/game/func_80031250.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 31280,
+   "size": 88,
+   "source": "src/game/func_80006E30.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 25104,
+   "size": 68,
+   "source": "src/game/func_80005610.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 202140,
+   "size": 40,
+   "source": "src/game/func_8003099C.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 202544,
+   "size": 84,
+   "source": "src/game/func_80030B30.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 202180,
+   "size": 112,
+   "source": "src/game/func_800309C4.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 194500,
+   "size": 44,
+   "source": "src/game/func_8002EBC4.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 32028,
+   "size": 64,
+   "source": "src/game/func_8000711C.c",
+   "tool": "kmc+normalized",
+   "evidence": "kmc+normalized verifier completed run"
+  },
+  {
+   "rom_start": 296504,
+   "size": 488,
+   "source": "src/libultra/gu_position.c",
+   "tool": "kmc+padded",
+   "evidence": "kmc+padded verifier completed run"
+  },
+  {
+   "rom_start": 313340,
+   "size": 196,
+   "source": "src/libultra/al_resample_param.c",
+   "tool": "kmc+padded",
+   "evidence": "kmc+padded verifier completed run"
+  },
+  {
+   "rom_start": 308396,
+   "size": 388,
+   "source": "src/libultra/al_decode_chunk.c",
+   "tool": "kmc+padded",
+   "evidence": "kmc+padded verifier completed run"
+  },
+  {
+   "rom_start": 263916,
+   "size": 84,
+   "source": "src/game/calculate_runtime_sample_8003faec.c",
+   "tool": "kmc+padded",
+   "evidence": "kmc+padded verifier completed run"
+  },
+  {
+   "rom_start": 277460,
+   "size": 140,
+   "source": "src/game/select_runtime_buffer_80042fd4.c",
+   "tool": "kmc+padded",
+   "evidence": "kmc+padded verifier completed run"
+  },
+  {
+   "rom_start": 316424,
+   "size": 152,
+   "source": "src/libultra/al_do_mod_func.c",
+   "tool": "kmc+padded",
+   "evidence": "kmc+padded verifier completed run"
+  },
+  {
+   "rom_start": 67608,
+   "size": 288,
+   "source": "src/game/func_8000FC18.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 62200,
+   "size": 200,
+   "source": "src/game/func_8000E6F8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 173180,
+   "size": 300,
+   "source": "src/game/func_8002987C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 30520,
+   "size": 224,
+   "source": "src/game/func_80006B38.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 26092,
+   "size": 272,
+   "source": "src/game/func_800059EC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 30152,
+   "size": 280,
+   "source": "src/game/func_800069C8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 34768,
+   "size": 304,
+   "source": "src/game/func_80007BD0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 46620,
+   "size": 344,
+   "source": "src/game/func_8000AA1C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 56164,
+   "size": 232,
+   "source": "src/game/func_8000CF64.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 67028,
+   "size": 276,
+   "source": "src/game/func_8000F9D4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 77008,
+   "size": 252,
+   "source": "src/game/func_800120D0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 78348,
+   "size": 272,
+   "source": "src/game/func_8001260C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 158928,
+   "size": 332,
+   "source": "src/game/func_800260D0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 165296,
+   "size": 108,
+   "source": "src/game/func_800279B0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 171420,
+   "size": 308,
+   "source": "src/game/func_8002919C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 183280,
+   "size": 376,
+   "source": "src/game/func_8002BFF0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 192300,
+   "size": 332,
+   "source": "src/game/func_8002E32C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 202952,
+   "size": 256,
+   "source": "src/game/func_80030CC8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 205584,
+   "size": 112,
+   "source": "src/game/func_80031710.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 205828,
+   "size": 120,
+   "source": "src/game/func_80031804.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 207024,
+   "size": 208,
+   "source": "src/game/func_80031CB0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 214264,
+   "size": 120,
+   "source": "src/game/func_800338F8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 203208,
+   "size": 100,
+   "source": "src/game/func_80030DC8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 203540,
+   "size": 96,
+   "source": "src/game/func_80030F14.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 201252,
+   "size": 160,
+   "source": "src/game/func_80030624.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 202004,
+   "size": 136,
+   "source": "src/game/func_80030914.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 27196,
+   "size": 188,
+   "source": "src/game/func_80005E3C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 205696,
+   "size": 132,
+   "source": "src/game/func_80031780.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 202292,
+   "size": 128,
+   "source": "src/game/func_80030A34.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 214140,
+   "size": 124,
+   "source": "src/game/func_8003387C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 47380,
+   "size": 116,
+   "source": "src/game/func_8000AD14.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 28676,
+   "size": 100,
+   "source": "src/game/func_80006404.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 78620,
+   "size": 92,
+   "source": "src/game/func_8001271C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 87548,
+   "size": 1284,
+   "source": "src/game/render_active_scene_nodes.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 177620,
+   "size": 1648,
+   "source": "src/game/update_player_selection_screen.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 152368,
+   "size": 152,
+   "source": "src/game/func_80024730.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 150220,
+   "size": 132,
+   "source": "src/game/func_80023ECC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 93428,
+   "size": 68,
+   "source": "src/game/func_800160F4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 149380,
+   "size": 188,
+   "source": "src/game/func_80023B84.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 151680,
+   "size": 180,
+   "source": "src/game/func_80024480.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 126176,
+   "size": 136,
+   "source": "src/game/func_8001E0E0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 130828,
+   "size": 96,
+   "source": "src/game/func_8001F30C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 130984,
+   "size": 96,
+   "source": "src/game/func_8001F3A8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 131248,
+   "size": 96,
+   "source": "src/game/func_8001F4B0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 130416,
+   "size": 84,
+   "source": "src/game/func_8001F170.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 130280,
+   "size": 80,
+   "source": "src/game/func_8001F0E8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 137576,
+   "size": 80,
+   "source": "src/game/func_80020D68.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 130360,
+   "size": 56,
+   "source": "src/game/func_8001F138.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 153648,
+   "size": 228,
+   "source": "src/game/func_80024C30.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 152160,
+   "size": 208,
+   "source": "src/game/func_80024660.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 110860,
+   "size": 180,
+   "source": "src/game/func_8001A50C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 108700,
+   "size": 168,
+   "source": "src/game/func_80019C9C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 148416,
+   "size": 160,
+   "source": "src/game/func_800237C0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 97104,
+   "size": 148,
+   "source": "src/game/func_80016F50.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 108352,
+   "size": 148,
+   "source": "src/game/func_80019B40.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 126328,
+   "size": 140,
+   "source": "src/game/func_8001E178.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 92528,
+   "size": 132,
+   "source": "src/game/func_80015D70.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 131080,
+   "size": 116,
+   "source": "src/game/func_8001F408.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 138688,
+   "size": 228,
+   "source": "src/game/func_800211C0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 94260,
+   "size": 184,
+   "source": "src/game/func_80016434.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 111040,
+   "size": 156,
+   "source": "src/game/func_8001A5C0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 118472,
+   "size": 112,
+   "source": "src/game/func_8001C2C8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 118680,
+   "size": 108,
+   "source": "src/game/func_8001C398.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 142096,
+   "size": 336,
+   "source": "src/game/func_80021F10.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 119296,
+   "size": 284,
+   "source": "src/game/func_8001C600.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 121908,
+   "size": 188,
+   "source": "src/game/func_8001D034.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 105792,
+   "size": 172,
+   "source": "src/game/func_80019140.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 120548,
+   "size": 348,
+   "source": "src/game/func_8001CAE4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 147060,
+   "size": 236,
+   "source": "src/game/func_80023274.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 104924,
+   "size": 296,
+   "source": "src/game/func_80018DDC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 129516,
+   "size": 192,
+   "source": "src/game/func_8001EDEC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 113640,
+   "size": 164,
+   "source": "src/game/func_8001AFE8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 95424,
+   "size": 152,
+   "source": "src/game/func_800168C0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 95732,
+   "size": 80,
+   "source": "src/game/func_800169F4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 121340,
+   "size": 292,
+   "source": "src/game/func_8001CDFC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 144452,
+   "size": 520,
+   "source": "src/game/func_80022844.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 93496,
+   "size": 376,
+   "source": "src/game/func_80016138.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 137000,
+   "size": 524,
+   "source": "src/game/func_80020B28.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 148968,
+   "size": 412,
+   "source": "src/game/func_800239E8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 120152,
+   "size": 396,
+   "source": "src/game/func_8001C958.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 150812,
+   "size": 524,
+   "source": "src/game/func_8002411C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 147952,
+   "size": 464,
+   "source": "src/game/func_800235F0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 139648,
+   "size": 132,
+   "source": "src/game/func_80021580.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 126128,
+   "size": 48,
+   "source": "src/game/func_8001E0B0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 143016,
+   "size": 64,
+   "source": "src/game/func_800222A8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 119196,
+   "size": 100,
+   "source": "src/game/func_8001C59C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 151860,
+   "size": 200,
+   "source": "src/game/func_80024534.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 108868,
+   "size": 156,
+   "source": "src/game/func_80019D44.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 137656,
+   "size": 180,
+   "source": "src/game/func_80020DB8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 129744,
+   "size": 56,
+   "source": "src/game/func_8001EED0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 137524,
+   "size": 52,
+   "source": "src/game/func_80020D34.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 115632,
+   "size": 80,
+   "source": "src/game/func_8001B7B0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 140780,
+   "size": 592,
+   "source": "src/game/func_800219EC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 135848,
+   "size": 40,
+   "source": "src/game/func_800206A8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 119136,
+   "size": 60,
+   "source": "src/game/func_8001C560.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 129800,
+   "size": 144,
+   "source": "src/game/func_8001EF08.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 107400,
+   "size": 64,
+   "source": "src/game/func_80019788.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 134024,
+   "size": 88,
+   "source": "src/game/func_8001FF88.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 129144,
+   "size": 108,
+   "source": "src/game/func_8001EC78.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 129252,
+   "size": 172,
+   "source": "src/game/func_8001ECE4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 117200,
+   "size": 264,
+   "source": "src/game/func_8001BDD0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 144368,
+   "size": 84,
+   "source": "src/game/func_800227F0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 138160,
+   "size": 308,
+   "source": "src/game/func_80020FB0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 93872,
+   "size": 388,
+   "source": "src/game/func_800162B0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 100324,
+   "size": 232,
+   "source": "src/game/func_80017BE4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 99068,
+   "size": 444,
+   "source": "src/game/func_800176FC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 119676,
+   "size": 444,
+   "source": "src/game/func_8001C77C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 147296,
+   "size": 484,
+   "source": "src/game/func_80023360.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 112584,
+   "size": 512,
+   "source": "src/game/func_8001ABC8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 113096,
+   "size": 544,
+   "source": "src/game/func_8001ADC8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 135928,
+   "size": 380,
+   "source": "src/game/func_800206F8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 126468,
+   "size": 136,
+   "source": "src/game/func_8001E204.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 95992,
+   "size": 140,
+   "source": "src/game/func_80016AF8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 94896,
+   "size": 64,
+   "source": "src/game/func_800166B0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 94512,
+   "size": 384,
+   "source": "src/game/func_80016530.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 149568,
+   "size": 292,
+   "source": "src/game/func_80023C40.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 144040,
+   "size": 184,
+   "source": "src/game/func_800226A8.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 95280,
+   "size": 144,
+   "source": "src/game/func_80016830.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 95576,
+   "size": 156,
+   "source": "src/game/func_80016958.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 139780,
+   "size": 148,
+   "source": "src/game/func_80021604.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 140476,
+   "size": 304,
+   "source": "src/game/func_800218BC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 105580,
+   "size": 212,
+   "source": "src/game/func_8001906C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 146704,
+   "size": 164,
+   "source": "src/game/func_80023110.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 149860,
+   "size": 360,
+   "source": "src/game/func_80023D64.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 120896,
+   "size": 444,
+   "source": "src/game/func_8001CC40.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 137868,
+   "size": 292,
+   "source": "src/game/func_80020E8C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 138960,
+   "size": 404,
+   "source": "src/game/func_800212D0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 108108,
+   "size": 180,
+   "source": "src/game/func_80019A4C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 148576,
+   "size": 392,
+   "source": "src/game/func_80023860.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 150352,
+   "size": 460,
+   "source": "src/game/func_80023F50.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 124188,
+   "size": 1444,
+   "source": "src/game/func_8001D91C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 92660,
+   "size": 768,
+   "source": "src/game/func_80015DF4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 117624,
+   "size": 820,
+   "source": "src/game/func_8001BF78.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 126640,
+   "size": 800,
+   "source": "src/game/func_8001E2B0.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 90944,
+   "size": 1420,
+   "source": "src/game/func_80015740.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 128636,
+   "size": 508,
+   "source": "src/game/func_8001EA7C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 92384,
+   "size": 140,
+   "source": "src/game/build_transformed_matrix.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 136308,
+   "size": 692,
+   "source": "src/game/func_80020874.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 103516,
+   "size": 472,
+   "source": "src/game/func_8001885C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 122160,
+   "size": 156,
+   "source": "src/game/func_8001D130.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 122316,
+   "size": 296,
+   "source": "src/game/func_8001D1CC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 122612,
+   "size": 292,
+   "source": "src/game/func_8001D2F4.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  }
+ ]
+}

@@ -24,9 +24,10 @@ MANIFESTS = (
 )
 DEFAULT_OUTPUT = ROOT / "build/report.json"
 PROGRAM_ROM_END = 0x57E80
-PROGRAM_TEXT_BYTES = 0x4EEC0
-PROGRAM_INITIALIZED_DATA_BYTES = 0x7FC0
+PROGRAM_TEXT_BYTES = 0x4F0A8
+PROGRAM_INITIALIZED_DATA_BYTES = 0x7DD8
 ROM_BYTES = 0x1000000
+NONCODE_ROM_BYTES = ROM_BYTES - PROGRAM_TEXT_BYTES
 
 
 def manifest_ranges() -> list[tuple[int, int, str]]:
@@ -243,6 +244,18 @@ def build_report() -> dict:
                 "name": "Extracted assets",
                 "measures": data_category_measures(
                     asset_bytes, extracted_assets
+                ),
+            },
+            {
+                "id": "asset_roundtrip",
+                "name": "Byte-exact asset/resource round-trip",
+                "measures": data_category_measures(asset_bytes, asset_bytes),
+            },
+            {
+                "id": "noncode_roundtrip",
+                "name": "Byte-exact non-code ROM round-trip",
+                "measures": data_category_measures(
+                    NONCODE_ROM_BYTES, NONCODE_ROM_BYTES
                 ),
             },
             {
