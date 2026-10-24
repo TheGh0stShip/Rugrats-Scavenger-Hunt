@@ -433,3 +433,4 @@
 0x130B0	0x130	src/game/create_round_controller.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	363d1f8294194aaa5636bb92e4a31ae1e4d58b78731469b1480b926b894bfe12
 0x3662C	0x1A4	src/game/set_spin_object_motion.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	2d48f71737d152fb871dc8851acef988d7cf00750c31fe0301fb4ed8879d50da
 0x3690C	0x168	src/game/setup_spin_objects.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6b16814546ddd9f9c022fa896d151f959713fd39833e67a1158a54b40207438a
+0x367D0	0x12C	src/game/update_spin_object_targets.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cc19d4afe8a966ee8a4f2e610b2021547b5b5c89fb3b1e5d64e66c8fef290b33

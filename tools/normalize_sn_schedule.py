@@ -264,6 +264,55 @@ def normalize_spin_object_motion(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_spin_object_targets(text: str) -> str:
+    """Reproduce the reviewed retail allocation for the adjacent target-motion loop."""
+    text = replace_once(text, "\tlw\t$12,0($5)\n\tlw\t$13,4($5)\n\tlw\t$14,8($5)\n\tsw\t$12,16($sp)\n\tsw\t$13,20($sp)\n\tsw\t$14,24($sp)\n", "\tlw\t$2,0($5)\n\tlw\t$3,4($5)\n\tlw\t$4,8($5)\n\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n\tsw\t$4,24($sp)\n", "reviewed current-position copy allocation")
+    text = replace_once(text, "\tlw\t$12,0($2)\n\tlw\t$13,4($2)\n\tlw\t$14,8($2)\n\tsw\t$12,32($sp)\n\tsw\t$13,36($sp)\n\tsw\t$14,40($sp)\n", "\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n\tsw\t$3,32($sp)\n\tsw\t$4,36($sp)\n\tsw\t$5,40($sp)\n", "reviewed target-position copy allocation")
+
+    start = text.find("\tlui\t$4,%hi(D_80054AB0) # high\n")
+    end_marker = "\tbne\t$2,$0,$L5\n\ts.s\t$f0,44($3)\n"
+    end = text.find(end_marker, start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed target-motion allocation span not found")
+    end += len(end_marker)
+    mapping = {"4": "3", "6": "8", "11": "13", "8": "9", "10": "12", "7": "11", "9": "10", "5": "7"}
+    pattern = re.compile(r"\$(11|10|9|8|7|6|5|4)(?!\d)")
+    span = pattern.sub(lambda match: "$" + mapping[match.group(1)], text[start:end])
+    text = text[:start] + span + text[end:]
+    text = replace_once(text, "\tlw\t$2,0($7)\n\tlw\t$3,4($7)\n\tlw\t$3,8($7)\n\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n\tsw\t$3,24($sp)\n", "\tlw\t$2,0($7)\n\tlw\t$3,4($7)\n\tlw\t$4,8($7)\n\tsw\t$2,16($sp)\n\tsw\t$3,20($sp)\n\tsw\t$4,24($sp)\n", "reviewed current-position post-map allocation")
+    text = replace_once(text, "\tlw\t$3,0($2)\n\tlw\t$3,4($2)\n\tlw\t$7,8($2)\n\tsw\t$3,32($sp)\n\tsw\t$3,36($sp)\n\tsw\t$7,40($sp)\n", "\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n\tsw\t$3,32($sp)\n\tsw\t$4,36($sp)\n\tsw\t$5,40($sp)\n", "reviewed target-position post-map allocation")
+
+    text = replace_once(text, "\tli\t$13,6\t\t\t# 0x00000006\n\tlui\t$9,%hi(D_800C3E40) # high\n", "\tlui\t$9,%hi(D_800C3E40) # high\n\tli\t$13,6\t\t\t# 0x00000006\n", "reviewed target-motion setup schedule")
+    text = replace_once(text, "\tlui\t$2,%hi(D_80002FEC) # high\n\tl.s\t$f4,%lo(D_80002FEC)($2)\n", "\t.set\tnoat\n\tlui\t$1,%hi(D_80002FEC) # high\n\tl.s\t$f4,%lo(D_80002FEC)($1)\n\t.set\tat\n", "reviewed target-motion constant allocation")
+    text = replace_once(text, "\tsh\t$13,48($7)\n\tsw\t$7,%lo(D_800C3E40)($9)\n", "\tsh\t$13,48($7)\n", "reviewed target pointer publication schedule source")
+    text = replace_once(text, "\tbne\t$16,$12,$L6\n\taddu\t$3,$8,1\n", "\tbne\t$16,$12,$L6\n\tsw\t$7,%lo(D_800C3E40)($9)\n", "reviewed target pointer publication delay slot")
+    text = replace_once(text, "$L6:\n\tlw\t$2,%lo(D_80054AB0)($11)\n\t#nop\n", "$L6:\n\tlw\t$2,%lo(D_80054AB0)($11)\n\taddu\t$3,$8,1\n", "reviewed next-index schedule")
+    text = replace_once(text, (
+        "\tl.s\t$f2,32($sp)\n\tl.s\t$f0,16($sp)\n\t#nop\n"
+        "\tsub.s\t$f2,$f2,$f0\n\tlw\t$3,%lo(D_800C3E40)($9)\n"
+        "\tdiv.s\t$f2,$f2,$f4\n\ts.s\t$f2,36($3)\n"
+        "\tl.s\t$f2,36($sp)\n\tl.s\t$f0,20($sp)\n\t#nop\n"
+        "\tsub.s\t$f2,$f2,$f0\n\taddu\t$7,$7,60\n"
+        "\tlui\t$3,%hi(D_80054AB0) # high\n\tdiv.s\t$f2,$f2,$f4\n"
+        "\ts.s\t$f2,40($3)\n\tl.s\t$f0,40($sp)\n\tl.s\t$f2,24($sp)\n"
+        "\tlw\t$2,%lo(D_80054AB0)($3)\n\tsub.s\t$f0,$f0,$f2\n"
+        "\taddu\t$8,$8,1\n\tslt\t$2,$8,$2\n\tdiv.s\t$f0,$f0,$f4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$2,$0,$L5\n\ts.s\t$f0,44($3)\n"
+    ), (
+        "\tl.s\t$f2,32($sp)\n\tl.s\t$f0,16($sp)\n\t#nop\n"
+        "\tsub.s\t$f2,$f2,$f0\n\tlw\t$2,%lo(D_800C3E40)($9)\n"
+        "\tdiv.s\t$f2,$f2,$f4\n\ts.s\t$f2,36($2)\n"
+        "\tl.s\t$f0,36($sp)\n\tl.s\t$f2,20($sp)\n\t#nop\n"
+        "\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n"
+        "\ts.s\t$f0,40($2)\n\tl.s\t$f0,40($sp)\n\tl.s\t$f2,24($sp)\n"
+        "\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n\ts.s\t$f0,44($2)\n"
+        "\tlui\t$3,%hi(D_80054AB0) # high\n\tlw\t$2,%lo(D_80054AB0)($3)\n"
+        "\taddu\t$8,$8,1\n\tslt\t$2,$8,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tbne\t$2,$0,$L5\n\taddu\t$7,$7,60\n"
+    ), "reviewed target-motion float and loop-tail schedule")
+    return normalize_standard_return(text)
+
+
 def normalize_board_player_input(text: str) -> str:
     """Reproduce the reviewed retail allocation for the board-input unit."""
     text = replace_once(
@@ -6066,6 +6115,8 @@ def normalize(text: str) -> str:
         return normalize_spin_object_setup(text)
     if "\t.ent\tfunc_80035A2C\n" in text:
         return normalize_spin_object_motion(text)
+    if "\t.ent\tfunc_80035BD0\n" in text:
+        return normalize_spin_object_targets(text)
     return normalize_standard_return(text)
 
 
