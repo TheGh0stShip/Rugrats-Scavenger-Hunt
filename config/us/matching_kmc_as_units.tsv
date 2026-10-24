@@ -21,6 +21,8 @@
 0x51960	0x150	src/libultra/os_epi_raw_write_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	42bb7b5721eba5c6384d09cb5582be7eeb6b7d16a1a5e0f956e519f690c48071
 0x50350	0x80	src/libultra/os_pfs_get_one_channel_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	d12ddc8becaf3e7c4e8f3975fa781b111673639884b2e621168ffd5759dc4c19
 0x503D0	0xA0	src/libultra/os_pi_raw_read_io.c	-O2 -G0 -mips3 -mgp32 -mfp32	bb64f566dac9cd91bf77c4794815852388492e6472ce89fe9fe451c1b2059885
+0x50620	0xD0	src/libultra/os_pi_raw_start_dma.c	-O2 -G0 -mips3 -mgp32 -mfp32	8afdad588a024f3ebe5d11a9371b1c890d5b22b7db051cf27ce6deeeb981ae13
+0x506F0	0x1D0	src/libultra/os_epi_raw_start_dma.c	-O2 -G0 -mips3 -mgp32 -mfp32	1da717e404933759d64dc5d2ceadfd8cec906752ddf05780e74560565742f8d5
 0x501E0	0xE0	src/libultra/os_pfs_get_status.c	-O2 -G0 -mips3 -mgp32 -mfp32	9f586dcd2cf8b77278f1035e22085d0c41288c156145ea4af365df9dd9958c9a
 0x4E730	0x88	src/libultra/os_cont_start_read_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	44d55068f1237dfee85250a99c688f5e010ef6b67f6890f11050597fe8997998
 0x4E7B8	0x9C	src/libultra/os_cont_get_read_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	53ca0e5c214d20db7239bc25d88dbfbadc49d4889f6ecfb7d2b2e4d9787029b7
