@@ -28,7 +28,9 @@ def run(command: list[str], cwd: Path) -> None:
         raise RuntimeError(f"{Path(command[0]).name} failed: {detail}")
 
 
-def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
+def verify(
+    manifest: Path, project: Path, rom: Path, symbols: Path, diff_lines: int = 0
+) -> None:
     config = load_config(project)
     sn = config.toolchain("sn")
     if sn is None:
@@ -98,13 +100,19 @@ def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
                 Elf(obj.read_bytes()), rom_data,
                 lambda address: address - ROM_TO_VRAM,
                 vram, size, row_symbols, bases=bases,
-                infer=True, rodata_search=False, with_diff=False,
+                infer=True, rodata_search=False, with_diff=diff_lines > 0,
             )
             if not result.exact:
                 first = result.text.first_diff
+                detail = ""
+                if result.diff is not None:
+                    detail = "\n" + result.diff.summary()
+                    if diff_lines:
+                        detail += "\n" + "\n".join(result.diff.lines(diff_lines))
                 raise ValueError(
                     f"{source}: mismatch at +0x{first or 0:X}; "
                     f"compiled 0x{result.compiled_size:X}, expected 0x{size:X}"
+                    f"{detail}"
                 )
             checked += 1
             checked_bytes += size
@@ -118,10 +126,12 @@ def main() -> None:
     parser.add_argument("--project", type=Path, default=Path.cwd())
     parser.add_argument("--rom", type=Path, required=True)
     parser.add_argument("--symbols", type=Path, required=True)
+    parser.add_argument("--lines", type=int, default=0)
     args = parser.parse_args()
     project = args.project.resolve()
     verify(
-        args.manifest.resolve(), project, args.rom.resolve(), args.symbols.resolve()
+        args.manifest.resolve(), project, args.rom.resolve(), args.symbols.resolve(),
+        args.lines,
     )
 
 

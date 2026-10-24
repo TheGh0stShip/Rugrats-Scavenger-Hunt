@@ -831,6 +831,156 @@ def normalize_object_trigger_result(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_actor_state_dispatch(text: str) -> str:
+    text = replace_once(text, (
+        "\tbeq\t$2,$0,$L1\n\tlw\t$3,252($16)\n\t#nop\n"
+        "\tsltu\t$2,$3,13\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L1\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$3,252($16)\n\tsltu\t$2,$3,13\n"
+    ), "reviewed actor-dispatch early return scheduling")
+    for value in (523, 514, 518):
+        text = replace_once(
+            text,
+            f"\tli\t$4,{value}\t\t\t# 0x{value:08x}\n",
+            f"\tli\t$3,{value}\t\t\t# 0x{value:08x}\n",
+            "reviewed actor-dispatch resource identifier register",
+        )
+    text = replace_once(text, (
+        "$L7:\n\tbeq\t$2,$4,$L10\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001ECE4\n\tli\t$5,56\t\t\t# 0x00000038\n"
+    ), (
+        "$L7:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$3,$L10\n\tmove\t$4,$3\n"
+        "\tjal\tfunc_8001ECE4\n\tli\t$5,56\t\t\t# 0x00000038\n"
+    ), "reviewed actor-dispatch resource call registers")
+    text = replace_once(text, (
+        "$L11:\n\tlw\t$2,248($16)\n"
+        "\tli\t$5,4\t\t\t# 0x00000004\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$5,$L12\n\tlui\t$2,%hi(D_80052F18) # high\n"
+    ), (
+        "$L11:\n\tli\t$5,4\t\t\t# 0x00000004\n"
+        "\tlw\t$2,248($16)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$5,$L12\n\taddu\t$4,$16,304\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+    ), "reviewed actor-dispatch selection scheduling")
+    text = replace_once(text, (
+        "$L12:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80021580\n\taddu\t$4,$16,304\n"
+    ), (
+        "$L12:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80021580\n\tnop\n"
+    ), "reviewed actor-dispatch selection call scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_selection_menu(text: str) -> str:
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L2\n\tlui\t$2,%hi(D_8000193C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_80001930) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L3\n\taddiu\t$4,$2,%lo(D_80001930) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\taddiu\t$4,$2,%lo(D_8000193C) # low\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbnel\t$3,$2,$L2\n\tlui\t$4,%hi(D_8000193C) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$4,%hi(D_80001930) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L3\n\taddiu\t$4,$4,%lo(D_80001930) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n\taddiu\t$4,$4,%lo(D_8000193C) # low\n"
+    ), "reviewed selection-menu string branch")
+    text = replace_once(text, (
+        "\tlw\t$2,%lo(D_800529F0)($16)\n\t#nop\n"
+        "\tlw\t$3,284($2)\n"
+    ), (
+        "\tlw\t$4,%lo(D_800529F0)($16)\n\t#nop\n"
+        "\tlw\t$3,284($4)\n"
+    ), "reviewed selection-menu player register")
+    text = replace_once(
+        text, "\tbne\t$3,$2,$L9\n",
+        "\tbne\t$3,$2,$L_player_ready\n",
+        "reviewed selection-menu player reuse branch",
+    )
+    text = replace_once(text, (
+        "$L9:\n\tlw\t$4,%lo(D_800529F0)($16)\n"
+        "\tjal\tfunc_800166B0\n"
+    ), (
+        "$L9:\n\tlw\t$4,%lo(D_800529F0)($16)\n"
+        "$L_player_ready:\n\tjal\tfunc_800166B0\n"
+    ), "reviewed selection-menu shared player call")
+    return normalize_standard_return(text)
+
+
+def normalize_actor_scale_update(text: str) -> str:
+    text = replace_once(text, (
+        "\tlui\t$3,%hi(D_80057D40) # high\n"
+        "\tlw\t$2,244($16)\n"
+        "\tlw\t$3,%lo(D_80057D40)($3)\n\t#nop\n"
+        "\txor\t$2,$2,$3\n\tsltu\t$17,$2,1\n"
+    ), (
+        "\tlui\t$2,%hi(D_80057D40) # high\n"
+        "\tlw\t$3,244($16)\n"
+        "\tlw\t$2,%lo(D_80057D40)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeql\t$3,$2,$L_scale_flag_set\n"
+        "\tli\t$17,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+        "$L_scale_flag_set:\n"
+    ), "reviewed actor-scale equality test")
+    text = replace_once(
+        text, "\tbne\t$16,$2,$L2\n",
+        "\tbne\t$16,$2,$L_scale_ready\n",
+        "reviewed actor-scale pointer mismatch target",
+    )
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbnel\t$2,$0,$L2\n\tli\t$17,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L2:\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L_scale_ready\n\tnop\n"
+        "$L2:\n\tli\t$17,1\t\t\t# 0x00000001\n"
+        "$L_scale_ready:\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "reviewed actor-scale selected-object flag test")
+    text = replace_once(
+        text, "\tli.s\t$f0,1.00000000000000000000e0\n",
+        "\tl.s\t$f0,$LC_scale_full\n",
+        "reviewed actor-scale full-scale constant",
+    )
+    text = replace_once(
+        text, "\tli.d\t$f2,1.00000000000000005551e-1\n",
+        "\tl.d\t$f2,$LC_scale_up\n",
+        "reviewed actor-scale increase constant",
+    )
+    text = replace_once(
+        text, "\tli.d\t$f2,2.00000000000000011102e-1\n",
+        "\tl.d\t$f2,$LC_scale_down\n",
+        "reviewed actor-scale decrease constant",
+    )
+    text = replace_once(text, "\t.end\tfunc_80020E8C\n", (
+        "\t.end\tfunc_80020E8C\n"
+        "\t.rdata\n\t.align\t2\n"
+        "$LC_scale_full:\n\t.word\t0x3f800000\n"
+        "$LC_scale_up:\n\t.word\t0x3fb99999\n\t.word\t0x9999999a\n"
+        "$LC_scale_down:\n\t.word\t0x3fc99999\n\t.word\t0x9999999a\n"
+    ), "reviewed actor-scale literal pool")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -906,6 +1056,12 @@ def normalize(text: str) -> str:
         return normalize_timed_object_result(text)
     if "\t.ent\tfunc_80023D64\n" in text:
         return normalize_object_trigger_result(text)
+    if "\t.ent\tfunc_800212D0\n" in text:
+        return normalize_actor_state_dispatch(text)
+    if "\t.ent\tfunc_8001CC40\n" in text:
+        return normalize_selection_menu(text)
+    if "\t.ent\tfunc_80020E8C\n" in text:
+        return normalize_actor_scale_update(text)
     return normalize_standard_return(text)
 
 
