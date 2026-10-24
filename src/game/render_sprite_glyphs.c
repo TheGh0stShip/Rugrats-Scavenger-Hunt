@@ -122,18 +122,17 @@ void func_80032A20(Text_80032A20 *arg, s32 x, s32 y) {
             {
                 Gfx *gp = D_80077830++;
                 gp->w0 = 0xF3000000;
-                q = (s32)(w & 0xFF) / 4;
                 dxtNum = 0x800;
-                if (q > 0) {
-                    dxtNum = q + 0x7FF;
+                if ((s32)(w & 0xFF) / 4 > 0) {
+                    dxtNum = (s32)(w & 0xFF) / 4 + 0x7FF;
                 }
                 lrs = (s32)((w & 0xFF) * (h & 0xFF)) - 1;
                 if (lrs >= 0x800) {
                     lrs = 0x7FF;
                 }
                 wb = ((lrs & 0xFFF) << 12) | 0x07000000;
-                if (q > 0) {
-                    gp->w1 = wb | ((dxtNum / q) & 0xFFF);
+                if ((s32)(w & 0xFF) / 4 > 0) {
+                    gp->w1 = wb | ((dxtNum / ((s32)(w & 0xFF) / 4)) & 0xFFF);
                 } else {
                     gp->w1 = wb | (dxtNum & 0xFFF);
                 }
