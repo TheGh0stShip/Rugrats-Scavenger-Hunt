@@ -157,3 +157,5 @@
 0x50040	0x1A0	src/libultra/os_pack_ram_write_data.c	-O2 -G0 -mips3 -mgp32 -mfp32	e6bb0ea9a31fc746c79d42ad568469a8ac0d68023012e29184a64a637f5cdc46
 0x4FA50	0x234	src/libultra/os_cont_ram_read.c	-O2 -G0 -mips3 -mgp32 -mfp32	ff0e23e8404536fa735e2b0a8043ed0813f0bd44123a66507de866488dc1f434
 0x4FE20	0x220	src/libultra/os_cont_ram_write.c	-O2 -G0 -mips3 -mgp32 -mfp32	5cc6d6fd0279ab65607bd1d29c40d922128f41a8a429d560f8d75f286930529c
+0x4F150	0x1C0	src/libultra/os_motor_stop.c	-O2 -G0 -mips3 -mgp32 -mfp32	7e260b3dc192f5fe31957b5cfed5b889cdf24fafc5b2a4eb0f57b2409f3e7f26
+0x4F310	0x1C0	src/libultra/os_motor_start.c	-O2 -G0 -mips3 -mgp32 -mfp32	e98c4103dcc63df60cdeb74a61a217c82649d5b4c047efde0519694a28b0e4cd
