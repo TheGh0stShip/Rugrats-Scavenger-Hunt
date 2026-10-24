@@ -1,5 +1,8 @@
 # KMC GCC 2.7.2 units matching with the original KMC assembler scheduling
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x3C220	0x14C	src/libmus/set_envelope_command.c	--section-base=.rodata:0x800032E0 -O2 -G0 -mips3 -mgp32 -mfp32 -finline-functions	eb2456d32e47f54ca41262f51da7835a0ada50c0475d69e255687854011114a3
+0x3CA38	0xCC	src/libmus/stop_channels.c	-O2 -G0 -mips3 -mgp32 -mfp32	546d80d1ffa506cdaf7fcdd9136d6331d7bbe542758cf0c22362d2a366732ecd
+0x3CB84	0xB4	src/libmus/stop_handle.c	-O2 -G0 -mips3 -mgp32 -mfp32	1df19bc685c2d57949456de3d512e587d640405ada70c7aa0292225cc1031dcf
 0x3C36C	0x288	src/libmus/initialize.c	-O2 -G0 -mips3 -mgp32 -mfp32	b311a32344cde282994c7bf82f53f109b17739f16891bf205bb1086be875cf98
 0x3DC90	0x154	src/libmus/set_volume_and_pan.c	-O2 -G0 -mips3 -mgp32 -mfp32	05f750b8c21f123728dfc4e6707c71b3e9ffef350d09b4f951036f1c7e6abe6d
 0x3E650	0x198	src/libmus/remap_pointer_bank.c	--section-base=.rodata:0x80003378 -O2 -G0 -mips3 -mgp32 -mfp32	495e55bd23ae9c1a42ee4414ecfe786b530c196b96ce4afbc8084c2edc0fce33
