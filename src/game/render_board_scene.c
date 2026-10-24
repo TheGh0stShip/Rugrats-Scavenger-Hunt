@@ -166,15 +166,16 @@ void func_80026824(void) {
     }
     if (func_8000B8D8()) {
         if (D_80052F18.mode == 0) {
-            main = &func_800197C8(0x54)->model;
-            flags = 0x20000000;
+            resId = 0x54;
         } else if (D_80052F18.mode == 1) {
-            main = &func_800197C8(0x55)->model;
-            flags = 0x20000000;
+            resId = 0x55;
         } else {
             main = 0;
-            flags = 0x20000000;
+            goto have_main;
         }
+        main = &func_800197C8(resId)->model;
+    have_main:
+        flags = 0x20000000;
         colStart = 0;
         rowStart = 0;
         rowEnd = 0;
