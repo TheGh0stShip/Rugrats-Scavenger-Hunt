@@ -39,3 +39,4 @@
 0x13BB0	0x18C	src/game/initialize_resource_tables_80012fb0.S	-mips3 -G0	065ebc57f4c4183c81af9788610c268d4d49494700d01d39b2f15360d76fab2a
 0x2C130	0x1B0	src/game/prepare_menu_transition_8002b530.S	-mips3 -G0	e369713d57d4830c00a77e0d981bce8aa01d87469b97d8d477a5324d3418c9e3
 0x1C1FC	0x1B4	src/game/prepare_player_menu_8001b5fc.S	-mips3 -G0	f2a8afaeada8920533cd689cff438ae390a3abe2b43dfe5854a560c9e554feaf
+0x58BC	0x534	src/game/debug_stub_exception_handler.S	-mips3 -G0	50982995e1ee1a16a1ffcddd7e2bde57fcb5c50e52861507eb47a31b2eac4bf5

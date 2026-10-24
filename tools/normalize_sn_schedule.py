@@ -6145,6 +6145,106 @@ def normalize_board_event_dispatch(text: str) -> str:
     )
 
 
+def normalize_player_scoreboard(text: str) -> str:
+    text = replace_once(text, (
+        "\tsw\t$0,32($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L9\n"
+        "\tsw\t$0,36($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L9\n"
+        "\tsw\t$0,32($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsw\t$0,36($sp)\n"
+    ), "reviewed scoreboard loop-state initialization")
+    text = replace_once(text, (
+        "\tlw\t$2,36($sp)\n\tlw\t$4,248($22)\n\taddu\t$17,$2,83\n"
+    ), (
+        "\tlw\t$8,36($sp)\n\tlw\t$4,248($22)\n\taddu\t$17,$8,83\n"
+    ), "reviewed scoreboard first row coordinate")
+    old = (
+        "\tli\t$4,255\t\t\t# 0x000000ff\n"
+        "\tmove\t$5,$4\n\tmove\t$6,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80033144\n\tmove\t$7,$4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,36($sp)\n"
+        "\tli\t$4,41\t\t\t# 0x00000029\n"
+    )
+    new = (
+        "\tlw\t$8,36($sp)\n"
+        "\tli\t$4,255\t\t\t# 0x000000ff\n"
+        "\tmove\t$5,$4\n\tmove\t$6,$4\n\tmove\t$7,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80033144\n\taddu\t$17,$8,81\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$4,41\t\t\t# 0x00000029\n"
+    )
+    text = replace_once(text, old, new, "reviewed scoreboard selected-player coordinate")
+    text = replace_once(text, (
+        "\tli\t$4,41\t\t\t# 0x00000029\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80032870\n\taddu\t$17,$2,81\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80032870\n\tli\t$4,41\t\t\t# 0x00000029\n"
+    ), "reviewed scoreboard resource lookup delay slot")
+
+    start = "$L24:\n"
+    end = "\tlw\t$2,36($sp)\n\tlui\t$3,%hi(D_80057D5C) # high\n"
+    if text.count(start) != 1 or text.count(end) != 1:
+        raise ValueError("reviewed scoreboard inner-loop bounds not found")
+    head, rest = text.split(start, 1)
+    body, tail = rest.split(end, 1)
+    body = body.replace("$fp", "$R30").replace("$23", "$fp").replace("$R30", "$23")
+    text = head + start + body + end + tail
+    text = replace_once(text, (
+        "$L24:\n\tmove\t$21,$20\n\tlw\t$23,36($sp)\n\tmove\t$19,$22\n"
+    ), (
+        "$L24:\n\tlw\t$23,36($sp)\n\tmove\t$21,$20\n\tmove\t$19,$22\n"
+    ), "reviewed scoreboard row-coordinate load placement")
+
+    text = replace_once(text, (
+        "\tjal\tfunc_80013724\n\taddu\t$19,$19,2\n"
+    ), (
+        "\tjal\tfunc_80013724\n\taddu\t$17,$23,87\n"
+    ), "reviewed scoreboard text-coordinate refresh")
+    text = replace_once(text, (
+        "\tlh\t$6,504($22)\n\taddu\t$20,$20,1\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8003A57C\n\taddu\t$21,$21,56\n"
+    ), (
+        "\tlh\t$6,504($22)\n\taddu\t$21,$21,56\n\taddu\t$19,$19,2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8003A57C\n\taddu\t$20,$20,1\n"
+    ), "reviewed scoreboard inner-loop increments")
+    text = replace_once(text, "\tbne\t$2,$0,$L16\n\taddu\t$17,$23,87\n",
+                        "\tbnel\t$2,$0,$L16\n\taddu\t$17,$23,87\n",
+                        "reviewed scoreboard likely loop branch")
+    text = replace_once(text, (
+        "\tlw\t$2,36($sp)\n"
+        "\tlui\t$3,%hi(D_80057D5C) # high\n"
+        "\taddu\t$2,$2,24\n\tsw\t$2,36($sp)\n"
+        "\tlw\t$2,32($sp)\n"
+        "\tlw\t$3,%lo(D_80057D5C)($3)\n"
+        "\taddu\t$2,$2,1\n\tsw\t$2,32($sp)\n"
+        "\tslt\t$2,$2,$3\n\tbne\t$2,$0,$L11\n"
+    ), (
+        "\tlw\t$8,36($sp)\n"
+        "\tlui\t$2,%hi(D_80057D5C) # high\n"
+        "\taddu\t$8,$8,24\n\tsw\t$8,36($sp)\n"
+        "\tlw\t$8,32($sp)\n"
+        "\tlw\t$2,%lo(D_80057D5C)($2)\n"
+        "\taddu\t$8,$8,1\n\tslt\t$2,$8,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L11\n\tsw\t$8,32($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "reviewed scoreboard outer-loop update")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800124B0\n" in text:
         return normalize_round_controller_create(text)
@@ -6520,6 +6620,8 @@ def normalize(text: str) -> str:
         return normalize_actor_event_completion(text)
     if "\t.ent\tfunc_8001FC2C\n" in text:
         return normalize_frame_display_lists(text)
+    if "\t.ent\tfunc_8002E930\n" in text:
+        return normalize_player_scoreboard(text)
     return normalize_standard_return(text)
 
 
