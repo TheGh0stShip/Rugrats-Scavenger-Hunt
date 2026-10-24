@@ -8,3 +8,4 @@
 0x44DCC	0x6C	src/game/update_stream_progress_800441cc.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	a7a7afd8f68192bf01e73d89427f486eeb287d511ae4e6c41cc4923ef1ef4561
 0x45068	0xE8	src/runtime/gsm_synthesis_driver.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	93b508a95d3670185292be56277d19e01a7dc5e20a67ef71608cb29575ff00c8
 0x44E70	0x1F8	src/runtime/gsm_decode_lar.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	75b21a439d56b9ad48aea7be0a31105dc171ef36612233422f25822bbf281f9a
+0x45150	0x290	src/runtime/gsm_frame_unpack.c	-O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	289a4129db05aafae15ee6e02bac1bfd24bf9dd4fb1cdf28ddf8e78a92a8bc97
