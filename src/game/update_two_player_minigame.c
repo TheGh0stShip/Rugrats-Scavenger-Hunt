@@ -66,7 +66,7 @@ extern s32 D_80054AA4;
 extern s32 D_80054AA8;
 extern Vec3f D_80054A0C[3];
 extern Vec3f D_80054A30[];
-extern s32 D_800538D8[6];
+extern s32 D_80053860[36];
 extern char *D_800535E8[];
 extern s16 D_80059DB8[];
 extern Pad_80058B58 D_80058B58[];
@@ -412,9 +412,11 @@ void func_80034978(void) {
             prize->unk100 = prizeAngle;
         }
         if (i == 4) {
+            s32 *spawnValues = D_80053860;
+
             D_80052F04->unk100 = D_80059DB8[D_800C3E2C] * 90;
             for (k = 0; k < 6; k++) {
-                o = func_800112D0(0x1AB, D_800538D8[k], -0x168, -0xFA0, 0, k * 5);
+                o = func_800112D0(0x1AB, spawnValues[k + 30], -0x168, -0xFA0, 0, k * 5);
                 o->unkE0 = func_800055A4(D_80059DB8[D_800C3E2C]);
             }
             D_80054AA8 = 0x3C;
