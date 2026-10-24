@@ -347,15 +347,15 @@ void func_80034978(void) {
                 D_800C3E2C = 0;
             }
             break;
-        case 0x1A3:
-            if (D_800C3DB0[1].actorId == 0x1A2) {
+        case 0x1A4:
+            if (D_800C3DB0[1].actorId == 0x1A3) {
                 D_800C3E2C = 1;
             } else {
                 D_800C3E2C = 0;
             }
             break;
-        case 0x1A4:
-            if (D_800C3DB0[1].actorId == 0x1A3) {
+        case 0x1A3:
+            if (D_800C3DB0[1].actorId == 0x1A2) {
                 D_800C3E2C = 1;
             } else {
                 D_800C3E2C = 0;

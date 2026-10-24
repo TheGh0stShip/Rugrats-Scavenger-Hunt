@@ -4722,6 +4722,32 @@ def normalize_two_player_minigame(text: str) -> str:
         "\tbeq\t$3,$4,$L89\n\tmove\t$18,$0\n",
         "two-player pairing case 2",
     )
+    text = replace_once(
+        text,
+        ("\tlw\t$5,4($16)\n\t#nop\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbeq\t$5,$0,$L62\n\tnop\n"
+         "\t.set\tmacro\n\t.set\treorder\n\n"
+         "\tlw\t$4,60($16)\n\t#nop\n"
+         "\tbeq\t$4,$0,$L62\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbne\t$5,$4,$L79\n"),
+        ("\tlw\t$6,4($16)\n\t#nop\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbeq\t$6,$0,$L62\n\tnop\n"
+         "\t.set\tmacro\n\t.set\treorder\n\n"
+         "\tlw\t$5,60($16)\n\t#nop\n"
+         "\tbeq\t$5,$0,$L62\n"
+         "\t.set\tnoreorder\n\t.set\tnomacro\n"
+         "\tbne\t$6,$5,$L79\n"),
+        "two-player actor selection registers",
+    )
+    text = replace_once(
+        text,
+        "\taddu\t$2,$5,$4\n\taddu\t$3,$2,-836\n",
+        "\taddu\t$2,$6,$5\n\taddu\t$3,$2,-836\n",
+        "two-player pairing operands",
+    )
     # Case 2 has already been removed by the equality above, making <2 and
     # <3 equivalent here.  Retail used the latter bound.
     text = replace_once(
@@ -4790,6 +4816,84 @@ def normalize_two_player_minigame(text: str) -> str:
     )
     for index, (old, new) in enumerate(copies):
         text = replace_once(text, old, new, f"two-player Vec3 copy {index}")
+
+    text = replace_once(
+        text,
+        ("\tlw\t$10,0($2)\n\tlw\t$11,4($2)\n\tlw\t$12,8($2)\n"
+         "\tsw\t$10,28($16)\n\tsw\t$11,32($16)\n\tsw\t$12,36($16)\n"),
+        ("\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n"
+         "\tsw\t$3,28($16)\n\tsw\t$4,32($16)\n\tsw\t$5,36($16)\n"),
+        "two-player separated destination copy",
+    )
+    separated_start = "$L169:\n"
+    separated_end = "\n\tj\t$L62\n$L98:"
+    if text.count(separated_start) != 1 or text.count(separated_end) != 1:
+        raise ValueError("reviewed separated interpolation loop not found")
+    before_separated, separated_rest = text.split(separated_start, 1)
+    separated, after_separated = separated_rest.split(separated_end, 1)
+    separated = separated_start + separated
+    separated = replace_once(
+        separated,
+        "\ttrunc.w.s $f12,$f4,$9\n\tmfc1\t$2,$f12\n",
+        "\ttrunc.w.s $f10,$f4,$9\n\tmfc1\t$2,$f10\n",
+        "two-player separated first conversion",
+    )
+    separated = replace_once(
+        separated,
+        "\ttrunc.w.s $f12,$f6,$9\n\tmfc1\t$2,$f12\n",
+        "\ttrunc.w.s $f0,$f6,$9\n\tmfc1\t$2,$f0\n",
+        "two-player separated second conversion",
+    )
+    separated = replace_once(
+        separated,
+        "\ttrunc.w.s $f12,$f2,$9\n\tmfc1\t$2,$f12\n",
+        "\ttrunc.w.s $f0,$f2,$9\n\tmfc1\t$2,$f0\n",
+        "two-player separated third conversion",
+    )
+    text = before_separated + separated + separated_end + after_separated
+
+    # Alpha-rename the complete shared-destination interpolation loop.  This
+    # is one live range: retail uses a2/a3/t0 for the destination, duration
+    # base, and source, while this compiler build uses a0/a1/a2.  Temporary
+    # structure-copy registers differ in the same region.  Rename them as a
+    # group so pointer and copied-value lifetimes cannot collide.
+    loop_start = ("\tmove\t$17,$0\n"
+                  "\tlui\t$2,%hi(D_80054A30) # high\n")
+    loop_end = "\n\tj\t$L62\n$L79:"
+    if text.count(loop_start) != 1 or text.count(loop_end) != 1:
+        raise ValueError("reviewed two-player interpolation loop not found")
+    head, rest = text.split(loop_start, 1)
+    loop, tail = rest.split(loop_end, 1)
+    loop = loop_start + loop
+    gpr_map = {4: 6, 5: 7, 6: 8, 9: 2, 10: 3, 11: 4}
+    gpr = re.compile(r"\$(\d+)\b")
+
+    def rename_interpolation_line(line: str) -> str:
+        if line.startswith("\ttrunc.w.s"):
+            return line
+        return gpr.sub(lambda m: "$" + str(gpr_map.get(int(m.group(1)), int(m.group(1)))), line)
+
+    loop = "\n".join(rename_interpolation_line(line) for line in loop.split("\n"))
+    loop = loop.replace("$f10", "$f12")
+    loop = replace_once(
+        loop,
+        "\ttrunc.w.s $f12,$f4,$9\n\tmfc1\t$2,$f12\n",
+        "\ttrunc.w.s $f10,$f4,$9\n\tmfc1\t$2,$f10\n",
+        "two-player first interpolation conversion",
+    )
+    loop = replace_once(
+        loop,
+        "\ttrunc.w.s $f12,$f6,$9\n\tmfc1\t$2,$f12\n",
+        "\ttrunc.w.s $f0,$f6,$9\n\tmfc1\t$2,$f0\n",
+        "two-player second interpolation conversion",
+    )
+    loop = replace_once(
+        loop,
+        "\ttrunc.w.s $f12,$f2,$9\n\tmfc1\t$2,$f12\n",
+        "\ttrunc.w.s $f0,$f2,$9\n\tmfc1\t$2,$f0\n",
+        "two-player third interpolation conversion",
+    )
+    text = head + loop + loop_end + tail
     return normalize_standard_return(text)
 
 
