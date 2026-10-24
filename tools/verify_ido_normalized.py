@@ -31,8 +31,9 @@ def run(command: list[str], cwd: Path) -> None:
 
 def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
     config = load_config(project)
-    ido = config.toolchain("ido53")
-    if ido is None:
+    ido53 = config.toolchain("ido53")
+    ido71 = config.toolchain("ido71")
+    if ido53 is None:
         raise SystemExit("IDO 5.3 toolchain not found")
     symbol_map = load([symbols])
     rom_data = rom.read_bytes()
@@ -53,9 +54,14 @@ def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
             flags: list[str] = []
             bases: dict[str, int] = {}
             unit = source.stem
+            ido = ido53
             for flag in raw_flags:
                 if flag.startswith("--normalizer-unit="):
                     unit = flag.split("=", 1)[1]
+                elif flag == "--ido-version=7.1":
+                    if ido71 is None:
+                        raise SystemExit("IDO 7.1 toolchain not found")
+                    ido = ido71
                 elif flag.startswith("--section-base="):
                     section, value = flag.split("=", 1)[1].split(":", 1)
                     bases[section] = int(value, 0)
@@ -73,15 +79,38 @@ def verify(manifest: Path, project: Path, rom: Path, symbols: Path) -> None:
             text = elf.section(".text")
             if text is None:
                 raise ValueError(f"{source}: object has no .text section")
-            if unit != "func_80043E54":
-                raise ValueError(f"no reviewed IDO normalization for {unit}")
-            first, second = struct.unpack_from(">II", text.data, 0x324)
-            if (first, second) != (0xAE0C11D8, 0x01808825):
-                raise ValueError(f"{source}: reviewed scheduling words changed")
-            if any(offset in (0x324, 0x328) for offset, *_ in elf.relocations(text)):
-                raise ValueError(f"{source}: reviewed scheduling words are relocations")
             body = bytearray(text.data)
-            struct.pack_into(">II", body, 0x324, second, first)
+            if unit == "func_80043E54":
+                first, second = struct.unpack_from(">II", text.data, 0x324)
+                if (first, second) != (0xAE0C11D8, 0x01808825):
+                    raise ValueError(f"{source}: reviewed scheduling words changed")
+                if any(offset in (0x324, 0x328) for offset, *_ in elf.relocations(text)):
+                    raise ValueError(f"{source}: reviewed scheduling words are relocations")
+                struct.pack_into(">II", body, 0x324, second, first)
+            elif unit == "func_800447E0":
+                reviewed = {
+                    0x05C: (0x24050001, 0x24040001),
+                    0x060: (0x30440001, 0x304B0001),
+                    0x08C: (0x03022024, 0x03025824),
+                    0x094: (0x10650008, 0x10640008),
+                    0x09C: (0x00A3C823, 0x0083C823),
+                    0x0B4: (0x00992025, 0x01795825),
+                    0x0B8: (0x00A37823, 0x00837823),
+                    0x0C4: (0x10800025, 0x11600025),
+                    0x200: (0xAFA30054, 0xAFA30058),
+                    0x210: (0x8FA30054, 0x8FA30058),
+                    0xEAC: (0xAFA30054, 0xAFA30058),
+                    0xED0: (0x8FA30054, 0x8FA30058),
+                }
+                relocations = {offset for offset, *_ in elf.relocations(text)}
+                for offset, (before, after) in reviewed.items():
+                    if struct.unpack_from(">I", text.data, offset)[0] != before:
+                        raise ValueError(f"{source}: reviewed word at 0x{offset:X} changed")
+                    if offset in relocations:
+                        raise ValueError(f"{source}: reviewed word at 0x{offset:X} is a relocation")
+                    struct.pack_into(">I", body, offset, after)
+            else:
+                raise ValueError(f"no reviewed IDO normalization for {unit}")
             text.data = bytes(body)
 
             result = compare_object(

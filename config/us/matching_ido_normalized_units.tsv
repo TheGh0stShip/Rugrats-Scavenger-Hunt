@@ -1,3 +1,4 @@
 # IDO 5.3 C units with reviewed scheduling normalization
 # ROM_START SIZE SOURCE FLAGS SHA256
 0x44A54	0x378	src/runtime/stream_service_80043e54.c	--normalizer-unit=func_80043E54 -O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	9a496bfae656c6a6177ba82d3df03415831ad0274047d1669b92332cc7dda89a
+0x453E0	0xF00	src/runtime/gsm_stream_decode.c	--normalizer-unit=func_800447E0 --ido-version=7.1 -O2 -mips2 -non_shared -Xcpluscomm -Wab,-r4300_mul -G 0	7c99de82b96b88cd6b9013c7992a337dd391a97d58aa1cd3a9095ee799fe416e
