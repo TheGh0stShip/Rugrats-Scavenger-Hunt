@@ -5094,6 +5094,51 @@ def normalize_board_scene_renderer(text: str) -> str:
     return head + modulo_start + modulo + modulo_end + tail
 
 
+def normalize_camera_follow_math(text: str) -> str:
+    """Use the retail allocator's registers for the modulo/divide tail."""
+    old = (
+        "\tsubu\t$5,$2,$3\n\tsll\t$3,$5,1\n\taddu\t$3,$3,$5\n"
+        "\tsll\t$2,$3,4\n\tsubu\t$2,$2,$3\n\tsll\t$2,$2,3\n"
+        "\tsubu\t$5,$4,$2\n\tli\t$2,180\t\t\t# 0x000000b4\n"
+        "\tsubu\t$4,$2,$5\n\tmtc1\t$4,$f0\n"
+    )
+    new = (
+        "\tsubu\t$2,$2,$3\n\tsll\t$3,$2,1\n\taddu\t$3,$3,$2\n"
+        "\tsll\t$2,$3,4\n\tsubu\t$2,$2,$3\n\tsll\t$2,$2,3\n"
+        "\tsubu\t$3,$4,$2\n\tli\t$2,180\t\t\t# 0x000000b4\n"
+        "\tsubu\t$5,$2,$3\n\tmtc1\t$5,$f0\n"
+    )
+    text = replace_once(text, old, new, "reviewed camera modulo registers")
+    old = (
+        "\tlw\t$3,%lo(D_80052BE8)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$L20\n\tmult\t$3,$4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L15:\n"
+        "\tlw\t$3,%lo(D_80052BE8)($2)\n\taddu\t$2,$5,-180\n"
+        "\tmult\t$3,$2\n$L20:\n\tmflo\t$3\n\t#nop\n\t#nop\n"
+        "\tmult\t$3,$6\n\tmfhi\t$6\n\t#nop\n\t#nop\n"
+        "\taddu\t$2,$6,$3\n\tsra\t$2,$2,7\n\tsra\t$3,$3,31\n"
+        "\tsubu\t$2,$2,$3\n\taddu\t$2,$2,2400\n"
+    )
+    new = (
+        "\tlw\t$2,%lo(D_80052BE8)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$L20\n\tmult\t$2,$5\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L15:\n"
+        "\tlw\t$2,%lo(D_80052BE8)($2)\n\taddu\t$3,$3,-180\n"
+        "\tmult\t$2,$3\n$L20:\n\tmflo\t$2\n\t#nop\n\t#nop\n"
+        "\tmult\t$2,$6\n\tmfhi\t$7\n\t#nop\n\t#nop\n"
+        "\taddu\t$3,$7,$2\n\tsra\t$3,$3,7\n\tsra\t$2,$2,31\n"
+        "\tsubu\t$3,$3,$2\n\taddu\t$3,$3,2400\n"
+    )
+    text = replace_once(text, old, new, "reviewed camera distance registers")
+    text = replace_once(
+        text,
+        "\tj\t$L17\n\tsw\t$2,260($17)\n",
+        "\tj\t$L17\n\tsw\t$3,260($17)\n",
+        "reviewed camera distance store",
+    )
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_8000D0AC\n" in text:
         return normalize_sprite_display_list(text)
@@ -5189,6 +5234,8 @@ def normalize(text: str) -> str:
         return normalize_two_player_minigame(text)
     if "\t.ent\tfunc_80026824\n" in text:
         return normalize_board_scene_renderer(text)
+    if "\t.ent\tfunc_8000F604\n" in text:
+        return normalize_camera_follow_math(text)
     if "\t.ent\tfunc_80034808\n" in text:
         return normalize_player_object_reset(text)
     if "\t.ent\tfunc_800345EC\n" in text:
