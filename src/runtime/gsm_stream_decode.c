@@ -47,8 +47,11 @@ s32 func_800447E0(GsmState *state, s16 *samples) {
     s32 bits_left;
     u32 current_word;
     s32 header;
-    s32 i;
     s16 *x;
+    s16 *nc_p;
+    s16 *bc_p;
+    s16 *mc_p;
+    s16 *xmax_p;
 
     bit_position = state->bit_position;
     current_word = state->words[(bit_position >> 5) & 0x3FF] >>
@@ -70,21 +73,28 @@ s32 func_800447E0(GsmState *state, s16 *samples) {
         func_80051050(samples, 160 * sizeof(*samples));
         state->silence_count--;
     } else {
+        nc_p = nc;
         READ_BITS(lar[0], 6);
+        bc_p = bc;
         READ_BITS(lar[1], 6);
+        mc_p = mc;
         READ_BITS(lar[2], 5);
+        xmax_p = xmax;
         READ_BITS(lar[3], 5);
+        x = xmc;
         READ_BITS(lar[4], 4);
         READ_BITS(lar[5], 4);
         READ_BITS(lar[6], 3);
         READ_BITS(lar[7], 3);
 
-        x = xmc;
-        for (i = 0; i < 4; i++) {
-            READ_BITS(nc[i], 7);
-            READ_BITS(bc[i], 2);
-            READ_BITS(mc[i], 2);
-            READ_BITS(xmax[i], 6);
+        do {
+            READ_BITS(*nc_p, 7);
+            nc_p++;
+            READ_BITS(*bc_p, 2);
+            bc_p++;
+            READ_BITS(*mc_p, 2);
+            mc_p++;
+            READ_BITS(*xmax_p, 6);
             READ_BITS(x[0], 3);
             READ_BITS(x[1], 3);
             READ_BITS(x[2], 3);
@@ -99,7 +109,8 @@ s32 func_800447E0(GsmState *state, s16 *samples) {
             READ_BITS(x[11], 3);
             READ_BITS(x[12], 3);
             x += 13;
-        }
+            xmax_p++;
+        } while (x != xmax);
 
         state->frame_count--;
         func_80044468(state, lar, nc, bc, mc, xmax, xmc, samples);
