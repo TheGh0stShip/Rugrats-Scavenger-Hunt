@@ -85,3 +85,5 @@
 0x9B50	0x64	src/game/set_runtime_fade.c	-O3 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	50efddb8c63f9b0d0aa3eec640bfd2597981223360bf9ae3ad45f330685aa720
 0x8EB8	0x88	src/game/build_runtime_matrix.c	--section-base=.rdata:0x800005F0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	50dae268878c49ee1128ed34c1e8d3226f8c9ab4b2e392ae7961b365eb6c141c
 0x8F40	0x8C	src/game/build_runtime_matrix_from_axes.c	--section-base=.rdata:0x800005F4 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5834d9d5f853d9aaa3b368f6d14e9635e477fc2e68ad2acc31710ac84b03620b
+0x13904	0x78	src/game/configure_runtime_fade.c	--section-base=.rdata:0x80001130 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5a1499a046f60ec5522303496303afcd3836185ba169d15f760972002abe6b5f
+0x20110	0x78	src/game/select_matching_runtime_slot.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	617f6010fea687b89aa571325e446b2026f39832918ac9d23b6ffef7321e297a

@@ -276,3 +276,4 @@
 0x54EC	0x68	src/runtime/host_file_close.c	-O2 -G0 -mips3 -mgp32 -mfp32	d3f38b9ebeb0830e9cf34705b77be7dc9d4e499f5e5fbc24be183175e77752d8
 0x56E0	0x70	src/runtime/host_file_seek.c	-O2 -G0 -mips3 -mgp32 -mfp32	b5deb6bc6a1cb22afff1147d16cd2c57bb4d160b3fd85844624ea07816a38824
 0x155A4	0x58	src/game/find_indexed_type_17_item.c	-O2 -G0 -mips3 -mgp32 -mfp32	0ecf859e3bb67eb91f20239b785cc327f714ea989e2dfa8bf3514604e36bdfb2
+0x21CE4	0xDC	src/game/copy_actor_transition_state.c	-O2 -G0 -mips3 -mgp32 -mfp32	410380960ed63b9348e1330cc445c028ef961e8fc215fe4f6fba4fb8a27ef6c8

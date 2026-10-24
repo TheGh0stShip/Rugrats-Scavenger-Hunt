@@ -227,3 +227,6 @@
 0x3CC90	0x60	src/game/set_matching_resource_value_8003c090.c	-O2 -G0 -mips3 -mgp32 -mfp32	52ae6fd6b2084cf236f350c1f210ee254f7c92cf3c06ecbd266ee79d046053f2
 0x3CD60	0x70	src/game/add_matching_resource_float_8003c160.c	-O2 -G0 -mips3 -mgp32 -mfp32	fef493deb7e4b0faee1bd789be8887edf4ad875e524c1c4659dc2f9d090d2ace
 0x3CE5C	0x88	src/game/set_matching_resource_byte_8003c25c.c	-O2 -G0 -mips3 -mgp32 -mfp32	efa1216edfc0ea7c12358d57a63bbfba7fbe6b6a35a4e554691bfaeb13f3c650
+0x3BBB0	0x70	src/runtime/handle_math_exception.c	-O1 -G0 -mips3 -mgp32 -mfp32	3eebc4b831a27b91f355df96515678a45c79b4642f93da4500b107ecb91cff2e
+0x3B2C0	0x60	src/runtime/scan_last_character.c	-O1 -G0 -mips3 -mgp32 -mfp32	23d4cf71db3d84547c7794799745d0a104f67f88e33a507bf9caaafad3e30d93
+0x3C8A0	0x80	src/runtime/process_pending_runtime_object.c	-O2 -G0 -mips3 -mgp32 -mfp32	f0fee5bc6ea0126f2c4107e2e3f048be2d7e98b51c16ca49b918ee9d64fda0ae
