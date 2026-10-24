@@ -2,3 +2,6 @@
 0x53280	0x31C	src/libultra/bcopy.S	-mips3 -G0	688eac87a95f4e8d86ac6912b84681b61dc1816825bd79bce569359d58f82816
 0x4931C	0x48	src/libultra/os_enqueue_thread.S	-mips3 -G0	cbd325d727d6dbfcdcec3c6fe3e9b088d39ac4663830e4c95bad173d6291babc
 0x51C50	0xA0	src/libultra/bzero.S	-mips3 -G0	a03d90b6e7011e27f00041a81c76ddd66e7aa5ca2a841447daffc9ed43213571
+0x3BC34	0x34	src/runtime/umul64_high.S	-mips3 -G0	1089c779f26c46f7a854b001ef9af983316b49f648bcbffa74bf4b7222e4a076
+0x3BFA0	0x20	src/runtime/div64_dispatch.S	-mips3 -G0	f7dd7fca19f6eaf4fdc43596a625754057d969b387ca6cdf1aceaa11ca4d34cf
+0x3BFC0	0x40	src/runtime/div64_call.S	-mips3 -G0	079b32daa906696f658d3ec920bdad628edd5b8e4161e53d6cdd2878adf1db79
