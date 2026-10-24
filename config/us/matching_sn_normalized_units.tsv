@@ -152,3 +152,6 @@
 0x29758	0xC0	src/runtime/func_80028B58.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0bfbcd8b0e466aa208329e9df15b1d23fb3de18a28ef244027c32d95b5e75cb1
 0x25FD8	0xC0	src/game/func_800253D8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	13aec93ab93c5ca5579588962c01f0283af685bb296b9acf976d256feafa60e8
 0x34F50	0xE4	src/game/func_80034350.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	a26ceff92ea5852db9c67e9a0b61f113cf9ab78cd0e13fad9c81a5423da5990e
+0x2ECE0	0x9C	src/game/func_8002E0E0.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	5b472a030d576edf609eb8741d6e606163a54b87b4dfeefeec60132e4883b273
+0xE8C8	0x98	src/game/func_8000DCC8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	7e2d7433a2247094351abeea7821a58853b3135e9b0ec7956200e2c8d7017750
+0xB988	0x84	src/game/func_8000AD88.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	178b4e2d351cc4797748834d4353fa1e6adc2e0b90f49c53b7012143c1e0d775

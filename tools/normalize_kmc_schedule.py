@@ -357,6 +357,36 @@ def normalize_mode_dispatch(text: str) -> str:
     )
 
 
+def normalize_idle_thread(text: str) -> str:
+    return replace_once(
+        text,
+        "\tmove\t$4,$0\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80049090\n\tmove\t$5,$0\n",
+        "\tmove\t$4,$0\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80049090\n\tmove\t$5,$4\n",
+        "idle-thread paired zero argument",
+    )
+
+
+def normalize_actor_position(text: str) -> str:
+    return replace_once(
+        text,
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80005598\n\tsw\t$2,292($16)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlh\t$5,336($16)\n\tlw\t$7,328($16)\n"
+        "\taddu\t$4,$sp,16\n",
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80005598\n\tsw\t$2,292($16)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$4,$sp,16\n\tlh\t$5,336($16)\n"
+        "\tlw\t$7,328($16)\n",
+        "actor-position output argument scheduling",
+    )
+
+
 def normalize(text: str, unit: str) -> str:
     if unit == "func_800196E8":
         text = normalize_state_copy(text)
@@ -398,6 +428,10 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_runtime_reset_store(text)
     elif unit == "func_8000711C":
         text = normalize_mode_dispatch(text)
+    elif unit == "func_80027A1C":
+        text = normalize_idle_thread(text)
+    elif unit == "func_80006534":
+        text = normalize_actor_position(text)
     return builtin(text)
 
 
