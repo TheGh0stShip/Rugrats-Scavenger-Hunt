@@ -304,6 +304,27 @@ def normalize_menu_entry_reset(text: str) -> str:
     )
 
 
+def normalize_wrapped_actor_index(text: str) -> str:
+    text = replace_once(
+        text,
+        "\taddu\t$4,$4,$fp\n",
+        "\taddiu\t$4,$4,1\n",
+        "reviewed actor-index increment constant",
+    )
+    text = replace_once(
+        text,
+        "\tsll\t$2,$16,$fp\n",
+        "\tsll\t$2,$16,1\n",
+        "reviewed actor-index scale-by-two constant",
+    )
+    return normalize_zero_copy_with_padding(
+        text,
+        "\tsll\t$2,$2,$23\n",
+        "\tsll\t$2,$2,3\n",
+        "reviewed actor-index scale-by-eight constant",
+    )
+
+
 def normalize_resource_range(text: str) -> str:
     text = replace_once(text, (
         "\tlui\t$8,%hi(D_80052EB0) # high\n"
@@ -4360,6 +4381,8 @@ def normalize_e4_func_80006C18(text: str) -> str:
 
 
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_8002903C\n" in text:
+        return normalize_wrapped_actor_index(text)
     if "\t.ent\tfunc_80016DB0\n" in text:
         return normalize_menu_entry_reset(text)
     if "\t.ent\tfunc_8002D4C0\n" in text:
