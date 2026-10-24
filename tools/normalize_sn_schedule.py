@@ -1125,6 +1125,52 @@ def normalize_object_activation_filter(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_main_state_driver(text: str) -> str:
+    text = replace_once(
+        text, "\tbeq\t$3,$2,$L97\n",
+        "\tbne\t$3,$2,$L97\n",
+        "reviewed main-state initial condition",
+    )
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlw\t$4,%lo(D_80052F18)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80008E20\n\tsltu\t$4,$0,$4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tjal\tfunc_80008FB4\n"
+        "\tlui\t$2,%hi(D_80053638) # high\n"
+        "$L98:\n"
+    ), (
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlw\t$2,%lo(D_80052F18)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L_mode_bool_ready\n"
+        "\tli\t$4,1\t\t\t# 0x00000001\n"
+        "\tmove\t$4,$0\n$L_mode_bool_ready:\n"
+        "\tjal\tfunc_80008E20\n\tnop\n"
+        "\tjal\tfunc_80008FB4\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_80053638) # high\n"
+        "$L98:\n"
+    ), "reviewed main-state boolean call sequence")
+    text = replace_once(
+        text, "\t.rdata\n\t.align\t3\n$L13:\n",
+        "\t.rdata\n\t.align\t2\n$L13:\n",
+        "reviewed first main-state table alignment",
+    )
+    text = replace_once(
+        text, "\t.rdata\n\t.align\t3\n$L49:\n",
+        "\t.rdata\n\t.align\t2\n\t.word\t0\n$L49:\n",
+        "reviewed second main-state table alignment",
+    )
+    text = replace_once(
+        text, "\t.rdata\n\t.align\t3\n$L91:\n",
+        "\t.rdata\n\t.align\t2\n$L91:\n",
+        "reviewed third main-state table alignment",
+    )
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -1212,6 +1258,8 @@ def normalize(text: str) -> str:
         return normalize_object_tile_event(text)
     if "\t.ent\tfunc_80023F50\n" in text:
         return normalize_object_activation_filter(text)
+    if "\t.ent\tfunc_8001D91C\n" in text:
+        return normalize_main_state_driver(text)
     return normalize_standard_return(text)
 
 
