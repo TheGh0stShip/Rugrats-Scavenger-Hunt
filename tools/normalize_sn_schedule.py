@@ -308,6 +308,97 @@ def normalize_resource_descriptor_init(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_object_loop_reset(text: str) -> str:
+    text = replace_once(text, (
+        "\tlw\t$31,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\tli\t$2,10\t\t\t# 0x0000000a\n"
+        "\tsw\t$2,%lo(D_8006FB90)($3)\n"
+    ), (
+        "\tli\t$2,10\t\t\t# 0x0000000a\n"
+        "\tsw\t$2,%lo(D_8006FB90)($3)\n"
+        "\tlw\t$31,20($sp)\n\tlw\t$16,16($sp)\n"
+    ), "reviewed object-loop reset scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_tile_probe(text: str) -> str:
+    replacements = (
+        ("\taddu\t$5,$sp,32\n", "\taddu\t$5,$sp,24\n"),
+        ("\taddu\t$6,$sp,36\n", "\taddu\t$6,$sp,28\n"),
+        ("\tlw\t$2,32($sp)\n", "\tlw\t$2,24($sp)\n"),
+        ("\tlw\t$2,36($sp)\n", "\tlw\t$2,28($sp)\n"),
+        ("\ttrunc.w.s $f4,$f2,$8\n\tmfc1\t$5,$f4\n",
+         "\ttrunc.w.s $f0,$f2,$8\n\tmfc1\t$5,$f0\n"),
+        ("\taddu\t$6,$sp,24\n", "\taddu\t$6,$sp,32\n"),
+    )
+    for old, new in replacements:
+        text = replace_once(text, old, new, "reviewed tile-probe stack/register layout")
+    return normalize_standard_return(text)
+
+
+def normalize_randomized_actor_init(text: str) -> str:
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000DD88\n\tandi\t$4,$2,0x00ff\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), (
+        "\tlbu\t$4,%lo(D_800581E9)($17)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000DD88\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "reviewed randomized-actor byte reload")
+    return normalize_standard_return(text)
+
+
+def normalize_menu_draw_tail(text: str) -> str:
+    text = replace_once(text, (
+        "\taddu\t$4,$18,14\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016AA8\n\tsw\t$2,4($18)\n"
+    ), (
+        "\tsw\t$2,4($18)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016AA8\n\taddu\t$4,$18,14\n"
+    ), "reviewed menu-draw call scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_event_dispatch(text: str) -> str:
+    text = replace_once(text, "\tslt\t$2,$3,53\n", "\tsltu\t$2,$3,53\n",
+                        "reviewed event selector comparison")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80052F04) # high\n"
+        "\tlui\t$3,%hi(D_80001918) # high\n"
+        "\tlw\t$2,%lo(D_80052F04)($2)\n"
+        "\tl.s\t$f0,%lo(D_80001918)($3)\n"
+    ), (
+        "\tlui\t$2,%hi(D_80052F04) # high\n"
+        "\tlw\t$2,%lo(D_80052F04)($2)\n"
+        "\t.set\tnoat\n\tlui\t$1,%hi(D_80001918) # high\n"
+        "\tl.s\t$f0,%lo(D_80001918)($1)\n\t.set\tat\n"
+    ), "reviewed event float-load scheduling")
+    return normalize_standard_return(text)
+
+
+def normalize_random_object_flags(text: str) -> str:
+    text = replace_once(text, (
+        "\tsra\t$4,$2,31\n\tmfhi\t$9\n\t#nop\n\t#nop\n"
+        "\tsubu\t$4,$9,$4\n\tsll\t$3,$4,1\n\taddu\t$3,$3,$4\n"
+        "\tsubu\t$3,$2,$3\n"
+    ), (
+        "\tsra\t$3,$2,31\n\tmfhi\t$9\n\t#nop\n\t#nop\n"
+        "\tsubu\t$4,$9,$3\n\tsll\t$3,$4,1\n\taddu\t$3,$3,$4\n"
+        "\tsubu\t$4,$2,$3\n"
+    ), "reviewed random-object remainder registers")
+    text = text.replace("\tbeq\t$3,$2,$L8\n", "\tbeq\t$4,$2,$L8\n", 1)
+    text = text.replace("\tslt\t$2,$3,2\n", "\tslt\t$2,$4,2\n", 1)
+    text = text.replace("\tbeq\t$3,$0,$L25\n", "\tbeq\t$4,$0,$L25\n", 1)
+    text = text.replace("\tbeq\t$3,$2,$L9\n", "\tbeq\t$4,$2,$L9\n", 1)
+    text = replace_once(text, "\tbnel\t$2,$3,$L16\n", "\tbnel\t$3,$2,$L16\n",
+                        "reviewed random-object operand order")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800149FC\n" in text:
         return normalize_scene_renderer(text)
@@ -339,6 +430,18 @@ def normalize(text: str) -> str:
         return normalize_resource_start_tail(text)
     if "\t.ent\tfunc_8001BDD0\n" in text:
         return normalize_resource_descriptor_init(text)
+    if "\t.ent\tfunc_800227F0\n" in text:
+        return normalize_object_loop_reset(text)
+    if "\t.ent\tfunc_80020FB0\n" in text:
+        return normalize_tile_probe(text)
+    if "\t.ent\tfunc_800162B0\n" in text:
+        return normalize_randomized_actor_init(text)
+    if "\t.ent\tfunc_80017BE4\n" in text or "\t.ent\tfunc_800176FC\n" in text:
+        return normalize_menu_draw_tail(text)
+    if "\t.ent\tfunc_8001C77C\n" in text:
+        return normalize_event_dispatch(text)
+    if "\t.ent\tfunc_80023360\n" in text:
+        return normalize_random_object_flags(text)
     return normalize_standard_return(text)
 
 
