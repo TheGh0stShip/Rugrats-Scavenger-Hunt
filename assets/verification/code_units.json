@@ -1,12 +1,12 @@
 {
- "clone_head": "2148e60b42167630d3766da8767c6138f4e2cbfc",
+ "clone_head": "dcc66d393024fd30b3ac20be6842879996d7313b",
  "command": "make verify-matching N64DK_ROOT=$N64DK_ROOT N64DK_TOOLCHAIN=$N64DK_TOOLCHAIN",
  "summaries": [
-  "Verified 293/293 units, 17064 code bytes, 52 data bytes (kmc+asn64 13/13, kmc+builtin 280/280)",
+  "Verified 297/297 units, 17964 code bytes, 52 data bytes (kmc+asn64 13/13, kmc+builtin 284/284)",
   "verified 22 normalized KMC unit(s), 2484 exact bytes",
-  "Verified 252/252 units, 62976 code bytes, 1672 data bytes (kmc+as 252/252)",
+  "Verified 255/255 units, 63696 code bytes, 1768 data bytes (kmc+as 255/255)",
   "Verified 94/94 units, 4796 code bytes, 44 data bytes (sn 94/94)",
-  "verified 195 normalized SN unit(s), 48392 exact bytes",
+  "verified 200 normalized SN unit(s), 50520 exact bytes",
   "Verified 6/6 units, 236 code bytes, 0 data bytes (ido5.3 6/6)"
  ],
  "units": [
@@ -2062,6 +2062,34 @@
    "evidence": "MATCH line"
   },
   {
+   "rom_start": 19120,
+   "size": 236,
+   "source": "src/runtime/func_80003EB0.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 19356,
+   "size": 204,
+   "source": "src/runtime/func_80003F9C.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 20108,
+   "size": 256,
+   "source": "src/runtime/func_8000428C.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 20364,
+   "size": 204,
+   "source": "src/runtime/func_8000438C.c",
+   "tool": "kmc+builtin",
+   "evidence": "MATCH line"
+  },
+  {
    "rom_start": 242816,
    "size": 544,
    "source": "src/game/func_8003A880.c",
@@ -3822,6 +3850,27 @@
    "rom_start": 261488,
    "size": 1400,
    "source": "src/libultra/n_al_env_mixer_pull.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 248096,
+   "size": 280,
+   "source": "src/game/select_resource_command_target.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 243736,
+   "size": 216,
+   "source": "src/runtime/compute_tangent.c",
+   "tool": "kmc+as",
+   "evidence": "MATCH line"
+  },
+  {
+   "rom_start": 243360,
+   "size": 224,
+   "source": "src/runtime/compute_sine.c",
    "tool": "kmc+as",
    "evidence": "MATCH line"
   },
@@ -6083,6 +6132,41 @@
    "rom_start": 157900,
    "size": 148,
    "source": "src/game/func_80025CCC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 25636,
+   "size": 216,
+   "source": "src/game/func_80005824.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 25852,
+   "size": 240,
+   "source": "src/game/func_800058FC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 26364,
+   "size": 336,
+   "source": "src/game/func_80005AFC.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 26700,
+   "size": 496,
+   "source": "src/game/func_80005C4C.c",
+   "tool": "sn+normalized",
+   "evidence": "sn+normalized verifier completed run"
+  },
+  {
+   "rom_start": 27384,
+   "size": 840,
+   "source": "src/game/func_80005EF8.c",
    "tool": "sn+normalized",
    "evidence": "sn+normalized verifier completed run"
   }

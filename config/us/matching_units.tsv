@@ -294,3 +294,7 @@
 0x4794	0xDC	src/runtime/func_80003B94.c	-O2 -G0 -mips3 -mgp32 -mfp32	b7c90a4e3925207d83c81b36baa068e59af47c702630d3ff9bf69e7d5ff1625c
 0x48AC	0x114	src/runtime/func_80003CAC.c	-O2 -G0 -mips3 -mgp32 -mfp32	30a8d57e92db9f6edd7ebb6223955cfc669e710c4866bbf12b7e702d21cc0818
 0x5058	0x250	src/game/func_80004458.c	--section-base=.rodata:0x80000500 -O2 -G0 -mips3 -mgp32 -mfp32	50d35f76ed5fb4aed9bce5bfa59d63896a0661c73e9e78c015a9bd2f86edfc44
+0x4AB0	0xEC	src/runtime/func_80003EB0.c	-O2 -G0 -mips3 -mgp32 -mfp32	2cfca44e33d913e261fb054e4625d9f72717bfb5df253182b8414fd2df39bb02
+0x4B9C	0xCC	src/runtime/func_80003F9C.c	-O2 -G0 -mips3 -mgp32 -mfp32	7b073cf28f0776f795dd0bc95a51a853e51b17b6828487c532ae097a74193da2
+0x4E8C	0x100	src/runtime/func_8000428C.c	-O2 -G0 -mips3 -mgp32 -mfp32	7170876f599d0b9b0e392dfa42f14b9e3fd36e2a16aea00d7089f12fcfc24177
+0x4F8C	0xCC	src/runtime/func_8000438C.c	-O2 -G0 -mips3 -mgp32 -mfp32	5bff7aa5f813864a6929ec14062b7d8d182bf43a4ee785d00165dc80eeddc49e
