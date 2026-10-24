@@ -1,5 +1,5 @@
 /* Target: func_800398E0  VRAM 0x800398E0  ROM 0x3A4E0
- * Size: 0xC9C  Pipeline: KMC GCC 2.7.2 -O2 -G0 -mips3 -mgp32 -mfp32
+ * Size: 0xC9C  Pipeline: KMC GCC 2.7.2 -O1 -G0 -mips3 -mgp32 -mfp32
  * Confidence: medium */
 
 typedef char *va_list;
@@ -26,7 +26,7 @@ extern char *D_800C3E70;
 extern s8 D_800C3E74;
 extern char D_800C3EA0[];
 extern char D_800C3FA0[];
-extern u8 D_80055930[];
+extern s8 D_80055930[];
 extern char D_80055870[];
 extern char D_80055884[];
 extern char D_80055896;
@@ -52,7 +52,7 @@ extern s32 func_8003AEA0(const char *s);
     } while (0)
 
 s32 func_800398E0(char *buf, const char *fmt, va_list ap) {
-    s32 c;
+    u8 c;
     s32 flags;
     s32 width;
     s32 prec;
