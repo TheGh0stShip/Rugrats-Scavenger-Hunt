@@ -23,10 +23,10 @@ The machine-readable physical ledger contains 1,907 non-overlapping rows and acc
 | archive_resource | 910 | 13,823,389 |
 | audio_sample | 178 | 1,807,650 |
 | zero_padding | 1 | 731,056 |
-| program_text | 2 | 323,264 |
+| program_text | 2 | 323,752 |
 | audio_pointer_bank_2 | 1 | 20,352 |
-| program_data | 2 | 18,972 |
-| program_rodata | 1 | 13,732 |
+| program_data | 2 | 18,672 |
+| program_rodata | 1 | 13,544 |
 | audio_pointer_bank_1 | 1 | 13,472 |
 | archive_index | 2 | 10,948 |
 | alignment_padding | 638 | 5,087 |
@@ -40,13 +40,13 @@ The machine-readable physical ledger contains 1,907 non-overlapping rows and acc
 
 | Start | End | Bytes | Section |
 |---:|---:|---:|---|
-| `0x001000` | `0x00103C` | 60 | text |
-| `0x00103C` | `0x0045E0` | 13,732 | rodata |
+| `0x001000` | `0x0010F8` | 248 | text |
+| `0x0010F8` | `0x0045E0` | 13,544 | rodata |
 | `0x0045E0` | `0x0045F0` | 16 | data |
-| `0x0045F0` | `0x053474` | 323,204 | text |
-| `0x053474` | `0x057E80` | 18,956 | data |
+| `0x0045F0` | `0x0535A0` | 323,504 | text |
+| `0x0535A0` | `0x057E80` | 18,656 | data |
 
-Executable sections total 323,264 bytes; read-only data totals 13,732 bytes; initialized writable data totals 18,972 bytes. These are physical section sizes, not the smaller sum of function-candidate extents.
+Executable sections total 323,752 bytes; read-only data totals 13,544 bytes; initialized writable data totals 18,672 bytes. These are physical section sizes, not the smaller sum of function-candidate extents.
 
 ## Audio and display data
 

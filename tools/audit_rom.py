@@ -20,11 +20,11 @@ ARCHIVES = (
     ("resource_archive_2", 0x4DB6D0, 0xF4D840),
 )
 PROGRAM_SECTIONS = (
-    ("text", 0x1000, 0x103C),
-    ("rodata", 0x103C, 0x45E0),
+    ("text", 0x1000, 0x10F8),
+    ("rodata", 0x10F8, 0x45E0),
     ("data", 0x45E0, 0x45F0),
-    ("text", 0x45F0, 0x53474),
-    ("data", 0x53474, 0x57E80),
+    ("text", 0x45F0, 0x535A0),
+    ("data", 0x535A0, 0x57E80),
 )
 AUDIO_GRAPHICS_RANGES = (
     ("display_lists_and_loader_block", 0x57E80, 0x57FD0),

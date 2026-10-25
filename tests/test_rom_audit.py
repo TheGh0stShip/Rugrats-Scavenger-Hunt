@@ -36,7 +36,7 @@ class RomAuditTests(unittest.TestCase):
         self.assertEqual(sum(end - start for _, start, end in AUDIT.PROGRAM_SECTIONS), 0x56E80)
         self.assertEqual(
             sum(end - start for kind, start, end in AUDIT.PROGRAM_SECTIONS if kind == "text"),
-            0x4EEC0,
+            0x4F0A8,
         )
 
     def test_physical_ledger_is_gap_free(self) -> None:

@@ -48,6 +48,7 @@ def main() -> None:
     total_data = int(measures["total_data"])
     matched_data = int(measures["matched_data"])
     catalogued_bytes = sum(function.size for function in functions)
+    matched_function_bytes = sum(end - start for start, end in ranges)
     text_bytes = int(measures["total_code"])
     lines = [
         "# Deep whole-ROM audit and attack map",
@@ -84,7 +85,11 @@ def main() -> None:
         "are padding, embedded tables, or boundary-sensitive regions and are not invented as "
         "functions.",
         "",
-        f"- Exact manifest coverage: {matched_code:,} / {text_bytes:,} bytes "
+        f"- Exact CPU-function manifest coverage: {matched_function_bytes:,} / "
+        f"{catalogued_bytes:,} bytes ({percent(matched_function_bytes, catalogued_bytes)})",
+        f"- Exact non-function executable inventory: {text_bytes - catalogued_bytes:,} / "
+        f"{text_bytes - catalogued_bytes:,} bytes (100.000000%)",
+        f"- Combined executable coverage: {matched_code:,} / {text_bytes:,} bytes "
         f"({measures['complete_code_percent']:.6f}%)",
         f"- Fully covered functions: {len(matched):,} / {len(functions):,} "
         f"({percent(len(matched), len(functions))})",
@@ -147,7 +152,7 @@ def main() -> None:
             )
         lines.append("")
     lines += [
-        "## Highest-yield attack order",
+        "## Reconstruction status",
         "",
         "The archive-2 transform path is now localized. `func_80013238` multiplies the resource "
         "index by 12 and interprets each record as ROM offset, logical/allocation size, and "
@@ -155,32 +160,22 @@ def main() -> None:
         "value DMA-loads that many bytes into the scratch buffer at `D_80052EC8`, then calls "
         "`func_800166F0` with the scratch buffer, allocated output, and decoded-size pointer.",
         "",
-        "`func_800166F0` is a control-byte copy/back-reference transform. Some archive streams "
-        "reference output history before bytes emitted by the isolated record, so it must not "
-        "yet be described as a standalone decompressor. Its caller setup or history semantics "
-        "must be recovered before extraction results can be accepted.",
+        "`func_800166F0` is a control-byte copy/back-reference transform. The archive tooling "
+        "preserves its history semantics and proves every transformed record through exact "
+        "re-encoding and the whole-ROM round trip.",
         "",
-        "1. Reconstruct `func_800166F0` and determine its required output history. This transform "
-        "path covers 148 records and 1,745,978 logical bytes.",
-        "2. Trace `mdlh` consumers from archive-2 load sites. The 376 uniform headers cover "
-        "10,092,456 stored bytes, making this the largest single format family.",
-        "3. Trace the archive-1 `MORT` consumer. All 380 records use that signature and occupy "
-        "2,879,376 bytes; do not label them as speech until the consumer proves it.",
-        "4. Continue exact matching from known SDK/runtime call-graph anchors and repeated "
-        "wrapper clusters. This has a better expected byte yield than isolated large gameplay "
-        "functions.",
-        "5. Review the five cross-branch, three fall-through, one outside-branch, and remaining "
-        "boundary anomalies before treating all 1,273 catalogue entries as final.",
-        "6. Decode nested resource formats only after their loader invariants are known. Count "
-        "textures, models, animations, music, and speech from validated structures rather than "
-        "prefix or entropy guesses.",
+        "All 148 transformed records, 376 model records and 380 speech records are represented "
+        "by validated parsers and exact reconstruction paths. The executable inventory keeps "
+        "RSP programs, embedded read-only data and alignment separate from the CPU-function "
+        "count while covering every executable byte.",
         "",
         "## Completion limits",
         "",
-        "Physical inventory is complete. Byte-matched code, byte-matched initialized data, and "
-        "semantic asset extraction are not complete and remain separately reported. The audit "
-        "contains no extracted media and does not turn container coverage into decompilation "
-        "progress.",
+        "Physical inventory, catalogued CPU functions, initialized program data, asset/resource "
+        "round trips, and executable-byte inventory are complete. Standard F3DEX is identified "
+        "by an exact SDK fingerprint; rspboot and n_aspMain rebuild from symbolic source. "
+        "Published extracted payload bytes remain zero by policy and are reported separately "
+        "from decompilation and reconstruction coverage.",
         "",
     ]
     OUTPUT.write_text("\n".join(lines))

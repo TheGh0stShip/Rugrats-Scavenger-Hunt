@@ -3,11 +3,12 @@ ROM ?= baseroms/us/baserom.z64
 N64DK_ROOT ?= ../n64-decomp-kit
 N64DK_PYTHON ?= $(abspath $(N64DK_ROOT))/.venv/bin/python
 N64DK_TOOLCHAIN ?= ../BattleTanx/.toolchain
+ARMIPS ?= armips
 N64DK := PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) -m n64dk
 
-.PHONY: check report report-check rom-audit deep-rom-audit verify-rom verify-matching survey
+.PHONY: check report report-check rom-audit deep-rom-audit verify-rom verify-matching verify-executable-inventory verify-executable-data verify-rsp-microcode survey
 
-check: verify-rom verify-matching report-check
+check: verify-rom verify-matching verify-executable-inventory verify-executable-data report-check
 
 rom-audit: verify-rom
 	$(PYTHON) tools/audit_rom.py "$(ROM)" --json analysis/rom_map.json --markdown analysis/rom_map.md --ledger analysis/rom_inventory.tsv
@@ -23,6 +24,15 @@ report-check:
 
 verify-rom:
 	$(PYTHON) tools/verify_rom.py "$(ROM)"
+
+verify-executable-inventory: verify-rom
+	$(PYTHON) tools/generate_executable_inventory.py "$(ROM)"
+
+verify-executable-data: verify-rom verify-executable-inventory
+	$(PYTHON) tools/verify_executable_data.py "$(ROM)"
+
+verify-rsp-microcode: verify-rom
+	$(PYTHON) tools/verify_rsp_microcode.py "$(ROM)" --armips "$(ARMIPS)"
 
 verify-matching: verify-rom
 	$(N64DK) match-batch config/us/matching_units.tsv=kmc --project . --symbols analysis/survey/symbol_addrs.txt

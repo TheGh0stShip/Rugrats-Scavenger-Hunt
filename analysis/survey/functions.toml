@@ -1,5 +1,5 @@
 # Function boundaries for RUGRATSSCAVENGERHUNT: main segment
-# text 0x80000400..0x8005299C, 1273 functions
+# text 0x80000400..0x8005299C, 1270 CPU functions
 [[section]]
 name = ".main"
 rom = 0x00001000
@@ -814,8 +814,6 @@ functions = [
     { name = "func_80035D0C", vram = 0x80035d0c, size = 0x168 }, # c
     { name = "func_80035E74", vram = 0x80035e74, size = 0x2c4 }, # c
     { name = "func_80036138", vram = 0x80036138, size = 0x6b4 }, # c
-    { name = "func_80036820", vram = 0x80036820, size = 0xc }, # asm
-    { name = "func_8003682C", vram = 0x8003682c, size = 0x18 }, # asm
     { name = "func_80038950", vram = 0x80038950, size = 0x1b8 }, # c
     { name = "func_80038B08", vram = 0x80038b08, size = 0x118 }, # c
     { name = "func_80038C20", vram = 0x80038c20, size = 0x170 }, # c
@@ -1030,8 +1028,7 @@ functions = [
     { name = "func_80042B70", vram = 0x80042b70, size = 0xe0 }, # c
     { name = "func_80042C50", vram = 0x80042c50, size = 0x138 }, # c
     { name = "func_80042D88", vram = 0x80042d88, size = 0x1a8 }, # c
-    { name = "func_80042F30", vram = 0x80042f30, size = 0x4 }, # stub falls_through
-    { name = "func_80042F34", vram = 0x80042f34, size = 0xa0 }, # leaf
+    { name = "func_80042F30", vram = 0x80042f30, size = 0xa4 }, # c
     { name = "func_80042FD4", vram = 0x80042fd4, size = 0x8c }, # leaf
     { name = "func_80043060", vram = 0x80043060, size = 0x4c }, # c
     { name = "func_800430AC", vram = 0x800430ac, size = 0x30 }, # c

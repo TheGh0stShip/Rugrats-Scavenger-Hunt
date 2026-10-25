@@ -1,10 +1,10 @@
 # Survey: RUGRATSSCAVENGERHUNT (NRGE)
 
-- **Program**: static image, main segment 0x80000400..0x80057280 (rom); 1273 functions, 268 named from the SDK
+- **Program**: static image, main segment 0x80000400..0x80057280 (rom); 1270 CPU functions, 268 named from the SDK
 - **ROM understood**: 17.5 % by content, plus 2.0 % only referenced by loader tables; 13,512,484 bytes unknown in 3 ranges
 - **Next**: ROM 0x749D72..0xF4D840 (0x803ace bytes) is unclassified; 7.0 bits/byte, zlib ratio 0.83: raw media or lightly packed data (audio, textures, animation)
 - **Next**: ROM 0x21AC00..0x6FA050 (0x4df450 bytes) is unclassified; 7.5 bits/byte, zlib ratio 0.93: raw media or lightly packed data (audio, textures, animation)
-- **Next**: investigate: text end: functions 0x8005299C, datamap 0x80052874 (unexplained)
+- **Next**: preserve the reviewed text end at 0x800529A0, including its final alignment word
 
 ## ROM
 
@@ -37,12 +37,12 @@ Offsets below are ROM offsets.
 - **text_size**: 337308
 - **data_start**: 0x8005299C
 - **image_end**: 0x80057280
-- **functions**: 1273
-- **kinds**: {'c': 873, 'leaf': 258, 'asm': 35, 'stub': 107}
+- **functions**: 1270
+- **kinds**: {'c': 875, 'leaf': 258, 'asm': 32, 'stub': 105}
 - **seeds**: {'entry': 1, 'unreferenced': 149, 'call': 1007, 'pointer': 116}
 - **jump_tables**: 64
 - **jump_table_entries**: 990
-- **in_text_data**: ['0x800004F8+0x34F8', '0x800367EC+0x34', '0x80036844+0x210C', '0x80045888+0x1CC', '0x800485E0+0x14', '0x800488F0+0x10']
+- **in_text_data**: ['0x800004F8+0x34E8', '0x800367EC+0x4', '0x800367F0+0x2160', '0x80045888+0x1CC', '0x800485E0+0x14', '0x800488F0+0x10']
 - **stray_words**: 52
 - **findings**: {'rejected_start': 1, 'in_text_data': 6, 'stray_words': 52, 'cross_branch': 5, 'start_in_delay_slot': 6, 'falls_through': 3, 'branch_to_entry': 2, 'late_start': 2, 'branch_outside': 1}
 
@@ -50,8 +50,8 @@ Offsets below are ROM offsets.
 
 - **image**: 0x80000400..0x80057280 (ROM 0x1000..0x57E80)
 - **bss**: 0x80057280..0x800C7E30
-- **sections**: ['.text 0x80000400..0x8000043C (0x3C)', '.rodata 0x8000043C..0x800039E0 (0x35A4)', '.data 0x800039E0..0x800039F0 (0x10)', '.text 0x800039F0..0x80052874 (0x4EE84)', '.data 0x80052874..0x80057280 (0x4A0C)']
-- **section_bytes**: {'.text': '0x4eec0', '.rodata': '0x35a4', '.data': '0x4a1c'}
+- **sections**: ['.text 0x80000400..0x800004F8 (0xF8)', '.rodata 0x800004F8..0x800039E0 (0x34E8)', '.data 0x800039E0..0x800039F0 (0x10)', '.text 0x800039F0..0x800529A0 (0x4EFB0)', '.data 0x800529A0..0x80057280 (0x48E0)']
+- **section_bytes**: {'.text': '0x4f0a8', '.rodata': '0x34e8', '.data': '0x48f0'}
 - **functions**: 1335
 - **xref_sites**: 2640
 - **data_addresses**: 1135
@@ -109,9 +109,9 @@ Offsets below are ROM offsets.
 | payload | 1,807,970 |
 | padding | 732,312 |
 | referenced | 331,544 |
-| code | 323,264 |
+| code | 323,752 |
 | container | 32,842 |
-| data | 32,704 |
+| data | 32,216 |
 | rom_metadata | 4,096 |
 
 | category | bytes |
@@ -131,7 +131,7 @@ Largest unknown ranges:
 
 ## Cross-checks
 
-- text end: functions 0x8005299C, datamap 0x80052874 (unexplained)
+- final function ends at 0x8005299C; text ends after alignment at 0x800529A0
 
 ## Next steps
 
@@ -139,7 +139,7 @@ Most bytes (or failures) first.
 
 1. ROM 0x749D72..0xF4D840 (0x803ace bytes) is unclassified; 7.0 bits/byte, zlib ratio 0.83: raw media or lightly packed data (audio, textures, animation)
 2. ROM 0x21AC00..0x6FA050 (0x4df450 bytes) is unclassified; 7.5 bits/byte, zlib ratio 0.93: raw media or lightly packed data (audio, textures, animation)
-3. investigate: text end: functions 0x8005299C, datamap 0x80052874 (unexplained)
+3. preserve the reviewed text end at 0x800529A0
 4. review function boundaries flagged in functions.toml: 5 cross_branch, 3 falls_through, 1 branch_outside
 5. ROM 0x215C7A..0x215C80 (0x6 bytes) is unclassified; 1.9 bits/byte, zlib ratio 2.33: already compressed (zlib cannot shrink it): a codec n64dk does not know; find its loader
 

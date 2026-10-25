@@ -150,6 +150,7 @@ void func_80026824(void) {
     register s32 colStart __asm__("$fp");
     s32 cell, id;
     s32 bonus = 0;
+    register s32 tileInRange __asm__("$2");
     s32 rowOff;
     s32 dist, alpha;
     register s32 absDist __asm__("$6");
@@ -324,9 +325,11 @@ draw:
                 id = D_80054208[id];
             }
             tileOffset = id - 0xF9;
-            if ((u32)tileOffset < 4) {
+            tileInRange = (u32)tileOffset < 4;
+            if (tileInRange) {
                 if (D_800529F0 != 0 && func_80025FC4(D_800529F0, 0xF)) {
                     bonus = 1;
+                    __asm__("" : "+r"(tileOffset));
                     id = tileOffset + 0xF;
                 } else if (D_80052F18.mode == 1) {
                     id = (resId == 0x52) ? 0xFF : 0xFE;
@@ -391,8 +394,8 @@ draw:
         for (record = (u8 *)rect; i < rect->count; i++, record += 0x10) {
             register struct Model_800197C8 *m __asm__("$18");
 
-            it = (struct Placed_8000DD88 *)(record + 0x10);
-            id = it->id;
+            it = (struct Placed_8000DD88 *)record;
+            id = it[1].id;
             if ((u32)(id - 0x106) < 4) {
                 if (!bonus) {
                     continue;
@@ -400,8 +403,8 @@ draw:
             } else if ((u32)(id - 0x10A) < 0xC && bonus) {
                 continue;
             }
-            tileRow = it->row;
-            tileCol = it->col;
+            tileRow = it[1].row;
+            tileCol = it[1].col;
             *(s32 *)&v.y = 0;
             v.x = tileCol * 600 + 300;
             v.z = tileRow * 600 + 300;
@@ -412,12 +415,12 @@ draw:
                 }
             }
             mtx = func_8001E630();
-            if (it->angle == 0x5A) {
+            if (it[1].angle == 0x5A) {
                 D_80054330 = 270.0f;
-            } else if (it->angle == 0x10E) {
+            } else if (it[1].angle == 0x10E) {
                 D_80054330 = 90.0f;
             } else {
-                D_80054330 = it->angle;
+                D_80054330 = it[1].angle;
             }
             func_8000CF10(mtx, zero, D_80054330, zero, 1.0f, v.x, v.y, v.z);
             m = &func_800197C8(id)->model;

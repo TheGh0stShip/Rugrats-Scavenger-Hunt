@@ -172,6 +172,79 @@ def normalize_shared_return(text: str) -> str:
     ), "reviewed shared-return second path")
 
 
+def normalize_board_route_search(text: str) -> str:
+    text = replace_once(text, (
+        "\tsra\t$9,$2,16\n\tsll\t$3,$9,7\n"
+        "\tlui\t$2,%hi(D_8006D6A0) # high\n"
+    ), (
+        "\tsra\t$9,$2,16\n"
+        "\tlui\t$2,%hi(D_8006D6A0) # high\n"
+        "\taddiu\t$2,$2,%lo(D_8006D6A0) # low\n"
+        "\tsll\t$3,$9,7\n"
+    ), "board-route row-base scheduling")
+    text = replace_once(text, (
+        "\tsll\t$3,$9,7\n"
+        "\taddiu\t$2,$2,%lo(D_8006D6A0) # low\n"
+    ), (
+        "\tsll\t$3,$9,7\n"
+    ), "board-route row-base duplicate scheduling")
+    text = replace_once(text, "\tmove\t$7,$0\n", "",
+                        "board-route copy index scheduling")
+    text = replace_once(text, (
+        "\tmove\t$2,$18\n #APP\n #NO_APP\n\tsll\t$2,$2,16\n"
+    ), (
+        " #APP\n #NO_APP\n\tsll\t$2,$18,16\n"
+    ), "board-route depth extension folding")
+    text = replace_once(text, (
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$8,%hi(D_8006F6B8) # high\n"
+    ), (
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$7,$0\n"
+        "\tlui\t$8,%hi(D_8006F6B8) # high\n"
+    ), "board-route copy index placement")
+    text = replace_once(text, (
+        "\tblez\t$3,$L6\n"
+        "\tlui\t$2,%hi(D_8006F6A0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$7,$0\n"
+    ), (
+        "\tblez\t$3,$L6\n"
+        "\tmove\t$7,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_8006F6A0) # high\n"
+    ), "board-route history-base scheduling")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_8006F6A0) # high\n"
+        "\tlui\t$8,%hi(D_8006F6B8) # high\n"
+        "\taddiu\t$9,$8,%lo(D_8006F6B8) # low\n"
+        "\taddiu\t$11,$2,%lo(D_8006F6A0) # low\n"
+    ), (
+        "\tlui\t$8,%hi(D_8006F6B8) # high\n"
+        "\taddiu\t$9,$8,%lo(D_8006F6B8) # low\n"
+        "\tlui\t$2,%hi(D_8006F6A0) # high\n"
+        "\taddiu\t$11,$2,%lo(D_8006F6A0) # low\n"
+    ), "board-route table-base scheduling")
+    text = replace_once(text, (
+        "\tsll\t$2,$18,16\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsll\t$3,$fp,16\n"
+    ), (
+        "\tsll\t$3,$fp,16\n\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsll\t$2,$18,16\n"
+    ), "board-route depth-limit scheduling")
+    text = replace_once(text, "\taddu\t$7,$fp,$2\n",
+                        "\taddiu\t$7,$fp,1\n",
+                        "board-route increment materialization")
+    text = replace_once(text, (
+        "\tlw\t$16,104($sp)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$31\n"
+    ), (
+        "\tlw\t$16,104($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$31\n"
+    ), "board-route return load hazard")
+    return normalize_standard_return(text)
+
+
 def normalize_standard_return(text: str) -> str:
     epilogue = re.compile(
         r"\t\.set\tnoreorder\n\t\.set\tnomacro\n"
@@ -187,6 +260,755 @@ def normalize_standard_return(text: str) -> str:
         text,
         count=1,
     )
+
+
+def normalize_minigame_player_render(text: str) -> str:
+    """Reproduce the reviewed retail scheduling around the two render passes."""
+    initial_count = (
+        "func_80033E90:\n"
+        "\t.frame\t$sp,112,$31\t\t# vars= 32, regs= 10/1, args= 32, extra= 0\n"
+        "\t.mask\t0xc0ff0000,-12\n\t.fmask\t0x00300000,-8\n"
+        "\tlui\t$2,%hi(D_80057D5C) # high\n"
+        "\tlw\t$2,%lo(D_80057D5C)($2)\n"
+    )
+    text = replace_once(text, initial_count, initial_count.replace(
+        "\tlui\t$2,%hi(D_80057D5C) # high\n"
+        "\tlw\t$2,%lo(D_80057D5C)($2)\n",
+        "\tlui\t$3,%hi(D_80057D5C) # high\n"
+        "\tlw\t$2,%lo(D_80057D5C)($3)\n",
+    ), "reviewed player-count base allocation")
+    text = replace_once(text, (
+        "$L6:\n #APP\n #NO_APP\n"
+        "\tlui\t$2,%hi(D_80057D5C) # high\n"
+        "\tlw\t$2,%lo(D_80057D5C)($2)\n"
+    ), (
+        "$L6:\n #APP\n #NO_APP\n"
+        "\tlw\t$2,%lo(D_80057D5C)($3)\n"
+    ), "reviewed retained player-count base")
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L1\n$L6:\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L1\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n$L6:\n"
+    ), "reviewed initial mode branch delay slot")
+    setup_start = text.find("$L8:\n")
+    setup_end = text.find("\tlui\t$2,%hi(D_80052F18) # high\n$L35:\n", setup_start)
+    if setup_start < 0 or setup_end < 0:
+        raise ValueError("reviewed player render setup span not found")
+    setup = (
+        "$L8:\n"
+        "\tsll\t$2,$20,2\n\taddu\t$2,$2,384\n"
+        "\tli\t$8,-16842752\t\t\t# 0xfeff0000\n"
+        "\tori\t$8,$8,0xffff\n\tsw\t$2,52($sp)\n"
+        "\tlui\t$2,%hi(D_80054840) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80054840) # low\n"
+        "\tsll\t$3,$20,1\n\taddu\t$3,$3,$20\n"
+        "\tsll\t$22,$3,2\n\taddu\t$2,$22,$2\n\tsw\t$2,60($sp)\n"
+        "\tsll\t$2,$3,4\n\tsubu\t$fp,$2,$3\n"
+        "\tlui\t$2,%hi(D_8005487C) # high\n"
+        "\taddiu\t$2,$2,%lo(D_8005487C) # low\n"
+        "\tmtc1\t$0,$f20\n\taddu\t$23,$22,$2\n\tsw\t$8,56($sp)\n"
+    )
+    text = text[:setup_start] + setup + text[setup_end:]
+
+    model_start = text.find("$L35:\n")
+    model_end = text.find("$L12:\n", model_start)
+    if model_start < 0 or model_end < 0:
+        raise ValueError("reviewed model selection span not found")
+    model_select = (
+        "$L35:\n\tlw\t$2,%lo(D_80052F18)($8)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L10\n\tsll\t$2,$21,2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$8,52($sp)\n\taddu\t$16,$21,$8\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80025CCC\n\tmove\t$4,$16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L12\n\tli\t$8,16777216\t\t\t# 0x01000000\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L12\n\tor\t$19,$19,$8\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L10:\n\tlw\t$8,48($sp)\n\taddu\t$2,$2,$8\n\tlw\t$16,428($2)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbgez\t$16,$L13\n\tli\t$8,16777216\t\t\t# 0x01000000\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tor\t$19,$19,$8\n\tli\t$2,2147418112\t\t\t# 0x7fff0000\n"
+        "\tori\t$2,$2,0xffff\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L12\n\tand\t$16,$16,$2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L13:\n\tlw\t$8,56($sp)\n\tand\t$19,$19,$8\n"
+    )
+    text = text[:model_start] + model_select + text[model_end:]
+
+    position_start = text.find("\tlui\t$3,%hi(D_80052F18) # high\n", text.find("$L12:\n"))
+    position_end = text.find("$L16:\n", position_start)
+    if position_start < 0 or position_end < 0:
+        raise ValueError("reviewed position selection span not found")
+    position_select = (
+        "\tlui\t$8,%hi(D_80052F18) # high\n"
+        "\tlw\t$3,%lo(D_80052F18)($8)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$0,$L15\n\taddu\t$16,$2,44\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$8,60($sp)\n"
+        "\tlw\t$2,0($8)\n\tlw\t$3,4($8)\n\tlw\t$4,8($8)\n"
+        "\tsw\t$2,32($sp)\n\tsw\t$3,36($sp)\n\tsw\t$4,40($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L16\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L15:\n"
+        "\tlw\t$2,0($23)\n\tlw\t$3,4($23)\n\tlw\t$4,8($23)\n"
+        "\tsw\t$2,32($sp)\n\tsw\t$3,36($sp)\n\tsw\t$4,40($sp)\n"
+    )
+    text = text[:position_start] + position_select + text[position_end:]
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80052F18) # high\n$L35:\n"
+    ), (
+        "\tlui\t$8,%hi(D_80052F18) # high\n$L35:\n"
+    ), "reviewed mode-global loop allocation")
+    text = replace_once(text, (
+        " #APP\n\tsll $17,$30,1\n #NO_APP\n"
+        "\tjal\tfunc_8001E630\n\tmtc1\t$17,$f2\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001E630\n\tsll\t$17,$30,1\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+        "\tmtc1\t$17,$f2\n"
+    ), "reviewed rotation delay slot")
+    text = replace_once(text, (
+        "$L32:\n\tjal\tfunc_8000B910\n"
+        "\tlui\t$8,%hi(D_80052F18) # high\n"
+        "\tlw\t$2,56($sp)\n"
+        "\tlw\t$3,%lo(D_80052F18)($8)\n"
+        "\tand\t$19,$19,$2\n"
+    ), (
+        "$L32:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B910\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+        "\tlw\t$8,56($sp)\n"
+        "\tand\t$19,$19,$8\n"
+        "\tlui\t$8,%hi(D_80052F18) # high\n"
+        "\tlw\t$3,%lo(D_80052F18)($8)\n"
+    ), "reviewed first draw-call return schedule")
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L24\n$L1:\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L24\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n$L1:\n"
+    ), "reviewed final loop delay slot")
+    final_setup_start = text.find("\tmove\t$17,$2\n", text.find("\tjal\tfunc_800055A4\n"))
+    final_setup_end = text.find("$L24:\n", final_setup_start)
+    if final_setup_start < 0 or final_setup_end < 0:
+        raise ValueError("reviewed final render setup span not found")
+    final_setup = (
+        "\tmove\t$21,$0\n"
+        "\tli\t$23,16777216\t\t\t# 0x01000000\n"
+        "\tlui\t$3,%hi(D_80054840) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80054840) # low\n"
+        "\taddu\t$fp,$3,48\n"
+        "\taddu\t$20,$sp,32\n"
+        "\tmtc1\t$0,$f20\n"
+        "\tlui\t$22,%hi(D_80059CF0) # high\n"
+        "\tmove\t$17,$2\n"
+    )
+    text = text[:final_setup_start] + final_setup + text[final_setup_end:]
+
+    attachment_start = text.find("\tlui\t$2,%hi(D_800548F4) # high\n")
+    attachment_end = text.find("\taddu\t$21,$21,1\n$L34:\n", attachment_start)
+    if attachment_start < 0 or attachment_end < 0:
+        raise ValueError("reviewed attachment render span not found")
+    attachment = (
+        "\tlui\t$2,%hi(D_800548F4) # high\n"
+        "\taddiu\t$2,$2,%lo(D_800548F4) # low\n"
+        "\taddu\t$2,$22,$2\n"
+        "\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n"
+        "\tsw\t$3,32($sp)\n\tsw\t$4,36($sp)\n\tsw\t$5,40($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800197C8\n\tli\t$4,404\t\t\t# 0x00000194\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$4,$2,44\n\taddu\t$16,$sp,32\n\tmove\t$5,$16\n"
+        "\tlui\t$8,%hi(D_80052F04) # high\n"
+        "\tlw\t$6,%lo(D_80052F04)($8)\n"
+        "\tlui\t$7,%hi(D_80059CF0) # high\n"
+        "\taddiu\t$7,$7,%lo(D_80059CF0) # low\n"
+        "\tsw\t$18,16($sp)\n\tsw\t$19,20($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B910\n\taddu\t$6,$6,40\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,0($23)\n\tlw\t$3,4($23)\n\tlw\t$4,8($23)\n"
+        "\tsw\t$2,32($sp)\n\tsw\t$3,36($sp)\n\tsw\t$4,40($sp)\n"
+        "\tlw\t$8,48($sp)\n\tlw\t$4,248($8)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800197C8\n\taddu\t$4,$4,405\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$4,$2,44\n\tmove\t$5,$16\n"
+        "\tlui\t$8,%hi(D_80052F04) # high\n"
+        "\tlw\t$6,%lo(D_80052F04)($8)\n"
+        "\tlui\t$7,%hi(D_80059CF0) # high\n"
+        "\taddiu\t$7,$7,%lo(D_80059CF0) # low\n"
+        "\tsw\t$18,16($sp)\n\tsw\t$19,20($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B910\n\taddu\t$6,$6,40\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    text = text[:attachment_start] + attachment + text[attachment_end:]
+
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L35\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_80057D5C) # high\n"
+        "\tlw\t$4,%lo(D_80057D5C)($2)\n"
+    ), (
+        "\tbne\t$2,$0,$L35\n\tlui\t$8,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_80057D5C) # high\n"
+        "\tlw\t$4,%lo(D_80057D5C)($3)\n"
+    ), "reviewed outer-loop global allocation")
+    text = replace_once(text, (
+        "\tbeq\t$2,$0,$L22\n\tlui\t$9,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,%lo(D_80052F18)($9)\n"
+    ), (
+        "\tbeq\t$2,$0,$L22\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,%lo(D_80052F18)($2)\n"
+    ), "reviewed first mode-test allocation")
+    text = replace_once(text, (
+        "$L22:\n\tlui\t$10,%hi(D_80052F18) # high\n"
+        "\tlw\t$2,%lo(D_80052F18)($10)\n"
+    ), (
+        "$L22:\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlw\t$2,%lo(D_80052F18)($2)\n"
+    ), "reviewed second mode-test allocation")
+
+    text = replace_once(text, (
+        "\tli\t$2,16777216\t\t\t# 0x01000000\n"
+        "\tand\t$2,$19,$2\n"
+    ), (
+        "\tli\t$8,16777216\t\t\t# 0x01000000\n"
+        "\tand\t$2,$19,$8\n"
+    ), "reviewed draw-flag temporary allocation")
+    text = replace_once(text, (
+        "\tmove\t$6,$5\n"
+        "\tlui\t$7,%hi(D_80059CF0) # high\n"
+        "\taddiu\t$7,$7,%lo(D_80059CF0) # low\n"
+    ), (
+        "\tmove\t$6,$5\n"
+        "\tlui\t$8,%hi(D_80059CF0) # high\n"
+        "\taddiu\t$7,$8,%lo(D_80059CF0) # low\n"
+    ), "reviewed first draw resource allocation")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_80052F04) # high\n"
+        "\tlui\t$7,%hi(D_80059CF0) # high\n"
+        "\tlw\t$6,%lo(D_80052F04)($2)\n"
+        "\taddiu\t$7,$7,%lo(D_80059CF0) # low\n"
+    ), (
+        "\tlui\t$8,%hi(D_80052F04) # high\n"
+        "\tlw\t$6,%lo(D_80052F04)($8)\n"
+        "\tlui\t$8,%hi(D_80059CF0) # high\n"
+        "\taddiu\t$7,$8,%lo(D_80059CF0) # low\n"
+    ), "reviewed camera draw argument allocation")
+
+    loop_start = text.find("$L24:\n")
+    loop_end = text.find("$L1:\n", loop_start)
+    if loop_start < 0 or loop_end < 0:
+        raise ValueError("reviewed final render loop span not found")
+    loop = text[loop_start:loop_end]
+    loop = loop.replace("$fp", "$99")
+    loop = re.sub(r"\$(30|23|22)(?!\d)", lambda m: {
+        "30": "$23", "23": "$22", "22": "$30"
+    }[m.group(1)], loop)
+    loop = loop.replace("$99", "$23")
+    loop = replace_once(loop, (
+        "\tlw\t$11,0($30)\n\tlw\t$8,4($30)\n\tlw\t$9,8($30)\n"
+        "\tsw\t$11,32($sp)\n\tsw\t$8,36($sp)\n\tsw\t$9,40($sp)\n"
+    ), (
+        "\tlw\t$2,0($30)\n\tlw\t$3,4($30)\n\tlw\t$4,8($30)\n"
+        "\tsw\t$2,32($sp)\n\tsw\t$3,36($sp)\n\tsw\t$4,40($sp)\n"
+    ), "reviewed fixed position vector allocation")
+    model_ready = (
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,0($30)\n"
+    )
+    loop = replace_once(loop, model_ready, (
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$16,$2,44\n"
+        "\tlw\t$2,0($30)\n"
+    ), "reviewed final model pointer schedule")
+    loop = replace_once(loop, (
+        "\tjal\tfunc_8001E630\n\taddu\t$16,$2,44\n"
+    ), (
+        "\tjal\tfunc_8001E630\n\tnop\n"
+    ), "reviewed final matrix delay slot")
+    text = text[:loop_start] + loop + text[loop_end:]
+    return normalize_standard_return(text)
+
+
+def normalize_menu_page_input(text: str) -> str:
+    """Reproduce the reviewed retail entry and state-dispatch layout."""
+    start = text.find("func_800182E8:\n")
+    end = text.find("$L3:\n", start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed menu input entry span not found")
+    entry = (
+        "func_800182E8:\n"
+        "\t.frame\t$sp,40,$31\t\t# vars= 0, regs= 5/0, args= 16, extra= 0\n"
+        "\t.mask\t0x800f0000,-8\n\t.fmask\t0x00000000,0\n"
+        "\tsubu\t$sp,$sp,40\n\tmove\t$5,$4\n"
+        "\tsw\t$18,24($sp)\n\tlui\t$18,%hi(D_80059ED0) # high\n"
+        "\tlw\t$4,%lo(D_80059ED0)($18)\n\tsw\t$19,28($sp)\n"
+        "\tmove\t$19,$0\n\tsw\t$16,16($sp)\n\tmove\t$16,$19\n"
+        "\tsw\t$17,20($sp)\n\tsw\t$31,32($sp)\n\tlw\t$3,4($4)\n"
+        "\tli\t$6,1\t\t\t# 0x00000001\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$6,$L66\n\tmove\t$17,$16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$0,$L3\n\tli\t$2,2\t\t\t# 0x00000002\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$2,$L4\n\tmove\t$2,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n\tj\t$L58\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L66:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L58\n\tmove\t$2,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L4:\n\tlbu\t$2,11($4)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L5\n\tlui\t$2,%hi(D_800533D8) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L68\n\tsw\t$0,4($4)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L5:\n\tlw\t$3,%lo(D_800533D8)($2)\n"
+        "\tlui\t$2,%hi(D_800533DC) # high\n"
+        "\tlui\t$4,%hi(D_80059ECC) # high\n"
+        "\taddu\t$3,$3,-1\n\tsw\t$3,%lo(D_800533DC)($2)\n"
+        "\tsll\t$2,$3,1\n\taddu\t$2,$2,$3\n\tsll\t$2,$2,3\n"
+        "\tlui\t$3,%hi(D_80059DD0) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80059DD0) # low\n\taddu\t$2,$2,$3\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L68\n\tsw\t$2,%lo(D_80059ECC)($4)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    text = text[:start] + entry + text[end:]
+    next_page_start = text.find("$L3:\n")
+    next_page_end = text.find("$L7:\n", next_page_start)
+    if next_page_start < 0 or next_page_end < 0:
+        raise ValueError("reviewed next-page input span not found")
+    next_page = (
+        "$L3:\n\tandi\t$2,$5,0x0020\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L7\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$3,%lo(D_80052F18)($2)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$3,$0,$L8\n\tli\t$2,2\t\t\t# 0x00000002\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$3,$2,$L9\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+        "\tlh\t$2,8($4)\n\t#nop\n\tslt\t$2,$2,3\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L8\n\tmove\t$2,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L58\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L9:\n\tlh\t$2,8($4)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L58\n\tmove\t$2,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L8:\n\tlui\t$2,%hi(D_80059ED0) # high\n"
+        "\tlui\t$3,%hi(D_80052F18) # high\n"
+        "\tlw\t$4,%lo(D_80059ED0)($2)\n"
+        "\taddiu\t$5,$3,%lo(D_80052F18) # low\n"
+        "\tlhu\t$2,8($4)\n\tlui\t$3,%hi(D_80059F10) # high\n"
+        "\taddu\t$2,$2,1\n\tsh\t$2,8($4)\n"
+        "\tsll\t$2,$2,16\n\tsra\t$2,$2,14\n\taddu\t$2,$2,$5\n"
+        "\tlw\t$2,12($2)\n\taddiu\t$3,$3,%lo(D_80059F10) # low\n"
+        "\tsll\t$2,$2,2\n\taddu\t$2,$2,$3\n"
+        "\tli\t$3,1\t\t\t# 0x00000001\n\tsw\t$3,0($2)\n"
+        "\tlh\t$16,8($4)\n\t#nop\n\tslt\t$2,$16,4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L14\n\tsll\t$2,$16,2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$3,$2,$5\n"
+        "$L16:\n\tsw\t$0,28($3)\n\taddu\t$16,$16,1\n"
+        "\tslt\t$2,$16,4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L16\n\taddu\t$3,$3,4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L14:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L68\n\tli\t$19,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    text = text[:next_page_start] + next_page + text[next_page_end:]
+    previous_page_start = text.find("$L7:\n")
+    previous_page_end = text.find("$L18:\n", previous_page_start)
+    if previous_page_start < 0 or previous_page_end < 0:
+        raise ValueError("reviewed previous-page input span not found")
+    previous_page = (
+        "$L7:\n\tandi\t$2,$5,0x0010\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L18\n\tandi\t$2,$5,0x0040\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlh\t$3,8($4)\n\tslt\t$2,$3,3\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L68\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddiu\t$5,$2,%lo(D_80052F18) # low\n"
+        "\tsll\t$2,$3,2\n\taddu\t$2,$2,$5\n"
+        "\tlui\t$3,%hi(D_80059F10) # high\n"
+        "\tlw\t$2,12($2)\n\taddiu\t$3,$3,%lo(D_80059F10) # low\n"
+        "\tsll\t$2,$2,2\n\taddu\t$2,$2,$3\n\tsw\t$6,0($2)\n"
+        "\tlhu\t$2,8($4)\n\taddu\t$2,$2,1\n\tsh\t$2,8($4)\n"
+        "\tsll\t$2,$2,16\n\tsra\t$4,$2,16\n\tslt\t$2,$4,5\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L20\n\tsll\t$2,$4,2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L21\n\tli\t$19,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L59:\n\tlw\t$2,%lo(D_80059ED0)($2)\n"
+        "\tlui\t$3,%hi(D_80052F18) # high\n\tlh\t$2,8($2)\n"
+        "\taddiu\t$3,$3,%lo(D_80052F18) # low\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$3\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L22\n\tsw\t$16,12($2)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L20:\n\taddu\t$2,$2,$5\n\tlw\t$2,12($2)\n"
+        "\tsll\t$2,$2,2\n\taddu\t$2,$2,$3\n\tlw\t$2,0($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L22\n\tmove\t$16,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L26:\n\tlw\t$2,0($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L59\n\tlui\t$2,%hi(D_80059ED0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$16,$16,1\n\tslt\t$2,$16,4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L26\n\taddu\t$3,$3,4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L22:\n\tlui\t$2,%hi(D_80059ED0) # high\n"
+        "\tlui\t$6,%hi(D_80053214) # high\n\taddiu\t$6,$6,%lo(D_80053214) # low\n"
+        "\tlui\t$5,%hi(D_80052F18) # high\n\taddiu\t$5,$5,%lo(D_80052F18) # low\n"
+        "\tlw\t$7,%lo(D_80059ED0)($2)\n"
+        "\tlui\t$3,%hi(D_80052FD0) # high\n\tlh\t$2,8($7)\n"
+        "\taddiu\t$3,$3,%lo(D_80052FD0) # low\n\taddu\t$4,$2,1\n"
+        "\tsll\t$4,$4,4\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$5\n"
+        "\tlw\t$2,12($2)\n\taddu\t$4,$4,$6\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$3\n\tlw\t$2,0($2)\n"
+        "\tlui\t$3,%hi(D_8005497C) # high\n\tsw\t$2,0($4)\n"
+        "\tlh\t$2,8($7)\n\taddiu\t$3,$3,%lo(D_8005497C) # low\n"
+        "\taddu\t$4,$2,5\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$5\n"
+        "\tlw\t$2,28($2)\n\tsll\t$4,$4,4\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$3\n\tlw\t$2,0($2)\n\taddu\t$4,$4,$6\n"
+        "\tsw\t$2,0($4)\n"
+        "$L21:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001F138\n\tli\t$4,39\t\t\t# 0x00000027\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L61:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L58\n\tmove\t$2,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    text = text[:previous_page_start] + previous_page + text[previous_page_end:]
+    back_start = text.find("$L18:\n")
+    back_end = text.find("$L29:\n", back_start)
+    if back_start < 0 or back_end < 0:
+        raise ValueError("reviewed menu back/fade span not found")
+    back = (
+        "$L18:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L29\n\tandi\t$2,$5,0x0004\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlh\t$2,8($4)\n\tlhu\t$3,8($4)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L30\n\taddu\t$2,$3,-1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_80052F18) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80052F18) # low\n\tsh\t$2,8($4)\n"
+        "\tsll\t$2,$2,16\n\tsra\t$2,$2,14\n\taddu\t$2,$2,$3\n"
+        "\tlui\t$3,%hi(D_80059F10) # high\n\tlw\t$2,12($2)\n"
+        "\taddiu\t$3,$3,%lo(D_80059F10) # low\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$3\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L31\n\tsw\t$0,0($2)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L30:\n\taddu\t$4,$4,10\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016A50\n\tmove\t$5,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$4,%lo(D_80059ED0)($18)\n\tmove\t$5,$0\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016A50\n\taddu\t$4,$4,14\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_800533D8) # high\n"
+        "\tlw\t$2,%lo(D_800533D8)($3)\n\tslt\t$2,$19,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L31\n\tmove\t$16,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_80059DD0+10) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80059DD0+10) # low\n"
+        "\taddu\t$18,$2,4\n\tmove\t$17,$2\n"
+        "$L35:\n\tlw\t$2,%lo(D_800533D8)($3)\n\taddu\t$2,$2,-1\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$16,$2,$L36\n\tmove\t$4,$17\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L69\n\tli\t$5,255\t\t\t# 0x000000ff\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L36:\n\tli\t$5,127\t\t\t# 0x0000007f\n"
+        "$L69:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016A50\n\taddu\t$17,$17,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$4,$18\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80016A50\n\tli\t$5,255\t\t\t# 0x000000ff\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_800533D8) # high\n"
+        "\tlw\t$2,%lo(D_800533D8)($3)\n\taddu\t$16,$16,1\n"
+        "\tslt\t$2,$16,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L35\n\taddu\t$18,$18,24\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L31:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001F138\n\tli\t$4,38\t\t\t# 0x00000026\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L58\n\tmove\t$2,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    text = text[:back_start] + back + text[back_end:]
+    primary_start = text.find("$L67:\n")
+    primary_end = text.find("$L54:\n", primary_start)
+    if primary_start < 0 or primary_end < 0:
+        raise ValueError("reviewed primary selection loop span not found")
+    primary = (
+        "$L67:\n\taddiu\t$6,$2,%lo(D_80052F18) # low\n"
+        "\tlui\t$2,%hi(D_80059ED0) # high\n"
+        "\tlw\t$5,%lo(D_80059ED0)($2)\n\taddu\t$7,$16,4\n"
+        "\tlui\t$2,%hi(D_80059F10) # high\n"
+        "\taddiu\t$8,$2,%lo(D_80059F10) # low\n"
+        "$L49:\n\tlh\t$2,8($5)\n\tsll\t$2,$2,2\n"
+        "\taddu\t$4,$2,$6\n\tlw\t$2,12($4)\n\taddu\t$3,$2,$7\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbgez\t$3,$L52\n\tmove\t$2,$3\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$2,$3,3\n"
+        "$L52:\n\tsra\t$2,$2,2\n\tsll\t$2,$2,2\n"
+        "\tsubu\t$2,$3,$2\n\tsw\t$2,12($4)\n"
+        "\tlh\t$2,8($5)\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$6\n"
+        "\tlw\t$2,12($2)\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$8\n"
+        "\tlw\t$2,0($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L49\n\tlui\t$3,%hi(D_80059F20) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80052F18) # low\n\tmove\t$8,$2\n"
+        "\tlui\t$2,%hi(D_80059ED0) # high\n"
+        "\tlui\t$5,%hi(D_80053214) # high\n"
+        "\taddiu\t$5,$5,%lo(D_80053214) # low\n"
+        "\tlw\t$2,%lo(D_80059ED0)($2)\n"
+        "\tlw\t$6,%lo(D_80059F20)($3)\n"
+        "\tlui\t$3,%hi(D_80052FD0) # high\n\tmove\t$7,$2\n"
+        "\tlh\t$2,8($7)\n\taddiu\t$3,$3,%lo(D_80052FD0) # low\n"
+        "\taddu\t$4,$2,1\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$8\n"
+        "\tlw\t$2,12($2)\n\tsll\t$4,$4,4\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$3\n\tlw\t$2,0($2)\n\taddu\t$4,$4,$5\n"
+        "\tsw\t$2,0($4)\n"
+    )
+    text = text[:primary_start] + primary + text[primary_end:]
+    secondary_start = text.find("$L54:\n")
+    secondary_end = text.find("$L58:\n", secondary_start)
+    if secondary_start < 0 or secondary_end < 0:
+        raise ValueError("reviewed secondary selection loop span not found")
+    secondary = (
+        "$L54:\n\tlh\t$4,8($7)\n\tsll\t$4,$4,2\n"
+        "\taddu\t$4,$4,$8\n\tlw\t$2,28($4)\n\taddu\t$2,$2,$6\n"
+        "\taddu\t$2,$2,$17\n\trem\t$3,$2,$6\n\tsw\t$3,28($4)\n"
+        "\tlh\t$2,8($7)\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$8\n"
+        "\tlw\t$2,28($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L54\n\tlui\t$2,%hi(D_80059ED0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$6,%hi(D_80053214) # high\n"
+        "\taddiu\t$6,$6,%lo(D_80053214) # low\n"
+        "\tlui\t$3,%hi(D_8005497C) # high\n"
+        "\tlw\t$2,%lo(D_80059ED0)($2)\n"
+        "\taddiu\t$3,$3,%lo(D_8005497C) # low\n"
+        "\tlh\t$4,8($2)\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\taddiu\t$2,$2,%lo(D_80052F18) # low\n\taddu\t$5,$4,5\n"
+        "\tsll\t$4,$4,2\n\taddu\t$4,$4,$2\n\tlw\t$2,28($4)\n"
+        "\tsll\t$5,$5,4\n\tsll\t$2,$2,2\n\taddu\t$2,$2,$3\n"
+        "\tlw\t$2,0($2)\n\taddu\t$5,$5,$6\n\tsw\t$2,0($5)\n"
+    )
+    text = text[:secondary_start] + secondary + text[secondary_end:]
+    epilogue = text.find("$L58:\n")
+    if epilogue < 0:
+        raise ValueError("reviewed menu input epilogue not found")
+    text = text[:epilogue] + "$L68:\n\tmove\t$2,$19\n" + text[epilogue:]
+    return normalize_standard_return(text)
+
+
+def normalize_animation_vertices(text: str) -> str:
+    """Reproduce the retail lifetime split before the packed-vertex loop."""
+    start = text.find("func_8000B380:\n")
+    end = text.find("$L12:\n", start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed animation vertex entry span not found")
+    entry = (
+        "func_8000B380:\n"
+        "\t.frame\t$sp,40,$31\t\t# vars= 0, regs= 9/0, args= 0, extra= 0\n"
+        "\t.mask\t0x40ff0000,-8\n\t.fmask\t0x00000000,0\n"
+        "\tsubu\t$sp,$sp,40\n\tmove\t$25,$0\n\tli\t$9,1\t\t\t# 0x00000001\n"
+        "\taddu\t$3,$5,20\n\tandi\t$6,$6,0xffff\n\tsll\t$2,$6,1\n"
+        "\taddu\t$2,$2,$3\n\tsw\t$18,8($sp)\n\tmove\t$18,$7\n"
+        "\tsw\t$21,20($sp)\n\tmove\t$21,$18\n\tsw\t$fp,32($sp)\n"
+        "\tsw\t$23,28($sp)\n\tsw\t$22,24($sp)\n\tsw\t$20,16($sp)\n"
+        "\tsw\t$19,12($sp)\n\tsw\t$17,4($sp)\n\tsw\t$16,0($sp)\n"
+        "\tlw\t$8,28($4)\n\tlw\t$11,20($4)\n\tlhu\t$4,8($5)\n"
+        "\tlhu\t$20,12($5)\n\tlhu\t$3,2($2)\n\tlhu\t$2,0($2)\n"
+        "\tlw\t$fp,56($sp)\n\tandi\t$10,$4,0x8000\n\tsubu\t$3,$3,$2\n"
+        "\taddu\t$24,$3,-1\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbgtz\t$24,$L2\n\tandi\t$4,$4,0x2000\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$9,$25\n\tli\t$24,1\t\t\t# 0x00000001\n"
+        "$L2:\n\tlw\t$3,4($5)\n\tsll\t$2,$6,2\n\taddu\t$17,$3,$2\n"
+        "\tlhu\t$2,14($5)\n\tandi\t$2,$2,0x0080\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L3\n\taddu\t$16,$17,4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$20,$20,-1\n\tandi\t$2,$20,0xffff\n\taddu\t$2,$2,-1\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeql\t$6,$2,$L3\n\tmove\t$16,$3\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L3:\n\tlhu\t$2,0($11)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L6\n\tsll\t$2,$10,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsra\t$19,$2,16\n\tsll\t$2,$4,16\n\tsra\t$23,$2,16\n"
+        "\tmove\t$22,$9\n$L32:\n\tlhu\t$2,0($11)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L8\n\tmove\t$15,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli.d\t$f6,4.29496729600000000000e9\n"
+        "\tandi\t$2,$20,0xffff\n\tsll\t$7,$2,2\n\tsll\t$2,$25,4\n"
+        "\taddu\t$10,$2,$21\n"
+    )
+    text = text[:start] + entry + text[end:]
+    loop_start = text.find("$L14:\n")
+    loop_end = text.find("$L8:\n", loop_start)
+    if loop_start < 0 or loop_end < 0:
+        raise ValueError("reviewed animation vertex interpolation span not found")
+    loop = (
+        "$L14:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$22,$0,$L16\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,0($16)\n\tsll\t$3,$2,21\n\tsra\t$4,$3,21\n"
+        "\tmove\t$5,$4\n\tsll\t$3,$2,10\n\tsra\t$3,$3,21\n"
+        "\tmove\t$6,$3\n\tsra\t$2,$2,22\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$19,$0,$L17\n\tmove\t$14,$2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsll\t$5,$4,1\n\tsll\t$6,$3,1\n\tsll\t$14,$2,1\n"
+        "$L17:\n\tmove\t$4,$8\n\tmtc1\t$24,$f0\n\tcvt.d.w\t$f0,$f0\n"
+        "\tsll\t$3,$5,16\n\tsra\t$3,$3,16\n"
+        "\tsll\t$2,$9,16\n\tsra\t$2,$2,16\n\tsubu\t$3,$3,$2\n"
+        "\tmtc1\t$3,$f2\n\tcvt.s.w\t$f2,$f2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbgez\t$24,$L40\n\taddu\t$8,$8,4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tadd.d\t$f0,$f0,$f6\n$L40:\n\tcvt.s.d\t$f0,$f0\n"
+        "\tdiv.s\t$f0,$f2,$f0\n\ts.s\t$f0,0($4)\n"
+        "\tmove\t$4,$8\n\tmtc1\t$24,$f0\n\tcvt.d.w\t$f0,$f0\n"
+        "\tsll\t$3,$6,16\n\tsra\t$3,$3,16\n"
+        "\tsll\t$2,$12,16\n\tsra\t$2,$2,16\n\tsubu\t$3,$3,$2\n"
+        "\tmtc1\t$3,$f2\n\tcvt.s.w\t$f2,$f2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbgez\t$24,$L41\n\taddu\t$8,$8,4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tadd.d\t$f0,$f0,$f6\n$L41:\n\tcvt.s.d\t$f0,$f0\n"
+        "\tdiv.s\t$f0,$f2,$f0\n\ts.s\t$f0,0($4)\n"
+        "\tmove\t$4,$8\n\tmtc1\t$24,$f0\n\tcvt.d.w\t$f0,$f0\n"
+        "\tsll\t$3,$14,16\n\tsra\t$3,$3,16\n"
+        "\tsll\t$2,$13,16\n\tsra\t$2,$2,16\n\tsubu\t$3,$3,$2\n"
+        "\tmtc1\t$3,$f2\n\tcvt.s.w\t$f2,$f2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbgez\t$24,$L42\n\taddu\t$8,$8,4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tadd.d\t$f0,$f0,$f6\n$L42:\n\tcvt.s.d\t$f0,$f0\n"
+        "\tdiv.s\t$f0,$f2,$f0\n\ts.s\t$f0,0($4)\n"
+        "$L16:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$fp,$0,$L21\n\tsll\t$2,$9,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tl.s\t$f2,-12($8)\n\tmtc1\t$fp,$f4\n\tcvt.s.w\t$f4,$f4\n"
+        "\tmul.s\t$f2,$f2,$f4\n\tsra\t$2,$2,16\n\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n\tadd.s\t$f0,$f0,$f2\n"
+        "\ttrunc.w.s $f2,$f0,$15\n\tmfc1\t$2,$f2\n\tsh\t$2,0($10)\n"
+        "\tl.s\t$f2,-8($8)\n\tmul.s\t$f2,$f2,$f4\n"
+        "\tsll\t$2,$12,16\n\tsra\t$2,$2,16\n\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n\tadd.s\t$f0,$f0,$f2\n"
+        "\ttrunc.w.s $f2,$f0,$15\n\tmfc1\t$2,$f2\n\tsh\t$2,2($10)\n"
+        "\tl.s\t$f2,-4($8)\n\tmul.s\t$f2,$f2,$f4\n"
+        "\tsll\t$2,$13,16\n\tsra\t$2,$2,16\n\tmtc1\t$2,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n\tadd.s\t$f0,$f0,$f2\n"
+        "\ttrunc.w.s $f2,$f0,$15\n\tmfc1\t$2,$f2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L22\n\tsh\t$2,4($10)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L21:\n\tsh\t$9,0($10)\n\tsh\t$12,2($10)\n\tsh\t$13,4($10)\n"
+        "$L22:\n\taddu\t$17,$17,$7\n\taddu\t$16,$16,$7\n"
+        "\taddu\t$10,$10,16\n\tlhu\t$2,0($11)\n\taddu\t$15,$15,1\n"
+        "\tslt\t$2,$15,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L12\n\taddu\t$25,$25,1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L8:\n"
+    )
+    text = text[:loop_start] + loop + text[loop_end + len("$L8:\n"):]
+    tail_start = text.find("$L8:\n")
+    tail_end = text.find("\t.end\tfunc_8000B380\n", tail_start)
+    if tail_start < 0 or tail_end < 0:
+        raise ValueError("reviewed animation vertex copied-run tail not found")
+    tail = (
+        "$L8:\n\taddu\t$11,$11,2\n\tlhu\t$4,0($11)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$4,$0,$L5\n\taddu\t$11,$11,2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$4,$0,$L5\n\tmove\t$15,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsll\t$2,$25,4\n\taddu\t$3,$2,$21\n"
+        "$L23:\n\tlhu\t$2,0($11)\n\tsll\t$2,$2,4\n"
+        "\taddu\t$2,$2,$18\n\tlhu\t$2,0($2)\n\tsh\t$2,0($3)\n"
+        "\tlhu\t$2,0($11)\n\tsll\t$2,$2,4\n\taddu\t$2,$2,$18\n"
+        "\tlhu\t$2,2($2)\n\taddu\t$25,$25,1\n\tsh\t$2,2($3)\n"
+        "\tlhu\t$2,0($11)\n\taddu\t$15,$15,1\n\tsll\t$2,$2,4\n"
+        "\taddu\t$2,$2,$18\n\tlhu\t$2,4($2)\n\taddu\t$11,$11,2\n"
+        "\tsh\t$2,4($3)\n\tslt\t$2,$15,$4\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L23\n\taddu\t$3,$3,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L5:\n\tlhu\t$2,0($11)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L32\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L6:\n\tlw\t$fp,32($sp)\n\tlw\t$23,28($sp)\n"
+        "\tlw\t$22,24($sp)\n\tlw\t$21,20($sp)\n\tlw\t$20,16($sp)\n"
+        "\tlw\t$19,12($sp)\n\tlw\t$18,8($sp)\n\tlw\t$17,4($sp)\n"
+        "\tlw\t$16,0($sp)\n\taddu\t$sp,$sp,40\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$31\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    return text[:tail_start] + tail + text[tail_end:]
 
 
 def normalize_debris_spawn(text: str) -> str:
@@ -5874,6 +6696,394 @@ def normalize_two_player_minigame(text: str) -> str:
 def normalize_board_scene_renderer(text: str) -> str:
     """Use retail's free t1 temporary outside the paired modulo calculation."""
     text = normalize_standard_return(text)
+    text = replace_once(text, (
+        "\tlw\t$4,%lo(D_80052F18)($16)\n\tlw\t$2,4($18)\n"
+        "\tsll\t$3,$4,1\n\taddu\t$3,$3,$4\n\taddu\t$2,$2,232\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B8C4\n\taddu\t$19,$3,$2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tbne\t$2,$0,$L12\n\tlw\t$2,%lo(D_80052F18)($16)\n"
+        "\t#nop\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$17,$L13\n\tmove\t$20,$0\n"
+    ), (
+        "\tlw\t$2,%lo(D_80052F18)($16)\n\tsll\t$3,$2,1\n"
+        "\taddu\t$3,$3,$2\n\tlw\t$2,4($18)\n\taddu\t$3,$3,232\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B8C4\n\taddu\t$19,$2,$3\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L12\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,%lo(D_80052F18)($16)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$17,$L13\n\tmove\t$20,$0\n"
+    ), "reviewed board renderer resource selection")
+    text = replace_once(text, (
+        "\tlui\t$2,%hi(D_800581E9) # high\n"
+        "\tlb\t$23,%lo(D_800581E9)($2)\n\tmove\t$fp,$20\n"
+        "\tsw\t$0,68($sp)\n\tsw\t$0,72($sp)\n\tsw\t$0,64($sp)\n"
+        "\taddu\t$23,$23,86\n"
+    ), (
+        "\tlui\t$2,%hi(D_800581E9) # high\n"
+        "\tlb\t$2,%lo(D_800581E9)($2)\n\tmove\t$fp,$20\n"
+        "\tsw\t$0,68($sp)\n\tsw\t$0,72($sp)\n\tsw\t$0,64($sp)\n"
+        "\taddu\t$23,$2,86\n"
+    ), "reviewed board renderer room resource id")
+    text = replace_once(text, (
+        "\tsll\t$2,$2,4\n\taddu\t$2,$2,$3\n\tlh\t$23,8220($2)\n"
+    ), (
+        "\tsll\t$2,$2,4\n\taddu\t$3,$3,$2\n\tlh\t$23,8220($3)\n"
+    ), "reviewed board renderer room record address")
+    text = replace_once(text, (
+        "\taddu\t$18,$2,44\n\tli\t$20,268435456\t\t\t# 0x10000000\n"
+        "\tmove\t$fp,$0\n\tli\t$9,64\t\t\t# 0x00000040\n"
+    ), (
+        "\taddu\t$18,$2,44\n\tli\t$20,268435456\t\t\t# 0x10000000\n"
+        "\tli\t$9,64\t\t\t# 0x00000040\n\tmove\t$fp,$0\n"
+    ), "reviewed board renderer background bounds schedule")
+    text = replace_once(text, (
+        "\tlui\t$17,%hi(D_800581D0) # high\n"
+        "\tl.s\t$f0,%lo(D_80054330)($16)\n"
+        "\tlw\t$6,%lo(D_800581D0)($17)\n"
+    ), (
+        "\tlui\t$17,0x8006\n"
+        "\taddiu\t$17,$17,-32320\n"
+        "\tl.s\t$f0,%lo(D_80054330)($16)\n"
+        "\tlw\t$6,16($17)\n"
+    ), "reviewed board renderer room-state base")
+    text = replace_once(
+        text,
+        "\tlw\t$2,%lo(D_800581D0)($17)\n",
+        "\tlw\t$2,16($17)\n",
+        "reviewed board renderer room-state flag access",
+    )
+    text = replace_once(text, (
+        "\tadd.s\t$f0,$f0,$f2\n\tmove\t$5,$20\n"
+        "\tandi\t$6,$6,0x7fff\n"
+    ), (
+        "\tadd.s\t$f0,$f0,$f2\n\tmove\t$5,$4\n"
+        "\tandi\t$6,$6,0x7fff\n"
+    ), "reviewed board renderer room-angle call argument")
+    text = replace_once(text, (
+        "\tjal\tfunc_80006AE0\n\tmove\t$6,$20\n"
+    ), (
+        "\tjal\tfunc_80006AE0\n\tmove\t$6,$5\n"
+    ), "reviewed board renderer room-vector call argument")
+    loop_start = text.find("$L24:\n$L27:\n")
+    loop_end_marker = "\tandi\t$19,$2,0x8000\n\tandi\t$16,$2,0x7fff\n"
+    loop_end = text.find(loop_end_marker, loop_start)
+    if loop_start < 0 or loop_end < 0:
+        raise ValueError("reviewed board renderer tile-loop preheader not found")
+    loop_end += len(loop_end_marker)
+    preheader = (
+        "$L24:\n"
+        "\tlw\t$21,68($sp)\n\tlw\t$9,72($sp)\n\tslt\t$2,$21,$9\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L124\n\tlui\t$2,%hi(D_800581E9) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L31:\n\tlw\t$9,64($sp)\n\tmove\t$18,$fp\n\tslt\t$2,$18,$9\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L30\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$9,68($sp)\n\tmtc1\t$0,$f20\n"
+        "\tsubu\t$22,$21,$9\n\tsll\t$3,$22,2\n\taddu\t$3,$3,$22\n"
+        "\tsll\t$2,$3,4\n\tsubu\t$2,$2,$3\n\tsll\t$2,$2,3\n"
+        "\taddu\t$9,$2,300\n\tsw\t$2,80($sp)\n\tsw\t$9,84($sp)\n"
+        "\tlui\t$9,%hi(D_800581F0) # high\n$L35:\n"
+        "\tlw\t$2,%lo(D_800581F0)($9)\n\tsll\t$3,$21,7\n"
+        "\taddu\t$3,$3,$2\n\tsll\t$2,$18,1\n\taddu\t$3,$3,$2\n"
+        "\tlh\t$4,18($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$4,$0,$L34\n\tmove\t$16,$4\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tandi\t$19,$16,0x8000\n\tandi\t$16,$16,0x7fff\n"
+    )
+    text = text[:loop_start] + preheader + text[loop_end:]
+    text = replace_once(
+        text,
+        "\tjal\tfunc_8002A154\n\tjal\tfunc_80027880\n",
+        "\tjal\tfunc_8002A154\n$L27:\n\tjal\tfunc_80027880\n",
+        "reviewed board renderer mode-two exit label",
+    )
+    text = replace_once(text, (
+        "$L34:\n\tlw\t$9,64($sp)\n\taddu\t$18,$18,1\n"
+        "\tslt\t$2,$18,$9\n\tbne\t$2,$0,$L35\n"
+    ), (
+        "$L34:\n\tlw\t$9,64($sp)\n\taddu\t$18,$18,1\n"
+        "\tslt\t$2,$18,$9\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L35\n\tlui\t$9,%hi(D_800581F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "reviewed board renderer inner-loop back edge")
+    draw_start = text.find(
+        "\tbeq\t$18,$0,$L123\n\tlui\t$2,%hi(D_80052F18) # high\n"
+    )
+    draw_end_marker = "$L123:\n\tlw\t$3,%lo(D_80052F18)($2)\n"
+    draw_end = text.find(draw_end_marker, draw_start)
+    if draw_start < 0 or draw_end < 0:
+        raise ValueError("reviewed board renderer model-draw span not found")
+    draw_end += len(draw_end_marker)
+    draw = (
+        "\tbeq\t$18,$0,$L123\n\tlui\t$4,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B8EC\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L20\n\tlui\t$17,0x0800\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$2,0x0800\n\tor\t$20,$20,$2\n\tmove\t$4,$18\n"
+        "\taddu\t$5,$sp,32\n\tlui\t$2,%hi(D_80052F04) # high\n"
+        "\tlui\t$7,%hi(D_80059CF0) # high\n"
+        "\tlw\t$6,%lo(D_80052F04)($2)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L106\n\taddiu\t$7,$7,%lo(D_80059CF0) # low\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L20:\n\tor\t$20,$20,$17\n\tmove\t$4,$18\n"
+        "\tlui\t$2,%hi(D_80059D48) # high\n"
+        "\tlw\t$5,%lo(D_80059D48)($2)\n"
+        "\taddiu\t$2,$2,%lo(D_80059D48) # low\n"
+        "\tlw\t$6,4($2)\n\tlw\t$7,8($2)\n"
+        "\tlui\t$2,%hi(D_80059CF0) # high\n"
+        "\taddiu\t$16,$2,%lo(D_80059CF0) # low\n"
+        "\tsw\t$16,16($sp)\n\tsw\t$19,20($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000C034\n\tsw\t$20,24($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$21,$0,$L22\n\tmove\t$4,$21\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$5,$sp,32\n\tlui\t$2,%hi(D_80052F04) # high\n"
+        "\tlw\t$6,%lo(D_80052F04)($2)\n\tmove\t$7,$16\n"
+        "\tsw\t$19,16($sp)\n\tsw\t$20,20($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B910\n\taddu\t$6,$6,40\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L22:\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$22,$0,$L123\n\tlui\t$4,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli.s\t$f0,1.00000000000000000000e1\n"
+        "\ts.s\t$f20,32($sp)\n\ts.s\t$f20,40($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001E630\n\ts.s\t$f0,36($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tor\t$20,$20,$17\n\tmfc1\t$5,$f20\n\tmove\t$19,$2\n"
+        "\ts.s\t$f22,16($sp)\n\tl.s\t$f0,32($sp)\n\tmove\t$4,$19\n"
+        "\ts.s\t$f0,20($sp)\n\tl.s\t$f0,36($sp)\n\tmove\t$6,$5\n"
+        "\ts.s\t$f0,24($sp)\n\tl.s\t$f0,40($sp)\n\tmove\t$7,$5\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000CF10\n\ts.s\t$f0,28($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$4,$22\n\taddu\t$5,$sp,32\n"
+        "\tlui\t$2,%hi(D_80052F04) # high\n"
+        "\tlw\t$6,%lo(D_80052F04)($2)\n\tmove\t$7,$16\n"
+        "$L106:\n\tsw\t$19,16($sp)\n\tsw\t$20,20($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B910\n\taddu\t$6,$6,40\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$4,%hi(D_80052F18) # high\n"
+        "$L123:\n\tlw\t$3,%lo(D_80052F18)($4)\n"
+    )
+    text = text[:draw_start] + draw + text[draw_end:]
+    rotation_start = text.find(
+        "\tl.s\t$f0,%lo(D_80054330)($16)\n"
+        "\tli.s\t$f2,9.00000000000000000000e1\n"
+    )
+    rotation_end_marker = (
+        "\tjal\tfunc_8000CF10\n\tmove\t$4,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    rotation_end = text.find(rotation_end_marker, rotation_start)
+    if rotation_start < 0 or rotation_end < 0:
+        raise ValueError("reviewed board renderer rotation span not found")
+    rotation_end += len(rotation_end_marker)
+    rotation = (
+        "\tmove\t$19,$2\n\tl.s\t$f0,%lo(D_80054330)($16)\n"
+        "\tli.s\t$f2,9.00000000000000000000e1\n\tmfc1\t$6,$f0\n"
+        "\tli.s\t$f0,1.00000000000000000000e0\n\tmtc1\t$6,$f8\n"
+        "\tli\t$8,-1240793088\t\t\t# 0xb60b0000\n"
+        "\ts.s\t$f0,16($sp)\n\tl.s\t$f0,32($sp)\n"
+        "\tadd.s\t$f2,$f8,$f2\n\tori\t$8,$8,0x60b7\n"
+        "\ts.s\t$f0,20($sp)\n\ttrunc.w.s\t$f0,$f2\n\tmfc1\t$5,$f0\n"
+        "\tl.s\t$f0,36($sp)\n\tmult\t$5,$8\n\ts.s\t$f0,24($sp)\n"
+        "\tl.s\t$f0,40($sp)\n\ts.s\t$f0,28($sp)\n"
+        "\tli.s\t$f0,1.80000000000000000000e2\n\tadd.s\t$f0,$f8,$f0\n"
+        "\tsra\t$3,$5,31\n\tmfhi\t$9\n\taddu\t$2,$9,$5\n"
+        "\tsra\t$2,$2,8\n\tsubu\t$2,$2,$3\n\tsll\t$3,$2,1\n"
+        "\taddu\t$3,$3,$2\n\tsll\t$2,$3,4\n\tsubu\t$2,$2,$3\n"
+        "\tsll\t$2,$2,3\n\ttrunc.w.s\t$f2,$f0\n\tmfc1\t$7,$f2\n"
+        "\tmult\t$7,$8\n\tsubu\t$5,$5,$2\n\tmtc1\t$5,$f8\n"
+        "\tcvt.s.w\t$f8,$f8\n\tmfc1\t$5,$f8\n\tsra\t$3,$7,31\n"
+        "\tmfhi\t$9\n\taddu\t$2,$9,$7\n\tsra\t$2,$2,8\n"
+        "\tsubu\t$2,$2,$3\n\tsll\t$3,$2,1\n\taddu\t$3,$3,$2\n"
+        "\tsll\t$2,$3,4\n\tsubu\t$2,$2,$3\n\tsll\t$2,$2,3\n"
+        "\tsubu\t$7,$7,$2\n\tmtc1\t$7,$f8\n\tcvt.s.w\t$f8,$f8\n"
+        "\tmfc1\t$7,$f8\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000CF10\n\tmove\t$4,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    )
+    text = text[:rotation_start] + rotation + text[rotation_end:]
+    room_record = (
+        "\taddu\t$2,$2,$3\n\tlh\t$3,8220($2)\n"
+    )
+    if text.count(room_record) != 2:
+        raise ValueError("reviewed board renderer repeated room-record access not found twice")
+    text = text.replace(
+        room_record,
+        "\taddu\t$3,$3,$2\n\tlh\t$3,8220($3)\n",
+    )
+    text = replace_once(text, (
+        "\tlhu\t$20,0($4)\n\tli\t$2,324\t\t\t# 0x00000144\n"
+        "\tandi\t$20,$20,0x2000\n"
+        "\tsltu\t$20,$20,1\n"
+    ), (
+        "\tlhu\t$3,0($4)\n\tli\t$2,324\t\t\t# 0x00000144\n"
+        "\tandi\t$3,$3,0x2000\n"
+        "\tsltu\t$3,$3,1\n"
+    ), "reviewed board renderer model-flag registers")
+    text = replace_once(
+        text,
+        "\tsll\t$20,$20,27\n",
+        "\tsll\t$20,$3,27\n",
+        "reviewed board renderer model-flag shift",
+    )
+    text = replace_once(text, (
+        "\ttrunc.w.s $f8,$f0,$9\n\tmfc1\t$4,$f8\n"
+        "\ttrunc.w.s $f8,$f2,$9\n\tmfc1\t$5,$f8\n"
+    ), (
+        "\ttrunc.w.s $f4,$f0,$9\n\tmfc1\t$4,$f4\n"
+        "\ttrunc.w.s $f0,$f2,$9\n\tmfc1\t$5,$f0\n"
+    ), "reviewed board renderer object-angle conversions")
+    text = replace_once(text, (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$4,$0,$L39\n\tli\t$5,15\t\t\t# 0x0000000f\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80025FC4\n\tsw\t$6,80($sp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$6,80($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L39\n\tli\t$9,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsw\t$9,76($sp)\n #APP\n #NO_APP\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L38\n\taddu\t$16,$17,15\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L39:\n\tlui\t$9,%hi(D_80052F18) # high\n"
+        "\tlw\t$2,%lo(D_80052F18)($9)\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$4,$0,$L39B\n\tlui\t$9,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80025FC4\n\tli\t$5,15\t\t\t# 0x0000000f\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L39\n\tli\t$9,1\t\t\t# 0x00000001\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsw\t$9,76($sp)\n #APP\n #NO_APP\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L38\n\taddu\t$16,$17,15\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "$L39:\n\tlui\t$9,%hi(D_80052F18) # high\n$L39B:\n"
+        "\tlw\t$2,%lo(D_80052F18)($9)\n"
+    ), "reviewed board renderer bonus-call scheduling")
+    text = replace_once(text, (
+        "$L112:\n\taddu\t$3,$3,$2\n\tmove\t$4,$18\n"
+        "\taddu\t$5,$sp,32\n"
+    ), (
+        "$L112:\n\taddu\t$2,$3,$2\n\tmove\t$6,$2\n"
+        "\tmove\t$4,$18\n\taddu\t$5,$sp,32\n"
+    ), "reviewed board renderer alpha calculation result")
+    text = replace_once(
+        text,
+        "\tsb\t$3,23($18)\n",
+        "\tsb\t$6,23($18)\n",
+        "reviewed board renderer alpha store",
+    )
+    text = replace_once(
+        text,
+        "\tmtc1\t$fp,$f0\n\tcvt.s.w\t$f0,$f0\n",
+        "\tl.s\t$f0,80($sp)\n\tcvt.s.w\t$f0,$f0\n",
+        "reviewed board renderer far-tile z coordinate",
+    )
+    text = replace_once(
+        text,
+        "\ts.s\t$f0,32($sp)\n\tmtc1\t$6,$f0\n\tcvt.s.w\t$f0,$f0\n",
+        "\ts.s\t$f0,32($sp)\n\tl.s\t$f0,84($sp)\n\tcvt.s.w\t$f0,$f0\n",
+        "reviewed board renderer near-tile z coordinate",
+    )
+    placed_start = text.find(
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L130\n\tlui\t$16,%hi(D_800529F0) # high\n"
+    )
+    placed_body = text.find("$L60:\n\tmove\t$18,$17\n", placed_start)
+    if placed_start < 0 or placed_body < 0:
+        raise ValueError("reviewed board renderer placed-object loop entry not found")
+    placed_body += len("$L60:\n\tmove\t$18,$17\n")
+    placed_entry = (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L130\n\tmove\t$20,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000B8EC\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L130B\n\tlui\t$16,%hi(D_800529F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80005544\n\tmove\t$21,$20\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80010B0C\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$9,60($sp)\n\tlh\t$2,10($9)\n"
+        "\tslt\t$2,$20,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbeq\t$2,$0,$L130B\n\tlui\t$16,%hi(D_800529F0) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$22,%hi(D_80054330) # high\n"
+        "\tmtc1\t$0,$f20\n"
+        "\tlui\t$23,%hi(D_80059CF0) # high\n"
+        "\tmove\t$17,$9\n$L60:\n"
+    )
+    text = text[:placed_start] + placed_entry + text[placed_body:]
+    model_lookup = text.find("\tjal\tfunc_800197C8\n", placed_start)
+    if model_lookup < 0:
+        raise ValueError("reviewed board renderer placed-object model lookup not found")
+    placed_segment = text[placed_start:model_lookup]
+    placed_segment = re.sub(r"\$18\b", "$17", placed_segment)
+    text = text[:placed_start] + placed_segment + text[model_lookup:]
+    text = replace_once(text, (
+        "$L59:\n\tlw\t$9,60($sp)\n\taddu\t$21,$21,1\n"
+        "\tlh\t$2,10($9)\n\t#nop\n\tslt\t$2,$21,$2\n"
+    ), (
+        "$L59:\n\tlw\t$9,60($sp)\n\tlh\t$2,10($9)\n"
+        "\taddu\t$21,$21,1\n\tslt\t$2,$21,$2\n"
+    ), "reviewed board renderer placed-object loop increment")
+    text = replace_once(
+        text,
+        "\tlui\t$16,%hi(D_800529F0) # high\n$L130:\n",
+        "$L130:\n\tlui\t$16,%hi(D_800529F0) # high\n$L130B:\n",
+        "reviewed board renderer placed-object loop exit label",
+    )
+    text = replace_once(text, (
+        "\tjal\tfunc_8000E078\n\tlui\t$3,%hi(D_800581E9) # high\n"
+        "\tlb\t$3,%lo(D_800581E9)($3)\n\t#nop\n"
+        "\tbne\t$2,$3,$L1\n\tlw\t$2,%lo(D_800529F0)($16)\n"
+        "\taddu\t$6,$sp,52\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000E078\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlui\t$3,%hi(D_800581E9) # high\n"
+        "\tlb\t$3,%lo(D_800581E9)($3)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$3,$L1\n\taddu\t$6,$sp,52\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,%lo(D_800529F0)($16)\n"
+    ), "reviewed board renderer player-event scheduling")
     # The preferred source shape already assigns both remainder calculations to
     # t1, so there is no conflicting t2 live range left to protect.
     if "$10" not in text:
@@ -6344,7 +7554,199 @@ def normalize_player_scoreboard(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_board_player_event(text: str) -> str:
+    """Reproduce the retail live ranges for the board-player event handler."""
+    text = replace_once(text, (
+        "\tsubu\t$sp,$sp,56\n"
+        "\tsw\t$19,28($sp)\n\tmove\t$19,$0\n"
+        "\tsw\t$21,36($sp)\n\tli\t$21,1\t\t\t# 0x00000001\n"
+        "\tsw\t$20,32($sp)\n\tmove\t$20,$21\n"
+        "\tsw\t$23,44($sp)\n\tmove\t$23,$19\n"
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$19\n"
+        "\tsw\t$fp,48($sp)\n\tmove\t$fp,$19\n"
+        "\tsw\t$18,24($sp)\n\tmove\t$18,$4\n"
+    ), (
+        "\tsubu\t$sp,$sp,56\n"
+        "\tsw\t$18,24($sp)\n\tmove\t$18,$4\n"
+        "\tsw\t$19,28($sp)\n\tmove\t$19,$0\n"
+        "\tsw\t$21,36($sp)\n\tli\t$21,1\t\t\t# 0x00000001\n"
+        "\tsw\t$20,32($sp)\n\tmove\t$20,$21\n"
+        "\tsw\t$23,44($sp)\n\tmove\t$23,$19\n"
+        "\tsw\t$17,20($sp)\n\tmove\t$17,$19\n"
+        "\tsw\t$fp,48($sp)\n\tmove\t$fp,$17\n"
+    ), "reviewed board-event prologue live ranges")
+
+    loop = re.compile(
+        r"\t\.set\tnoreorder\n\t\.set\tnomacro\n"
+        r"\tbne\t\$fp,\$0,(?P<exit>\$L\d+)\n"
+        r"\tmove\t\$fp,\$0\n\t\.set\tmacro\n\t\.set\treorder\n\n"
+        r".*?"
+        r"(?P<after>\$L\d+):\n\tlui\t\$2,%hi\(D_80052F18\) # high\n",
+        re.DOTALL,
+    )
+    match = loop.search(text)
+    if match is None:
+        raise ValueError("reviewed board-event occupant loop not found")
+    old = match.group(0)
+    labels = re.findall(r"^(\$L\d+):$", old, re.MULTILINE)
+    if len(labels) < 3:
+        raise ValueError("reviewed board-event loop labels not found")
+    loop_label = labels[0]
+    continue_label = labels[1]
+    after_label = match.group("after")
+    if after_label != labels[-1]:
+        raise ValueError("reviewed board-event loop exit label mismatch")
+    exit_label = match.group("exit")
+    new = (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbne\t$fp,$0,{exit_label}\n\tmove\t$17,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$16,$0\n"
+        "\tlui\t$5,%hi(D_80057D5C) # high\n"
+        "\tlhu\t$2,246($18)\n"
+        "\tlw\t$3,%lo(D_80057D5C)($5)\n"
+        "\tlui\t$4,%hi(D_80059DB8) # high\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tblez\t$3,{after_label}\n"
+        "\tsh\t$2,%lo(D_80059DB8)($4)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$fp,$5\n"
+        f"{loop_label}:\n"
+        "\tlw\t$2,244($18)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbeq\t$16,$2,{continue_label}\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800055A4\n\tmove\t$4,$16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlbu\t$3,316($2)\n\tlbu\t$2,316($18)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbne\t$3,$2,{continue_label}\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800055A4\n\tmove\t$4,$16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlbu\t$3,317($2)\n\tlbu\t$2,317($18)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbne\t$3,$2,{continue_label}\n"
+        "\tlui\t$7,%hi(D_80059DB8) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$17,$17,1\n"
+        "\taddiu\t$7,$7,%lo(D_80059DB8) # low\n"
+        "\tsh\t$16,2($7)\n"
+        f"{continue_label}:\n"
+        "\tlw\t$2,%lo(D_80057D5C)($fp)\n"
+        "\taddu\t$16,$16,1\n"
+        "\tslt\t$2,$16,$2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbne\t$2,$0,{loop_label}\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        f"{after_label}:\n\tlui\t$2,%hi(D_80052F18) # high\n"
+    )
+    text = text.replace(old, new, 1)
+
+    decision = re.compile(
+        rf"{re.escape(after_label)}:\n"
+        r"\tlui\t\$2,%hi\(D_80052F18\) # high\n.*?"
+        rf"(?P<dispatch>\$L\d+):\n\t\.set\tnoreorder\n\t\.set\tnomacro\n"
+        r"\tbeq\t\$19,\$0,(?P<done>\$L\d+)\n"
+        r"\tsll\t\$22,\$22,16\n",
+        re.DOTALL,
+    )
+    match = decision.search(text)
+    if match is None:
+        raise ValueError("reviewed board-event occupant decision not found")
+    dispatch_label = match.group("dispatch")
+    done_label = match.group("done")
+    old = match.group(0)
+    decision_labels = re.findall(r"^(\$L\d+):$", old, re.MULTILINE)
+    if len(decision_labels) < 5:
+        raise ValueError("reviewed board-event decision labels not found")
+    mode_label = decision_labels[1]
+    count_label = decision_labels[2]
+    occupied_label = decision_labels[3]
+    call_label = decision_labels[4]
+    new = (
+        f"{after_label}:\n"
+        "\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\tlw\t$3,%lo(D_80052F18)($2)\n"
+        "\tli\t$2,1\t\t\t# 0x00000001\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbne\t$3,$2,{mode_label}\n\tsll\t$2,$17,16\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsra\t$2,$2,16\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbnel\t$2,$3,{count_label}\n\tmove\t$17,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        f"{count_label}:\n\tsll\t$2,$17,16\n"
+        f"{mode_label}:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbeq\t$2,$0,{dispatch_label}\n\tlui\t$2,%hi(D_80052F18) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,%lo(D_80052F18)($2)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbne\t$2,$0,{occupied_label}\n\tmove\t$4,$18\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlh\t$4,336($18)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8000E008\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbeq\t$2,$0,{dispatch_label}\n\tmove\t$4,$18\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$5,56\t\t\t# 0x00000038\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tj\t{call_label}\n\tli\t$6,-1\t\t\t# 0xffffffff\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        f"{occupied_label}:\n"
+        "\tli\t$5,54\t\t\t# 0x00000036\n\tli\t$6,31\t\t\t# 0x0000001f\n"
+        f"{call_label}:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80024D14\n\tmove\t$19,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$23,1\t\t\t# 0x00000001\n"
+        f"{dispatch_label}:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        f"\tbeq\t$19,$0,{done_label}\n\tsll\t$2,$22,16\n"
+    )
+    text = text.replace(old, new, 1)
+    dispatch_start = text.index(f"{dispatch_label}:\n")
+    generic_jump = text.index("\tjal\tfunc_80005500\n", dispatch_start)
+    dispatch = text[dispatch_start:generic_jump]
+    dispatch = dispatch.replace("\tsra\t$22,$22,16\n", "\tsra\t$3,$2,16\n")
+    dispatch = dispatch.replace("$22,$2", "$3,$2").replace("$2,$22", "$2,$3")
+    dispatch = dispatch.replace(
+        f"\tbeq\t$19,$0,{done_label}\n\tsll\t$2,$3,16\n",
+        f"\tbeq\t$19,$0,{done_label}\n\tsll\t$2,$22,16\n",
+        1,
+    )
+    case_13 = re.search(
+        r"\tbeq\t\$3,\$2,(?P<label>\$L\d+)\n\tmove\t\$4,\$18\n"
+        r"\t\.set\tmacro\n\t\.set\treorder\n\n"
+        r" #APP\n #NO_APP\n\tslt\t\$2,\$3,13\n",
+        dispatch,
+    )
+    if case_13 is None:
+        raise ValueError("reviewed board-event case-13 branch not found")
+    case_13_label = case_13.group("label")
+    dispatch = dispatch.replace(case_13.group(0), (
+        f"\tbeq\t$3,$2,{case_13_label}\n\tslt\t$2,$3,13\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n #APP\n #NO_APP\n"
+    ), 1)
+    dispatch = dispatch.replace(
+        f"{case_13_label}:\n\tli\t$5,59",
+        f"{case_13_label}:\n\tmove\t$4,$18\n\tli\t$5,59",
+        1,
+    )
+    text = text[:dispatch_start] + dispatch + text[generic_jump:]
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
+    if "\t.ent\tfunc_800182E8\n" in text:
+        return normalize_menu_page_input(text)
+    if "\t.ent\tfunc_80033E90\n" in text:
+        return normalize_minigame_player_render(text)
     if "\t.ent\tfunc_800124B0\n" in text:
         return normalize_round_controller_create(text)
     if "\t.ent\tfunc_80012324\n" in text:
@@ -6717,6 +8119,8 @@ def normalize(text: str) -> str:
         return normalize_board_space_label(text)
     if "\t.ent\tfunc_80009634\n" in text:
         return normalize_actor_event_completion(text)
+    if "\t.ent\tfunc_8000B380\n" in text:
+        return normalize_animation_vertices(text)
     if "\t.ent\tfunc_8001FC2C\n" in text:
         return normalize_frame_display_lists(text)
     if "\t.ent\tfunc_8002E930\n" in text:
@@ -6725,6 +8129,10 @@ def normalize(text: str) -> str:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:
         return normalize_texture_block_loads(text)
+    if "\t.ent\tfunc_80024DF8\n" in text:
+        return normalize_board_player_event(text)
+    if "\t.ent\tfunc_8002012C\n" in text:
+        return normalize_board_route_search(text)
     return normalize_standard_return(text)
 
 

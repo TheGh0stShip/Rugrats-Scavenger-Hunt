@@ -1,15 +1,15 @@
 start	end	size	class	category	kind	name	evidence
 0x0	0x40	64	rom_metadata	rom_metadata	header	rom_header	rom header
 0x40	0x1000	4032	rom_metadata	rom_metadata	ipl3	ipl3	cic 6102
-0x1000	0x103C	60	code	program	.text	text_80000400	datamap section
-0x103C	0x45E0	13732	data	program	.rodata	rodata_8000043C	datamap section
+0x1000	0x10F8	248	code	program	.text	text_80000400	datamap section
+0x10F8	0x45E0	13544	data	program	.rodata	rodata_800004F8	datamap section
 0x45E0	0x45F0	16	data	program	.data	data_800039E0	datamap section
 0x45F0	0x37800	209424	code	program	.text	text_800039F0	datamap section
 0x37800	0x37B40	832	code	program	rsp_text	rsp_80036C00	RSP opcodes only, vector-heavy (64-byte granularity)
 0x37B40	0x37D80	576	code	program	.text	text_800039F0	datamap section
 0x37D80	0x39540	6080	code	program	rsp_text	rsp_80037180	RSP opcodes only, vector-heavy (64-byte granularity)
-0x39540	0x53474	106292	code	program	.text	text_800039F0	datamap section
-0x53474	0x57E80	18956	data	program	.data	data_80052874	datamap section
+0x39540	0x535A0	106592	code	program	.text	text_800039F0	datamap section
+0x535A0	0x57E80	18656	data	program	.data	data_800529A0	datamap section
 0x57E80	0x57E90	16	referenced	loader_range	pi	rom_57E80	call 0x80013B68 in 0x80013B3C
 0x57E90	0x57F80	240	payload	graphics	display_list	dl_57E90	f3dex display list, 30 commands (data not resolvable)
 0x57F80	0x57FA8	40	payload	graphics	display_list	dl_57F80	f3dex display list, 5 commands (data not resolvable)

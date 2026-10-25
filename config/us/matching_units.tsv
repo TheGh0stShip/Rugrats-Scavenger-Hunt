@@ -242,7 +242,6 @@
 0x48BB0	0x10	src/runtime/jump_to_thread_entry.c	-O2 -G0 -mips3 -mgp32 -mfp32	6112d81e3b008cad21cce84561b8767e68ce5ec1a57269069930d4041abe541d
 0x12158	0x8	src/game/jump_to_state_handler.c	-O2 -G0 -mips3 -mgp32 -mfp32	0801c5d781ab193c544820949f74d7ba730d0c0df9e5fa6f62824b1ebd7d2786
 0x3BB30	0x14	src/game/return_command_token.c	-O2 -G0 -mips3 -mgp32 -mfp32	da1da61b09d4cc1c2508063099e8acdafca9088524722ab7662dec07246ad564
-0x3742C	0x18	src/runtime/clear_watchpoint.c	-O2 -G0 -mips3 -mgp32 -mfp32	be7bf6c78932bd569d1c2bfae45eb70d11d9f2180c4a873138a867c545e58adc
 0x48A80	0x30	src/runtime/writeback_data_cache_all.c	-O2 -G0 -mips3 -mgp32 -mfp32	9e2e910cf2dcf19b0d2826eea41187a62acc4584b8fb7316cc74acbd40f4b04f
 0x5750	0x28	src/runtime/jump_to_exception_dispatch.c	-O2 -G0 -mips3 -mgp32 -mfp32	8f55ce2a668b2f764350c328f30737476c6854c821f2d8ad85d28d88ae02393f
 0x48A00	0x80	src/runtime/writeback_data_cache_range.c	-O2 -G0 -mips3 -mgp32 -mfp32	34f4c1b390e561d62c4b6dc9ed63701b9b87430391fc74bfe7d21d90b8fd1074

@@ -625,12 +625,187 @@ def normalize_formatted_output_core(text: str) -> str:
     return head + body + body_end + tail
 
 
+def normalize_stream_channel_mixer(text: str) -> str:
+    """Reproduce the reviewed register web and FP hazard schedule of the mixer."""
+    text = replace_once(
+        text,
+        "\tmove\t$9,$6\n"
+        "\tmove\t$8,$7\n"
+        "\tsw\t$17,76($sp)\n"
+        "\tmove\t$17,$0\n"
+        "\tsw\t$22,96($sp)\n"
+        "\tmove\t$22,$0\n"
+        "\tsw\t$31,108($sp)\n"
+        "\tsw\t$fp,104($sp)\n"
+        "\tsw\t$23,100($sp)\n"
+        "\tsw\t$21,92($sp)\n"
+        "\tsw\t$20,88($sp)\n"
+        "\tsw\t$18,80($sp)\n"
+        "\tsw\t$16,72($sp)\n",
+        "\tmove\t$8,$7\n"
+        "\tmove\t$9,$6\n"
+        "\tsw\t$22,96($sp)\n"
+        "\tmove\t$22,$0\n"
+        "\tsw\t$23,100($sp)\n"
+        "\tmove\t$23,$0\n"
+        "\tsw\t$31,108($sp)\n"
+        "\tsw\t$fp,104($sp)\n"
+        "\tsw\t$21,92($sp)\n"
+        "\tsw\t$20,88($sp)\n"
+        "\tsw\t$18,80($sp)\n"
+        "\tsw\t$17,76($sp)\n"
+        "\tsw\t$16,72($sp)\n",
+        "stream-mixer entry register web",
+    )
+    text = replace_once(
+        text,
+        "\tli\t$20,0x0000ffff\t\t# 65535\n"
+        "\tli\t$18,0x00000003\t\t# 3\n"
+        "\tmove\t$16,$0\n",
+        "\tli\t$18,0x0000ffff\t\t# 65535\n"
+        "\tli\t$17,0x00000003\t\t# 3\n"
+        "\tmove\t$16,$0\n",
+        "stream-mixer scan constants",
+    )
+    scan_start = text.index(".L5:\n")
+    scan_end = text.index(".L9:\n", scan_start)
+    scan = text[scan_start:scan_end]
+    for old, temporary in (("$20", "$30"), ("$18", "$26"),
+                           ("$17", "$27"), ("$22", "$28")):
+        scan = scan.replace(old, temporary)
+    for temporary, new in (("$30", "$18"), ("$26", "$17"),
+                           ("$27", "$22"), ("$28", "$23")):
+        scan = scan.replace(temporary, new)
+    text = text[:scan_start] + scan + text[scan_end:]
+    inner_start = text.index(".L13:\n")
+    inner_end = text.index(".L15:\n", inner_start)
+    inner = text[inner_start:inner_end]
+    inner = inner.replace("$22", "$30").replace("$23", "$22").replace("$30", "$23")
+    inner = inner.replace("$11", "$30").replace("$12", "$11").replace("$30", "$12")
+    inner = inner.replace("\tsw\t$12,60($sp)\n", "\tsw\t$11,60($sp)\n")
+    inner = inner.replace("\tsw\t$11,64($sp)\n", "\tsw\t$12,64($sp)\n")
+    inner = inner.replace("\tlw\t$11,64($sp)\n", "\tlw\t$11,60($sp)\n")
+    inner = inner.replace("\tlw\t$12,60($sp)\n", "\tlw\t$12,64($sp)\n")
+    text = text[:inner_start] + inner + text[inner_end:]
+    outer_start = text.index(".L9:\n")
+    outer_end = text.index(".L13:\n", outer_start)
+    outer = text[outer_start:outer_end]
+    outer = outer.replace("$11", "$30").replace("$12", "$11").replace("$30", "$12")
+    text = text[:outer_start] + outer + text[outer_end:]
+    text = replace_once(
+        text,
+        "\tli\t$11,0x0c000000\t\t# 201326592\n",
+        "",
+        "stream-mixer deferred mix opcode",
+    )
+    text = replace_once(
+        text,
+        "\t.set\tmacro\n\t.set\treorder\n\n\tmove\t$21,$0\n",
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$11,0x0c000000\t\t# 201326592\n\tmove\t$21,$0\n",
+        "stream-mixer mix opcode placement",
+    )
+    text = replace_once(
+        text,
+        "\tlw\t$3,4564($6)\n"
+        "\tlw\t$2,4596($6)\n"
+        "\tmtc1\t$fp,$f0\n"
+        "\tcvt.s.w\t$f0,$f0\n"
+        "\tl.s\t$f2,4592($6)\n"
+        "\taddu\t$3,$3,$2\n"
+        "\tli\t$2,-858993459\t\t\t# 0xcccccccd\n"
+        "\tmultu\t$3,$2\n"
+        "\tmul.s\t$f2,$f2,$f0\n"
+        "\tl.s\t$f0,4588($6)\n"
+        "\t#nop\n"
+        "\tadd.s\t$f0,$f0,$f2\n",
+        "\t.set\tnoreorder\n"
+        "\tlw\t$3,4564($6)\n"
+        "\tlw\t$2,4596($6)\n"
+        "\tl.s\t$f2,4592($6)\n"
+        "\tmtc1\t$fp,$f0\n"
+        "\tnop\n"
+        "\tcvt.s.w\t$f0,$f0\n"
+        "\taddu\t$3,$3,$2\n"
+        "\tmul.s\t$f2,$f2,$f0\n"
+        "\tli\t$2,-858993459\t\t\t# 0xcccccccd\n"
+        "\tmultu\t$3,$2\n"
+        "\tl.s\t$f0,4588($6)\n"
+        "\tadd.s\t$f0,$f0,$f2\n"
+        "\t.set\treorder\n",
+        "stream-mixer pitch calculation schedule",
+    )
+    wrap_start = text.index("\tlw\t$3,4576($6)\n", text.index(".L17:\n"))
+    wrap_end = text.index(".L20:\n", wrap_start)
+    wrap = (
+        "\t.set\tnoreorder\n"
+        "\taddu\t$16,$16,8\n"
+        "\taddu\t$17,$17,16\n"
+        "\tlw\t$3,4576($6)\n"
+        "\taddu\t$19,$19,16\n"
+        "\tsll\t$2,$5,1\n"
+        "\tli\t$13,-8\t\t\t# 0xfffffff8\n"
+        "\taddu\t$3,$3,$2\n"
+        "\tsubu\t$4,$3,$10\n"
+        "\tandi\t$20,$4,0x0007\n"
+        "\tsubu\t$4,$4,$20\n"
+        "\tli\t$3,0x00000a00\t\t# 2560\n"
+        "\tsubu\t$3,$3,$5\n"
+        "\tsll\t$3,$3,1\n"
+        "\taddu\t$3,$3,$20\n"
+        "\taddu\t$3,$3,7\n"
+        "\tandi\t$2,$3,0x0ff8\n"
+        "\tsll\t$2,$2,12\n"
+        "\tor\t$2,$2,$12\n"
+        "\tsw\t$2,-4($16)\n"
+        "\tsw\t$4,0($16)\n"
+        "\taddu\t$16,$16,8\n"
+        "\tand\t$3,$3,$13\n"
+        "\taddu\t$3,$3,368\n"
+        "\tlw\t$4,4576($6)\n"
+        "\tsll\t$2,$7,1\n"
+        "\taddu\t$2,$2,-5105\n"
+        "\tandi\t$2,$2,0x0ff8\n"
+        "\tsll\t$2,$2,12\n"
+        "\tandi\t$3,$3,0x0ff8\n"
+        "\tli\t$13,0x04000000\t\t# 67108864\n"
+        "\tor\t$3,$3,$13\n"
+        "\tor\t$2,$2,$3\n"
+        "\tsw\t$2,-4($16)\n"
+        "\tj\t.L21\n"
+        "\tsubu\t$4,$4,$10\n"
+        "\t.set\treorder\n\n"
+    )
+    text = text[:wrap_start] + wrap + text[wrap_end:]
+    text = replace_once(
+        text,
+        ".L21:\n\tlw\t$2,D_800C4300\n\tli.s\t$f0,3.27680000000000000000e4\n"
+        "\tsw\t$4,0($16)\n",
+        ".L21:\n\tsw\t$4,0($16)\n\tlw\t$2,D_800C4300\n"
+        "\tli.s\t$f0,3.27680000000000000000e4\n",
+        "stream-mixer shared address store schedule",
+    )
+    # The original assembler scheduled the integer HI result between the
+    # float conversion's mfc1 and mtc1, avoiding the emitted hazard nop.
+    text = replace_once(
+        text,
+        "\tmfhi\t$13\n\t#nop\n\t#nop\n\tsrl\t$5,$13,11\n"
+        "\ttrunc.w.s $f2,$f0,$2\n\tmfc1\t$22,$f2\n\t#nop\n\tmtc1\t$22,$f2\n",
+        "\ttrunc.w.s $f2,$f0,$2\n\tmfc1\t$22,$f2\n"
+        "\tmfhi\t$13\n\tsrl\t$5,$13,11\n\tmtc1\t$22,$f2\n",
+        "stream-mixer float conversion schedule",
+    )
+    return text
+
+
 def normalize(text: str, unit: str) -> str:
     if unit == "func_800398E0":
         # This unit uses the original assembler's reorder pass.  Its reviewed
         # transformations preserve that input mode instead of applying the
         # builtin no-reorder scheduler used by the units below.
         return normalize_formatted_output_core(text)
+    elif unit == "func_8004381C":
+        return normalize_stream_channel_mixer(text)
     elif unit == "func_800196E8":
         text = normalize_state_copy(text)
     elif unit == "func_80006E88":

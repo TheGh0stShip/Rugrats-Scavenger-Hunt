@@ -49,14 +49,14 @@
     {
       "kind": "text",
       "start": 4096,
-      "end": 4156,
-      "size": 60
+      "end": 4344,
+      "size": 248
     },
     {
       "kind": "rodata",
-      "start": 4156,
+      "start": 4344,
       "end": 17888,
-      "size": 13732
+      "size": 13544
     },
     {
       "kind": "data",
@@ -67,20 +67,20 @@
     {
       "kind": "text",
       "start": 17904,
-      "end": 341108,
-      "size": 323204
+      "end": 341408,
+      "size": 323504
     },
     {
       "kind": "data",
-      "start": 341108,
+      "start": 341408,
       "end": 360064,
-      "size": 18956
+      "size": 18656
     }
   ],
   "program_section_bytes": {
-    "text": 323264,
-    "rodata": 13732,
-    "data": 18972
+    "text": 323752,
+    "rodata": 13544,
+    "data": 18672
   },
   "audio_graphics_ranges": [
     {
@@ -11681,17 +11681,17 @@
     },
     {
       "start": 4096,
-      "end": 4156,
+      "end": 4344,
       "kind": "program_text",
       "name": "text",
-      "size": 60
+      "size": 248
     },
     {
-      "start": 4156,
+      "start": 4344,
       "end": 17888,
       "kind": "program_rodata",
       "name": "rodata",
-      "size": 13732
+      "size": 13544
     },
     {
       "start": 17888,
@@ -11702,17 +11702,17 @@
     },
     {
       "start": 17904,
-      "end": 341108,
+      "end": 341408,
       "kind": "program_text",
       "name": "text",
-      "size": 323204
+      "size": 323504
     },
     {
-      "start": 341108,
+      "start": 341408,
       "end": 360064,
       "kind": "program_data",
       "name": "data",
-      "size": 18956
+      "size": 18656
     },
     {
       "start": 360064,
@@ -29067,17 +29067,17 @@
     {
       "kind": "program_data",
       "intervals": 2,
-      "bytes": 18972
+      "bytes": 18672
     },
     {
       "kind": "program_rodata",
       "intervals": 1,
-      "bytes": 13732
+      "bytes": 13544
     },
     {
       "kind": "program_text",
       "intervals": 2,
-      "bytes": 323264
+      "bytes": 323752
     },
     {
       "kind": "rom_header",

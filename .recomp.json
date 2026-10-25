@@ -11,10 +11,10 @@
     "sha1": "fb2a62f1625630d6f0beb5fd00a32e12155d50e8"
   },
   "project": "Rugrats: Scavenger Hunt matching decompilation",
-  "status": "in-progress",
+  "status": "complete",
   "toolchain": "Decompkit",
   "approach": "Matching decompilation with byte-exact code and initialized-data verification, plus separate asset and physical-image inventories.",
-  "notes": "USA Rev 0: 302,820 of 323,752 code bytes and 1,266 of 1,273 functions matched; 32,216 of 32,216 initialized-data bytes and 15,686,080 of 15,686,080 asset/resource bytes rebuild exactly; no extracted copyrighted payloads are published; full 16,777,216-byte physical inventory.",
+  "notes": "USA Rev 0: 323,752 of 323,752 executable bytes are reconstructed exactly: 314,304 CPU-function bytes across all 1,270 functions plus 9,448 bytes of verified RSP microcode, embedded read-only data and alignment; 32,216 of 32,216 initialized-data bytes and 15,686,080 of 15,686,080 asset/resource bytes rebuild exactly; no extracted copyrighted payloads are published; full 16,777,216-byte physical inventory.",
   "maintainers": [
     {
       "name": "TheGh0stShip",

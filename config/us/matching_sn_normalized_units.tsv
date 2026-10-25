@@ -443,3 +443,9 @@
 0x3690C	0x168	src/game/setup_spin_objects.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6b16814546ddd9f9c022fa896d151f959713fd39833e67a1158a54b40207438a
 0x367D0	0x12C	src/game/update_spin_object_targets.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cc19d4afe8a966ee8a4f2e610b2021547b5b5c89fb3b1e5d64e66c8fef290b33
 0x36A74	0x2C4	src/game/randomize_spin_objects.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	d6b2766a725b62879bc4d0106acf1ef89fa219b88941165cf59533812fe78525
+0x34A90	0x470	src/game/render_minigame_players_80033e90.c	--section-base=.rdata:0x80002BF0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	fb2d6618c4fc1590728b3486f16d9b5e8a9cf5fe4892b3e188b7397634405b45
+0x18EE8	0x574	src/game/menu_page_input_800182e8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	0170a23232881ba9a445d6ee7f4cd3c0e033eb69baaf0b3bfeeb1e8a3d3e1d96
+0x27424	0x105C	src/game/render_board_scene.c	--section-base=.rdata:0x800020E0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	b6ca7ded303a46877e72ba1bc2bec58d6127a4aaa6c607cdb66e999d0d3c613c
+0xBF80	0x39C	src/game/interpolate_animation_vertices_8000b380.c	--section-base=.rdata:0x800006D0 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	7388e276b517f839ac6be94cdf68b33ba116a7e543a7452ca4e943177e78797e
+0x259F8	0x510	src/game/handle_board_player_event_80024df8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	613cbd2636a244bce23f6a2e5d81ef1c92e41c435ea4c9a337f572ba63bf88b7
+0x20D2C	0x54C	src/game/search_board_routes_8002012c.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	55ae455c5c99919e962304a335881022aa3046c9acfc93d3c2876b8dea12fa14

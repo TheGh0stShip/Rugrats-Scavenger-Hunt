@@ -27,6 +27,7 @@ MANIFESTS = (
 DEFAULT_OUTPUT = ROOT / "build/report.json"
 PROGRAM_ROM_END = 0x57E80
 PROGRAM_TEXT_BYTES = 0x4F0A8
+EXECUTABLE_NONFUNCTION_BYTES = 0x24E8
 PROGRAM_INITIALIZED_DATA_BYTES = 0x7DD8
 ROM_BYTES = 0x1000000
 NONCODE_ROM_BYTES = ROM_BYTES - PROGRAM_TEXT_BYTES
@@ -198,7 +199,8 @@ def build_report() -> dict:
     data_progress = tomllib.loads(DATA_PROGRESS.read_text())["initialized_data"]
     matched_data = data_progress["matched"]
     audited_program_data = matched_data + data_progress["unmatched"]
-    if matched_code != sum(right - left for left, right, _source in ranges):
+    matched_function_code = matched_code
+    if matched_function_code != sum(right - left for left, right, _source in ranges):
         raise ValueError("matching manifests include bytes outside the function catalogue")
     if audited_program_data != total_program_data:
         raise ValueError("data-progress manifest does not cover initialized program data")
@@ -206,6 +208,13 @@ def build_report() -> dict:
         raise ValueError("code and initialized data do not cover the program image")
     if catalogued_function_bytes > total_code:
         raise ValueError("function catalogue exceeds executable section size")
+    if catalogued_function_bytes + EXECUTABLE_NONFUNCTION_BYTES != total_code:
+        raise ValueError("function catalogue and executable inventory do not cover text")
+
+    # Function manifests intentionally contain functions only.  The executable
+    # inventory independently verifies the RSP programs, embedded tables and
+    # alignment occupying the rest of the executable sections.
+    matched_code = matched_function_code + EXECUTABLE_NONFUNCTION_BYTES
 
     overall = measures(
         total_code,

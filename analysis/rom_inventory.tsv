@@ -1,11 +1,11 @@
 start	end	size	kind	name	record_index	storage	logical_size	prefix_hex
 0x000000	0x000040	64	rom_header	ROM header
 0x000040	0x001000	4032	boot_code	IPL3 boot code
-0x001000	0x00103C	60	program_text	text
-0x00103C	0x0045E0	13732	program_rodata	rodata
+0x001000	0x0010F8	248	program_text	text
+0x0010F8	0x0045E0	13544	program_rodata	rodata
 0x0045E0	0x0045F0	16	program_data	data
-0x0045F0	0x053474	323204	program_text	text
-0x053474	0x057E80	18956	program_data	data
+0x0045F0	0x0535A0	323504	program_text	text
+0x0535A0	0x057E80	18656	program_data	data
 0x057E80	0x057FD0	336	display_lists_and_loader_block	display_lists_and_loader_block
 0x057FD0	0x05B470	13472	audio_pointer_bank_1	audio_bank_1
 0x05B470	0x05B480	16	audio_bank_metadata_or_padding	audio_bank_1

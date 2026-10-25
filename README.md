@@ -8,7 +8,7 @@
 [![decmp.dev](https://api.decmp.dev/badge/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?measure=matched_code_percent&label=decmp.dev)](https://decmp.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
 [![Report](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml/badge.svg)](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml)
 
-An in-progress, byte-matching C decompilation of the Nintendo 64 game. You must
+A complete, byte-matching decompilation of the Nintendo 64 game. You must
 provide your own legally obtained USA retail ROM.
 
 ## Current baseline
@@ -18,13 +18,16 @@ provide your own legally obtained USA retail ROM.
 - Initial program: ROM `0x1000..0x57E80`, VRAM `0x80000400..0x80057280`
 - BSS: `0x80057280..0x800C7E30`
 - Executable sections: 323,752 bytes; initialized data: 32,216 bytes
-- 1,273 conservative function candidates; 268 SDK functions fingerprinted
+- 1,270 conservative function candidates; 268 SDK functions fingerprinted
 - 1,017 initialized-data objects identified (including 65 jump tables and 153 strings)
 - Two resource archives: 910 nonempty indexed resources in 911 records
 - Audio: 178 indexed samples across two sample and pointer-bank pairs
 - Asset signatures: 380 `MORT` records and 376 `mdlh` model-header records
 - Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Byte-matched source: 1,266 / 1,273 functions; 302,820 / 323,752 code bytes (93.53%)
+- Byte-matched source: 1,270 / 1,270 functions; 323,752 / 323,752 code bytes (100.00%)
+- CPU-function source: 314,304 bytes; verified non-function executable material: 9,448 bytes
+- Non-function executable inventory: 9,448 / 9,448 bytes (100%)
+- Combined executable coverage: 323,752 / 323,752 bytes (100%)
 - Matching initialized data: 32,216 / 32,216 bytes (100%)
 - Asset/resource round-trip: 15,686,080 / 15,686,080 bytes (100%)
 - Published extracted asset payloads: 0 bytes; no copyrighted payloads are committed
@@ -43,6 +46,12 @@ rebuilds are not mislabeled as published copyrighted payloads.
 `0xFFFFFF`. The automated code and initialized-data survey is preserved in
 `analysis/survey/`. Function boundaries are candidates until reviewed; a
 stripped retail ROM cannot prove original source-level function boundaries.
+The 9,448 executable bytes outside those boundaries are recorded individually
+in `analysis/executable_nonfunction_inventory.tsv`; this separates standard RSP
+microcode, embedded read-only data, and alignment without inventing CPU functions.
+The RSP boot and audio programs have symbolic source under `rsp/`; run
+`make verify-rsp-microcode ARMIPS=/path/to/armips` to rebuild them and verify
+those outputs plus the exact SDK F3DEX 1.23 fingerprint.
 
 The decoded inventory includes 2,207 textures, 429 palettes, 376 models, 445
 vertex-animation streams, 178 audio samples, 25 songs, 112 sound effects, 380
