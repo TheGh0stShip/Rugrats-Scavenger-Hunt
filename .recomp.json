@@ -31,11 +31,6 @@
       "url": "https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt"
     }
   ],
-  "help": [
-    "Matching game functions",
-    "Initialized-data reconstruction",
-    "Resource format decoding"
-  ],
   "tags": [
     "matching",
     "MIPS"
