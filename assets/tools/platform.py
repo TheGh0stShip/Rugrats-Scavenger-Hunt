@@ -12,7 +12,7 @@ import struct
 import sys
 import zlib
 
-KIT = os.environ.get("N64DK_ROOT", "../n64-decomp-kit")
+KIT = os.environ.get("N64DK_ROOT", "tools/n64dk")
 if KIT not in sys.path:
     sys.path.append(KIT)
 try:

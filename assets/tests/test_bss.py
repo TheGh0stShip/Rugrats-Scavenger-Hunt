@@ -37,7 +37,7 @@ class TestBss(unittest.TestCase):
         self.assertEqual(bss.roundtrip(b""), [])
 
     def test_kmc_link_addresses(self):
-        tc = os.environ.get("N64DK_TOOLCHAIN", "../BattleTanx/.toolchain")
+        tc = os.environ.get("N64DK_TOOLCHAIN", ".toolchain")
         gcc = os.path.join(tc, "kmc-gcc-2.7.2", "gcc")
         bin_ = os.path.join(tc, "mips-binutils", "usr", "bin")
         if not os.path.exists(gcc):

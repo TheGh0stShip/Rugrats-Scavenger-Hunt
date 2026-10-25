@@ -24,7 +24,7 @@ ASM = os.path.join(ROOT, "src", "asm")
 ROM_PATH = os.environ.get("ROM", "baseroms/us/baserom.z64")
 PROJ = os.environ.get("PROJECT_ROOT", ".")
 FULLTEXT = os.environ.get("DATASRC_FULLTEXT") or os.path.join(ROOT, "private_extracted", "disasm", "fulltext.s")
-TOOLCHAIN = os.environ.get("N64DK_TOOLCHAIN", "../BattleTanx/.toolchain")
+TOOLCHAIN = os.environ.get("N64DK_TOOLCHAIN", ".toolchain")
 ROM2VRAM = 0x7FFFF400
 
 RANGES = [(0x103C, 0x45E0, ".rodata"), (0x45E0, 0x45F0, ".data"), (0x53474, 0x57E80, ".data")]

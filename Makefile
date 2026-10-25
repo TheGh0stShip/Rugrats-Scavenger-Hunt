@@ -1,8 +1,8 @@
 PYTHON ?= python3
 ROM ?= baseroms/us/baserom.z64
-N64DK_ROOT ?= ../n64-decomp-kit
-N64DK_PYTHON ?= $(abspath $(N64DK_ROOT))/.venv/bin/python
-N64DK_TOOLCHAIN ?= ../BattleTanx/.toolchain
+N64DK_ROOT ?= tools/n64dk
+N64DK_PYTHON ?= $(PYTHON)
+N64DK_TOOLCHAIN ?= .toolchain
 ARMIPS ?= armips
 N64DK := PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) -m n64dk
 

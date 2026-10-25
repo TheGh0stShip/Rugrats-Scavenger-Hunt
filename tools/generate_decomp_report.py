@@ -77,14 +77,14 @@ def source_for(start: int, end: int,
 def inventory_progress() -> tuple[int, int, int, int, int]:
     """Validate the physical ledger and return truthful inventory totals.
 
-    Asset extraction is deliberately independent from identification: knowing
-    the byte boundaries of an archive or audio bank does not mean its payload
-    has been extracted and published.
+    Public asset progress measures decompiled representations with verified
+    reconstruction paths. It does not measure publication of copyrighted
+    extracted payloads.
     """
     progress = tomllib.loads(ASSET_PROGRESS.read_text())
     region = progress["region"]
     asset_start, asset_end = region["rom_start"], region["rom_end"]
-    extracted = progress["extraction"]["matched"]
+    decompiled = progress["decompilation"]["matched"]
     ledger = ROOT / progress["ledger"]["path"]
     rows = ledger.read_text().splitlines()
     if not rows or rows[0].split("\t")[:4] != ["start", "end", "size", "kind"]:
@@ -110,9 +110,9 @@ def inventory_progress() -> tuple[int, int, int, int, int]:
     asset_bytes = asset_end - asset_start
     if asset_start != PROGRAM_ROM_END or asset_end <= asset_start:
         raise ValueError(f"{ASSET_PROGRESS}: invalid asset region")
-    if not 0 <= extracted <= asset_bytes:
-        raise ValueError(f"{ASSET_PROGRESS}: invalid extracted byte count")
-    return asset_bytes, extracted, ROM_BYTES, audio_bytes, resource_bytes
+    if not 0 <= decompiled <= asset_bytes:
+        raise ValueError(f"{ASSET_PROGRESS}: invalid decompiled byte count")
+    return asset_bytes, decompiled, ROM_BYTES, audio_bytes, resource_bytes
 
 
 def measures(total_code: int, matched_code: int, total_functions: int,
@@ -230,7 +230,7 @@ def build_report() -> dict:
         len(functions),
         matched_functions,
     )
-    asset_bytes, extracted_assets, rom_bytes, audio_bytes, resource_bytes = (
+    asset_bytes, decompiled_assets, rom_bytes, audio_bytes, resource_bytes = (
         inventory_progress()
     )
     return {
@@ -251,10 +251,10 @@ def build_report() -> dict:
                 ),
             },
             {
-                "id": "assets_extracted",
-                "name": "Extracted assets",
+                "id": "assets_decompiled",
+                "name": "Decompiled assets and resources",
                 "measures": data_category_measures(
-                    asset_bytes, extracted_assets
+                    asset_bytes, decompiled_assets
                 ),
             },
             {

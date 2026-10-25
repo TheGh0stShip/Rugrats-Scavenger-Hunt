@@ -34,7 +34,7 @@ class DecompReportTests(unittest.TestCase):
             {
                 "code",
                 "program_data",
-                "assets_extracted",
+                "assets_decompiled",
                 "asset_roundtrip",
                 "noncode_roundtrip",
                 "asset_inventory",
@@ -46,7 +46,7 @@ class DecompReportTests(unittest.TestCase):
         self.assertEqual(categories["program_data"]["total_code"], "32216")
         self.assertEqual(categories["program_data"]["total_data"], "32216")
         self.assertEqual(categories["program_data"]["matched_data"], "32216")
-        self.assertEqual(categories["assets_extracted"]["matched_data"], "0")
+        self.assertEqual(categories["assets_decompiled"]["matched_data"], "15686080")
         self.assertEqual(categories["asset_roundtrip"]["matched_data"], "15686080")
         self.assertEqual(categories["noncode_roundtrip"]["matched_data"], "16453464")
         self.assertEqual(categories["asset_inventory"]["matched_data"], "15686080")
@@ -69,14 +69,17 @@ class DecompReportTests(unittest.TestCase):
         manifest = json.loads(manifest_text)
         workflow = (ROOT / ".github/workflows/progress.yml").read_text()
 
+        function_summary = (
+            f"{totals['matched_functions']:,} / {totals['total_functions']:,}"
+        )
         code_summary = (
-            f"{totals['matched_functions']:,} / {totals['total_functions']:,} functions; "
-            f"{int(totals['matched_code']):,} / {int(totals['total_code']):,} code bytes"
+            f"{int(totals['matched_code']):,} / {int(totals['total_code']):,}"
         )
         data_summary = (
             f"{int(totals['matched_data']):,} / "
-            f"{int(totals['total_data']):,} bytes"
+            f"{int(totals['total_data']):,}"
         )
+        self.assertIn(function_summary, readme)
         self.assertIn(code_summary, readme)
         self.assertIn(data_summary, readme)
         self.assertIn("NRGE_report", workflow)

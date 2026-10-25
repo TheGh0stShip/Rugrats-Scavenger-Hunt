@@ -1,6 +1,6 @@
 // n_aspMain: N_audio (libmus / n_audio) RSP audio microcode, IMEM text.
-// Retail: BattleTanx - Global Assault (USA), RDRAM 0x800FA210-0x800FAE70 (0xC60 bytes),
-// loaded by the RSP task at IMEM 0x04001080.
+// Rugrats retail ROM 0x500-0x1160 (0xC60 bytes), loaded by the RSP task at
+// IMEM 0x04001080.
 //
 // Reverse-engineered source: every word is an RSP instruction written symbolically, plus
 // 12 bytes of explicit object padding. Assembles with armips 0.11 (.rsp) byte-for-byte to the

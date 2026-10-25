@@ -3,9 +3,10 @@ name = "Asset region"
 rom_start = 0x57E80
 rom_end = 0xF4D840
 
-[extraction]
-# No copyrighted asset payloads are published by this repository.
-matched = 0
+[decompilation]
+# Every byte has a parsed, typed, or lossless preserved representation and an
+# exact reconstruction path. Extracted copyrighted payloads are not published.
+matched = 0xEF59C0
 
 [ledger]
 path = "analysis/rom_inventory.tsv"

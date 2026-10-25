@@ -29,7 +29,7 @@ import rlz  # noqa: E402
 import archive  # noqa: E402
 
 try:  # optional: display-list walker (analysis only, not needed for rebuild)
-    sys.path.insert(0, os.environ.get("N64DK_ROOT", "../n64-decomp-kit"))
+    sys.path.insert(0, os.environ.get("N64DK_ROOT", "tools/n64dk"))
     from n64dk.assets import gbi  # type: ignore
 except Exception:  # pragma: no cover
     gbi = None

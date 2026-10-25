@@ -1,90 +1,182 @@
-# Rugrats: Scavenger Hunt (USA) decompilation
+# Rugrats: Scavenger Hunt (Nintendo 64, USA)
 
 [![Progress](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Code&measure=matched_code_percent)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
 [![Functions](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Functions&measure=matched_functions)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
 [![Data](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Data&measure=matched_data_percent)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
-[![Assets](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Assets&measure=matched_data_percent&category=asset_roundtrip)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
-[![Inventory](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?mode=shield&label=Inventory&measure=matched_data_percent&category=rom_inventory)](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
 [![decmp.dev](https://api.decmp.dev/badge/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?measure=matched_code_percent&label=decmp.dev)](https://decmp.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
 [![Report](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml/badge.svg)](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml)
 
-A complete, byte-matching decompilation of the Nintendo 64 game. You must
-provide your own legally obtained USA retail ROM.
+This repository contains a complete, byte-exact decompilation of the USA retail
+release of *Rugrats: Scavenger Hunt*. It includes C and assembly source for the
+program, symbolic RSP source, initialized-data descriptions, asset parsers, and
+whole-ROM reconstruction checks.
 
-## Current baseline
+No ROM, extracted media, or proprietary compiler is included. You must provide
+your own legally obtained copy of the game and the historical compiler files
+needed for code verification.
 
-- ROM identity: `fb2a62f1625630d6f0beb5fd00a32e12155d50e8`
-- CIC 6102; header entry point `0x80000400`
-- Initial program: ROM `0x1000..0x57E80`, VRAM `0x80000400..0x80057280`
-- BSS: `0x80057280..0x800C7E30`
-- Executable sections: 323,752 bytes; initialized data: 32,216 bytes
-- 1,270 conservative function candidates; 268 SDK functions fingerprinted
-- 1,017 initialized-data objects identified (including 65 jump tables and 153 strings)
-- Two resource archives: 910 nonempty indexed resources in 911 records
-- Audio: 178 indexed samples across two sample and pointer-bank pairs
-- Asset signatures: 380 `MORT` records and 376 `mdlh` model-header records
-- Compilers confirmed in game code: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
-- Byte-matched source: 1,270 / 1,270 functions; 323,752 / 323,752 code bytes (100.00%)
-- CPU-function source: 314,304 bytes; verified non-function executable material: 9,448 bytes
-- Non-function executable inventory: 9,448 / 9,448 bytes (100%)
-- Combined executable coverage: 323,752 / 323,752 bytes (100%)
-- Matching initialized data: 32,216 / 32,216 bytes (100%)
-- Asset/resource round-trip: 15,686,080 / 15,686,080 bytes (100%)
-- Published extracted asset payloads: 0 bytes; no copyrighted payloads are committed
-- All non-code ROM bytes: 16,453,464 / 16,453,464 bytes (100%)
-- Physical ROM inventory: 16,777,216 / 16,777,216 bytes (100%)
+## Completion status
 
-The reproducible physical ROM map is in `analysis/rom_map.md`; the combined
-function, data, archive, audio, and attack-priority analysis is in
-`analysis/deep_rom_audit.md`. The map's companion
-JSON includes every resource and audio-sample record, while the hosted tracker
-reports byte-matched code, byte-matched initialized data, byte-exact resource
-round trips, published asset extraction, asset-container inventory, and
-physical ROM coverage as separate measures. Parsed formats and verified
-rebuilds are not mislabeled as published copyrighted payloads.
-`analysis/rom_inventory.tsv` is a gap-free 1,907-row ledger covering every ROM address from `0x000000` through
-`0xFFFFFF`. The automated code and initialized-data survey is preserved in
-`analysis/survey/`. Function boundaries are candidates until reviewed; a
-stripped retail ROM cannot prove original source-level function boundaries.
-The 9,448 executable bytes outside those boundaries are recorded individually
-in `analysis/executable_nonfunction_inventory.tsv`; this separates standard RSP
-microcode, embedded read-only data, and alignment without inventing CPU functions.
-The RSP boot and audio programs have symbolic source under `rsp/`; run
-`make verify-rsp-microcode ARMIPS=/path/to/armips` to rebuild them and verify
-those outputs plus the exact SDK F3DEX 1.23 fingerprint.
+| Area | Verified coverage |
+|---|---:|
+| CPU functions | 1,270 / 1,270 |
+| CPU-function bytes | 314,304 / 314,304 |
+| Other executable material | 9,448 / 9,448 |
+| All executable bytes | 323,752 / 323,752 |
+| Initialized data | 32,216 / 32,216 |
+| Non-code ROM round trip | 16,453,464 / 16,453,464 |
+| Physical ROM inventory | 16,777,216 / 16,777,216 |
+
+The non-function executable material consists of RSP microcode, embedded
+read-only tables, and alignment. It is deliberately tracked separately instead
+of being presented as CPU functions.
+
+## Requirements
+
+- Linux or WSL
+- Python 3.11 or newer
+- GNU Make
+- `rabbitizer` (installed from `requirements.txt`)
+- The historical N64 compiler toolchains described below
+- `armips` for rebuilding the symbolic RSP sources
+
+All project-specific analysis, matching, normalization, asset, and verification
+tools are stored in this repository. The matching package is vendored under
+`tools/n64dk/`; no sibling source checkout is required.
+
+## Setup
+
+Clone the repository and install its Python dependency:
+
+```sh
+git clone https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt.git
+cd Rugrats-Scavenger-Hunt
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
+
+Place the USA ROM at `baseroms/us/baserom.z64`. The required SHA-1 is:
+
+```text
+fb2a62f1625630d6f0beb5fd00a32e12155d50e8
+```
+
+Verify it before doing anything else:
+
+```sh
+make verify-rom PYTHON=.venv/bin/python
+```
+
+## Historical compiler layout
+
+The original compilers cannot be redistributed. Put your legally obtained
+toolchain files in the ignored `.toolchain/` directory:
+
+```text
+.toolchain/
+├── kmc-gcc-2.7.2/
+│   ├── gcc
+│   ├── cc1
+│   └── as
+├── sn-gcc-2.8/
+│   ├── wibo
+│   ├── cc1n64.exe
+│   ├── asn64.exe
+│   └── psyq-obj-parser
+├── ido5.3/
+│   └── cc
+├── ido7.1/
+│   └── cc
+└── mips-binutils/
+    └── usr/bin/mips-linux-gnu-as
+```
+
+IDO 7.1 is supported by the tooling but is not currently required by a
+matching manifest. A compatible MIPS assembler on `PATH` may be used instead of
+the `mips-binutils` directory. To keep toolchains elsewhere, pass
+`N64DK_TOOLCHAIN=/absolute/path` to Make.
+
+## Verify the decompilation
+
+Run the primary verification suite:
+
+```sh
+make check PYTHON=.venv/bin/python
+```
+
+This verifies the ROM, rebuilds every matching CPU unit with its recorded
+compiler pipeline, checks executable tables and alignment, regenerates the
+progress report, and runs the repository tests.
+
+Verify the symbolic RSP programs separately by providing `armips`:
+
+```sh
+make verify-rsp-microcode \
+  PYTHON=.venv/bin/python \
+  ARMIPS=/absolute/path/to/armips
+```
+
+Run the complete data and asset validation:
+
+```sh
+make data-tests PYTHON=.venv/bin/python
+make data-roundtrip PYTHON=.venv/bin/python
+```
+
+`data-roundtrip` rebuilds all non-code ROM bytes from parsed representations and
+compares them with the retail image. It does not write a distributable ROM.
+
+## Useful targets
+
+| Command | Purpose |
+|---|---|
+| `make verify-rom` | Check ROM size and SHA-1 |
+| `make verify-matching` | Rebuild and compare all CPU-function manifests |
+| `make verify-executable-inventory` | Check every non-function executable interval |
+| `make verify-executable-data` | Rebuild executable tables and alignment from C |
+| `make verify-rsp-microcode` | Assemble and compare symbolic RSP programs |
+| `make data-tests` | Run format, data, audio, BSS, and asset tests |
+| `make data-roundtrip` | Rebuild and compare every non-code ROM byte |
+| `make report` | Generate `build/report.json` for progress trackers |
+| `make deep-rom-audit` | Regenerate the ROM map and consolidated audit |
+
+Variables such as `ROM`, `PYTHON`, `N64DK_TOOLCHAIN`, and `ARMIPS` can be
+overridden on the Make command line.
+
+## Repository layout
+
+| Path | Contents |
+|---|---|
+| `src/game/` | Game and runtime C source |
+| `src/runtime/`, `src/libultra/`, `src/libmus/` | Runtime and library source |
+| `src/data/` | Executable-section data represented in C |
+| `rsp/` | Symbolic RSP boot and audio microcode source |
+| `config/us/` | Matching manifests and progress metadata |
+| `analysis/` | Function catalogue, address map, ROM ledger, and audit reports |
+| `assets/` | Asset/data parsers, source metadata, and round-trip tests |
+| `tools/` | All project verification and matching tools |
 
 The decoded inventory includes 2,207 textures, 429 palettes, 376 models, 445
 vertex-animation streams, 178 audio samples, 25 songs, 112 sound effects, 380
 speech clips, 14 camera paths, 6 grid maps, 2 fonts, and 107 image tile banks.
-The source metadata and round-trip tools are under `assets/`; extracted ROM
-payloads remain local and untracked.
+Extracted copyrighted payloads remain local and are ignored by Git.
 
-## Verification
+## Technical details
 
-Place the ROM at `baseroms/us/baserom.z64` (a symlink is fine), then run:
+- Target: big-endian MIPS III / VR4300 using the 32-bit o32 ABI
+- CIC: 6102
+- Entry point: `0x80000400`
+- Program ROM range: `0x1000..0x57E80`
+- Program VRAM range: `0x80000400..0x80057280`
+- BSS: `0x80057280..0x800C7E30`
+- Confirmed compilers: KMC GCC 2.7.2, SN Systems GCC 2.8, and IDO 5.3
 
-```sh
-make check
-```
+See [`analysis/deep_rom_audit.md`](analysis/deep_rom_audit.md) for the complete
+coverage audit and [`analysis/rom_map.md`](analysis/rom_map.md) for the physical
+ROM map.
 
-By default the Makefile reuses `../n64-decomp-kit` and
-`../BattleTanx/.toolchain`. Set `N64DK_ROOT` or `N64DK_TOOLCHAIN` to use other
-locations. `make verify-matching` compiles every row in
-the matching manifests in `config/us/` and compares relocated output directly
-with the retail ROM. Reviewed SN assembler scheduling differences are reproduced
-by `tools/normalize_sn_schedule.py`; generated assembly remains temporary and is
-never stored in the repository.
+## Legal
 
-`make report` generates the ROM-independent objdiff v2 progress report used by
-[ByteMatch](https://bytematch.dev/TheGh0stShip/Rugrats-Scavenger-Hunt). The
-root [`.recomp.json`](.recomp.json) supplies the project metadata used by
-[recomp.fyi](https://recomp.fyi/). The default-branch workflow publishes the
-same report as `NRGE_report` after every push and retains `us_report` for the
-established ByteMatch entry. It also sends the verified report directly to
-[decmp.dev](https://decmp.dev/TheGh0stShip/Rugrats-Scavenger-Hunt). Its
-aggregate measures report program code and initialized program data.
-The ROM-wide audit identifies audio banks and both indexed resource archives.
-Post-program resources remain excluded from the code/data progress percentage.
-Run `make deep-rom-audit` to regenerate the physical map, progress report, and
-combined attack map from the verified retail image.
-
+This project does not provide the game ROM, extracted copyrighted media, or
+proprietary compiler binaries. The source and tooling are licensed under the
+terms in [`COPYING`](COPYING).
