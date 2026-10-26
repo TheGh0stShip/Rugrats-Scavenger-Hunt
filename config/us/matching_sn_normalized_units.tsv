@@ -450,3 +450,4 @@
 0x259F8	0x510	src/game/handle_board_player_event_80024df8.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	613cbd2636a244bce23f6a2e5d81ef1c92e41c435ea4c9a337f572ba63bf88b7
 0x20D2C	0x54C	src/game/search_board_routes_8002012c.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	55ae455c5c99919e962304a335881022aa3046c9acfc93d3c2876b8dea12fa14
 0x2E004	0xBC	src/game/reset_round_display.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f7b7564a0d6f07a72d636735cdcb501a3e891aad13e8c96aef218564e64612b7
+0x2C034	0xFC	src/game/prepare_cursor_motion.c	--section-base=.rdata:0x80002354 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	160c1d930fa43bd28b5f4200ebbb3bec6e8811798181866fdbcd766145b34f5a

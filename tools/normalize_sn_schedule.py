@@ -7494,6 +7494,72 @@ def normalize_texture_block_loads(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_cursor_motion(text: str) -> str:
+    """Reproduce the reviewed register allocation for the two cursor records."""
+    start = text.find("\t.ent\tfunc_8002B434\n")
+    end = text.find("\t.end\tfunc_8002B434\n", start)
+    if start < 0 or end < 0:
+        raise ValueError("reviewed cursor-motion function not found")
+    body = text[start:end]
+
+    allocation_start = "\tli\t$6,6\t\t\t# 0x00000006\n"
+    if body.count(allocation_start) != 1:
+        raise ValueError("reviewed cursor-motion allocation start not found")
+    head, allocated = body.split(allocation_start, 1)
+    allocated = allocation_start + allocated
+    register_map = {4: 7, 5: 8, 6: 10, 7: 9}
+    allocated = re.sub(
+        r"\$(4|5|6|7)\b",
+        lambda match: "$" + str(register_map[int(match.group(1))]),
+        allocated,
+    )
+    allocated = replace_once(allocated, (
+        "\tli\t$10,6\t\t\t# 0x00000006\n"
+        " #APP\n #NO_APP\n\tmove\t$8,$0\n"
+    ), (
+        " #APP\n #NO_APP\n\tmove\t$8,$0\n"
+        "\tli\t$10,6\t\t\t# 0x00000006\n"
+    ), "reviewed cursor-motion loop initialization")
+
+    for source_register, source_offset, stack_offset, target_registers in (
+        (7, 0, 16, (2, 3, 4)),
+        (2, 0, 32, (3, 4, 5)),
+    ):
+        old = (
+            f"\tlw\t$8,{source_offset}(${source_register})\n"
+            f"\tlw\t$9,{source_offset + 4}(${source_register})\n"
+            f"\tlw\t$10,{source_offset + 8}(${source_register})\n"
+            f"\tsw\t$8,{stack_offset}($sp)\n"
+            f"\tsw\t$9,{stack_offset + 4}($sp)\n"
+            f"\tsw\t$10,{stack_offset + 8}($sp)\n"
+        )
+        first, second, third = target_registers
+        new = (
+            f"\tlw\t${first},{source_offset}(${source_register})\n"
+            f"\tlw\t${second},{source_offset + 4}(${source_register})\n"
+            f"\tlw\t${third},{source_offset + 8}(${source_register})\n"
+            f"\tsw\t${first},{stack_offset}($sp)\n"
+            f"\tsw\t${second},{stack_offset + 4}($sp)\n"
+            f"\tsw\t${third},{stack_offset + 8}($sp)\n"
+        )
+        allocated = replace_once(
+            allocated, old, new, "reviewed cursor-motion vector copy"
+        )
+
+    allocated = replace_once(allocated, (
+        "\tl.s\t$f2,40($sp)\n\tl.s\t$f0,24($sp)\n\t#nop\n"
+        "\tsub.s\t$f2,$f2,$f0\n\taddu\t$8,$8,1\n"
+        "\tslt\t$2,$8,2\n\tdiv.s\t$f2,$f2,$f4\n"
+        "\ts.s\t$f2,44($7)\n"
+    ), (
+        "\tl.s\t$f0,40($sp)\n\tl.s\t$f2,24($sp)\n\t#nop\n"
+        "\tsub.s\t$f0,$f0,$f2\n\tdiv.s\t$f0,$f0,$f4\n"
+        "\ts.s\t$f0,44($7)\n\taddu\t$8,$8,1\n"
+        "\tslt\t$2,$8,2\n"
+    ), "reviewed cursor-motion final component schedule")
+    return normalize_standard_return(text[:start] + head + allocated + text[end:])
+
+
 def normalize_board_item_seeding(text: str) -> str:
     def swap_registers(span: str, left: str, right: str) -> str:
         marker = "$@board_seed_swap"
@@ -8210,6 +8276,8 @@ def normalize(text: str) -> str:
         return normalize_player_scoreboard(text)
     if "\t.ent\tfunc_8002D404\n" in text:
         return normalize_round_display_reset(text)
+    if "\t.ent\tfunc_8002B434\n" in text:
+        return normalize_cursor_motion(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:

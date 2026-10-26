@@ -6,13 +6,13 @@ decompilation are different measurements. A function in
 
 ## Current status
 
-The assembly manifest contains 37 functions and 11,084 bytes:
+The assembly manifest contains 36 functions and 10,832 bytes:
 
 | Classification | Functions | Bytes |
 |---|---:|---:|
 | Runtime, compiler helper, exception, codec, or SDK assembly | 26 | 6,264 |
 | Debugger exception handler | 1 | 1,332 |
-| Ordinary game logic still awaiting matching C | 10 | 3,488 |
+| Ordinary game logic still awaiting matching C | 9 | 3,236 |
 
 The first two categories are retained assembly with low-level behavior or
 source provenance consistent with assembly. The third category is not counted
@@ -29,7 +29,6 @@ as matching C, even though its current assembly source reproduces the ROM.
 | `func_8001F1C4` | `0x1FDC4` | 328 | Start rotating stream |
 | `func_8001F850` | `0x20450` | 420 | Emit scaled textured rectangle |
 | `func_8001FA40` | `0x20640` | 324 | Emit textured rectangle |
-| `func_8002B434` | `0x2C034` | 252 | Prepare cursor motion |
 | `func_8002B530` | `0x2C130` | 432 | Prepare menu transition |
 | `func_8002E478` | `0x2F078` | 204 | Update object timer |
 
@@ -49,6 +48,7 @@ from C:
 | `func_8002D404` | SN Systems GCC 2.8, reviewed normalization | Game logic |
 | `func_8003F0A8` | KMC GCC 2.7.2 through GNU `as` | n_audio routine; eight trailing alignment bytes |
 | `func_80042B70` | KMC GCC 2.7.2 through GNU `as` | libmus scheduler submission |
+| `func_8002B434` | SN Systems GCC 2.8, reviewed normalization | Cursor motion setup |
 
 Reviewed normalizers are fail-closed and function-specific. They reproduce
 assembler scheduling and register choices without replacing a function body
