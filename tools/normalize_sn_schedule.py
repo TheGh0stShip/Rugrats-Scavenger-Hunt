@@ -8085,6 +8085,71 @@ def normalize_player_menu_setup(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_rotating_stream_start(text: str) -> str:
+    """Apply the retail scheduling and base-register allocation to func_8001F1C4."""
+    text = replace_once(text,
+        "\tlui\t$4,%hi(D_80053978) # high\n\tlui\t$16,%hi(D_80061D80) # high\n",
+        "\tlui\t$16,%hi(D_80061D80) # high\n\tlui\t$4,%hi(D_80053978) # high\n",
+        "reviewed rotating-stream initial address-load order")
+    text = replace_once(text, (
+        "\tlui\t$5,%hi(D_80061D80) # high\n"
+        "\tlui\t$4,%hi(D_80053978) # high\n"
+        "\tlw\t$3,%lo(D_80061D80)($5)\n"
+        "\taddiu\t$16,$4,%lo(D_80053978) # low\n"
+        "\tsll\t$3,$3,1\n\taddu\t$3,$3,$16\n"
+        "\t#.set\tvolatile\n\tsh\t$2,0($3)\n\t#.set\tnovolatile\n"
+        "\t#.set\tvolatile\n\tlhu\t$4,0($3)\n\t#.set\tnovolatile\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80043554\n\taddiu\t$17,$5,%lo(D_80061D80) # low\n"
+    ), (
+        "\tlui\t$17,%hi(D_80061D80) # high\n"
+        "\tlui\t$4,%hi(D_80053978) # high\n"
+        "\tlw\t$3,%lo(D_80061D80)($17)\n"
+        "\taddiu\t$16,$4,%lo(D_80053978) # low\n"
+        "\tsll\t$3,$3,1\n\taddu\t$3,$3,$16\n"
+        "\t#.set\tvolatile\n\tsh\t$2,0($3)\n\t#.set\tnovolatile\n"
+        "\t#.set\tvolatile\n\tlhu\t$4,0($3)\n\t#.set\tnovolatile\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80043554\n\tnop\n"
+    ), "reviewed rotating-stream active-slot setup")
+    text = text.replace("\tlw\t$2,0($17)\n", "\tlw\t$2,%lo(D_80061D80)($17)\n", 1)
+    text = text.replace("\tlw\t$3,0($17)\n", "\tlw\t$3,%lo(D_80061D80)($17)\n", 1)
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L6\n\tlui\t$3,%hi(D_80053930) # high\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n\tmove\t$4,$18\n"
+    ), (
+        "\tbne\t$2,$0,$L6\n\tmove\t$4,$18\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "reviewed rotating-stream successful-retry delay slot")
+    text = replace_once(text, (
+        "\t#.set\tvolatile\n\tsh\t$2,0($3)\n\t#.set\tnovolatile\n"
+        "\tj\t$L5\n$L6:\n"
+    ), (
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L5\n\tsh\t$2,0($3)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L6:\n"
+        "\tlui\t$3,%hi(D_80053930) # high\n"
+    ), "reviewed rotating-stream retry delay slot")
+    text = replace_once(text, (
+        "\tlui\t$3,%hi(D_80053978) # high\n"
+        "\tlui\t$2,%hi(D_80061D80) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80053978) # low\n"
+        "\tlw\t$2,%lo(D_80061D80)($2)\n"
+        "\tlw\t$31,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+        "\tsll\t$2,$2,1\n\taddu\t$2,$2,$3\n\tlhu\t$2,0($2)\n\t#nop\n"
+    ), (
+        "\tlui\t$2,%hi(D_80061D80) # high\n"
+        "\tlui\t$3,%hi(D_80053978) # high\n"
+        "\tlw\t$2,%lo(D_80061D80)($2)\n"
+        "\taddiu\t$3,$3,%lo(D_80053978) # low\n"
+        "\tsll\t$2,$2,1\n\taddu\t$2,$2,$3\n\tlhu\t$2,0($2)\n\t#nop\n"
+        "\tlw\t$31,32($sp)\n\tlw\t$19,28($sp)\n"
+        "\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n"
+    ), "reviewed rotating-stream return-value scheduling")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800182E8\n" in text:
         return normalize_menu_page_input(text)
@@ -8478,6 +8543,8 @@ def normalize(text: str) -> str:
         return normalize_display_command_patch(text)
     if "\t.ent\tfunc_8001B5FC\n" in text:
         return normalize_player_menu_setup(text)
+    if "\t.ent\tfunc_8001F1C4\n" in text:
+        return normalize_rotating_stream_start(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:

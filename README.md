@@ -11,8 +11,8 @@ USA retail release of *Rugrats: Scavenger Hunt*. It includes matching C,
 reviewed assembly, symbolic RSP source, initialized-data descriptions, asset
 parsers, and whole-ROM reconstruction checks.
 
-Executable-byte coverage is 100%, but matching-C conversion is not: six
-ordinary game functions (1,976 bytes) still use reviewed assembly fallbacks.
+Executable-byte coverage is 100%, but matching-C conversion is not: five
+ordinary game functions (1,648 bytes) still use reviewed assembly fallbacks.
 They are listed in [`docs/ASSEMBLY_AUDIT.md`](docs/ASSEMBLY_AUDIT.md). The
 remaining assembly consists of low-level runtime, compiler-helper, exception,
 codec, SDK, and debugger code. This distinction is intentional so byte-exact
@@ -34,8 +34,8 @@ needed for code verification.
 | Non-code ROM round trip | 16,453,464 / 16,453,464 |
 | Physical ROM inventory | 16,777,216 / 16,777,216 |
 
-The assembly manifest currently contains 33 functions (9,572 bytes). Of
-those, 6 functions (1,976 bytes) are ordinary game logic still awaiting
+The assembly manifest currently contains 32 functions (9,244 bytes). Of
+those, 5 functions (1,648 bytes) are ordinary game logic still awaiting
 matching C. The other 27 functions are audited low-level or source-assembly
 units.
 
