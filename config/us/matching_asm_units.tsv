@@ -28,5 +28,4 @@
 0x20640	0x144	src/game/emit_textured_rectangle_8001fa40.S	-mips3 -G0	1ab23c4304dbd5c65c3ad0cfc5ffff9d86987916d09060d5f576e27d09e1b985
 0x20450	0x1A4	src/game/emit_scaled_textured_rectangle_8001f850.S	-mips3 -G0	a427b653ca48d8329bf63b72d006db0b5075cb6bba60f9c055baf5b231b397da
 0x9D94	0x130	src/game/find_record_state_80009194.S	-mips3 -G0	bd6587fe6585ccb40e49bb43fa0f883e67422fd350497dc5553215ba941bdcd3
-0x13BB0	0x18C	src/game/initialize_resource_tables_80012fb0.S	-mips3 -G0	065ebc57f4c4183c81af9788610c268d4d49494700d01d39b2f15360d76fab2a
 0x58BC	0x534	src/game/debug_stub_exception_handler.S	-mips3 -G0	50982995e1ee1a16a1ffcddd7e2bde57fcb5c50e52861507eb47a31b2eac4bf5

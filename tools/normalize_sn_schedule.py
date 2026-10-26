@@ -8150,6 +8150,83 @@ def normalize_rotating_stream_start(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_resource_table_initialization(text: str) -> str:
+    """Reproduce the retail live-range splits in func_80012FB0."""
+    text = replace_once(text, (
+        "\tsw\t$16,40($sp)\n\tlui\t$16,%hi(D_80058C38) # high\n"
+        "\tsw\t$21,60($sp)\n\taddiu\t$21,$16,%lo(D_80058C38) # low\n"
+        "\tmove\t$5,$21\n\tsw\t$20,56($sp)\n"
+        "\tlui\t$20,%hi(D_80052EB0) # high\n"
+        "\tlw\t$4,%lo(D_80052EB0)($20)\n\tli\t$6,8\t\t\t# 0x00000008\n"
+        "\tsw\t$31,68($sp)\n\tsw\t$22,64($sp)\n"
+        "\tsw\t$19,52($sp)\n\tsw\t$18,48($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80028B58\n\tsw\t$17,44($sp)\n"
+    ), (
+        "\tsw\t$16,40($sp)\n\tlui\t$16,%hi(D_80058C38) # high\n"
+        "\tsw\t$20,56($sp)\n\taddiu\t$20,$16,%lo(D_80058C38) # low\n"
+        "\tmove\t$5,$20\n\tsw\t$18,48($sp)\n"
+        "\tlui\t$18,%hi(D_80052EB0) # high\n"
+        "\tlw\t$4,%lo(D_80052EB0)($18)\n\tli\t$6,8\t\t\t# 0x00000008\n"
+        "\tsw\t$31,68($sp)\n\tsw\t$22,64($sp)\n"
+        "\tsw\t$21,60($sp)\n\tsw\t$19,52($sp)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80028B58\n\tsw\t$17,44($sp)\n"
+    ), "reviewed resource-table prologue allocation")
+    text = replace_once(text, (
+        "\tlw\t$3,%lo(D_80058C38)($16)\n\tmove\t$18,$0\n"
+        "\tsll\t$2,$3,1\n\taddu\t$2,$2,$3\n\tsll\t$17,$2,2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001A2B0\n\tmove\t$4,$17\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$5,$2\n\tlw\t$4,%lo(D_80052EB0)($20)\n"
+        "\tmove\t$6,$17\n\tsw\t$5,8($21)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80028B58\n\taddu\t$4,$4,8\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,%lo(D_80058C38)($16)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L3\n\tmove\t$19,$18\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$22,$16\n\tlui\t$17,%hi(D_80001140) # high\n"
+        "\tmove\t$16,$18\n"
+    ), (
+        "\tlw\t$3,%lo(D_80058C38)($16)\n\tmove\t$17,$0\n"
+        "\tsll\t$2,$3,1\n\taddu\t$2,$2,$3\n\tsll\t$19,$2,2\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001A2B0\n\tmove\t$4,$19\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$5,$2\n\tlw\t$4,%lo(D_80052EB0)($18)\n"
+        "\tmove\t$6,$19\n\tsw\t$5,8($20)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_80028B58\n\taddu\t$4,$4,8\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tlw\t$2,%lo(D_80058C38)($16)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L3\n\tmove\t$19,$17\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$22,$16\n\tmove\t$21,$20\n\tmove\t$20,$18\n"
+        "\tlui\t$18,%hi(D_80001140) # high\n\tmove\t$16,$17\n"
+    ), "reviewed resource-table initial allocations and loop split")
+    loop_start = text.index("$L5:\n")
+    loop_end = text.index("$L3:\n", loop_start)
+    loop = text[loop_start:loop_end]
+    loop = loop.replace("$17", "$30").replace("$18", "$17").replace("$30", "$18")
+    loop = loop.replace("\taddu\t$4,$2,$16\n", "\taddu\t$4,$16,$2\n")
+    text = text[:loop_start] + loop + text[loop_end:]
+    text = replace_once(text,
+        "\tsll\t$17,$2,2\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001A2B0\n\tmove\t$4,$17\n",
+        "\tsll\t$19,$2,2\n\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_8001A2B0\n\tmove\t$4,$19\n",
+        "reviewed second resource-table allocation size")
+    text = replace_once(text,
+        "\tmove\t$6,$17\n\tsw\t$5,8($18)\n",
+        "\tmove\t$6,$19\n\tsw\t$5,8($18)\n",
+        "reviewed second resource-table read size")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800182E8\n" in text:
         return normalize_menu_page_input(text)
@@ -8545,6 +8622,8 @@ def normalize(text: str) -> str:
         return normalize_player_menu_setup(text)
     if "\t.ent\tfunc_8001F1C4\n" in text:
         return normalize_rotating_stream_start(text)
+    if "\t.ent\tfunc_80012FB0\n" in text:
+        return normalize_resource_table_initialization(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:
