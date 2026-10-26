@@ -8227,6 +8227,146 @@ def normalize_resource_table_initialization(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_record_state_search(text: str) -> str:
+    """Apply the retail live-range split and loop layout to func_80009194."""
+    text = replace_once(text, (
+        "\tsubu\t$sp,$sp,56\n\tsw\t$fp,48($sp)\n\tmove\t$fp,$5\n"
+        "\tsw\t$18,24($sp)\n\tmove\t$18,$0\n"
+        "\tsw\t$16,16($sp)\n\tmove\t$16,$18\n"
+        "\tsll\t$4,$4,16\n\tsra\t$4,$4,16\n"
+        "\tlui\t$3,%hi(D_800581F0) # high\n"
+        "\tsll\t$2,$4,5\n\taddu\t$2,$2,$4\n"
+        "\tlw\t$3,%lo(D_800581F0)($3)\n\tsll\t$5,$2,4\n"
+        "\tsw\t$31,52($sp)\n\tsw\t$23,44($sp)\n"
+        "\tsw\t$22,40($sp)\n\tsw\t$21,36($sp)\n"
+        "\tsw\t$20,32($sp)\n\tsw\t$19,28($sp)\n\tsw\t$17,20($sp)\n"
+        "\taddu\t$3,$5,$3\n\tlh\t$2,8222($3)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L2\n\tmove\t$19,$18\n"
+    ), (
+        "\tsubu\t$sp,$sp,56\n\tsw\t$23,44($sp)\n\tmove\t$23,$5\n"
+        "\tsw\t$19,28($sp)\n\tmove\t$19,$0\n"
+        "\tsw\t$16,16($sp)\n\tmove\t$16,$19\n"
+        "\tlui\t$3,%hi(D_800581F0) # high\n"
+        "\tsll\t$4,$4,16\n\tsra\t$4,$4,16\n"
+        "\tsll\t$2,$4,5\n\taddu\t$2,$2,$4\n"
+        "\tlw\t$3,%lo(D_800581F0)($3)\n\tsll\t$5,$2,4\n"
+        "\tsw\t$31,48($sp)\n\tsw\t$22,40($sp)\n"
+        "\tsw\t$21,36($sp)\n\tsw\t$20,32($sp)\n"
+        "\tsw\t$18,24($sp)\n\tsw\t$17,20($sp)\n"
+        "\taddu\t$3,$3,$5\n\tlh\t$2,8222($3)\n\t#nop\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,$L2\n\tmove\t$17,$16\n"
+    ), "reviewed record-state prologue allocation")
+    text = replace_once(text, (
+        "\tli\t$23,-1\t\t\t# 0xffffffff\n"
+        "\tlui\t$2,%hi(D_80057F70) # high\n"
+        "\taddiu\t$22,$2,%lo(D_80057F70) # low\n"
+        "\tmove\t$21,$5\n\tmove\t$20,$4\n\tsll\t$17,$20,6\n"
+    ), (
+        "\tli\t$22,-1\t\t\t# 0xffffffff\n"
+        "\tmove\t$21,$5\n\tmove\t$20,$4\n"
+        "\tlui\t$3,%hi(D_80057F70) # high\n"
+        "\taddiu\t$3,$3,%lo(D_80057F70) # low\n"
+        "\tsll\t$2,$20,6\n\taddu\t$2,$2,$3\n\taddiu\t$18,$2,4\n"
+    ), "reviewed record-state slot-pointer setup")
+    loop_start = text.index("$L3:\n")
+    loop_end = text.index("$L2:\n", loop_start)
+    old_loop = text[loop_start:loop_end]
+    new_loop = """$L3:
+	move	$4,$20
+	.set	noreorder
+	.set	nomacro
+	jal	func_8000E02C
+	move	$5,$16
+	.set	macro
+	.set	reorder
+
+	sll	$2,$2,16
+	sra	$2,$2,16
+	.set	noreorder
+	.set	nomacro
+	beq	$2,$22,$L6
+	lui	$2,%hi(D_800581F0) # high
+	.set	macro
+	.set	reorder
+
+	lh	$2,0($18)
+	lhu	$3,0($18)
+	.set	noreorder
+	.set	nomacro
+	beq	$2,$0,$L7
+	addu	$2,$3,-380
+	.set	macro
+	.set	reorder
+
+	sltu	$2,$2,4
+	.set	noreorder
+	.set	nomacro
+	beq	$2,$0,$Lcontinue_setup
+	move	$17,$16
+	.set	macro
+	.set	reorder
+
+	.set	noreorder
+	.set	nomacro
+	j	$L2
+	li	$19,2			# 0x00000002
+	.set	macro
+	.set	reorder
+
+$Lcontinue_setup:
+	.set	noreorder
+	.set	nomacro
+	j	$L6
+	lui	$2,%hi(D_800581F0) # high
+	.set	macro
+	.set	reorder
+
+$L7:
+	.set	noreorder
+	.set	nomacro
+	bgtz	$19,$L6
+	lui	$2,%hi(D_800581F0) # high
+	.set	macro
+	.set	reorder
+
+	move	$17,$16
+	li	$19,1			# 0x00000001
+$L6:
+	lw	$2,%lo(D_800581F0)($2)
+	#nop
+	addu	$2,$2,$21
+	lh	$2,8222($2)
+	addu	$16,$16,1
+	slt	$2,$16,$2
+	.set	noreorder
+	.set	nomacro
+	bne	$2,$0,$L3
+	addu	$18,$18,2
+	.set	macro
+	.set	reorder
+
+"""
+    text = text[:loop_start] + new_loop + text[loop_end:]
+    text = replace_once(text, (
+        "\tbnel\t$fp,$0,$L12\n\tsw\t$18,0($fp)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L12:\n"
+        "\tmove\t$2,$19\n\tlw\t$31,52($sp)\n\tlw\t$fp,48($sp)\n"
+        "\tlw\t$23,44($sp)\n\tlw\t$22,40($sp)\n\tlw\t$21,36($sp)\n"
+        "\tlw\t$20,32($sp)\n\tlw\t$19,28($sp)\n\tlw\t$18,24($sp)\n"
+        "\tlw\t$17,20($sp)\n\tlw\t$16,16($sp)\n\t#nop\n"
+    ), (
+        "\tbnel\t$23,$0,$L12\n\tsw\t$19,0($23)\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n$L12:\n"
+        "\tmove\t$2,$17\n\tlw\t$31,48($sp)\n\tlw\t$23,44($sp)\n"
+        "\tlw\t$22,40($sp)\n\tlw\t$21,36($sp)\n\tlw\t$20,32($sp)\n"
+        "\tlw\t$19,28($sp)\n\tlw\t$18,24($sp)\n\tlw\t$17,20($sp)\n"
+        "\tlw\t$16,16($sp)\n\t#nop\n"
+    ), "reviewed record-state result and epilogue allocation")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800182E8\n" in text:
         return normalize_menu_page_input(text)
@@ -8624,6 +8764,8 @@ def normalize(text: str) -> str:
         return normalize_rotating_stream_start(text)
     if "\t.ent\tfunc_80012FB0\n" in text:
         return normalize_resource_table_initialization(text)
+    if "\t.ent\tfunc_80009194\n" in text:
+        return normalize_record_state_search(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:

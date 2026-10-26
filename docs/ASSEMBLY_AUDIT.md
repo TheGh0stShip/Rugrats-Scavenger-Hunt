@@ -6,13 +6,13 @@ decompilation are different measurements. A function in
 
 ## Current status
 
-The assembly manifest contains 30 functions and 8,644 bytes:
+The assembly manifest contains 29 functions and 8,340 bytes:
 
 | Classification | Functions | Bytes |
 |---|---:|---:|
 | Runtime, compiler helper, exception, codec, or SDK assembly | 26 | 6,264 |
 | Debugger exception handler | 1 | 1,332 |
-| Ordinary game logic still awaiting matching C | 3 | 1,048 |
+| Ordinary game logic still awaiting matching C | 2 | 744 |
 
 The first two categories are retained assembly with low-level behavior or
 source provenance consistent with assembly. The third category is not counted
@@ -22,7 +22,6 @@ as matching C, even though its current assembly source reproduces the ROM.
 
 | Function | ROM | Bytes | Purpose |
 |---|---:|---:|---|
-| `func_80009194` | `0x9D94` | 304 | Find record state |
 | `func_8001F850` | `0x20450` | 420 | Emit scaled textured rectangle |
 | `func_8001FA40` | `0x20640` | 324 | Emit textured rectangle |
 
@@ -49,6 +48,7 @@ from C:
 | `func_8001F1C4` | SN Systems GCC 2.8, reviewed normalization | Rotating-stream startup |
 | `func_8002E478` | KMC GCC 2.7.2, reviewed normalization | Object timer and flag update |
 | `func_80012FB0` | SN Systems GCC 2.8, reviewed normalization | Resource-table initialization |
+| `func_80009194` | SN Systems GCC 2.8, reviewed normalization | Record-state search |
 
 Reviewed normalizers are fail-closed and function-specific. They reproduce
 assembler scheduling and register choices without replacing a function body

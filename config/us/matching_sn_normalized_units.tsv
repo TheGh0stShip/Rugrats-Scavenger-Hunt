@@ -456,3 +456,4 @@
 0x1C1FC	0x1B4	src/game/prepare_player_menu.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	2a9b43362ad927f66551cf41f78f4ee8cfe500d7000f4c1203478994045685b9
 0x1FDC4	0x148	src/game/start_rotating_stream.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb	99d293690d65d1f210be085c3e7fa78c7a0e145269cd8c2f1ccbd7460207a8ff
 0x13BB0	0x18C	src/game/initialize_resource_tables.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	4808dc52f0ae92dc973ce0cf89fec3694351a7745d64542b822c69cef501d193
+0x9D94	0x130	src/game/find_record_state.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f5b8c085dce2934042c6bb13ebb006bdd4516b2e0b45ec00b22a7cc1863fdb1f
