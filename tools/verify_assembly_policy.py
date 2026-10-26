@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Keep ordinary game assembly visible and prevent the fallback list growing."""
+"""Restrict game assembly to the audited low-level source units."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ import argparse
 from pathlib import Path
 
 
-AUDITED_GAME_ASSEMBLY = {
+AUTHENTIC_GAME_ASSEMBLY = {
     (0x20450, 0x1A4, "src/game/emit_scaled_textured_rectangle_8001f850.S"),
     (0x20640, 0x144, "src/game/emit_textured_rectangle_8001fa40.S"),
     (0x58BC, 0x534, "src/game/debug_stub_exception_handler.S"),
@@ -33,7 +33,7 @@ def main() -> None:
         if fields[2].startswith("src/game/"):
             actual.add(row)
 
-    unexpected = actual - AUDITED_GAME_ASSEMBLY
+    unexpected = actual - AUTHENTIC_GAME_ASSEMBLY
     if unexpected:
         details = "\n".join(
             f"  0x{start:X} 0x{size:X} {source}"
@@ -41,9 +41,17 @@ def main() -> None:
         )
         raise SystemExit(f"unexpected game assembly unit(s):\n{details}")
 
+    missing = AUTHENTIC_GAME_ASSEMBLY - actual
+    if missing:
+        details = "\n".join(
+            f"  0x{start:X} 0x{size:X} {source}"
+            for start, size, source in sorted(missing)
+        )
+        raise SystemExit(f"missing audited low-level assembly unit(s):\n{details}")
+
     print(
-        f"assembly policy verified: {len(actual)} audited game unit(s); "
-        f"the allowlist has {len(AUDITED_GAME_ASSEMBLY) - len(actual)} retired slot(s)"
+        f"assembly policy verified: {len(actual)} audited low-level game unit(s); "
+        "no ordinary game fallback remains"
     )
 
 

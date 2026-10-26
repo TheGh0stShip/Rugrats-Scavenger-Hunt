@@ -8272,7 +8272,6 @@ def normalize_record_state_search(text: str) -> str:
     ), "reviewed record-state slot-pointer setup")
     loop_start = text.index("$L3:\n")
     loop_end = text.index("$L2:\n", loop_start)
-    old_loop = text[loop_start:loop_end]
     new_loop = """$L3:
 	move	$4,$20
 	.set	noreorder

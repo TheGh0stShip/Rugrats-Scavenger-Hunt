@@ -11,12 +11,12 @@ USA retail release of *Rugrats: Scavenger Hunt*. It includes matching C,
 reviewed assembly, symbolic RSP source, initialized-data descriptions, asset
 parsers, and whole-ROM reconstruction checks.
 
-Executable-byte coverage is 100%, but matching-C conversion is not: two
-ordinary game functions (744 bytes) still use reviewed assembly fallbacks.
-They are listed in [`docs/ASSEMBLY_AUDIT.md`](docs/ASSEMBLY_AUDIT.md). The
-remaining assembly consists of low-level runtime, compiler-helper, exception,
-codec, SDK, and debugger code. This distinction is intentional so byte-exact
-reconstruction is never presented as 100% C decompilation.
+Executable-byte coverage is 100%, and every ordinary game routine has verified
+matching C. The retained assembly consists of authentic low-level runtime,
+compiler-helper, exception, codec, SDK, debugger, and custom-ABI display-list
+code. It is listed in [`docs/ASSEMBLY_AUDIT.md`](docs/ASSEMBLY_AUDIT.md). This
+distinction is intentional: the repository is a complete byte-exact
+decompilation, but it is not inaccurately presented as containing only C.
 
 No ROM, extracted media, or proprietary compiler is included. You must provide
 your own legally obtained copy of the game and the historical compiler files
@@ -34,10 +34,9 @@ needed for code verification.
 | Non-code ROM round trip | 16,453,464 / 16,453,464 |
 | Physical ROM inventory | 16,777,216 / 16,777,216 |
 
-The assembly manifest currently contains 29 functions (8,340 bytes). Of
-those, 2 functions (744 bytes) are ordinary game logic still awaiting
-matching C. The other 27 functions are audited low-level or source-assembly
-units.
+The assembly manifest contains 29 functions (8,340 bytes): 27 runtime,
+compiler-helper, exception, codec, SDK, or debugger units, plus two authentic
+custom-ABI display-list emitters. No ordinary game assembly fallback remains.
 
 The non-function executable material consists of RSP microcode, embedded
 read-only tables, and alignment. It is deliberately tracked separately instead

@@ -12,24 +12,32 @@ The assembly manifest contains 29 functions and 8,340 bytes:
 |---|---:|---:|
 | Runtime, compiler helper, exception, codec, or SDK assembly | 26 | 6,264 |
 | Debugger exception handler | 1 | 1,332 |
-| Ordinary game logic still awaiting matching C | 2 | 744 |
+| Authentic low-level display-list emitters | 2 | 744 |
+| Ordinary game logic still awaiting matching C | 0 | 0 |
 
-The first two categories are retained assembly with low-level behavior or
-source provenance consistent with assembly. The third category is not counted
-as matching C, even though its current assembly source reproduces the ROM.
+Every ordinary game routine now has matching C. The retained assembly has
+low-level behavior or source provenance consistent with assembly. It remains
+separate from matching C even though its source reproduces the ROM exactly.
 
-## Ordinary game functions awaiting matching C
+## Authentic low-level game assembly
 
 | Function | ROM | Bytes | Purpose |
 |---|---:|---:|---|
 | `func_8001F850` | `0x20450` | 420 | Emit scaled textured rectangle |
 | `func_8001FA40` | `0x20640` | 324 | Emit textured rectangle |
 
-`tools/verify_assembly_policy.py` fixes this list as an upper bound. The check
-fails if an unexpected game assembly unit appears, if one of these ranges
-changes, or if the exact debugger handler is removed from its audited class.
-When a fallback becomes matching C, remove it from both the assembly manifest
-and the allowlist. The check deliberately permits the fallback list to shrink.
+These are paired, leaf-level RDP display-list emitters with parallel control
+flow and command-writing sequences. `func_8001F850` reads live inputs from
+`$v1` and `$t4` on entry in addition to the o32 argument locations, which
+cannot be represented by a standard C function signature. Its unscaled sibling
+uses the same hand-allocated register roles and emits the same three raw RDP
+commands. This custom ABI and shared construction identify the pair as
+hand-authored low-level assembly rather than unresolved ordinary C.
+
+`tools/verify_assembly_policy.py` requires exactly this pair and the audited
+debugger exception handler under `src/game/`. It fails if another game assembly
+unit appears, if a range changes, or if an audited low-level unit disappears
+without a deliberate policy update.
 
 ## Matching-C conversions
 
