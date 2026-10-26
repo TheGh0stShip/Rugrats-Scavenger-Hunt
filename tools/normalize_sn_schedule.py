@@ -7560,6 +7560,58 @@ def normalize_cursor_motion(text: str) -> str:
     return normalize_standard_return(text[:start] + head + allocated + text[end:])
 
 
+def normalize_menu_transition(text: str) -> str:
+    text = replace_once(text, (
+        "\tmove\t$19,$0\n"
+        "\tlui\t$3,%hi(D_800544E0) # high\n"
+        "\taddiu\t$3,$3,%lo(D_800544E0) # low\n"
+        "\taddu\t$22,$3,12\n"
+        "\tlui\t$2,%hi(D_80054490) # high\n"
+        "\taddiu\t$21,$2,%lo(D_80054490) # low\n"
+        "\tmove\t$17,$3\n\tmove\t$20,$19\n"
+    ), (
+        "\tmove\t$19,$0\n"
+        "\tlui\t$2,%hi(D_80054490) # high\n"
+        "\taddiu\t$22,$2,%lo(D_80054490) # low\n"
+        "\tlui\t$2,%hi(D_800544E0) # high\n"
+        "\taddiu\t$21,$2,%lo(D_800544E0) # low\n"
+        "\tmove\t$17,$21\n\tmove\t$20,$19\n"
+    ), "reviewed menu-transition table bases")
+    text = replace_once(text, (
+        "\taddu\t$16,$4,-2\n\tsubu\t$3,$19,$16\n"
+    ), (
+        "\taddu\t$3,$4,-2\n\tsubu\t$3,$19,$3\n"
+    ), "reviewed menu-transition wrapped index")
+    text = replace_once(
+        text, "\tbne\t$23,$2,$L7\n\tsll\t$2,$18,1\n",
+        "\tbne\t$23,$2,$L7\n\tsll\t$3,$18,1\n",
+        "reviewed menu-transition branch delay register",
+    )
+    old = (
+        "\taddu\t$2,$2,$18\n"
+        "\tsll\t$2,$2,2\n\taddu\t$2,$2,$20\n"
+        "\taddu\t$3,$2,$22\n"
+        "\tsll\t$2,$16,1\n\taddu\t$2,$2,$16\n"
+        "\tsll\t$2,$2,2\n\taddu\t$2,$2,$21\n"
+    )
+    new = (
+        "\taddu\t$3,$3,$18\n"
+        "\tsll\t$3,$3,2\n\taddu\t$3,$3,$20\n"
+        "\taddu\t$3,$3,$21\n"
+        "\tsll\t$2,$16,1\n\taddu\t$2,$2,$16\n"
+        "\tsll\t$2,$2,2\n\taddu\t$2,$2,$22\n"
+    )
+    if text.count(old) != 2:
+        raise ValueError("reviewed menu-transition vector blocks not found")
+    text = text.replace(old, new)
+    for source, target in ((0, 12), (4, 16), (8, 20)):
+        old_load = f"\tl.s\t$f0,{source}($3)\n"
+        if text.count(old_load) != 2:
+            raise ValueError("reviewed menu-transition component load not found")
+        text = text.replace(old_load, f"\tl.s\t$f0,{target}($3)\n")
+    return normalize_standard_return(text)
+
+
 def normalize_board_item_seeding(text: str) -> str:
     def swap_registers(span: str, left: str, right: str) -> str:
         marker = "$@board_seed_swap"
@@ -8278,6 +8330,8 @@ def normalize(text: str) -> str:
         return normalize_round_display_reset(text)
     if "\t.ent\tfunc_8002B434\n" in text:
         return normalize_cursor_motion(text)
+    if "\t.ent\tfunc_8002B530\n" in text:
+        return normalize_menu_transition(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:
