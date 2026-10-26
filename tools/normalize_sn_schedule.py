@@ -7963,6 +7963,128 @@ def normalize_board_player_event(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_player_menu_setup(text: str) -> str:
+    """Reproduce the retail allocator and delay-slot choices for func_8001B5FC.
+
+    The source compiler emits the same operations, but ASN64 keeps two call
+    delay slots occupied and reloads D_800529F0 through a redundant high-half
+    temporary.  Retail leaves those call slots empty and reuses $s0.  The row
+    loop also uses a different, non-overlapping allocation of its integer live
+    ranges.  These replacements only move existing meaningful operations,
+    remove the redundant high-half load, insert the corresponding delay-slot
+    nops, and consistently rename scratch registers.
+    """
+    text = replace_once(text, (
+        "\tbne\t$2,$0,$L3\n"
+        "\tori\t$2,$3,0x4000\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tsw\t$2,280($5)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L4\n\tli\t$4,49\t\t\t# 0x00000031\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), (
+        "\tbne\t$2,$0,$L3\n"
+        "\tli\t$4,49\t\t\t# 0x00000031\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$6,$0\n"
+        "\tori\t$2,$3,0x4000\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tj\t$L4\n\tsw\t$2,280($5)\n"
+        "\t.set\tmacro\n\t.set\treorder\n"
+    ), "reviewed player-menu first sound path scheduling")
+    text = replace_once(text,
+        "\tbne\t$2,$0,$L4\n\tli\t$4,61\t\t\t# 0x0000003d\n",
+        "\tbne\t$2,$0,$Lsound\n\tli\t$4,61\t\t\t# 0x0000003d\n",
+        "reviewed player-menu ready-sound branch label")
+    text = replace_once(text, (
+        "\tbne\t$3,$2,$L21\n\tmove\t$6,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$4,49\t\t\t# 0x00000031\n"
+        "\tlw\t$5,%lo(D_800529F0)($16)\n"
+        "$L4:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800069C8\n\tmove\t$6,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$4,$0\n"
+        "\tlui\t$2,%hi(D_800529F0) # high\n"
+        "\tlw\t$5,%lo(D_800529F0)($2)\n"
+    ), (
+        "\tbne\t$3,$2,$L21\n\tmove\t$8,$0\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tli\t$4,49\t\t\t# 0x00000031\n"
+        "\tlw\t$5,%lo(D_800529F0)($16)\n"
+        "$Lsound:\n\tmove\t$6,$0\n"
+        "$L4:\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tjal\tfunc_800069C8\n\tnop\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\tmove\t$4,$0\n"
+        "\tlw\t$5,%lo(D_800529F0)($16)\n"
+    ), "reviewed player-menu shared sound call scheduling")
+    text = replace_once(text,
+        "\tmfhi\t$11\n\t#nop\n\t#nop\n\tsra\t$4,$11,1\n",
+        "\tmfhi\t$13\n\t#nop\n\t#nop\n\tsra\t$4,$13,1\n",
+        "reviewed player-menu random quotient scratch register")
+    text = replace_once(text, (
+        "\tmove\t$6,$0\n$L21:\n"
+        "\tli\t$10,1\t\t\t# 0x00000001\n"
+        "\tlui\t$2,%hi(D_8005363C) # high\n"
+        "\taddiu\t$9,$2,%lo(D_8005363C) # low\n"
+        "\tlui\t$2,%hi(D_8005B7F2) # high\n"
+        "\tmove\t$7,$2\n"
+        "\tli\t$8,1717960704\t\t\t# 0x66660000\n"
+        "\tori\t$8,$8,0x6667\n"
+        "\tlui\t$2,%hi(D_8005368C) # high\n"
+        "\taddiu\t$5,$2,%lo(D_8005368C) # low\n"
+        "\tlui\t$2,%hi(D_800537D8) # high\n"
+        "\tsw\t$0,%lo(D_800537D8)($2)\n"
+        "\tmove\t$2,$10\n"
+        "\tsh\t$2,%lo(D_8005B7F2)($7)\n"
+        "$L12:\n"
+        "\tlh\t$4,%lo(D_8005B7F2)($7)\n\t#nop\n"
+        "\taddu\t$4,$4,-5\n\tsubu\t$4,$6,$4\n"
+        "\tmult\t$4,$8\n\tsh\t$10,50($5)\n"
+        "\taddu\t$6,$6,1\n\tsra\t$2,$4,31\n"
+        "\tmfhi\t$11\n\t#nop\n\t#nop\n"
+        "\tsra\t$3,$11,1\n\tsubu\t$3,$3,$2\n"
+        "\tsll\t$2,$3,2\n\taddu\t$2,$2,$3\n"
+        "\tsubu\t$4,$4,$2\n\tsll\t$2,$4,1\n"
+        "\taddu\t$2,$2,$4\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$9\n"
+        "\tlw\t$12,0($2)\n\tlw\t$13,4($2)\n\tlw\t$14,8($2)\n"
+        "\tsw\t$12,0($5)\n\tsw\t$13,4($5)\n\tsw\t$14,8($5)\n"
+        "\tslt\t$2,$6,5\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L12\n\taddu\t$5,$5,60\n"
+    ), (
+        "\tmove\t$8,$0\n$L21:\n"
+        "\tli\t$12,1\t\t\t# 0x00000001\n"
+        "\tlui\t$2,%hi(D_8005B7F2) # high\n\tmove\t$9,$2\n"
+        "\tli\t$10,1717960704\t\t\t# 0x66660000\n\tori\t$10,$10,0x6667\n"
+        "\tlui\t$2,%hi(D_8005363C) # high\n\taddiu\t$11,$2,%lo(D_8005363C) # low\n"
+        "\tlui\t$2,%hi(D_8005368C) # high\n\taddiu\t$7,$2,%lo(D_8005368C) # low\n"
+        "\tlui\t$2,%hi(D_800537D8) # high\n\tsw\t$0,%lo(D_800537D8)($2)\n"
+        "\tmove\t$2,$12\n\tsh\t$2,%lo(D_8005B7F2)($9)\n"
+        "$L12:\n"
+        "\tlh\t$3,%lo(D_8005B7F2)($9)\n\t#nop\n"
+        "\taddu\t$3,$3,-5\n\tsubu\t$3,$8,$3\n"
+        "\tmult\t$3,$10\n\tsh\t$12,50($7)\n"
+        "\taddu\t$8,$8,1\n\tsra\t$2,$3,31\n"
+        "\tmfhi\t$13\n\t#nop\n\t#nop\n"
+        "\tsra\t$4,$13,1\n\tsubu\t$4,$4,$2\n"
+        "\tsll\t$2,$4,2\n\taddu\t$2,$2,$4\n"
+        "\tsubu\t$4,$3,$2\n\tsll\t$2,$4,1\n"
+        "\taddu\t$2,$2,$4\n\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$11\n"
+        "\tlw\t$3,0($2)\n\tlw\t$4,4($2)\n\tlw\t$5,8($2)\n"
+        "\tsw\t$3,0($7)\n\tsw\t$4,4($7)\n\tsw\t$5,8($7)\n"
+        "\tslt\t$2,$8,5\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tbne\t$2,$0,$L12\n\taddu\t$7,$7,60\n"
+    ), "reviewed player-menu row-loop allocation")
+    return normalize_standard_return(text)
+
+
 def normalize(text: str) -> str:
     if "\t.ent\tfunc_800182E8\n" in text:
         return normalize_menu_page_input(text)
@@ -8354,6 +8476,8 @@ def normalize(text: str) -> str:
         return normalize_menu_transition(text)
     if "\t.ent\tfunc_80014084\n" in text:
         return normalize_display_command_patch(text)
+    if "\t.ent\tfunc_8001B5FC\n" in text:
+        return normalize_player_menu_setup(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:
