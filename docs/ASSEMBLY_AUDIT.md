@@ -6,13 +6,13 @@ decompilation are different measurements. A function in
 
 ## Current status
 
-The assembly manifest contains 35 functions and 10,400 bytes:
+The assembly manifest contains 34 functions and 10,008 bytes:
 
 | Classification | Functions | Bytes |
 |---|---:|---:|
 | Runtime, compiler helper, exception, codec, or SDK assembly | 26 | 6,264 |
 | Debugger exception handler | 1 | 1,332 |
-| Ordinary game logic still awaiting matching C | 8 | 2,804 |
+| Ordinary game logic still awaiting matching C | 7 | 2,412 |
 
 The first two categories are retained assembly with low-level behavior or
 source provenance consistent with assembly. The third category is not counted
@@ -24,7 +24,6 @@ as matching C, even though its current assembly source reproduces the ROM.
 |---|---:|---:|---|
 | `func_80009194` | `0x9D94` | 304 | Find record state |
 | `func_80012FB0` | `0x13BB0` | 396 | Initialize resource tables |
-| `func_80014084` | `0x14C84` | 392 | Patch display commands |
 | `func_8001B5FC` | `0x1C1FC` | 436 | Prepare player menu |
 | `func_8001F1C4` | `0x1FDC4` | 328 | Start rotating stream |
 | `func_8001F850` | `0x20450` | 420 | Emit scaled textured rectangle |
@@ -49,6 +48,7 @@ from C:
 | `func_80042B70` | KMC GCC 2.7.2 through GNU `as` | libmus scheduler submission |
 | `func_8002B434` | SN Systems GCC 2.8, reviewed normalization | Cursor motion setup |
 | `func_8002B530` | SN Systems GCC 2.8, reviewed normalization | Menu transition setup |
+| `func_80014084` | SN Systems GCC 2.8, reviewed normalization | Display-command patching |
 
 Reviewed normalizers are fail-closed and function-specific. They reproduce
 assembler scheduling and register choices without replacing a function body

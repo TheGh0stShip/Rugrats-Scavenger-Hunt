@@ -7612,6 +7612,26 @@ def normalize_menu_transition(text: str) -> str:
     return normalize_standard_return(text)
 
 
+def normalize_display_command_patch(text: str) -> str:
+    mode_load = (
+        "\tlui\t$2,%hi(D_80052EE8) # high\n"
+        "\tlw\t$9,%lo(D_80052EE8)($2)\n"
+    )
+    text = replace_once(
+        text, mode_load, "", "reviewed display-command mode-load removal"
+    )
+    text = replace_once(
+        text,
+        "\tli\t$25,-3079\t\t\t# 0xfffff3f9\n",
+        "\tli\t$25,-3079\t\t\t# 0xfffff3f9\n" + mode_load,
+        "reviewed display-command mode-load schedule",
+    )
+    text = remap_registers(
+        text, {15: 25, 25: 15, 14: 24, 24: 14, 13: 11, 11: 13}
+    )
+    return normalize_standard_return(text)
+
+
 def normalize_board_item_seeding(text: str) -> str:
     def swap_registers(span: str, left: str, right: str) -> str:
         marker = "$@board_seed_swap"
@@ -8332,6 +8352,8 @@ def normalize(text: str) -> str:
         return normalize_cursor_motion(text)
     if "\t.ent\tfunc_8002B530\n" in text:
         return normalize_menu_transition(text)
+    if "\t.ent\tfunc_80014084\n" in text:
+        return normalize_display_command_patch(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:

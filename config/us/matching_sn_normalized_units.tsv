@@ -452,3 +452,4 @@
 0x2E004	0xBC	src/game/reset_round_display.c	-O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	f7b7564a0d6f07a72d636735cdcb501a3e891aad13e8c96aef218564e64612b7
 0x2C034	0xFC	src/game/prepare_cursor_motion.c	--section-base=.rdata:0x80002354 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	160c1d930fa43bd28b5f4200ebbb3bec6e8811798181866fdbcd766145b34f5a
 0x2C130	0x1B0	src/game/prepare_menu_transition.c	--section-base=.rdata:0x80002358 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	6493cf74530f0dde02effea2f4da228eea815449e6daa1be9d31b6729a78b480
+0x14C84	0x188	src/game/patch_display_commands.c	--section-base=.rdata:0x80001150 -O2 -G0 -mcpu=vr4300 -mhard-float -meb -mips3	cf69a3ed241e4672dd3b89d00bd07750135626157c019a275919a2deb36420a5

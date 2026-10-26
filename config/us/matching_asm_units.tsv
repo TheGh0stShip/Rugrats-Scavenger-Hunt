@@ -30,7 +30,6 @@
 0x20450	0x1A4	src/game/emit_scaled_textured_rectangle_8001f850.S	-mips3 -G0	a427b653ca48d8329bf63b72d006db0b5075cb6bba60f9c055baf5b231b397da
 0x9D94	0x130	src/game/find_record_state_80009194.S	-mips3 -G0	bd6587fe6585ccb40e49bb43fa0f883e67422fd350497dc5553215ba941bdcd3
 0x1FDC4	0x148	src/game/start_rotating_stream_8001f1c4.S	-mips3 -G0	36365984ac47cbca4f2f7d0267588a03fd974fb89fce282377360dbe7c7fedd0
-0x14C84	0x188	src/game/patch_display_commands_80014084.S	-mips3 -G0	c69c3035b72d5de1de4d73b42aab9cd77e484e6dc029ca1db190906a5d1d2f4b
 0x13BB0	0x18C	src/game/initialize_resource_tables_80012fb0.S	-mips3 -G0	065ebc57f4c4183c81af9788610c268d4d49494700d01d39b2f15360d76fab2a
 0x1C1FC	0x1B4	src/game/prepare_player_menu_8001b5fc.S	-mips3 -G0	f2a8afaeada8920533cd689cff438ae390a3abe2b43dfe5854a560c9e554feaf
 0x58BC	0x534	src/game/debug_stub_exception_handler.S	-mips3 -G0	50982995e1ee1a16a1ffcddd7e2bde57fcb5c50e52861507eb47a31b2eac4bf5
