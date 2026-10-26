@@ -12,7 +12,6 @@ AUDITED_GAME_ASSEMBLY = {
     (0x13BB0, 0x18C, "src/game/initialize_resource_tables_80012fb0.S"),
     (0x20450, 0x1A4, "src/game/emit_scaled_textured_rectangle_8001f850.S"),
     (0x20640, 0x144, "src/game/emit_textured_rectangle_8001fa40.S"),
-    (0x2F078, 0xCC, "src/game/update_object_timer_8002e478.S"),
     (0x58BC, 0x534, "src/game/debug_stub_exception_handler.S"),
 }
 

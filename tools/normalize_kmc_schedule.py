@@ -249,6 +249,33 @@ def normalize_entry_copy_selection(text: str) -> str:
     ), "entry-copy selection layout")
 
 
+def normalize_game_object_timer(text: str) -> str:
+    text = replace_once(text,
+        "\t.frame\t$sp,8,$31\t\t# vars= 8, regs= 0/0, args= 0, extra= 0\n",
+        "\t.frame\t$sp,0,$31\t\t# vars= 0, regs= 0/0, args= 0, extra= 0\n",
+        "game-object timer empty frame")
+    text = replace_once(text, (
+        "\tlh\t$2,404($4)\n\tsubu\t$sp,$sp,8\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,.L2\n\tmove\t$3,$2\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+        "\taddu\t$2,$3,-1\n"
+    ), (
+        "\tlh\t$2,404($4)\n\tlhu\t$3,404($4)\n"
+        "\t.set\tnoreorder\n\t.set\tnomacro\n"
+        "\tblez\t$2,.L2\n\taddu\t$2,$3,-1\n"
+        "\t.set\tmacro\n\t.set\treorder\n\n"
+    ), "game-object timer unsigned decrement")
+    text = replace_once(text,
+        "\tlw\t$3,D_800B92F4\n",
+        "\tlui\t$2,%hi(D_800B92F4)\n\tlw\t$3,%lo(D_800B92F4)($2)\n",
+        "game-object timer state address register")
+    return replace_once(text,
+        ".L3:\n\taddu\t$sp,$sp,8\n\tj\t$31\n",
+        ".L3:\n\tj\t$31\n",
+        "game-object timer empty epilogue")
+
+
 def normalize_grid_direction_probe(text: str) -> str:
     text = replace_once(
         text, "\tsw\t$21,36($sp)\n\tla\t$21,.L11\n",
@@ -832,6 +859,8 @@ def normalize(text: str, unit: str) -> str:
         text = normalize_slot_store(text)
     elif unit == "func_800231B4":
         text = normalize_object_timer(text)
+    elif unit == "func_8002E478":
+        text = normalize_game_object_timer(text)
     elif unit == "func_8001AB7C":
         text = normalize_entry_copy_selection(text)
     elif unit == "func_80024328":

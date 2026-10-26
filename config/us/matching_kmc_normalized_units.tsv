@@ -29,3 +29,4 @@
 0x8BF8	0xA4	src/game/find_record_pair_80007ff8.c	--normalizer-unit=func_80007FF8 -O2 -G0 -mips3 -mgp32 -mfp32	918bddcece9a93abb7b64afe5356e44e43933d8122136618b16cc0ccb336a00d
 0x11AF8	0xBC	src/game/check_pak_channel_80010ef8.c	--normalizer-unit=func_80010EF8 -O2 -G0 -mips3 -mgp32 -mfp32	fdf8881a3b384ced1276cbe07c4c0c3e4b1e11451bf46ce08b35463479c310a7
 0x4441C	0x4C8	src/game/mix_stream_channels_8004381c.c	--normalizer-unit=func_8004381C -O2 -G0 -mips3 -mgp32 -mfp32	2e71d363b075a3f2a773bb68c70b1ba6d8ec97910c31aef08ae6f0c5a0958434
+0x2F078	0xCC	src/game/update_object_timer.c	--normalizer-unit=func_8002E478 -O2 -G0 -mips3 -mgp32 -mfp32	da86d3ea1a8d3ce345d796ddbbca78e13107ae48463e06699bc065bf76556e55

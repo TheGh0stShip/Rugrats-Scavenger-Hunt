@@ -6,13 +6,13 @@ decompilation are different measurements. A function in
 
 ## Current status
 
-The assembly manifest contains 32 functions and 9,244 bytes:
+The assembly manifest contains 31 functions and 9,040 bytes:
 
 | Classification | Functions | Bytes |
 |---|---:|---:|
 | Runtime, compiler helper, exception, codec, or SDK assembly | 26 | 6,264 |
 | Debugger exception handler | 1 | 1,332 |
-| Ordinary game logic still awaiting matching C | 5 | 1,648 |
+| Ordinary game logic still awaiting matching C | 4 | 1,444 |
 
 The first two categories are retained assembly with low-level behavior or
 source provenance consistent with assembly. The third category is not counted
@@ -26,7 +26,6 @@ as matching C, even though its current assembly source reproduces the ROM.
 | `func_80012FB0` | `0x13BB0` | 396 | Initialize resource tables |
 | `func_8001F850` | `0x20450` | 420 | Emit scaled textured rectangle |
 | `func_8001FA40` | `0x20640` | 324 | Emit textured rectangle |
-| `func_8002E478` | `0x2F078` | 204 | Update object timer |
 
 `tools/verify_assembly_policy.py` fixes this list as an upper bound. The check
 fails if an unexpected game assembly unit appears, if one of these ranges
@@ -49,6 +48,7 @@ from C:
 | `func_80014084` | SN Systems GCC 2.8, reviewed normalization | Display-command patching |
 | `func_8001B5FC` | SN Systems GCC 2.8, reviewed normalization | Player-menu setup |
 | `func_8001F1C4` | SN Systems GCC 2.8, reviewed normalization | Rotating-stream startup |
+| `func_8002E478` | KMC GCC 2.7.2, reviewed normalization | Object timer and flag update |
 
 Reviewed normalizers are fail-closed and function-specific. They reproduce
 assembler scheduling and register choices without replacing a function body
