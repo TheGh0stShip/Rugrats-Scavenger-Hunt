@@ -1,5 +1,6 @@
 # KMC GCC 2.7.2 C units with catalogue-owned trailing zero padding
 # ROM_START SIZE SOURCE FLAGS SHA256
+0x3FCA8	0xC8	src/libultra/n_al_allocate_pvoice.c	--trailing-padding=0x8 -O2 -G0 -mips3 -mgp32 -mfp32	39a5c7279baa9ea64161f2e73dfea68feb47cdef8e9f7891379c890fa88f929d
 0x48638	0x1E8	src/libultra/gu_position.c	--trailing-padding=0x8 -O2 -finline-functions -G0 -mips3 -mgp32 -mfp32	064bc420c5dcce4d064184634d25bc51ae9e9aee6df14e28d026bb2f88718c08
 0x4C7FC	0xC4	src/libultra/al_resample_param.c	--trailing-padding=0x4 --section-base=.rodata:0x80003828 -O2 -G0 -mips3 -mgp32 -mfp32	a6133fdeb0bc3ed41d25988a6c5be2420e532c57bebf5c6614b561f36d486715
 0x4B4AC	0x184	src/libultra/al_decode_chunk.c	--trailing-padding=0x4 -O2 -G0 -mips3 -mgp32 -mfp32	df97c1aecf1bd1e7b40dab7329973dfec48a04ce8372c33b83e01dd4b31785de

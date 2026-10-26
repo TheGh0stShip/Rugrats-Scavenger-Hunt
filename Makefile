@@ -6,9 +6,9 @@ N64DK_TOOLCHAIN ?= .toolchain
 ARMIPS ?= armips
 N64DK := PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) -m n64dk
 
-.PHONY: check report report-check rom-audit deep-rom-audit verify-rom verify-matching verify-executable-inventory verify-executable-data verify-rsp-microcode survey
+.PHONY: check report report-check rom-audit deep-rom-audit verify-rom verify-matching verify-assembly-policy verify-executable-inventory verify-executable-data verify-rsp-microcode survey
 
-check: verify-rom verify-matching verify-executable-inventory verify-executable-data report-check
+check: verify-rom verify-matching verify-assembly-policy verify-executable-inventory verify-executable-data report-check
 
 rom-audit: verify-rom
 	$(PYTHON) tools/audit_rom.py "$(ROM)" --json analysis/rom_map.json --markdown analysis/rom_map.md --ledger analysis/rom_inventory.tsv
@@ -44,6 +44,9 @@ verify-matching: verify-rom
 	$(N64DK) match-batch config/us/matching_ido_units.tsv=ido5.3 --project . --symbols analysis/survey/symbol_addrs.txt
 	PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) tools/verify_ido_normalized.py config/us/matching_ido_normalized_units.tsv --project . --rom "$(ROM)" --symbols analysis/survey/symbol_addrs.txt
 	PYTHONPATH=$(abspath $(N64DK_ROOT)) N64DK_TOOLCHAIN=$(abspath $(N64DK_TOOLCHAIN)) $(N64DK_PYTHON) tools/verify_asm_units.py config/us/matching_asm_units.tsv --project . --rom "$(ROM)" --symbols analysis/survey/symbol_addrs.txt
+
+verify-assembly-policy:
+	$(PYTHON) tools/verify_assembly_policy.py
 
 survey: verify-rom
 	$(N64DK) survey "$(ROM)" --out analysis/survey

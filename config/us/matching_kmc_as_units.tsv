@@ -278,6 +278,7 @@
 0x3D3DC	0x2F0	src/libmus/mus_main.c	-O2 -G0 -mips3 -mgp32 -mfp32	7d1b90464736d6914f7a8c3e3c9e19b6447bb378d66773a852099e332eb63517
 0x3A2E0	0x200	src/runtime/format_general_number.c	-O1 -G0 -mips3 -mgp32 -mfp32	883b5c732ce8bf508223fffed5fef438749a8c2a9c1004d7c86ee491fa3535eb
 0x43250	0x174	src/libmus/dma_init.c	-O2 -G0 -mips3 -mgp32 -mfp32	29f90a0ae5a125cdec59c0bc3f9f5b511ff1060ad96b16ce0b0f075e2685908b
+0x43770	0xE0	src/libmus/submit_audio_task.c	-O2 -G0 -mips3 -mgp32 -mfp32	6858226376be16f9c39f4abcf365acf459666a026b36e9e20ea49dab5c328ccc
 0x4350C	0x194	src/libmus/dma_new_buffer.c	-O2 -G0 -mips3 -mgp32 -mfp32	576d59a83606e4372cc8d918d64aadd4e4a703f9ffe33eadfe13206e5af40378
 0x441B4	0x268	src/game/set_stream_pan_800435b4.c	-O2 -G0 -mips3 -mgp32 -mfp32	22de197db285743160029617260ca2bb4f0722e3a9665a32af6ef633d741e3d5
 0x3B17C	0x58	src/game/sprintf_8003a57c.c	-O1 -G0 -mips3 -mgp32 -mfp32	17135457426d3dfd1e1d16913b80e42f0a12b6c82d96e00fd27c1ca0bbade11d

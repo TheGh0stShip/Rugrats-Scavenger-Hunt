@@ -6,10 +6,17 @@
 [![decmp.dev](https://api.decmp.dev/badge/TheGh0stShip/Rugrats-Scavenger-Hunt.svg?measure=matched_code_percent&label=decmp.dev)](https://decmp.dev/TheGh0stShip/Rugrats-Scavenger-Hunt)
 [![Report](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml/badge.svg)](https://github.com/TheGh0stShip/Rugrats-Scavenger-Hunt/actions/workflows/progress.yml)
 
-This repository contains a complete, byte-exact decompilation of the USA retail
-release of *Rugrats: Scavenger Hunt*. It includes C and assembly source for the
-program, symbolic RSP source, initialized-data descriptions, asset parsers, and
-whole-ROM reconstruction checks.
+This repository contains a complete, byte-exact source reconstruction of the
+USA retail release of *Rugrats: Scavenger Hunt*. It includes matching C,
+reviewed assembly, symbolic RSP source, initialized-data descriptions, asset
+parsers, and whole-ROM reconstruction checks.
+
+Executable-byte coverage is 100%, but matching-C conversion is not: ten
+ordinary game functions (3,488 bytes) still use reviewed assembly fallbacks.
+They are listed in [`docs/ASSEMBLY_AUDIT.md`](docs/ASSEMBLY_AUDIT.md). The
+remaining assembly consists of low-level runtime, compiler-helper, exception,
+codec, SDK, and debugger code. This distinction is intentional so byte-exact
+reconstruction is never presented as 100% C decompilation.
 
 No ROM, extracted media, or proprietary compiler is included. You must provide
 your own legally obtained copy of the game and the historical compiler files
@@ -26,6 +33,11 @@ needed for code verification.
 | Initialized data | 32,216 / 32,216 |
 | Non-code ROM round trip | 16,453,464 / 16,453,464 |
 | Physical ROM inventory | 16,777,216 / 16,777,216 |
+
+The assembly manifest currently contains 37 functions (11,084 bytes). Of
+those, 10 functions (3,488 bytes) are ordinary game logic still awaiting
+matching C. The other 27 functions are audited low-level or source-assembly
+units.
 
 The non-function executable material consists of RSP microcode, embedded
 read-only tables, and alignment. It is deliberately tracked separately instead
@@ -132,6 +144,7 @@ compares them with the retail image. It does not write a distributable ROM.
 |---|---|
 | `make verify-rom` | Check ROM size and SHA-1 |
 | `make verify-matching` | Rebuild and compare all CPU-function manifests |
+| `make verify-assembly-policy` | Reject unreviewed additions to game assembly |
 | `make verify-executable-inventory` | Check every non-function executable interval |
 | `make verify-executable-data` | Rebuild executable tables and alignment from C |
 | `make verify-rsp-microcode` | Assemble and compare symbolic RSP programs |

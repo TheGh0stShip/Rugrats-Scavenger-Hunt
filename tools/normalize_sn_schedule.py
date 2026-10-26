@@ -144,6 +144,89 @@ def normalize_state_reset(text: str) -> str:
     ), "reviewed state-reset scheduling pattern")
 
 
+def normalize_round_display_reset(text: str) -> str:
+    """Apply the reviewed register allocation for the two-entry reset loop."""
+    text = replace_once(text, (
+        "\tmove\t$6,$0\n"
+        "\tlui\t$2,%hi(D_800544E0) # high\n"
+        "\taddiu\t$5,$2,%lo(D_800544E0) # low\n"
+        "\tlui\t$2,%hi(D_800B92EC) # high\n"
+        "\tmove\t$7,$2\n"
+        "\tlui\t$2,%hi(D_80054490) # high\n"
+        "\taddiu\t$9,$2,%lo(D_80054490) # low\n"
+        "\tli\t$8,1\t\t\t# 0x00000001\n"
+    ), (
+        "\tmove\t$8,$0\n"
+        "\tli\t$11,1\t\t\t# 0x00000001\n"
+        "\tlui\t$2,%hi(D_800B92EC) # high\n"
+        "\tmove\t$9,$2\n"
+        "\tlui\t$2,%hi(D_80054490) # high\n"
+        "\taddiu\t$10,$2,%lo(D_80054490) # low\n"
+        "\tlui\t$2,%hi(D_800544E0) # high\n"
+        "\taddiu\t$7,$2,%lo(D_800544E0) # low\n"
+    ), "round-display reset preheader allocation")
+    text = replace_once(text, (
+        "\tmove\t$2,$8\n"
+        "\tsh\t$2,%lo(D_800B92EC)($7)\n"
+        "$L6:\n"
+        "\tlh\t$2,%lo(D_800B92EC)($7)\n"
+        "\tsh\t$8,50($5)\n"
+        "\taddu\t$4,$2,-2\n"
+        "\tsubu\t$3,$6,$4\n"
+        "\tsrl\t$2,$3,31\n"
+        "\taddu\t$2,$3,$2\n"
+        "\tsra\t$4,$2,1\n"
+        "\tsll\t$2,$4,1\n"
+        "\tsubu\t$4,$3,$2\n"
+        "\taddu\t$6,$6,1\n"
+        "\tsll\t$2,$4,1\n"
+        "\taddu\t$2,$2,$4\n"
+        "\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$9\n"
+        "\tlw\t$10,0($2)\n"
+        "\tlw\t$11,4($2)\n"
+        "\tlw\t$12,8($2)\n"
+        "\tsw\t$10,0($5)\n"
+        "\tsw\t$11,4($5)\n"
+        "\tsw\t$12,8($5)\n"
+        "\tslt\t$2,$6,2\n"
+    ), (
+        "\tmove\t$2,$11\n"
+        "\tsh\t$2,%lo(D_800B92EC)($9)\n"
+        "$L6:\n"
+        "\tlh\t$3,%lo(D_800B92EC)($9)\n"
+        "\tsh\t$11,50($7)\n"
+        "\taddu\t$3,$3,-2\n"
+        "\tsubu\t$3,$8,$3\n"
+        "\tsrl\t$2,$3,31\n"
+        "\taddu\t$2,$3,$2\n"
+        "\tsra\t$4,$2,1\n"
+        "\tsll\t$2,$4,1\n"
+        "\tsubu\t$4,$3,$2\n"
+        "\tsll\t$2,$4,1\n"
+        "\taddu\t$2,$2,$4\n"
+        "\tsll\t$2,$2,2\n"
+        "\taddu\t$2,$2,$10\n"
+        "\tlw\t$3,0($2)\n"
+        "\tlw\t$4,4($2)\n"
+        "\tlw\t$5,8($2)\n"
+        "\tsw\t$3,0($7)\n"
+        "\tsw\t$4,4($7)\n"
+        "\tsw\t$5,8($7)\n"
+        "\taddu\t$8,$8,1\n"
+        "\tslt\t$2,$8,2\n"
+    ), "round-display reset loop allocation")
+    text = replace_once(text, "\taddu\t$5,$5,60\n", "\taddu\t$7,$7,60\n",
+                        "round-display reset loop stride")
+    return replace_once(text, (
+        "$L8:\n\tlw\t$31,16($sp)\n"
+        "\tli\t$2,435\t\t\t# 0x000001b3\n"
+    ), (
+        "$L8:\n\tli\t$2,435\t\t\t# 0x000001b3\n"
+        "\tlw\t$31,16($sp)\n"
+    ), "round-display reset epilogue scheduling")
+
+
 def normalize_byte_clear_loop(text: str) -> str:
     return replace_once(
         text, "\tbne\t$2,$0,$L7\n", "\tbnel\t$2,$0,$L7\n",
@@ -8125,6 +8208,8 @@ def normalize(text: str) -> str:
         return normalize_frame_display_lists(text)
     if "\t.ent\tfunc_8002E930\n" in text:
         return normalize_player_scoreboard(text)
+    if "\t.ent\tfunc_8002D404\n" in text:
+        return normalize_round_display_reset(text)
     if "\t.ent\tfunc_80031408\n" in text:
         return normalize_board_item_seeding(text)
     if "\t.ent\tfunc_8001F588\n" in text:
